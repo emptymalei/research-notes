@@ -122,7 +122,46 @@
             
   <div class="section" id="matter-as-driven-energy">
 <h1>Matter as Driven Energy<a class="headerlink" href="#matter-as-driven-energy" title="Permalink to this headline">¶</a></h1>
-<p><strong>This is part of my research. I put them here because I believe in open is the key of reseach.</strong></p>
+<div class="section" id="oscillation-in-matter-and-vacuum">
+<h2>Oscillation in Matter and Vacuum<a class="headerlink" href="#oscillation-in-matter-and-vacuum" title="Permalink to this headline">¶</a></h2>
+<p>Oscillation in Vacuum, as we have calculated is,</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_{e}^{(v)} (\bar x) \\ \psi_{x}^{(v)} (\bar x)  \end{pmatrix} = \begin{pmatrix}  \cos\theta_v \psi_{v1}(0) e^{-i\frac{\bar x}{2}} + \sin \theta_v \psi_{v2}(0) e^{i\frac{\bar x}{2}} \\    -\sin\theta_v \psi_{v1}(0) e^{-i\frac{\bar x}{2}} + \cos \theta_v \psi_{v2}(0) e^{i\frac{\bar x}{2}}   \end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\bar x = \omega x\)</span> and <span class="math">\(\omega = \frac{\delta m^2 }{2E}\)</span>.</p>
+<p>The initial condition is</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_{v1}(0) \\ \psi_{v2}(0) \end{pmatrix} = \begin{pmatrix} \cos\theta_v &amp; -\sin\theta_v \\ \sin \theta_v &amp; \cos\theta_v \end{pmatrix} \begin{pmatrix} \psi_{e}(0) \\ \psi_{x}(0) \end{pmatrix} .\end{split}\]</div>
+<p>Thus we have the probability of the second state</p>
+<div class="math">
+\[P_{x}^{(v)}(\bar x) = 2\sin^2\theta_v \cos^2\theta_v \left( 1 + \cos (\bar x) \right).\]</div>
+<p>Similarly the oscillation in a constant matter background is</p>
+<div class="math">
+\[P_{x}^{(m)}(\bar x) = 2\sin^2\theta_m \cos^2\theta_m \left( 1 + \cos \left( \frac{\omega_m}{\omega} \bar x \right) \right).\]</div>
+<p>To have a larger amplitude in matter oscillation, we require</p>
+<div class="math">
+\[\sin ^2\theta_m \cos^2\theta_m \geq \sin ^2\theta_v \cos^2\theta_v,\]</div>
+<p>which simplifies to</p>
+<div class="math">
+\[\sin 2\theta_m \geq \sin 2\theta_v.\]</div>
+<p>Since</p>
+<div class="math">
+\[\sin 2\theta_m = \frac{\sin 2\theta_v}{\sqrt{ 1 + \left(\frac{\lambda}{\omega}\right)^2 - 2\frac{\lambda}{\omega} \cos 2\theta_v }},\]</div>
+<p>we have</p>
+<div class="math">
+\[\sqrt{ 1 + \left(\frac{\lambda}{\omega}\right)^2 - 2\frac{\lambda}{\omega} \cos 2\theta_v } \leq 1.\]</div>
+<p>Manipulating this inequality, we get</p>
+<div class="math">
+\[\frac{\lambda}{\omega} \leq 2\cos 2\theta_v.\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">MSW Resonance</p>
+<p>The MSW resonance is at</p>
+<div class="last math">
+\[\frac{\lambda}{\omega} = \cos 2\theta_v.\]</div>
+</div>
+<p>Notice that this requirement also leads to the result that the oscillation frequency in matter is smaller than the vacuum oscillation frequency,</p>
+<div class="math">
+\[\omega_m = \omega \sqrt{ 1 +  \left(\frac{\lambda}{\omega}\right)^2 -2 \frac{\lambda}{\omega} \cos 2\theta_v } \leq \omega.\]</div>
+</div>
 <div class="section" id="rabi-like-transition">
 <h2>Rabi-like Transition<a class="headerlink" href="#rabi-like-transition" title="Permalink to this headline">¶</a></h2>
 <div class="note admonition" id="index-0">

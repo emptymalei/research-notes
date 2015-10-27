@@ -1,7 +1,80 @@
 Matter as Driven Energy
 ====================================
 
-**This is part of my research. I put them here because I believe in open is the key of reseach.**
+
+
+Oscillation in Matter and Vacuum
+--------------------------------------------------------------
+
+
+Oscillation in Vacuum, as we have calculated is,
+
+.. math::
+   \begin{pmatrix} \psi_{e}^{(v)} (\bar x) \\ \psi_{x}^{(v)} (\bar x)  \end{pmatrix} = \begin{pmatrix}  \cos\theta_v \psi_{v1}(0) e^{-i\frac{\bar x}{2}} + \sin \theta_v \psi_{v2}(0) e^{i\frac{\bar x}{2}} \\    -\sin\theta_v \psi_{v1}(0) e^{-i\frac{\bar x}{2}} + \cos \theta_v \psi_{v2}(0) e^{i\frac{\bar x}{2}}   \end{pmatrix},
+
+where :math:`\bar x = \omega x` and :math:`\omega = \frac{\delta m^2 }{2E}`.
+
+The initial condition is
+
+.. math::
+   \begin{pmatrix} \psi_{v1}(0) \\ \psi_{v2}(0) \end{pmatrix} = \begin{pmatrix} \cos\theta_v & -\sin\theta_v \\ \sin \theta_v & \cos\theta_v \end{pmatrix} \begin{pmatrix} \psi_{e}(0) \\ \psi_{x}(0) \end{pmatrix} .
+
+Thus we have the probability of the second state
+
+.. math::
+   P_{x}^{(v)}(\bar x) = 2\sin^2\theta_v \cos^2\theta_v \left( 1 + \cos (\bar x) \right).
+
+Similarly the oscillation in a constant matter background is
+
+.. math::
+   P_{x}^{(m)}(\bar x) = 2\sin^2\theta_m \cos^2\theta_m \left( 1 + \cos \left( \frac{\omega_m}{\omega} \bar x \right) \right).
+
+To have a larger amplitude in matter oscillation, we require
+
+.. math::
+   \sin ^2\theta_m \cos^2\theta_m \geq \sin ^2\theta_v \cos^2\theta_v,
+
+which simplifies to
+
+.. math::
+   \sin 2\theta_m \geq \sin 2\theta_v.
+
+Since
+
+.. math::
+   \sin 2\theta_m = \frac{\sin 2\theta_v}{\sqrt{ 1 + \left(\frac{\lambda}{\omega}\right)^2 - 2\frac{\lambda}{\omega} \cos 2\theta_v }},
+
+we have
+
+.. math::
+   \sqrt{ 1 + \left(\frac{\lambda}{\omega}\right)^2 - 2\frac{\lambda}{\omega} \cos 2\theta_v } \leq 1.
+
+Manipulating this inequality, we get
+
+.. math::
+   \frac{\lambda}{\omega} \leq 2\cos 2\theta_v.
+
+
+.. admonition:: MSW Resonance
+   :class: hint
+
+   The MSW resonance is at
+
+   .. math::
+      \frac{\lambda}{\omega} = \cos 2\theta_v.
+
+
+
+Notice that this requirement also leads to the result that the oscillation frequency in matter is smaller than the vacuum oscillation frequency,
+
+.. math::
+   \omega_m = \omega \sqrt{ 1 +  \left(\frac{\lambda}{\omega}\right)^2 -2 \frac{\lambda}{\omega} \cos 2\theta_v } \leq \omega.
+
+
+
+
+
+
 
 Rabi-like Transition
 ------------------------------
