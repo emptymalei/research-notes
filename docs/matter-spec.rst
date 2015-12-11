@@ -547,6 +547,31 @@ Since we have been using initial condition that :math:`\lvert C_1 \rvert^2=1`, t
 
 
 
+Resoances
+---------------------------------------
+
+For a matter profile
+
+.. math::
+   \lambda (x) = \lambda_0 + \lambda_1 \sin ( \beta \hat x ),
+
+where :math:`\hat x = \omega x`, the resonance happens at a :math:`\beta` value
+
+.. math::
+   \beta_r = \frac{1}{n} \sqrt{ \hat \lambda ^2 +1 - 2\hat\lambda \cos (2\theta_v) }.
+
+
+This result comes from the matching of the frequency of matter oscillation profile :math:`\beta` and matter oscillation frequency :math:`\omega_m = \frac{\omega_m}{2} - \left( -\frac{\omega_m}{2} \right)` to some certain fraction :math:`n`, [1]_
+
+.. math::
+   n \beta - \left( \frac{\omega_m}{2} - \left( -\frac{\omega_m}{2} \right) \right) = 0.
+
+
+
+
+
+
+
 What Really is the Reason of These Transition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -631,3 +656,6 @@ Under this approximation, the equation for :math:`C_2` becomes
 
 Refs & Notes
 -----------------
+
+
+.. [1] Kneller, J. P., McLaughlin, G. C., & Patton, K. M. (2013). Stimulated neutrino transformation in supernovae. AIP Conference Proceedings, 1560, 176–178. doi:10.1063/1.4826746
