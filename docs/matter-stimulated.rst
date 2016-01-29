@@ -19,6 +19,31 @@ As a first step, we solve single frequency matter perturbation
 .. math::
    \delta \lambda(x)  = A \sin (k x + \phi).
 
+The Hamiltonian is
+
+.. math::
+   H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin \theta_m \sigma_1.
+
+
+.. admonition:: Derive the Hamiltonian
+   :class: note
+
+   This Hamiltonian can be derived easily using
+
+   .. math::
+      H = -\frac{\omega_m}{3}\sigma_3 + \frac{\delta \lambda}{2} U^\dagger \sigma_3 U.
+
+
+Suppose the wave function in this basis is written as
+
+.. math::
+   \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}.
+
+To remove the position dependent :math:`sigma_3` term in the Hamiltonian which prevents us from solving the equation of motion easily, we use a new basis where the wave function is related to background matter basis through
+
+.. math::
+   \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & -i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.
+
 
 
 
