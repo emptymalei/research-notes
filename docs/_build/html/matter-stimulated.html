@@ -190,6 +190,15 @@
 <p class="first admonition-title">Other Initial Conditions</p>
 <p class="last">The initial condition can be other convinient ones. For example we can remove the integration constant of the last term in the relation.</p>
 </div>
+<p>At any position/time, the wave function in background matter basis is</p>
+<div class="math" id="equation-wavefunction-diff-basis">
+<span class="eqno">(1)</span>\[\begin{split}\begin{pmatrix} \psi_1 (x) \\ \psi_2(x)  \end{pmatrix} = \begin{pmatrix} e^{- i \eta} \psi_{b1} (x) \\ e^{i\eta} \psi_{b2} (x)  \end{pmatrix}.\end{split}\]</div>
+<p>To calculated the transition from low energy state to high energy state in background matter basis, with initial condition</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_1 (0) \\ \psi_2(0)  \end{pmatrix} = \begin{pmatrix} 1 \\ 0  \end{pmatrix},\end{split}\]</div>
+<p>we simply calculate</p>
+<div class="math">
+\[P_{1 \to 2} (x) = \lvert e^{i\eta} \psi_{b2} (x)  \rvert^2 = \lvert \psi_{b2} (x)  \rvert^2 .\]</div>
 </div>
 <div class="section" id="single-frequency-matter-perturbation">
 <h2>Single Frequency Matter Perturbation<a class="headerlink" href="#single-frequency-matter-perturbation" title="Permalink to this headline">¶</a></h2>
@@ -198,7 +207,108 @@
 \[\delta \lambda(x)  = A \sin (k x + \phi).\]</div>
 <p>Using the relation between <span class="math">\(\eta\)</span> and <span class="math">\(\delta\lambda\)</span>, we solve out <span class="math">\(\eta\)</span>.</p>
 <div class="math">
-\[\eta(x) =\]</div>
+\[\eta(x) = - \frac{\omega_m}{2}x + \frac{\cos 2\theta_m}{2} \frac{A}{k} \cos (k x + \phi),\]</div>
+<p>where we have chosen <span class="math">\(\eta(0)=\frac{\cos 2\theta_m}{2}\frac{A}{k}\cos\phi\)</span>.</p>
+<p>The problem is to solve the equation of motion</p>
+<div class="math">
+\[\begin{split}i \frac{d}{dx} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} = \frac{\sin 2\theta_m}{2}\delta\lambda(x) \begin{pmatrix} 0 &amp;  e^{2i\eta(x)} \\   e^{-2i\eta(x)} &amp;  0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} .\end{split}\]</div>
+<p>We also define</p>
+<div class="math">
+\[h = \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)}\]</div>
+<p>Obviously, the exponential terms is too complicate. On the other hand, this equation of motion reminds us of the Rabi oscillation. So we decide to rewrite the exponential into some plane wave terms using Jacobi-Anger expansion. (Refs &amp; Notes: Patton et al)</p>
+<div class="note admonition">
+<p class="first admonition-title">Jacobi-Anger Expansion</p>
+<p>One of the forms of Jacobi-Anger expansion is</p>
+<div class="last math">
+\[e^{i z \cos (\Phi)} = \sum_{n=-\infty}^\infty i^n J_n(z) e^{i n\Phi}.\]</div>
+</div>
+<p>We define <span class="math">\(z_k = \frac{A}{k} \cos 2\theta_m\)</span>, with which we expand the term</p>
+<div class="math">
+\[e^{i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (z_k) e^{in (kx +\phi)}.\]</div>
+<p>The expansion is plugged into the Hamiltonian elements,</p>
+<div class="math">
+\[\begin{split}h &amp;= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
+&amp; = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
+&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).\end{split}\]</div>
+<p>Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero. The two such conditions for the two summations are</p>
+<div class="math">
+\[\begin{split}n_- &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) - 1 \\
+n_+ &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .\end{split}\]</div>
+<p>We define <span class="math">\(\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0\)</span>,</p>
+<div class="math">
+\[\begin{split}n_- &amp;= n_0 - 1 \\
+n_+ &amp;= n_0 + 1 .\end{split}\]</div>
+<p>The element of Hamiltonian is written as</p>
+<div class="math">
+\[\begin{split}h &amp;= \frac{A\sin 2\theta_m}{4i} e^{in_0\phi}\left( i^{n_0-1} J_{n_0-1}(z_k) - i^{n_0+1} J_{n_0 +1}(z_k) \right) e^{i(n_0 k -\omega_m)x} \\
+&amp; = \frac{A\sin 2\theta_m}{4i} e^{in_0\phi} i^{n_0-1}\left( J_{n_0-1}(z_k) + J_{n_0 +1}(z_k) \right) e^{i(n_0 k -\omega_m)x}.\end{split}\]</div>
+<p>Recall that for Bessel functions,</p>
+<div class="math">
+\[J_{n_0-1}(z_k) + J_{n_0+1}(z_k)  = \frac{2n_0+1}{z_k}J_{n_0}(z_k).\]</div>
+<p>Then we have</p>
+<div class="math">
+\[h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} i^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.\]</div>
+<p>To save keystrokes, we define</p>
+<div class="math" id="equation-definition-F">
+<span class="eqno">(2)</span>\[F = \frac{1}{4} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
+<p>which depends on <span class="math">\(n_0\)</span> and <span class="math">\(z_k\)</span>.</p>
+<div class="hint admonition">
+<p class="first admonition-title">Solving Using Mathematica</p>
+<p>The Mathematica code:</p>
+<div class="last highlight-python"><div class="highlight"><pre>In[1]:= sys = I D[{phi1[x], phi2[x]}, x] == {{0, (g0R + I g0I) Exp[ I (-omegam + n0 k) x]}, {(g0R - I g0I) Exp[-I (-omegam + n0 k) x], 0}}.{phi1[x], phi2[x]}
+In[2]:= DSolve[sys, {phi1, phi2}, x]// FullSimplify
+Out[3]:= {{phi1 -&gt; Function[{x},
+E^(1/2 I (k n0 + I Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] - omegam) x) C[1]
++ E^(1/2 (Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] + I (k n0 - omegam)) x) C[2]],
+phi2 -&gt; Function[{x}, (1/(2 (g0I - I g0R)))
+I E^(-I (k n0 - omegam) x +
+ 1/2 I (k n0 + I Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] - omegam) x)
+ (k n0 + I Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] - omegam) C[1]
+ + (1/(2 (g0I - I g0R))) E^(1/2 (Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2]
+ + I (k n0 - omegam)) x - I (k n0 - omegam) x) (Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2]
+ + I (k n0 - omegam)) C[2]]}}
+</pre></div>
+</div>
+</div>
+<p>The general solution to the equation of motion is</p>
+<div class="math">
+\[\begin{split}\psi_{b1} = &amp; C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  4\lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  4\lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
+\psi_{b2} = &amp; \frac{C_1}{2F^*} i \left( n_0 k - \omega_m - \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \\
+&amp; + \frac{C_2}{2 F^*} i \left( n_0 k - \omega_m + \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .\end{split}\]</div>
+<p>For simplicity, we define</p>
+<div class="math" id="equation-definition-g-l">
+<span class="eqno">(3)</span>\[\begin{split}g &amp;= n_0 k  - \omega_m, \\
+l &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
+<p>To determine the constants, we need intial condition,</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_1 (0) \\ \psi_2(0)  \end{pmatrix} = \begin{pmatrix} 1 \\ 0  \end{pmatrix} ,\end{split}\]</div>
+<p>which leads to</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_{b1} (0) \\ \psi_{b2}(0)  \end{pmatrix} = \begin{pmatrix} e^{i\eta(0)} \\ 0  \end{pmatrix},\end{split}\]</div>
+<p>using equation <a href="#equation-wavefunction-diff-basis">(1)</a>.</p>
+<p>Plug in the initial condition for the wave function,</p>
+<div class="math">
+\[\begin{split}C_1 + C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \\
+\frac{C_1}{2F^ * } i \left( g - \sqrt{l} \right) + \frac{C _ 2}{2 F ^ *} i \left( \sqrt{l} + g  \right) &amp; = 0.\end{split}\]</div>
+<p>The constants are solved out</p>
+<div class="math">
+\[\begin{split}C_1 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{\sqrt{l} + g }{2\sqrt{l}} , \\
+C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.\end{split}\]</div>
+<p>where <span class="math">\(F\)</span> is defined in <a href="#equation-definition-F">(2)</a> and <span class="math">\(l\)</span> and <span class="math">\(g\)</span> are defined in <a href="#equation-definition-g-l">(3)</a>.</p>
+<p>The second element of wave function becomes</p>
+<div class="math">
+\[\psi_{b2}(x) = \frac{- 2 F}{\sqrt{l}} e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2}\sqrt{l} x \right).\]</div>
+<p>The transition probability becomes</p>
+<div class="math">
+\[P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{l} \sin^2\left( \frac{\sqrt{l} }{2} x \right).\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Compare The Result with Kneller et al</p>
+<p>Kneller et al have a transition probability</p>
+<div class="math">
+\[P_{12} = \frac{\kappa_n^2}{q_n^2} \sin^2 (q_n x),\]</div>
+<p>where <span class="math">\(q_n^2 = k_n^2 + \kappa_n^2\)</span> and <span class="math">\(2k_n = \tilde{\delta k}_{12} + n k_\star\)</span>.</p>
+<p class="last">In my notation, <span class="math">\(k\)</span> is the same as their <span class="math">\(k_\star\)</span></p>
+</div>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
