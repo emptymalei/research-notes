@@ -305,11 +305,37 @@ The transition probability becomes
    Kneller et al have a transition probability
 
    .. math::
-      P_{12} = \frac{\kappa_n^2}{q_n^2} \sin^2 (q_n x),
+      \color{red}P_{12} = \frac{\kappa_n^2}{q_n^2} \sin^2 (q_n x),
 
-   where :math:`q_n^2 = k_n^2 + \kappa_n^2` and :math:`2k_n = \tilde{\delta k}_{12} + n k_\star`.
+   where :math:`\color{red}q_n^2 = k_n^2 + \kappa_n^2` and :math:`\color{red}2k_n = \tilde{\delta k}_{12} + n k_\star`.
 
-   In my notation, :math:`k` is the same as their :math:`k_\star`
+   In my notation, :math:`k` is the same as their :math:`\color{red}k_\star`. After the first step of translation, we have :math:`g = \color{red} 2 k_n`.
+
+   The definition of :math:`\color{red}\kappa_n` is given by
+
+   .. math
+      \color{red}\kappa_{ij,n} = (-i)^{n-1} \frac{n C_\star V_\star}{z_{ij}} J_n(z_{ij}) \tilde U_{ei}^* \tilde U_{ej} e^{i ( n \eta + z_{ij} \cos \eta)},
+
+   in Kneller's notation and
+
+   .. math::
+      \delta V_{ee}(x) = C_\star V_\star \sin (k_\star x + \eta).
+
+   So we conclude that my :math:`\lvert F \rvert ^2` is related to Kneller's :math:`\lvert \kappa_n \rvert^2` through
+
+   .. math::
+      \lvert F \rvert^2 = \color{red} \lvert \kappa_n \rvert^2.
+
+   We also have
+
+   .. math::
+      l = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,
+
+   i.e., :math:`{\color{red}q_n} = \frac{\sqrt{l} }{2}`.
+
+   Now we see the method we have used gives exactly the same transition probability as Kneller's.
+
+
 
 
 
