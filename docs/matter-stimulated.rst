@@ -407,7 +407,7 @@ Constant Matter Profile :math:`\delta\lambda = \lambda_c`                       
 .. math:: \frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}         .. math:: \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\frac{A\cos 2\theta_m}{k} \cos (kx+\phi) }
 ================================================================================   ========================================================================
 
-The periodic profile comes into the exponential. Jacobi-Anger expansion (equation :eq:`jacobi-anger-expansion`) expands the periodic matter profile into infinite constant matter profiles.
+The periodic profile comes into the exponential. Jacobi-Anger expansion (equation :eq:`jacobi-anger-expansion`) expands the periodic matter profile into infinite constant matter profiles. By comparing the two cases, we conclude that :math:`\cos 2\theta_m\lambda_c` corresponds to :math:`nk`.
 
 The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.
 
@@ -419,7 +419,29 @@ The big question is which constant matter profiles are the most important ones? 
 where :math:`n_0=\mathrm{Int}\left( \frac{\omega_m}{k} \right)`.
 
 
-**What is the meaning of this condition in this new basis?**
+**What is the meaning of this condition in this new basis?** If we define a effective matter density out of the Jacobi-Anger expanded series, we should define it to be
+
+.. math::
+   \lambda_c' = \frac{n_0 k}{\cos 2\theta_m}.
+
+Then we can rewrite the RWA requirement as
+
+.. math::
+   \lambda_c' - \cos 2\theta_m \omega_m = 0.
+
+
+.. admonition:: A Reminder of MSW Resonance
+   :class: note
+
+   The MSW Hamiltonian in flavor basis is
+
+   .. math::
+      \mathbf H = \frac{\omega_v}{2}( -\cos2\theta_v \sigma_3 + \sin 2\theta_v \sigma_1 )   {\color{red} + \frac{\lambda}{2} \mathbf {\sigma_3}}  {\color{green}+ \Delta \mathbf I},
+
+   where the MSW resonance happens when all the :math:`\sigma_3` terms cancel eath other, i.e.,
+
+   .. math::
+      - \omega_v \cos 2\theta_v  + \lambda = 0.
 
 
 
