@@ -128,8 +128,6 @@
 <div class="math">
 \[\lambda(x) = \lambda_0 + \delta \lambda (x),\]</div>
 <p>where <span class="math">\(\lambda_0 = \sqrt{2}G_F n_{e0}\)</span> and <span class="math">\(\delta \lambda(x) = \sqrt{2}G_F \delta n_e(x)\)</span>.</p>
-<div class="section" id="a-unitary-transformation">
-<h2>A Unitary Transformation<a class="headerlink" href="#a-unitary-transformation" title="Permalink to this headline">¶</a></h2>
 <p>The Hamiltonian is</p>
 <div class="math">
 \[H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin \theta_m \sigma_1.\]</div>
@@ -139,6 +137,8 @@
 <div class="last math">
 \[H = -\frac{\omega_m}{3}\sigma_3 + \frac{\delta \lambda}{2} U^\dagger \sigma_3 U.\]</div>
 </div>
+<div class="section" id="a-unitary-transformation">
+<h2>A Unitary Transformation<a class="headerlink" href="#a-unitary-transformation" title="Permalink to this headline">¶</a></h2>
 <p>Suppose the wave function in this basis is written as</p>
 <div class="math">
 \[\begin{split}\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}.\end{split}\]</div>
@@ -182,8 +182,11 @@
 \[\begin{split}\begin{pmatrix}  \frac{d\eta}{dx}  &amp; 0 \\ 0 &amp; - \frac{d\eta}{dx}  \end{pmatrix} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} = \left[ -\frac{\omega_m}{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_m  \sigma_3 \right] \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.\end{split}\]</div>
 <p>It reduces to</p>
 <div class="math">
+\[\frac{d\eta(x)}{dx} = - \frac{\omega_m}{2} + \frac{\delta \lambda(x)}{2} \cos 2\theta_m ,\]</div>
+<p>which has a general solution of the form</p>
+<div class="math">
 \[\eta(x) - \eta(0) = - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.\]</div>
-<p>We choose <span class="math">\(\eta(0)=0\)</span>, which simplifies the relation</p>
+<p>We might choose <span class="math">\(\eta(0)=0\)</span>, which simplifies the relation</p>
 <div class="math">
 \[\eta(x)= - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.\]</div>
 <div class="note admonition">
@@ -213,14 +216,15 @@
 <div class="math">
 \[\begin{split}i \frac{d}{dx} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} = \frac{\sin 2\theta_m}{2}\delta\lambda(x) \begin{pmatrix} 0 &amp;  e^{2i\eta(x)} \\   e^{-2i\eta(x)} &amp;  0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} .\end{split}\]</div>
 <p>We also define</p>
-<div class="math">
-\[h = \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)}\]</div>
+<div class="math" id="equation-single-frequency-hamiltonian-element">
+<span class="eqno">(2)</span>\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
+&amp; = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.\end{split}\]</div>
 <p>Obviously, the exponential terms is too complicate. On the other hand, this equation of motion reminds us of the Rabi oscillation. So we decide to rewrite the exponential into some plane wave terms using Jacobi-Anger expansion. (Refs &amp; Notes: Patton et al)</p>
 <div class="note admonition">
 <p class="first admonition-title">Jacobi-Anger Expansion</p>
 <p>One of the forms of Jacobi-Anger expansion is</p>
-<div class="last math">
-\[e^{i z \cos (\Phi)} = \sum_{n=-\infty}^\infty i^n J_n(z) e^{i n\Phi}.\]</div>
+<div class="last math" id="equation-jacobi-anger-expansion">
+<span class="eqno">(3)</span>\[e^{i z \cos (\Phi)} = \sum_{n=-\infty}^\infty i^n J_n(z) e^{i n\Phi}.\]</div>
 </div>
 <p>We define <span class="math">\(z_k = \frac{A}{k} \cos 2\theta_m\)</span>, with which we expand the term</p>
 <div class="math">
@@ -229,11 +233,15 @@
 <div class="math">
 \[\begin{split}h &amp;= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
 &amp; = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).\end{split}\]</div>
-<p>Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero. The two such conditions for the two summations are</p>
+&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).\end{split}\]</div>
+<p>Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero,</p>
+<div class="math" id="equation-single-frequency-rwa-requirement">
+<span class="eqno">(4)</span>\[\begin{split}(n+1) k -\omega_m &amp;\sim 0 \\
+(n'-1) k -\omega_m &amp;\sim 0.\end{split}\]</div>
+<p>The two such conditions for the two summations are</p>
 <div class="math">
-\[\begin{split}n_- &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) - 1 \\
-n_+ &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .\end{split}\]</div>
+\[\begin{split}n \equiv n_- &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) - 1 \\
+n' \equiv n_+ &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .\end{split}\]</div>
 <p>We define <span class="math">\(\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0\)</span>,</p>
 <div class="math">
 \[\begin{split}n_- &amp;= n_0 - 1 \\
@@ -250,7 +258,7 @@ n_+ &amp;= n_0 + 1 .\end{split}\]</div>
 \[h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} i^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.\]</div>
 <p>To save keystrokes, we define</p>
 <div class="math" id="equation-definition-F">
-<span class="eqno">(2)</span>\[F = \frac{1}{4} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
+<span class="eqno">(5)</span>\[F = \frac{1}{4} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
 <p>which depends on <span class="math">\(n_0\)</span> and <span class="math">\(z_k\)</span>.</p>
 <div class="hint admonition">
 <p class="first admonition-title">Solving Using Mathematica</p>
@@ -277,7 +285,7 @@ I E^(-I (k n0 - omegam) x +
 &amp; + \frac{C_2}{2 F^*} i \left( n_0 k - \omega_m + \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .\end{split}\]</div>
 <p>For simplicity, we define</p>
 <div class="math" id="equation-definition-g-l">
-<span class="eqno">(3)</span>\[\begin{split}g &amp;= n_0 k  - \omega_m, \\
+<span class="eqno">(6)</span>\[\begin{split}g &amp;= n_0 k  - \omega_m, \\
 l &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <p>To determine the constants, we need intial condition,</p>
 <div class="math">
@@ -294,7 +302,7 @@ l &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <div class="math">
 \[\begin{split}C_1 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{\sqrt{l} + g }{2\sqrt{l}} , \\
 C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.\end{split}\]</div>
-<p>where <span class="math">\(F\)</span> is defined in <a href="#equation-definition-F">(2)</a> and <span class="math">\(l\)</span> and <span class="math">\(g\)</span> are defined in <a href="#equation-definition-g-l">(3)</a>.</p>
+<p>where <span class="math">\(F\)</span> is defined in <a href="#equation-definition-F">(5)</a> and <span class="math">\(l\)</span> and <span class="math">\(g\)</span> are defined in <a href="#equation-definition-g-l">(6)</a>.</p>
 <p>The second element of wave function becomes</p>
 <div class="math">
 \[\psi_{b2}(x) = \frac{- 2 F}{\sqrt{l}} e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2}\sqrt{l} x \right).\]</div>
@@ -320,6 +328,89 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.\end{sp
 \[l = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,\]</div>
 <p>i.e., <span class="math">\({\color{red}q_n} = \frac{\sqrt{l} }{2}\)</span>.</p>
 <p class="last">Now we see the method we have used gives exactly the same transition probability as Kneller&#8217;s.</p>
+</div>
+<div class="section" id="physics-behind-the-math">
+<h3>Physics Behind The Math<a class="headerlink" href="#physics-behind-the-math" title="Permalink to this headline">¶</a></h3>
+<p>There are several question to answer before we can understand the picture of the math.</p>
+<ol class="arabic simple">
+<li>What does each term mean in the Hamiltonian?</li>
+<li>What exactly is the unitary transformation we used to rotate the wave function?</li>
+<li>What is the physical meaning of Jacobi-Anger expansion in our calculation?</li>
+</ol>
+<p>To answer the first question, we need to write down the solution to Schrodinger equation assuming the Hamiltonian has only one term. The results are listed below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Hamiltonian</th>
+<th class="head">Solution to The First Element of Wave Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last math">
+\[-\frac{\omega_m}{2}\sigma_3\]</div>
+</td>
+<td><div class="first last math">
+\[\psi_1 \sim e^{i\omega_m x/2}\]</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last math">
+\[\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3\]</div>
+</td>
+<td><div class="first last math">
+\[\psi_1 \sim e^{i\frac{A\cos 2\theta_m}{2k}\cos(kx+\phi)}\]</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last math">
+\[\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3\]</div>
+</td>
+<td><div class="first last math">
+\[\psi_1 = C_1 e^{i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)}\]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The unitary transformation used is to move our reference frame to a co-rotating one. <span class="math">\(-\frac{\omega_m}{2}\sigma_3\)</span> is indeed causing the wave function to rotate and removing this term using a transformation means we are co-rotating with it. <span class="math">\(\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3\)</span> causes a more complicated rotation however it is still a rotation.</p>
+<p>As for Jacobi-Anger expansion, it expands an oscillating matter profile to infinite constant matter potentials. To see it more clearly, we assume that <span class="math">\(\delta\lambda= \lambda_c\)</span> is constant. After the unitary transformation, the effective Hamiltonian is</p>
+<div class="math">
+\[\begin{split}H' = \frac{\sin 2\theta_m}{2} \lambda_c \begin{pmatrix} 0 &amp; e^{2i\eta(x)} \\ e^{-2i\eta(x)} &amp; 0 \end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\eta(x) = -\frac{\omega_m}{2}x + \frac{\cos 2\theta_m}{2}\lambda_c x\)</span> and we have chosen <span class="math">\(\eta(0)=0\)</span>.</p>
+<p>The 12 element of the Hamiltonian becomes</p>
+<div class="math">
+\[\frac{\sin 2\theta_m}{2} \lambda_c e^{2i\eta(x)} = \frac{\sin 2\theta_m}{2} \lambda_c e^{2i\left( \frac{\omega_m}{2} + \frac{\cos 2\theta_m}{2} \lambda_c \right)x} .\]</div>
+<p>The significance of it is to show that a constant matter profile will result in a simple exponential term. However, as we move on to periodic matter profile, we have a Hamiltonian element of the form</p>
+<div class="math">
+\[h = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)},\]</div>
+<p>as derived in equation <a href="#equation-single-frequency-hamiltonian-element">(2)</a>. To compare with the constant matter case, we make a table of relevant terms in Hamiltonian.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Constant Matter Profile <span class="math">\(\delta\lambda = \lambda_c\)</span></th>
+<th class="head">Period Matter Profile <span class="math">\(\delta\lambda=A\sin (kx+\phi)\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last math">
+\[\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}\]</div>
+</td>
+<td><div class="first last math">
+\[\frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\frac{A\cos 2\theta_m}{k} \cos (kx+\phi) }\]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The periodic profile comes into the exponential. Jacobi-Anger expansion (equation <a href="#equation-jacobi-anger-expansion">(3)</a>) expands the periodic matter profile into infinite constant matter profiles.</p>
+<p>The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.</p>
+<p>The big question is which constant matter profiles are the most important ones? Mathematically, we require the phase to be almost zero, i.e. equation <a href="#equation-single-frequency-rwa-requirement">(4)</a> or</p>
+<div class="math">
+\[n_0 k - \omega_m \sim 0 ,\]</div>
+<p>where <span class="math">\(n_0=\mathrm{Int}\left( \frac{\omega_m}{k} \right)\)</span>.</p>
+<p><strong>What is the meaning of this condition in this new basis?</strong></p>
 </div>
 </div>
 <div class="section" id="refs-notes">

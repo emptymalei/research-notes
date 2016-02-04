@@ -10,9 +10,6 @@ where :math:`\lambda_0 = \sqrt{2}G_F n_{e0}` and :math:`\delta \lambda(x) = \sqr
 
 
 
-A Unitary Transformation
------------------------------
-
 
 The Hamiltonian is
 
@@ -27,6 +24,12 @@ The Hamiltonian is
 
    .. math::
       H = -\frac{\omega_m}{3}\sigma_3 + \frac{\delta \lambda}{2} U^\dagger \sigma_3 U.
+
+
+
+A Unitary Transformation
+-----------------------------
+
 
 
 Suppose the wave function in this basis is written as
@@ -100,9 +103,14 @@ The key is to remove the :math:`\sigma_3` terms using this transformation, which
 It reduces to
 
 .. math::
+   \frac{d\eta(x)}{dx} = - \frac{\omega_m}{2} + \frac{\delta \lambda(x)}{2} \cos 2\theta_m ,
+
+which has a general solution of the form
+
+.. math::
    \eta(x) - \eta(0) = - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
 
-We choose :math:`\eta(0)=0`, which simplifies the relation
+We might choose :math:`\eta(0)=0`, which simplifies the relation
 
 .. math::
    \eta(x)= - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
@@ -157,7 +165,9 @@ The problem is to solve the equation of motion
 We also define
 
 .. math::
-   h = \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)}
+   h &= \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
+   & = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.
+   :label: single-frequency-hamiltonian-element
 
 Obviously, the exponential terms is too complicate. On the other hand, this equation of motion reminds us of the Rabi oscillation. So we decide to rewrite the exponential into some plane wave terms using Jacobi-Anger expansion. (Refs & Notes: Patton et al)
 
@@ -168,6 +178,7 @@ Obviously, the exponential terms is too complicate. On the other hand, this equa
 
    .. math::
       e^{i z \cos (\Phi)} = \sum_{n=-\infty}^\infty i^n J_n(z) e^{i n\Phi}.
+      :label: jacobi-anger-expansion
 
 
 We define :math:`z_k = \frac{A}{k} \cos 2\theta_m`, with which we expand the term
@@ -180,14 +191,22 @@ The expansion is plugged into the Hamiltonian elements,
 .. math::
    h &= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
    & = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).
+   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).
 
 
-Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero. The two such conditions for the two summations are
+Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero,
 
 .. math::
-   n_- &= \mathrm{Int}\left( \frac{\omega_m}{k} \right) - 1 \\
-   n_+ &= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .
+   (n+1) k -\omega_m &\sim 0 \\
+   (n'-1) k -\omega_m &\sim 0.
+   :label: single-frequency-rwa-requirement
+
+
+The two such conditions for the two summations are
+
+.. math::
+   n \equiv n_- &= \mathrm{Int}\left( \frac{\omega_m}{k} \right) - 1 \\
+   n' \equiv n_+ &= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .
 
 We define :math:`\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0`,
 
@@ -334,6 +353,74 @@ The transition probability becomes
    i.e., :math:`{\color{red}q_n} = \frac{\sqrt{l} }{2}`.
 
    Now we see the method we have used gives exactly the same transition probability as Kneller's.
+
+
+
+Physics Behind The Math
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+There are several question to answer before we can understand the picture of the math.
+
+1. What does each term mean in the Hamiltonian?
+2. What exactly is the unitary transformation we used to rotate the wave function?
+3. What is the physical meaning of Jacobi-Anger expansion in our calculation?
+
+
+To answer the first question, we need to write down the solution to Schrodinger equation assuming the Hamiltonian has only one term. The results are listed below.
+
+============================================================ =================================================================================================================================
+Hamiltonian                                                       Solution to The First Element of Wave Function
+============================================================ =================================================================================================================================
+.. math:: -\frac{\omega_m}{2}\sigma_3                           .. math:: \psi_1 \sim e^{i\omega_m x/2}
+.. math:: \frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3        .. math:: \psi_1 \sim e^{i\frac{A\cos 2\theta_m}{2k}\cos(kx+\phi)}
+.. math:: \frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3        .. math:: \psi_1 = C_1 e^{i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)}
+============================================================ =================================================================================================================================
+
+
+The unitary transformation used is to move our reference frame to a co-rotating one. :math:`-\frac{\omega_m}{2}\sigma_3` is indeed causing the wave function to rotate and removing this term using a transformation means we are co-rotating with it. :math:`\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3` causes a more complicated rotation however it is still a rotation.
+
+
+
+As for Jacobi-Anger expansion, it expands an oscillating matter profile to infinite constant matter potentials. To see it more clearly, we assume that :math:`\delta\lambda= \lambda_c` is constant. After the unitary transformation, the effective Hamiltonian is
+
+.. math::
+   H' = \frac{\sin 2\theta_m}{2} \lambda_c \begin{pmatrix} 0 & e^{2i\eta(x)} \\ e^{-2i\eta(x)} & 0 \end{pmatrix},
+
+where :math:`\eta(x) = -\frac{\omega_m}{2}x + \frac{\cos 2\theta_m}{2}\lambda_c x` and we have chosen :math:`\eta(0)=0`.
+
+The 12 element of the Hamiltonian becomes
+
+.. math::
+   \frac{\sin 2\theta_m}{2} \lambda_c e^{2i\eta(x)} = \frac{\sin 2\theta_m}{2} \lambda_c e^{2i\left( \frac{\omega_m}{2} + \frac{\cos 2\theta_m}{2} \lambda_c \right)x} .
+
+The significance of it is to show that a constant matter profile will result in a simple exponential term. However, as we move on to periodic matter profile, we have a Hamiltonian element of the form
+
+.. math::
+   h = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)},
+
+as derived in equation :eq:`single-frequency-hamiltonian-element`. To compare with the constant matter case, we make a table of relevant terms in Hamiltonian.
+
+================================================================================   ========================================================================
+Constant Matter Profile :math:`\delta\lambda = \lambda_c`                           Period Matter Profile :math:`\delta\lambda=A\sin (kx+\phi)`
+================================================================================   ========================================================================
+.. math:: \frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}         .. math:: \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\frac{A\cos 2\theta_m}{k} \cos (kx+\phi) }
+================================================================================   ========================================================================
+
+The periodic profile comes into the exponential. Jacobi-Anger expansion (equation :eq:`jacobi-anger-expansion`) expands the periodic matter profile into infinite constant matter profiles.
+
+The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.
+
+The big question is which constant matter profiles are the most important ones? Mathematically, we require the phase to be almost zero, i.e. equation :eq:`single-frequency-rwa-requirement` or
+
+.. math::
+   n_0 k - \omega_m \sim 0 ,
+
+where :math:`n_0=\mathrm{Int}\left( \frac{\omega_m}{k} \right)`.
+
+
+**What is the meaning of this condition in this new basis?**
+
 
 
 
