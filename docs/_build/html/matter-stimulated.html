@@ -142,7 +142,7 @@
 <p>Suppose the wave function in this basis is written as</p>
 <div class="math">
 \[\begin{split}\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}.\end{split}\]</div>
-<p>To remove the position dependent <span class="math">\(sigma_3\)</span> term in the Hamiltonian which prevents us from solving the equation of motion easily, we use a new basis where the wave function is related to background matter basis through</p>
+<p>To remove the position dependent <span class="math">\(\sigma_3\)</span> term in the Hamiltonian which prevents us from solving the equation of motion easily, we use a new basis where the wave function is related to background matter basis through</p>
 <div class="math">
 \[\begin{split}\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{-i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.\end{split}\]</div>
 <div class="note admonition">
@@ -286,7 +286,7 @@ I E^(-I (k n0 - omegam) x +
 <p>For simplicity, we define</p>
 <div class="math" id="equation-definition-g-l">
 <span class="eqno">(6)</span>\[\begin{split}g &amp;= n_0 k  - \omega_m, \\
-l &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
+q^2 &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <p>To determine the constants, we need intial condition,</p>
 <div class="math">
 \[\begin{split}\begin{pmatrix} \psi_1 (0) \\ \psi_2(0)  \end{pmatrix} = \begin{pmatrix} 1 \\ 0  \end{pmatrix} ,\end{split}\]</div>
@@ -297,18 +297,19 @@ l &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <p>Plug in the initial condition for the wave function,</p>
 <div class="math">
 \[\begin{split}C_1 + C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \\
-\frac{C_1}{2F^ * } i \left( g - \sqrt{l} \right) + \frac{C _ 2}{2 F ^ *} i \left( \sqrt{l} + g  \right) &amp; = 0.\end{split}\]</div>
+\frac{C_1}{2F^ * } i \left( g - q \right) + \frac{C _ 2}{2 F ^ *} i \left( q + g  \right) &amp; = 0.\end{split}\]</div>
 <p>The constants are solved out</p>
 <div class="math">
-\[\begin{split}C_1 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{\sqrt{l} + g }{2\sqrt{l}} , \\
-C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.\end{split}\]</div>
+\[\begin{split}C_1 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{q + g }{2 q} , \\
+C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>where <span class="math">\(F\)</span> is defined in <a href="#equation-definition-F">(5)</a> and <span class="math">\(l\)</span> and <span class="math">\(g\)</span> are defined in <a href="#equation-definition-g-l">(6)</a>.</p>
 <p>The second element of wave function becomes</p>
 <div class="math">
-\[\psi_{b2}(x) = \frac{- 2 F}{\sqrt{l}} e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2}\sqrt{l} x \right).\]</div>
+\[\psi_{b2}(x) = \frac{- 2 F}{ q } e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2} q x \right).\]</div>
 <p>The transition probability becomes</p>
 <div class="math">
-\[P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{l} \sin^2\left( \frac{\sqrt{l} }{2} x \right).\]</div>
+\[P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{q^2} \sin^2\left( \frac{ q }{2} x \right),\]</div>
+<p>where <span class="math">\(q\)</span> is the oscillation wavenumber. Period of this oscillation is given by <span class="math">\(T = \frac{2\pi}{q}\)</span>.</p>
 <div class="note admonition">
 <p class="first admonition-title">Compare The Result with Kneller et al</p>
 <p>Kneller et al have a transition probability</p>
@@ -325,8 +326,8 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.\end{sp
 \[\lvert F \rvert^2 = \color{red} \lvert \kappa_n \rvert^2.\]</div>
 <p>We also have</p>
 <div class="math">
-\[l = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,\]</div>
-<p>i.e., <span class="math">\({\color{red}q_n} = \frac{\sqrt{l} }{2}\)</span>.</p>
+\[q^2 = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,\]</div>
+<p>i.e., <span class="math">\({\color{red}q_n} = \frac{ q }{2}\)</span>.</p>
 <p class="last">Now we see the method we have used gives exactly the same transition probability as Kneller&#8217;s.</p>
 </div>
 <div class="section" id="physics-behind-the-math">
@@ -467,8 +468,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.\end{sp
 <h3>Links</h3>
 <ul>
    <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
-   <li class="toctree-l1"><a href="http://interimm.org" style="color:orange;"><i class="fa fa-rocket"></i>&nbsp;星际移民中心</a></li>
-</ul>
+   </ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">

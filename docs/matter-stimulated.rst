@@ -272,7 +272,7 @@ For simplicity, we define
 
 .. math::
    g &= n_0 k  - \omega_m, \\
-   l &= 4 \lvert F \rvert^2 + g^2.
+   q^2 &= 4 \lvert F \rvert^2 + g^2.
    :label: definition-g-l
 
 
@@ -292,14 +292,14 @@ Plug in the initial condition for the wave function,
 
 .. math::
    C_1 + C_2 &= e^{i \frac{z_k}{2}\cos \phi} \\
-   \frac{C_1}{2F^ * } i \left( g - \sqrt{l} \right) + \frac{C _ 2}{2 F ^ *} i \left( \sqrt{l} + g  \right) & = 0.
+   \frac{C_1}{2F^ * } i \left( g - q \right) + \frac{C _ 2}{2 F ^ *} i \left( q + g  \right) & = 0.
 
 
 The constants are solved out
 
 .. math::
-   C_1 &= e^{i \frac{z_k}{2}\cos \phi} \frac{\sqrt{l} + g }{2\sqrt{l}} , \\
-   C_2 &= e^{i \frac{z_k}{2}\cos \phi} \frac{ \sqrt{l} - g }{2\sqrt{l}}.
+   C_1 &= e^{i \frac{z_k}{2}\cos \phi} \frac{q + g }{2 q} , \\
+   C_2 &= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.
 
 
 where :math:`F` is defined in :eq:`definition-F` and :math:`l` and :math:`g` are defined in :eq:`definition-g-l`.
@@ -308,13 +308,15 @@ where :math:`F` is defined in :eq:`definition-F` and :math:`l` and :math:`g` are
 The second element of wave function becomes
 
 .. math::
-   \psi_{b2}(x) = \frac{- 2 F}{\sqrt{l}} e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2}\sqrt{l} x \right).
+   \psi_{b2}(x) = \frac{- 2 F}{ q } e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2} q x \right).
 
 
 The transition probability becomes
 
 .. math::
-   P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{l} \sin^2\left( \frac{\sqrt{l} }{2} x \right).
+   P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{q^2} \sin^2\left( \frac{ q }{2} x \right),
+
+where :math:`q` is the oscillation wavenumber. Period of this oscillation is given by :math:`T = \frac{2\pi}{q}`.
 
 
 
@@ -348,9 +350,9 @@ The transition probability becomes
    We also have
 
    .. math::
-      l = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,
+      q^2 = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,
 
-   i.e., :math:`{\color{red}q_n} = \frac{\sqrt{l} }{2}`.
+   i.e., :math:`{\color{red}q_n} = \frac{ q }{2}`.
 
    Now we see the method we have used gives exactly the same transition probability as Kneller's.
 
