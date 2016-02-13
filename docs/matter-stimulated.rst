@@ -191,7 +191,13 @@ The expansion is plugged into the Hamiltonian elements,
 .. math::
    h &= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
    & = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).
+   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
+   & = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},
+
+where I have used
+
+.. math::
+   J_{n-1}(z_k) + J_{n+1}(z_k) = \frac{2n+1}{z_k} J_n(z_k).
 
 
 Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero,
@@ -235,7 +241,7 @@ Then we have
 To save keystrokes, we define
 
 .. math::
-   F = \frac{1}{4} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,
+   F = \frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,
    :label: definition-F
 
 which depends on :math:`n_0` and :math:`z_k`.
@@ -264,16 +270,16 @@ which depends on :math:`n_0` and :math:`z_k`.
 The general solution to the equation of motion is
 
 .. math::
-   \psi_{b1} = & C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  4\lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  4\lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
-   \psi_{b2} = & \frac{C_1}{2F^*} i \left( n_0 k - \omega_m - \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \\
-   & + \frac{C_2}{2 F^*} i \left( n_0 k - \omega_m + \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .
+   \psi_{b1} = & C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
+   \psi_{b2} = & \frac{C_1}{F^*} i \left( n_0 k - \omega_m - \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \\
+   & + \frac{C_2}{F^*} i \left( n_0 k - \omega_m + \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .
 
 For simplicity, we define
 
 .. math::
    g &= n_0 k  - \omega_m, \\
-   q^2 &= 4 \lvert F \rvert^2 + g^2.
-   :label: definition-g-l
+   q^2 &= \lvert F \rvert^2 + g^2.
+   :label: definition-g-q
 
 
 To determine the constants, we need intial condition,
@@ -292,7 +298,7 @@ Plug in the initial condition for the wave function,
 
 .. math::
    C_1 + C_2 &= e^{i \frac{z_k}{2}\cos \phi} \\
-   \frac{C_1}{2F^ * } i \left( g - q \right) + \frac{C _ 2}{2 F ^ *} i \left( q + g  \right) & = 0.
+   \frac{C_1}{2F^ * } i \left( g - q \right) + \frac{C _ 2}{ F ^ *} i \left( q + g  \right) & = 0.
 
 
 The constants are solved out
@@ -302,19 +308,19 @@ The constants are solved out
    C_2 &= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.
 
 
-where :math:`F` is defined in :eq:`definition-F` and :math:`l` and :math:`g` are defined in :eq:`definition-g-l`.
+where :math:`F` is defined in :eq:`definition-F` and :math:`l` and :math:`g` are defined in :eq:`definition-g-q`.
 
 
 The second element of wave function becomes
 
 .. math::
-   \psi_{b2}(x) = \frac{- 2 F}{ q } e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2} q x \right).
+   \psi_{b2}(x) = \frac{- F}{ q } e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2} q x \right).
 
 
 The transition probability becomes
 
 .. math::
-   P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{q^2} \sin^2\left( \frac{ q }{2} x \right),
+   P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{\lvert F \rvert^2}{q^2} \sin^2\left( \frac{ q }{2} x \right),
 
 where :math:`q` is the oscillation wavenumber. Period of this oscillation is given by :math:`T = \frac{2\pi}{q}`.
 
@@ -345,16 +351,31 @@ where :math:`q` is the oscillation wavenumber. Period of this oscillation is giv
    So we conclude that my :math:`\lvert F \rvert ^2` is related to Kneller's :math:`\lvert \kappa_n \rvert^2` through
 
    .. math::
-      \lvert F \rvert^2 = \color{red} \lvert \kappa_n \rvert^2.
+      \lvert F \rvert^2 = 4 \color{red} \lvert \kappa_n \rvert^2.
 
    We also have
 
    .. math::
-      q^2 = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,
+      q^2 = \lvert F \rvert ^2 + g^2  = 4 \color{red} q_n^2,
 
    i.e., :math:`{\color{red}q_n} = \frac{ q }{2}`.
 
    Now we see the method we have used gives exactly the same transition probability as Kneller's.
+
+
+
+To make the numerical calculations easier, we rewrite the result by defining the scaled variables
+
+.. math::
+   \hat k &= \frac{k}{\omega_m} \\
+   \hat A & = \frac{A}{\omega_m} \\
+   \hat g & = \frac{g}{\omega_m} = n_0 \hat k - 1,
+
+so that :math:`n_0 = \mathrm{Round}\left( 1/\hat k\right)` and
+
+.. math::
+   P_{1\to 2} = \frac{\left\lvert \frac{1}{2} \frac{\hat A}{z_k} \sin 2\theta_m (2n_0+1) J_n (z_k) \right\rvert^2}{\left\lvert \frac{1}{2} \frac{\hat A}{z_k} \sin 2\theta_m (2n_0+1) J_n (z_k) \right\rvert^2 + \hat g ^2} .
+
 
 
 
@@ -406,7 +427,7 @@ as derived in equation :eq:`single-frequency-hamiltonian-element`. To compare wi
 ================================================================================   ========================================================================
 Constant Matter Profile :math:`\delta\lambda = \lambda_c`                           Period Matter Profile :math:`\delta\lambda=A\sin (kx+\phi)`
 ================================================================================   ========================================================================
-.. math:: \frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}         .. math:: \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\frac{A\cos 2\theta_m}{k} \cos (kx+\phi) }
+.. math:: \frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}         .. math:: \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}
 ================================================================================   ========================================================================
 
 The periodic profile comes into the exponential. Jacobi-Anger expansion (equation :eq:`jacobi-anger-expansion`) expands the periodic matter profile into infinite constant matter profiles. By comparing the two cases, we conclude that :math:`\cos 2\theta_m\lambda_c` corresponds to :math:`nk`.
@@ -418,7 +439,7 @@ The big question is which constant matter profiles are the most important ones? 
 .. math::
    n_0 k - \omega_m \sim 0 ,
 
-where :math:`n_0=\mathrm{Int}\left( \frac{\omega_m}{k} \right)`.
+where :math:`n_0=\mathrm{Round}\left( \frac{\omega_m}{k} \right)`.
 
 
 **What is the meaning of this condition in this new basis?** If we define a effective matter density out of the Jacobi-Anger expanded series, we should define it to be
@@ -447,6 +468,19 @@ Then we can rewrite the RWA requirement as
 
 
 
+
+The Resonances
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. admonition:: Questions
+   :class: question
+
+   There are several questions to be answered.
+
+   1. How good is the RWA approximation? What are the conditions?
+   2. What can we use for other calculations?
+   3. Multiple matter frequency?
 
 
 

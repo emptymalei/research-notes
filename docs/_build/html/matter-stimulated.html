@@ -233,7 +233,11 @@
 <div class="math">
 \[\begin{split}h &amp;= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
 &amp; = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right).\end{split}\]</div>
+&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
+&amp; = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},\end{split}\]</div>
+<p>where I have used</p>
+<div class="math">
+\[J_{n-1}(z_k) + J_{n+1}(z_k) = \frac{2n+1}{z_k} J_n(z_k).\]</div>
 <p>Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero,</p>
 <div class="math" id="equation-single-frequency-rwa-requirement">
 <span class="eqno">(4)</span>\[\begin{split}(n+1) k -\omega_m &amp;\sim 0 \\
@@ -258,7 +262,7 @@ n_+ &amp;= n_0 + 1 .\end{split}\]</div>
 \[h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} i^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.\]</div>
 <p>To save keystrokes, we define</p>
 <div class="math" id="equation-definition-F">
-<span class="eqno">(5)</span>\[F = \frac{1}{4} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
+<span class="eqno">(5)</span>\[F = \frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
 <p>which depends on <span class="math">\(n_0\)</span> and <span class="math">\(z_k\)</span>.</p>
 <div class="hint admonition">
 <p class="first admonition-title">Solving Using Mathematica</p>
@@ -280,13 +284,13 @@ I E^(-I (k n0 - omegam) x +
 </div>
 <p>The general solution to the equation of motion is</p>
 <div class="math">
-\[\begin{split}\psi_{b1} = &amp; C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  4\lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  4\lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
-\psi_{b2} = &amp; \frac{C_1}{2F^*} i \left( n_0 k - \omega_m - \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \\
-&amp; + \frac{C_2}{2 F^*} i \left( n_0 k - \omega_m + \sqrt{ 4\lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ 4\lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .\end{split}\]</div>
+\[\begin{split}\psi_{b1} = &amp; C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
+\psi_{b2} = &amp; \frac{C_1}{F^*} i \left( n_0 k - \omega_m - \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \\
+&amp; + \frac{C_2}{F^*} i \left( n_0 k - \omega_m + \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .\end{split}\]</div>
 <p>For simplicity, we define</p>
-<div class="math" id="equation-definition-g-l">
+<div class="math" id="equation-definition-g-q">
 <span class="eqno">(6)</span>\[\begin{split}g &amp;= n_0 k  - \omega_m, \\
-q^2 &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
+q^2 &amp;= \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <p>To determine the constants, we need intial condition,</p>
 <div class="math">
 \[\begin{split}\begin{pmatrix} \psi_1 (0) \\ \psi_2(0)  \end{pmatrix} = \begin{pmatrix} 1 \\ 0  \end{pmatrix} ,\end{split}\]</div>
@@ -297,18 +301,18 @@ q^2 &amp;= 4 \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <p>Plug in the initial condition for the wave function,</p>
 <div class="math">
 \[\begin{split}C_1 + C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \\
-\frac{C_1}{2F^ * } i \left( g - q \right) + \frac{C _ 2}{2 F ^ *} i \left( q + g  \right) &amp; = 0.\end{split}\]</div>
+\frac{C_1}{2F^ * } i \left( g - q \right) + \frac{C _ 2}{ F ^ *} i \left( q + g  \right) &amp; = 0.\end{split}\]</div>
 <p>The constants are solved out</p>
 <div class="math">
 \[\begin{split}C_1 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{q + g }{2 q} , \\
 C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
-<p>where <span class="math">\(F\)</span> is defined in <a href="#equation-definition-F">(5)</a> and <span class="math">\(l\)</span> and <span class="math">\(g\)</span> are defined in <a href="#equation-definition-g-l">(6)</a>.</p>
+<p>where <span class="math">\(F\)</span> is defined in <a href="#equation-definition-F">(5)</a> and <span class="math">\(l\)</span> and <span class="math">\(g\)</span> are defined in <a href="#equation-definition-g-q">(6)</a>.</p>
 <p>The second element of wave function becomes</p>
 <div class="math">
-\[\psi_{b2}(x) = \frac{- 2 F}{ q } e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2} q x \right).\]</div>
+\[\psi_{b2}(x) = \frac{- F}{ q } e^{i\frac{z_k}{2} \cos\phi} e^{- \frac{i}{2}gx} \sin \left( \frac{1}{2} q x \right).\]</div>
 <p>The transition probability becomes</p>
 <div class="math">
-\[P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{4 \lvert F \rvert^2}{q^2} \sin^2\left( \frac{ q }{2} x \right),\]</div>
+\[P_{1\to 2} = \lvert \psi_{b2} \rvert^2 = \frac{\lvert F \rvert^2}{q^2} \sin^2\left( \frac{ q }{2} x \right),\]</div>
 <p>where <span class="math">\(q\)</span> is the oscillation wavenumber. Period of this oscillation is given by <span class="math">\(T = \frac{2\pi}{q}\)</span>.</p>
 <div class="note admonition">
 <p class="first admonition-title">Compare The Result with Kneller et al</p>
@@ -323,13 +327,21 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 \[\delta V_{ee}(x) = C_\star V_\star \sin (k_\star x + \eta).\]</div>
 <p>So we conclude that my <span class="math">\(\lvert F \rvert ^2\)</span> is related to Kneller&#8217;s <span class="math">\(\lvert \kappa_n \rvert^2\)</span> through</p>
 <div class="math">
-\[\lvert F \rvert^2 = \color{red} \lvert \kappa_n \rvert^2.\]</div>
+\[\lvert F \rvert^2 = 4 \color{red} \lvert \kappa_n \rvert^2.\]</div>
 <p>We also have</p>
 <div class="math">
-\[q^2 = 4 \lvert F \rvert ^2 + g  = 4 \color{red} q_n^2,\]</div>
+\[q^2 = \lvert F \rvert ^2 + g^2  = 4 \color{red} q_n^2,\]</div>
 <p>i.e., <span class="math">\({\color{red}q_n} = \frac{ q }{2}\)</span>.</p>
 <p class="last">Now we see the method we have used gives exactly the same transition probability as Kneller&#8217;s.</p>
 </div>
+<p>To make the numerical calculations easier, we rewrite the result by defining the scaled variables</p>
+<div class="math">
+\[\begin{split}\hat k &amp;= \frac{k}{\omega_m} \\
+\hat A &amp; = \frac{A}{\omega_m} \\
+\hat g &amp; = \frac{g}{\omega_m} = n_0 \hat k - 1,\end{split}\]</div>
+<p>so that <span class="math">\(n_0 = \mathrm{Round}\left( 1/\hat k\right)\)</span> and</p>
+<div class="math">
+\[P_{1\to 2} = \frac{\left\lvert \frac{1}{2} \frac{\hat A}{z_k} \sin 2\theta_m (2n_0+1) J_n (z_k) \right\rvert^2}{\left\lvert \frac{1}{2} \frac{\hat A}{z_k} \sin 2\theta_m (2n_0+1) J_n (z_k) \right\rvert^2 + \hat g ^2} .\]</div>
 <div class="section" id="physics-behind-the-math">
 <h3>Physics Behind The Math<a class="headerlink" href="#physics-behind-the-math" title="Permalink to this headline">¶</a></h3>
 <p>There are several question to answer before we can understand the picture of the math.</p>
@@ -387,8 +399,8 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>as derived in equation <a href="#equation-single-frequency-hamiltonian-element">(2)</a>. To compare with the constant matter case, we make a table of relevant terms in Hamiltonian.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="44%" />
-<col width="56%" />
+<col width="36%" />
+<col width="64%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Constant Matter Profile <span class="math">\(\delta\lambda = \lambda_c\)</span></th>
@@ -400,7 +412,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 \[\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}\]</div>
 </td>
 <td><div class="first last math">
-\[\frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\frac{A\cos 2\theta_m}{k} \cos (kx+\phi) }\]</div>
+\[\frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}\]</div>
 </td>
 </tr>
 </tbody>
@@ -410,7 +422,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>The big question is which constant matter profiles are the most important ones? Mathematically, we require the phase to be almost zero, i.e. equation <a href="#equation-single-frequency-rwa-requirement">(4)</a> or</p>
 <div class="math">
 \[n_0 k - \omega_m \sim 0 ,\]</div>
-<p>where <span class="math">\(n_0=\mathrm{Int}\left( \frac{\omega_m}{k} \right)\)</span>.</p>
+<p>where <span class="math">\(n_0=\mathrm{Round}\left( \frac{\omega_m}{k} \right)\)</span>.</p>
 <p><strong>What is the meaning of this condition in this new basis?</strong> If we define a effective matter density out of the Jacobi-Anger expanded series, we should define it to be</p>
 <div class="math">
 \[\lambda_c' = \frac{n_0 k}{\cos 2\theta_m}.\]</div>
@@ -425,6 +437,13 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>where the MSW resonance happens when all the <span class="math">\(\sigma_3\)</span> terms cancel eath other, i.e.,</p>
 <div class="last math">
 \[- \omega_v \cos 2\theta_v  + \lambda = 0.\]</div>
+</div>
+</div>
+<div class="section" id="the-resonances">
+<h3>The Resonances<a class="headerlink" href="#the-resonances" title="Permalink to this headline">¶</a></h3>
+<div class="question admonition">
+<p class="first admonition-title">Questions</p>
+<p class="last">There are several questions to be answered.</p>
 </div>
 </div>
 </div>

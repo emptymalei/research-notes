@@ -28,3 +28,10 @@ border: solid 2px lightgrey !important;
 border-radius: 4px !important;
 background: none !important;
 }
+
+div.question {
+padding: 10px 15px 10px 50px !important;
+border: solid 2px #b7a1c9 !important;
+border-radius: 4px !important;
+background: none !important;
+}
