@@ -483,6 +483,19 @@ The Resonances
    3. Multiple matter frequency?
 
 
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
+   :align: center
+
+   Probabiity Amplitude as a function of :math:`k/\omega_m` within RWA.
+
+
+
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
+   :align: center
+
+   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion.
+
+
 
 
 

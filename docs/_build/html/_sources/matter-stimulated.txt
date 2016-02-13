@@ -478,6 +478,23 @@ The Resonances
 
    There are several questions to be answered.
 
+   1. How good is the RWA approximation? What are the conditions?
+   2. What can we use for other calculations?
+   3. Multiple matter frequency?
+
+
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
+   :align: center
+
+   Probabiity Amplitude as a function of :math:`k/\omega_m` within RWA.
+
+
+
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
+   :align: center
+
+   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion.
+
 
 
 
