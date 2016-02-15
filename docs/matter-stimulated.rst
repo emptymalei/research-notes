@@ -109,6 +109,7 @@ which has a general solution of the form
 
 .. math::
    \eta(x) - \eta(0) = - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
+   :label: eta-x-general
 
 We might choose :math:`\eta(0)=0`, which simplifies the relation
 
@@ -489,6 +490,28 @@ The Resonances
 
    Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion.
 
+
+
+
+
+Multi-frequency Matter Perturbation
+------------------------------------------------------------------
+
+
+However, as we proceed to the more realistic matter profile, multi-frequency matter profiles are necessary. Generally, we choose the perturbation matter profile upon a constant background to be
+
+.. math::
+   \delta \lambda(x) = \sum_n A_n \sin (k_n x + \phi_n).
+
+Using :eq:`eta-x-general` we conclude that
+
+.. math::
+   \eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \sum_n \frac{A_n}{k_n} \cos ( k_n x+ \phi_n ).
+
+Hence we write down
+
+.. math::
+   h = \frac{\sin 2\theta_m}{2} \sum_n A_n \sin (k_n x + \phi_n) e^{-i\omega_m x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }
 
 
 
