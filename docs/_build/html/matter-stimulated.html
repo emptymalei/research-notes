@@ -210,15 +210,15 @@
 \[\delta \lambda(x)  = A \sin (k x + \phi).\]</div>
 <p>Using the relation between <span class="math">\(\eta\)</span> and <span class="math">\(\delta\lambda\)</span>, we solve out <span class="math">\(\eta\)</span>.</p>
 <div class="math">
-\[\eta(x) = - \frac{\omega_m}{2}x + \frac{\cos 2\theta_m}{2} \frac{A}{k} \cos (k x + \phi),\]</div>
-<p>where we have chosen <span class="math">\(\eta(0)=\frac{\cos 2\theta_m}{2}\frac{A}{k}\cos\phi\)</span>.</p>
+\[\eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \frac{A}{k} \cos (k x + \phi),\]</div>
+<p>where we have chosen <span class="math">\(\eta(0)=-\frac{\cos 2\theta_m}{2}\frac{A}{k}\cos\phi\)</span>.</p>
 <p>The problem is to solve the equation of motion</p>
 <div class="math">
 \[\begin{split}i \frac{d}{dx} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} = \frac{\sin 2\theta_m}{2}\delta\lambda(x) \begin{pmatrix} 0 &amp;  e^{2i\eta(x)} \\   e^{-2i\eta(x)} &amp;  0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} .\end{split}\]</div>
 <p>We also define</p>
 <div class="math" id="equation-single-frequency-hamiltonian-element">
 <span class="eqno">(2)</span>\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
-&amp; = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.\end{split}\]</div>
+&amp; = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x - \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.\end{split}\]</div>
 <p>Obviously, the exponential terms is too complicate. On the other hand, this equation of motion reminds us of the Rabi oscillation. So we decide to rewrite the exponential into some plane wave terms using Jacobi-Anger expansion. (Refs &amp; Notes: Patton et al)</p>
 <div class="note admonition">
 <p class="first admonition-title">Jacobi-Anger Expansion</p>
@@ -228,13 +228,14 @@
 </div>
 <p>We define <span class="math">\(z_k = \frac{A}{k} \cos 2\theta_m\)</span>, with which we expand the term</p>
 <div class="math">
-\[e^{i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (z_k) e^{in (kx +\phi)}.\]</div>
+\[e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (-z_k) e^{in (kx +\phi)},\]</div>
+<p>where I used <span class="math">\(J_n(-z_k) = (-1)^n J_n(z_k)\)</span> for integer <span class="math">\(n\)</span>.</p>
 <p>The expansion is plugged into the Hamiltonian elements,</p>
 <div class="math">
-\[\begin{split}h &amp;= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-&amp; = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
-&amp; = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},\end{split}\]</div>
+\[\begin{split}h &amp;= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
+&amp; = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
+&amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} (-i)^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
+&amp; = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - (-i)^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},\end{split}\]</div>
 <p>where I have used</p>
 <div class="math">
 \[J_{n-1}(z_k) + J_{n+1}(z_k) = \frac{2n+1}{z_k} J_n(z_k).\]</div>
@@ -252,18 +253,13 @@ n' \equiv n_+ &amp;= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .\end{spl
 n_+ &amp;= n_0 + 1 .\end{split}\]</div>
 <p>The element of Hamiltonian is written as</p>
 <div class="math">
-\[\begin{split}h &amp;= \frac{A\sin 2\theta_m}{4i} e^{in_0\phi}\left( i^{n_0-1} J_{n_0-1}(z_k) - i^{n_0+1} J_{n_0 +1}(z_k) \right) e^{i(n_0 k -\omega_m)x} \\
-&amp; = \frac{A\sin 2\theta_m}{4i} e^{in_0\phi} i^{n_0-1}\left( J_{n_0-1}(z_k) + J_{n_0 +1}(z_k) \right) e^{i(n_0 k -\omega_m)x}.\end{split}\]</div>
-<p>Recall that for Bessel functions,</p>
-<div class="math">
-\[J_{n_0-1}(z_k) + J_{n_0+1}(z_k)  = \frac{2n_0+1}{z_k}J_{n_0}(z_k).\]</div>
-<p>Then we have</p>
-<div class="math">
-\[h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} i^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.\]</div>
+\[h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} (-i)^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.\]</div>
 <p>To save keystrokes, we define</p>
 <div class="math" id="equation-definition-F">
-<span class="eqno">(5)</span>\[F = \frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
-<p>which depends on <span class="math">\(n_0\)</span> and <span class="math">\(z_k\)</span>.</p>
+<span class="eqno">(5)</span>\[F = -\frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (-i)^{n_0} \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,\]</div>
+<p>which depends on <span class="math">\(n_0\)</span> and <span class="math">\(z_k = \frac{A}{k} \cos 2\theta_m\)</span>. Notice that</p>
+<div class="math">
+\[\lvert F \rvert^2 = \left\lvert \frac{1}{2} A\sin 2\theta_m  \frac{2n_0+1}{z_k} J_{n_0} (z_k) \right\rvert^2 .\]</div>
 <div class="hint admonition">
 <p class="first admonition-title">Solving Using Mathematica</p>
 <p>The Mathematica code:</p>

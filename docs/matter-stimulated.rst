@@ -153,9 +153,9 @@ As a first step, we solve single frequency matter perturbation
 Using the relation between :math:`\eta` and :math:`\delta\lambda`, we solve out :math:`\eta`.
 
 .. math::
-   \eta(x) = - \frac{\omega_m}{2}x + \frac{\cos 2\theta_m}{2} \frac{A}{k} \cos (k x + \phi),
+   \eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \frac{A}{k} \cos (k x + \phi),
 
-where we have chosen :math:`\eta(0)=\frac{\cos 2\theta_m}{2}\frac{A}{k}\cos\phi`.
+where we have chosen :math:`\eta(0)=-\frac{\cos 2\theta_m}{2}\frac{A}{k}\cos\phi`.
 
 The problem is to solve the equation of motion
 
@@ -166,7 +166,7 @@ We also define
 
 .. math::
    h &= \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
-   & = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.
+   & = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x - \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.
    :label: single-frequency-hamiltonian-element
 
 Obviously, the exponential terms is too complicate. On the other hand, this equation of motion reminds us of the Rabi oscillation. So we decide to rewrite the exponential into some plane wave terms using Jacobi-Anger expansion. (Refs & Notes: Patton et al)
@@ -184,15 +184,17 @@ Obviously, the exponential terms is too complicate. On the other hand, this equa
 We define :math:`z_k = \frac{A}{k} \cos 2\theta_m`, with which we expand the term
 
 .. math::
-   e^{i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (z_k) e^{in (kx +\phi)}.
+   e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (-z_k) e^{in (kx +\phi)},
+
+where I used :math:`J_n(-z_k) = (-1)^n J_n(z_k)` for integer :math:`n`.
 
 The expansion is plugged into the Hamiltonian elements,
 
 .. math::
-   h &= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-   & = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty i^n J_n(z_k) e^{i n ( kx + \phi)} \\
-   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} i^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
-   & = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},
+   h &= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
+   & = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
+   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} (-i)^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
+   & = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - (-i)^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},
 
 where I have used
 
@@ -224,27 +226,19 @@ We define :math:`\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0`,
 The element of Hamiltonian is written as
 
 .. math::
-   h &= \frac{A\sin 2\theta_m}{4i} e^{in_0\phi}\left( i^{n_0-1} J_{n_0-1}(z_k) - i^{n_0+1} J_{n_0 +1}(z_k) \right) e^{i(n_0 k -\omega_m)x} \\
-   & = \frac{A\sin 2\theta_m}{4i} e^{in_0\phi} i^{n_0-1}\left( J_{n_0-1}(z_k) + J_{n_0 +1}(z_k) \right) e^{i(n_0 k -\omega_m)x}.
-
-Recall that for Bessel functions,
-
-.. math::
-   J_{n_0-1}(z_k) + J_{n_0+1}(z_k)  = \frac{2n_0+1}{z_k}J_{n_0}(z_k).
-
-Then we have
-
-.. math::
-   h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} i^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
+   h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} (-i)^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
 
 
 To save keystrokes, we define
 
 .. math::
-   F = \frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (- i^{n_0}) \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,
+   F = -\frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (-i)^{n_0} \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,
    :label: definition-F
 
-which depends on :math:`n_0` and :math:`z_k`.
+which depends on :math:`n_0` and :math:`z_k = \frac{A}{k} \cos 2\theta_m`. Notice that
+
+.. math::
+   \lvert F \rvert^2 = \left\lvert \frac{1}{2} A\sin 2\theta_m  \frac{2n_0+1}{z_k} J_{n_0} (z_k) \right\rvert^2 .
 
 
 .. admonition:: Solving Using Mathematica
