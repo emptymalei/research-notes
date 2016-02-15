@@ -511,7 +511,47 @@ Using :eq:`eta-x-general` we conclude that
 Hence we write down
 
 .. math::
-   h = \frac{\sin 2\theta_m}{2} \sum_n \sum_n A_n \sin (k_n x + \phi_n) e^{-i\omega_m x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }
+   h = \frac{\sin 2\theta_m}{2} \sum_a A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }
+
+
+
+Two Frequencies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+To work out the equation of motion that we could solve, we deal with two frequencies first,
+
+.. math::
+   \delta \lambda ( x ) = A_1\sin (k_1 x + \phi_1) + A_2 \sin (k_2 x + \phi_2),
+
+while
+
+.. math::
+   h = \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a=1}^2 \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }.
+
+
+
+.. admonition:: Summation Algebra
+   :class: note
+
+   A multiplication of two summations
+
+   .. math::
+      \sum_n a_n \sum_m b_m  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_m = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.
+      :label: multiplication-summation-rule
+
+   The rule is to sum over a line :math:`m+n=N` then sum over :math:`N`.
+
+   .. figure:: assets/matter-stimulated/summation-algebra.svg
+      :align: center
+
+      Rewrite multiplication of summations into summations only.
+
+
+
+
+
+
 
 
 

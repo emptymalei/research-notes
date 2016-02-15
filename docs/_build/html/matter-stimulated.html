@@ -464,7 +464,26 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 \[\eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \sum_n \frac{A_n}{k_n} \cos ( k_n x+ \phi_n ).\]</div>
 <p>Hence we write down</p>
 <div class="math">
-\[h = \frac{\sin 2\theta_m}{2} \sum_n \sum_n A_n \sin (k_n x + \phi_n) e^{-i\omega_m x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }\]</div>
+\[h = \frac{\sin 2\theta_m}{2} \sum_a A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }\]</div>
+<div class="section" id="two-frequencies">
+<h3>Two Frequencies<a class="headerlink" href="#two-frequencies" title="Permalink to this headline">¶</a></h3>
+<p>To work out the equation of motion that we could solve, we deal with two frequencies first,</p>
+<div class="math">
+\[\delta \lambda ( x ) = A_1\sin (k_1 x + \phi_1) + A_2 \sin (k_2 x + \phi_2),\]</div>
+<p>while</p>
+<div class="math">
+\[h = \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a=1}^2 \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Summation Algebra</p>
+<p>A multiplication of two summations</p>
+<div class="math" id="equation-multiplication-summation-rule">
+<span class="eqno">(8)</span>\[\sum_n a_n \sum_m b_m  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_m = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.\]</div>
+<p>The rule is to sum over a line <span class="math">\(m+n=N\)</span> then sum over <span class="math">\(N\)</span>.</p>
+<div class="last figure align-center" id="id3">
+<img src="_images/summation-algebra.svg" /><p class="caption"><span class="caption-text">Rewrite multiplication of summations into summations only.</span></p>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
@@ -572,7 +591,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
 <!-- Disqus END -->
 
 
-      &copy;2014, Lei Ma. | <a href="citing.html">Licenses</a>
+      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
       |
       <a href="genindex.html">Index</a>
       |
