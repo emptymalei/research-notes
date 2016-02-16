@@ -542,11 +542,11 @@ while
 
    The rule is to sum over a line :math:`m+n=N` then sum over :math:`N`.
 
+
    .. figure:: assets/matter-stimulated/summation-algebra.svg
       :align: center
 
       Rewrite multiplication of summations into summations only.
-
 
 
 
