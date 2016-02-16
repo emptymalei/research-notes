@@ -542,43 +542,13 @@ while
 
    The rule is to sum over a line :math:`m+n=N` then sum over :math:`N`.
 
-   Test ref figure :numref:`figuretest`
-
-
 
    .. figure:: assets/matter-stimulated/summation-algebra.svg
       :align: center
-      :name: figuretest
 
       Rewrite multiplication of summations into summations only.
 
 
-
-
-Test
-
-.. figure:: assets/matter-stimulated/summation-algebra.*
-   :name: my_figure
-
-   Figure caption Test
-
-.. table:: Table caption Test
-   :name: my_table
-
-   === === ===
-   1   2   3
-   4   5   6
-   === === ===
-
-.. code-block:: none
-   :name: my_block
-   :caption: Block caption Test
-
-   Foo
-
-References to :ref:`my_table`, :ref:`my_figure`, :ref:`my_block`.
-
-References to :numref:`my_table`, :numref:`my_figure`, :numref:`my_block`.
 
 
 
