@@ -483,6 +483,57 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <img src="_images/summation-algebra.svg" /><p class="caption"><span class="caption-text">Rewrite multiplication of summations into summations only.</span></p>
 </div>
 </div>
+<p>The multiplication becomes</p>
+<div class="math">
+\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^n J_n (z_{k_1}) e^{i n(k_1 x + \phi_1) } (-i)^{N-n} J_{N-n}(z_{k_2}) e^{i (N-n)(k_2 x + \phi_2)} \\
+&amp;=\frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^N J_{n}(z_{k_1}) J_{N-n}(z_{k_2}) e^{i n ((k_1-k_2)x + \phi_1 - \phi_2) + i N (k_2 x + \phi_2)}\end{split}\]</div>
+<p>To proceed on, we rewrite <span class="math">\(\sum_{a = 1}^2 A_a \sin (k_a x + \phi_a)\)</span>,</p>
+<div class="math">
+\[\begin{split}&amp;A_1 \sin(k_1 x +\phi_1) + A_2 \sin(k_2 x +\phi_2) \\
+= &amp; \frac{A_1}{2i}\left( e^{i(k_1 x + \phi_1)} +  e^{-i(k_1 x + \phi_1)} \right) + \frac{A_2}{2i} \left( e^{i(k_2 x + \phi_2)} +  e^{-i(k_2 x + \phi_2)} \right).\end{split}\]</div>
+<p>We define</p>
+<div class="math">
+\[h = h_1 + h_2,\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}h_1 =&amp; \frac{A_1\sin 2\theta_m}{4i}\bigg( \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  (n+1) (k_1 x + \phi_1) +  (N-n)(k_2 x + \phi_2) - \omega_m x \right) } \\
+&amp; \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i \left(  (n-1) (k_1 x + \phi_1) + (N-n)(k_2 x + \phi_2) -  \omega_m x \right) }  \bigg),\end{split}\]</div>
+<p>and</p>
+<div class="math">
+\[\begin{split}h_2=&amp; \frac{A_2\sin 2\theta_m}{4i}\bigg( \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  n (k_1 x + \phi_1) + (N-n+1)(k_2 x + \phi_2) -  \omega_m x \right) } \\
+&amp; \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  n (k_1 x + \phi_1) + (N-n-1)(k_2 x + \phi_2) -  \omega_m x \right) }  \bigg).\end{split}\]</div>
+<p>To adopt the RWA approximation, we require some integers for each summation to satisfy the relations</p>
+<div class="math">
+\[\begin{split}(n_{11,N} + 1)k_1 + (N-n_{11,N}) k_2 -\omega_m &amp;\sim 0 \\
+(n_{12,N} - 1)k_1 + (N-n_{12,N}) k_2 -\omega_m &amp;\sim 0 \\
+n_{21,N}k_1 + (N-n_{21,N}+1) k_2 -\omega_m &amp;\sim 0 \\
+n_{22,N} k_1 + (N-n_{22,N}-1) k_2 -\omega_m &amp;\sim 0.\end{split}\]</div>
+<p>so that the <span class="math">\(x\)</span> dependent exponential almost vanishes (obtain the largest wavelength in fact). Notice that each <span class="math">\(n_{ij,N}\)</span> depends on the summation index <span class="math">\(N\)</span>.</p>
+<p>We solve each <span class="math">\(n_{ij,N}\)</span>,</p>
+<div class="math">
+\[\begin{split}n_{11,N} &amp;\sim \mathrm{Round}\left[\frac{\omega_m - N k_2 -k_1}{k_1 - k_2} \right] \\
+n_{12,N} &amp;\sim \mathrm{Round}\left[\frac{\omega_m - N k_2 + k_1}{k_1 - k_2}\right] \\
+n_{21,N} &amp;\sim \mathrm{Round}\left[\frac{\omega_m - (N + 1) k_2 }{k_1 - k_2} \right]\\
+n_{22,N} &amp;\sim \mathrm{Round}\left[\frac{\omega_m - (N - 1) k_2 }{k_1 - k_2} \right].\end{split}\]</div>
+<p>Another important constrain is that <span class="math">\(n\leq N\)</span>, thus we have</p>
+<div class="math">
+\[\begin{split}N_{11} &amp;\sim \mathrm{Round}\left[\frac{\omega_m - k_1}{k_1}\right] \\
+N_{12} &amp;\sim \mathrm{Round}\left[\frac{\omega_m + k_1}{k_1}\right] \\
+N_{21} &amp;\sim \mathrm{Round}\left[\frac{\omega_m - k_2}{k_1}\right] \\
+N_{22} &amp;\sim \mathrm{Round}\left[\frac{\omega_m + k_2}{k_1}\right],\end{split}\]</div>
+<p>for each summation over <span class="math">\(N\)</span> and we require <span class="math">\(N\geq N_{ij}\)</span> for each summation. We also assumed <span class="math">\(k_1 &gt; k_2\)</span>. In other words, <span class="math">\(N_{ij}\)</span> are the lower limits of the summations over <span class="math">\(N\)</span>&#8216;s.</p>
+<p>Using RWA, we keep only the resonance terms for the summation over <span class="math">\(n\)</span>&#8216;s,</p>
+<div class="math">
+\[\begin{split}h_1 \approx &amp; \frac{A_1\sin 2\theta_m}{4i} \bigg( \sum_{N=N_{11}}^\infty (-i)^N J_{n_{11}} (z_{k_1}) J_{N-n_{11}}(z_{k_2}) e^{ i \left(  (n_{11}+1) (k_1 x + \phi_1) + (N-n_{11})(k_2 x + \phi_2) - \omega_m x \right) }   \\
+&amp; \sum_{N=N_{12}}^\infty (-i)^N J_{n_{12}} (z_{k_1}) J_{N-n_{12}}(z_{k_2}) e^{ i \left(  (n_{12}-1) (k_1 x + \phi_1) + (N-n_{12})(k_2 x + \phi_2) - \omega_m x \right) }\bigg),\end{split}\]</div>
+<p>and</p>
+<div class="math">
+\[\begin{split}h_2 \approx &amp; \frac{A_2\sin 2\theta_m}{4i} \bigg( \sum_{N=N_{21}}^\infty (-i)^N J_{n_{21}} (z_{k_1}) J_{N-n_{21}}(z_{k_2}) e^{ i \left(  n_{21} (k_1 x + \phi_1) + (N-n_{21} + 1)(k_2 x + \phi_2) - \omega_m x \right) }   \\
+&amp; \sum_{N=N_{22}}^\infty (-i)^N J_{n_{22}} (z_{k_1}) J_{N-n_{22}}(z_{k_2}) e^{ i \left(  n_{22} (k_1 x + \phi_1) + (N-n_{22}-1)(k_2 x + \phi_2) - \omega_m x \right) }\bigg) .\end{split}\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Comment on This Result</p>
+<p class="last">I can imagine how hard it is to solve the equation of motion with this <span class="math">\(h\)</span>. Well, is it?</p>
+</div>
 </div>
 </div>
 <div class="section" id="refs-notes">
