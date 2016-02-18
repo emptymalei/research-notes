@@ -631,10 +631,15 @@ and
 
    I can imagine how hard it is to solve the equation of motion with this :math:`h`. Well, is it?
 
-   
 
 
 
+
+.. todo::
+
+   1. Find the resonance of single frequency  F^2/(F^2+g^2) we can use expansion
+   2. Numerical determine the width of single frequency
+   3. h_1=n1 k1+n2 k2; h_1=(n1\pm 1)k1+n2 k2 ;
 
 
 
