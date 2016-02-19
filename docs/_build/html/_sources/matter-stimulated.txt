@@ -481,14 +481,31 @@ The Resonances
 .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
    :align: center
 
-   Probabiity Amplitude as a function of :math:`k/\omega_m` within RWA.
+   Probabiity Amplitude as a function of :math:`k/\omega_m` within RWA, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
 
 
 
 .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
    :align: center
 
-   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion.
+   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
+
+
+To look at the resonances I define a Mathematica function to calculate the FWHM.
+
+
+.. admonition:: Find FWHM Using Mathematica
+   :class: hint
+
+   The Mathematica code::
+
+      fwhm[n_] := First@Differences[k /. {ToRules@Reduce[amplitude[k, 0.1, Pi/5, n] == 0.5 &&k > (1 - 0.5/Exp[n]/n^2)/n && k < (1 + 0.5/Exp[n]/n^2)/n, k]}]
+
+
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-resonance-width.svg
+   :align: center
+
+   Width of the resonances for :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
 
 
 
@@ -631,10 +648,16 @@ and
 
    I can imagine how hard it is to solve the equation of motion with this :math:`h`. Well, is it?
 
-   
 
 
 
+
+.. todo::
+
+   1. Find the resonance of single frequency  F^2/(F^2+g^2) we can use expansion
+   2. Numerical determine the width of single frequency
+   3. h_1=n1 k1+n2 k2; h_1=(n1\pm 1)k1+n2 k2 ;
+   4. Numerical solution to the complete problem without approximation.
 
 
 
