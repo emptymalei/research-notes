@@ -227,19 +227,19 @@ We define :math:`\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0`,
 The element of Hamiltonian is written as
 
 .. math::
-   h = \frac{A\sin 2\theta_m}{4} e^{in_0\phi} (-i)^{n_0} \frac{2n_0+1}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
+   h = \frac{A\sin 2\theta_m}{2} e^{in_0\phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
 
 
 To save keystrokes, we define
 
 .. math::
-   F = -\frac{1}{2} A\sin 2\theta_m e^{i n_0 \phi} (-i)^{n_0} \frac{2n_0+1}{z_k} J_{n_0} (z_k) ,
+   F = - A\sin 2\theta_m e^{i n_0 \phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0} (z_k) ,
    :label: definition-F
 
 which depends on :math:`n_0` and :math:`z_k = \frac{A}{k} \cos 2\theta_m`. Notice that
 
 .. math::
-   \lvert F \rvert^2 = \left\lvert \frac{1}{2} A\sin 2\theta_m  \frac{2n_0+1}{z_k} J_{n_0} (z_k) \right\rvert^2 .
+   \lvert F \rvert^2 = \left\lvert  k \tan 2\theta_m  n_0 J_{n_0} (z_k) \right\rvert^2 .
 
 
 .. admonition:: Solving Using Mathematica
@@ -366,10 +366,10 @@ To make the numerical calculations easier, we rewrite the result by defining the
    \hat A & = \frac{A}{\omega_m} \\
    \hat g & = \frac{g}{\omega_m} = n_0 \hat k - 1,
 
-so that :math:`n_0 = \mathrm{Round}\left( 1/\hat k\right)`, :math:`z_k=\frac{\hat A}{\hat k}\cos 2 theta_m` and
+so that :math:`n_0 = \mathrm{Round}\left( 1/\hat k\right)`, :math:`z_k=\frac{\hat A}{\hat k} \cos 2 \theta_m` and
 
 .. math::
-   P_{1\to 2} = \frac{\left\lvert \frac{1}{2} \frac{\hat A}{z_k} \sin 2\theta_m (2n_0+1) J_{n_0} (z_k) \right\rvert^2}{\left\lvert \frac{1}{2} \frac{\hat A}{z_k} \sin 2\theta_m (2n_0+1) J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ q }{2} x \right) .
+   P_{1\to 2} = \frac{\left\lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2}{\left\lvert  \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ q }{2} x \right) .
 
 
 
