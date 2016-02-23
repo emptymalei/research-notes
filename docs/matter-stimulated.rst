@@ -509,7 +509,15 @@ To look at the resonances I define a Mathematica function to calculate the FWHM.
 
 
 
-How do we understand the resonance?
+How do we understand the resonance? Resonance width of each order of resonance (each n) should be calculated analytically.
+
+.. admonition:: Lorentzian Distribution
+   :class: hint
+
+   Three-parameter Lorentzian function is
+
+   .. math::
+      f_{x_0,\sigma,A}(x)= A \frac{\sigma^2}{\sigma^2 + (x-x_0)^2}.
 
 
 
