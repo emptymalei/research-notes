@@ -104,6 +104,8 @@
   </script>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
+
+
  
   </head>
   <body role="document">
@@ -235,10 +237,10 @@
 \[\begin{split}h &amp;= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
 &amp; = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
 &amp; = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} (-i)^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
-&amp; = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - (-i)^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},\end{split}\]</div>
+&amp; = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - (-i)^n \right) \frac{2n}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},\end{split}\]</div>
 <p>where I have used</p>
 <div class="math">
-\[J_{n-1}(z_k) + J_{n+1}(z_k) = \frac{2n+1}{z_k} J_n(z_k).\]</div>
+\[J_{n-1}(z_k) + J_{n+1}(z_k) = \frac{2n}{z_k} J_n(z_k).\]</div>
 <p>Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero,</p>
 <div class="math" id="equation-single-frequency-rwa-requirement">
 <span class="eqno">(5)</span>\[\begin{split}(n+1) k -\omega_m &amp;\sim 0 \\
@@ -471,6 +473,12 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 \[f_{x_0,\sigma,A}(x)= A \frac{\sigma^2}{\sigma^2 + (x-x_0)^2}.\]</div>
 </div>
 </div>
+<div class="section" id="perturbation-amplitude-and-transition-probability">
+<h3>Perturbation Amplitude and Transition Probability<a class="headerlink" href="#perturbation-amplitude-and-transition-probability" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id4">
+<img src="_images/pltPertAmpPertWaveNumTransitionAmp.svg" /><p class="caption"><span class="caption-text">Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.</span></p>
+</div>
+</div>
 </div>
 <div class="section" id="multi-frequency-matter-perturbation">
 <h2>Multi-frequency Matter Perturbation<a class="headerlink" href="#multi-frequency-matter-perturbation" title="Permalink to this headline">¶</a></h2>
@@ -497,7 +505,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <div class="math" id="equation-multiplication-summation-rule">
 <span class="eqno">(8)</span>\[\sum_n a_n \sum_m b_m  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_m = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.\]</div>
 <p>The rule is to sum over a line <span class="math">\(m+n=N\)</span> then sum over <span class="math">\(N\)</span>.</p>
-<div class="last figure align-center" id="id4">
+<div class="last figure align-center" id="id5">
 <img src="_images/summation-algebra.svg" /><p class="caption"><span class="caption-text">Rewrite multiplication of summations into summations only.</span></p>
 </div>
 </div>
@@ -551,6 +559,26 @@ N_{22} &amp;\sim \mathrm{Round}\left[\frac{\omega_m + k_2}{k_1}\right],\end{spli
 <div class="hint admonition">
 <p class="first admonition-title">Comment on This Result</p>
 <p class="last">I can imagine how hard it is to solve the equation of motion with this <span class="math">\(h\)</span>. Well, is it?</p>
+</div>
+</div>
+<div class="section" id="which-one-dominates">
+<h3>Which one Dominates?<a class="headerlink" href="#which-one-dominates" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id6">
+<img alt="_images/compApproxNum.png" src="_images/compApproxNum.png" />
+<p class="caption"><span class="caption-text">Top Left: Smaller wavenumber <span class="math">\(k_1\)</span> is at resonance and it has smaller perturbation amplitude;
+Top Right: Smaller wavenumber <span class="math">\(k_1\)</span> is at resonance and it has larger perturbation amplitude;
+Bottom Left: Larger wavenumber <span class="math">\(k_2\)</span> is at resonance and it has smaller perturbation amplitude;
+Bottom Right: Larger wavenumber <span class="math">\(k_2\)</span> is at resonance and it has larger perturbation amplitude.
+Red dotted line is numerical solution, black line is lowest approximation of <span class="math">\(k_2\)</span>, magenta is higher order approximation of <span class="math">\(k_2\)</span>.</span></p>
+</div>
+<div class="todo admonition">
+<p class="first admonition-title">To do</p>
+<ol class="last arabic simple">
+<li>Find the resonance of single frequency  F^2/(F^2+g^2) we can use expansion</li>
+<li>Numerical determine the width of single frequency</li>
+<li>h_1=n1 k1+n2 k2; h_1=(n1pm 1)k1+n2 k2 ;</li>
+<li>Numerical solution to the complete problem without approximation.</li>
+</ol>
 </div>
 </div>
 </div>

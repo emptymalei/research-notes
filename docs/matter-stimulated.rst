@@ -520,6 +520,16 @@ How do we understand the resonance? Resonance width of each order of resonance (
       f_{x_0,\sigma,A}(x)= A \frac{\sigma^2}{\sigma^2 + (x-x_0)^2}.
 
 
+Perturbation Amplitude and Transition Probability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. figure:: assets/matter-stimulated/pltPertAmpPertWaveNumTransitionAmp.svg
+   :align: center
+
+   Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.
+
+
 
 
 
@@ -663,9 +673,29 @@ and
 
 
 
+Which one Dominates?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. todo::
+.. figure:: assets/matter-stimulated/compApproxNum/compApproxNum.png
+   :align: center
+
+   Top Left: Smaller wavenumber :math:`k_1` is at resonance and it has smaller perturbation amplitude;
+   Top Right: Smaller wavenumber :math:`k_1` is at resonance and it has larger perturbation amplitude;
+   Bottom Left: Larger wavenumber :math:`k_2` is at resonance and it has smaller perturbation amplitude;
+   Bottom Right: Larger wavenumber :math:`k_2` is at resonance and it has larger perturbation amplitude.
+   Red dotted line is numerical solution, black line is lowest approximation of :math:`k_2`, magenta is higher order approximation of :math:`k_2`.
+
+
+
+
+
+
+
+
+
+.. admonition:: To do
+   :class: todo
 
    1. Find the resonance of single frequency  F^2/(F^2+g^2) we can use expansion
    2. Numerical determine the width of single frequency
