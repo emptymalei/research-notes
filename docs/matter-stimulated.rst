@@ -185,7 +185,7 @@ Obviously, the exponential terms is too complicate. On the other hand, this equa
 We define :math:`z_k = \frac{A}{k} \cos 2\theta_m`, with which we expand the term
 
 .. math::
-   e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (-z_k) e^{in (kx +\phi)},
+   e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (z_k) e^{in (kx +\phi)},
 
 where I used :math:`J_n(-z_k) = (-1)^n J_n(z_k)` for integer :math:`n`.
 
