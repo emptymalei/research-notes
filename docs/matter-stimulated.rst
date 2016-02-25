@@ -227,7 +227,7 @@ We define :math:`\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0`,
 The element of Hamiltonian is written as
 
 .. math::
-   h = \frac{A\sin 2\theta_m}{2} e^{in_0\phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
+   h = - \frac{A\sin 2\theta_m}{2} e^{in_0\phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
 
 
 To save keystrokes, we define
@@ -517,7 +517,33 @@ How do we understand the resonance? Resonance width of each order of resonance (
    Three-parameter Lorentzian function is
 
    .. math::
-      f_{x_0,\sigma,A}(x)= A \frac{\sigma^2}{\sigma^2 + (x-x_0)^2}.
+      f_{x_0,\sigma,A}(x)= \frac{1}{\pi} \frac{\sigma}{\sigma^2 + (x-x_0)^2},
+
+   which has a width :math:`2\gamma`.
+
+To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that :math:`\left\lvert F \right\rvert^2` doesn't change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is
+
+.. math::
+   \Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert  .
+
+To verify this result, we compare it with the width found numerically from the exact amplitude.
+
+
+.. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
+   :align: center
+
+   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 0.1`.
+
+
+.. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-1.png
+   :align: center
+
+   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 1`.
+
+
+
+
+
 
 
 Perturbation Amplitude and Transition Probability
@@ -569,6 +595,9 @@ while
 .. math::
    h = \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a=1}^2 \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }.
 
+
+Rewrite Multiplication into Summation
+`````````````````````````````````````````````````````````
 
 
 .. admonition:: Summation Algebra
@@ -673,8 +702,101 @@ and
 
 
 
+One by One Approximation
+`````````````````````````````````````
+
+After reading Kelly Patton et al, we decided to try the approximation they are using.
+
+By looking at the Hamiltonian, we can identify terms like this
+
+.. math::
+   h_a = \left( \frac{\sin 2\theta_m}{2}  A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}  \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }  \right) \prod_{b\neq a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_b}) e^{i n(k_b x + \phi_b) },
+
+where the parenthensis part is what we would have if only one frequency is used and we also have
+
+.. math::
+   h = \sum_{a} h_a,
+
+for all frequencies.
+
+This reminds us that each of these terms means the interference due to other frequencies. As a simple example, we demonstrate two-frequency case.
+
+The two-frequency matter perturbation system has a Hamiltonian element :math:`H_{12}`
+
+.. math::
+   h = h_1 + h_2,
+
+where
+
+.. math::
+   h_1 & = {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} n_1 J_{n_1} (z_{k_1}) e^{i (n_1 k_1-\omega_m)x} e^{i n_1\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
+   h_2 & = {\color{red} - \frac{k_2\tan 2\theta_m}{2} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} n_2 J_{n_2}(z_{k_2}) e^{i(n_2k_2-\omega_m)x} e^{i n_2 \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} }
+
+with red color coding the second frequency and blue coding the first frequency. :math:`h` is symmetric under exchange of index 1, 2 since the exchange simply switches :math:`h_1` and :math:`h_2`.
+
+
+
+
 Which one Dominates?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+To grasp a clue, we need to identify which term in the summation dominates. Without a good analytical analysis, the only way to do is to numerically calculate the effect of each order.
+
+By order, we are already thinking of a dominating term which is not true. Nonethless, we assume RWA can be applied to the part that looks like one frequency only. In our two-frequency example, first RWA leads to
+
+.. math::
+   h_1 & \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
+   h_2 & \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} },
+
+where
+
+.. math::
+   n_{1,0} &= \mathrm{Round}\left[  \frac{\omega_m}{k_1}  \right], \\
+   n_{2,0} &= \mathrm{Round}\left[  \frac{\omega_m}{k_2}  \right] .
+
+With this approximation, we can use RWA again by requiring
+
+.. math::
+   (n_{1,0} k_1-\omega_m + n_2 k_2)x &\sim 0, \\
+   (n_1 k_1-\omega_m + n_{2,0} k_2)x &\sim 0,
+
+where the integer solutions are
+
+.. math::
+   n'_{2,0} &= \mathrm{Round}\left[ \frac{ n_{1,0} k_1-\omega_m }{k_2} \right], \\
+   n'_{1,0} &= \mathrm{Round}\left[ \frac{ n_{2,0} k_1-\omega_m }{k_1} \right].
+
+Now we can remove all the summations using another RWA approximation. However, whether it holds is up to investigation.
+
+The final result is
+
+.. math::
+   h_1 & \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} (-i)^{n'_{2,0}} J_{n'_{2,0}}(z_{k_2}) e^{i(n'_{2,0}k_2)x} e^{i n'_{2,0} \phi_2}  } \\
+   & = -\frac{k_1 \tan 2\theta_m}{2} (-i)^{ n_{1,0}+n'_{2,0} }   e^{i (n_{1,0}\phi_1 + n'_{2,0} \phi_2)} n_{1,0} J_{n_{1,0}} (z_{k_1})  J_{n'_{2,0}}(z_{k_2}) e^{i(n_{1,0} k_1-\omega_m + n'_{2,0}k_2)x}  \\
+   & \equiv \frac{F_1}{2} e^{i(n_{1,0} k_1-\omega_m + n'_{2,0}k_2)x}  , \\
+   h_2 & \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} } \\
+   & = - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}+ n'_{1,0} }   e^{i (n_{2,0} \phi_2 + n'_{1,0} \phi_1)}  n_{2,0} J_{n_{2,0}}(z_{k_2}) J_{n'_{1,0}}(z_{k_1})  e^{i(n_{2,0}k_2-\omega_m+ n'_{1,0} k_1)x} \\
+   & \equiv \frac{F_2}{2} e^{i(n_{2,0}k_2-\omega_m+ n'_{1,0} k_1)x} .
+
+
+
+We are not sure whether lowest order is sufficient, so higher orders should be examined.
+
+.. admonition:: How to Include Higher Orders
+   :class: notes
+
+   The first thought of higher orders is to add more from the summation before the last RWA. However, it is highly suspicious that this is just like the one frequency case which has a very fast drop in the resonance width as we go to higher orders.
+
+
+Here we always keep the RWA condition for the last RWA process. What can be changed is the first assumption that the most important term is when only one frequency is relavent which is not always true. We now consider :math:`n_{i,\pm 1}=n_{i,0}\pm 1` and :math:`n'_{i,\pm 1} =  \mathrm{Round}\left[ \frac{ n_{j,\pm 1} k_j - \omega_m }{k_i} \right]` with :math:`j\neq i`, thus we replace :math:`n_{i,0}` with :math:`n_{i,\pm 1}` to get higher order corrections.
+
+
+
+
+
+
+
 
 
 .. figure:: assets/matter-stimulated/compApproxNum/compApproxNum.png
