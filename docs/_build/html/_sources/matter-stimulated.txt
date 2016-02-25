@@ -545,6 +545,7 @@ To verify this result, we compare it with the width found numerically from the e
 
 
 
+
 Perturbation Amplitude and Transition Probability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -801,10 +802,10 @@ Here we always keep the RWA condition for the last RWA process. What can be chan
 .. figure:: assets/matter-stimulated/compApproxNum/compApproxNum.png
    :align: center
 
-   Top Left: Smaller wavenumber :math:`k_1` is at resonance and it has smaller perturbation amplitude;
-   Top Right: Smaller wavenumber :math:`k_1` is at resonance and it has larger perturbation amplitude;
-   Bottom Left: Larger wavenumber :math:`k_2` is at resonance and it has smaller perturbation amplitude;
-   Bottom Right: Larger wavenumber :math:`k_2` is at resonance and it has larger perturbation amplitude.
+   Top Left: Smaller wavenumber :math:`k_1=0.95` is at resonance and it has smaller perturbation amplitude (:math:`k_2=1.55`);
+   Top Right: Smaller wavenumber :math:`k_1=0.95` is at resonance and it has larger perturbation amplitude (:math:`k_2=1.55`);
+   Bottom Left: Larger wavenumber :math:`k_2=0.95` is at resonance and it has smaller perturbation amplitude (:math:`k_1=0.35`);
+   Bottom Right: Larger wavenumber :math:`k_2=0.95` is at resonance and it has larger perturbation amplitude (:math:`k_1=0.35`).
    Red dotted line is numerical solution, black line is lowest approximation of :math:`k_2`, magenta is higher order approximation of :math:`k_2`.
 
 
