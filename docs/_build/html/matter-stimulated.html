@@ -230,7 +230,7 @@
 </div>
 <p>We define <span class="math">\(z_k = \frac{A}{k} \cos 2\theta_m\)</span>, with which we expand the term</p>
 <div class="math">
-\[e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (-z_k) e^{in (kx +\phi)},\]</div>
+\[e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (z_k) e^{in (kx +\phi)},\]</div>
 <p>where I used <span class="math">\(J_n(-z_k) = (-1)^n J_n(z_k)\)</span> for integer <span class="math">\(n\)</span>.</p>
 <p>The expansion is plugged into the Hamiltonian elements,</p>
 <div class="math">
@@ -601,8 +601,8 @@ h_2 &amp; = {\color{red} - \frac{k_2\tan 2\theta_m}{2} \sum_{n_2=-\infty}^{\inft
 <h3>Which one Dominates?<a class="headerlink" href="#which-one-dominates" title="Permalink to this headline">¶</a></h3>
 <p>To grasp a clue, we need to identify which term in the summation dominates. Without a good analytical analysis, the only way to do is to numerically calculate the effect of each order.</p>
 <p>By order, we are already thinking of a dominating term which is not true. Nonethless, we assume RWA can be applied to the part that looks like one frequency only. In our two-frequency example, first RWA leads to</p>
-<div class="math">
-\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
+<div class="math" id="equation-eqn-after-first-rwa">
+<span class="eqno">(9)</span>\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} },\end{split}\]</div>
 <p>where</p>
 <div class="math">
@@ -639,6 +639,17 @@ Bottom Left: Larger wavenumber <span class="math">\(k_2=0.95\)</span> is at reso
 Bottom Right: Larger wavenumber <span class="math">\(k_2=0.95\)</span> is at resonance and it has larger perturbation amplitude (<span class="math">\(k_1=0.35\)</span>).
 Red dotted line is numerical solution, black line is lowest approximation of <span class="math">\(k_2\)</span>, magenta is higher order approximation of <span class="math">\(k_2\)</span>.</span></p>
 </div>
+<p>In real physical systems, it is more likely to have a matter profile so that we have the bottom left situation. In other words, RWA method breaks down in the most interesting case.</p>
+</div>
+<div class="section" id="fix-rwa-in-2-frequency-case">
+<h3>Fix RWA in 2-frequency Case<a class="headerlink" href="#fix-rwa-in-2-frequency-case" title="Permalink to this headline">¶</a></h3>
+<p>To fix this problem, we could add more higher orders, however, through the demonstration of the four cases, it is very unlikely that adding the third or even fourth order will help.</p>
+<p>Then we ask the question, which approximation breaking down exactly? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(9)</a> holds but no RWA will be applied to this.</p>
+<p>Not notice that the summation in <a href="#equation-eqn-after-first-rwa">(9)</a> is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to</p>
+<div class="math">
+\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
+h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.\end{split}\]</div>
+<p>We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.</p>
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
 <ol class="last arabic simple">
