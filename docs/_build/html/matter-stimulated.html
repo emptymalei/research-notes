@@ -650,6 +650,14 @@ Red dotted line is numerical solution, black line is lowest approximation of <sp
 \[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.\end{split}\]</div>
 <p>We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.</p>
+</div>
+<div class="section" id="frequencies">
+<h3>3 Frequencies<a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h3>
+<p>To extend what we have done to more frequencies is easy. For 3 frequencies, the 12 element of Hamiltonian has such a pattern that</p>
+<div class="math">
+\[\begin{split}h &amp;= {\color{blue} \delta \lambda_1 \sum_{n_1} \cdots } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red} \delta \lambda_2 \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red}  \sum_{n_2} \cdots } {\color{cyan} \delta \lambda_3 \sum_{n_3} \cdots } \\
+&amp; \equiv h_1 + h_2 + h_3.\end{split}\]</div>
+<p>As what have tried in 2-frequency case, these terms can be viewed as three terms each is the interference between one frequency and the other two.</p>
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
 <ol class="last arabic simple">

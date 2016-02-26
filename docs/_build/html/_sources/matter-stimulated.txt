@@ -831,6 +831,18 @@ Not notice that the summation in :eq:`eqn-after-first-rwa` is due to the Jacobi-
 We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.
 
 
+3 Frequencies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+To extend what we have done to more frequencies is easy. For 3 frequencies, the 12 element of Hamiltonian has such a pattern that
+
+.. math::
+   h &= {\color{blue} \delta \lambda_1 \sum_{n_1} \cdots } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red} \delta \lambda_2 \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red}  \sum_{n_2} \cdots } {\color{cyan} \delta \lambda_3 \sum_{n_3} \cdots } \\
+   & \equiv h_1 + h_2 + h_3.
+
+As what have tried in 2-frequency case, these terms can be viewed as three terms each is the interference between one frequency and the other two.
+
 
 
 
