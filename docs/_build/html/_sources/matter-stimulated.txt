@@ -794,12 +794,6 @@ Here we always keep the RWA condition for the last RWA process. What can be chan
 
 
 
-
-
-
-
-
-
 .. figure:: assets/matter-stimulated/compApproxNum/compApproxNum.png
    :align: center
 
@@ -813,6 +807,8 @@ Here we always keep the RWA condition for the last RWA process. What can be chan
 
 
 In real physical systems, it is more likely to have a matter profile so that we have the bottom left situation. In other words, RWA method breaks down in the most interesting case.
+
+
 
 Fix RWA in 2-frequency Case
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -831,6 +827,50 @@ Not notice that the summation in :eq:`eqn-after-first-rwa` is due to the Jacobi-
 We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.
 
 
+
+A More Systematic Thinking of 2-Frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+The 12 element can be written as
+
+.. math::
+   h = h_1 + h_2,
+
+where
+
+.. math::
+   h_1 &=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})  \right) e^{i(n_1\phi_1+n_2\phi_2)} e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}, \\
+   h_2 &=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})  \right) e^{i(n_1\phi_1+n_2\phi_2)} e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}.
+
+For simplicity, we define
+
+.. math::
+   B_{n_1,n_2}(k_1,k_2) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}) ,\\
+   \Phi & = e^{i(n_1\phi_1+n_2\phi_2)}.
+
+Notice that
+
+.. math::
+   B_{n_2,n_1}(k_2,k_1) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}).
+
+Using these definitions, we rewrite the Hamiltonian 12 element
+
+.. math::
+   h &= h_1 + h_2 \\
+   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
+   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+
+where :math:`B\equiv B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)` is what we are interested in.
+
+
+
+
+
+
+
+
+
 3 Frequencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -841,7 +881,20 @@ To extend what we have done to more frequencies is easy. For 3 frequencies, the 
    h &= {\color{blue} \delta \lambda_1 \sum_{n_1} \cdots } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red} \delta \lambda_2 \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red}  \sum_{n_2} \cdots } {\color{cyan} \delta \lambda_3 \sum_{n_3} \cdots } \\
    & \equiv h_1 + h_2 + h_3.
 
-As what have tried in 2-frequency case, these terms can be viewed as three terms each is the interference between one frequency and the other two.
+As what we have tried in 2-frequency case, these terms can be viewed as three terms each is the interference between one frequency and the other two.
+
+First of all, we assume the most important terms for :math:`h_1,h_2,h_3` are determined by the :math:`k_1,k_2,k_3` alone resonance respectively. Then we need to explore which terms to keep in the other two summations. Since the other two summations in each term are symmetric, we would like to include the resonance condition for one of them.
+
+As an example, the first assumption leads to
+
+.. math::
+   h_1 \approx {\color{blue} \delta \lambda_1 \cdots(with n_{1,0} in it) } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots }.
+
+Then we include the other resonances
+
+.. math::
+   (to do)
+
 
 
 
