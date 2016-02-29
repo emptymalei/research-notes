@@ -568,7 +568,7 @@ To verify this result, we compare it with the width found numerically from the e
    For small :math:`\alpha`, we have
 
    .. math::
-      \Gamma \asymp 
+      \Gamma \asymp
 
 
 
