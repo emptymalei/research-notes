@@ -475,7 +475,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </div>
 <p>To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that <span class="math">\(\left\lvert F \right\rvert^2\)</span> doesn&#8217;t change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is</p>
 <div class="math">
-\[\Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert  .\]</div>
+\[\Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .\]</div>
 <p>To verify this result, we compare it with the width found numerically from the exact amplitude.</p>
 <div class="figure align-center" id="id4">
 <img alt="_images/stimulated-single-frequency-width-approximation-amp-point1.png" src="_images/stimulated-single-frequency-width-approximation-amp-point1.png" />
@@ -484,6 +484,23 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <div class="figure align-center" id="id5">
 <img alt="_images/stimulated-single-frequency-width-approximation-amp-1.png" src="_images/stimulated-single-frequency-width-approximation-amp-1.png" />
 <p class="caption"><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 1\)</span>.</span></p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">A Special Property of Bessel Function</p>
+<p>A special relation of Bessel function is that</p>
+<div class="math">
+\[J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{2\pi n \tanh \alpha}\]</div>
+<p>for large <span class="math">\(n\)</span>.</p>
+<p>Using this relation and defining <span class="math">\(\sech \alpha = A \cos 2\theta_m\)</span>, which renders</p>
+<div class="math" id="equation-eqn-width-alpha-solved">
+<span class="eqno">(8)</span>\[\alpha = 2 n \pi i + \ln \left(  \frac{ 1 \pm \sqrt{ -A^2 \cos^2 2\theta_m + 1 } }{ A\cos 2\theta_m } \right),\qquad n\in \mathrm{Integers},\]</div>
+<p>we find out an more human readabale analytical expression for the width</p>
+<div class="math">
+\[\Gamma = \left\lvert 2 \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert\]</div>
+<p>where <span class="math">\(\alpha\)</span> is solved out in <a href="#equation-eqn-width-alpha-solved">(8)</a>.</p>
+<p>For small <span class="math">\(\alpha\)</span>, we have</p>
+<div class="last math">
+\[\Gamma \asymp\]</div>
 </div>
 </div>
 <div class="section" id="perturbation-amplitude-and-transition-probability">
@@ -518,7 +535,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p class="first admonition-title">Summation Algebra</p>
 <p>A multiplication of two summations</p>
 <div class="math" id="equation-multiplication-summation-rule">
-<span class="eqno">(8)</span>\[\sum_n a_n \sum_m b_m  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_m = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.\]</div>
+<span class="eqno">(9)</span>\[\sum_n a_n \sum_m b_m  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_m = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.\]</div>
 <p>The rule is to sum over a line <span class="math">\(m+n=N\)</span> then sum over <span class="math">\(N\)</span>.</p>
 <div class="last figure align-center" id="id7">
 <img src="_images/summation-algebra.svg" /><p class="caption"><span class="caption-text">Rewrite multiplication of summations into summations only.</span></p>
@@ -602,7 +619,7 @@ h_2 &amp; = {\color{red} - \frac{k_2\tan 2\theta_m}{2} \sum_{n_2=-\infty}^{\inft
 <p>To grasp a clue, we need to identify which term in the summation dominates. Without a good analytical analysis, the only way to do is to numerically calculate the effect of each order.</p>
 <p>By order, we are already thinking of a dominating term which is not true. Nonethless, we assume RWA can be applied to the part that looks like one frequency only. In our two-frequency example, first RWA leads to</p>
 <div class="math" id="equation-eqn-after-first-rwa">
-<span class="eqno">(9)</span>\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
+<span class="eqno">(10)</span>\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} },\end{split}\]</div>
 <p>where</p>
 <div class="math">
@@ -644,8 +661,8 @@ Red dotted line is numerical solution, black line is lowest approximation of <sp
 <div class="section" id="fix-rwa-in-2-frequency-case">
 <h3>Fix RWA in 2-frequency Case<a class="headerlink" href="#fix-rwa-in-2-frequency-case" title="Permalink to this headline">¶</a></h3>
 <p>To fix this problem, we could add more higher orders, however, through the demonstration of the four cases, it is very unlikely that adding the third or even fourth order will help.</p>
-<p>Then we ask the question, which approximation breaking down exactly? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(9)</a> holds but no RWA will be applied to this.</p>
-<p>Not notice that the summation in <a href="#equation-eqn-after-first-rwa">(9)</a> is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to</p>
+<p>Then we ask the question, which approximation breaking down exactly? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(10)</a> holds but no RWA will be applied to this.</p>
+<p>Not notice that the summation in <a href="#equation-eqn-after-first-rwa">(10)</a> is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to</p>
 <div class="math">
 \[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.\end{split}\]</div>

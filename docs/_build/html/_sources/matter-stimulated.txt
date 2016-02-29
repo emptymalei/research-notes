@@ -524,7 +524,7 @@ How do we understand the resonance? Resonance width of each order of resonance (
 To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that :math:`\left\lvert F \right\rvert^2` doesn't change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is
 
 .. math::
-   \Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert  .
+   \Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .
 
 To verify this result, we compare it with the width found numerically from the exact amplitude.
 
@@ -539,6 +539,36 @@ To verify this result, we compare it with the width found numerically from the e
    :align: center
 
    Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 1`.
+
+
+
+.. admonition:: A Special Property of Bessel Function
+   :class: note
+
+   A special relation of Bessel function is that
+
+   .. math::
+      J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{2\pi n \tanh \alpha}
+
+   for large :math:`n`.
+
+   Using this relation and defining :math:`\sech \alpha = A \cos 2\theta_m`, which renders
+
+   .. math::
+      \alpha = 2 n \pi i + \ln \left(  \frac{ 1 \pm \sqrt{ -A^2 \cos^2 2\theta_m + 1 } }{ A\cos 2\theta_m } \right),\qquad n\in \mathrm{Integers},
+      :label: eqn-width-alpha-solved
+
+   we find out an more human readabale analytical expression for the width
+
+   .. math::
+      \Gamma = \left\lvert 2 \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert
+
+   where :math:`\alpha` is solved out in :eq:`eqn-width-alpha-solved`.
+
+   For small :math:`\alpha`, we have
+
+   .. math::
+      \Gamma \asymp 
 
 
 
