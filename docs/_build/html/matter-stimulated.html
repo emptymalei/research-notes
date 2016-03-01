@@ -496,13 +496,17 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>Using this relation and defining <span class="math">\(\sech \alpha = A \cos 2\theta_m\)</span>, which renders</p>
 <div class="math" id="equation-eqn-width-alpha-solved">
 <span class="eqno">(8)</span>\[\alpha = 2 n \pi i + \ln \left(  \frac{ 1 \pm \sqrt{ -A^2 \cos^2 2\theta_m + 1 } }{ A\cos 2\theta_m } \right),\qquad n\in \mathrm{Integers},\]</div>
+<p>where the Mathematica code to solve it is shown below,</p>
+<blockquote>
+<div>In[1]:= Solve[Exp[z] + Exp[-z] == 2/(A Cos[2 Subscript[[Theta], m]]), z] // FullSimplify</div></blockquote>
 <p>we find out an more human readabale analytical expression for the width</p>
 <div class="math">
 \[\Gamma = \left\lvert 2 \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert\]</div>
 <p>where <span class="math">\(\alpha\)</span> is solved out in <a href="#equation-eqn-width-alpha-solved">(8)</a>.</p>
-<p>For small <span class="math">\(\alpha\)</span>, we have</p>
-<div class="last math">
-\[\Gamma \asymp\]</div>
+<p>For small <span class="math">\(\alpha\)</span>, we have expansions for exponentials and hyperbolic functions <span class="math">\(\tanh \alpha \sim \alpha - \frac{\alpha^3}{3}\)</span>,</p>
+<div class="math">
+\[\Gamma \asymp 2\tan 2\theta_m \frac{ e^{n \alpha^3/3} }{\sqrt{2\pi \alpha} n_0^{3/2}  }.\]</div>
+<p class="last">However, it doesn&#8217;t really help that much since <span class="math">\(n\)</span> is large and no expansion could be done except for significantly small <span class="math">\(\alpha\)</span>.</p>
 </div>
 </div>
 <div class="section" id="perturbation-amplitude-and-transition-probability">

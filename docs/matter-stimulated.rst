@@ -561,8 +561,6 @@ To verify this result, we compare it with the width found numerically from the e
    where the Mathematica code to solve it is shown below,
 
       In[1]:= Solve[Exp[z] + Exp[-z] == 2/(A Cos[2 Subscript[\[Theta], m]]), z] // FullSimplify
-      Out[1]= {{z -> ConditionalExpression[2 I \[Pi] C[1] + Log[(Sec[2 Subscript[\[Theta], m]] - Sqrt[-A^2 + Sec[2 Subscript[\[Theta], m]]^2])/A], C[1] \[Element] Integers]}, {z -> ConditionalExpression[ 2 I \[Pi] C[1] + Log[(Sec[2 Subscript[\[Theta], m]] + Sqrt[-A^2 + Sec[2 Subscript[\[Theta], m]]^2])/A], C[1] \[Element] Integers]}}
-
 
    we find out an more human readabale analytical expression for the width
 
@@ -576,7 +574,7 @@ To verify this result, we compare it with the width found numerically from the e
    .. math::
       \Gamma \asymp 2\tan 2\theta_m \frac{ e^{n \alpha^3/3} }{\sqrt{2\pi \alpha} n_0^{3/2}  }.
 
-    However, it doesn't really help that much since :math:`n` is large and no expansion could be done except for significantly small :math:`\alpha`.
+   However, it doesn't really help that much since :math:`n` is large and no expansion could be done except for significantly small :math:`\alpha`.
 
 
 
