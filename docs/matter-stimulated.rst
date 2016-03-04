@@ -241,6 +241,12 @@ which depends on :math:`n_0` and :math:`z_k = \frac{A}{k} \cos 2\theta_m`. Notic
 .. math::
    \lvert F \rvert^2 = \left\lvert  k \tan 2\theta_m  n_0 J_{n_0} (z_k) \right\rvert^2 .
 
+Thus the 12 element of the Hamiltonian is rewritten as
+
+.. math::
+   h = \frac{1}{2}F e^{i(n_0 k -\omega_m)x}.
+   :label: eqn-12-element-and-F
+
 
 .. admonition:: Solving Using Mathematica
    :class: hint
@@ -362,14 +368,16 @@ where :math:`q` is the oscillation wavenumber. Period of this oscillation is giv
 To make the numerical calculations easier, we rewrite the result by defining the scaled variables
 
 .. math::
-   \hat k &= \frac{k}{\omega_m} \\
-   \hat A & = \frac{A}{\omega_m} \\
-   \hat g & = \frac{g}{\omega_m} = n_0 \hat k - 1,
+   \hat x & = \omega_m x,\\
+   \hat k &= \frac{k}{\omega_m}, \\
+   \hat A & = \frac{A}{\omega_m}, \\
+   \hat g & = \frac{g}{\omega_m} = n_0 \hat k - 1,\\
+   \hat q &= \sqrt{ \lvert \hat F \rvert^2 + \hat g^2 } = \sqrt{ \lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \rvert + \hat g^2 },
 
 so that :math:`n_0 = \mathrm{Round}\left( 1/\hat k\right)`, :math:`z_k=\frac{\hat A}{\hat k} \cos 2 \theta_m` and
 
 .. math::
-   P_{1\to 2} = \frac{\left\lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2}{\left\lvert  \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ q }{2} x \right) .
+   P_{1\to 2} = \frac{\left\lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2}{\left\lvert  \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ \hat q }{2} \hat x \right) .
 
 
 
@@ -527,6 +535,23 @@ To find the exact width is hopeless since we need to inverse Bessel functions. N
    \Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .
 
 To verify this result, we compare it with the width found numerically from the exact amplitude.
+
+Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the coefficient in front of the phase term of 12 element in Hamiltonian is related to the width, while the the deviation from the exact resonance is given by :math:`\hat g=n_0 \hat k - 1`.
+
+.. admonition:: Guessing The Width
+   :class: note
+
+   Given a Hamiltonian 12 element here
+
+   .. math::
+      h = B e^{i(n_0 \hat k - 1) \hat x} = B e^{i \hat g \hat x},
+
+   the width of the resonance is
+
+   .. math::
+      \Gamma = \left\lvert \frac{B}{n_0} \right\rvert.
+      :label: eqn-single-frequency-width-guessing
+
 
 
 .. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
@@ -899,7 +924,18 @@ Using these definitions, we rewrite the Hamiltonian 12 element
 
 where :math:`B\equiv B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)` is what we are interested in.
 
+Comparing this expression with the single frequency one :eq:`eqn-single-frequency-width-guessing`, we can infer that the following quantity is more or less the width given the two integers,
 
+.. math::
+   \Gamma_2 = \frac{B_{n_1,n_2}(k_1,k_2)}{n_1} + \frac{B_{n_2,n_1}(k_2,k_1)}{n_2},
+
+while the quantity :math:`g_2 = n_1 k_1 + n_2 k_2 - \omega_m` tells us how far from resonance.
+
+
+.. admonition:: Need to Verify This Result
+   :class: note
+
+   TODO: Just solve the equation of motion for a certain combination of the two integers.
 
 
 
