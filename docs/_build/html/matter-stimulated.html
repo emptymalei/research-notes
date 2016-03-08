@@ -663,12 +663,22 @@ n'_{1,0} &amp;= \mathrm{Round}\left[ \frac{ n_{2,0} k_1-\omega_m }{k_1} \right].
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} } \\
 &amp; = - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}+ n'_{1,0} }   e^{i (n_{2,0} \phi_2 + n'_{1,0} \phi_1)}  n_{2,0} J_{n_{2,0}}(z_{k_2}) J_{n'_{1,0}}(z_{k_1})  e^{i(n_{2,0}k_2-\omega_m+ n'_{1,0} k_1)x} \\
 &amp; \equiv \frac{F_2}{2} e^{i(n_{2,0}k_2-\omega_m+ n'_{1,0} k_1)x} .\end{split}\]</div>
-<p>We are not sure whether lowest order is sufficient, so higher orders should be examined.</p>
-<div class="notes admonition">
+<p>Lowest order only works for very special cases where on of the wave vectors is very close to resonance. To fix this problem, we could add more higher orders, however, what does it mean to have higher orders needs a discussion.</p>
+<div class="note admonition">
 <p class="first admonition-title">How to Include Higher Orders</p>
-<p class="last">The first thought of higher orders is to add more from the summation before the last RWA. However, it is highly suspicious that this is just like the one frequency case which has a very fast drop in the resonance width as we go to higher orders.</p>
+<p>The first thought of higher orders is to add more from the summation before the last RWA. However, it is highly suspicious that this is just like the one frequency case which has a very fast drop in the resonance width as we go to higher orders.</p>
+<p>This guess needs proof, numerically and analytically.</p>
+<p>But notice, when we said higher orders, we actually mean higher orders in both <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. As an example, since we can alway write the 12 element of Hamiltonian as</p>
+<div class="math" id="equation-2-freq-hamiltonian-12-element">
+<span class="eqno">(13)</span>\[\begin{split}h &amp;= h_1 + h_2 \\
+&amp; = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
+&amp; = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},\end{split}\]</div>
+<p class="last">without any approximations.</p>
 </div>
-<p>Here we always keep the RWA condition for the last RWA process. What can be changed is the first assumption that the most important term is when only one frequency is relavent which is not always true. We now consider <span class="math">\(n_{i,\pm 1}=n_{i,0}\pm 1\)</span> and <span class="math">\(n'_{i,\pm 1} =  \mathrm{Round}\left[ \frac{ n_{j,\pm 1} k_j - \omega_m }{k_i} \right]\)</span> with <span class="math">\(j\neq i\)</span>, thus we replace <span class="math">\(n_{i,0}\)</span> with <span class="math">\(n_{i,\pm 1}\)</span> to get higher order corrections.</p>
+<ol class="arabic">
+<li><p class="first">One of the choices of adding higher orders is to use <span class="math">\(n_1=\mathrm{Round}\left[ \frac{\omega_m}{k_1} \right]\)</span> and <span class="math">\(n_2=\mathrm{Round}\left[ \frac{ n_1  k_1 - \omega_m }{k_2} \right]\)</span> as the lowest order in <span class="math">\(h_1\)</span> and <span class="math">\(n_2=\mathrm{Round}\left[ \frac{\omega_m}{k_2} \right]\)</span> and <span class="math">\(n_1=\mathrm{Round}\left[ \frac{ n_2  k_2 - \omega_m }{k_1} \right]\)</span> as the lowest order in <span class="math">\(h_2\)</span>. Adding higher orders means we add or remove one from <span class="math">\(n_1\)</span> in <span class="math">\(h_1\)</span> and recalculate <span class="math">\(n_2\)</span>, while add or remove one from <span class="math">\(n_2\)</span> in <span class="math">\(h_2\)</span> and recalculate <span class="math">\(n_1\)</span>.</p>
+<p>That is to say, we always keep the RWA condition for the last RWA process. What can be changed is the first assumption that the most important term is when only one frequency is relavent which is not always true.</p>
+<p>As an example, we now consider <span class="math">\(n_{i,\pm 1}=n_{i,0}\pm 1\)</span> and <span class="math">\(n'_{i,\pm 1} =  \mathrm{Round}\left[ \frac{ n_{j,\pm 1} k_j - \omega_m }{k_i} \right]\)</span> with <span class="math">\(j\neq i\)</span>, thus we replace <span class="math">\(n_{i,0}\)</span> with <span class="math">\(n_{i,\pm 1}\)</span> to get higher order corrections.</p>
 <div class="figure align-center" id="id8">
 <img alt="_images/compApproxNum.png" src="_images/compApproxNum.png" />
 <p class="caption"><span class="caption-text">Top Left: Smaller wavenumber <span class="math">\(k_1=0.95\)</span> is at resonance and it has smaller perturbation amplitude (<span class="math">\(k_2=1.55\)</span>);
@@ -678,16 +688,24 @@ Bottom Right: Larger wavenumber <span class="math">\(k_2=0.95\)</span> is at res
 Red dotted line is numerical solution, black line is lowest approximation of <span class="math">\(k_2\)</span>, magenta is higher order approximation of <span class="math">\(k_2\)</span>.</span></p>
 </div>
 <p>In real physical systems, it is more likely to have a matter profile so that we have the bottom left situation. In other words, RWA method breaks down in the most interesting case.</p>
+</li>
+<li><p class="first">Another choice is to add or remove one for both <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span> for both terms in the Hamiltonian. The approach will define the order <span class="math">\(n_{order}\)</span> first, as will be applied to the n&#8217;s. As an example, adding first order to <span class="math">\(n_1\)</span> will include all the possible combinations of <span class="math">\(n_1,n_1\pm 1\)</span> for both terms without changing <span class="math">\(n_2\)</span>. As an example, we compare the different orders of <span class="math">\(n_1\)</span> only with the numerical calculation without approximations.</p>
+<div class="figure align-center" id="id9">
+<img alt="_images/stimulated-2-freq-higher-orders-approach-2.png" src="_images/stimulated-2-freq-higher-orders-approach-2.png" />
+<p class="caption"><span class="caption-text">Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in <span class="math">\(n_1\)</span> fixes the deviation from numerical calculation (red dotted line). The wave vectors are <span class="math">\(k_1=0.5\)</span>, <span class="math">\(k_2=0.8\)</span>, amplitudes are <span class="math">\(A_1=0.1 k_1^{-5/3}\)</span>, <span class="math">\(A_2=0.1 k_2^{-5/3}\)</span>, mixing angle in background matter is <span class="math">\(\theta_m=\pi/5\)</span>.</span></p>
 </div>
-<div class="section" id="fix-rwa-in-2-frequency-case">
-<h3>Fix RWA in 2-frequency Case<a class="headerlink" href="#fix-rwa-in-2-frequency-case" title="Permalink to this headline">¶</a></h3>
-<p>To fix this problem, we could add more higher orders, however, through the demonstration of the four cases, it is very unlikely that adding the third or even fourth order will help.</p>
-<p>Then we ask the question, which approximation breaking down exactly? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(12)</a> holds but no RWA will be applied to this.</p>
+</li>
+<li><p class="first">Now according to the complate expression of the 12 element of Hamiltonian <a href="#equation-2-freq-hamiltonian-12-element">(13)</a>, there is no difference between <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. We notice in equation <a href="#equation-eqn-single-frequency-width-guessing">(9)</a>, single frequency width depends on the coefficient in front of the phase in the Hamiltonian and the integer. The task is to derive or guess the resonance width for each pair of integers <span class="math">\(n_1, n_2\)</span>.</p>
+</li>
+</ol>
+<div class="note admonition">
+<p class="first admonition-title">Which Approximation Breaks Down</p>
+<p>We ask the question, which approximation is breaking down exactly during our RWA? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(12)</a> holds but no RWA will be applied to this.</p>
 <p>Not notice that the summation in <a href="#equation-eqn-after-first-rwa">(12)</a> is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to</p>
-<div class="math">
+<div class="last math">
 \[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
-h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.\end{split}\]</div>
-<p>We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.</p>
+h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.\end{split}\]\[We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.\]</div>
+</div>
 </div>
 <div class="section" id="a-more-systematic-thinking-of-2-frequency">
 <h3>A More Systematic Thinking of 2-Frequency<a class="headerlink" href="#a-more-systematic-thinking-of-2-frequency" title="Permalink to this headline">¶</a></h3>
@@ -737,10 +755,9 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
 <ol class="last arabic simple">
-<li>Find the resonance of single frequency  F^2/(F^2+g^2) we can use expansion</li>
-<li>Numerical determine the width of single frequency</li>
-<li>h_1=n1 k1+n2 k2; h_1=(n1pm 1)k1+n2 k2 ;</li>
-<li>Numerical solution to the complete problem without approximation.</li>
+<li><span class="math">\(h_1=n1 k1+n2 k2; h_1=(n1\pm 1)k1+n2 k2\)</span> ;</li>
+<li>Find out which approximation breaks down; Ref to admonition Which Approximation Breaks Down</li>
+<li>Find out the resonance width for each pair of integers in the Hamiltonian. Ref to <a href="#equation-2-freq-hamiltonian-12-element">(13)</a>.</li>
 </ol>
 </div>
 </div>
