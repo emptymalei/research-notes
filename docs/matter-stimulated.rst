@@ -378,6 +378,7 @@ so that :math:`n_0 = \mathrm{Round}\left( 1/\hat k\right)`, :math:`z_k=\frac{\ha
 
 .. math::
    P_{1\to 2} = \frac{\left\lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2}{\left\lvert  \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ \hat q }{2} \hat x \right) .
+   :label: stimulated-single-freq-trans-probability
 
 
 
@@ -853,13 +854,12 @@ Lowest order only works for very special cases where on of the wave vectors is v
 
    This guess needs proof, numerically and analytically.
 
-   But notice, when we said higher orders, we actually mean higher orders in both :math:`n_1` and :math:`n_2`. As an example, since we can alway write the 12 element of Hamiltonian as
+   But notice, when we said higher orders, we actually mean higher orders in both :math:`n_1` and :math:`n_2`. Notice that we can alway write the 12 element of Hamiltonian as :eq:`2-freq-hamiltonian-12-element`, i.e.,
 
    .. math::
       h &= h_1 + h_2 \\
       & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
       & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
-      :label: 2-freq-hamiltonian-12-element
 
    without any approximations.
 
@@ -910,7 +910,7 @@ Lowest order only works for very special cases where on of the wave vectors is v
       h_1 & \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
       h_2 & \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.
 
-      We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.
+   We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.
 
 
 
@@ -946,21 +946,34 @@ Using these definitions, we rewrite the Hamiltonian 12 element
    h &= h_1 + h_2 \\
    & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
    & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+   :label: 2-freq-hamiltonian-12-element
 
 where :math:`B\equiv B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)` is what we are interested in.
 
-Comparing this expression with the single frequency one :eq:`eqn-single-frequency-width-guessing`, we can infer that the following quantity is more or less the width given the two integers,
+Comparing this expression with the single frequency one which is almost the same structure if we remove the two sums, and using the result :eq:`stimulated-single-freq-trans-probability`, we can infer that the transition probability,
 
 .. math::
-   \Gamma_2 = \frac{B_{n_1,n_2}(k_1,k_2)}{n_1} + \frac{B_{n_2,n_1}(k_2,k_1)}{n_2},
+   P_{1\to 2}(x) = \frac{\lvert \hat F_2 \rvert^2}{ \lvert \hat F_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
 
-while the quantity :math:`g_2 = n_1 k_1 + n_2 k_2 - \omega_m` tells us how far from resonance.
+where :math:`\hat F_2=\frac{2 B}{\omega_m}=2\frac{B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)}{\omega_m}` and :math:`\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1` which tells us how far from resonance and :math:`q_2=\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }`.
+
+The width then is similar to :eq:`eqn-single-frequency-width-guessing`, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,
+
+.. math::
+   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert F_2 \rvert = 2 \left\lvert \frac{B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)}{\omega_m} \right\rvert.
+
+For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a function of :math:`k_1, k_2`.
 
 
-.. admonition:: Need to Verify This Result
+.. admonition:: Solve The Problem
    :class: note
 
-   TODO: Just solve the equation of motion for a certain combination of the two integers.
+   A solution shows that this is correct. The solution to the second element of wave function is
+
+   .. math::
+      \psi_{b2} = i \frac{ \lvert \hat F_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat F_2 \sqrt{\lvert \hat F_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }}{2}x \right)  .
+
+
 
 
 
