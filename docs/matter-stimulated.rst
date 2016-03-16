@@ -167,8 +167,13 @@ We also define
 
 .. math::
    h &= \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
-   & = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x - \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)}.
+   & = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\left( -\omega_m x - \frac{A \cos 2\theta_m}{k} \cos (kx+\phi) \right)},
    :label: single-frequency-hamiltonian-element
+
+so that the equation of motion becomes
+
+.. math::
+   i \frac{d}{dx} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} =  \begin{pmatrix} 0 &  h \\   h^* &  0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} .
 
 Obviously, the exponential terms is too complicate. On the other hand, this equation of motion reminds us of the Rabi oscillation. So we decide to rewrite the exponential into some plane wave terms using Jacobi-Anger expansion. (Refs & Notes: Patton et al)
 
@@ -932,35 +937,36 @@ where
 For simplicity, we define
 
 .. math::
-   B_{n_1,n_2}(k_1,k_2) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}) ,\\
+   B_{n_1,n_2}(k_1,k_2,A_1,A_2) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m) J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)  ,\\
    \Phi & = e^{i(n_1\phi_1+n_2\phi_2)}.
 
 Notice that
 
 .. math::
-   B_{n_2,n_1}(k_2,k_1) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}).
+   B_{n_2,n_1}(k_2,k_1, A_2, A_1) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).
 
 Using these definitions, we rewrite the Hamiltonian 12 element
 
 .. math::
    h &= h_1 + h_2 \\
-   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
-   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
+   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
    :label: 2-freq-hamiltonian-12-element
 
-where :math:`B\equiv B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)` is what we are interested in.
+where :math:`B\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)` is what we are interested in.
 
 Comparing this expression with the single frequency one which is almost the same structure if we remove the two sums, and using the result :eq:`stimulated-single-freq-trans-probability`, we can infer that the transition probability,
 
 .. math::
    P_{1\to 2}(x) = \frac{\lvert \hat F_2 \rvert^2}{ \lvert \hat F_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
 
-where :math:`\hat F_2=\frac{2 B}{\omega_m}=2\frac{B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)}{\omega_m}` and :math:`\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1` which tells us how far from resonance and :math:`q_2=\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }`.
+where :math:`\hat F_2=\frac{2 B}{\omega_m}=2\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}` and :math:`\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1` which tells us how far from resonance and :math:`q_2=\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }`.
 
 The width then is similar to :eq:`eqn-single-frequency-width-guessing`, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,
 
 .. math::
-   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert F_2 \rvert = 2 \left\lvert \frac{B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1)}{\omega_m} \right\rvert.
+   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert F_2 \rvert = 2 \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.
+   :label: stimulated-2-freq-width-requirement-raw
 
 For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a function of :math:`k_1, k_2`.
 
@@ -973,6 +979,50 @@ For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a f
    .. math::
       \psi_{b2} = i \frac{ \lvert \hat F_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat F_2 \sqrt{\lvert \hat F_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }}{2}x \right)  .
 
+
+It is very confusing when we write down the requirement for width :eq:`stimulated-2-freq-width-requirement-raw`, since we need to assume :math:`\lvert \hat F_2 \rvert` to be almost constant to arrive this result. What values of :math:`\hat k_1,\hat k_2` do we need to calculate :math:`\lvert \hat F_2 \rvert`?
+
+The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using :math:`n_1 k_1 + n_2 k_2 = 1`, which is plotted as dashed red line in :ref:`diagram-of-width-2-freq`. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of :math:`(k_10,k_2)=(k_{10},k_{20})` which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.
+
+
+.. _diagram-of-width-2-freq:
+
+.. figure:: assets/matter-stimulated/stimulated-2-freq-width-diagram.png
+   :align: center
+
+   Diagram of Width.
+
+In the language of algebra, we could derive the interception point of the two lines, which is
+
+.. math::
+   k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2} \\
+   k_{2,\mathrm{intercept}} &= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2},
+
+where :math:`k_{10}` and :math:`k_{20}` are the values given in the matter perturbation of the system.
+
+Using this method, we can define a reasonable width for two frequency matter perturbation case,
+
+.. math::
+   \Gamma_2 = \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
+
+
+.. admonition:: Derivation of Width for 2 Frequency Matter Perturbation
+   :class: hint
+
+   To be typed in.
+
+
+To apply the width in a problem, we need to calculate the distance between the given point :math:`(k_{10},k_{20})` of the system to a certain resonance line which depends on :math:`n_1,n_2,A_1,A_2,\theta_m`. This is as simple as point to line distance, which is calculated using
+
+.. math::
+   d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.
+
+Here comes the question: **what is the requirement for a pair of** :math:`(n_1,n_2)` **to be important?**
+
+We answer this by defining a quantity that compares the distance from a certain resonance line with the width of this resonance line,
+
+.. math::
+   Q_2 = \frac{d}{\Gamma_2}.
 
 
 
