@@ -751,14 +751,14 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 \[\psi_{b2} = i \frac{ \lvert \hat F_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat F_2 \sqrt{\lvert \hat F_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }}{2}x \right)  .\]</div>
 </div>
 <p>It is very confusing when we write down the requirement for width <a href="#equation-stimulated-2-freq-width-requirement-raw">(15)</a>, since we need to assume <span class="math">\(\lvert \hat F_2 \rvert\)</span> to be almost constant to arrive this result. What values of <span class="math">\(\hat k_1,\hat k_2\)</span> do we need to calculate <span class="math">\(\lvert \hat F_2 \rvert\)</span>?</p>
-<p>The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using <span class="math">\(n_1 k_1 + n_2 k_2 = 1\)</span>, which is plotted as dashed red line in <a class="reference internal" href="#diagram-of-width-2-freq"><span>Diagram of Width.</span></a>. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of <span class="math">\((k_10,k_2)=(k_{10},k_{20})\)</span> which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.</p>
+<p>The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using <span class="math">\(n_1 k_1 + n_2 k_2 = 1\)</span>, which is plotted as dashed red line in <code class="xref std std-numref docutils literal"><span class="pre">diagram-of-width-2-freq</span></code>. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of <span class="math">\((k_10,k_2)=(k_{10},k_{20})\)</span> which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.</p>
 <div class="figure align-center" id="id10">
 <span id="diagram-of-width-2-freq"></span><img alt="_images/stimulated-2-freq-width-diagram.png" src="_images/stimulated-2-freq-width-diagram.png" />
 <p class="caption"><span class="caption-text">Diagram of Width.</span></p>
 </div>
 <p>In the language of algebra, we could derive the interception point of the two lines, which is</p>
 <div class="math">
-\[\begin{split}k_{1,\mathrm{intercept}} &amp;= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2} \\
+\[\begin{split}k_{1,\mathrm{intercept}} &amp;= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
 k_{2,\mathrm{intercept}} &amp;= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2},\end{split}\]</div>
 <p>where <span class="math">\(k_{10}\)</span> and <span class="math">\(k_{20}\)</span> are the values given in the matter perturbation of the system.</p>
 <p>Using this method, we can define a reasonable width for two frequency matter perturbation case,</p>
@@ -766,15 +766,62 @@ k_{2,\mathrm{intercept}} &amp;= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{
 \[\Gamma_2 = \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.\]</div>
 <div class="hint admonition">
 <p class="first admonition-title">Derivation of Width for 2 Frequency Matter Perturbation</p>
-<p class="last">To be typed in.</p>
+<p>First of all, we assume that a point <span class="math">\((\hat k_{10},\hat k_{20})\)</span> is a displace from the line by the FWHM <span class="math">\(\hat L\)</span> in <span class="math">\(\hat k_2\)</span>, which means that, the line that is paralell to the resonance line and passing through the point <span class="math">\((\hat k_{10},\hat k_{20})\)</span> is displaced by <span class="math">\(\hat L\)</span> in <span class="math">\(\hat k_2\)</span>,</p>
+<div class="math">
+\[n_1 \hat k_1 + n_2 \hat k_2 - n_2 \hat L = 1.\]</div>
+<p>We assume the width of resonance is not large so that we could use resonance values for <span class="math">\(\hat k_1, \hat k_2\)</span>. For FWHM, we require</p>
+<div class="math">
+\[n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1  - n_2 \hat L = \lvert \hat F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert,\]</div>
+<p>where we could apply <span class="math">\(n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1 = 0\)</span> because we assumed the width is narrow, thus</p>
+<div class="math">
+\[- n_2 \hat L = \lvert \hat F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert.\]</div>
+<p>However, <span class="math">\(L\)</span> is not the actually deviation from the interception point. We could calculate the actual deviation <span class="math">\(Gamma_2\)</span> on the blue line in figure <code class="xref std std-numref docutils literal"><span class="pre">diagram-of-width-2-freq</span></code>, which is given by</p>
+<div class="math">
+\[\sqrt{n_1^2 + n_2^2} \Gamma_2 = n_2 L,\]</div>
+<p>i.e., we find the resonance width</p>
+<div class="last math">
+\[\Gamma_2 =  \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.\]</div>
 </div>
 <p>To apply the width in a problem, we need to calculate the distance between the given point <span class="math">\((k_{10},k_{20})\)</span> of the system to a certain resonance line which depends on <span class="math">\(n_1,n_2,A_1,A_2,\theta_m\)</span>. This is as simple as point to line distance, which is calculated using</p>
-<div class="math">
-\[d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.\]</div>
+<div class="math" id="equation-stimulated-2-freq-distance-0">
+<span class="eqno">(16)</span>\[d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.\]</div>
 <p>Here comes the question: <strong>what is the requirement for a pair of</strong> <span class="math">\((n_1,n_2)\)</span> <strong>to be important?</strong></p>
 <p>We answer this by defining a quantity that compares the distance from a certain resonance line with the width of this resonance line,</p>
 <div class="math">
 \[Q_2 = \frac{d}{\Gamma_2}.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Caveats</p>
+<p>There are caveats when calculating the distance <span class="math">\(d\)</span> or the width <span class="math">\(\Gamma_2\)</span>.</p>
+<p>The first problem is the zeros. In special cases, <span class="math">\(n_1=0\)</span> as an example, the distance <span class="math">\(d\)</span> using the equation <a href="#equation-stimulated-2-freq-distance-0">(16)</a> will lead to infinities. Same thing happens to the width.</p>
+<p>The solution is to treat the special cases seperately. As an result, we conclude that</p>
+<div class="math" id="equation-stimulated-2-freq-distance-d">
+<span class="eqno">(17)</span>\[\begin{split}d=\begin{cases}
+\frac{\lvert n_1 k_{10} + n_2 k_{20} -1 \rvert}{\sqrt{ n_1^2 + n_2 ^2 }}, &amp; n_1\neq 0 \&amp;\&amp; n_2 \neq 0 \\
+\infty , &amp; &amp; n_1= 0 \&amp;\&amp; n_2 = 0.
+\end{cases}\end{split}\]</div>
+<p>The <span class="math">\(\infty\)</span> is simply a defined value which is to ensure the final values of <span class="math">\(Q_2\)</span> to be reasonable.</p>
+<p>Meanwhile, the width can always be written as <span class="math">\(\Gamma_2 = \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.\)</span> as long as <span class="math">\(n_1\neq 0\&amp;\&amp; n_2\neq 0\)</span>. However, what we mean by <span class="math">\(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}\)</span> has special situations.</p>
+<p>For <span class="math">\(n_1\neq 0\&amp;\&amp; n_2\neq 0\)</span>, we have the general solution</p>
+<div class="math">
+\[\begin{split}k_{1,\mathrm{intercept}} &amp;= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
+k_{2,\mathrm{intercept}} &amp;= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2}.\end{split}\]</div>
+<p>For <span class="math">\(n_1=0\&amp;\&amp; n_2\neq 0\)</span>, we have</p>
+<div class="math">
+\[\begin{split}k_{1,\mathrm{intercept}} &amp;= k_{10}, \\
+k_{2,\mathrm{intercept}} &amp;= \frac{1}{n_2}.\end{split}\]</div>
+<p>Finally, for <span class="math">\(n_1\neq 0\&amp;\&amp; n_2 =0\)</span>, we need</p>
+<div class="math">
+\[\begin{split}k_{1,\mathrm{intercept}} &amp;=\frac{1}{n_1}, \\
+k_{2,\mathrm{intercept}} &amp;= k_{20}.\end{split}\]</div>
+<p>As for <span class="math">\(n_1=0\&amp;\&amp; n_2=0\)</span>, we define the width to be zero.</p>
+<p>One last thing,</p>
+<div class="last math">
+\[\begin{split}Q_2 = \begin{cases}
+\frac{d}{\Gamma_2}, &amp; \Gamma_2\neq 0 \\
+\infty, &amp; \Gamma_2 = 0\&amp;\&amp; d\neq 0\\
+0, &amp; \Gamma_2=0\&amp;\&amp; d = 0
+\end{cases}\end{split}\]</div>
+</div>
 </div>
 <div class="section" id="frequencies">
 <h3>3 Frequencies<a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h3>

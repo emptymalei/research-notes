@@ -982,7 +982,7 @@ For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a f
 
 It is very confusing when we write down the requirement for width :eq:`stimulated-2-freq-width-requirement-raw`, since we need to assume :math:`\lvert \hat F_2 \rvert` to be almost constant to arrive this result. What values of :math:`\hat k_1,\hat k_2` do we need to calculate :math:`\lvert \hat F_2 \rvert`?
 
-The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using :math:`n_1 k_1 + n_2 k_2 = 1`, which is plotted as dashed red line in :ref:`diagram-of-width-2-freq`. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of :math:`(k_10,k_2)=(k_{10},k_{20})` which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.
+The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using :math:`n_1 k_1 + n_2 k_2 = 1`, which is plotted as dashed red line in :numref:`diagram-of-width-2-freq`. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of :math:`(k_10,k_2)=(k_{10},k_{20})` which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.
 
 
 .. _diagram-of-width-2-freq:
@@ -995,7 +995,7 @@ The idea is to find the FWHM when a point is deviating from the line. To be spec
 In the language of algebra, we could derive the interception point of the two lines, which is
 
 .. math::
-   k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2} \\
+   k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
    k_{2,\mathrm{intercept}} &= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2},
 
 where :math:`k_{10}` and :math:`k_{20}` are the values given in the matter perturbation of the system.
@@ -1009,13 +1009,38 @@ Using this method, we can define a reasonable width for two frequency matter per
 .. admonition:: Derivation of Width for 2 Frequency Matter Perturbation
    :class: hint
 
-   To be typed in.
+   First of all, we assume that a point :math:`(\hat k_{10},\hat k_{20})` is a displace from the line by the FWHM :math:`\hat L` in :math:`\hat k_2`, which means that, the line that is paralell to the resonance line and passing through the point :math:`(\hat k_{10},\hat k_{20})` is displaced by :math:`\hat L` in :math:`\hat k_2`,
+
+   .. math::
+      n_1 \hat k_1 + n_2 \hat k_2 - n_2 \hat L = 1.
+
+   We assume the width of resonance is not large so that we could use resonance values for :math:`\hat k_1, \hat k_2`. For FWHM, we require
+
+   .. math::
+      n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1  - n_2 \hat L = \lvert \hat F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert,
+
+   where we could apply :math:`n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1 = 0` because we assumed the width is narrow, thus
+
+   .. math::
+      - n_2 \hat L = \lvert \hat F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert.
+
+
+   However, :math:`L` is not the actually deviation from the interception point. We could calculate the actual deviation :math:`Gamma_2` on the blue line in figure :numref:`diagram-of-width-2-freq`, which is given by
+
+   .. math::
+      \sqrt{n_1^2 + n_2^2} \Gamma_2 = n_2 L,
+
+   i.e., we find the resonance width
+
+   .. math::
+      \Gamma_2 =  \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
 
 
 To apply the width in a problem, we need to calculate the distance between the given point :math:`(k_{10},k_{20})` of the system to a certain resonance line which depends on :math:`n_1,n_2,A_1,A_2,\theta_m`. This is as simple as point to line distance, which is calculated using
 
 .. math::
    d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.
+   :label: stimulated-2-freq-distance-0
 
 Here comes the question: **what is the requirement for a pair of** :math:`(n_1,n_2)` **to be important?**
 
@@ -1023,6 +1048,58 @@ We answer this by defining a quantity that compares the distance from a certain 
 
 .. math::
    Q_2 = \frac{d}{\Gamma_2}.
+
+
+
+.. admonition:: Caveats
+   :class: note
+
+   There are caveats when calculating the distance :math:`d` or the width :math:`\Gamma_2`.
+
+   The first problem is the zeros. In special cases, :math:`n_1=0` as an example, the distance :math:`d` using the equation :eq:`stimulated-2-freq-distance-0` will lead to infinities. Same thing happens to the width.
+
+   The solution is to treat the special cases seperately. As an result, we conclude that
+
+   .. math::
+      d=\begin{cases}
+      \frac{\lvert n_1 k_{10} + n_2 k_{20} -1 \rvert}{\sqrt{ n_1^2 + n_2 ^2 }}, & n_1\neq 0 \&\& n_2 \neq 0 \\
+      \infty , & & n_1= 0 \&\& n_2 = 0.
+      \end{cases}
+      :label: stimulated-2-freq-distance-d
+
+   The :math:`\infty` is simply a defined value which is to ensure the final values of :math:`Q_2` to be reasonable.
+
+   Meanwhile, the width can always be written as :math:`\Gamma_2 = \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.` as long as :math:`n_1\neq 0\&\& n_2\neq 0`. However, what we mean by :math:`k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}` has special situations.
+
+   For :math:`n_1\neq 0\&\& n_2\neq 0`, we have the general solution
+
+   .. math::
+      k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
+      k_{2,\mathrm{intercept}} &= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2}.
+
+   For :math:`n_1=0\&\& n_2\neq 0`, we have
+
+   .. math::
+      k_{1,\mathrm{intercept}} &= k_{10}, \\
+      k_{2,\mathrm{intercept}} &= \frac{1}{n_2}.
+
+   Finally, for :math:`n_1\neq 0\&\& n_2 =0`, we need
+
+   .. math::
+      k_{1,\mathrm{intercept}} &=\frac{1}{n_1}, \\
+      k_{2,\mathrm{intercept}} &= k_{20}.
+
+   As for :math:`n_1=0\&\& n_2=0`, we define the width to be zero.
+
+   One last thing,
+
+   .. math::
+      Q_2 = \begin{cases}
+      \frac{d}{\Gamma_2}, & \Gamma_2\neq 0 \\
+      \infty, & \Gamma_2 = 0\&\& d\neq 0\\
+      0, & \Gamma_2=0\&\& d = 0
+      \end{cases}
+
 
 
 
