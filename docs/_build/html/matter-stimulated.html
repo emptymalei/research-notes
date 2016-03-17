@@ -569,8 +569,8 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </div>
 </div>
 <p>The multiplication becomes</p>
-<div class="math">
-\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^n J_n (z_{k_1}) e^{i n(k_1 x + \phi_1) } (-i)^{N-n} J_{N-n}(z_{k_2}) e^{i (N-n)(k_2 x + \phi_2)} \\
+<div class="math" id="equation-stimulated-multi-freq-hamiltonian-12-element">
+<span class="eqno">(13)</span>\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^n J_n (z_{k_1}) e^{i n(k_1 x + \phi_1) } (-i)^{N-n} J_{N-n}(z_{k_2}) e^{i (N-n)(k_2 x + \phi_2)} \\
 &amp;=\frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^N J_{n}(z_{k_1}) J_{N-n}(z_{k_2}) e^{i n ((k_1-k_2)x + \phi_1 - \phi_2) + i N (k_2 x + \phi_2)}\end{split}\]</div>
 <p>To proceed on, we rewrite <span class="math">\(\sum_{a = 1}^2 A_a \sin (k_a x + \phi_a)\)</span>,</p>
 <div class="math">
@@ -646,7 +646,7 @@ h_2 &amp; = {\color{red} - \frac{k_2\tan 2\theta_m}{2} \sum_{n_2=-\infty}^{\inft
 <p>To grasp a clue, we need to identify which term in the summation dominates. Without a good analytical analysis, the only way to do is to numerically calculate the effect of each order.</p>
 <p>By order, we are already thinking of a dominating term which is not true. Nonethless, we assume RWA can be applied to the part that looks like one frequency only. In our two-frequency example, first RWA leads to</p>
 <div class="math" id="equation-eqn-after-first-rwa">
-<span class="eqno">(13)</span>\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
+<span class="eqno">(14)</span>\[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} },\end{split}\]</div>
 <p>where</p>
 <div class="math">
@@ -674,7 +674,7 @@ h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2
 <p class="first admonition-title">How to Include Higher Orders</p>
 <p>The first thought of higher orders is to add more from the summation before the last RWA. However, it is highly suspicious that this is just like the one frequency case which has a very fast drop in the resonance width as we go to higher orders.</p>
 <p>This guess needs proof, numerically and analytically.</p>
-<p>But notice, when we said higher orders, we actually mean higher orders in both <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Notice that we can alway write the 12 element of Hamiltonian as <a href="#equation-2-freq-hamiltonian-12-element">(14)</a>, i.e.,</p>
+<p>But notice, when we said higher orders, we actually mean higher orders in both <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Notice that we can alway write the 12 element of Hamiltonian as <a href="#equation-2-freq-hamiltonian-12-element">(15)</a>, i.e.,</p>
 <div class="math">
 \[\begin{split}h &amp;= h_1 + h_2 \\
 &amp; = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
@@ -701,13 +701,13 @@ Red dotted line is numerical solution, black line is lowest approximation of <sp
 <p class="caption"><span class="caption-text">Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in <span class="math">\(n_1\)</span> fixes the deviation from numerical calculation (red dotted line). The wave vectors are <span class="math">\(k_1=0.5\)</span>, <span class="math">\(k_2=0.8\)</span>, amplitudes are <span class="math">\(A_1=0.1 k_1^{-5/3}\)</span>, <span class="math">\(A_2=0.1 k_2^{-5/3}\)</span>, mixing angle in background matter is <span class="math">\(\theta_m=\pi/5\)</span>.</span></p>
 </div>
 </li>
-<li><p class="first">Now according to the complate expression of the 12 element of Hamiltonian <a href="#equation-2-freq-hamiltonian-12-element">(14)</a>, there is no difference between <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. We notice in equation <a href="#equation-eqn-single-frequency-width-guessing">(10)</a>, single frequency width depends on the coefficient in front of the phase in the Hamiltonian and the integer. The task is to derive or guess the resonance width for each pair of integers <span class="math">\(n_1, n_2\)</span>.</p>
+<li><p class="first">Now according to the complate expression of the 12 element of Hamiltonian <a href="#equation-2-freq-hamiltonian-12-element">(15)</a>, there is no difference between <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. We notice in equation <a href="#equation-eqn-single-frequency-width-guessing">(10)</a>, single frequency width depends on the coefficient in front of the phase in the Hamiltonian and the integer. The task is to derive or guess the resonance width for each pair of integers <span class="math">\(n_1, n_2\)</span>.</p>
 </li>
 </ol>
 <div class="note admonition">
 <p class="first admonition-title">Which Approximation Breaks Down</p>
-<p>We ask the question, which approximation is breaking down exactly during our RWA? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(13)</a> holds but no RWA will be applied to this.</p>
-<p>Not notice that the summation in <a href="#equation-eqn-after-first-rwa">(13)</a> is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to</p>
+<p>We ask the question, which approximation is breaking down exactly during our RWA? To find out, we first include all the orders after the first assumption, i.e., we do not use RWA for the second time, which means <a href="#equation-eqn-after-first-rwa">(14)</a> holds but no RWA will be applied to this.</p>
+<p>Not notice that the summation in <a href="#equation-eqn-after-first-rwa">(14)</a> is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to</p>
 <div class="math">
 \[\begin{split}h_1 &amp; \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
 h_2 &amp; \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.\end{split}\]</div>
@@ -732,7 +732,7 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 \[\begin{split}B_{n_2,n_1}(k_2,k_1, A_2, A_1) &amp;= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).\end{split}\]</div>
 <p>Using these definitions, we rewrite the Hamiltonian 12 element</p>
 <div class="math" id="equation-2-freq-hamiltonian-12-element">
-<span class="eqno">(14)</span>\[\begin{split}h &amp;= h_1 + h_2 \\
+<span class="eqno">(15)</span>\[\begin{split}h &amp;= h_1 + h_2 \\
 &amp; = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
 &amp; = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},\end{split}\]</div>
 <p>where <span class="math">\(B\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)\)</span> is what we are interested in.</p>
@@ -742,7 +742,7 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 <p>where <span class="math">\(\hat F_2=\frac{2 B}{\omega_m}=2\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}\)</span> and <span class="math">\(\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1\)</span> which tells us how far from resonance and <span class="math">\(q_2=\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }\)</span>.</p>
 <p>The width then is similar to <a href="#equation-eqn-single-frequency-width-guessing">(10)</a>, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,</p>
 <div class="math" id="equation-stimulated-2-freq-width-requirement-raw">
-<span class="eqno">(15)</span>\[n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert F_2 \rvert = 2 \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.\]</div>
+<span class="eqno">(16)</span>\[n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert F_2 \rvert = 2 \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.\]</div>
 <p>For a given pair of integers <span class="math">\(n_1,n_2\)</span>, we could find the amplitude as a function of <span class="math">\(k_1, k_2\)</span>.</p>
 <div class="note admonition">
 <p class="first admonition-title">Solve The Problem</p>
@@ -750,7 +750,7 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 <div class="last math">
 \[\psi_{b2} = i \frac{ \lvert \hat F_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat F_2 \sqrt{\lvert \hat F_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }}{2}x \right)  .\]</div>
 </div>
-<p>It is very confusing when we write down the requirement for width <a href="#equation-stimulated-2-freq-width-requirement-raw">(15)</a>, since we need to assume <span class="math">\(\lvert \hat F_2 \rvert\)</span> to be almost constant to arrive this result. What values of <span class="math">\(\hat k_1,\hat k_2\)</span> do we need to calculate <span class="math">\(\lvert \hat F_2 \rvert\)</span>?</p>
+<p>It is very confusing when we write down the requirement for width <a href="#equation-stimulated-2-freq-width-requirement-raw">(16)</a>, since we need to assume <span class="math">\(\lvert \hat F_2 \rvert\)</span> to be almost constant to arrive this result. What values of <span class="math">\(\hat k_1,\hat k_2\)</span> do we need to calculate <span class="math">\(\lvert \hat F_2 \rvert\)</span>?</p>
 <p>The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using <span class="math">\(n_1 k_1 + n_2 k_2 = 1\)</span>, which is plotted as dashed red line in <code class="xref std std-numref docutils literal"><span class="pre">diagram-of-width-2-freq</span></code>. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of <span class="math">\((k_10,k_2)=(k_{10},k_{20})\)</span> which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.</p>
 <div class="figure align-center" id="id10">
 <span id="diagram-of-width-2-freq"></span><img alt="_images/stimulated-2-freq-width-diagram.png" src="_images/stimulated-2-freq-width-diagram.png" />
@@ -784,7 +784,7 @@ k_{2,\mathrm{intercept}} &amp;= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{
 </div>
 <p>To apply the width in a problem, we need to calculate the distance between the given point <span class="math">\((k_{10},k_{20})\)</span> of the system to a certain resonance line which depends on <span class="math">\(n_1,n_2,A_1,A_2,\theta_m\)</span>. This is as simple as point to line distance, which is calculated using</p>
 <div class="math" id="equation-stimulated-2-freq-distance-0">
-<span class="eqno">(16)</span>\[d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.\]</div>
+<span class="eqno">(17)</span>\[d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.\]</div>
 <p>Here comes the question: <strong>what is the requirement for a pair of</strong> <span class="math">\((n_1,n_2)\)</span> <strong>to be important?</strong></p>
 <p>We answer this by defining a quantity that compares the distance from a certain resonance line with the width of this resonance line,</p>
 <div class="math">
@@ -792,10 +792,10 @@ k_{2,\mathrm{intercept}} &amp;= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{
 <div class="note admonition">
 <p class="first admonition-title">Caveats</p>
 <p>There are caveats when calculating the distance <span class="math">\(d\)</span> or the width <span class="math">\(\Gamma_2\)</span>.</p>
-<p>The first problem is the zeros. In special cases, <span class="math">\(n_1=0\)</span> as an example, the distance <span class="math">\(d\)</span> using the equation <a href="#equation-stimulated-2-freq-distance-0">(16)</a> will lead to infinities. Same thing happens to the width.</p>
+<p>The first problem is the zeros. In special cases, <span class="math">\(n_1=0\)</span> as an example, the distance <span class="math">\(d\)</span> using the equation <a href="#equation-stimulated-2-freq-distance-0">(17)</a> will lead to infinities. Same thing happens to the width.</p>
 <p>The solution is to treat the special cases seperately. As an result, we conclude that</p>
 <div class="math" id="equation-stimulated-2-freq-distance-d">
-<span class="eqno">(17)</span>\[\begin{split}d=\begin{cases}
+<span class="eqno">(18)</span>\[\begin{split}d=\begin{cases}
 \frac{\lvert n_1 k_{10} + n_2 k_{20} -1 \rvert}{\sqrt{ n_1^2 + n_2 ^2 }}, &amp; n_1\neq 0 \&amp;\&amp; n_2 \neq 0 \\
 \infty , &amp; &amp; n_1= 0 \&amp;\&amp; n_2 = 0.
 \end{cases}\end{split}\]</div>
@@ -829,20 +829,40 @@ k_{2,\mathrm{intercept}} &amp;= k_{20}.\end{split}\]</div>
 <div class="math">
 \[\begin{split}h &amp;= {\color{blue} \delta \lambda_1 \sum_{n_1} \cdots } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red} \delta \lambda_2 \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red}  \sum_{n_2} \cdots } {\color{cyan} \delta \lambda_3 \sum_{n_3} \cdots } \\
 &amp; \equiv h_1 + h_2 + h_3.\end{split}\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Split Hamiltonian Strategy</p>
 <p>As what we have tried in 2-frequency case, these terms can be viewed as three terms each is the interference between one frequency and the other two.</p>
 <p>First of all, we assume the most important terms for <span class="math">\(h_1,h_2,h_3\)</span> are determined by the <span class="math">\(k_1,k_2,k_3\)</span> alone resonance respectively. Then we need to explore which terms to keep in the other two summations. Since the other two summations in each term are symmetric, we would like to include the resonance condition for one of them.</p>
 <p>As an example, the first assumption leads to</p>
 <div class="math">
 \[h_1 \approx {\color{blue} \delta \lambda_1 \cdots(with n_{1,0} in it) } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots }.\]</div>
-<p>Then we include the other resonances</p>
+<p>Then we include the other resonances.</p>
+<p class="last"><strong>A simple test using Mathematica shows that it doesn&#8217;t work.</strong></p>
+</div>
+<p>We continue to rewrite the Hamiltonian by combining all terms. First of all, we write down the general form of Hamiltonian 12 element for <span class="math">\(N\)</span> frequencies which is similar to <a href="#equation-stimulated-multi-freq-hamiltonian-12-element">(13)</a>,</p>
 <div class="math">
-\[(to do)\]</div>
+\[h = \frac{\sin 2\theta_m}{2}\sum_{a=1}^{N}A_a\sin(k_a x + \phi_a) e^{-i\omega_m  x} \Pi_{a_1}^N \sum_{n_a=-\infty}^{\infty} (-i)^{n_a} J_{n_a}(\frac{A_a}{k_a}\cos 2\theta_m) e^{i n_a ( k_a x + \phi_a)} .\]</div>
+<p>For three frequency perturbation,</p>
+<div class="math">
+\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{4i}\sum_{a=1}^{3}A_a( e^{i(k_a x + \phi_a - \omega_m x)} - e^{-i(k_a x + \phi_a + \omega_m x)} )  \Pi_{a_1}^N \sum_{n_a=-\infty}^{\infty} (-i)^{n_a} J_{n_a}(\frac{A_a}{k_a}\cos 2\theta_m) e^{i n_a ( k_a x + \phi_a)} .\end{split}\]</div>
+<p>Elaborate more on the math, we have (<strong>need a verification for this result</strong>)</p>
+<div class="math">
+\[h = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty \left( B_{3,1} + B_{3,2} + B_{3,3} \right) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}B_{3,1} &amp;= - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
+B_{3,2} &amp; =  - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_2 k_2 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
+B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_3 k_3 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m)\\
+\Phi &amp;= e^{i(n_1\phi_1 + n_2\phi_2+n_3\phi_3)}.\end{split}\]</div>
+<p>In other words,</p>
+<div class="math">
+\[h = - \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty (-i)^{n_1+n_2+n_3} \left(  n_1 k_1 + n_2 k_2 + n_3 k_3 \right) J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x}.\]</div>
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
 <ol class="last arabic simple">
 <li><span class="math">\(h_1=n1 k1+n2 k2; h_1=(n1\pm 1)k1+n2 k2\)</span> ;</li>
 <li>Find out which approximation breaks down; Ref to admonition Which Approximation Breaks Down</li>
-<li>Find out the resonance width for each pair of integers in the Hamiltonian. Ref to <a href="#equation-2-freq-hamiltonian-12-element">(14)</a>.</li>
+<li>Find out the resonance width for each pair of integers in the Hamiltonian. Ref to <a href="#equation-2-freq-hamiltonian-12-element">(15)</a>.</li>
 </ol>
 </div>
 </div>
