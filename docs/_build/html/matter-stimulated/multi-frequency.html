@@ -180,6 +180,16 @@ B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_3 k_3 J_{n_1}
 </div>
 <div class="section" id="n-frequencies">
 <h2>N Frequencies<a class="headerlink" href="#n-frequencies" title="Permalink to this headline">¶</a></h2>
+<p>Given a system with N perturbations</p>
+<div class="math">
+\[\delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),\]</div>
+<p>the Hamiltonian 12 element through a guess is</p>
+<div class="math">
+\[h_N = -\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}B_N &amp;= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+\Phi_N &amp;= e^{i\left( \sum_a n_a \phi_a \right)}.\end{split}\]</div>
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
 <ol class="last arabic simple">

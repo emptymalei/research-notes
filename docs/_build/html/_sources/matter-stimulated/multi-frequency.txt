@@ -73,7 +73,21 @@ In other words,
 N Frequencies
 ------------------------
 
+Given a system with N perturbations
 
+.. math::
+   \delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),
+
+the Hamiltonian 12 element through a guess is
+
+.. math::
+   h_N = -\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},
+
+where
+
+.. math::
+   B_N &= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+   \Phi_N &= e^{i\left( \sum_a n_a \phi_a \right)}.
 
 
 
