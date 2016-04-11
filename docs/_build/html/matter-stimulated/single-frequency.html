@@ -417,17 +417,17 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </div>
 <p>To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that <span class="math">\(\left\lvert F \right\rvert^2\)</span> doesn&#8217;t change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is</p>
 <div class="math">
-\[\Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .\]</div>
+\[\Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert  \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .\]</div>
 <p>To verify this result, we compare it with the width found numerically from the exact amplitude.</p>
 <p>Given this result, and equation <a href="#equation-eqn-12-element-and-F">(5)</a>, we infer that the coefficient in front of the phase term of 12 element in Hamiltonian is related to the width, while the the deviation from the exact resonance is given by <span class="math">\(\hat g=n_0 \hat k - 1\)</span>.</p>
 <div class="note admonition">
 <p class="first admonition-title">Guessing The Width</p>
 <p>Given a Hamiltonian 12 element here</p>
 <div class="math">
-\[h = B e^{i(n_0 \hat k - 1) \hat x} = B e^{i \hat g \hat x},\]</div>
+\[h = \frac{F}{2} e^{i(n_0 \hat k - 1) \hat x} = \frac{F}{2} e^{i \hat g \hat x},\]</div>
 <p>the width of the resonance is</p>
 <div class="last math" id="equation-eqn-single-frequency-width-guessing">
-<span id="single-frequency-equation-eqn-single-frequency-width-guessing"></span><span class="eqno">(8)</span>\[\Gamma = \left\lvert \frac{B}{n_0} \right\rvert.\]</div>
+<span id="single-frequency-equation-eqn-single-frequency-width-guessing"></span><span class="eqno">(8)</span>\[\Gamma = \left\lvert \frac{F}{n_0} \right\rvert.\]</div>
 </div>
 <div class="figure align-center" id="id4">
 <img alt="../_images/stimulated-single-frequency-width-approximation-amp-point1.png" src="../_images/stimulated-single-frequency-width-approximation-amp-point1.png" />

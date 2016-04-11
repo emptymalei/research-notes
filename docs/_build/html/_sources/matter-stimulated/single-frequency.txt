@@ -397,7 +397,7 @@ How do we understand the resonance? Resonance width of each order of resonance (
 To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that :math:`\left\lvert F \right\rvert^2` doesn't change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is
 
 .. math::
-   \Gamma = \left\lvert \frac{2\hat F}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .
+   \Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert  \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .
 
 To verify this result, we compare it with the width found numerically from the exact amplitude.
 
@@ -409,14 +409,14 @@ Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the co
    Given a Hamiltonian 12 element here
 
    .. math::
-      h = B e^{i(n_0 \hat k - 1) \hat x} = B e^{i \hat g \hat x},
+      h = \frac{F}{2} e^{i(n_0 \hat k - 1) \hat x} = \frac{F}{2} e^{i \hat g \hat x},
 
    the width of the resonance is
 
    .. _single-frequency-equation-eqn-single-frequency-width-guessing:
 
    .. math::
-      \Gamma = \left\lvert \frac{B}{n_0} \right\rvert.
+      \Gamma = \left\lvert \frac{F}{n_0} \right\rvert.
       :label: eqn-single-frequency-width-guessing
 
 

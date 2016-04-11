@@ -119,6 +119,12 @@ We might choose :math:`\eta(0)=0`, which simplifies the relation
    \eta(x)= - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
 
 
+What is left in the equation of motion is the part where off-diagonal Hamiltonian takes effect,
+
+.. math::
+   i \frac{d}{dx} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.
+
+
 .. admonition:: Other Initial Conditions
    :class: note
 
