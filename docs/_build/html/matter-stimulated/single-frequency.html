@@ -417,7 +417,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </div>
 <p>To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that <span class="math">\(\left\lvert F \right\rvert^2\)</span> doesn&#8217;t change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is</p>
 <div class="math">
-\[\Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert  \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .\]</div>
+\[\Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_m \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_m/\hat k )}{n_0} \right\rvert .\]</div>
 <p>To verify this result, we compare it with the width found numerically from the exact amplitude.</p>
 <p>Given this result, and equation <a href="#equation-eqn-12-element-and-F">(5)</a>, we infer that the coefficient in front of the phase term of 12 element in Hamiltonian is related to the width, while the the deviation from the exact resonance is given by <span class="math">\(\hat g=n_0 \hat k - 1\)</span>.</p>
 <div class="note admonition">
@@ -442,7 +442,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>A special relation of Bessel function is that</p>
 <div class="math">
 \[J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{2\pi n \tanh \alpha}\]</div>
-<p>for large <span class="math">\(n\)</span>.</p>
+<p>for large <span class="math">\(n\)</span>. As a matter of fact, for all positive <span class="math">\(\alpha\)</span>, we always have <span class="math">\(\tanh \alpha - \alpha &lt; 0\)</span>.</p>
 <p>Using this relation and defining <span class="math">\(\sech \alpha = A \cos 2\theta_m\)</span>, which renders</p>
 <div class="math" id="equation-eqn-width-alpha-solved">
 <span class="eqno">(9)</span>\[\alpha = 2 n \pi i + \ln \left(  \frac{ 1 \pm \sqrt{ -A^2 \cos^2 2\theta_m + 1 } }{ A\cos 2\theta_m } \right),\qquad n\in \mathrm{Integers},\]</div>

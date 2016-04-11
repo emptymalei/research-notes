@@ -397,7 +397,7 @@ How do we understand the resonance? Resonance width of each order of resonance (
 To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that :math:`\left\lvert F \right\rvert^2` doesn't change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is
 
 .. math::
-   \Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert  \tan 2\theta_m \frac{J_{n_0}(z_k)}{n_0} \right\rvert = \left\lvert 2 \tan 2\theta_m \frac{J_{n_0}( n_0 A \cos 2\theta_m )}{n_0} \right\rvert .
+   \Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_m \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_m/\hat k )}{n_0} \right\rvert .
 
 To verify this result, we compare it with the width found numerically from the exact amplitude.
 
@@ -442,7 +442,7 @@ Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the co
    .. math::
       J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{2\pi n \tanh \alpha}
 
-   for large :math:`n`.
+   for large :math:`n`. As a matter of fact, for all positive :math:`\alpha`, we always have :math:`\tanh \alpha - \alpha < 0`.
 
    Using this relation and defining :math:`\sech \alpha = A \cos 2\theta_m`, which renders
 
