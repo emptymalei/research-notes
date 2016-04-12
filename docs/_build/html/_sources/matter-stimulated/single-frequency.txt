@@ -437,10 +437,10 @@ Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the co
 .. admonition:: A Special Property of Bessel Function
    :class: note
 
-   A special relation of Bessel function is that
+   A special relation of Bessel function is that [Ploumistakis2009]_
 
    .. math::
-      J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{2\pi n \tanh \alpha}
+      J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }
 
    for large :math:`n`. As a matter of fact, for all positive :math:`\alpha`, we always have :math:`\tanh \alpha - \alpha < 0`.
 
@@ -457,7 +457,7 @@ Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the co
    we find out an more human readabale analytical expression for the width
 
    .. math::
-      \Gamma = \left\lvert 2 \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert
+      \Gamma = \left\lvert 2 \hat k \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert
 
    where :math:`\alpha` is solved out in :eq:`eqn-width-alpha-solved`.
 
@@ -469,7 +469,9 @@ Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the co
    However, it doesn't really help that much since :math:`n` is large and no expansion could be done except for significantly small :math:`\alpha`.
 
 
-
+.. [Ploumistakis2009] I. Ploumistakis, S.D. Moustaizis, I. Tsohantjis, Towards laser based improved experimental schemes for multiphoton pair production from vacuum, Physics Letters A, Volume 373, Issue 32, 3 August 2009, Pages 2897-2900, ISSN 0375-9601, http://dx.doi.org/10.1016/j.physleta.2009.06.015.
+(http://www.sciencedirect.com/science/article/pii/S0375960109007166)
+Keywords: Pair production; Multiphoton processes; High intensity lasers
 
 
 

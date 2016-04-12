@@ -390,10 +390,10 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <li>Multiple matter frequency?</li>
 </ol>
 </div>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <img src="../_images/stimulated-probability-apmlitude-vs-k.svg" /><p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Probabiity Amplitude as a function of <span class="math">\(k/\omega_m\)</span> within RWA, with parameters <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <img src="../_images/stimulated-probability-apmlitude-vs-k-non-RWA.svg" /><p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Probabiity Amplitude as a function of <span class="math">\(k/\omega_m\)</span> for each term in Jacobi-Anger expansion, with parameters <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
 </div>
 <p>To look at the resonances I define a Mathematica function to calculate the FWHM.</p>
@@ -404,7 +404,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </pre></div>
 </div>
 </div>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <img src="../_images/stimulated-probability-apmlitude-vs-k-resonance-width.svg" /><p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Width of the resonances for <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
 </div>
 <p>How do we understand the resonance? Resonance width of each order of resonance (each n) should be calculated analytically.</p>
@@ -429,19 +429,19 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <div class="last math" id="equation-eqn-single-frequency-width-guessing">
 <span id="single-frequency-equation-eqn-single-frequency-width-guessing"></span><span class="eqno">(8)</span>\[\Gamma = \left\lvert \frac{F}{n_0} \right\rvert.\]</div>
 </div>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <img alt="../_images/stimulated-single-frequency-width-approximation-amp-point1.png" src="../_images/stimulated-single-frequency-width-approximation-amp-point1.png" />
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 0.1\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <img alt="../_images/stimulated-single-frequency-width-approximation-amp-1.png" src="../_images/stimulated-single-frequency-width-approximation-amp-1.png" />
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 1\)</span>.</span></p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">A Special Property of Bessel Function</p>
-<p>A special relation of Bessel function is that</p>
+<p>A special relation of Bessel function is that <a class="reference internal" href="#ploumistakis2009" id="id1">[Ploumistakis2009]</a></p>
 <div class="math">
-\[J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{2\pi n \tanh \alpha}\]</div>
+\[J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }\]</div>
 <p>for large <span class="math">\(n\)</span>. As a matter of fact, for all positive <span class="math">\(\alpha\)</span>, we always have <span class="math">\(\tanh \alpha - \alpha &lt; 0\)</span>.</p>
 <p>Using this relation and defining <span class="math">\(\sech \alpha = A \cos 2\theta_m\)</span>, which renders</p>
 <div class="math" id="equation-eqn-width-alpha-solved">
@@ -451,17 +451,28 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <div>In[1]:= Solve[Exp[z] + Exp[-z] == 2/(A Cos[2 Subscript[[Theta], m]]), z] // FullSimplify</div></blockquote>
 <p>we find out an more human readabale analytical expression for the width</p>
 <div class="math">
-\[\Gamma = \left\lvert 2 \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert\]</div>
+\[\Gamma = \left\lvert 2 \hat k \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert\]</div>
 <p>where <span class="math">\(\alpha\)</span> is solved out in <a href="#equation-eqn-width-alpha-solved">(9)</a>.</p>
 <p>For small <span class="math">\(\alpha\)</span>, we have expansions for exponentials and hyperbolic functions <span class="math">\(\tanh \alpha \sim \alpha - \frac{\alpha^3}{3}\)</span>,</p>
 <div class="math">
 \[\Gamma \asymp 2\tan 2\theta_m \frac{ e^{n \alpha^3/3} }{\sqrt{2\pi \alpha} n_0^{3/2}  }.\]</div>
 <p class="last">However, it doesn&#8217;t really help that much since <span class="math">\(n\)</span> is large and no expansion could be done except for significantly small <span class="math">\(\alpha\)</span>.</p>
 </div>
+<table class="docutils citation" frame="void" id="ploumistakis2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Ploumistakis2009]</a></td><td><ol class="first last upperroman simple">
+<li>Ploumistakis, S.D. Moustaizis, I. Tsohantjis, Towards laser based improved experimental schemes for multiphoton pair production from vacuum, Physics Letters A, Volume 373, Issue 32, 3 August 2009, Pages 2897-2900, ISSN 0375-9601, <a class="reference external" href="http://dx.doi.org/10.1016/j.physleta.2009.06.015">http://dx.doi.org/10.1016/j.physleta.2009.06.015</a>.</li>
+</ol>
+</td></tr>
+</tbody>
+</table>
+<p>(<a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0375960109007166">http://www.sciencedirect.com/science/article/pii/S0375960109007166</a>)
+Keywords: Pair production; Multiphoton processes; High intensity lasers</p>
 </div>
 <div class="section" id="perturbation-amplitude-and-transition-probability">
 <h2>Perturbation Amplitude and Transition Probability<a class="headerlink" href="#perturbation-amplitude-and-transition-probability" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img src="../_images/pltPertAmpPertWaveNumTransitionAmp.svg" /><p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.</span></p>
 </div>
 </div>
@@ -490,9 +501,9 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <h3>ToC</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../matter-stimulated.html">Matter Stimulated Oscillation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../matter-stimulated.html#a-unitary-transformation">A Unitary Transformation</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../matter-stimulated.html#detailed-discussions">Detailed Discussions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../matter-stimulated.html#refs-notes">Refs &amp; Notes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
 </ul>
 </li>
 </ul>

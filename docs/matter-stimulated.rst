@@ -27,8 +27,7 @@ The Hamiltonian is
 
 
 
-A Unitary Transformation
------------------------------
+**A Unitary Transformation**
 
 
 
@@ -150,8 +149,6 @@ we simply calculate
 
 
 
-Detailed Discussions
---------------------------
 
 
 .. toctree::
@@ -165,8 +162,6 @@ Detailed Discussions
 
 
 
-Refs & Notes
-------------------------
 
 1. Patton, K. M., Kneller, J. P., & McLaughlin, G. C. (2014). Stimulated neutrino transformation through turbulence. Physical Review D, 89(7), 073022. doi:10.1103/PhysRevD.89.073022
 2. Kneller, J. P., McLaughlin, G. C., & Patton, K. M. (2013). Stimulated neutrino transformation in supernovae. AIP Conference Proceedings, 1560, 176–178. doi:10.1063/1.4826746
