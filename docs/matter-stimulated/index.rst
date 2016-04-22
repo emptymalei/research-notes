@@ -11,10 +11,12 @@ where :math:`\lambda_0 = \sqrt{2}G_F n_{e0}` and :math:`\delta \lambda(x) = \sqr
 
 
 
-The Hamiltonian is
+The Hamiltonian in background matter basis :math:`\{\ket{\nu_{\mathrm{L}}},\ket{\nu_{\mathrm{H}}}\}` is
 
 .. math::
    H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin \theta_m \sigma_1.
+
+Here by background matter basis, we mean that the Hamiltonian is diagonalized if perturbation is zero in matter profile.
 
 
 .. admonition:: Derive the Hamiltonian
@@ -36,7 +38,7 @@ Suppose the wave function in this basis is written as
 .. math::
    \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}.
 
-To remove the position dependent :math:`\sigma_3` term in the Hamiltonian which prevents us from solving the equation of motion easily, we use a new basis where the wave function is related to background matter basis through
+To remove the position dependent :math:`\sigma_3` term in the Hamiltonian which prevents us from solving the equation of motion easily, we define a new basis :math:`\{\ket{\tilde\nu_{\mathrm{L}}},\ket{\tilde\nu_{\mathrm{H}}}\}` where the wave function is related to background matter basis through
 
 .. math::
    \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.
@@ -154,9 +156,9 @@ we simply calculate
 .. toctree::
    :maxdepth: 2
 
-   matter-stimulated/single-frequency.rst
-   matter-stimulated/two-frequency.rst
-   matter-stimulated/multi-frequency.rst
+   single-frequency.rst
+   two-frequency.rst
+   multi-frequency.rst
 
 
 

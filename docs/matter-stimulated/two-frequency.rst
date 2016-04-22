@@ -50,7 +50,7 @@ Rewrite Multiplication into Summation
    The rule is to sum over a line :math:`m+n=N` then sum over :math:`N`.
 
 
-   .. figure:: ../assets/matter-stimulated/summation-algebra.svg
+   .. figure:: assets/matter-stimulated/summation-algebra.svg
       :align: center
 
       Rewrite multiplication of summations into summations only.
@@ -253,7 +253,7 @@ Lowest order only works for very special cases where on of the wave vectors is v
 
 
 
-   .. figure:: ../assets/matter-stimulated/compApproxNum/compApproxNum.png
+   .. figure:: assets/matter-stimulated/compApproxNum/compApproxNum.png
       :align: center
 
       Top Left: Smaller wavenumber :math:`k_1=0.95` is at resonance and it has smaller perturbation amplitude (:math:`k_2=1.55`);
@@ -269,7 +269,7 @@ Lowest order only works for very special cases where on of the wave vectors is v
 
 2. Another choice is to add or remove one for both :math:`n_1` and :math:`n_2` for both terms in the Hamiltonian. The approach will define the order :math:`n_{order}` first, as will be applied to the n's. As an example, adding first order to :math:`n_1` will include all the possible combinations of :math:`n_1,n_1\pm 1` for both terms without changing :math:`n_2`. As an example, we compare the different orders of :math:`n_1` only with the numerical calculation without approximations.
 
-   .. figure:: ../assets/matter-stimulated/stimulated-2-freq-higher-orders-approach-2.png
+   .. figure:: assets/matter-stimulated/stimulated-2-freq-higher-orders-approach-2.png
       :align: center
 
       Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in :math:`n_1` fixes the deviation from numerical calculation (red dotted line). The wave vectors are :math:`k_1=0.5`, :math:`k_2=0.8`, amplitudes are :math:`A_1=0.1 k_1^{-5/3}`, :math:`A_2=0.1 k_2^{-5/3}`, mixing angle in background matter is :math:`\theta_m=\pi/5`.
@@ -362,7 +362,7 @@ The idea is to find the FWHM when a point is deviating from the line. To be spec
 
 .. _diagram-of-width-2-freq:
 
-.. figure:: ../assets/matter-stimulated/stimulated-2-freq-width-diagram.png
+.. figure:: assets/matter-stimulated/stimulated-2-freq-width-diagram.png
    :align: center
 
    Diagram of Width.

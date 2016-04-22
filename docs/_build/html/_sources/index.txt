@@ -50,7 +50,7 @@ Here is also an index: `genindex.html <genindex.html>`_ .
    oscillations.rst
    vacuum.rst
    matter.rst
-   matter-stimulated.rst
+   matter-stimulated/index.rst
    collective.rst
    qualitative.rst
    instability.rst

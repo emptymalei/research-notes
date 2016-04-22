@@ -247,8 +247,8 @@ so that :math:`n_0 = \mathrm{Round}\left( 1/\hat k\right)`, :math:`z_k=\frac{\ha
 
 
 
-Physics Behind The Math
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mathematical Analysis of The Result
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 There are several question to answer before we can understand the picture of the math.
@@ -340,7 +340,6 @@ Then we can rewrite the RWA requirement as
 The Resonances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 .. admonition:: Questions
    :class: question
 
@@ -351,14 +350,111 @@ The Resonances
    3. Multiple matter frequency?
 
 
-.. figure:: ../assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
+Now we check the Hamiltonian again to see if we could locate some physics. In the newly defined basis and using scaled quantities
+
+.. math::
+   \hat{\mathbf{H}} = \begin{pmatrix}
+   0 & \hat h \\
+   \hat h^* & 0
+   \end{pmatrix},
+
+where
+
+.. math::
+   \hat h = \frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x},
+
+and
+
+.. math::
+   \hat B_n = \hat k \tan 2\theta_{\mathrm{m}} n J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).
+
+
+It becomes much more clearer if we plug :math:`\hat h` back into Hamiltonian. What we find is that
+
+.. math::
+   \hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
+   0 & \frac{1}{2} \hat B_n \exp{i(n \hat k - 1)\hat x} \\
+   \frac{1}{2} \hat B_n \exp{-i(n \hat k - 1)\hat x} & 0
+   \end{pmatrix}.
+
+At this stage, it is quite obvious that our system is a composite Rabi oscilation system. For each specific :math:`n` term we write down the hopping probability from light state to the heavy state,
+
+.. math::
+   P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n} /2 \right\rvert^2 }{ \left\lvert   \hat B_{n} /2 \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),
+
+where
+
+.. math::
+   \Gamma^{(n)} &= \left\lvert \hat B_{n} \right\rvert, \quad \text{width of resonance ($n\hat k$ as parameter)} \\
+   \hat q^{(n)} &= \sqrt{\left\lvert  \Gamma^{(n)}/2 \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}
+
+
+
+
+
+.. admonition:: Scaled Quantities
+   :class: note
+
+   As a reminder, the scaled quantities are defined as
+
+   .. math::
+      \hat x &= \omega_{\mathrm{m}} x, \\
+      \hat h &= h/\omega_{\mathrm{m}}, \\
+      \hat B_n &= B_n/\omega_{\mathrm{m}}, \\
+      \hat k &= k/\omega_{\mathrm{m}}, \\
+      \hat A &= A/\omega_{\mathrm{m}}, \\
+      \hat q &= q/\omega_{\mathrm{m}} .
+
+   Just a comment. :math:`B_n` is used here because I actually want to use it for multi-frequency case and I just think :math:`B_n` is better than :math:`F`.
+
+
+
+.. admonition:: Rabi Oscillations
+   :class: note
+
+   The form of Hamiltonian reminds of us Rabi oscillations, whose Hamiltonian is
+
+   .. math::
+      \begin{pmatrix}
+      -\omega_0/2 & \alpha \omega_0 e^{i \omega x}\\
+      \alpha \omega_0  e^{-i k x} & \omega_0/2
+      \end{pmatrix},
+
+   where :math:`\omega_0` is the energy gap between the two energy levels and :math:`\omega` is the frequency of the incoming light. To be more specific, we explain this phenomenon using two level systems.
+
+   .. figure:: assets/single-frequency/rabi-diagram.png
+      :align: center
+
+      Rabi oscillation system
+
+   The system is prepared in low energy state. When the incoming light frequency matches the energy gap between two states, we have a resonance. Otherwise, we still have the transition from low energy state to high energy state but with a smaller transition amplitude.
+
+   .. figure:: assets/single-frequency/rabi-oscillations.png
+      :align: center
+
+      Rabi oscillations for two differen incoming light frequencies. :math:`\omega/\omega_0 =1` is the resonance condition.
+
+   What we really mean by resonance is that the transition amplitude is maximized. Or the phase inside the off-diagonal element of Hamiltonian is minimized.
+
+   What's more, we explore the transition amplitude as a function of differen incoming light frequencies.
+
+   .. figure:: assets/single-frequency/rabi-resonance.png
+      :align: center
+
+      Resonance of Rabi oscillations.
+
+
+
+
+
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
    :align: center
 
    Probabiity Amplitude as a function of :math:`k/\omega_m` within RWA, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
 
 
 
-.. figure:: ../assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
    :align: center
 
    Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
@@ -375,7 +471,7 @@ To look at the resonances I define a Mathematica function to calculate the FWHM.
       fwhm[n_] := First@Differences[k /. {ToRules@Reduce[amplitude[k, 0.1, Pi/5, n] == 0.5 &&k > (1 - 0.5/Exp[n]/n^2)/n && k < (1 + 0.5/Exp[n]/n^2)/n, k]}]
 
 
-.. figure:: ../assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-resonance-width.svg
+.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-resonance-width.svg
    :align: center
 
    Width of the resonances for :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
@@ -421,13 +517,13 @@ Given this result, and equation :eq:`eqn-12-element-and-F`, we infer that the co
 
 
 
-.. figure:: ../assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
+.. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
    :align: center
 
    Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 0.1`.
 
 
-.. figure:: ../assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-1.png
+.. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-1.png
    :align: center
 
    Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 1`.
@@ -480,7 +576,7 @@ Perturbation Amplitude and Transition Probability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. figure:: ../assets/matter-stimulated/pltPertAmpPertWaveNumTransitionAmp.svg
+.. figure:: assets/matter-stimulated/pltPertAmpPertWaveNumTransitionAmp.svg
    :align: center
 
    Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.
