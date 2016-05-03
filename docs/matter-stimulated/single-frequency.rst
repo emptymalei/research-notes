@@ -374,19 +374,29 @@ It becomes much more clearer if we plug :math:`\hat h` back into Hamiltonian. Wh
 .. math::
    \hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
    0 & \frac{1}{2} \hat B_n \exp{i(n \hat k - 1)\hat x} \\
-   \frac{1}{2} \hat B_n \exp{-i(n \hat k - 1)\hat x} & 0
+   \frac{1}{2} \hat B_n^* \exp{-i(n \hat k - 1)\hat x} & 0
    \end{pmatrix}.
+
+With some effort, we find that the solution to the second amplitude of the wave function is
+
+.. math::
+   \psi_2 = \frac{i}{ \hat B_n \hat W} e^{-i(n \hat k -1)\hat x}  \left\vert \hat B_n \right\vert^2 \sin\left( \frac{1}{2}(n \hat k -1 -\hat W) \hat x  \right),
+
+where
+
+.. math::
+   \hat W = \sqrt{ (n \hat k - 1)^2 + \left\vert \hat B_n \right\vert^2 }.
 
 At this stage, it is quite obvious that our system is a composite Rabi oscilation system. For each specific :math:`n` term we write down the hopping probability from light state to the heavy state,
 
 .. math::
-   P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n} /2 \right\rvert^2 }{ \left\lvert   \hat B_{n} /2 \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),
+   P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n}  \right\rvert^2 }{ \left\lvert   \hat B_{n}  \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),
 
 where
 
 .. math::
    \Gamma^{(n)} &= \left\lvert \hat B_{n} \right\rvert, \quad \text{width of resonance ($n\hat k$ as parameter)} \\
-   \hat q^{(n)} &= \sqrt{\left\lvert  \Gamma^{(n)}/2 \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}
+   \hat q^{(n)} &= \sqrt{\left\lvert  \Gamma^{(n)} \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}
 
 
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Multi-frequency &mdash; Neutrino Pi documentation</title>
+    <title>Scales &mdash; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -29,7 +29,8 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
     <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
-    <link rel="prev" title="Two-frequency Matter Perturbation" href="two-frequency.html" />
+    <link rel="next" title="Single Frequency Matter Perturbation" href="single-frequency.html" />
+    <link rel="prev" title="Matter Stimulated Oscillation" href="index.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -51,7 +52,7 @@
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
-  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/multi-frequency.html"/>
+  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/scales.html"/>
 
 
 
@@ -123,7 +124,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="two-frequency.html" title="Two-frequency Matter Perturbation"
+          <a href="single-frequency.html" title="Single Frequency Matter Perturbation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Matter Stimulated Oscillation"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
@@ -135,66 +139,61 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="multi-frequency">
-<h1>Multi-frequency<a class="headerlink" href="#multi-frequency" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="frequencies">
-<h2>3 Frequencies<a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h2>
-<p>To extend what we have done to more frequencies is easy. For 3 frequencies, the 12 element of Hamiltonian has such a pattern that</p>
-<div class="math">
-\[\begin{split}h &amp;= {\color{blue} \delta \lambda_1 \sum_{n_1} \cdots } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red} \delta \lambda_2 \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red}  \sum_{n_2} \cdots } {\color{cyan} \delta \lambda_3 \sum_{n_3} \cdots } \\
-&amp; \equiv h_1 + h_2 + h_3.\end{split}\]</div>
-<div class="hint admonition">
-<p class="first admonition-title">Split Hamiltonian Strategy</p>
-<p>As what we have tried in 2-frequency case, these terms can be viewed as three terms each is the interference between one frequency and the other two.</p>
-<p>First of all, we assume the most important terms for <span class="math">\(h_1,h_2,h_3\)</span> are determined by the <span class="math">\(k_1,k_2,k_3\)</span> alone resonance respectively. Then we need to explore which terms to keep in the other two summations. Since the other two summations in each term are symmetric, we would like to include the resonance condition for one of them.</p>
-<p>As an example, the first assumption leads to</p>
-<div class="math">
-\[h_1 \approx {\color{blue} \delta \lambda_1 \cdots(with n_{1,0} in it) } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots }.\]</div>
-<p>Then we include the other resonances.</p>
-<p class="last"><strong>A simple test using Mathematica shows that it doesn&#8217;t work.</strong></p>
-</div>
-<p>We continue to rewrite the Hamiltonian by combining all terms. First of all, we write down the general form of Hamiltonian 12 element for <span class="math">\(N\)</span> frequencies which is similar to <a class="reference internal" href="two-frequency.html#two-frequency-equation-stimulated-multi-freq-hamiltonian-12-element"><span>Hamiltonian of two frequency case</span></a>,</p>
-<div class="math">
-\[h = \frac{\sin 2\theta_m}{2}\sum_{a=1}^{N}A_a\sin(k_a x + \phi_a) e^{-i\omega_m  x} \Pi_{a_1}^N \sum_{n_a=-\infty}^{\infty} (-i)^{n_a} J_{n_a}(\frac{A_a}{k_a}\cos 2\theta_m) e^{i n_a ( k_a x + \phi_a)} .\]</div>
-<p>For three frequency perturbation,</p>
-<div class="math">
-\[\begin{split}h &amp;= \frac{\sin 2\theta_m}{4i}\sum_{a=1}^{3}A_a( e^{i(k_a x + \phi_a - \omega_m x)} - e^{-i(k_a x + \phi_a + \omega_m x)} )  \Pi_{a_1}^N \sum_{n_a=-\infty}^{\infty} (-i)^{n_a} J_{n_a}(\frac{A_a}{k_a}\cos 2\theta_m) e^{i n_a ( k_a x + \phi_a)} .\end{split}\]</div>
-<p>Elaborate more on the math, we have (<strong>need a verification for this result</strong>)</p>
-<div class="math">
-\[h = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty \left( B_{3,1} + B_{3,2} + B_{3,3} \right) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x},\]</div>
-<p>where</p>
-<div class="math">
-\[\begin{split}B_{3,1} &amp;= - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
-B_{3,2} &amp; =  - (-i)^{n_1+n_2+n_3}  \tan 2\theta_m  n_2 k_2 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
-B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_3 k_3 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m)\\
-\Phi &amp;= e^{i(n_1\phi_1 + n_2\phi_2+n_3\phi_3)}.\end{split}\]</div>
-<p>In other words,</p>
-<div class="math">
-\[h = - \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty (-i)^{n_1+n_2+n_3} \left(  n_1 k_1 + n_2 k_2 + n_3 k_3 \right) J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x}.\]</div>
-<div class="note admonition">
-<p class="first admonition-title">Are 2 Frequencies Enough to Solve 3 Frequency Problems</p>
-<p>We could try to use two frequencies to approach the actual 3 frequency problem first. To see the result, we first need to solve 3 frequency problem numerically without any approximation.</p>
-<p>Then we choose pairs of integers to approach the 3 frequency system.</p>
-<p class="last">An calculations shows that this is not generally true, even though sometimes it is.</p>
-</div>
-</div>
-<div class="section" id="n-frequencies">
-<h2>N Frequencies<a class="headerlink" href="#n-frequencies" title="Permalink to this headline">¶</a></h2>
-<p>Given a system with N perturbations</p>
-<div class="math">
-\[\delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),\]</div>
-<p>the Hamiltonian 12 element through a guess is</p>
-<div class="math">
-\[h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},\]</div>
-<p>where</p>
-<div class="math">
-\[\begin{split}B_N &amp;= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
-\Phi_N &amp;= e^{i\left( \sum_a n_a \phi_a \right)}.\end{split}\]</div>
-<div class="todo admonition">
-<p class="first admonition-title">To do</p>
-<ol class="last arabic simple">
-<li>To actually make some sense here. I need to find out which approximation breaks down in Kelly&#8217;s paper; Ref to admonition Which Approximation Breaks Down</li>
+  <div class="section" id="scales">
+<h1>Scales<a class="headerlink" href="#scales" title="Permalink to this headline">¶</a></h1>
+<p>We need to discuss the scales relavent to different environments.</p>
+<div class="section" id="supernova">
+<h2>Supernova<a class="headerlink" href="#supernova" title="Permalink to this headline">¶</a></h2>
+<p>To find out the relavent length and energy scales, we need to know</p>
+<ol class="arabic simple">
+<li>size of supernova,</li>
+<li>matter profile.</li>
 </ol>
+<p>From the 2D simulation by E. Borriello et al, the size of supernova at 2sec after the bounce is about :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>2.7times 10^4`km <a class="reference internal" href="#eborriello2014" id="id3">[EBorriello2014]</a>.</p>
+<div class="figure align-center" id="id8">
+<img alt="../_images/supernova-shock-turbulence.png" src="../_images/supernova-shock-turbulence.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">2D supernova simulation <a class="reference internal" href="#eborriello2014" id="id4">[EBorriello2014]</a>.</span></p>
+</div>
+<p>The angle averaged density on radial direction is of the order <span class="math">\(10^3\mathrm{g/cm^3}\)</span> to <span class="math">\(10^5\mathrm{g/cm^3}\)</span>.</p>
+<div class="figure align-center" id="id9">
+<img alt="../_images/supernova-radial-density-profile.png" src="../_images/supernova-radial-density-profile.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Supernova 2D simulation radial density (averaged over angles) <a class="reference internal" href="#eborriello2014" id="id5">[EBorriello2014]</a>.</span></p>
+</div>
+<table class="docutils citation" frame="void" id="eborriello2014" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[EBorriello2014]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>, <a class="fn-backref" href="#id5">3</a>)</em> Borriello, E., Chakraborty, S., Janka, H.-T., Lisi, E., &amp; Mirizzi, A. (2014). Turbulence patterns and neutrino flavor transitions in high-resolution supernova models. Journal of Cosmology and Astroparticle Physics, 2014(11), 030–030. doi:10.1088/1475-7516/2014/11/030</td></tr>
+</tbody>
+</table>
+<div class="figure align-center" id="id10">
+<img alt="../_images/earth-density-profile-PREM-model.png" src="../_images/earth-density-profile-PREM-model.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Earth density profile from PREM model.</span></p>
+</div>
+<p>That was the densities. As a reference, we can calculate MSW resonance densities for some neutrino energies. The relation between neutrino energy and MSW resonance electron number density is calculated through</p>
+<div class="math">
+\[\omega_v \cos 2\theta_v = \sqrt{2} G_F n_e .\]</div>
+<p>Move around the terms and we get</p>
+<div class="math">
+\[\begin{split}n_e &amp;= \frac{\delta m^2 \cos 2\theta_v}{2\sqrt{2} G_F} \frac{1}{E} \\
+&amp;= 2.6\times 10^{-14}\mathrm{GeV^3} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.37} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right),\end{split}\]</div>
+<p>where we have used <span class="math">\(\delta m^2 = \delta m^2_{\mathrm{atm}}\)</span>.</p>
+<p>Using natural units, we know that</p>
+<div class="math">
+\[1\mathrm{GeV^3} = 1.3\times 10^{41} \mathrm{cm^{-3}}.\]</div>
+<p>The number density of electrons of MSW resonance is</p>
+<div class="math">
+\[n_e = 3.4\times 10^{27}\mathrm{cm^{-3}} \left(  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.37} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right).\]</div>
+<p>Assuming an electron fraction <span class="math">\(Y_e\)</span>, which is defined as the ration of electrons to baryons, the mass density is</p>
+<div class="math">
+\[\begin{split}\rho &amp;= \frac{n_e}{Y_e} \times m_b \\
+&amp; = \frac{ 3.4\times 10^{27} \mathrm{cm^{-3}} \times 1.67\times 10^{-24} \mathrm{g} }{ 0.5 } \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.37} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right)\\
+&amp; =  5.7\times 10^3 \mathrm{g/cm^3} \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.37} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right).\end{split}\]</div>
+<p>In the case of <span class="math">\(\delta m^2 = \delta m^2_{\mathrm{sol}} \sim 7.59\times 10^{-5}\mathrm{eV^2}\)</span>, we would have a density that is two orders smaller.</p>
+<div class="section" id="lengths">
+<h3>Lengths<a class="headerlink" href="#lengths" title="Permalink to this headline">¶</a></h3>
+<p>Assuming energy of neutrinos to be 1MeV, the general idea is that if the stimulated neutrino oscillations have a larger oscillation length than :math:<a href="#id6"><span class="problematic" id="id7">`</span></a>10^4`km, we don&#8217;t really need to consider the oscillations. Otherwise, oscillations could cause depolarization or other effects.</p>
+<p>In this case what should be done is to check whether MSW density.</p>
+<p>Another view is that to see the stimulated neutrino oscillations, we need to find a relavent neutrino energy range.</p>
 </div>
 </div>
 </div>
@@ -222,9 +221,10 @@ B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_3 k_3 J_{n_1}(\frac{A_1}
 <h3>ToC</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Scales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Multi-frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
 </ul>
 </li>
 </ul>
@@ -266,7 +266,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Multi-frequency &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="Scales &mdash; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -311,7 +311,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
-      <a href="../_sources/matter-stimulated/multi-frequency.txt"
+      <a href="../_sources/matter-stimulated/scales.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

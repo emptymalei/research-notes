@@ -156,6 +156,7 @@ we simply calculate
 .. toctree::
    :maxdepth: 2
 
+   scales.rst
    single-frequency.rst
    two-frequency.rst
    multi-frequency.rst

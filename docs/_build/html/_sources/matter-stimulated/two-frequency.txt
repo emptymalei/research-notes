@@ -312,35 +312,36 @@ where
 For simplicity, we define
 
 .. math::
-   B_{n_1,n_2}(k_1,k_2,A_1,A_2) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m) J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)  ,\\
+   B_{n_1,n_2}(k_1,k_2,A_1,A_2) &= -(-i)^{n_1+n_2} \tan 2\theta_m n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}) = -(-i)^{n_1+n_2} \tan 2\theta_m n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m) J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)  ,\\
    \Phi & = e^{i(n_1\phi_1+n_2\phi_2)}.
 
 Notice that
 
 .. math::
-   B_{n_2,n_1}(k_2,k_1, A_2, A_1) &= -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).
+   B_{n_2,n_1}(k_2,k_1, A_2, A_1) &= -(-i)^{n_1+n_2} \tan 2\theta_m n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).
 
 Using these definitions, we rewrite the Hamiltonian 12 element
 
 .. math::
    h &= h_1 + h_2 \\
-   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
-   & = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+   & = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
+   & = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}\\
+   & = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
    :label: 2-freq-hamiltonian-12-element
 
-where :math:`B\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)` is what we are interested in.
+where :math:`B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)` is what we are interested in.
 
 Comparing this expression with the single frequency one which is almost the same structure if we remove the two sums, and using the result :ref:`transition probability for single frequency <single-frequency-equation-stimulated-single-freq-trans-probability>`, we can infer that the transition probability,
 
 .. math::
-   P_{1\to 2}(x) = \frac{\lvert \hat F_2 \rvert^2}{ \lvert \hat F_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
+   P_{1\to 2}(x) = \frac{\lvert \hat B_2 \rvert^2}{ \lvert \hat B_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
 
-where :math:`\hat F_2=\frac{2 B}{\omega_m}=2\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}` and :math:`\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1` which tells us how far from resonance and :math:`q_2=\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }`.
+where :math:`\hat B_2=\frac{ B_2 }{\omega_m}=\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}` and :math:`\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1` which tells us how far from resonance and :math:`q_2=\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }`.
 
 The width then is similar to :ref:`single frequency width <single-frequency-equation-eqn-single-frequency-width-guessing>`, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,
 
 .. math::
-   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert F_2 \rvert = 2 \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.
+   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert \hat B_2 \rvert = \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.
    :label: stimulated-2-freq-width-requirement-raw
 
 For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a function of :math:`k_1, k_2`.
@@ -352,7 +353,7 @@ For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a f
    A solution shows that this is correct. The solution to the second element of wave function is
 
    .. math::
-      \psi_{b2} = i \frac{ \lvert \hat F_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat F_2 \sqrt{\lvert \hat F_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat F_2 \rvert^2 + \hat g^2 }}{2}x \right)  .
+      \psi_{b2} = i \frac{ \lvert \hat B_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat B_2 \sqrt{\lvert \hat B_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }}{2}x \right)  .
 
 
 It is very confusing when we write down the requirement for width :eq:`stimulated-2-freq-width-requirement-raw`, since we need to assume :math:`\lvert \hat F_2 \rvert` to be almost constant to arrive this result. What values of :math:`\hat k_1,\hat k_2` do we need to calculate :math:`\lvert \hat F_2 \rvert`?
@@ -378,7 +379,7 @@ where :math:`k_{10}` and :math:`k_{20}` are the values given in the matter pertu
 Using this method, we can define a reasonable width for two frequency matter perturbation case,
 
 .. math::
-   \Gamma_2 = \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
+   \Gamma_2 = \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
 
 
 .. admonition:: Derivation of Width for 2 Frequency Matter Perturbation
@@ -392,15 +393,15 @@ Using this method, we can define a reasonable width for two frequency matter per
    We assume the width of resonance is not large so that we could use resonance values for :math:`\hat k_1, \hat k_2`. For FWHM, we require
 
    .. math::
-      n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1  - n_2 \hat L = \lvert \hat F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert,
+      n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1  - n_2 \hat L = \lvert \hat B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert,
 
    where we could apply :math:`n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1 = 0` because we assumed the width is narrow, thus
 
    .. math::
-      - n_2 \hat L = \lvert \hat F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert.
+      - n_2 \hat L = \lvert \hat B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert.
 
 
-   However, :math:`L` is not the actually deviation from the interception point. We could calculate the actual deviation :math:`Gamma_2` on the blue line in figure :numref:`diagram-of-width-2-freq`, which is given by
+   However, :math:`L` is not the actually deviation from the interception point. We could calculate the actual deviation :math:`\Gamma_2` on the blue line in figure :numref:`diagram-of-width-2-freq`, which is given by
 
    .. math::
       \sqrt{n_1^2 + n_2^2} \Gamma_2 = n_2 L,
@@ -408,7 +409,7 @@ Using this method, we can define a reasonable width for two frequency matter per
    i.e., we find the resonance width
 
    .. math::
-      \Gamma_2 =  \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
+      \Gamma_2 =  \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
 
 
 To apply the width in a problem, we need to calculate the distance between the given point :math:`(k_{10},k_{20})` of the system to a certain resonance line which depends on :math:`n_1,n_2,A_1,A_2,\theta_m`. This is as simple as point to line distance, which is calculated using
@@ -444,7 +445,7 @@ We answer this by defining a quantity that compares the distance from a certain 
 
    The :math:`\infty` is simply a defined value which is to ensure the final values of :math:`Q_2` to be reasonable.
 
-   Meanwhile, the width can always be written as :math:`\Gamma_2 = \frac{F_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.` as long as :math:`n_1\neq 0\&\& n_2\neq 0`. However, what we mean by :math:`k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}` has special situations.
+   Meanwhile, the width can always be written as :math:`\Gamma_2 = \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.` as long as :math:`n_1\neq 0\&\& n_2\neq 0`. However, what we mean by :math:`k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}` has special situations.
 
    For :math:`n_1\neq 0\&\& n_2\neq 0`, we have the general solution
 

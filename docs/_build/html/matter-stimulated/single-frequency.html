@@ -30,7 +30,7 @@
     <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
     <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
     <link rel="next" title="Two-frequency Matter Perturbation" href="two-frequency.html" />
-    <link rel="prev" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="prev" title="Scales" href="scales.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -127,7 +127,7 @@
           <a href="two-frequency.html" title="Two-frequency Matter Perturbation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Matter Stimulated Oscillation"
+          <a href="scales.html" title="Scales"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
@@ -406,15 +406,21 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <div class="math">
 \[\begin{split}\hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
 0 &amp; \frac{1}{2} \hat B_n \exp{i(n \hat k - 1)\hat x} \\
-\frac{1}{2} \hat B_n \exp{-i(n \hat k - 1)\hat x} &amp; 0
+\frac{1}{2} \hat B_n^* \exp{-i(n \hat k - 1)\hat x} &amp; 0
 \end{pmatrix}.\end{split}\]</div>
+<p>With some effort, we find that the solution to the second amplitude of the wave function is</p>
+<div class="math">
+\[\psi_2 = \frac{i}{ \hat B_n \hat W} e^{-i(n \hat k -1)\hat x}  \left\vert \hat B_n \right\vert^2 \sin\left( \frac{1}{2}(n \hat k -1 -\hat W) \hat x  \right),\]</div>
+<p>where</p>
+<div class="math">
+\[\hat W = \sqrt{ (n \hat k - 1)^2 + \left\vert \hat B_n \right\vert^2 }.\]</div>
 <p>At this stage, it is quite obvious that our system is a composite Rabi oscilation system. For each specific <span class="math">\(n\)</span> term we write down the hopping probability from light state to the heavy state,</p>
 <div class="math">
-\[P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n} /2 \right\rvert^2 }{ \left\lvert   \hat B_{n} /2 \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),\]</div>
+\[P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n}  \right\rvert^2 }{ \left\lvert   \hat B_{n}  \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),\]</div>
 <p>where</p>
 <div class="math">
 \[\begin{split}\Gamma^{(n)} &amp;= \left\lvert \hat B_{n} \right\rvert, \quad \text{width of resonance ($n\hat k$ as parameter)} \\
-\hat q^{(n)} &amp;= \sqrt{\left\lvert  \Gamma^{(n)}/2 \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}\end{split}\]</div>
+\hat q^{(n)} &amp;= \sqrt{\left\lvert  \Gamma^{(n)} \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}\end{split}\]</div>
 <div class="note admonition">
 <p class="first admonition-title">Scaled Quantities</p>
 <p>As a reminder, the scaled quantities are defined as</p>
@@ -438,25 +444,25 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <p>where <span class="math">\(\omega_0\)</span> is the energy gap between the two energy levels and <span class="math">\(\omega\)</span> is the frequency of the incoming light. To be more specific, we explain this phenomenon using two level systems.</p>
 <div class="figure align-center" id="id2">
 <img alt="../_images/rabi-diagram.png" src="../_images/rabi-diagram.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Rabi oscillation system</span></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Rabi oscillation system</span></p>
 </div>
 <p>The system is prepared in low energy state. When the incoming light frequency matches the energy gap between two states, we have a resonance. Otherwise, we still have the transition from low energy state to high energy state but with a smaller transition amplitude.</p>
 <div class="figure align-center" id="id3">
 <img alt="../_images/rabi-oscillations.png" src="../_images/rabi-oscillations.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Rabi oscillations for two differen incoming light frequencies. <span class="math">\(\omega/\omega_0 =1\)</span> is the resonance condition.</span></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Rabi oscillations for two differen incoming light frequencies. <span class="math">\(\omega/\omega_0 =1\)</span> is the resonance condition.</span></p>
 </div>
 <p>What we really mean by resonance is that the transition amplitude is maximized. Or the phase inside the off-diagonal element of Hamiltonian is minimized.</p>
 <p>What&#8217;s more, we explore the transition amplitude as a function of differen incoming light frequencies.</p>
 <div class="last figure align-center" id="id4">
 <img alt="../_images/rabi-resonance.png" src="../_images/rabi-resonance.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Resonance of Rabi oscillations.</span></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Resonance of Rabi oscillations.</span></p>
 </div>
 </div>
 <div class="figure align-center" id="id5">
-<img src="../_images/stimulated-probability-apmlitude-vs-k.svg" /><p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Probabiity Amplitude as a function of <span class="math">\(k/\omega_m\)</span> within RWA, with parameters <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
+<img src="../_images/stimulated-probability-apmlitude-vs-k.svg" /><p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Probabiity Amplitude as a function of <span class="math">\(k/\omega_m\)</span> within RWA, with parameters <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
 </div>
 <div class="figure align-center" id="id6">
-<img src="../_images/stimulated-probability-apmlitude-vs-k-non-RWA.svg" /><p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Probabiity Amplitude as a function of <span class="math">\(k/\omega_m\)</span> for each term in Jacobi-Anger expansion, with parameters <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
+<img src="../_images/stimulated-probability-apmlitude-vs-k-non-RWA.svg" /><p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Probabiity Amplitude as a function of <span class="math">\(k/\omega_m\)</span> for each term in Jacobi-Anger expansion, with parameters <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
 </div>
 <p>To look at the resonances I define a Mathematica function to calculate the FWHM.</p>
 <div class="hint admonition">
@@ -467,7 +473,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </div>
 </div>
 <div class="figure align-center" id="id7">
-<img src="../_images/stimulated-probability-apmlitude-vs-k-resonance-width.svg" /><p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Width of the resonances for <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
+<img src="../_images/stimulated-probability-apmlitude-vs-k-resonance-width.svg" /><p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Width of the resonances for <span class="math">\(A=0.1, \theta_m=\pi/5, \phi=0\)</span>.</span></p>
 </div>
 <p>How do we understand the resonance? Resonance width of each order of resonance (each n) should be calculated analytically.</p>
 <div class="hint admonition">
@@ -493,11 +499,11 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 </div>
 <div class="figure align-center" id="id8">
 <img alt="../_images/stimulated-single-frequency-width-approximation-amp-point1.png" src="../_images/stimulated-single-frequency-width-approximation-amp-point1.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 0.1\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 0.1\)</span>.</span></p>
 </div>
 <div class="figure align-center" id="id9">
 <img alt="../_images/stimulated-single-frequency-width-approximation-amp-1.png" src="../_images/stimulated-single-frequency-width-approximation-amp-1.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 1\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Comparison of approximated width and numerical results for perturbation amplitude <span class="math">\(\hat A = \frac{A}{\omega_m} = 1\)</span>.</span></p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">A Special Property of Bessel Function</p>
@@ -535,7 +541,7 @@ Keywords: Pair production; Multiphoton processes; High intensity lasers</p>
 <div class="section" id="perturbation-amplitude-and-transition-probability">
 <h2>Perturbation Amplitude and Transition Probability<a class="headerlink" href="#perturbation-amplitude-and-transition-probability" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id10">
-<img src="../_images/pltPertAmpPertWaveNumTransitionAmp.svg" /><p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.</span></p>
+<img src="../_images/pltPertAmpPertWaveNumTransitionAmp.svg" /><p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.</span></p>
 </div>
 </div>
 </div>
@@ -563,6 +569,7 @@ Keywords: Pair production; Multiphoton processes; High intensity lasers</p>
 <h3>ToC</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Single Frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>

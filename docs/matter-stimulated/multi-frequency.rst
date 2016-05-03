@@ -42,21 +42,20 @@ For three frequency perturbation,
 Elaborate more on the math, we have (**need a verification for this result**)
 
 .. math::
-   h = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty \left( B_{3,1} + B_{3,2} + B_{3,3} \right) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x},
+   h = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty \left( B_{3,1} + B_{3,2} + B_{3,3} \right) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x},
 
 where
 
 .. math::
-   B_{3,1} &= - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
-   B_{3,2} & =  - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_2 k_2 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
-   B_{3,3} & =  - (-i)^{n_1+n_2+n_3} \frac{ \tan 2\theta_m }{2} n_3 k_3 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m)\\
+   B_{3,1} &= - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
+   B_{3,2} & =  - (-i)^{n_1+n_2+n_3}  \tan 2\theta_m  n_2 k_2 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \\
+   B_{3,3} & =  - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_3 k_3 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m)\\
    \Phi &= e^{i(n_1\phi_1 + n_2\phi_2+n_3\phi_3)}.
 
 In other words,
 
 .. math::
-   h = - \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty (-i)^{n_1+n_2+n_3} \left(  n_1 k_1 + n_2 k_2 + n_3 k_3 \right) J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x}.
-
+   h = - \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^\infty \sum_{n_2=-\infty}^\infty (-i)^{n_1+n_2+n_3} \left(  n_1 k_1 + n_2 k_2 + n_3 k_3 \right) J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m)J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)J_{n_3}(\frac{A_3}{k_3}\cos 2\theta_m) \Phi_3 e^{i(n_1 k_1 +n_2 k_2 + n_3 k_3 -\omega_m)x}.
 
 
 .. admonition:: Are 2 Frequencies Enough to Solve 3 Frequency Problems
@@ -81,7 +80,7 @@ Given a system with N perturbations
 the Hamiltonian 12 element through a guess is
 
 .. math::
-   h_N = -\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},
+   h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},
 
 where
 
