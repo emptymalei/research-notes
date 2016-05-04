@@ -49,7 +49,7 @@ Move around the terms and we get
 
 .. math::
    n_e &= \frac{\delta m^2 \cos 2\theta_v}{2\sqrt{2} G_F} \frac{1}{E} \\
-   &= 7.49\times 10^{-15}\mathrm{GeV^3} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right),
+   &= 7.49\times 10^{-15}\mathrm{GeV^3} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right),
 
 where we have used :math:`\delta m^2 = \delta m^2_{\mathrm{atm}}`.
 
@@ -61,14 +61,14 @@ Using natural units, we know that
 The number density of electrons of MSW resonance is
 
 .. math::
-   n_e = 9.74\times 10^{26}\mathrm{cm^{-3}} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right).
+   n_e = 9.74\times 10^{26}\mathrm{cm^{-3}} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right).
 
 Assuming an electron fraction :math:`Y_e`, which is defined as the ration of electrons to baryons, the mass density is
 
 .. math::
    \rho &= \frac{n_e}{Y_e} \times m_b \\
-   & = \frac{ 9.74\times 10^{26} \mathrm{cm^{-3}} \times 1.67\times 10^{-24} \mathrm{g} }{ 0.5 } \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right)\\
-   & =  3.25\times 10^3 \mathrm{g/cm^3} \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/1\mathrm{MeV}} \right),
+   & = \frac{ 9.74\times 10^{26} \mathrm{cm^{-3}} \times 1.67\times 10^{-24} \mathrm{g} }{ 0.5 } \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right)\\
+   & =  3.25\times 10^3 \mathrm{g/cm^3} \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right),
 
 where I have used :math:`\sin^2(2\theta_v) = \sin^2(2\theta_{13})=0.093` from PDG 2014.
 
