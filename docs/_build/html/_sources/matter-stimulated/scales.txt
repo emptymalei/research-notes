@@ -7,17 +7,35 @@ We need to discuss the scales relavent to different environments.
 Supernova
 -----------------------
 
+Initial Matter Density Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: assets/scales/supernova-matter-profile-initial-configuration.png
+   :align: center
+
+   Supernova initial matter profile from [shigeyama1990]_.
+
+
+.. [shigeyama1990] Shigeyama, T., & Nomoto, K. (1990). Theoretical light curve of SN 1987A and mixing of hydrogen and nickel in the ejecta. The Astrophysical Journal, 360, 242. doi:10.1086/169114
+
+
+
+Early Stage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+One of the interesting stages is the bounce on the core.
+
 To find out the relavent length and energy scales, we need to know
 
 1. size of supernova,
 2. matter profile.
 
-From the 2D simulation by E. Borriello et al, the size of supernova at 2sec after the bounce is about :math:`2.7\times 10^4`km [EBorriello2014]_.
+From the 2D simulation by E. Borriello et al, the size of supernova at 2sec after the bounce is about :math:`2.7\times 10^4\mathrm{km}` [EBorriello2014]_.
 
 .. figure:: assets/scales/supernova-shock-turbulence.png
    :align: center
 
-   2D supernova simulation [EBorriello2014]_.
+   2D supernova simulation for a 15 solar mass supernova [EBorriello2014]_.
 
 The angle averaged density on radial direction is of the order :math:`10^3\mathrm{g/cm^3}` to :math:`10^5\mathrm{g/cm^3}`.
 
@@ -75,11 +93,12 @@ where I have used :math:`\sin^2(2\theta_v) = \sin^2(2\theta_{13})=0.093` from PD
 In the case of :math:`\delta m^2 = \delta m^2_{\mathrm{sol}} \sim 7.59\times 10^{-5}\mathrm{eV^2}`, we would have a density that is two orders smaller.
 
 
+
 Lengths
 ~~~~~~~~~~~~~~~~~~~
 
-Assuming energy of neutrinos to be 1MeV, the general idea is that if the stimulated neutrino oscillations have a larger oscillation length than :math:`10^4`km, we don't really need to consider the oscillations. Otherwise, oscillations could cause depolarization or other effects.
+Assuming energy of neutrinos to be 10MeV, the general idea is that if the stimulated neutrino oscillations have a larger oscillation length than :math:`10^4`km, we don't really need to consider the oscillations. Otherwise, oscillations could cause depolarization or little effect at all.
 
-In this case what should be done is to check whether MSW density.
+In this case what should be done is to check whether what are the rel.
 
 Another view is that to see the stimulated neutrino oscillations, we need to find a relavent neutrino energy range.
