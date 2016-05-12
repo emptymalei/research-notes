@@ -101,3 +101,23 @@ where
 
 
    1. To actually make some sense here. I need to find out which approximation breaks down in Kelly's paper; Ref to admonition Which Approximation Breaks Down
+
+
+Numerical Results
+-------------------------
+
+For an example system with 6 frequencies, with background matter profile :math:`\lambda=10\lambda_{\mathrm{MSW}}=10\cos(2\theta_v)\omega_v`, :math:`\sin 2\theta_v = 0.093`, :math:`\delta m^2 = \delta m_{13}^2=2.6\times 10^{-15}`, energy :math:`10\mathrm{MeV}`
+
+.. math::
+   \hat k = \{2.6138748783741892734981263895723814892738971298790875814789472389461\
+29836741984650871234, 1.8, 1.4, 0.9, 0.7, 0.3\}
+
+and perturbation amplitudes
+
+.. math::
+   \hat a = 0.1\hat k^{-5/3} = \{0.0201616, 0.0375445, 0.057076, 0.119196, 0.181205, 0.743814\}.
+
+.. figure:: assets/multi-frequency/6-frequency-matter-profile-200-combinations.png
+   :align: center
+
+   Matter profile with 6 frequencies
