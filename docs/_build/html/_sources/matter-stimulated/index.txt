@@ -160,6 +160,9 @@ we simply calculate
    single-frequency.rst
    two-frequency.rst
    multi-frequency.rst
+   interference.rst
+   linear-background-matter.rst
+
 
 
 
