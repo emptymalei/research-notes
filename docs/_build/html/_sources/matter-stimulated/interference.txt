@@ -83,7 +83,7 @@ Approximations
 -----------------
 
 
-For single n list equation, the second term can be dropped if :math:`\phi_1` is much smaller than 1. In the language of physics, the second term can be dropped if the system is very close to resonance.
+For single n list equation, the second term dominates if :math:`\phi_1` is much smaller than 1. In the language of physics, the second term dominates if the system is very close to resonance.
 
 .. admonition:: :math:`\phi_n` and resonance
    :class: note
@@ -93,7 +93,11 @@ For single n list equation, the second term can be dropped if :math:`\phi_1` is 
    .. math::
       \phi_n = \sum_{a}^N n_a k_a - \omega_m.
 
-In the multi-n-list case, this approximation is easily destroyed. As an example, suppose we have :math:`A_1= A_2 = A` and :math:`\phi_2 = 10^{10}\phi_1`, the second term in equation :eq:`two-n-list-second-order-eq-o-m` becomes
+In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have :math:`A_1= A_2 = A` and :math:`\phi_2 = 10^{10}\phi_1`, the second term in equation :eq:`two-n-list-second-order-eq-o-m` becomes
 
 .. math::
-   a
+   \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},
+
+which can be dropped on as long as :math:`\phi_1` is not as small as :math:`10^{-10}`.
+
+We exaggerated the situation.

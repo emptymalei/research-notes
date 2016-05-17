@@ -137,6 +137,168 @@
             
   <div class="section" id="linear-background-matter-profile">
 <h1>Linear Background Matter Profile<a class="headerlink" href="#linear-background-matter-profile" title="Permalink to this headline">¶</a></h1>
+<p>The equation of motion in flavor basis for arbitary matter profile <span class="math">\(\lambda(x)\)</span> is</p>
+<div class="math">
+\[\begin{split}i \partial_x \begin{pmatrix}
+\psi_e\\
+\psi_x
+\end{pmatrix} = \left[
+\left( \frac{\lambda(x)}{2} - \frac{\omega_v}{2} \cos 2\theta_v  \right) \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1
+\right]\begin{pmatrix}
+\psi_e\\
+\psi_x
+\end{pmatrix}.\end{split}\]</div>
+<p>Introduce the T transformation</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_e\\
+\psi_x
+\end{pmatrix} = \mathbf{T} \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = \begin{pmatrix}
+e^{-i \eta(x)} &amp; 0 \\
+0 &amp; e^{i \eta(x)}
+\end{pmatrix} \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>By multiplying on both sides <span class="math">\(\mathbf{T}^\dagger\)</span>, we get</p>
+<div class="math">
+\[\begin{split}i \partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = \frac{\omega_v}{2} \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{2i\eta(x)} \\
+e^{-2i\eta(x)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} + \left( \frac{\lambda(x)}{2} - \frac{\omega_v}{2} \cos 2\theta_v - \partial_x \eta(x) \right) \sigma_3 \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>To remove the diagonal elements we require</p>
+<div class="math">
+\[\frac{\lambda(x)}{2} - \frac{\omega_v}{2} \cos 2\theta_v - \partial_x \eta(x)  = 0,\]</div>
+<div class="math">
+\[\eta(x) = \eta(0) + \frac{1}{2}\int_0^x dx' \left( \lambda(x) - \frac{\omega_v}{2} \cos 2\theta_v \right) .\]</div>
+<p>Perodic perturbation can be used</p>
+<div class="math">
+\[\delta \lambda(x) = A\sin (kx + \phi).\]</div>
+<p><span class="math">\(\eta(x)\)</span> has the form</p>
+<div class="math">
+\[\begin{split}\eta(x) &amp;= \eta(0) + \frac{1}{2} \int_0^x dx' (\lambda_0(x) + A\sin(kx+\phi) ) - \frac{1}{2}\omega_v \sin 2\theta_v x \\
+&amp; = - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) {\color{grey}- \frac{1}{2}g(0) - \frac{A}{2k} \cos \phi + \eta(0) },\end{split}\]</div>
+<p>where <span class="math">\(g(x)=\int dx' \lambda_0(x')\)</span> and the grey part is usally set to zero.</p>
+<p>The equation we are dealing with is</p>
+<div class="math">
+\[\begin{split}i \partial_x  \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = \frac{\omega_v}{2} \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{2i\eta(x)} \\
+e^{-2i\eta(x)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\eta(x) = - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) .\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Can we solve the equation</p>
+<p>Here is the problem. For most general <span class="math">\(g(x)\)</span> we are not guaranteed to have a analycal solution of the system.</p>
+<p>For <span class="math">\(g(x)\propto x\)</span> we have demonstrated that the system is solvale.</p>
+<p class="last">What about <span class="math">\(g(x)\propto x^2\)</span> (linear background matter profile) and <span class="math">\(g(x)\propto e^{x}\)</span> (exponential background matter profile)?</p>
+</div>
+<div class="section" id="id1">
+<h2>Linear Background Matter Profile<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Equation Solved</p>
+<p>It turns out that we can solve the system</p>
+<div class="math">
+\[\begin{split}i\partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = A_s  \begin{pmatrix}
+0 &amp; e^{if x^2} \\
+e^{-if x^2} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>The solution involves hypergeometric functions. For initial condition</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_{b1}(0)\\
+\psi_{b2}(0)
+\end{pmatrix} = \begin{pmatrix}
+1\\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>we have the solution</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_{b1}(x)\\
+\psi_{b2}(x)
+\end{pmatrix} = \begin{pmatrix}
+{}_1F_1 \left( \frac{i A_s^2}{4f};\frac{1}{2}; i f x^2 \right) \\
+-i A_s x e^{-i f x^2} {}_1F_1 \left( \frac{i A_s^2}{4f}+1;\frac{3}{2}; i f x^2 \right)
+\end{pmatrix},\end{split}\]</div>
+<p class="last">where <span class="math">\({}_1F_1(a;b;z)\)</span> is <a class="reference external" href="https://en.wikipedia.org/wiki/Confluent_hypergeometric_function">hypergeometric function</a> .</p>
+</div>
+<p>We choose the background matter profile to be</p>
+<div class="math">
+\[\lambda_0(x) = a x + b,\]</div>
+<p>while the perturbation to be</p>
+<div class="math">
+\[\delta \lambda(x) = A\sin (kx + \phi).\]</div>
+<p><span class="math">\(\eta(x)\)</span> is solved</p>
+<div class="math">
+\[\begin{split}g(x) &amp; = \frac{1}{2} ax^2+b \\
+\eta(x) &amp;= - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),\end{split}\]</div>
+<p>so that</p>
+<div class="math">
+\[e^{2i\eta(x)} = e^{-i \omega_v \sin 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Jacobi-Anger Expansion</p>
+<div class="last math">
+\[e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)} = \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi)}.\]</div>
+</div>
+<p>Collect terms</p>
+<div class="math">
+\[\begin{split}e^{2i\eta(x)} &amp;= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \sin 2\theta_v x } \\
+&amp;=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) }  ,\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[b_n = b + nk + \phi - \omega_v \sin 2\theta_v.\]</div>
+<p>The equation to be sovled becomes</p>
+<div class="math">
+\[\begin{split}i\partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} =  \frac{\omega_v}{2}\sin 2\theta_v \sum_{n=-\infty}^\infty (-i)^n J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) } \\
+e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>With initial condition</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_{b1}(0)\\
+\psi_{b2}(0)
+\end{pmatrix} = \begin{pmatrix}
+1\\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>we write down the solution</p>
+<div class="math">
+\[\begin{split}\psi_1(x)&amp;= {}_1F_1 \left( \frac{i A_s^2}{2 a}; \frac{1}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) \\
+\psi_2(x) &amp;=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .\end{split}\]</div>
+</div>
 </div>
 
 

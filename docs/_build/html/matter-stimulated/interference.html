@@ -194,16 +194,18 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 \[\partial_x^2 \psi_{b2} + \left( \frac{i}{\phi_1}  \right) \partial_x \psi_{b2} + \lvert A_1 \rvert^2 \psi_{b2} = 0.\]</div>
 <div class="section" id="approximations">
 <h2>Approximations<a class="headerlink" href="#approximations" title="Permalink to this headline">¶</a></h2>
-<p>For single n list equation, the second term can be dropped if <span class="math">\(\phi_1\)</span> is much smaller than 1. In the language of physics, the second term can be dropped if the system is very close to resonance.</p>
+<p>For single n list equation, the second term dominates if <span class="math">\(\phi_1\)</span> is much smaller than 1. In the language of physics, the second term dominates if the system is very close to resonance.</p>
 <div class="note admonition">
 <p class="first admonition-title"><span class="math">\(\phi_n\)</span> and resonance</p>
 <p><span class="math">\(\phi_n\)</span> is in fact the deviation from exact resonance.</p>
 <div class="last math">
 \[\phi_n = \sum_{a}^N n_a k_a - \omega_m.\]</div>
 </div>
-<p>In the multi-n-list case, this approximation is easily destroyed. As an example, suppose we have <span class="math">\(A_1= A_2 = A\)</span> and <span class="math">\(\phi_2 = 10^{10}\phi_1\)</span>, the second term in equation <a href="#equation-two-n-list-second-order-eq-o-m">(1)</a> becomes</p>
+<p>In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have <span class="math">\(A_1= A_2 = A\)</span> and <span class="math">\(\phi_2 = 10^{10}\phi_1\)</span>, the second term in equation <a href="#equation-two-n-list-second-order-eq-o-m">(1)</a> becomes</p>
 <div class="math">
-\[a\]</div>
+\[\frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},\]</div>
+<p>which can be dropped on as long as <span class="math">\(\phi_1\)</span> is not as small as <span class="math">\(10^{-10}\)</span>.</p>
+<p>We exaggerated the situation.</p>
 </div>
 </div>
 
