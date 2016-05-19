@@ -65,8 +65,8 @@ Perodic perturbation can be used
 :math:`\eta(x)` has the form
 
 .. math::
-   \eta(x) &= \eta(0) + \frac{1}{2} \int_0^x dx' (\lambda_0(x) + A\sin(kx+\phi) ) - \frac{1}{2}\omega_v \sin 2\theta_v x \\
-   & = - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) {\color{grey}- \frac{1}{2}g(0) - \frac{A}{2k} \cos \phi + \eta(0) },
+   \eta(x) &= \eta(0) + \frac{1}{2} \int_0^x dx' (\lambda_0(x) + A\sin(kx+\phi) ) - \frac{1}{2}\omega_v \cos 2\theta_v x \\
+   & = - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) {\color{grey}- \frac{1}{2}g(0) - \frac{A}{2k} \cos \phi + \eta(0) },
 
 where :math:`g(x)=\int dx' \lambda_0(x')` and the grey part is usally set to zero.
 
@@ -87,7 +87,7 @@ The equation we are dealing with is
 where
 
 .. math::
-   \eta(x) = - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) .
+   \eta(x) = - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) .
 
 
 .. admonition:: Can we solve the equation
@@ -159,12 +159,12 @@ while the perturbation to be
 
 .. math::
    g(x) & = \frac{1}{2} ax^2+b \\
-   \eta(x) &= - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),
+   \eta(x) &= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),
 
 so that
 
 .. math::
-   e^{2i\eta(x)} = e^{-i \omega_v \sin 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.
+   e^{2i\eta(x)} = e^{-i \omega_v \cos 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.
 
 
 .. admonition:: Jacobi-Anger Expansion
@@ -177,13 +177,13 @@ so that
 Collect terms
 
 .. math::
-   e^{2i\eta(x)} &= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \sin 2\theta_v x } \\
-   &=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) }  ,
+   e^{2i\eta(x)} &= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \cos 2\theta_v x } \\
+   &=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) }  ,
 
 where
 
 .. math::
-   b_n = b + nk + \phi - \omega_v \sin 2\theta_v.
+   b_n = b + nk + \phi - \omega_v \cos 2\theta_v.
 
 
 The equation to be sovled becomes
@@ -193,8 +193,8 @@ The equation to be sovled becomes
    \psi_{b1}\\
    \psi_{b2}
    \end{pmatrix} =  \frac{\omega_v}{2}\sin 2\theta_v \sum_{n=-\infty}^\infty (-i)^n J_n\left( \frac{A}{k} \right) \begin{pmatrix}
-   0 & e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) } \\
-   e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right)} & 0
+   0 & e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \\
+   e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right)} & 0
    \end{pmatrix}\begin{pmatrix}
    \psi_{b1}\\
    \psi_{b2}
@@ -216,4 +216,4 @@ we write down the solution
 
 .. math::
    \psi_1(x)&= {}_1F_1 \left( \frac{i A_s^2}{2 a}; \frac{1}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) \\
-   \psi_2(x) &=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .
+   \psi_2(x) &=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .

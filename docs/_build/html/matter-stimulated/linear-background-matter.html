@@ -188,8 +188,8 @@ e^{-2i\eta(x)} &amp; 0
 \[\delta \lambda(x) = A\sin (kx + \phi).\]</div>
 <p><span class="math">\(\eta(x)\)</span> has the form</p>
 <div class="math">
-\[\begin{split}\eta(x) &amp;= \eta(0) + \frac{1}{2} \int_0^x dx' (\lambda_0(x) + A\sin(kx+\phi) ) - \frac{1}{2}\omega_v \sin 2\theta_v x \\
-&amp; = - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) {\color{grey}- \frac{1}{2}g(0) - \frac{A}{2k} \cos \phi + \eta(0) },\end{split}\]</div>
+\[\begin{split}\eta(x) &amp;= \eta(0) + \frac{1}{2} \int_0^x dx' (\lambda_0(x) + A\sin(kx+\phi) ) - \frac{1}{2}\omega_v \cos 2\theta_v x \\
+&amp; = - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) {\color{grey}- \frac{1}{2}g(0) - \frac{A}{2k} \cos \phi + \eta(0) },\end{split}\]</div>
 <p>where <span class="math">\(g(x)=\int dx' \lambda_0(x')\)</span> and the grey part is usally set to zero.</p>
 <p>The equation we are dealing with is</p>
 <div class="math">
@@ -205,7 +205,7 @@ e^{-2i\eta(x)} &amp; 0
 \end{pmatrix},\end{split}\]</div>
 <p>where</p>
 <div class="math">
-\[\eta(x) = - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) .\]</div>
+\[\eta(x) = - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) .\]</div>
 <div class="note admonition">
 <p class="first admonition-title">Can we solve the equation</p>
 <p>Here is the problem. For most general <span class="math">\(g(x)\)</span> we are not guaranteed to have a analycal solution of the system.</p>
@@ -257,10 +257,10 @@ e^{-if x^2} &amp; 0
 <p><span class="math">\(\eta(x)\)</span> is solved</p>
 <div class="math">
 \[\begin{split}g(x) &amp; = \frac{1}{2} ax^2+b \\
-\eta(x) &amp;= - \frac{1}{2} \omega_v \sin 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),\end{split}\]</div>
+\eta(x) &amp;= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),\end{split}\]</div>
 <p>so that</p>
 <div class="math">
-\[e^{2i\eta(x)} = e^{-i \omega_v \sin 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.\]</div>
+\[e^{2i\eta(x)} = e^{-i \omega_v \cos 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.\]</div>
 <div class="note admonition">
 <p class="first admonition-title">Jacobi-Anger Expansion</p>
 <div class="last math">
@@ -268,19 +268,19 @@ e^{-if x^2} &amp; 0
 </div>
 <p>Collect terms</p>
 <div class="math">
-\[\begin{split}e^{2i\eta(x)} &amp;= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \sin 2\theta_v x } \\
-&amp;=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) }  ,\end{split}\]</div>
+\[\begin{split}e^{2i\eta(x)} &amp;= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \cos 2\theta_v x } \\
+&amp;=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) }  ,\end{split}\]</div>
 <p>where</p>
 <div class="math">
-\[b_n = b + nk + \phi - \omega_v \sin 2\theta_v.\]</div>
+\[b_n = b + nk + \phi - \omega_v \cos 2\theta_v.\]</div>
 <p>The equation to be sovled becomes</p>
 <div class="math">
 \[\begin{split}i\partial_x \begin{pmatrix}
 \psi_{b1}\\
 \psi_{b2}
 \end{pmatrix} =  \frac{\omega_v}{2}\sin 2\theta_v \sum_{n=-\infty}^\infty (-i)^n J_n\left( \frac{A}{k} \right) \begin{pmatrix}
-0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) } \\
-e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right)} &amp; 0
+0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \\
+e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right)} &amp; 0
 \end{pmatrix}\begin{pmatrix}
 \psi_{b1}\\
 \psi_{b2}
@@ -297,7 +297,7 @@ e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \
 <p>we write down the solution</p>
 <div class="math">
 \[\begin{split}\psi_1(x)&amp;= {}_1F_1 \left( \frac{i A_s^2}{2 a}; \frac{1}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) \\
-\psi_2(x) &amp;=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .\end{split}\]</div>
+\psi_2(x) &amp;=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .\end{split}\]</div>
 </div>
 </div>
 
