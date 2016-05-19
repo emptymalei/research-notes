@@ -187,7 +187,13 @@ B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_3 k_3 J_{n_1}(\frac{A_1}
 <p>Given a system with N perturbations</p>
 <div class="math">
 \[\delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),\]</div>
-<p>the Hamiltonian 12 element through a guess is</p>
+<p>the Hamiltonian can be written as</p>
+<div class="math">
+\[\begin{split}H = \begin{pmatrix}
+0 &amp; h_N \\
+h_N^* &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where the Hamiltonian 12 element is</p>
 <div class="math">
 \[h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},\]</div>
 <p>where</p>
@@ -197,7 +203,9 @@ B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_3 k_3 J_{n_1}(\frac{A_1}
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
 <ol class="last arabic simple">
-<li>To actually make some sense here. I need to find out which approximation breaks down in Kelly&#8217;s paper; Ref to admonition Which Approximation Breaks Down</li>
+<li>To actually make some sense here. I need to find out which approximation breaks down in Kelly&#8217;s paper; Ref to admonition Which Approximation Breaks Down. Check!</li>
+<li>Use physical length scales to simplify/obscure the problem. Check!</li>
+<li>How can small <span class="math">\(k\)</span> destroy the resonance of large <span class="math">\(k\)</span>? c.f., Kelly&#8217;s PRD paper.</li>
 </ol>
 </div>
 </div>

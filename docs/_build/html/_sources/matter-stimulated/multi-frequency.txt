@@ -77,7 +77,16 @@ Given a system with N perturbations
 .. math::
    \delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),
 
-the Hamiltonian 12 element through a guess is
+the Hamiltonian can be written as
+
+.. math::
+   H = \begin{pmatrix}
+   0 & h_N \\
+   h_N^* & 0
+   \end{pmatrix},
+
+
+where the Hamiltonian 12 element is
 
 .. math::
    h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},
@@ -100,7 +109,10 @@ where
    :class: todo
 
 
-   1. To actually make some sense here. I need to find out which approximation breaks down in Kelly's paper; Ref to admonition Which Approximation Breaks Down
+   1. To actually make some sense here. I need to find out which approximation breaks down in Kelly's paper; Ref to admonition Which Approximation Breaks Down. Check!
+   2. Use physical length scales to simplify/obscure the problem. Check!
+   3. How can small :math:`k` destroy the resonance of large :math:`k`? c.f., Kelly's PRD paper.
+
 
 
 Numerical Results
