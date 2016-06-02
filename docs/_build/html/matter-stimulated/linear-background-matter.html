@@ -257,7 +257,7 @@ e^{-if x^2} &amp; 0
 <p><span class="math">\(\eta(x)\)</span> is solved</p>
 <div class="math">
 \[\begin{split}g(x) &amp; = \frac{1}{2} ax^2+b \\
-\eta(x) &amp;= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),\end{split}\]</div>
+\eta(x) &amp;= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b x \right),\end{split}\]</div>
 <p>so that</p>
 <div class="math">
 \[e^{2i\eta(x)} = e^{-i \omega_v \cos 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.\]</div>
@@ -269,18 +269,24 @@ e^{-if x^2} &amp; 0
 <p>Collect terms</p>
 <div class="math">
 \[\begin{split}e^{2i\eta(x)} &amp;= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \cos 2\theta_v x } \\
-&amp;=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) }  ,\end{split}\]</div>
+&amp;=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi \right) } \\
+&amp; = \sum_{n=-\infty}^{\infty} J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi + n\pi \right) } \\
+&amp; = \sum_{n=-\infty}^{\infty} J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) }  ,\end{split}\]</div>
 <p>where</p>
 <div class="math">
-\[b_n = b + nk + \phi - \omega_v \cos 2\theta_v.\]</div>
+\[\begin{split}b_n &amp;= b + nk - \omega_v \cos 2\theta_v,\\
+\phi'&amp;= \phi + \pi,\end{split}\]</div>
+<p>and we have used</p>
+<div class="math">
+\[(-i)^n = e^{i n\pi}.\]</div>
 <p>The equation to be sovled becomes</p>
 <div class="math">
 \[\begin{split}i\partial_x \begin{pmatrix}
 \psi_{b1}\\
 \psi_{b2}
-\end{pmatrix} =  \frac{\omega_v}{2}\sin 2\theta_v \sum_{n=-\infty}^\infty (-i)^n J_n\left( \frac{A}{k} \right) \begin{pmatrix}
-0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \\
-e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right)} &amp; 0
+\end{pmatrix} =   \sum_{n=-\infty}^\infty \frac{\omega_v}{2}\sin 2\theta_v  J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) } \\
+e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right)} &amp; 0
 \end{pmatrix}\begin{pmatrix}
 \psi_{b1}\\
 \psi_{b2}
@@ -294,10 +300,28 @@ e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} 
 1\\
 0
 \end{pmatrix},\end{split}\]</div>
-<p>we write down the solution</p>
+<p>the equation</p>
 <div class="math">
-\[\begin{split}\psi_1(x)&amp;= {}_1F_1 \left( \frac{i A_s^2}{2 a}; \frac{1}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) \\
-\psi_2(x) &amp;=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .\end{split}\]</div>
+\[\begin{split}i\partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} =   \frac{\omega_v}{2}\sin 2\theta_v  J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) } \\
+e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>can be solved. To save keystroke, we define</p>
+<div class="math">
+\[A_s= J_n\left(\frac{A}{k}\right)\frac{\omega_v}{2} \sin 2\theta_v.\]</div>
+<p>We write down the solution</p>
+<div class="math">
+\[\psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } \left[ - b_n H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+a x) b_n H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}p_1 &amp; = \frac{(-1)^{1/4} b_n}{\sqrt{2a}}, \\
+p_2 &amp; = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }\end{split}\]</div>
 </div>
 </div>
 

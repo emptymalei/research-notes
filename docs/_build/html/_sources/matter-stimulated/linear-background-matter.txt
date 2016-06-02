@@ -159,7 +159,7 @@ while the perturbation to be
 
 .. math::
    g(x) & = \frac{1}{2} ax^2+b \\
-   \eta(x) &= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),
+   \eta(x) &= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b x \right),
 
 so that
 
@@ -178,12 +178,20 @@ Collect terms
 
 .. math::
    e^{2i\eta(x)} &= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \cos 2\theta_v x } \\
-   &=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) }  ,
+   &=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi \right) } \\
+   & = \sum_{n=-\infty}^{\infty} J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi + n\pi \right) } \\
+   & = \sum_{n=-\infty}^{\infty} J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) }  ,
 
 where
 
 .. math::
-   b_n = b + nk + \phi - \omega_v \cos 2\theta_v.
+   b_n &= b + nk - \omega_v \cos 2\theta_v,\\
+   \phi'&= \phi + \pi,
+
+and we have used
+
+.. math::
+   (-i)^n = e^{i n\pi}.
 
 
 The equation to be sovled becomes
@@ -192,9 +200,9 @@ The equation to be sovled becomes
    i\partial_x \begin{pmatrix}
    \psi_{b1}\\
    \psi_{b2}
-   \end{pmatrix} =  \frac{\omega_v}{2}\sin 2\theta_v \sum_{n=-\infty}^\infty (-i)^n J_n\left( \frac{A}{k} \right) \begin{pmatrix}
-   0 & e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \\
-   e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right)} & 0
+   \end{pmatrix} =   \sum_{n=-\infty}^\infty \frac{\omega_v}{2}\sin 2\theta_v  J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+   0 & e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) } \\
+   e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right)} & 0
    \end{pmatrix}\begin{pmatrix}
    \psi_{b1}\\
    \psi_{b2}
@@ -212,8 +220,34 @@ With initial condition
    0
    \end{pmatrix},
 
-we write down the solution
+
+the equation
+
 
 .. math::
-   \psi_1(x)&= {}_1F_1 \left( \frac{i A_s^2}{2 a}; \frac{1}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) \\
-   \psi_2(x) &=  - i A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a}  \right) } \left( x + \frac{b_n}{a}\right) {}_1F_1\left( 1 + \frac{i A_s^2}{2 a}; \frac{3}{2}; i \frac{a}{2} \left( x + \frac{b_n}{a} \right)^2 \right) .
+   i\partial_x \begin{pmatrix}
+   \psi_{b1}\\
+   \psi_{b2}
+   \end{pmatrix} =   \frac{\omega_v}{2}\sin 2\theta_v  J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+   0 & e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) } \\
+   e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right)} & 0
+   \end{pmatrix}\begin{pmatrix}
+   \psi_{b1}\\
+   \psi_{b2}
+   \end{pmatrix}.
+
+can be solved. To save keystroke, we define
+
+.. math::
+   A_s= J_n\left(\frac{A}{k}\right)\frac{\omega_v}{2} \sin 2\theta_v.
+
+We write down the solution
+
+.. math::
+   \psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } \left[ - b_n H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+a x) b_n H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},
+
+where
+
+.. math::
+   p_1 & = \frac{(-1)^{1/4} b_n}{\sqrt{2a}}, \\
+   p_2 & = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }
