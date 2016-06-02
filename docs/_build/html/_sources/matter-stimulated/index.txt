@@ -73,6 +73,12 @@ To remove the position dependent :math:`\sigma_3` term in the Hamiltonian which 
       = & \begin{pmatrix} a_{11} e^{i(\eta_1+\eta_2)} & a_{12} e^{i(\eta_1 - \eta_2)} \\ a_{21} e^{-i(\eta_1-\eta_2)} & a_{22} e^{-i(\eta_1+\eta_2)}  \end{pmatrix}
 
 
+   Another very useful relation is
+
+   .. math::
+      i\mathbf{T}^{\dagger} \partial_x \mathbf{T} = \partial_x \eta(x) \sigma_3.
+
+
 The Schrodinger equation in background matter basis is
 
 .. math::

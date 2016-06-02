@@ -159,7 +159,7 @@ while the perturbation to be
 
 .. math::
    g(x) & = \frac{1}{2} ax^2+b \\
-   \eta(x) &= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b \right),
+   \eta(x) &= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b x \right),
 
 so that
 
