@@ -244,10 +244,28 @@ can be solved. To save keystroke, we define
 We write down the solution
 
 .. math::
-   \psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } \left[ - b_n H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+a x) b_n H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},
+   \psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } b_n  \left[ - H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+\frac{a}{b_n} x) H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},
 
 where
 
 .. math::
    p_1 & = \frac{(-1)^{1/4} b_n}{\sqrt{2a}}, \\
-   p_2 & = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }
+   p_2 & = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }.
+
+:math:`F_1\equiv {}_1 F_1` is the hypergeometric function. What's important is that we can always define
+
+.. math::
+   M_n & =  \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \\
+   K_{F,n} &= F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \\
+   K_{H,n} &= H_{-1 - i A_s^2/a} (p_1),
+
+which are all constants given the parameters and n. We can reduce the solution to
+
+.. math::
+   \psi_2 =  (-1)^{1/4} \sqrt{2} A_s b_n \frac{K_{H,n} F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) (1+\frac{a}{b_n} x) - K_{F,n} H_{-1 - i A_s^2/a} (p_1 + p_2 x) }{ M_n } e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) }.
+
+Some points:
+
+1. The third argument of :math:`F_1`, which is denoted as :math:`p_1 +p_2 x` is in fact imaginary. As a result, this value of hypergeometric function is actually dropping as :math:`x` increase.
+2. In this result, the x dependent Hermite polynomial is a monotonically decreasing function.
+3. The overall phase doesn't play a role in the transition probability.

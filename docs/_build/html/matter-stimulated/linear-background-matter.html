@@ -317,11 +317,25 @@ e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} 
 \[A_s= J_n\left(\frac{A}{k}\right)\frac{\omega_v}{2} \sin 2\theta_v.\]</div>
 <p>We write down the solution</p>
 <div class="math">
-\[\psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } \left[ - b_n H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+a x) b_n H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},\]</div>
+\[\psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } b_n  \left[ - H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+\frac{a}{b_n} x) H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},\]</div>
 <p>where</p>
 <div class="math">
 \[\begin{split}p_1 &amp; = \frac{(-1)^{1/4} b_n}{\sqrt{2a}}, \\
-p_2 &amp; = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }\end{split}\]</div>
+p_2 &amp; = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }.\end{split}\]</div>
+<p><span class="math">\(F_1\equiv {}_1 F_1\)</span> is the hypergeometric function. What&#8217;s important is that we can always define</p>
+<div class="math">
+\[\begin{split}M_n &amp; =  \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \\
+K_{F,n} &amp;= F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \\
+K_{H,n} &amp;= H_{-1 - i A_s^2/a} (p_1),\end{split}\]</div>
+<p>which are all constants given the parameters and n. We can reduce the solution to</p>
+<div class="math">
+\[\psi_2 =  (-1)^{1/4} \sqrt{2} A_s b_n \frac{K_{H,n} F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) (1+\frac{a}{b_n} x) - K_{F,n} H_{-1 - i A_s^2/a} (p_1 + p_2 x) }{ M_n } e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) }.\]</div>
+<p>Some points:</p>
+<ol class="arabic simple">
+<li>The third argument of <span class="math">\(F_1\)</span>, which is denoted as <span class="math">\(p_1 +p_2 x\)</span> is in fact imaginary. As a result, this value of hypergeometric function is actually dropping as <span class="math">\(x\)</span> increase.</li>
+<li>In this result, the x dependent Hermite polynomial is a monotonically decreasing function.</li>
+<li>The overall phase doesn&#8217;t play a role in the transition probability.</li>
+</ol>
 </div>
 </div>
 
