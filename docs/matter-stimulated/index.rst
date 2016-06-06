@@ -14,7 +14,7 @@ where :math:`\lambda_0 = \sqrt{2}G_F n_{e0}` and :math:`\delta \lambda(x) = \sqr
 The Hamiltonian in background matter basis :math:`\{\ket{\nu_{\mathrm{L}}},\ket{\nu_{\mathrm{H}}}\}` is
 
 .. math::
-   H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin \theta_m \sigma_1.
+   H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin 2 \theta_m \sigma_1.
 
 Here by background matter basis, we mean that the Hamiltonian is diagonalized if perturbation is zero in matter profile.
 
