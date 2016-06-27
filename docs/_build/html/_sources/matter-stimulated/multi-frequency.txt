@@ -94,7 +94,7 @@ where the Hamiltonian 12 element is
 where
 
 .. math::
-   B_N &= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+   B_N &= (-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
    \Phi_N &= e^{i\left( \sum_a n_a \phi_a \right)}.
 
 

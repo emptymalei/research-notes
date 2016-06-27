@@ -366,15 +366,15 @@ where
 and
 
 .. math::
-   \hat B_n = \hat k \tan 2\theta_{\mathrm{m}} n J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).
+   \hat B_n = (-i)^n \hat k \tan 2\theta_{\mathrm{m}} n J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).
 
 
 It becomes much more clearer if we plug :math:`\hat h` back into Hamiltonian. What we find is that
 
 .. math::
    \hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
-   0 & \frac{1}{2} \hat B_n \exp{i(n \hat k - 1)\hat x} \\
-   \frac{1}{2} \hat B_n^* \exp{-i(n \hat k - 1)\hat x} & 0
+   0 & -\frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x} \\
+   -\frac{1}{2} \hat B_n^* e^{-i(n \hat k - 1)\hat x} & 0
    \end{pmatrix}.
 
 With some effort, we find that the solution to the second amplitude of the wave function is

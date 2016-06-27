@@ -166,7 +166,9 @@ h_N^* &amp; 0
 <div class="math">
 \[\begin{split}B_N &amp;= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
 \Phi_N &amp;= e^{i\left( \sum_a n_a \phi_a \right)}.\end{split}\]</div>
-<p>So we could identify the important combinations of n&#8217;s <span class="math">\(\{n_1, \cdots, n_N \}\)</span> so that we can approximate the actual result.</p>
+<div class="section" id="apply-approximations-to-two-frequencies">
+<h2>Apply Approximations to Two Frequencies<a class="headerlink" href="#apply-approximations-to-two-frequencies" title="Permalink to this headline">¶</a></h2>
+<p>We could identify the important combinations of n&#8217;s <span class="math">\(\{n_1, \cdots, n_N \}\)</span> so that we can approximate the actual result.</p>
 <p>The important question is combining multiple lists of n&#8217;s is not intuitively easy to understand. Here we consider the effect of adding new list of n&#8217;s to the system.</p>
 <p>For simplicity a simplified system will be used,</p>
 <div class="math">
@@ -192,8 +194,8 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <p>As a comparison, we also write down the equation for single n list,</p>
 <div class="math">
 \[\partial_x^2 \psi_{b2} + \left( \frac{i}{\phi_1}  \right) \partial_x \psi_{b2} + \lvert A_1 \rvert^2 \psi_{b2} = 0.\]</div>
-<div class="section" id="approximations">
-<h2>Approximations<a class="headerlink" href="#approximations" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Approximations?</p>
 <p>For single n list equation, the second term dominates if <span class="math">\(\phi_1\)</span> is much smaller than 1. In the language of physics, the second term dominates if the system is very close to resonance.</p>
 <div class="note admonition">
 <p class="first admonition-title"><span class="math">\(\phi_n\)</span> and resonance</p>
@@ -205,7 +207,118 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <div class="math">
 \[\frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},\]</div>
 <p>which can be dropped on as long as <span class="math">\(\phi_1\)</span> is not as small as <span class="math">\(10^{-10}\)</span>.</p>
-<p>We exaggerated the situation.</p>
+<p class="last">We exaggerated the situation.</p>
+</div>
+</div>
+<div class="section" id="resonance-destroyed">
+<h2>Resonance Destroyed<a class="headerlink" href="#resonance-destroyed" title="Permalink to this headline">¶</a></h2>
+<p>We first investigate two frequencies. The Hamiltonian for a single frequency matter perturbation is</p>
+<div class="math">
+\[\begin{split}\hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
+0 &amp; \frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x} \\
+\frac{1}{2} \hat B_n^* e^{-i(n \hat k - 1)\hat x} &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\hat B_n = (-i)^n \tan 2\theta_{\mathrm{m}} n \hat k  J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).\]</div>
+<p>In some conditions, even we have on of the matter frequancy at resonance, this resonance could be destroyed when a new matter frequency is destroyed. Numerical calculations show that this could happen if the new perturbation is off resonance and with larger <span class="math">\(B_{n_2}\)</span>.</p>
+<p>Let&#8217;s first set this first perturbation at resonance. Suppose we add in another matter perturbation with a frequency which is higher, i.e., <span class="math">\(k_2\ll k\)</span>. Since the wavelength of this new perturbation is much larger, we will assume it doesn&#8217;t change within one wavelength of the first perturbation. Thus it behaves as an additional background. Will this new background destroy the resonance? Illustration of this idea is shown in <a class="reference internal" href="#interference-adding-new-destroy-resonance-q-value"><span>Fig. 19</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="interference-adding-new-destroy-resonance-q-value"></span><img alt="../_images/second-freq-as-bg-illustration.png" src="../_images/second-freq-as-bg-illustration.png" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The two matter perturbations</span></p>
+</div>
+<p>To quantify this idea, we calculate the Q values for different modes with and without the new frequency. The procedure should be</p>
+<ol class="arabic simple">
+<li>Prepare the parameters: <span class="math">\(\omega_v\)</span>, <span class="math">\(\lambda_0\)</span> (background matter profile), <span class="math">\(\lambda_1\)</span> (perturbation amplitude for first perturbation), <span class="math">\(k_1\)</span> (perturbation wavenumber for first perturbation)</li>
+<li>Calculate the Q values.</li>
+<li>Add in <span class="math">\(\lambda_2\)</span> (perturbation amplitude for the second perturbation) and treat this new perturbation as a constant within one wavelength of the first perturbation. Just use some random phase for the new matter profile, i.e., set <span class="math">\(\sin(k_2 x)\)</span> to some resonanable value.</li>
+<li>Recalculate the Q values.</li>
+</ol>
+<p>Without the new perturbation (Mathematica Code):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>deltamsquare13 = 2.6*10^(-15);(*MeV^2*)
+energy20 = 20;(*Energy in units of MeV*)
+thetaV = ArcSin[Sqrt[0.093]]/2
+omegaVKK = OmegaVacuum[energy20, deltamsquare13](*MeV*)(*deltamsquare13/(2 energy20)(*MeV*)*)
+
+lambdaNKK = 0.5*Cos[2 thetaV] omegaVKK (*MeV*)
+
+onekListKK = {1};
+oneaListKK =(*{0.1};*){0.02 (MeVInverse2km[ 2 Pi/(omegaMKK onekListKK[[1]])]/1500)^(5/3)};
+onephiListKK = {0};
+
+Part[qValueOrderdList[listNGenerator[1, 10], onekListKK, oneaListKK, onephiListKK, thetamV], 1 ;; 10];
+Grid@%
+</pre></div>
+</div>
+<p>which returns the Q value results for each modes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{1}  0.
+{-1} 577810.
+{2}  1.75394*10^10
+{-2} 5.26182*10^10
+{3}  4.25927*10^15
+{-3} 8.51854*10^15
+{4}  1.16361*10^21
+{-4} 1.93935*10^21
+{5}  3.76761*10^26
+{-5} 5.65142*10^26
+</pre></div>
+</div>
+<p>Adding in the new frequency:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>phi2 = Pi/2/100;
+
+twoaListKK =(*{0.1,0.1};*){0.02 (MeVInverse2km[2 Pi/(omegaMKK*twokListKK[[1]])]/1500)^(5/3),
+0.02 (MeVInverse2km[2 Pi/(omegaMKK twokListKK[[2]])]/1500)^(5/3)};
+
+lambdaNKK2 = 0.5*Cos[2 thetaV] omegaVKK + Sin[phi2]*twoaListKK[[2]]*omegaMKK(*MeV*)
+
+omegaMKK2 = OmegaMatter2[lambdaNKK2, thetaV, omegaVKK](*MeV*)
+thetamV2 = Mod[ArcTan[Sin[2 thetaV]/(Cos[2 thetaV] - (lambdaNKK2/omegaVKK)^2)]/2, Pi]
+
+onekListKK2 = {1}*omegaMKK/omegaMKK2;
+oneaListKK2 =(*{0.1};*){0.02 (MeVInverse2km[2 Pi/(omegaMKK2 onekListKK2[[1]])]/1500)^(5/3)};
+
+Part[qValueOrderdList[listNGenerator[1, 10], onekListKK2, oneaListKK2, onephiListKK, thetamV2], 1 ;; 10]
+Grid@%
+</pre></div>
+</div>
+<p>and the results for Q values of different modes are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{1}  246.833
+{-1} 577687.
+{2}  1.75752*10^10
+{-2} 5.26655*10^10
+{3}  4.27026*10^15
+{-3} 8.53505*10^15
+{4}  1.16758*10^21
+{-4} 1.94507*10^21
+{5}  3.78384*10^26
+{-5} 5.67375*10^26
+</pre></div>
+</div>
+<p>The corresponding plots are shown in <a class="reference internal" href="#second-freq-as-bg-example-1-first-freq-only"><span>Fig. 20</span></a> and <a class="reference internal" href="#second-freq-as-bg-example-1-with-second-freq-as-bg"><span>Fig. 21</span></a></p>
+<div class="figure align-center" id="id2">
+<span id="second-freq-as-bg-example-1-first-freq-only"></span><img alt="../_images/second-freq-as-bg-example-1-first-freq-only.png" src="../_images/second-freq-as-bg-example-1-first-freq-only.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Only the first frequency which is at resonance</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<span id="second-freq-as-bg-example-1-with-second-freq-as-bg"></span><img alt="../_images/second-freq-as-bg-example-1-with-second-freq-as-bg.png" src="../_images/second-freq-as-bg-example-1-with-second-freq-as-bg.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">With the second frequency added in but only as a shift in background density</span></p>
+</div>
+<p>What determines the amplitude is</p>
+<div class="math">
+\[\frac{ \left\lvert  B_{n}  \right\rvert^2 }{ \left\lvert    B_{n}  \right\rvert^2 + ( n  k - \omega_m )^2  }.\]</div>
+<p>In this example, the coefficient in unit of <span class="math">\(\omega_m\)</span> for one perturbation only is</p>
+<div class="math">
+\[\lvert B_1 \rvert = 3.46135\times 10^{-6},\]</div>
+<p>while it shifts a little bit when the second frequency is added in as a background shift, in unit of <span class="math">\(\omega_m\)</span>,</p>
+<div class="math">
+\[\lvert B_1' \rvert = 3.46356\times 10^{-6}.\]</div>
+<p>We set the first frequency at resonance, which means</p>
+<div class="math">
+\[k - \omega_m = 0.\]</div>
+<p>With the apprearance of the second frequency, what we have now is, in unit of <span class="math">\(\omega_m\)</span>,</p>
+<div class="math">
+\[k - \omega_m' = 0.000854192,\]</div>
+<p>which is far beyond the width of the resonance.</p>
 </div>
 </div>
 

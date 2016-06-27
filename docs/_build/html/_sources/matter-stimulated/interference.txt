@@ -40,7 +40,13 @@ and
    \Phi_N &= e^{i\left( \sum_a n_a \phi_a \right)}.
 
 
-So we could identify the important combinations of n's :math:`\{n_1, \cdots, n_N \}` so that we can approximate the actual result.
+
+
+Apply Approximations to Two Frequencies
+--------------------------------------------------
+
+We could identify the important combinations of n's :math:`\{n_1, \cdots, n_N \}` so that we can approximate the actual result.
+
 
 The important question is combining multiple lists of n's is not intuitively easy to understand. Here we consider the effect of adding new list of n's to the system.
 
@@ -79,25 +85,171 @@ As a comparison, we also write down the equation for single n list,
    \partial_x^2 \psi_{b2} + \left( \frac{i}{\phi_1}  \right) \partial_x \psi_{b2} + \lvert A_1 \rvert^2 \psi_{b2} = 0.
 
 
-Approximations
------------------
-
-
-For single n list equation, the second term dominates if :math:`\phi_1` is much smaller than 1. In the language of physics, the second term dominates if the system is very close to resonance.
-
-.. admonition:: :math:`\phi_n` and resonance
+.. admonition:: Approximations?
    :class: note
 
-   :math:`\phi_n` is in fact the deviation from exact resonance.
+
+   For single n list equation, the second term dominates if :math:`\phi_1` is much smaller than 1. In the language of physics, the second term dominates if the system is very close to resonance.
+
+   .. admonition:: :math:`\phi_n` and resonance
+      :class: note
+
+      :math:`\phi_n` is in fact the deviation from exact resonance.
+
+      .. math::
+         \phi_n = \sum_{a}^N n_a k_a - \omega_m.
+
+   In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have :math:`A_1= A_2 = A` and :math:`\phi_2 = 10^{10}\phi_1`, the second term in equation :eq:`two-n-list-second-order-eq-o-m` becomes
 
    .. math::
-      \phi_n = \sum_{a}^N n_a k_a - \omega_m.
+      \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},
 
-In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have :math:`A_1= A_2 = A` and :math:`\phi_2 = 10^{10}\phi_1`, the second term in equation :eq:`two-n-list-second-order-eq-o-m` becomes
+   which can be dropped on as long as :math:`\phi_1` is not as small as :math:`10^{-10}`.
+
+   We exaggerated the situation.
+
+
+
+Resonance Destroyed
+----------------------------
+
+We first investigate two frequencies. The Hamiltonian for a single frequency matter perturbation is
 
 .. math::
-   \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},
+   \hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
+   0 & \frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x} \\
+   \frac{1}{2} \hat B_n^* e^{-i(n \hat k - 1)\hat x} & 0
+   \end{pmatrix},
 
-which can be dropped on as long as :math:`\phi_1` is not as small as :math:`10^{-10}`.
 
-We exaggerated the situation.
+where
+
+.. math::
+   \hat B_n = (-i)^n \tan 2\theta_{\mathrm{m}} n \hat k  J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).
+
+In some conditions, even we have on of the matter frequancy at resonance, this resonance could be destroyed when a new matter frequency is destroyed. Numerical calculations show that this could happen if the new perturbation is off resonance and with larger :math:`B_{n_2}`.
+
+Let's first set this first perturbation at resonance. Suppose we add in another matter perturbation with a frequency which is higher, i.e., :math:`k_2\ll k`. Since the wavelength of this new perturbation is much larger, we will assume it doesn't change within one wavelength of the first perturbation. Thus it behaves as an additional background. Will this new background destroy the resonance? Illustration of this idea is shown in :numref:`interference-adding-new-destroy-resonance-q-value`.
+
+.. _interference-adding-new-destroy-resonance-q-value:
+
+.. figure:: assets/interference/second-freq-as-bg-illustration.png
+   :align: center
+
+   The two matter perturbations
+
+To quantify this idea, we calculate the Q values for different modes with and without the new frequency. The procedure should be
+
+#. Prepare the parameters: :math:`\omega_v`, :math:`\lambda_0` (background matter profile), :math:`\lambda_1` (perturbation amplitude for first perturbation), :math:`k_1` (perturbation wavenumber for first perturbation)
+#. Calculate the Q values.
+#. Add in :math:`\lambda_2` (perturbation amplitude for the second perturbation) and treat this new perturbation as a constant within one wavelength of the first perturbation. Just use some random phase for the new matter profile, i.e., set :math:`\sin(k_2 x)` to some resonanable value.
+#. Recalculate the Q values.
+
+
+
+
+Without the new perturbation (Mathematica Code)::
+
+   deltamsquare13 = 2.6*10^(-15);(*MeV^2*)
+   energy20 = 20;(*Energy in units of MeV*)
+   thetaV = ArcSin[Sqrt[0.093]]/2
+   omegaVKK = OmegaVacuum[energy20, deltamsquare13](*MeV*)(*deltamsquare13/(2 energy20)(*MeV*)*)
+
+   lambdaNKK = 0.5*Cos[2 thetaV] omegaVKK (*MeV*)
+
+   onekListKK = {1};
+   oneaListKK =(*{0.1};*){0.02 (MeVInverse2km[ 2 Pi/(omegaMKK onekListKK[[1]])]/1500)^(5/3)};
+   onephiListKK = {0};
+
+   Part[qValueOrderdList[listNGenerator[1, 10], onekListKK, oneaListKK, onephiListKK, thetamV], 1 ;; 10];
+   Grid@%
+
+which returns the Q value results for each modes::
+
+   {1}	0.
+   {-1}	577810.
+   {2}	1.75394*10^10
+   {-2}	5.26182*10^10
+   {3}	4.25927*10^15
+   {-3}	8.51854*10^15
+   {4}	1.16361*10^21
+   {-4}	1.93935*10^21
+   {5}	3.76761*10^26
+   {-5}	5.65142*10^26
+
+Adding in the new frequency::
+
+   phi2 = Pi/2/100;
+
+   twoaListKK =(*{0.1,0.1};*){0.02 (MeVInverse2km[2 Pi/(omegaMKK*twokListKK[[1]])]/1500)^(5/3),
+   0.02 (MeVInverse2km[2 Pi/(omegaMKK twokListKK[[2]])]/1500)^(5/3)};
+
+   lambdaNKK2 = 0.5*Cos[2 thetaV] omegaVKK + Sin[phi2]*twoaListKK[[2]]*omegaMKK(*MeV*)
+
+   omegaMKK2 = OmegaMatter2[lambdaNKK2, thetaV, omegaVKK](*MeV*)
+   thetamV2 = Mod[ArcTan[Sin[2 thetaV]/(Cos[2 thetaV] - (lambdaNKK2/omegaVKK)^2)]/2, Pi]
+
+   onekListKK2 = {1}*omegaMKK/omegaMKK2;
+   oneaListKK2 =(*{0.1};*){0.02 (MeVInverse2km[2 Pi/(omegaMKK2 onekListKK2[[1]])]/1500)^(5/3)};
+
+   Part[qValueOrderdList[listNGenerator[1, 10], onekListKK2, oneaListKK2, onephiListKK, thetamV2], 1 ;; 10]
+   Grid@%
+
+and the results for Q values of different modes are::
+
+   {1}	246.833
+   {-1}	577687.
+   {2}	1.75752*10^10
+   {-2}	5.26655*10^10
+   {3}	4.27026*10^15
+   {-3}	8.53505*10^15
+   {4}	1.16758*10^21
+   {-4}	1.94507*10^21
+   {5}	3.78384*10^26
+   {-5}	5.67375*10^26
+
+
+The corresponding plots are shown in :numref:`second-freq-as-bg-example-1-first-freq-only` and :numref:`second-freq-as-bg-example-1-with-second-freq-as-bg`
+
+.. _second-freq-as-bg-example-1-first-freq-only:
+
+.. figure:: assets/interference/second-freq-as-bg-example-1-first-freq-only.png
+   :align: center
+
+   Only the first frequency which is at resonance
+
+
+
+.. _second-freq-as-bg-example-1-with-second-freq-as-bg:
+
+.. figure:: assets/interference/second-freq-as-bg-example-1-with-second-freq-as-bg.png
+   :align: center
+
+   With the second frequency added in but only as a shift in background density
+
+What determines the amplitude is
+
+.. math::
+   \frac{ \left\lvert  B_{n}  \right\rvert^2 }{ \left\lvert    B_{n}  \right\rvert^2 + ( n  k - \omega_m )^2  }.
+
+In this example, the coefficient in unit of :math:`\omega_m` for one perturbation only is
+
+.. math::
+   \lvert B_1 \rvert = 3.46135\times 10^{-6},
+
+while it shifts a little bit when the second frequency is added in as a background shift, in unit of :math:`\omega_m`,
+
+.. math::
+   \lvert B_1' \rvert = 3.46356\times 10^{-6}.
+
+We set the first frequency at resonance, which means
+
+.. math::
+   k - \omega_m = 0.
+
+With the apprearance of the second frequency, what we have now is, in unit of :math:`\omega_m`,
+
+.. math::
+   k - \omega_m' = 0.000854192,
+
+which is far beyond the width of the resonance.
