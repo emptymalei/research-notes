@@ -2,6 +2,31 @@ Interference
 ============================================
 
 
+
+.. admonition:: Summary
+   :class: note
+
+   Overall the system has at least two limits,
+
+   1. strong interference regime;
+   2. low-interference regime.
+
+   For either case, the system is explained within the ralm of superpositions of multiple Rabi oscillations.
+
+   As for the first case, th criteria is related to both the resonance itself and the size of physical system we are interested in. More specifically,
+
+   1. Each mode has an associated resonance, and explained by a single Rabi oscillation;
+   2. Whether a mode is important to the system is determined by Q value, which is defined as the ratio of distance to resonance and resonance width;
+   3. However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any transition probabilities within a small region;
+   4. What's more, higher orders have much smaller resonance width than low orders.
+
+   The second case has a much more complicated resonance, however with Komogorov spectra of matter, we could check the limits. One of them is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density.
+
+   1.
+
+
+
+
 In the calculation of multi-frequency matter background,
 
 .. math::
