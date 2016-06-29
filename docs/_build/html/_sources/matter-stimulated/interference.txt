@@ -113,6 +113,10 @@ As a comparison, we also write down the equation for single n list,
 Resonance Destroyed
 ----------------------------
 
+
+General Ideas
+~~~~~~~~~~~~~~~~~~~~~
+
 We first investigate two frequencies. The Hamiltonian for a single frequency matter perturbation is
 
 .. math::
@@ -253,3 +257,39 @@ With the apprearance of the second frequency, what we have now is, in unit of :m
    k - \omega_m' = 0.000854192,
 
 which is far beyond the width of the resonance.
+
+
+Some Artifical Systems
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+.. figure:: assets/interference/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-matter-density.png
+   :align: center
+
+   Matter profiles with one wavelength of the first perturbation
+
+
+The resonance from the first perturbation is destroyed as the second perturbation grows much larger than it.
+
+.. figure:: assets/interference/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-full-numerical.png
+   :align: center
+
+   Full numerical solutions
+
+
+An investigation of the most important mode shows that it is destroyed due to the a shift of background matter density.
+
+.. figure:: assets/interference/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-log.png
+   :align: center
+
+   Resonance destruction of the first mode
+
+
+
+
+
+
+
+Refs & Notes
+---------------------
