@@ -8,21 +8,31 @@ Interference
 
    Overall the system has at least two limits,
 
-   1. strong interference regime;
-   2. low-interference regime.
+   1. strong interference regime (the wavelength of the perturbations are of the same orders);
+   2. low-interference regime (one of the perturbations has a wavelength much larger than the others').
 
    For either case, the system is explained within the ralm of superpositions of multiple Rabi oscillations.
 
-   As for the first case, th criteria is related to both the resonance itself and the size of physical system we are interested in. More specifically,
+   As for the first case, th criteria is related to both the resonance itself and the size of physical system we are interested in.
 
-   1. Each mode has an associated resonance, and explained by a single Rabi oscillation;
-   2. Whether a mode is important to the system is determined by Q value, which is defined as the ratio of distance to resonance and resonance width;
-   3. However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any transition probabilities within a small region;
-   4. What's more, higher orders have much smaller resonance width than low orders.
+   1. Each mode has an associated resonance, and explained by a single Rabi oscillation. Higher orders have much smaller resonance width than low orders.
+   2. Whether a mode is important to the system is determined by Q value, which is defined as the ratio of distance to resonance and resonance width.
+   3. However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any significant transition probabilities within the region of the physical system.
 
-   The second case has a much more complicated resonance, however with Komogorov spectra of matter, we could check the limits. One of them is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density.
+   **However, we do not have a cystal clear understanding of such a strong interference.**
 
-   1.
+   The second case is essentially some limit of the strong interference. With Komogorov spectra of matter, the resonance is simplified in some sense. One of the limits is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density, within one wavelength of the small wavelength perturbations. Here we use two frequencies as examples, c.f. :numref:`interference-adding-new-destroy-resonance-q-value`.
+
+   1. Even if the short wavelength one is exactly on resonance, adding the second perturbation as a background shift could move the system out of the resonance. The math behind it is related to the amplitude,
+
+      .. math::
+         \frac{ \left\lvert  B_{n}  \right\rvert^2 }{ \left\lvert    B_{n}  \right\rvert^2 + ( n  k - \omega_m )^2  },
+
+      where :math:`n  k - \omega_m = 0` for the resonance situation. As we add in the second long wavelength perturbation, :math:`B_{n}`, :math:`\omega_m` will change. Nonetheless the relative change in :math:`B_n` is small while the change in :math:`nk-\omega_m` is huge compared to :math:`B_n` value, if the amplitude of the new perturbation is large enough, i.e., :math:`A_2 \gg \lvert B_n\rvert`.
+   2. The caveat is that the wavelength of the second perturbation :math:`k_2` must be within a range much smaller than :math:`k_1`, and much larger than the resonance transition probability wavelength, roughly speaking, :math:`k_1\gg k_2 \gg \lvert B_n\rvert`.
+   3. The newly added long wavelength merely has any effect when the system is in a region :math:`\mathrm{mod}(k_2 x,\pi)\sim 0`, since :math:`A_2\sin(k_2x)\sim 0` for these values. Such regions probabily will appear multiple times within the size of physical system. Then we see accumulation effect, so that the transition amplitude will rise as we go furthure out.
+
+   **From this point of view, the resonance is never destroyed since the accumulation will always be there.**
 
 
 

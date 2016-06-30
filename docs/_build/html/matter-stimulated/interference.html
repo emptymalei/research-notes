@@ -145,21 +145,30 @@
 <p class="first admonition-title">Summary</p>
 <p>Overall the system has at least two limits,</p>
 <ol class="arabic simple">
-<li>strong interference regime;</li>
-<li>low-interference regime.</li>
+<li>strong interference regime (the wavelength of the perturbations are of the same orders);</li>
+<li>low-interference regime (one of the perturbations has a wavelength much larger than the others&#8217;).</li>
 </ol>
 <p>For either case, the system is explained within the ralm of superpositions of multiple Rabi oscillations.</p>
-<p>As for the first case, th criteria is related to both the resonance itself and the size of physical system we are interested in. More specifically,</p>
+<p>As for the first case, th criteria is related to both the resonance itself and the size of physical system we are interested in.</p>
 <ol class="arabic simple">
-<li>Each mode has an associated resonance, and explained by a single Rabi oscillation;</li>
-<li>Whether a mode is important to the system is determined by Q value, which is defined as the ratio of distance to resonance and resonance width;</li>
-<li>However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any transition probabilities within a small region;</li>
-<li>What&#8217;s more, higher orders have much smaller resonance width than low orders.</li>
+<li>Each mode has an associated resonance, and explained by a single Rabi oscillation. Higher orders have much smaller resonance width than low orders.</li>
+<li>Whether a mode is important to the system is determined by Q value, which is defined as the ratio of distance to resonance and resonance width.</li>
+<li>However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any significant transition probabilities within the region of the physical system.</li>
 </ol>
-<p>The second case has a much more complicated resonance, however with Komogorov spectra of matter, we could check the limits. One of them is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density.</p>
-<ol class="last arabic simple">
-<li></li>
+<p><strong>However, we do not have a cystal clear understanding of such a strong interference.</strong></p>
+<p>The second case is essentially some limit of the strong interference. With Komogorov spectra of matter, the resonance is simplified in some sense. One of the limits is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density, within one wavelength of the small wavelength perturbations. Here we use two frequencies as examples, c.f. <a class="reference internal" href="#interference-adding-new-destroy-resonance-q-value"><span>Fig. 19</span></a>.</p>
+<ol class="arabic">
+<li><p class="first">Even if the short wavelength one is exactly on resonance, adding the second perturbation as a background shift could move the system out of the resonance. The math behind it is related to the amplitude,</p>
+<div class="math">
+\[\frac{ \left\lvert  B_{n}  \right\rvert^2 }{ \left\lvert    B_{n}  \right\rvert^2 + ( n  k - \omega_m )^2  },\]</div>
+<p>where <span class="math">\(n  k - \omega_m = 0\)</span> for the resonance situation. As we add in the second long wavelength perturbation, <span class="math">\(B_{n}\)</span>, <span class="math">\(\omega_m\)</span> will change. Nonetheless the relative change in <span class="math">\(B_n\)</span> is small while the change in <span class="math">\(nk-\omega_m\)</span> is huge compared to <span class="math">\(B_n\)</span> value, if the amplitude of the new perturbation is large enough, i.e., <span class="math">\(A_2 \gg \lvert B_n\rvert\)</span>.</p>
+</li>
+<li><p class="first">The caveat is that the wavelength of the second perturbation <span class="math">\(k_2\)</span> must be within a range much smaller than <span class="math">\(k_1\)</span>, and much larger than the resonance transition probability wavelength, roughly speaking, <span class="math">\(k_1\gg k_2 \gg \lvert B_n\rvert\)</span>.</p>
+</li>
+<li><p class="first">The newly added long wavelength merely has any effect when the system is in a region <span class="math">\(\mathrm{mod}(k_2 x,\pi)\sim 0\)</span>, since <span class="math">\(A_2\sin(k_2x)\sim 0\)</span> for these values. Such regions probabily will appear multiple times within the size of physical system. Then we see accumulation effect, so that the transition amplitude will rise as we go furthure out.</p>
+</li>
 </ol>
+<p class="last"><strong>From this point of view, the resonance is never destroyed since the accumulation will always be there.</strong></p>
 </div>
 <p>In the calculation of multi-frequency matter background,</p>
 <div class="math">
