@@ -313,6 +313,9 @@ The resonance from the first perturbation is destroyed as the second perturbatio
    Full numerical solutions
 
 
+The hint is, the shift of the background matter profile is related to the destruction effect, whether it's true destruction or effective destruction (destruction within a region).
+
+
 An investigation of the most important mode shows that it is destroyed due to the a shift of background matter density.
 
 .. figure:: assets/interference/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-log.png
@@ -321,6 +324,27 @@ An investigation of the most important mode shows that it is destroyed due to th
    Resonance destruction of the first mode
 
 
+To verify how the interference actually works, we plot the full numerical calculation and the {1,0} mode, for comparision
+
+.. _second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines:
+
+.. figure:: assets/interference/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines.png
+	:align: center
+
+	The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.
+
+
+It is clearly shown in :numref:`second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines` that each vicinity of zero amplitude for the second perturbation, the transition amplitude will increase, due to the resonance of the first perturbation.
+
+
+What's more interesting is that as :math:`A_2` becomes much larger than :math:`A_1`, the resonance seams to be destroyed. As an example, here we take :math:`A_2=0.0346135, A_1=0.0000357347` both in unit of :math:`\omega_m`, which means :math:`A_2` is almost three orders larger than :math:`A_1`. The results are shown in :numref:`second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines`.
+
+.. _second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines:
+
+.. figure:: assets/interference/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines.png
+	:align: center
+
+	The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.
 
 
 
