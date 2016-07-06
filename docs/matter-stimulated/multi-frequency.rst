@@ -89,13 +89,16 @@ the Hamiltonian can be written as
 where the Hamiltonian 12 element is
 
 .. math::
-   h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},
+   h_N = \frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},
 
 where
 
 .. math::
-   B_N &= (-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+   B_N &= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
    \Phi_N &= e^{i\left( \sum_a n_a \phi_a \right)}.
+
+
+It might be useful to notice that :math:`(-i)^{\sum_a n_a} = (e^{-i \pi/2})^{\sum_a n_a} = e^{-i \pi\sum_a n_a/2}`. Such an phase won't change the final transition probability given the initial condition that the system is completely on the low energy state.
 
 
 
@@ -112,6 +115,8 @@ where
    1. To actually make some sense here. I need to find out which approximation breaks down in Kelly's paper; Ref to admonition Which Approximation Breaks Down. Check!
    2. Use physical length scales to simplify/obscure the problem. Check!
    3. How can small :math:`k` destroy the resonance of large :math:`k`? c.f., Kelly's PRD paper.
+
+
 
 
 

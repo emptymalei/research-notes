@@ -195,17 +195,21 @@ h_N^* &amp; 0
 \end{pmatrix},\end{split}\]</div>
 <p>where the Hamiltonian 12 element is</p>
 <div class="math">
-\[h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},\]</div>
+\[h_N = \frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a n_a k_a - \omega_m)x},\]</div>
 <p>where</p>
 <div class="math">
-\[\begin{split}B_N &amp;= (-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+\[\begin{split}B_N &amp;= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
 \Phi_N &amp;= e^{i\left( \sum_a n_a \phi_a \right)}.\end{split}\]</div>
+<p>It might be useful to notice that <span class="math">\((-i)^{\sum_a n_a} = (e^{-i \pi/2})^{\sum_a n_a} = e^{-i \pi\sum_a n_a/2}\)</span>.</p>
 <div class="todo admonition">
 <p class="first admonition-title">To do</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>To actually make some sense here. I need to find out which approximation breaks down in Kelly&#8217;s paper; Ref to admonition Which Approximation Breaks Down. Check!</li>
 <li>Use physical length scales to simplify/obscure the problem. Check!</li>
 <li>How can small <span class="math">\(k\)</span> destroy the resonance of large <span class="math">\(k\)</span>? c.f., Kelly&#8217;s PRD paper.</li>
+</ol>
+<ol class="last arabic simple">
+<li>Prove that any overall phase to <span class="math">\(h_N\)</span> doesn&#8217;t change the transition probability.</li>
 </ol>
 </div>
 </div>
