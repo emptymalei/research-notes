@@ -76,6 +76,55 @@ and
 
 
 
+Flavor Isospin
+-------------------------------------------
+
+Using flavor isospin, the equation of motion is written as
+
+.. math::
+   \frac{d\vec s}{dx} = \vec{s} \times \vec H,
+
+where
+
+.. math::
+   \vec s = \begin{pmatrix}
+   \mathrm{Re}(\psi_1^*\psi_2) \\
+   \mathrm{Im}(\psi_1^*\psi_2) \\
+   (\lvert \psi_1 \rvert^2 - \lvert \psi_2 \rvert^2)/2.
+   \end{pmatrix}
+
+
+In background matter basis the Hamiltonian vector is
+
+.. math::
+   \vec H = \begin{pmatrix}
+   \delta \lambda(x) \sin 2\theta_m \\
+   0 \\
+   \omega_m - \delta \lambda(x) \cos 2\theta_m
+   \end{pmatrix}.
+
+For two perturbations, we write it as
+
+
+.. math::
+   \vec H = \begin{pmatrix}
+   0 \\
+   0 \\
+   \omega_m
+   \end{pmatrix} + \begin{pmatrix}
+   \delta \lambda_1(x) \sin 2\theta_m \\
+   0 \\
+    - \delta \lambda_1(x) \cos 2\theta_m
+   \end{pmatrix} + \begin{pmatrix}
+   \delta \lambda_2(x) \sin 2\theta_m \\
+   0 \\
+    - \delta \lambda_2(x) \cos 2\theta_m
+   \end{pmatrix}.
+
+
+
+
+
 
 Apply Approximations to Two Frequencies
 --------------------------------------------------

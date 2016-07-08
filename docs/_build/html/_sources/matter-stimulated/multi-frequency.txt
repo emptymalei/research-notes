@@ -98,7 +98,7 @@ where
    \Phi_N &= e^{i\left( \sum_a n_a \phi_a \right)}.
 
 
-It might be useful to notice that :math:`(-i)^{\sum_a n_a} = (e^{-i \pi/2})^{\sum_a n_a} = e^{-i \pi\sum_a n_a/2}`.
+It might be useful to notice that :math:`(-i)^{\sum_a n_a} = (e^{-i \pi/2})^{\sum_a n_a} = e^{-i \pi\sum_a n_a/2}`. Such an phase won't change the final transition probability given the initial condition that the system is completely on the low energy state.
 
 
 
@@ -116,7 +116,7 @@ It might be useful to notice that :math:`(-i)^{\sum_a n_a} = (e^{-i \pi/2})^{\su
    2. Use physical length scales to simplify/obscure the problem. Check!
    3. How can small :math:`k` destroy the resonance of large :math:`k`? c.f., Kelly's PRD paper.
 
-   1. Prove that any overall phase to :math:`h_N` doesn't change the transition probability.
+
 
 
 
