@@ -214,6 +214,38 @@ where
 
 
 
+.. admonition:: Modes
+   :class: hint
+
+   For each mode of the multi-frequency case, the Hamiltonian is
+
+   .. math::
+      H = \frac{1}{2}\begin{pmatrix}
+      0 & B_N e^{i(n_i k_i -\omega_m)x} \\
+      B_N^* e^{-i(n_i k_i -\omega_m)x} & 0
+      \end{pmatrix},
+
+   where :math:`B_N` is either real or pure imaginary,
+
+   .. math::
+      B_N &= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right)\\
+      & = - \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right) e^{-i \sum_a n_a \pi/2}\\
+      & = \rho_{N} e^{-i \sum_a n_a \pi/2}.
+
+   The Hamiltonian vector is
+
+   .. math::
+      \vec H = \begin{pmatrix}
+      \rho_N \cos\left( (n_i k_i -\omega_m)x - \sum_a n_a \pi/2 \right) \\
+      -\rho_N \sin\left( (n_i k_i -\omega_m)x - \sum_a n_a \pi/2 \right) \\
+      0
+      \end{pmatrix}
+
+
+
+
+
+
 
 
 

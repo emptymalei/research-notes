@@ -295,6 +295,27 @@ e^{-2i\eta_2(x)} &amp; 0
 \end{pmatrix},\end{split}\]</div>
 <p class="last">since the T transformation is unitary.</p>
 </div>
+<div class="hint admonition">
+<p class="first admonition-title">Modes</p>
+<p>For each mode of the multi-frequency case, the Hamiltonian is</p>
+<div class="math">
+\[\begin{split}H = \frac{1}{2}\begin{pmatrix}
+0 &amp; B_N e^{i(n_i k_i -\omega_m)x} \\
+B_N^* e^{-i(n_i k_i -\omega_m)x} &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(B_N\)</span> is either real or pure imaginary,</p>
+<div class="math">
+\[\begin{split}B_N &amp;= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right)\\
+&amp; = - \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right) e^{-i \sum_a n_a \pi/2}\\
+&amp; = \rho_{N} e^{-i \sum_a n_a \pi/2}.\end{split}\]</div>
+<p>The Hamiltonian vector is</p>
+<div class="last math">
+\[\begin{split}\vec H = \begin{pmatrix}
+\rho_N \cos\left( (n_i k_i -\omega_m)x - \sum_a n_a \pi/2 \right) \\
+-\rho_N \sin\left( (n_i k_i -\omega_m)x - \sum_a n_a \pi/2 \right) \\
+0
+\end{pmatrix}\end{split}\]</div>
+</div>
 </div>
 <div class="section" id="apply-approximations-to-two-frequencies">
 <h2>Apply Approximations to Two Frequencies<a class="headerlink" href="#apply-approximations-to-two-frequencies" title="Permalink to this headline">¶</a></h2>
