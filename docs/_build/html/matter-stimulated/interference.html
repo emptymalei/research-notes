@@ -207,6 +207,8 @@ h_N^* &amp; 0
 \mathrm{Im}(\psi_1^*\psi_2) \\
 (\lvert \psi_1 \rvert^2 - \lvert \psi_2 \rvert^2)/2.
 \end{pmatrix}\end{split}\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Background Matter Basis</p>
 <p>In background matter basis the Hamiltonian vector is</p>
 <div class="math">
 \[\begin{split}\vec H = \begin{pmatrix}
@@ -229,6 +231,70 @@ h_N^* &amp; 0
 0 \\
  - \delta \lambda_2(x) \cos 2\theta_m
 \end{pmatrix}.\end{split}\]</div>
+<p>The initial condition is</p>
+<div class="math">
+\[\begin{split}\Psi(0) = \begin{pmatrix}
+1 \\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>which corresponds to a flavor isospin vector</p>
+<div class="last math">
+\[\begin{split}\vec s(0) = \frac{1}{2} \begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix}.\end{split}\]</div>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">T-basis</p>
+<p>In this basis, the Hamiltonian is</p>
+<div class="math">
+\[\begin{split}H_1 &amp;= -\frac{\omega_m}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix}
+0 &amp; e^{2i\eta_1(x)} \\
+e^{-2i\eta_1(x)} &amp; 0
+\end{pmatrix} \\
+&amp; = -\frac{\omega_m}{2} \sigma_3 +\frac{\delta \lambda}{2} \sin 2\theta_m \sin 2\eta_1(x) \sigma_2  - \frac{\delta \lambda}{2} \sin 2\theta_m \cos 2\eta_1(x) \sigma_1,\end{split}\]</div>
+<p>or</p>
+<div class="math">
+\[\begin{split}H_2 &amp;= - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix}
+0 &amp; e^{2i\eta_2(x)} \\
+e^{-2i\eta_2(x)} &amp; 0
+\end{pmatrix} \\
+&amp;= \frac{\delta \lambda}{2} \sin 2\theta_m \sin 2\eta_2(x) \sigma_2  - \frac{\delta \lambda}{2} \sin 2\theta_m \cos 2\eta_2(x) \sigma_1,\end{split}\]</div>
+<p>where the background is removed from diagonal elements in <span class="math">\(H_1\)</span> but not in <span class="math">\(H_2\)</span>.</p>
+<p>The corresponding vectors are</p>
+<div class="math">
+\[\begin{split}\vec H_1 = \begin{pmatrix}
+\delta\lambda \sin 2\theta_m \cos 2\eta_1(x) \\
+-\delta\lambda \sin 2\theta_m \sin 2\eta_1(x)\\
+\omega_m
+\end{pmatrix},\end{split}\]</div>
+<p>and</p>
+<div class="math">
+\[\begin{split}\vec H_2 = \begin{pmatrix}
+\delta\lambda \sin 2\theta_m \cos 2\eta_2(x) \\
+-\delta\lambda \sin 2\theta_m \sin 2\eta_2(x)\\
+0
+\end{pmatrix}.\end{split}\]</div>
+<p>Given the initial condition in background matter basis</p>
+<div class="math">
+\[\begin{split}\Psi(0) = \begin{pmatrix}
+1 \\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>we have to apply the T transformation to get the initial condition in the T-basis</p>
+<div class="math">
+\[\begin{split}\Psi_1(0) &amp;=  \begin{pmatrix} e^{i \eta_1 (x)} &amp; 0 \\  0 &amp; e^{-i \eta_1 (x)}  \end{pmatrix}\Psi(0) = \begin{pmatrix} e^{i \eta_1 (x)} \\  0 \end{pmatrix} \\
+\Psi_2(0) &amp;=  \begin{pmatrix} e^{i \eta_2 (x)} &amp; 0 \\  0 &amp; e^{-i \eta_2 (x)}  \end{pmatrix}\Psi(0) = \begin{pmatrix} e^{i \eta_2 (x)} \\  0 \end{pmatrix},\end{split}\]</div>
+<p>which correspond to flavor isospin vectors</p>
+<div class="math">
+\[\begin{split}\vec s_1(0) = \vec s_2(0) = \vec s(0) = \frac{1}{2} \begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix},\end{split}\]</div>
+<p class="last">since the T transformation is unitary.</p>
+</div>
 </div>
 <div class="section" id="apply-approximations-to-two-frequencies">
 <h2>Apply Approximations to Two Frequencies<a class="headerlink" href="#apply-approximations-to-two-frequencies" title="Permalink to this headline">¶</a></h2>

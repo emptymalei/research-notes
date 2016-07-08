@@ -93,33 +93,129 @@ where
    (\lvert \psi_1 \rvert^2 - \lvert \psi_2 \rvert^2)/2.
    \end{pmatrix}
 
+.. admonition:: Background Matter Basis
+   :class: hint
 
-In background matter basis the Hamiltonian vector is
+   In background matter basis the Hamiltonian vector is
 
-.. math::
-   \vec H = \begin{pmatrix}
-   \delta \lambda(x) \sin 2\theta_m \\
-   0 \\
-   \omega_m - \delta \lambda(x) \cos 2\theta_m
-   \end{pmatrix}.
+   .. math::
+      \vec H = \begin{pmatrix}
+      \delta \lambda(x) \sin 2\theta_m \\
+      0 \\
+      \omega_m - \delta \lambda(x) \cos 2\theta_m
+      \end{pmatrix}.
 
-For two perturbations, we write it as
+   For two perturbations, we write it as
 
 
-.. math::
-   \vec H = \begin{pmatrix}
-   0 \\
-   0 \\
-   \omega_m
-   \end{pmatrix} + \begin{pmatrix}
-   \delta \lambda_1(x) \sin 2\theta_m \\
-   0 \\
-    - \delta \lambda_1(x) \cos 2\theta_m
-   \end{pmatrix} + \begin{pmatrix}
-   \delta \lambda_2(x) \sin 2\theta_m \\
-   0 \\
-    - \delta \lambda_2(x) \cos 2\theta_m
-   \end{pmatrix}.
+   .. math::
+      \vec H = \begin{pmatrix}
+      0 \\
+      0 \\
+      \omega_m
+      \end{pmatrix} + \begin{pmatrix}
+      \delta \lambda_1(x) \sin 2\theta_m \\
+      0 \\
+       - \delta \lambda_1(x) \cos 2\theta_m
+      \end{pmatrix} + \begin{pmatrix}
+      \delta \lambda_2(x) \sin 2\theta_m \\
+      0 \\
+       - \delta \lambda_2(x) \cos 2\theta_m
+      \end{pmatrix}.
+
+
+   The initial condition is
+
+   .. math::
+      \Psi(0) = \begin{pmatrix}
+      1 \\
+      0
+      \end{pmatrix},
+
+   which corresponds to a flavor isospin vector
+
+   .. math::
+      \vec s(0) = \frac{1}{2} \begin{pmatrix}
+      0 \\
+      0 \\
+      1
+      \end{pmatrix}.
+
+
+.. admonition:: T-basis
+   :class: hint
+
+   In this basis, the Hamiltonian is
+
+   .. math::
+      H_1 &= -\frac{\omega_m}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix}
+      0 & e^{2i\eta_1(x)} \\
+      e^{-2i\eta_1(x)} & 0
+      \end{pmatrix} \\
+      & = -\frac{\omega_m}{2} \sigma_3 +\frac{\delta \lambda}{2} \sin 2\theta_m \sin 2\eta_1(x) \sigma_2  - \frac{\delta \lambda}{2} \sin 2\theta_m \cos 2\eta_1(x) \sigma_1,
+
+   or
+
+   .. math::
+      H_2 &= - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix}
+      0 & e^{2i\eta_2(x)} \\
+      e^{-2i\eta_2(x)} & 0
+      \end{pmatrix} \\
+      &= \frac{\delta \lambda}{2} \sin 2\theta_m \sin 2\eta_2(x) \sigma_2  - \frac{\delta \lambda}{2} \sin 2\theta_m \cos 2\eta_2(x) \sigma_1,
+
+   where the background is removed from diagonal elements in :math:`H_1` but not in :math:`H_2`.
+
+   The corresponding vectors are
+
+   .. math::
+      \vec H_1 = \begin{pmatrix}
+      \delta\lambda \sin 2\theta_m \cos 2\eta_1(x) \\
+      -\delta\lambda \sin 2\theta_m \sin 2\eta_1(x)\\
+      \omega_m
+      \end{pmatrix},
+
+
+   and
+
+   .. math::
+      \vec H_2 = \begin{pmatrix}
+      \delta\lambda \sin 2\theta_m \cos 2\eta_2(x) \\
+      -\delta\lambda \sin 2\theta_m \sin 2\eta_2(x)\\
+      0
+      \end{pmatrix}.
+
+
+   Given the initial condition in background matter basis
+
+   .. math::
+      \Psi(0) = \begin{pmatrix}
+      1 \\
+      0
+      \end{pmatrix},
+
+   we have to apply the T transformation to get the initial condition in the T-basis
+
+   .. math::
+      \Psi_1(0) &=  \begin{pmatrix} e^{i \eta_1 (x)} & 0 \\  0 & e^{-i \eta_1 (x)}  \end{pmatrix}\Psi(0) = \begin{pmatrix} e^{i \eta_1 (x)} \\  0 \end{pmatrix} \\
+      \Psi_2(0) &=  \begin{pmatrix} e^{i \eta_2 (x)} & 0 \\  0 & e^{-i \eta_2 (x)}  \end{pmatrix}\Psi(0) = \begin{pmatrix} e^{i \eta_2 (x)} \\  0 \end{pmatrix},
+
+
+   which correspond to flavor isospin vectors
+
+   .. math::
+      \vec s_1(0) = \vec s_2(0) = \vec s(0) = \frac{1}{2} \begin{pmatrix}
+      0 \\
+      0 \\
+      1
+      \end{pmatrix},
+
+   since the T transformation is unitary.
+
+
+
+
+
+
 
 
 
