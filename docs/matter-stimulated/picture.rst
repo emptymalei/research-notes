@@ -1,0 +1,100 @@
+Physics Picture
+==================
+
+
+Rabi oscillations
+---------------------
+
+Hamiltonian of Rabi oscillation is
+
+.. math::
+   H = -\frac{\omega_0}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} - A \cos(\omega t)\begin{pmatrix} 0 & 1 \\ 1 & 0  \end{pmatrix} .
+
+
+
+
+Test Example
+--------------------------
+
+
+First we choose a system that is on resonance
+
+.. math::
+   H_1 = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,
+
+where :math:`\delta\lambda_1 = A_1 \sin (k_1 x)`, where :math:`k_1 = \omega_m` and :math:`A_1 = 3.5\times 10^{-5}\omega_m`. This sets the system to resonance.
+
+.. figure:: assets/picture/resonance-freq-example-1.png
+   :align: center
+
+   Resonance
+
+
+.. admonition:: Does the Diagonal Term Matter?
+   :class: note
+
+   Removing the diagonal elements of the perturbation
+
+   .. math::
+      H_1' = -\frac{\omega_m}{2} \sigma_3  - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,
+
+   will result in :numref:`resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed`.
+
+   .. _resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed:
+
+   .. figure:: assets/picture/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png
+      :align: center
+
+      Remove the diagonal elements of the preturbation
+
+
+
+.. admonition:: Adding in Slow Rotating Field
+   :class: note
+
+   Add a new slow perturbation
+
+   .. math::
+      \delta \lambda_2 = A_2 \sin (k_2 x),
+
+   with
+
+   .. math::
+      A_2 &= 10^{-2},\\
+      k_2 &= 0.1.
+
+
+   .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation.png
+      :align: center
+
+      Added new slow perturbation
+
+
+
+.. admonition:: Removing Diagonal Elements of Slow Perturbation
+   :class: note
+
+   Removing the diagonal elements of slow perturbation
+
+   .. math::
+      H_2' = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1 }{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1 + \delta \lambda_2}{2} \sin 2\theta_m \sigma_1,
+
+
+   gives us the result :numref:`resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements`.
+
+   .. _resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements:
+
+   .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png
+      :align: center
+
+
+
+
+
+
+
+
+Refs & Notes
+-----------------
+
+1. Note to self: My advisor proposed and did the first calculations.

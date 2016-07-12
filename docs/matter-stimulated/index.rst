@@ -167,6 +167,8 @@ we simply calculate
    two-frequency.rst
    multi-frequency.rst
    interference.rst
+   flavor-isospin-matter.rst
+   picture.rst
    linear-background-matter.rst
 
 
