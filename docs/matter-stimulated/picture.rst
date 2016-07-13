@@ -13,6 +13,7 @@ Hamiltonian of Rabi oscillation is
 
 
 
+
 Test Example
 --------------------------
 
@@ -87,8 +88,101 @@ where :math:`\delta\lambda_1 = A_1 \sin (k_1 x)`, where :math:`k_1 = \omega_m` a
    .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png
       :align: center
 
+      Remove diagonal elements of slow perturbation.
 
 
+
+Explaination
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Slow perturbation is slow and changes the energy gap of the system. Since the energy gap :math:`\omega_m` determines the resonance point, which is
+
+.. math::
+   k_1 = \omega_m,
+
+adding the slow perturbation could increase :math:`\omega_m`,
+
+.. math::
+   \omega_m' &= \sqrt{A_{2,\bot} ^2 + \omega_m^2} \\
+   & = \omega_m \sqrt{ \left(\frac{A_{2,\bot}}{\omega_m} \right)^2 + 1 } \\
+   & \approx  \omega_m + \frac{A_{2,\bot}^2}{2\omega_m},
+   :label: quadratic-approximation-energy-gap-shift
+
+
+where :math:`A_{2,\bot}` is component perpendicular to z axis.
+
+
+
+.. admonition:: Only Perpendicular Component
+   :class: warning
+
+   In the calculation of the modified energy gap, we used only the perpendicular component of the new slow perturbation. This only holds for :math:`A_{2,\bot}  \ll \omega_m`.
+
+   **PROOF**
+
+
+.. admonition:: Shift The System Out of Resonance
+   :class: note
+
+   Shift the system out of resonance, it is required that
+
+   .. math::
+      \lvert \omega_m' - \omega_m \rvert \gtrsim \text{width of resonance}.
+
+   Width of resonance is basically determined by :math:`A_{1,\bot}`. Apply equation :eq:`quadratic-approximation-energy-gap-shift`, we can solve the condition to break the resonance,
+
+   .. math::
+      A_{2,\bot} \gtrsim \sqrt{2\omega_m A_{1,\bot}}.
+
+   In our example, the condition becomes
+
+   .. math::
+      &A_2 \sin 2\theta_m \gtrsim \sqrt{2\omega_m A_1 \sin 2\theta_m} \\
+      \Rightarrow & A_2  \gtrsim \sqrt{2\omega_m A_1 \tan 2\theta_m/\cos 2\theta_m}.
+
+
+   .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction.png
+      :align: center
+
+      With :math:`A_2=\sqrt{2 A_1 \sin (2 \theta_m)}/ \cos ^2(2 \theta_m) =0.0190304\omega_m`
+
+
+
+   .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png
+      :align: center
+
+      Compare to show destruction
+
+
+   Using Rabi formula the amplitudes are not matching the numerical calculations, :numref:``.
+
+   .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png
+      :align: center
+
+      Grid lines are the amplitudes predicted by Rabi formula.
+
+   As a reference, the Q values for each line are
+
+   .. math::
+      Q_1 & =  \frac{\lvert k_1 - \sqrt{A_2 \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 1.11689, \\
+      Q_2 & = \frac{\lvert k_1 - \sqrt{A_2' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 4.04469, \\
+      Q_3 & = \frac{\lvert k_1 - \sqrt{A_2'' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 402.277.
+
+
+
+
+
+However, the important question is whether the modified oscillation really Rabi oscillation. The answer is NO.
+
+.. figure:: assets/picture/really-rabi-question-mark.png
+   :align: center
+
+   Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
+   Lower panel: Theoretical and numerical calculation with slow perturbation added.
+
+
+We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula.
 
 
 
@@ -97,4 +191,4 @@ where :math:`\delta\lambda_1 = A_1 \sin (k_1 x)`, where :math:`k_1 = \omega_m` a
 Refs & Notes
 -----------------
 
-1. Note to self: My advisor proposed and did the first calculations.
+.. 1. Note to self: My advisor proposed and did the first calculations.

@@ -153,7 +153,7 @@
 <div class="math">
 \[H_1 = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
 <p>where <span class="math">\(\delta\lambda_1 = A_1 \sin (k_1 x)\)</span>, where <span class="math">\(k_1 = \omega_m\)</span> and <span class="math">\(A_1 = 3.5\times 10^{-5}\omega_m\)</span>. This sets the system to resonance.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id3">
 <img alt="../_images/resonance-freq-example-1.png" src="../_images/resonance-freq-example-1.png" />
 <p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Resonance</span></p>
 </div>
@@ -163,7 +163,7 @@
 <div class="math">
 \[H_1' = -\frac{\omega_m}{2} \sigma_3  - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
 <p>will result in <a class="reference internal" href="#resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"><span>Fig. 29</span></a>.</p>
-<div class="last figure align-center" id="id2">
+<div class="last figure align-center" id="id4">
 <span id="resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"></span><img alt="../_images/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png" src="../_images/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png" />
 <p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Remove the diagonal elements of the preturbation</span></p>
 </div>
@@ -177,7 +177,7 @@
 <div class="math">
 \[\begin{split}A_2 &amp;= 10^{-2},\\
 k_2 &amp;= 0.1.\end{split}\]</div>
-<div class="last figure align-center" id="id3">
+<div class="last figure align-center" id="id5">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation.png" />
 <p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Added new slow perturbation</span></p>
 </div>
@@ -188,16 +188,69 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <div class="math">
 \[H_2' = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1 }{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1 + \delta \lambda_2}{2} \sin 2\theta_m \sigma_1,\]</div>
 <p>gives us the result <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"><span>Fig. 31</span></a>.</p>
-<div class="last figure align-center" id="resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements">
-<img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" />
+<div class="last figure align-center" id="id6">
+<span id="resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"></span><img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Remove diagonal elements of slow perturbation.</span></p>
 </div>
+</div>
+<div class="section" id="explaination">
+<h3>Explaination<a class="headerlink" href="#explaination" title="Permalink to this headline">¶</a></h3>
+<p>Slow perturbation is slow and changes the energy gap of the system. Since the energy gap <span class="math">\(\omega_m\)</span> determines the resonance point, which is</p>
+<div class="math">
+\[k_1 = \omega_m,\]</div>
+<p>adding the slow perturbation could increase <span class="math">\(\omega_m\)</span>,</p>
+<div class="math" id="equation-quadratic-approximation-energy-gap-shift">
+<span class="eqno">(1)</span>\[\begin{split}\omega_m' &amp;= \sqrt{A_{2,\bot} ^2 + \omega_m^2} \\
+&amp; = \omega_m \sqrt{ \left(\frac{A_{2,\bot}}{\omega_m} \right)^2 + 1 } \\
+&amp; \approx  \omega_m + \frac{A_{2,\bot}^2}{2\omega_m},\end{split}\]</div>
+<p>where <span class="math">\(A_{2,\bot}\)</span> is component perpendicular to z axis.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Only Perpendicular Component</p>
+<p>In the calculation of the modified energy gap, we used only the perpendicular component of the new slow perturbation. This only holds for <span class="math">\(A_{2,\bot}  \ll \omega_m\)</span>.</p>
+<p class="last"><strong>PROOF</strong></p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Shift The System Out of Resonance</p>
+<p>Shift the system out of resonance, it is required that</p>
+<div class="math">
+\[\lvert \omega_m' - \omega_m \rvert \gtrsim \text{width of resonance}.\]</div>
+<p>Width of resonance is basically determined by <span class="math">\(A_{1,\bot}\)</span>. Apply equation <a href="#equation-quadratic-approximation-energy-gap-shift">(1)</a>, we can solve the condition to break the resonance,</p>
+<div class="math">
+\[A_{2,\bot} \gtrsim \sqrt{2\omega_m A_{1,\bot}}.\]</div>
+<p>In our example, the condition becomes</p>
+<div class="math">
+\[\begin{split}&amp;A_2 \sin 2\theta_m \gtrsim \sqrt{2\omega_m A_1 \sin 2\theta_m} \\
+\Rightarrow &amp; A_2  \gtrsim \sqrt{2\omega_m A_1 \tan 2\theta_m/\cos 2\theta_m}.\end{split}\]</div>
+<div class="figure align-center" id="id7">
+<img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">With <span class="math">\(A_2=\sqrt{2 A_1 \sin (2 \theta_m)}/ \cos ^2(2 \theta_m) =0.0190304\omega_m\)</span></span></p>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Compare to show destruction</span></p>
+</div>
+<p>Using Rabi formula the amplitudes are not matching the numerical calculations, :numref:<a href="#id1"><span class="problematic" id="id2">``</span></a>.</p>
+<div class="figure align-center" id="id9">
+<img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Grid lines are the amplitudes predicted by Rabi formula.</span></p>
+</div>
+<p>As a reference, the Q values for each line are</p>
+<div class="last math">
+\[\begin{split}Q_1 &amp; =  \frac{\lvert k_1 - \sqrt{A_2 \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 1.11689, \\
+Q_2 &amp; = \frac{\lvert k_1 - \sqrt{A_2' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 4.04469, \\
+Q_3 &amp; = \frac{\lvert k_1 - \sqrt{A_2'' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 402.277.\end{split}\]</div>
+</div>
+<p>However, the important question is whether the modified oscillation really Rabi oscillation. The answer is NO.</p>
+<div class="figure align-center" id="id10">
+<img alt="../_images/really-rabi-question-mark.png" src="../_images/really-rabi-question-mark.png" />
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
+Lower panel: Theoretical and numerical calculation with slow perturbation added.</span></p>
+</div>
+<p>We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula.</p>
 </div>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Note to self: My advisor proposed and did the first calculations.</li>
-</ol>
 </div>
 </div>
 
