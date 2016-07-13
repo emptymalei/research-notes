@@ -155,9 +155,13 @@ where :math:`A_{2,\bot}` is component perpendicular to z axis.
       Compare to show destruction
 
 
-   Using Rabi formula the amplitudes are not matching the numerical calculations, :numref:``.
+   Using Rabi formula the amplitudes are not matching the numerical calculations, :numref:`resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field`.
+
+
+   .. _resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field:
 
    .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png
+
       :align: center
 
       Grid lines are the amplitudes predicted by Rabi formula.
@@ -182,7 +186,26 @@ However, the important question is whether the modified oscillation really Rabi 
    Lower panel: Theoretical and numerical calculation with slow perturbation added.
 
 
-We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula.
+We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula. That makes sense!
+
+
+Rotating Perturbation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+We add in the term that completes rotating perturbation,
+
+.. math::
+   H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda(x)}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_1 + \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_2.
+
+
+With the new :math:`\sigma_2` term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length.
+
+.. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png
+   :align: center
+
+
+
+
 
 
 
