@@ -13,8 +13,7 @@ Hamiltonian of Rabi oscillation is
 
 
 
-
-Test Example
+Example System
 --------------------------
 
 
@@ -50,7 +49,7 @@ where :math:`\delta\lambda_1 = A_1 \sin (k_1 x)`, where :math:`k_1 = \omega_m` a
 
 
 
-.. admonition:: Adding in Slow Rotating Field
+.. admonition:: Adding in Slowly Changing Field
    :class: note
 
    Add a new slow perturbation
@@ -93,7 +92,7 @@ where :math:`\delta\lambda_1 = A_1 \sin (k_1 x)`, where :math:`k_1 = \omega_m` a
 
 
 Explaination
-~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 
 Slow perturbation is slow and changes the energy gap of the system. Since the energy gap :math:`\omega_m` determines the resonance point, which is
@@ -161,7 +160,6 @@ where :math:`A_{2,\bot}` is component perpendicular to z axis.
    .. _resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field:
 
    .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png
-
       :align: center
 
       Grid lines are the amplitudes predicted by Rabi formula.
@@ -198,10 +196,12 @@ We add in the term that completes rotating perturbation,
    H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda(x)}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_1 + \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_2.
 
 
-With the new :math:`\sigma_2` term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length.
+With the new :math:`\sigma_2` term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length rather than the slowly changing energy gap.
 
 .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png
    :align: center
+
+   Add back the other component of rotating field in xy plane
 
 
 

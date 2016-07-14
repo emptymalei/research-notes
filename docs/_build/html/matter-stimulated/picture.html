@@ -147,8 +147,8 @@
 <div class="math">
 \[\begin{split}H = -\frac{\omega_0}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} - A \cos(\omega t)\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0  \end{pmatrix} .\end{split}\]</div>
 </div>
-<div class="section" id="test-example">
-<h2>Test Example<a class="headerlink" href="#test-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-system">
+<h2>Example System<a class="headerlink" href="#example-system" title="Permalink to this headline">¶</a></h2>
 <p>First we choose a system that is on resonance</p>
 <div class="math">
 \[H_1 = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
@@ -169,7 +169,7 @@
 </div>
 </div>
 <div class="note admonition">
-<p class="first admonition-title">Adding in Slow Rotating Field</p>
+<p class="first admonition-title">Adding in Slowly Changing Field</p>
 <p>Add a new slow perturbation</p>
 <div class="math">
 \[\delta \lambda_2 = A_2 \sin (k_2 x),\]</div>
@@ -193,8 +193,9 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Remove diagonal elements of slow perturbation.</span></p>
 </div>
 </div>
+</div>
 <div class="section" id="explaination">
-<h3>Explaination<a class="headerlink" href="#explaination" title="Permalink to this headline">¶</a></h3>
+<h2>Explaination<a class="headerlink" href="#explaination" title="Permalink to this headline">¶</a></h2>
 <p>Slow perturbation is slow and changes the energy gap of the system. Since the energy gap <span class="math">\(\omega_m\)</span> determines the resonance point, which is</p>
 <div class="math">
 \[k_1 = \omega_m,\]</div>
@@ -230,8 +231,9 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Compare to show destruction</span></p>
 </div>
 <p>Using Rabi formula the amplitudes are not matching the numerical calculations, <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"><span>Fig. 34</span></a>.</p>
-<div class="figure" id="resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field">
-<img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" />
+<div class="figure align-center" id="id7">
+<span id="resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"></span><img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Grid lines are the amplitudes predicted by Rabi formula.</span></p>
 </div>
 <p>As a reference, the Q values for each line are</p>
 <div class="last math">
@@ -240,21 +242,21 @@ Q_2 &amp; = \frac{\lvert k_1 - \sqrt{A_2' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2
 Q_3 &amp; = \frac{\lvert k_1 - \sqrt{A_2'' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 402.277.\end{split}\]</div>
 </div>
 <p>However, the important question is whether the modified oscillation really Rabi oscillation. The answer is NO.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id8">
 <img alt="../_images/really-rabi-question-mark.png" src="../_images/really-rabi-question-mark.png" />
 <p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
 Lower panel: Theoretical and numerical calculation with slow perturbation added.</span></p>
 </div>
 <p>We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula. That makes sense!</p>
-</div>
 <div class="section" id="rotating-perturbation">
 <h3>Rotating Perturbation<a class="headerlink" href="#rotating-perturbation" title="Permalink to this headline">¶</a></h3>
 <p>We add in the term that completes rotating perturbation,</p>
 <div class="math">
 \[H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda(x)}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_1 + \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_2.\]</div>
-<p>With the new <span class="math">\(\sigma_2\)</span> term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length.</p>
-<div class="figure align-center">
+<p>With the new <span class="math">\(\sigma_2\)</span> term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length rather than the slowly changing energy gap.</p>
+<div class="figure align-center" id="id9">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png" />
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Add back the other component of rotating field in xy plane</span></p>
 </div>
 </div>
 </div>
