@@ -145,27 +145,116 @@
 <h2>Rabi oscillations<a class="headerlink" href="#rabi-oscillations" title="Permalink to this headline">¶</a></h2>
 <p>Hamiltonian of Rabi oscillation is</p>
 <div class="math">
-\[\begin{split}H = -\frac{\omega_0}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} - A \cos(\omega t)\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0  \end{pmatrix} .\end{split}\]</div>
+\[\begin{split}H = -\frac{\omega_m}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} - A \cos(k t)\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0  \end{pmatrix} .\end{split}\]</div>
+<p>The Hamiltonian we could solve is</p>
+<div class="math">
+\[\begin{split}H &amp;= -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \begin{pmatrix}0 &amp; e^{i k x} \\ e^{-i k x} &amp; 0 \end{pmatrix} \\
+&amp; =  -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \cos(kx) \sigma_1 + \frac{A}{2} \sin (kx) \sigma_2 ,\end{split}\]</div>
+<p>which has a transition probability</p>
+<div class="math">
+\[P(x) = \frac{\lvert A\rvert^2}{ \lvert A\rvert^2 + (k - \omega_m)^2 }  \sin^2 \left( \sqrt{ \lvert A\rvert^2 + (k - \omega_m)^2 } x/2 \right).\]</div>
+<p>With two perturbations</p>
+<div class="math">
+\[H' = -\frac{\omega_m}{2} \sigma_3  - \frac{1}{2} (A_1 \cos(k_1 x) + A_2 \cos(k_2 x)) \sigma_1 + \frac{1}{2}( A_1 \sin (k_1x) + A_2 \sin (k_2 x) ) \sigma_2.\]</div>
+<p>If <span class="math">\(k_1 \gg k_2\)</span>, we can approximate by treating the slow rotating perturbation as a constant added to the energy gap, so that the new energy gap is shifted</p>
+<div class="math">
+\[\omega_m' = \sqrt{ \omega_m^2 + A_2^2 },\]</div>
+<p>which could possibly shift the system out of resonance.</p>
+<p>The best practice would be applying this to the different modes.</p>
 </div>
-<div class="section" id="example-system">
-<h2>Example System<a class="headerlink" href="#example-system" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="oscillations-and-modes">
+<h2>Oscillations and Modes<a class="headerlink" href="#oscillations-and-modes" title="Permalink to this headline">¶</a></h2>
+<p>Using Jacobi-Anger expansion, for any system with Hamiltonian</p>
+<div class="math">
+\[H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}\sum_n A_n \sin (k_n x) \cos 2\theta_m \sigma_3 - \frac{1}{2}\sum_n A_n \sin (k_n x) \sin 2\theta_m \sigma_1,\]</div>
+<p>we could rewrite the system into a composition of multiple Rabi oscillations</p>
+<div class="math">
+\[\begin{split}H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 &amp; B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} &amp; 0 \end{pmatrix}.\end{split}\]</div>
+<p>For each mode, we have a Rabi oscillation</p>
+<div class="math">
+\[\begin{split}H_{n_1,\cdots,n_N} =  -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}
+\lvert B_{n_1,\cdots,n_N} \rvert \begin{pmatrix}
+0 &amp; e^{i \left( \sum_{a} n_a k_a   \right)x} \\
+e^{-i \left( \sum_{a} n_a k_a   \right)x} &amp;  0
+\end{pmatrix},\end{split}\]</div>
+<p>where we have dropped <span class="math">\(\Phi_{n_1,\cdots, n_N}\)</span> and the possible sign and phase of <span class="math">\(B_{n_1,\cdots,n_N}\)</span> since these phase terms only determines the phase of the perturbation on xy plane.</p>
+<p>To explain the interference, we explore the superposition of two modes,</p>
+<div class="math">
+\[\begin{split}H \equiv -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}
+\lvert B_1 \rvert \begin{pmatrix}
+0 &amp; e^{i \left( \sum_{a} n_a k_a   \right)x} \\
+e^{-i \left( \sum_{a} n_a k_a   \right)x} &amp;  0
+\end{pmatrix} + \frac{1}{2}
+\lvert B_2 \rvert \begin{pmatrix}
+0 &amp; e^{i \left( \sum_{a} n_a' k_a   \right)x} \\
+e^{-i \left( \sum_{a} n_a' k_a   \right)x} &amp;  0
+\end{pmatrix},\end{split}\]</div>
+<p>which is composed of two Rabi oscillations. We choose the first mode to be the one close to resonance, i.e., <span class="math">\(\sum_a n_a k_a \sim \omega_m\)</span>, while the second mode is far away from resonance.</p>
+<p>For simplicity we use two perturbations, that is <span class="math">\(a=1,2\)</span>. The Hamiltonian can be written as</p>
+<div class="math">
+\[H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} ( \lvert B_1\rvert \cos(\phi_1 x) + \lvert B_1 \rvert \cos (\phi_2 x) )\sigma_1 - \frac{1}{2} ( \lvert B_1 \rvert \sin (\phi_1 x) + \lvert B_2 \rvert \sin(\phi_2x) ) \sigma_2,\]</div>
+<p>where we define <span class="math">\(\phi_1 = n_1 k_1 + n_2 k_2\)</span> and <span class="math">\(\phi_2 = n_1' k_1 + n_2' k_2\)</span>. Using Pauli matrices are basis, this corresponds to a Hamilton vector</p>
+<div class="math">
+\[\begin{split}\vec H = \begin{pmatrix}
+- \lvert B_1\rvert \cos(\phi_1 x) - \lvert B_2 \rvert \cos (\phi_2 x)  \\
+\lvert B_1 \rvert \sin (\phi_1 x) + \lvert B_2 \rvert \sin(\phi_2x) \\
+\omega_m
+\end{pmatrix} = \begin{pmatrix}
+0  \\
+0 \\
+\omega_m
+\end{pmatrix} + \begin{pmatrix}
+- \lvert B_1\rvert \cos(\phi_1 x)   \\
+\lvert B_1 \rvert \sin (\phi_1 x)  \\
+0
+\end{pmatrix} + \begin{pmatrix}
+- \lvert B_2 \rvert \cos (\phi_2 x)  \\
+\lvert B_2 \rvert \sin(\phi_2x) \\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>which has a z component and two rotating perturbations. We choose the system to be</p>
+<div class="math">
+\[\begin{split}\phi_1 &amp;\sim \omega_m \\
+\phi_2 &amp; \neq \omega_m.\end{split}\]</div>
+<p>We then have two different situations, <span class="math">\(\phi_2/\omega_m \gg 1\)</span> and <span class="math">\(\phi_2/\omega_m \ll 1\)</span>.</p>
+<div class="section" id="slow-perturbation">
+<h3>Slow Perturbation<a class="headerlink" href="#slow-perturbation" title="Permalink to this headline">¶</a></h3>
+<p>For <span class="math">\(\phi_2/\omega_m \ll 1\)</span>, the second mode is a very slow rotating perturbation, which can be explained using the proposed theory.</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/rabi-oscillation-interference-of-different-modes.png" src="../_images/rabi-oscillation-interference-of-different-modes.png" />
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Resonance interference of modes. The combination of the first mode and <span class="math">\(B_2=\)</span></span></p>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="../_images/rabi-oscillation-interference-of-different-modes-compare-rabi-formula.png" src="../_images/rabi-oscillation-interference-of-different-modes-compare-rabi-formula.png" />
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Compare with Rabi formula</span></p>
+</div>
+<p>As a test of the theory, we can calculate the ration of each <span class="math">\(B_2\)</span>, which depends on the modes, and the critical value <span class="math">\(B_2^C\)</span> which is the crtical value for the destruction of the resonance.</p>
+<div class="figure align-center" id="id3">
+<img alt="../_images/rabi-oscillation-interference-of-different-modes-b2-over-b2critical.png" src="../_images/rabi-oscillation-interference-of-different-modes-b2-over-b2critical.png" />
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Ration <span class="math">\(\lvert B_2\rvert/\lvert B_2^C \rvert\)</span></span></p>
+</div>
+<p>To summarize, in the modes view, resonance of some modes are destroyed by some certain modes.</p>
+</div>
+</div>
+<div class="section" id="example-of-full-system">
+<h2>Example of Full System<a class="headerlink" href="#example-of-full-system" title="Permalink to this headline">¶</a></h2>
 <p>First we choose a system that is on resonance</p>
 <div class="math">
 \[H_1 = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
 <p>where <span class="math">\(\delta\lambda_1 = A_1 \sin (k_1 x)\)</span>, where <span class="math">\(k_1 = \omega_m\)</span> and <span class="math">\(A_1 = 3.5\times 10^{-5}\omega_m\)</span>. This sets the system to resonance.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id4">
 <img alt="../_images/resonance-freq-example-1.png" src="../_images/resonance-freq-example-1.png" />
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Resonance</span></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Resonance</span></p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">Does the Diagonal Term Matter?</p>
 <p>Removing the diagonal elements of the perturbation</p>
 <div class="math">
 \[H_1' = -\frac{\omega_m}{2} \sigma_3  - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
-<p>will result in <a class="reference internal" href="#resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"><span>Fig. 29</span></a>.</p>
-<div class="last figure align-center" id="id2">
+<p>will result in <a class="reference internal" href="#resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"><span>Fig. 32</span></a>.</p>
+<div class="last figure align-center" id="id5">
 <span id="resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"></span><img alt="../_images/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png" src="../_images/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png" />
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Remove the diagonal elements of the preturbation</span></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Remove the diagonal elements of the preturbation</span></p>
 </div>
 </div>
 <div class="note admonition">
@@ -177,9 +266,9 @@
 <div class="math">
 \[\begin{split}A_2 &amp;= 10^{-2},\\
 k_2 &amp;= 0.1.\end{split}\]</div>
-<div class="last figure align-center" id="id3">
+<div class="last figure align-center" id="id6">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation.png" />
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Added new slow perturbation</span></p>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Added new slow perturbation</span></p>
 </div>
 </div>
 <div class="note admonition">
@@ -187,10 +276,10 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <p>Removing the diagonal elements of slow perturbation</p>
 <div class="math">
 \[H_2' = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1 }{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1 + \delta \lambda_2}{2} \sin 2\theta_m \sigma_1,\]</div>
-<p>gives us the result <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"><span>Fig. 31</span></a>.</p>
-<div class="last figure align-center" id="id4">
+<p>gives us the result <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"><span>Fig. 34</span></a>.</p>
+<div class="last figure align-center" id="id7">
 <span id="resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"></span><img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Remove diagonal elements of slow perturbation.</span></p>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Remove diagonal elements of slow perturbation.</span></p>
 </div>
 </div>
 </div>
@@ -222,18 +311,18 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <div class="math">
 \[\begin{split}&amp;A_2 \sin 2\theta_m \gtrsim \sqrt{2\omega_m A_1 \sin 2\theta_m} \\
 \Rightarrow &amp; A_2  \gtrsim \sqrt{2\omega_m A_1 \tan 2\theta_m/\cos 2\theta_m}.\end{split}\]</div>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id8">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction.png" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">With <span class="math">\(A_2=\sqrt{2 A_1 \sin (2 \theta_m)}/ \cos ^2(2 \theta_m) =0.0190304\omega_m\)</span></span></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">With <span class="math">\(A_2=\sqrt{2 A_1 \sin (2 \theta_m)}/ \cos ^2(2 \theta_m) =0.0190304\omega_m\)</span></span></p>
 </div>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id9">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Compare to show destruction</span></p>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Compare to show destruction</span></p>
 </div>
-<p>Using Rabi formula the amplitudes are not matching the numerical calculations, <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"><span>Fig. 34</span></a>.</p>
-<div class="figure align-center" id="id7">
+<p>Using Rabi formula the amplitudes are not matching the numerical calculations, <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"><span>Fig. 37</span></a>.</p>
+<div class="figure align-center" id="id10">
 <span id="resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"></span><img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" />
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Grid lines are the amplitudes predicted by Rabi formula.</span></p>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Grid lines are the amplitudes predicted by Rabi formula.</span></p>
 </div>
 <p>As a reference, the Q values for each line are</p>
 <div class="last math">
@@ -242,9 +331,9 @@ Q_2 &amp; = \frac{\lvert k_1 - \sqrt{A_2' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2
 Q_3 &amp; = \frac{\lvert k_1 - \sqrt{A_2'' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (2\theta_m)} = 402.277.\end{split}\]</div>
 </div>
 <p>However, the important question is whether the modified oscillation really Rabi oscillation. The answer is NO.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id11">
 <img alt="../_images/really-rabi-question-mark.png" src="../_images/really-rabi-question-mark.png" />
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
 Lower panel: Theoretical and numerical calculation with slow perturbation added.</span></p>
 </div>
 <p>We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula. That makes sense!</p>
@@ -254,9 +343,9 @@ Lower panel: Theoretical and numerical calculation with slow perturbation added.
 <div class="math">
 \[H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda(x)}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_1 + \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_2.\]</div>
 <p>With the new <span class="math">\(\sigma_2\)</span> term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length rather than the slowly changing energy gap.</p>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id12">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png" />
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Add back the other component of rotating field in xy plane</span></p>
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Add back the other component of rotating field in xy plane</span></p>
 </div>
 </div>
 </div>

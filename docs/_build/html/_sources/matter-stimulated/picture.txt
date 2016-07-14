@@ -8,13 +8,151 @@ Rabi oscillations
 Hamiltonian of Rabi oscillation is
 
 .. math::
-   H = -\frac{\omega_0}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} - A \cos(\omega t)\begin{pmatrix} 0 & 1 \\ 1 & 0  \end{pmatrix} .
+   H = -\frac{\omega_m}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} - A \cos(k t)\begin{pmatrix} 0 & 1 \\ 1 & 0  \end{pmatrix} .
+
+
+The Hamiltonian we could solve is
+
+.. math::
+   H &= -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \begin{pmatrix}0 & e^{i k x} \\ e^{-i k x} & 0 \end{pmatrix} \\
+   & =  -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \cos(kx) \sigma_1 + \frac{A}{2} \sin (kx) \sigma_2 ,
+
+which has a transition probability
+
+.. math::
+   P(x) = \frac{\lvert A\rvert^2}{ \lvert A\rvert^2 + (k - \omega_m)^2 }  \sin^2 \left( \sqrt{ \lvert A\rvert^2 + (k - \omega_m)^2 } x/2 \right).
+
+
+
+With two perturbations
+
+.. math::
+   H' = -\frac{\omega_m}{2} \sigma_3  - \frac{1}{2} (A_1 \cos(k_1 x) + A_2 \cos(k_2 x)) \sigma_1 + \frac{1}{2}( A_1 \sin (k_1x) + A_2 \sin (k_2 x) ) \sigma_2.
+
+If :math:`k_1 \gg k_2`, we can approximate by treating the slow rotating perturbation as a constant added to the energy gap, so that the new energy gap is shifted
+
+.. math::
+   \omega_m' = \sqrt{ \omega_m^2 + A_2^2 },
+
+which could possibly shift the system out of resonance.
+
+The best practice would be applying this to the different modes.
+
+
+
+Oscillations and Modes
+-------------------------
+
+
+Using Jacobi-Anger expansion, for any system with Hamiltonian
+
+.. math::
+   H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}\sum_n A_n \sin (k_n x) \cos 2\theta_m \sigma_3 - \frac{1}{2}\sum_n A_n \sin (k_n x) \sin 2\theta_m \sigma_1,
+
+we could rewrite the system into a composition of multiple Rabi oscillations
+
+.. math::
+   H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 & B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} & 0 \end{pmatrix}.
+
+For each mode, we have a Rabi oscillation
+
+.. math::
+   H_{n_1,\cdots,n_N} =  -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}
+   \lvert B_{n_1,\cdots,n_N} \rvert \begin{pmatrix}
+   0 & e^{i \left( \sum_{a} n_a k_a   \right)x} \\
+   e^{-i \left( \sum_{a} n_a k_a   \right)x} &  0
+   \end{pmatrix},
+
+where we have dropped :math:`\Phi_{n_1,\cdots, n_N}` and the possible sign and phase of :math:`B_{n_1,\cdots,n_N}` since these phase terms only determines the phase of the perturbation on xy plane.
 
 
 
 
-Example System
---------------------------
+To explain the interference, we explore the superposition of two modes,
+
+.. math::
+   H \equiv -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}
+   \lvert B_1 \rvert \begin{pmatrix}
+   0 & e^{i \left( \sum_{a} n_a k_a   \right)x} \\
+   e^{-i \left( \sum_{a} n_a k_a   \right)x} &  0
+   \end{pmatrix} + \frac{1}{2}
+   \lvert B_2 \rvert \begin{pmatrix}
+   0 & e^{i \left( \sum_{a} n_a' k_a   \right)x} \\
+   e^{-i \left( \sum_{a} n_a' k_a   \right)x} &  0
+   \end{pmatrix},
+
+which is composed of two Rabi oscillations. We choose the first mode to be the one close to resonance, i.e., :math:`\sum_a n_a k_a \sim \omega_m`, while the second mode is far away from resonance.
+
+For simplicity we use two perturbations, that is :math:`a=1,2`. The Hamiltonian can be written as
+
+.. math::
+   H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} ( \lvert B_1\rvert \cos(\phi_1 x) + \lvert B_1 \rvert \cos (\phi_2 x) )\sigma_1 - \frac{1}{2} ( \lvert B_1 \rvert \sin (\phi_1 x) + \lvert B_2 \rvert \sin(\phi_2x) ) \sigma_2,
+
+
+where we define :math:`\phi_1 = n_1 k_1 + n_2 k_2` and :math:`\phi_2 = n_1' k_1 + n_2' k_2`. Using Pauli matrices are basis, this corresponds to a Hamilton vector
+
+.. math::
+   \vec H = \begin{pmatrix}
+   - \lvert B_1\rvert \cos(\phi_1 x) - \lvert B_2 \rvert \cos (\phi_2 x)  \\
+   \lvert B_1 \rvert \sin (\phi_1 x) + \lvert B_2 \rvert \sin(\phi_2x) \\
+   \omega_m
+   \end{pmatrix} = \begin{pmatrix}
+   0  \\
+   0 \\
+   \omega_m
+   \end{pmatrix} + \begin{pmatrix}
+   - \lvert B_1\rvert \cos(\phi_1 x)   \\
+   \lvert B_1 \rvert \sin (\phi_1 x)  \\
+   0
+   \end{pmatrix} + \begin{pmatrix}
+   - \lvert B_2 \rvert \cos (\phi_2 x)  \\
+   \lvert B_2 \rvert \sin(\phi_2x) \\
+   0
+   \end{pmatrix},
+
+which has a z component and two rotating perturbations. We choose the system to be
+
+.. math::
+   \phi_1 &\sim \omega_m \\
+   \phi_2 & \neq \omega_m.
+
+We then have two different situations, :math:`\phi_2/\omega_m \gg 1` and :math:`\phi_2/\omega_m \ll 1`.
+
+
+Slow Perturbation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For :math:`\phi_2/\omega_m \ll 1`, the second mode is a very slow rotating perturbation, which can be explained using the proposed theory.
+
+
+
+.. figure:: assets/picture/rabi-oscillation-interference-of-different-modes.png
+   :align: center
+
+   Resonance interference of modes. The combination of the first mode and :math:`B_2=`
+
+
+.. figure:: assets/picture/rabi-oscillation-interference-of-different-modes-compare-rabi-formula.png
+   :align: center
+
+   Compare with Rabi formula
+
+
+
+As a test of the theory, we can calculate the ration of each :math:`B_2`, which depends on the modes, and the critical value :math:`B_2^C` which is the crtical value for the destruction of the resonance.
+
+.. figure:: assets/picture/rabi-oscillation-interference-of-different-modes-b2-over-b2critical.png
+   :align: center
+
+   Ration :math:`\lvert B_2\rvert/\lvert B_2^C \rvert`
+
+
+To summarize, in the modes view, resonance of some modes are destroyed by some certain modes.
+
+
+
+Example of Full System
+----------------------------------------------------
 
 
 First we choose a system that is on resonance
