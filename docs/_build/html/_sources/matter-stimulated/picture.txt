@@ -265,7 +265,7 @@ where :math:`A_{2,\bot}` is component perpendicular to z axis.
    Shift the system out of resonance, it is required that
 
    .. math::
-      \lvert \omega_m' - \omega_m \rvert \gtrsim \text{width of resonance}.
+      \lvert \omega_m' - k_1 \rvert \gtrsim \text{width of resonance} A_1.
 
    Width of resonance is basically determined by :math:`A_{1,\bot}`. Apply equation :eq:`quadratic-approximation-energy-gap-shift`, we can solve the condition to break the resonance,
 
@@ -325,24 +325,38 @@ However, the important question is whether the modified oscillation really Rabi 
 We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula. That makes sense!
 
 
-Rotating Perturbation
-~~~~~~~~~~~~~~~~~~~~~~~
+Introducing Another Component Perturbation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We add in the term that completes rotating perturbation,
+We add in the term that has two components,
 
 .. math::
    H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda(x)}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_1 + \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_2.
 
 
-With the new :math:`\sigma_2` term, the perturbation is a rotating field with constant length, which makes sure the modified energy gap has a constant length rather than the slowly changing energy gap.
 
 .. figure:: assets/picture/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png
    :align: center
 
-   Add back the other component of rotating field in xy plane
+   Add another component xy plane
 
 
+Rotating Perturbation with Constant Strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Construct a system with a mode at resonance and another rotating perturbation of constant length,
+
+.. math::
+   H = - \frac{\omega_m}{2} \sigma_3 - \frac{1}{2} (A_1\cos(k_1x) + A_2 \sin(k_2x))  \sigma_1 + \frac{1}{2} ( A_1\sin (k_1 x) + A_2 \sin(k_2 x) ) \sigma_2,
+
+where we choose :math:`k_1\gg k_2`.
+
+The new :math:`\sigma_2` term is a rotating field with constant length, which makes sure the modified energy gap has a constant length rather than the slowly changing energy gap.
+
+.. figure:: assets/picture/rabi-oscillations-energy-gap-change.png
+   :align: center
+
+   Reduction of transition amplitudes. Black dashed line: one perturbation at exact resonance; Green long dashed line: :math:`A_2=A_{2,\mathrm{Critical}}=0.0083666`; Blue dotted line: :math:`A_2=0.01`; Red line: :math:`A_2=0.02`. The grid lines are the amplitude predicted using Rabi formula correspondingly.
 
 
 
