@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Scales &mdash; Neutrino Pi documentation</title>
+    <title>MSW Effect Revisted &mdash; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -29,8 +29,8 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
     <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
-    <link rel="next" title="MSW Effect Revisted" href="msw-revisted.html" />
-    <link rel="prev" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="next" title="Single Frequency Matter Perturbation" href="single-frequency.html" />
+    <link rel="prev" title="Scales" href="scales.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -52,7 +52,7 @@
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
-  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/scales.html"/>
+  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/msw-revisted.html"/>
 
 
 
@@ -124,10 +124,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="msw-revisted.html" title="MSW Effect Revisted"
+          <a href="single-frequency.html" title="Single Frequency Matter Perturbation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Matter Stimulated Oscillation"
+          <a href="scales.html" title="Scales"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
@@ -139,80 +139,91 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="scales">
-<h1>Scales<a class="headerlink" href="#scales" title="Permalink to this headline">¶</a></h1>
-<p>We need to discuss the scales relavent to different environments.</p>
-<div class="section" id="supernova">
-<h2>Supernova<a class="headerlink" href="#supernova" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="initial-matter-density-configuration">
-<h3>Initial Matter Density Configuration<a class="headerlink" href="#initial-matter-density-configuration" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-center" id="id7">
-<img alt="../_images/supernova-matter-profile-initial-configuration.png" src="../_images/supernova-matter-profile-initial-configuration.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Supernova initial matter profile from <a class="reference internal" href="#shigeyama1990" id="id1">[shigeyama1990]</a>.</span></p>
-</div>
-<table class="docutils citation" frame="void" id="shigeyama1990" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[shigeyama1990]</a></td><td>Shigeyama, T., &amp; Nomoto, K. (1990). Theoretical light curve of SN 1987A and mixing of hydrogen and nickel in the ejecta. The Astrophysical Journal, 360, 242. doi:10.1086/169114</td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="early-stage">
-<h3>Early Stage<a class="headerlink" href="#early-stage" title="Permalink to this headline">¶</a></h3>
-<p>One of the interesting stages is the bounce on the core.</p>
-<p>To find out the relavent length and energy scales, we need to know</p>
-<ol class="arabic simple">
-<li>size of supernova,</li>
-<li>matter profile.</li>
-</ol>
-<p>From the 2D simulation by E. Borriello et al, the size of supernova at 2sec after the bounce is about <span class="math">\(2.7\times 10^4\mathrm{km}\)</span> <a class="reference internal" href="#eborriello2014" id="id2">[EBorriello2014]</a>.</p>
-<div class="figure align-center" id="id8">
-<img alt="../_images/supernova-shock-turbulence.png" src="../_images/supernova-shock-turbulence.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">2D supernova simulation for a 15 solar mass supernova <a class="reference internal" href="#eborriello2014" id="id3">[EBorriello2014]</a>.</span></p>
-</div>
-<p>The angle averaged density on radial direction is of the order <span class="math">\(10^3\mathrm{g/cm^3}\)</span> to <span class="math">\(10^5\mathrm{g/cm^3}\)</span>.</p>
-<div class="figure align-center" id="id9">
-<img alt="../_images/supernova-radial-density-profile.png" src="../_images/supernova-radial-density-profile.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Supernova 2D simulation radial density (averaged over angles) <a class="reference internal" href="#eborriello2014" id="id4">[EBorriello2014]</a>.</span></p>
-</div>
-<table class="docutils citation" frame="void" id="eborriello2014" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[EBorriello2014]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>, <a class="fn-backref" href="#id4">3</a>)</em> Borriello, E., Chakraborty, S., Janka, H.-T., Lisi, E., &amp; Mirizzi, A. (2014). Turbulence patterns and neutrino flavor transitions in high-resolution supernova models. Journal of Cosmology and Astroparticle Physics, 2014(11), 030–030. doi:10.1088/1475-7516/2014/11/030</td></tr>
-</tbody>
-</table>
-<div class="figure align-center" id="id10">
-<img alt="../_images/earth-density-profile-PREM-model.png" src="../_images/earth-density-profile-PREM-model.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Earth density profile from PREM model.</span></p>
-</div>
-<p>That was the densities. As a reference, we can calculate MSW resonance densities for some neutrino energies. The relation between neutrino energy and MSW resonance electron number density is calculated through</p>
+  <div class="section" id="msw-effect-revisted">
+<h1>MSW Effect Revisted<a class="headerlink" href="#msw-effect-revisted" title="Permalink to this headline">¶</a></h1>
+<div class="note admonition">
+<p class="first admonition-title">Pauli Matrices and Rotations</p>
+<p>Given a rotation</p>
 <div class="math">
-\[\omega_v \cos 2\theta_v = \sqrt{2} G_F n_e .\]</div>
-<p>Move around the terms and we get</p>
-<div class="math">
-\[\begin{split}n_e &amp;= \frac{\delta m^2 \cos 2\theta_v}{2\sqrt{2} G_F} \frac{1}{E} \\
-&amp;= 7.49\times 10^{-15}\mathrm{GeV^3} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right),\end{split}\]</div>
-<p>where we have used <span class="math">\(\delta m^2 = \delta m^2_{\mathrm{atm}}\)</span>.</p>
-<p>Using natural units, we know that</p>
-<div class="math">
-\[1\mathrm{GeV^3} = 1.3\times 10^{41} \mathrm{cm^{-3}}.\]</div>
-<p>The number density of electrons of MSW resonance is</p>
-<div class="math">
-\[n_e = 9.74\times 10^{26}\mathrm{cm^{-3}} \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right).\]</div>
-<p>Assuming an electron fraction <span class="math">\(Y_e\)</span>, which is defined as the ration of electrons to baryons, the mass density is</p>
-<div class="math">
-\[\begin{split}\rho &amp;= \frac{n_e}{Y_e} \times m_b \\
-&amp; = \frac{ 9.74\times 10^{26} \mathrm{cm^{-3}} \times 1.67\times 10^{-24} \mathrm{g} }{ 0.5 } \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right)\\
-&amp; =  3.25\times 10^3 \mathrm{g/cm^3} \frac{1}{ Y_e/0.5 } \left(  \frac{\delta m^2}{2.6\times 10^{-3}\mathrm{eV^2}} \frac{\cos 2\theta_v}{0.95} \frac{1}{G_F/(1.17\times 10^{-5}\mathrm{GeV^{-2}})} \frac{1}{E/10\mathrm{MeV}} \right),\end{split}\]</div>
-<p>where I have used <span class="math">\(\sin^2(2\theta_v) = \sin^2(2\theta_{13})=0.093\)</span> from PDG 2014.</p>
-<p>In the case of <span class="math">\(\delta m^2 = \delta m^2_{\mathrm{sol}} \sim 7.59\times 10^{-5}\mathrm{eV^2}\)</span>, we would have a density that is two orders smaller.</p>
+\[\begin{split}U = \begin{pmatrix} \cos \theta &amp; \sin \theta \\ -\sin\theta &amp; \cos \theta \end{pmatrix},\end{split}\]</div>
+<p>its effect on Pauli matrices are</p>
+<div class="last math">
+\[\begin{split}U^\dagger \sigma_3 U  &amp;=\cos 2\theta \sigma_3 + \sin 2\theta \sigma_1 \\
+U^\dagger \sigma_1 U &amp; = -\sin 2\theta \sigma_3 + \cos 2\theta \sigma_1.\end{split}\]</div>
 </div>
-<div class="section" id="lengths">
-<h3>Lengths<a class="headerlink" href="#lengths" title="Permalink to this headline">¶</a></h3>
-<p>Assuming energy of neutrinos to be 10MeV, the general idea is that if the stimulated neutrino oscillations have a larger oscillation length than :math:<a href="#id5"><span class="problematic" id="id6">`</span></a>10^4`km, we don&#8217;t really need to consider the oscillations. Otherwise, oscillations could cause depolarization or little effect at all.</p>
-<p>In this case what should be done is to check whether what are the rel.</p>
-<p>Another view is that to see the stimulated neutrino oscillations, we need to find a relavent neutrino energy range.</p>
+<div class="section" id="flavor-basis">
+<h2>Flavor Basis<a class="headerlink" href="#flavor-basis" title="Permalink to this headline">¶</a></h2>
+<p>Neutrino oscillation in matter has a Hamiltonian in flavor basis</p>
+<div class="math">
+\[H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1.\]</div>
+<p>The Schroding equation is</p>
+<div class="math">
+\[i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)}.\]</div>
+<p>To make connections to Rabi oscillations, we would like to remove the changing <span class="math">\(\sigma_3\)</span> terms, using a transformation</p>
+<div class="math">
+\[\begin{split}T = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix},\end{split}\]</div>
+<p>which transform the flavor basis to another basis</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_e \\ \psi_x \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{a} \\ \psi_{b} \end{pmatrix}.\end{split}\]</div>
+<p>The Schrodinger equation can be written into this new basis</p>
+<div class="math">
+\[i \partial_x (T \Psi^{(r)}) = H^{(f)} T\Psi^{(r)},\]</div>
+<p>which is simplified to</p>
+<div class="math">
+\[i \partial_x \Psi^{(r)} = H^{(r)} \Psi^{(r)},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{2i\eta(x)} \\
+e^{-2i\eta(x)} &amp; 0 \\
+\end{pmatrix},\end{split}\]</div>
+<p>in which we remove the varying component of <span class="math">\(\sigma_3\)</span> elements using</p>
+<div class="math">
+\[\frac{d}{dx}\eta(x) = \frac{\lambda(x)}{2}.\]</div>
+<p>The final Hamiltonian would have some form</p>
+<div class="math">
+\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{i\int_0^x \lambda(\tau)d\tau + 2i\eta(0)} \\
+e^{-i\int_0^x \lambda(\tau)d\tau - 2i\eta(0)} &amp; 0 \\
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\eta(0)\)</span> is chosen to conter the constant terms from the integral.</p>
+<p>For arbitary matter profile, we could first apply Fourier expand the profile into trig function then use Jacobi-Anger expansion so that the system becomes a lot of Rabi oscillations.</p>
+<p>Any transformations or expansions that decompose <span class="math">\(\exp{\left(i\int_0^x \lambda(\tau)d\tau\right)}\)</span> into many summations of <span class="math">\(\exp{\left( i a x + b \right)}\)</span> would be enough for an Rabi oscillation interpretation.</p>
 </div>
+<div class="section" id="instanteneous-matter-basis">
+<h2>Instanteneous Matter Basis<a class="headerlink" href="#instanteneous-matter-basis" title="Permalink to this headline">¶</a></h2>
+<p>Neutrino oscillation in matter has a Hamiltonian in flavor basis</p>
+<div class="math">
+\[H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1.\]</div>
+<p>The Schroding equation is</p>
+<div class="math">
+\[i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)},\]</div>
+<p>which can be transformed to instantaneous matter basis by applying a rotation <span class="math">\(U\)</span>,</p>
+<div class="math">
+\[i \partial_x \left(  U\Psi^{(m)} \right)= H^{(f)} U\Psi^{(m)},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}U = \begin{pmatrix} \cos \theta_m &amp; \sin \theta_m \\ -\sin\theta_m &amp; \cos \theta_m \end{pmatrix}.\end{split}\]</div>
+<p>With a little algebra, we can write the system into</p>
+<div class="math">
+\[i \partial _x \Psi^{(m)} = H^{(m)}\Psi^{(m)}\]</div>
+<div class="math">
+\[H^{(m)} = U^\dagger H^{(f)} U - i U^\dagger \partial_x U.\]</div>
+<p>By setting the off-diagonal elements of the first term <span class="math">\(U^\dagger H^{(f)} U\)</span> to zero, we can derive the relation</p>
+<div class="math">
+\[\tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v}.\]</div>
+<p>Furthermore, we derive the term</p>
+<div class="math">
+\[i U^\dagger \partial_x U = - \dot\theta_m \sigma_2.\]</div>
+<p>We can calculate <span class="math">\(\dot\theta_m\)</span> by taking the derivative of <span class="math">\(\tan 2\theta_m\)</span>,</p>
+<div class="math">
+\[\frac{d}{dx} \tan 2\theta_m = \frac{2}{\cos^2 2\theta_m} \dot\theta_m,\]</div>
+<p>so that</p>
+<div class="math">
+\[\begin{split}\dot\theta_m &amp;= \frac{1}{2} \cos^2 (2\theta_m) \frac{d}{dx} \tan 2\theta_m \\
+&amp; = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v } \frac{d}{dx} \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v} \\
+&amp; = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v }  \frac{\sin 2\theta_v}{(\cos 2\theta_v - \lambda/\omega_v)^2} \frac{1}{\omega)v} \frac{d}{dx} \lambda(x) \\
+&amp; = \frac{1}{2} \sin 2\theta_m \frac{1}{\omega_m} \frac{d}{dx} \lambda(x).\end{split}\]</div>
 </div>
 </div>
 
@@ -239,8 +250,8 @@
 <h3>ToC</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Scales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">MSW Effect Revisted</a></li>
 <li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
@@ -289,7 +300,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Scales &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="MSW Effect Revisted &mdash; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -334,7 +345,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
-      <a href="../_sources/matter-stimulated/scales.txt"
+      <a href="../_sources/matter-stimulated/msw-revisted.txt"
           rel="nofollow">Page source</a></li>
     </div>
 
