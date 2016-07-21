@@ -85,6 +85,23 @@ For arbitary matter profile, we could first apply Fourier expand the profile int
 Any transformations or expansions that decompose :math:`\exp{\left(i\int_0^x \lambda(\tau)d\tau\right)}` into many summations of :math:`\exp{\left( i a x + b \right)}` would be enough for an Rabi oscillation interpretation.
 
 
+Let's discuss the constant matter profile, :math:`\lambda(x) = \lambda_0`. Thus we have
+
+.. math::
+   \eta(x) = \frac{1}{2} \lambda_0 x.
+
+The Hamiltonian becomes
+
+.. math::
+   H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+   0 & e^{i\lambda_0 x} \\
+   e^{-i\lambda_0 x} & 0 \\
+   \end{pmatrix},
+
+which is exactly a Rabi oscillation. The resonance condition is
+
+.. math::
+   \lambda_0 = \omega_v \cos 2\theta_v.
 
 
 
