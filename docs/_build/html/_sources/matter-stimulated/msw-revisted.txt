@@ -22,6 +22,11 @@ Flavor Basis
 -------------------------
 
 
+.. admonition:: Vacuum Oscillations
+   :class: note
+
+   Vacuum oscillations is already a Rabi oscillation at resonance with oscillation width :math:`\omega_v \sin 2\theta_v`.
+
 Neutrino oscillation in matter has a Hamiltonian in flavor basis
 
 .. math::

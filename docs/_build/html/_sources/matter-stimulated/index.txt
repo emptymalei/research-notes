@@ -164,6 +164,7 @@ we simply calculate
 
    scales.rst
    msw-revisted.rst
+   parametric-resonance-revisted.rst
    single-frequency.rst
    two-frequency.rst
    multi-frequency.rst
@@ -171,7 +172,6 @@ we simply calculate
    flavor-isospin-matter.rst
    picture.rst
    linear-background-matter.rst
-   parametric-resonance-revisted.rst
 
 
 
