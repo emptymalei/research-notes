@@ -205,18 +205,18 @@ n_+ &amp;= n_0 + 1 .\end{split}\]</div>
 <div class="hint admonition">
 <p class="first admonition-title">Solving Using Mathematica</p>
 <p>The Mathematica code:</p>
-<div class="last highlight-python"><div class="highlight"><pre><span></span>In[1]:= sys = I D[{phi1[x], phi2[x]}, x] == {{0, (g0R + I g0I) Exp[ I (-omegam + n0 k) x]}, {(g0R - I g0I) Exp[-I (-omegam + n0 k) x], 0}}.{phi1[x], phi2[x]}
-In[2]:= DSolve[sys, {phi1, phi2}, x]// FullSimplify
-Out[3]:= {{phi1 -&gt; Function[{x},
-E^(1/2 I (k n0 + I Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] - omegam) x) C[1]
-+ E^(1/2 (Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] + I (k n0 - omegam)) x) C[2]],
-phi2 -&gt; Function[{x}, (1/(2 (g0I - I g0R)))
-I E^(-I (k n0 - omegam) x +
- 1/2 I (k n0 + I Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] - omegam) x)
- (k n0 + I Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2] - omegam) C[1]
- + (1/(2 (g0I - I g0R))) E^(1/2 (Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2]
- + I (k n0 - omegam)) x - I (k n0 - omegam) x) (Sqrt[-4 (g0I^2 + g0R^2) - (k n0 - omegam)^2]
- + I (k n0 - omegam)) C[2]]}}
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="o">=</span> <span class="n">sys</span> <span class="o">=</span> <span class="n">I</span> <span class="n">D</span><span class="p">[{</span><span class="n">phi1</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">phi2</span><span class="p">[</span><span class="n">x</span><span class="p">]},</span> <span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="p">{{</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">g0R</span> <span class="o">+</span> <span class="n">I</span> <span class="n">g0I</span><span class="p">)</span> <span class="n">Exp</span><span class="p">[</span> <span class="n">I</span> <span class="p">(</span><span class="o">-</span><span class="n">omegam</span> <span class="o">+</span> <span class="n">n0</span> <span class="n">k</span><span class="p">)</span> <span class="n">x</span><span class="p">]},</span> <span class="p">{(</span><span class="n">g0R</span> <span class="o">-</span> <span class="n">I</span> <span class="n">g0I</span><span class="p">)</span> <span class="n">Exp</span><span class="p">[</span><span class="o">-</span><span class="n">I</span> <span class="p">(</span><span class="o">-</span><span class="n">omegam</span> <span class="o">+</span> <span class="n">n0</span> <span class="n">k</span><span class="p">)</span> <span class="n">x</span><span class="p">],</span> <span class="mi">0</span><span class="p">}}</span><span class="o">.</span><span class="p">{</span><span class="n">phi1</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">phi2</span><span class="p">[</span><span class="n">x</span><span class="p">]}</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span><span class="o">=</span> <span class="n">DSolve</span><span class="p">[</span><span class="n">sys</span><span class="p">,</span> <span class="p">{</span><span class="n">phi1</span><span class="p">,</span> <span class="n">phi2</span><span class="p">},</span> <span class="n">x</span><span class="p">]</span><span class="o">//</span> <span class="n">FullSimplify</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span><span class="o">=</span> <span class="p">{{</span><span class="n">phi1</span> <span class="o">-&gt;</span> <span class="n">Function</span><span class="p">[{</span><span class="n">x</span><span class="p">},</span>
+<span class="n">E</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">+</span> <span class="n">I</span> <span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">(</span><span class="n">g0I</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">g0R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span> <span class="n">x</span><span class="p">)</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">+</span> <span class="n">E</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="p">(</span><span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">(</span><span class="n">g0I</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">g0R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">))</span> <span class="n">x</span><span class="p">)</span> <span class="n">C</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span>
+<span class="n">phi2</span> <span class="o">-&gt;</span> <span class="n">Function</span><span class="p">[{</span><span class="n">x</span><span class="p">},</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span> <span class="p">(</span><span class="n">g0I</span> <span class="o">-</span> <span class="n">I</span> <span class="n">g0R</span><span class="p">)))</span>
+<span class="n">I</span> <span class="n">E</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span> <span class="n">x</span> <span class="o">+</span>
+ <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">+</span> <span class="n">I</span> <span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">(</span><span class="n">g0I</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">g0R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span> <span class="n">x</span><span class="p">)</span>
+ <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">+</span> <span class="n">I</span> <span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">(</span><span class="n">g0I</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">g0R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+ <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span> <span class="p">(</span><span class="n">g0I</span> <span class="o">-</span> <span class="n">I</span> <span class="n">g0R</span><span class="p">)))</span> <span class="n">E</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="p">(</span><span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">(</span><span class="n">g0I</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">g0R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
+ <span class="o">+</span> <span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">))</span> <span class="n">x</span> <span class="o">-</span> <span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span> <span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="p">(</span><span class="n">g0I</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">g0R</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
+ <span class="o">+</span> <span class="n">I</span> <span class="p">(</span><span class="n">k</span> <span class="n">n0</span> <span class="o">-</span> <span class="n">omegam</span><span class="p">))</span> <span class="n">C</span><span class="p">[</span><span class="mi">2</span><span class="p">]]}}</span>
 </pre></div>
 </div>
 </div>
@@ -235,7 +235,7 @@ q^2 &amp;= \lvert F \rvert^2 + g^2.\end{split}\]</div>
 <p>which leads to</p>
 <div class="math">
 \[\begin{split}\begin{pmatrix} \psi_{b1} (0) \\ \psi_{b2}(0)  \end{pmatrix} = \begin{pmatrix} e^{i\eta(0)} \\ 0  \end{pmatrix},\end{split}\]</div>
-<p>using equation <a class="reference internal" href="index.html#matter-stimulated-equation-wavefunction-diff-basis"><span>wavefunction in background matter basis</span></a>.</p>
+<p>using equation <a class="reference internal" href="index.html#matter-stimulated-equation-wavefunction-diff-basis"><span class="std std-ref">wavefunction in background matter basis</span></a>.</p>
 <p>Plug in the initial condition for the wave function,</p>
 <div class="math">
 \[\begin{split}C_1 + C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \\
@@ -468,7 +468,7 @@ C_2 &amp;= e^{i \frac{z_k}{2}\cos \phi} \frac{ q - g }{2 q}.\end{split}\]</div>
 <div class="hint admonition">
 <p class="first admonition-title">Find FWHM Using Mathematica</p>
 <p>The Mathematica code:</p>
-<div class="last highlight-python"><div class="highlight"><pre><span></span>fwhm[n_] := First@Differences[k /. {ToRules@Reduce[amplitude[k, 0.1, Pi/5, n] == 0.5 &amp;&amp;k &gt; (1 - 0.5/Exp[n]/n^2)/n &amp;&amp; k &lt; (1 + 0.5/Exp[n]/n^2)/n, k]}]
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">fwhm</span><span class="p">[</span><span class="n">n_</span><span class="p">]</span> <span class="p">:</span><span class="o">=</span> <span class="n">First</span><span class="nd">@Differences</span><span class="p">[</span><span class="n">k</span> <span class="o">/.</span> <span class="p">{</span><span class="n">ToRules</span><span class="nd">@Reduce</span><span class="p">[</span><span class="n">amplitude</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">Pi</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.5</span> <span class="o">&amp;&amp;</span><span class="n">k</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">Exp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">Exp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">]}]</span>
 </pre></div>
 </div>
 </div>
@@ -571,13 +571,14 @@ Keywords: Pair production; Multiphoton processes; High intensity lasers</p>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Single Frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interference.html">Interference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">Parametric Resonance Revisted</a></li>
 </ul>
 </li>
 </ul>
@@ -598,9 +599,6 @@ Keywords: Pair production; Multiphoton processes; High intensity lasers</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3>Support Us</h3>
@@ -660,8 +658,8 @@ var duoshuoQuery = {short_name:"sci2fi"};
       <a href="genindex.html">Index</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
       <a href="../_sources/matter-stimulated/single-frequency.txt"

@@ -28,6 +28,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="prev" title="Linear Background Matter Profile" href="linear-background-matter.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -120,7 +122,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="linear-background-matter.html" title="Linear Background Matter Profile"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -132,8 +138,8 @@
   <div class="section" id="parametric-resonance-revisted">
 <h1>Parametric Resonance Revisted<a class="headerlink" href="#parametric-resonance-revisted" title="Permalink to this headline">¶</a></h1>
 <p>For a matter profile</p>
-<div class="math">
-\[\lambda(x) = \lambda_0 + A\sin( k x),\]</div>
+<div class="math" id="equation-parametric-resonance-matter-profile-single-frequency">
+<span class="eqno">(1)</span>\[\lambda(x) = \lambda_0 + A\sin( k x),\]</div>
 <p>the parametric resonance condition is <a class="reference internal" href="#krastev1989" id="id1">[Krastev1989]</a></p>
 <div class="math">
 \[\omega_m \sim n k,\]</div>
@@ -141,8 +147,20 @@
 <div class="note admonition">
 <p class="first admonition-title">A Minimal Derivation of Parametric Resonance Condition</p>
 <p>This derivation is from <a class="reference internal" href="#krastev1989" id="id2">[Krastev1989]</a>.</p>
-<p class="last">On one matter profile wavelength, the accumulated phase of the system should be a multiple of <span class="math">\(2\pi\)</span></p>
+<p>On one matter profile wavelength, the accumulated phase of the system should be a multiple of <span class="math">\(2\pi\)</span>,</p>
+<div class="math">
+\[\int_0^{2\pi/k} \omega_m = 2\pi n,\]</div>
+<p>where</p>
+<div class="math">
+\[\omega_m = \omega_v \sqrt{ (\lambda(x)/\omega_v - \cos 2\theta_v)^2 + \sin^2 2\theta_v }.\]</div>
+<p><span class="math">\(\omega_m\)</span> doesn&#8217;t change a lot during one matter profile oscillation wavelength <span class="math">\(2\pi/k\)</span>, thus we perform the integration by treating the integrand as a constant, which returns</p>
+<div class="math">
+\[\omega_m \frac{2\pi}{k} =2\pi n,\]</div>
+<p>which can be simplified</p>
+<div class="last math">
+\[\omega_m = n k.\]</div>
 </div>
+<p>For matter profile <a href="#equation-parametric-resonance-matter-profile-single-frequency">(1)</a>, we already know that this is the condition of resonance from Rabi oscillation.</p>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 <table class="docutils citation" frame="void" id="krastev1989" rules="none">
@@ -175,8 +193,20 @@
 
 
 <h3>ToC</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interference.html">Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Parametric Resonance Revisted</a></li>
+</ul>
+</li>
 </ul>
 
 
@@ -195,9 +225,6 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3>Support Us</h3>
@@ -257,8 +284,8 @@ var duoshuoQuery = {short_name:"sci2fi"};
       <a href="genindex.html">Index</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
       <a href="../_sources/matter-stimulated/parametric-resonance-revisted.txt"
