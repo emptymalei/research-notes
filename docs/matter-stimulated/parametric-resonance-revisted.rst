@@ -44,6 +44,106 @@ where :math:`k=1,2,3,\cdots`.
 For matter profile :eq:`parametric-resonance-matter-profile-single-frequency`, we already know that this is the condition of resonance from Rabi oscillation.
 
 
+Castle Wall Profile - Fourier Series
+----------------------------------------------------------------
+
+Matter profile
+
+.. math::
+   \lambda(x) = \begin{cases} \lambda_1, \quad 0 \leq \mathrm{Mod}[x] \leq X_1  \\  \lambda_2, \quad  X_1 < \mathrm{Mod}[x] < X_1+X_2  \end{cases},
+
+which is periodic with period :math:`X \equiv X_1 + X_2`. Such a profile can be decomposed using Fourier series,
+
+.. math::
+   \lambda(x) = \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( \frac{i2\pi n x}{X} \right) = \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right),
+
+where :math:`\omega_0 = \frac{2\pi}{X}`. The coefficients are evaluated using the orthogonal relation of exponentials for :math:`n\neq 0`,
+
+.. math::
+   \Lambda_n &= \frac{1}{X} \int_0^X \lambda(x) e^{ - i \omega_0 n x} dx \\
+   & = \frac{1}{X} \left( \int_{0}^{X_1} \lambda_1 e^{ - i \omega_0 n x} dx + \int_{X_1}^{X_1+X_2} \lambda_2 e^{ - i \omega_0 n x} dx  \right) \\
+   & = \frac{1}{X} \frac{X}{-i2\pi n} \left( \lambda_1 e^{-i\omega_0 n X_1} + \lambda_2 \left( e^{-i\omega_0 n X} - e^{-i\omega_0 n X_1}  \right) \right) \\
+   & = \frac{i}{2\pi n} \left( -\lambda_1 + (\lambda_1 - \lambda_2) e^{-i2\pi n X_1/X} + \lambda_2 e^{-i 2\pi n} \right).
+   :label: parametric-resonance-castle-wall-fourier-coeff
+
+For n=0, we have
+
+.. math::
+   \Lambda_0 = \frac{X_1 \lambda_1 + X_2 \lambda_2}{X}.
+
+
+
+.. admonition:: Verification of This Result
+   :class: note
+
+   We can verify this result by setting :math:`\lambda_1 =\lambda_2 = \lambda`, which should give use the result :math:`\Lambda_n = \frac{i}{2\pi n}\lambda (e^{- i 2\pi n} - 1)`. By setting :math:`\lambda_1 =\lambda_2 = \lambda` in the last step of :eq:`parametric-resonance-castle-wall-fourier-coeff`, we have the result that matches our expectation.
+
+   Another more complete way to verify this result is to compare the numerical results using this Fourier series and the original profile, which is shown in :numref:`parametric-resonance-reconstruction-of-castle-wall-0point01-0point02-1-1point8`.
+
+   .. _parametric-resonance-reconstruction-of-castle-wall-0point01-0point02-1-1point8:
+
+   .. figure:: assets/parametric-resonance/reconstruction-of-castle-wall-0point01-0point02-1-1point8.png
+      :align: center
+
+      Reconstruction of castle wall profile using Fourier series.
+
+
+
+.. admonition:: Akhmedov's Castle Wall Parametric Resonance Condition
+   :class: note
+
+   The resonance condition is given by
+
+   .. math::
+      \frac{\tan (\omega_{m1}X_1)}{\tan (\omega_{m2}X_2)} = - \frac{\cos 2\theta_{m1}}{\cos 2\theta_{m2}} = - \frac{ \cos 2\theta_v - \lambda_1/\omega_v }{  \cos 2\theta_v - \lambda_2/\omega_v } \frac{ \sqrt{ (\lambda_2/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_2/\omega_v } }{ \sqrt{ (\lambda_1/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_1/\omega_v } }.
+
+   This is rather opaque.
+
+
+
+We would like to choose parameters so that we have a full parametric resonance. A guess through our Fourier series is to set the first mode in the series to be at resonance. Since the Hamiltonian in flavor basis is
+
+.. math::
+   H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \frac{1}{2}  \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right) \sigma_3.
+
+
+Castle Wall - Direct Rotation Using T Matrix
+----------------------------------------------------------------
+
+We can, on the other hand, rotate the system first, which gives us the Hamiltonian
+
+.. math::
+   H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+   0 & \exp\left( i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) \right) \\
+   \exp\left( -i\int_0^x \lambda(\tau) d\tau - 2i \eta(0) \right) & 0
+   \end{pmatrix},
+
+where :math:`\eta(0)` is the initial condition we chose for
+
+.. math::
+   \frac{d}{dx}\eta(x) = \frac{\lambda(x)}{2}.
+
+
+For :math:`x<X_1`, we have
+
+.. math::
+   i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) = i \lambda_1 x,
+
+while for :math:`X_1<x<X_1+X_2`, we have
+
+.. math::
+   i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) = i \lambda_1 X_1 + i \lambda_2 (x-X_1).
+
+One of the important conclusion from the research in Rabi oscilations is that the constant phase term has no effect on the system at all. Thus even for a much larger x, we can always drop the constant phase :math:`i(\lambda_1X_1+\lambda_2X_2)N` which is obtained through integration over N periods. What's more, the term :math:`i \lambda_1 X_1` and :math:`-i\lambda_2X_1` can also be dropped.
+
+At this point, we would conclude that the resonance condition should be obtained by setting either mode :math:`e^{i\lambda_1 x}` or :math:`e^{i\lambda_2 x}`.
+
+.. admonition:: TO DO
+   :class: warning
+
+   1. **NUMERICAL CALCULATIONS?**
+   2. **I can not relate this result with the Akhmedov condition.**
+
 
 
 

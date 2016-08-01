@@ -29,7 +29,8 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
     <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
-    <link rel="prev" title="Linear Background Matter Profile" href="linear-background-matter.html" />
+    <link rel="next" title="Single Frequency Matter Perturbation" href="single-frequency.html" />
+    <link rel="prev" title="MSW Effect Revisted" href="msw-revisted.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -123,7 +124,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="linear-background-matter.html" title="Linear Background Matter Profile"
+          <a href="single-frequency.html" title="Single Frequency Matter Perturbation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="msw-revisted.html" title="MSW Effect Revisted"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
@@ -161,6 +165,70 @@
 \[\omega_m = n k.\]</div>
 </div>
 <p>For matter profile <a href="#equation-parametric-resonance-matter-profile-single-frequency">(1)</a>, we already know that this is the condition of resonance from Rabi oscillation.</p>
+<div class="section" id="castle-wall-profile-fourier-series">
+<h2>Castle Wall Profile - Fourier Series<a class="headerlink" href="#castle-wall-profile-fourier-series" title="Permalink to this headline">¶</a></h2>
+<p>Matter profile</p>
+<div class="math">
+\[\begin{split}\lambda(x) = \begin{cases} \lambda_1, \quad 0 \leq \mathrm{Mod}[x] \leq X_1  \\  \lambda_2, \quad  X_1 &lt; \mathrm{Mod}[x] &lt; X_1+X_2  \end{cases},\end{split}\]</div>
+<p>which is periodic with period <span class="math">\(X \equiv X_1 + X_2\)</span>. Such a profile can be decomposed using Fourier series,</p>
+<div class="math">
+\[\lambda(x) = \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( \frac{i2\pi n x}{X} \right) = \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right),\]</div>
+<p>where <span class="math">\(\omega_0 = \frac{2\pi}{X}\)</span>. The coefficients are evaluated using the orthogonal relation of exponentials for <span class="math">\(n\neq 0\)</span>,</p>
+<div class="math" id="equation-parametric-resonance-castle-wall-fourier-coeff">
+<span class="eqno">(2)</span>\[\begin{split}\Lambda_n &amp;= \frac{1}{X} \int_0^X \lambda(x) e^{ - i \omega_0 n x} dx \\
+&amp; = \frac{1}{X} \left( \int_{0}^{X_1} \lambda_1 e^{ - i \omega_0 n x} dx + \int_{X_1}^{X_1+X_2} \lambda_2 e^{ - i \omega_0 n x} dx  \right) \\
+&amp; = \frac{1}{X} \frac{X}{-i2\pi n} \left( \lambda_1 e^{-i\omega_0 n X_1} + \lambda_2 \left( e^{-i\omega_0 n X} - e^{-i\omega_0 n X_1}  \right) \right) \\
+&amp; = \frac{i}{2\pi n} \left( -\lambda_1 + (\lambda_1 - \lambda_2) e^{-i2\pi n X_1/X} + \lambda_2 e^{-i 2\pi n} \right).\end{split}\]</div>
+<p>For n=0, we have</p>
+<div class="math">
+\[\Lambda_0 = \frac{X_1 \lambda_1 + X_2 \lambda_2}{X}.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Verification of This Result</p>
+<p>We can verify this result by setting <span class="math">\(\lambda_1 =\lambda_2 = \lambda\)</span>, which should give use the result <span class="math">\(\Lambda_n = \frac{i}{2\pi n}\lambda (e^{- i 2\pi n} - 1)\)</span>. By setting <span class="math">\(\lambda_1 =\lambda_2 = \lambda\)</span> in the last step of <a href="#equation-parametric-resonance-castle-wall-fourier-coeff">(2)</a>, we have the result that matches our expectation.</p>
+<p>Another more complete way to verify this result is to compare the numerical results using this Fourier series and the original profile, which is shown in <a class="reference internal" href="#parametric-resonance-reconstruction-of-castle-wall-0point01-0point02-1-1point8"><span>Fig. 5</span></a>.</p>
+<div class="last figure align-center" id="id3">
+<span id="parametric-resonance-reconstruction-of-castle-wall-0point01-0point02-1-1point8"></span><img alt="../_images/reconstruction-of-castle-wall-0point01-0point02-1-1point8.png" src="../_images/reconstruction-of-castle-wall-0point01-0point02-1-1point8.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Reconstruction of castle wall profile using Fourier series.</span></p>
+</div>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Akhmedov&#8217;s Castle Wall Parametric Resonance Condition</p>
+<p>The resonance condition is given by</p>
+<div class="math">
+\[\frac{\tan (\omega_{m1}X_1)}{\tan (\omega_{m2}X_2)} = - \frac{\cos 2\theta_{m1}}{\cos 2\theta_{m2}} = - \frac{ \cos 2\theta_v - \lambda_1/\omega_v }{  \cos 2\theta_v - \lambda_2/\omega_v } \frac{ \sqrt{ (\lambda_2/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_2/\omega_v } }{ \sqrt{ (\lambda_1/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_1/\omega_v } }.\]</div>
+<p class="last">This is rather opaque.</p>
+</div>
+<p>We would like to choose parameters so that we have a full parametric resonance. A guess through our Fourier series is to set the first mode in the series to be at resonance. Since the Hamiltonian in flavor basis is</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \frac{1}{2}  \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right) \sigma_3.\]</div>
+</div>
+<div class="section" id="castle-wall-direct-rotation-using-t-matrix">
+<h2>Castle Wall - Direct Rotation Using T Matrix<a class="headerlink" href="#castle-wall-direct-rotation-using-t-matrix" title="Permalink to this headline">¶</a></h2>
+<p>We can, on the other hand, rotate the system first, which gives us the Hamiltonian</p>
+<div class="math">
+\[\begin{split}H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; \exp\left( i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) \right) \\
+\exp\left( -i\int_0^x \lambda(\tau) d\tau - 2i \eta(0) \right) &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\eta(0)\)</span> is the initial condition we chose for</p>
+<div class="math">
+\[\frac{d}{dx}\eta(x) = \frac{\lambda(x)}{2}.\]</div>
+<p>For <span class="math">\(x&lt;X_1\)</span>, we have</p>
+<div class="math">
+\[i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) = i \lambda_1 x,\]</div>
+<p>while for <span class="math">\(X_1&lt;x&lt;X_1+X_2\)</span>, we have</p>
+<div class="math">
+\[i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) = i \lambda_1 X_1 + i \lambda_2 (x-X_1).\]</div>
+<p>One of the important conclusion from the research in Rabi oscilations is that the constant phase term has no effect on the system at all. Thus even for a much larger x, we can always drop the constant phase <span class="math">\(i(\lambda_1X_1+\lambda_2X_2)N\)</span> which is obtained through integration over N periods. What&#8217;s more, the term <span class="math">\(i \lambda_1 X_1\)</span> and <span class="math">\(-i\lambda_2X_1\)</span> can also be dropped.</p>
+<p>At this point, we would conclude that the resonance condition should be obtained by setting either mode <span class="math">\(e^{i\lambda_1 x}\)</span> or <span class="math">\(e^{i\lambda_2 x}\)</span>.</p>
+<div class="warning admonition">
+<p class="first admonition-title">TO DO</p>
+<ol class="last arabic simple">
+<li><strong>NUMERICAL CALCULATIONS?</strong></li>
+<li><strong>I can not relate this result with the Akhmedov condition.</strong></li>
+</ol>
+</div>
+</div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 <table class="docutils citation" frame="void" id="krastev1989" rules="none">
@@ -197,6 +265,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Parametric Resonance Revisted</a></li>
 <li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
@@ -204,7 +273,6 @@
 <li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Parametric Resonance Revisted</a></li>
 </ul>
 </li>
 </ul>
@@ -225,6 +293,9 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3>Support Us</h3>
@@ -284,8 +355,8 @@ var duoshuoQuery = {short_name:"sci2fi"};
       <a href="genindex.html">Index</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
       <a href="../_sources/matter-stimulated/parametric-resonance-revisted.txt"

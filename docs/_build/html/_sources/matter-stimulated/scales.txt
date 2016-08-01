@@ -97,7 +97,7 @@ In the case of :math:`\delta m^2 = \delta m^2_{\mathrm{sol}} \sim 7.59\times 10^
 Lengths
 ~~~~~~~~~~~~~~~~~~~
 
-Assuming energy of neutrinos to be 10MeV, the general idea is that if the stimulated neutrino oscillations have a larger oscillation length than :math:`10^4`km, we don't really need to consider the oscillations. Otherwise, oscillations could cause depolarization or little effect at all.
+Assuming energy of neutrinos to be 10MeV, the general idea is that if the stimulated neutrino oscillations have a larger oscillation length than :math:`10^4` km, we don't really need to consider the oscillations. Otherwise, oscillations could cause depolarization or little effect at all.
 
 In this case what should be done is to check whether what are the rel.
 
