@@ -92,6 +92,15 @@ latex_preamble = r"""
 pngmath_latex_preamble = latex_preamble
 latex_elements = {"preamble": latex_preamble}
 
+# prolog included in the beginning of every rst file
+rst_prolog = """
+.. role:: strike
+   :class: strike
+
+.. role:: highlight-text
+   :class: highlight-text
+"""
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

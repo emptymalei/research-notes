@@ -5,3 +5,20 @@
 img.math {
     width: inherit;
 }
+
+.strike {
+  text-decoration: line-through;
+}
+
+/* Highlight Text */
+
+.highlight-text {
+padding: 2px 4px;
+/*font-size: 90%;*/
+/*font-weight: bold;*/
+color: #4B648C;
+background-color: #c3ffcd;
+/*white-space: nowrap;*/
+border-radius: 4px;
+display: inline;
+}
