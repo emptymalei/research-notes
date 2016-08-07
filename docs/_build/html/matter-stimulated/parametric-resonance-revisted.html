@@ -203,6 +203,8 @@
 </div>
 <div class="section" id="castle-wall-profile-fourier-series">
 <h2>Castle Wall Profile - Fourier Series<a class="headerlink" href="#castle-wall-profile-fourier-series" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-attemptation-full-fourier-series">
+<h3>First Attemptation: Full Fourier Series<a class="headerlink" href="#first-attemptation-full-fourier-series" title="Permalink to this headline">¶</a></h3>
 <p>Another approach is to decompose the system into a lot of sin or cos modes so that we can use the result we had before.</p>
 <p>Such a periodic matter profile <a href="#equation-parametric-resonance-castle-wall-profile">(2)</a> can be decomposed using Fourier series,</p>
 <div class="math">
@@ -235,7 +237,22 @@
 <p>To find out the Rabi modes, we first rotate to the rotation frame using T matrix. Since the Hamiltonian in flavor basis is</p>
 <div class="math">
 \[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \frac{1}{2}  \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right) \sigma_3.\]</div>
-<p>We notice that the 0-mode is a constant which plays a role as the background matter profile. We should rotate to the background matter basis first because the zero mode is always there and will generate some flavor transitions. However, this is not anything special but the constant matter flavor transitions. <span class="highlight-text">Rotating to the background matter profile allows us to concentrate on the actual parametric effect.</span> The Hamiltonian in background basis is</p>
+<p>We notice that the 0-mode is a constant which plays a role as the background matter profile. We should rotate to the background matter basis first because the zero mode is always there and will generate some flavor transitions. However, this is not anything special but the constant matter flavor transitions. <span class="highlight-text">Rotating to the background matter profile allows us to concentrate on the actual parametric effect.</span> To do so we rewrite the Hamiltonian</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q \exp\left( i \omega_0 q x \right) \right) \sigma_3,\]</div>
+<p>where we treat <span class="math">\(\Lambda_0\)</span> as the background matter profile. For simplifity we define</p>
+<div class="math">
+\[\delta \lambda =  \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q \exp\left( i \omega_0 q x \right),\]</div>
+<p>so that</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \delta \lambda \right) \sigma_3.\]</div>
+<p>The Hamiltonian in background matter basis becomes</p>
+<div class="math">
+\[\begin{split}H &amp;= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda - \frac{1}{2} \delta \lambda \sigma_1 \\
+&amp;= - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \sin 2\theta_m \sigma_1.\end{split}\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Rotating to Background Matter Basis</p>
+<p>The Hamiltonian in background basis is</p>
 <div class="math">
 \[H = U^\dagger H^{(f)} U,\]</div>
 <p>where</p>
@@ -249,12 +266,54 @@
 \[\begin{split}&amp;\frac{1}{2}\omega_v\left( \Lambda_0/\omega_v \cos 2\theta_m - \cos 2\theta_v\cos 2\theta_m - \sin 2\theta_v\sin 2\theta_m \right) \\
 =&amp;-\frac{1}{2}\omega_m,\end{split}\]</div>
 <p>and</p>
-<div class="math">
+<div class="last math">
 \[\begin{split}&amp;\frac{1}{2}\Lambda_0 \sin 2\theta_m - \frac{1}{2} \omega_v \cos 2\theta_v \sin 2\theta_m + \frac{1}{2} \omega_v \sin 2\theta_v \cos 2\theta_m \\
 =&amp; 0.\end{split}\]</div>
-<p>The Hamiltonian in background matter basis becomes</p>
+</div>
+<p>Then we go to the frame that the z component of Hamiltonina vector is stationary. The caveat here is that the rotation we would use</p>
 <div class="math">
-\[H =  - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \cos 2\theta_m \sigma_3 + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \sin 2\theta_m \sigma_1.\]</div>
+\[\begin{split}\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{s1} \\ \psi_{s2} \end{pmatrix}\end{split}\]</div>
+<p>is only valid for <strong>real</strong> <span class="math">\(\eta(x)\)</span> because complex <span class="math">\(\eta(x)\)</span> will make this transformation <strong>non-unitary</strong>.</p>
+<p><span class="highlight-text">So this derivation has to stop here.</span></p>
+</div>
+<div class="section" id="the-trick-even-fourier-series">
+<h3>The Trick: Even Fourier Series<a class="headerlink" href="#the-trick-even-fourier-series" title="Permalink to this headline">¶</a></h3>
+<div class="note admonition">
+<p class="first admonition-title">Fourier Series of Even and Odd Functions</p>
+<p>In general the Fourier series of a periodic function defined on <span class="math">\(\left[ -\frac{X}{2}, \frac{X}{2} \right]\)</span> is</p>
+<div class="math">
+\[\lambda(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos(n 2\pi x/X) + \sum_{n=1}^\infty b_n \sin(n 2\pi x/X),\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}a_0 &amp; = \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
+a_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \cos ( n2\pi x/X ) dx\\
+b_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \sin( n 2\pi x/X ) dx.\end{split}\]</div>
+<p>For EVEN function <span class="math">\(\lambda(x)\)</span>, we have</p>
+<div class="last math">
+\[\lambda(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n \cos (n 2\pi x/X).\]</div>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="../_images/piecewise-profile.png" src="../_images/piecewise-profile.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Shifted castle wall profile.</span></p>
+</div>
+<p>We shift the castle wall profile and make it always even, so that</p>
+<div class="math">
+\[\begin{split}\lambda(x) = \begin{cases} \lambda_2 , &amp;\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x\le -\frac{X_1}{2} \\
+\lambda_1, &amp;\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
+\lambda_2, &amp;\quad \frac{X_1}{2}\le x\le \frac{X_1}{2}+\frac{X_2}{2}
+\end{cases}\end{split}\]</div>
+<p>Fourier series of the profile is</p>
+<div class="math">
+\[\lambda(x) = \frac{1}{2}\Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \frac{i 2\pi q x}{X} \right) = \frac{1}{2} \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( i \omega_0 q x \right),\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\Lambda_0 &amp;= \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
+&amp; = \frac{2}{X} \left(  \lambda_2 X_2 + \lambda_1 X_1   \right) \\
+\Lambda_q &amp;= \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \cos(n 2\pi x/X)dx \\
+&amp; = \frac{2}{X} \left( \lambda_2 \int_{-X/2}^{-X_1/2} \cos(n 2\pi x/X)dx + \lambda_1 \int_{-X_1/2}^{X_1/2} \cos(n 2\pi x/X)dx + \lambda_2 \int_{X_1/2}^{X/2} \cos(n 2\pi x/X)dx \right) \\
+&amp; = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q\omega_0 X/2) - \sin(q\omega_0 X_1/2) \right) + \lambda_1 \sin( q\omega_0 X_1/2)  \right)  \\
+&amp; = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q \pi ) - \sin(q \pi X_1/X) \right) + \lambda_1 \sin( q\pi X_1/X)  \right)\end{split}\]</div>
+</div>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>

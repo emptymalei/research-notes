@@ -106,6 +106,10 @@ At this point, we would conclude that the resonance condition should be obtained
 Castle Wall Profile - Fourier Series
 ----------------------------------------------------------------
 
+
+First Attemptation: Full Fourier Series
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Another approach is to decompose the system into a lot of sin or cos modes so that we can use the result we had before.
 
 Such a periodic matter profile :eq:`parametric-resonance-castle-wall-profile` can be decomposed using Fourier series,
@@ -163,40 +167,116 @@ To find out the Rabi modes, we first rotate to the rotation frame using T matrix
 .. math::
    H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \frac{1}{2}  \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right) \sigma_3.
 
-We notice that the 0-mode is a constant which plays a role as the background matter profile. We should rotate to the background matter basis first because the zero mode is always there and will generate some flavor transitions. However, this is not anything special but the constant matter flavor transitions. :highlight-text:`Rotating to the background matter profile allows us to concentrate on the actual parametric effect.` The Hamiltonian in background basis is
+We notice that the 0-mode is a constant which plays a role as the background matter profile. We should rotate to the background matter basis first because the zero mode is always there and will generate some flavor transitions. However, this is not anything special but the constant matter flavor transitions. :highlight-text:`Rotating to the background matter profile allows us to concentrate on the actual parametric effect.` To do so we rewrite the Hamiltonian
 
 .. math::
-   H = U^\dagger H^{(f)} U,
+   H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q \exp\left( i \omega_0 q x \right) \right) \sigma_3,
 
-where
-
-.. math::
-   U = \begin{pmatrix}
-   \cos \theta_{\mathrm{m}} & \sin \theta_{\mathrm{m}} \\
-   -\sin \theta_{\mathrm{m}} & \cos \theta_{\mathrm{m}}
-   \end{pmatrix} = \cos \theta_m I + i\sin \theta_m \sigma_2.
-
-where :math:`\sin \theta_m` and :math:`\cos \theta_m` are the corresponding values for background matter density equals :math:`\Lambda_0`. We also know that
+where we treat :math:`\Lambda_0` as the background matter profile. For simplifity we define
 
 .. math::
-   &\frac{1}{2}\omega_v\left( \Lambda_0/\omega_v \cos 2\theta_m - \cos 2\theta_v\cos 2\theta_m - \sin 2\theta_v\sin 2\theta_m \right) \\
-   =&-\frac{1}{2}\omega_m,
+   \delta \lambda =  \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q \exp\left( i \omega_0 q x \right),
 
-and
+so that
 
 .. math::
-   &\frac{1}{2}\Lambda_0 \sin 2\theta_m - \frac{1}{2} \omega_v \cos 2\theta_v \sin 2\theta_m + \frac{1}{2} \omega_v \sin 2\theta_v \cos 2\theta_m \\
-   =& 0.
-
+   H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \delta \lambda \right) \sigma_3.
 
 The Hamiltonian in background matter basis becomes
 
 .. math::
-   H =  - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \cos 2\theta_m \sigma_3 + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \sin 2\theta_m \sigma_1.
+   H &= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda - \frac{1}{2} \delta \lambda \sigma_1 \\
+   &= - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \sin 2\theta_m \sigma_1.
+
+.. admonition:: Rotating to Background Matter Basis
+   :class: hint
+
+   The Hamiltonian in background basis is
+
+   .. math::
+      H = U^\dagger H^{(f)} U,
+
+   where
+
+   .. math::
+      U = \begin{pmatrix}
+      \cos \theta_{\mathrm{m}} & \sin \theta_{\mathrm{m}} \\
+      -\sin \theta_{\mathrm{m}} & \cos \theta_{\mathrm{m}}
+      \end{pmatrix} = \cos \theta_m I + i\sin \theta_m \sigma_2.
+
+   where :math:`\sin \theta_m` and :math:`\cos \theta_m` are the corresponding values for background matter density equals :math:`\Lambda_0`. We also know that
+
+   .. math::
+      &\frac{1}{2}\omega_v\left( \Lambda_0/\omega_v \cos 2\theta_m - \cos 2\theta_v\cos 2\theta_m - \sin 2\theta_v\sin 2\theta_m \right) \\
+      =&-\frac{1}{2}\omega_m,
+
+   and
+
+   .. math::
+      &\frac{1}{2}\Lambda_0 \sin 2\theta_m - \frac{1}{2} \omega_v \cos 2\theta_v \sin 2\theta_m + \frac{1}{2} \omega_v \sin 2\theta_v \cos 2\theta_m \\
+      =& 0.
 
 
+Then we go to the frame that the z component of Hamiltonina vector is stationary. The caveat here is that the rotation we would use
+
+.. math::
+   \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{s1} \\ \psi_{s2} \end{pmatrix}
+
+is only valid for **real** :math:`\eta(x)` because complex :math:`\eta(x)` will make this transformation **non-unitary**.
+
+:highlight-text:`So this derivation has to stop here.`
 
 
+The Trick: Even Fourier Series
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Fourier Series of Even and Odd Functions
+   :class: note
+
+   In general the Fourier series of a periodic function defined on :math:`\left[ -\frac{X}{2}, \frac{X}{2} \right]` is
+
+   .. math::
+      \lambda(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos(n 2\pi x/X) + \sum_{n=1}^\infty b_n \sin(n 2\pi x/X),
+
+   where
+
+   .. math::
+      a_0 & = \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
+      a_n & = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \cos ( n2\pi x/X ) dx\\
+      b_n & = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \sin( n 2\pi x/X ) dx.
+
+   For EVEN function :math:`\lambda(x)`, we have
+
+   .. math::
+      \lambda(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n \cos (n 2\pi x/X).
+
+.. figure:: assets/parametric-resonance/piecewise-profile.png
+   :align: center
+
+   Shifted castle wall profile.
+
+We shift the castle wall profile and make it always even, so that
+
+.. math::
+   \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x\le -\frac{X_1}{2} \\
+   \lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
+   \lambda_2, &\quad \frac{X_1}{2}\le x\le \frac{X_1}{2}+\frac{X_2}{2}
+   \end{cases}
+
+Fourier series of the profile is
+
+.. math::
+   \lambda(x) = \frac{1}{2}\Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \frac{i 2\pi q x}{X} \right) = \frac{1}{2} \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( i \omega_0 q x \right),
+
+where
+
+.. math::
+   \Lambda_0 &= \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
+   & = \frac{2}{X} \left(  \lambda_2 X_2 + \lambda_1 X_1   \right) \\
+   \Lambda_q &= \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \cos(n 2\pi x/X)dx \\
+   & = \frac{2}{X} \left( \lambda_2 \int_{-X/2}^{-X_1/2} \cos(n 2\pi x/X)dx + \lambda_1 \int_{-X_1/2}^{X_1/2} \cos(n 2\pi x/X)dx + \lambda_2 \int_{X_1/2}^{X/2} \cos(n 2\pi x/X)dx \right) \\
+   & = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q\omega_0 X/2) - \sin(q\omega_0 X_1/2) \right) + \lambda_1 \sin( q\omega_0 X_1/2)  \right)  \\
+   & = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q \pi ) - \sin(q \pi X_1/X) \right) + \lambda_1 \sin( q\pi X_1/X)  \right)  
 
 
 
