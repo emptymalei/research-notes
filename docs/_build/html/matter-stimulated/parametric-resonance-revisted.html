@@ -304,7 +304,7 @@ b_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \sin( n 2\pi x/X ) dx.\end{
 \end{cases}\end{split}\]</div>
 <p>Fourier series of the profile is</p>
 <div class="math">
-\[\lambda(x) = \frac{1}{2}\Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \frac{i 2\pi q x}{X} \right) = \frac{1}{2} \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( i \omega_0 q x \right),\]</div>
+\[\lambda(x) = \frac{1}{2}\Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \frac{ 2\pi q x}{X} \right) = \frac{1}{2} \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right),\]</div>
 <p>where</p>
 <div class="math">
 \[\begin{split}\Lambda_0 &amp;= \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
@@ -313,6 +313,13 @@ b_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \sin( n 2\pi x/X ) dx.\end{
 &amp; = \frac{2}{X} \left( \lambda_2 \int_{-X/2}^{-X_1/2} \cos(n 2\pi x/X)dx + \lambda_1 \int_{-X_1/2}^{X_1/2} \cos(n 2\pi x/X)dx + \lambda_2 \int_{X_1/2}^{X/2} \cos(n 2\pi x/X)dx \right) \\
 &amp; = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q\omega_0 X/2) - \sin(q\omega_0 X_1/2) \right) + \lambda_1 \sin( q\omega_0 X_1/2)  \right)  \\
 &amp; = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q \pi ) - \sin(q \pi X_1/X) \right) + \lambda_1 \sin( q\pi X_1/X)  \right)\end{split}\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Numerical Verification</p>
+<div class="last figure align-center" id="id5">
+<span id="parametric-resonance-reconstruction-of-even-castle-wall-0point01-0point02-1-1point8"></span><img alt="../_images/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png" src="../_images/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Reconstruction of castle wall profile using Fourier series.</span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="refs-notes">
