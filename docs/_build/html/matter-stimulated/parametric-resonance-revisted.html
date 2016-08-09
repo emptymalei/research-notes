@@ -231,7 +231,7 @@
 <p class="first admonition-title">Akhmedov&#8217;s Castle Wall Parametric Resonance Condition</p>
 <p>The resonance condition is given by</p>
 <div class="math">
-\[\frac{\tan (\omega_{m1}X_1)}{\tan (\omega_{m2}X_2)} = - \frac{\cos 2\theta_{m1}}{\cos 2\theta_{m2}} = - \frac{ \cos 2\theta_v - \lambda_1/\omega_v }{  \cos 2\theta_v - \lambda_2/\omega_v } \frac{ \sqrt{ (\lambda_2/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_2/\omega_v } }{ \sqrt{ (\lambda_1/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_1/\omega_v } }.\]</div>
+\[\frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}} = - \frac{ \cos 2\theta_v - \lambda_1/\omega_v }{  \cos 2\theta_v - \lambda_2/\omega_v } \frac{ \sqrt{ (\lambda_2/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_2/\omega_v } }{ \sqrt{ (\lambda_1/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_1/\omega_v } }.\]</div>
 <p class="last">This is rather opaque.</p>
 </div>
 <p>To find out the Rabi modes, we first rotate to the rotation frame using T matrix. Since the Hamiltonian in flavor basis is</p>
@@ -320,6 +320,17 @@ b_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \sin( n 2\pi x/X ) dx.\end{
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Reconstruction of castle wall profile using Fourier series.</span></p>
 </div>
 </div>
+<p>Transform the system into background matter basis, so that we can inspect the stimulated transitions more clearly. As a first step, we rewrite the Hamiltonian</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \delta \lambda \right) \sigma_3,\]</div>
+<p>where we define</p>
+<div class="math">
+\[\delta \lambda = \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right).\]</div>
+<p>This profile is exactly a multi-frequency matter profile.</p>
+<p>Rotate to the background matter basis</p>
+<div class="math">
+\[\begin{split}H &amp;= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda - \frac{1}{2} \delta \lambda \sigma_1 \\
+&amp;= - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right) \sin 2\theta_m \sigma_1.\end{split}\]</div>
 </div>
 </div>
 <div class="section" id="refs-notes">
