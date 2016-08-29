@@ -305,7 +305,7 @@ This profile is exactly a multi-frequency matter profile.
 Rotate to the background matter basis
 
 .. math::
-   H &= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda - \frac{1}{2} \delta \lambda \sigma_1 \\
+   H &= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda \sigma_3 - \frac{1}{2} \delta \lambda \sigma_1 \\
    &= - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right) \sin 2\theta_m \sigma_1.
 
 
