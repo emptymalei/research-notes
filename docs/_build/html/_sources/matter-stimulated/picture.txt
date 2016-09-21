@@ -139,12 +139,12 @@ For :math:`\phi_2/\omega_m \ll 1`, the second mode is a very slow rotating pertu
 
 
 
-As a test of the theory, we can calculate the ration of each :math:`B_2`, which depends on the modes, and the critical value :math:`B_2^C` which is the crtical value for the destruction of the resonance.
+As a test of the theory, we can calculate the ratio of each :math:`B_2`, which depends on the modes, and the critical value :math:`B_2^C` which is the crtical value for the destruction of the resonance.
 
 .. figure:: assets/picture/rabi-oscillation-interference-of-different-modes-b2-over-b2critical.png
    :align: center
 
-   Ration :math:`\lvert B_2\rvert/\lvert B_2^C \rvert`
+   Ratio :math:`\lvert B_2\rvert/\lvert B_2^C \rvert`
 
 
 To summarize, in the modes view, resonance of some modes are destroyed by some certain modes.
