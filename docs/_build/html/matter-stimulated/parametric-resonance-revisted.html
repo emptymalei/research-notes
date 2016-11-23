@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Parametric Resonance Revisted &mdash; Neutrino Pi documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Pi',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="next" title="Single Frequency Matter Perturbation" href="single-frequency.html" />
+    <link rel="prev" title="MSW Effect Revisted" href="msw-revisted.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  <!-- Hypothesis -->
+  <!-- <script async defer src="https://hypothes.is/embed.js"></script> -->
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/parametric-resonance-revisted.html"/>
+
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js", "cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "fast-preview": {disabled: true}
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="single-frequency.html" title="Single Frequency Matter Perturbation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="msw-revisted.html" title="MSW Effect Revisted"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parametric-resonance-revisted">
+<h1>Parametric Resonance Revisted<a class="headerlink" href="#parametric-resonance-revisted" title="Permalink to this headline">¶</a></h1>
+<p>For a matter profile</p>
+<div class="math" id="equation-parametric-resonance-matter-profile-single-frequency">
+<span class="eqno">(1)</span>\[\lambda(x) = \lambda_0 + A\sin( k x),\]</div>
+<p>the parametric resonance condition is <a class="reference internal" href="#krastev1989" id="id1">[Krastev1989]</a></p>
+<div class="math">
+\[\omega_m \sim n k,\]</div>
+<p>where <span class="math">\(k=1,2,3,\cdots\)</span>.</p>
+<div class="note admonition">
+<p class="first admonition-title">A Minimal Derivation of Parametric Resonance Condition</p>
+<p>This derivation is from <a class="reference internal" href="#krastev1989" id="id2">[Krastev1989]</a>.</p>
+<p>On one matter profile wavelength, the accumulated phase of the system should be a multiple of <span class="math">\(2\pi\)</span>,</p>
+<div class="math">
+\[\int_0^{2\pi/k} \omega_m = 2\pi n,\]</div>
+<p>where</p>
+<div class="math">
+\[\omega_m = \omega_v \sqrt{ (\lambda(x)/\omega_v - \cos 2\theta_v)^2 + \sin^2 2\theta_v }.\]</div>
+<p><span class="math">\(\omega_m\)</span> doesn&#8217;t change a lot during one matter profile oscillation wavelength <span class="math">\(2\pi/k\)</span>, thus we perform the integration by treating the integrand as a constant, which returns</p>
+<div class="math">
+\[\omega_m \frac{2\pi}{k} =2\pi n,\]</div>
+<p>which can be simplified</p>
+<div class="last math">
+\[\omega_m = n k.\]</div>
+</div>
+<p>For matter profile <a href="#equation-parametric-resonance-matter-profile-single-frequency">(1)</a>, we already know that this is the condition of resonance from Rabi oscillation.</p>
+<div class="section" id="castle-wall-direct-rotation-using-t-matrix">
+<h2>Castle Wall - Direct Rotation Using T Matrix<a class="headerlink" href="#castle-wall-direct-rotation-using-t-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Matter profile</p>
+<div class="math" id="equation-parametric-resonance-castle-wall-profile">
+<span class="eqno">(2)</span>\[\begin{split}\lambda(x) = \begin{cases} \lambda_1, \quad 0 \leq \mathrm{Mod}[x] \leq X_1  \\  \lambda_2, \quad  X_1 &lt; \mathrm{Mod}[x] &lt; X_1+X_2  \end{cases},\end{split}\]</div>
+<p>which is periodic with period <span class="math">\(X \equiv X_1 + X_2\)</span>.</p>
+<p>We can, on first thought, rotate the system first, which gives us the Hamiltonian</p>
+<div class="math">
+\[\begin{split}H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; \exp\left( i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) \right) \\
+\exp\left( -i\int_0^x \lambda(\tau) d\tau - 2i \eta(0) \right) &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\eta(0)\)</span> is the initial condition we chose for</p>
+<div class="math">
+\[\frac{d}{dx}\eta(x) = \frac{\lambda(x)}{2}.\]</div>
+<p>For <span class="math">\(x&lt;X_1\)</span>, we have</p>
+<div class="math">
+\[i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) = i \lambda_1 x,\]</div>
+<p>while for <span class="math">\(X_1&lt;x&lt;X_1+X_2\)</span>, we have</p>
+<div class="math">
+\[i\int_0^x \lambda(\tau) d\tau + 2i \eta(0) = i \lambda_1 X_1 + i \lambda_2 (x-X_1).\]</div>
+<p>One of the important conclusion from the research in Rabi oscilations is that the constant phase term has no effect on the system at all. Thus even for a much larger x, we can always drop the constant phase <span class="math">\(i(\lambda_1X_1+\lambda_2X_2)N\)</span> which is obtained through integration over N periods. What&#8217;s more, the term <span class="math">\(i \lambda_1 X_1\)</span> and <span class="math">\(-i\lambda_2X_1\)</span> can also be dropped.</p>
+<p>At this point, we would conclude that the resonance condition should be obtained by setting either mode <span class="math">\(e^{i\lambda_1 x}\)</span> or <span class="math">\(e^{i\lambda_2 x}\)</span>.</p>
+<div class="warning admonition">
+<p class="first admonition-title">TO DO</p>
+<ol class="last arabic simple">
+<li><strong>NUMERICAL CALCULATIONS?</strong></li>
+<li><span class="strike">I can not relate this result with the Akhmedov condition.</span> (See update <a class="reference external" href="#clarification-of-the-resonance-condition">Clarification of Resonance Condition</a>.)</li>
+</ol>
+</div>
+<div class="hint admonition" id="clarification-of-the-resonance-condition">
+<p class="first admonition-title">Clarification of Resonance Condition</p>
+<p>The idea of increasing in transition is initial condition related. If we set the resonance for matter density <span class="math">\(\lambda_1\)</span>, after a evolution of distance <span class="math">\(X_1\)</span>, the state of the system has changed and the corresponding flavor isospin vector is not on the direction of z axis anymore. Thus we do not have a simple prediction of evolution across <span class="math">\(X_2\)</span> unless we know the state right before this evolution.</p>
+<p class="last">From this simple argument, we have a hint that the resonance could well depend on period of the matter profile.</p>
+</div>
+</div>
+<div class="section" id="castle-wall-profile-fourier-series">
+<h2>Castle Wall Profile - Fourier Series<a class="headerlink" href="#castle-wall-profile-fourier-series" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-attemptation-full-fourier-series">
+<h3>First Attemptation: Full Fourier Series<a class="headerlink" href="#first-attemptation-full-fourier-series" title="Permalink to this headline">¶</a></h3>
+<p>Another approach is to decompose the system into a lot of sin or cos modes so that we can use the result we had before.</p>
+<p>Such a periodic matter profile <a href="#equation-parametric-resonance-castle-wall-profile">(2)</a> can be decomposed using Fourier series,</p>
+<div class="math">
+\[\lambda(x) = \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( \frac{i2\pi n x}{X} \right) = \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right),\]</div>
+<p>where <span class="math">\(\omega_0 = \frac{2\pi}{X}\)</span>. The coefficients are evaluated using the orthogonal relation of exponentials for <span class="math">\(n\neq 0\)</span>,</p>
+<div class="math" id="equation-parametric-resonance-castle-wall-fourier-coeff">
+<span class="eqno">(3)</span>\[\begin{split}\Lambda_n &amp;= \frac{1}{X} \int_0^X \lambda(x) e^{ - i \omega_0 n x} dx \\
+&amp; = \frac{1}{X} \left( \int_{0}^{X_1} \lambda_1 e^{ - i \omega_0 n x} dx + \int_{X_1}^{X_1+X_2} \lambda_2 e^{ - i \omega_0 n x} dx  \right) \\
+&amp; = \frac{1}{X} \frac{X}{-i2\pi n} \left( \lambda_1 e^{-i\omega_0 n X_1} + \lambda_2 \left( e^{-i\omega_0 n X} - e^{-i\omega_0 n X_1}  \right) \right) \\
+&amp; = \frac{i}{2\pi n} \left( -\lambda_1 + (\lambda_1 - \lambda_2) e^{-i2\pi n X_1/X} + \lambda_2 e^{-i 2\pi n} \right).\end{split}\]</div>
+<p>For n=0, we have</p>
+<div class="math">
+\[\Lambda_0 = \frac{X_1 \lambda_1 + X_2 \lambda_2}{X}.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Verification of This Result</p>
+<p>We can verify this result by setting <span class="math">\(\lambda_1 =\lambda_2 = \lambda\)</span>, which should give use the result <span class="math">\(\Lambda_n = \frac{i}{2\pi n}\lambda (e^{- i 2\pi n} - 1)\)</span>. By setting <span class="math">\(\lambda_1 =\lambda_2 = \lambda\)</span> in the last step of <a href="#equation-parametric-resonance-castle-wall-fourier-coeff">(3)</a>, we have the result that matches our expectation.</p>
+<p>Another more complete way to verify this result is to compare the numerical results using this Fourier series and the original profile, which is shown in <a class="reference internal" href="#parametric-resonance-reconstruction-of-castle-wall-0point01-0point02-1-1point8"><span>Fig. 5</span></a>.</p>
+<div class="last figure align-center" id="id3">
+<span id="parametric-resonance-reconstruction-of-castle-wall-0point01-0point02-1-1point8"></span><img alt="../_images/reconstruction-of-castle-wall-0point01-0point02-1-1point8.png" src="../_images/reconstruction-of-castle-wall-0point01-0point02-1-1point8.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Reconstruction of castle wall profile using Fourier series.</span></p>
+</div>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Akhmedov&#8217;s Castle Wall Parametric Resonance Condition</p>
+<p>The resonance condition is given by</p>
+<div class="math">
+\[\frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}} = - \frac{ \cos 2\theta_v - \lambda_1/\omega_v }{  \cos 2\theta_v - \lambda_2/\omega_v } \frac{ \sqrt{ (\lambda_2/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_2/\omega_v } }{ \sqrt{ (\lambda_1/\omega_v)^2  + 1 - 2\cos 2\theta_v \lambda_1/\omega_v } }.\]</div>
+<p class="last">This is rather opaque.</p>
+</div>
+<p>To find out the Rabi modes, we first rotate to the rotation frame using T matrix. Since the Hamiltonian in flavor basis is</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \frac{1}{2}  \sum_{n=-\infty}^{\infty} \Lambda_n \exp\left( i \omega_0 n x \right) \sigma_3.\]</div>
+<p>We notice that the 0-mode is a constant which plays a role as the background matter profile. We should rotate to the background matter basis first because the zero mode is always there and will generate some flavor transitions. However, this is not anything special but the constant matter flavor transitions. <span class="highlight-text">Rotating to the background matter profile allows us to concentrate on the actual parametric effect.</span> To do so we rewrite the Hamiltonian</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q \exp\left( i \omega_0 q x \right) \right) \sigma_3,\]</div>
+<p>where we treat <span class="math">\(\Lambda_0\)</span> as the background matter profile. For simplifity we define</p>
+<div class="math">
+\[\delta \lambda =  \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q \exp\left( i \omega_0 q x \right),\]</div>
+<p>so that</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \delta \lambda \right) \sigma_3.\]</div>
+<p>The Hamiltonian in background matter basis becomes</p>
+<div class="math">
+\[\begin{split}H &amp;= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda - \frac{1}{2} \delta \lambda \sigma_1 \\
+&amp;= - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=-\infty, q\neq 0}^{\infty} \Lambda_q e^{i q \omega_0 x} \sin 2\theta_m \sigma_1.\end{split}\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Rotating to Background Matter Basis</p>
+<p>The Hamiltonian in background basis is</p>
+<div class="math">
+\[H = U^\dagger H^{(f)} U,\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}U = \begin{pmatrix}
+\cos \theta_{\mathrm{m}} &amp; \sin \theta_{\mathrm{m}} \\
+-\sin \theta_{\mathrm{m}} &amp; \cos \theta_{\mathrm{m}}
+\end{pmatrix} = \cos \theta_m I + i\sin \theta_m \sigma_2.\end{split}\]</div>
+<p>where <span class="math">\(\sin \theta_m\)</span> and <span class="math">\(\cos \theta_m\)</span> are the corresponding values for background matter density equals <span class="math">\(\Lambda_0\)</span>. We also know that</p>
+<div class="math">
+\[\begin{split}&amp;\frac{1}{2}\omega_v\left( \Lambda_0/\omega_v \cos 2\theta_m - \cos 2\theta_v\cos 2\theta_m - \sin 2\theta_v\sin 2\theta_m \right) \\
+=&amp;-\frac{1}{2}\omega_m,\end{split}\]</div>
+<p>and</p>
+<div class="last math">
+\[\begin{split}&amp;\frac{1}{2}\Lambda_0 \sin 2\theta_m - \frac{1}{2} \omega_v \cos 2\theta_v \sin 2\theta_m + \frac{1}{2} \omega_v \sin 2\theta_v \cos 2\theta_m \\
+=&amp; 0.\end{split}\]</div>
+</div>
+<p>Then we go to the frame that the z component of Hamiltonina vector is stationary. The caveat here is that the rotation we would use</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{s1} \\ \psi_{s2} \end{pmatrix}\end{split}\]</div>
+<p>is only valid for <strong>real</strong> <span class="math">\(\eta(x)\)</span> because complex <span class="math">\(\eta(x)\)</span> will make this transformation <strong>non-unitary</strong>.</p>
+<p><span class="highlight-text">So this derivation has to stop here.</span></p>
+</div>
+<div class="section" id="the-trick-even-fourier-series">
+<h3>The Trick: Even Fourier Series<a class="headerlink" href="#the-trick-even-fourier-series" title="Permalink to this headline">¶</a></h3>
+<div class="note admonition">
+<p class="first admonition-title">Fourier Series of Even and Odd Functions</p>
+<p>In general the Fourier series of a periodic function defined on <span class="math">\(\left[ -\frac{X}{2}, \frac{X}{2} \right]\)</span> is</p>
+<div class="math">
+\[\lambda(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos(n 2\pi x/X) + \sum_{n=1}^\infty b_n \sin(n 2\pi x/X),\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}a_0 &amp; = \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
+a_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \cos ( n2\pi x/X ) dx\\
+b_n &amp; = \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \sin( n 2\pi x/X ) dx.\end{split}\]</div>
+<p>For EVEN function <span class="math">\(\lambda(x)\)</span>, we have</p>
+<div class="last math">
+\[\lambda(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n \cos (n 2\pi x/X).\]</div>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="../_images/piecewise-profile.png" src="../_images/piecewise-profile.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Shifted castle wall profile.</span></p>
+</div>
+<p>We shift the castle wall profile and make it always even, so that</p>
+<div class="math">
+\[\begin{split}\lambda(x) = \begin{cases} \lambda_2 , &amp;\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x\le -\frac{X_1}{2} \\
+\lambda_1, &amp;\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
+\lambda_2, &amp;\quad \frac{X_1}{2}\le x\le \frac{X_1}{2}+\frac{X_2}{2}
+\end{cases}\end{split}\]</div>
+<p>Fourier series of the profile is</p>
+<div class="math">
+\[\lambda(x) = \frac{1}{2}\Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \frac{ 2\pi q x}{X} \right) = \frac{1}{2} \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right),\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\Lambda_0 &amp;= \frac{2}{X} \int^{X/2}_{-X/2} \lambda(x) d x \\
+&amp; = \frac{2}{X} \left(  \lambda_2 X_2 + \lambda_1 X_1   \right) \\
+\Lambda_q &amp;= \frac{2}{X} \int_{-X/2}^{X/2} \lambda(x) \cos(n 2\pi x/X)dx \\
+&amp; = \frac{2}{X} \left( \lambda_2 \int_{-X/2}^{-X_1/2} \cos(n 2\pi x/X)dx + \lambda_1 \int_{-X_1/2}^{X_1/2} \cos(n 2\pi x/X)dx + \lambda_2 \int_{X_1/2}^{X/2} \cos(n 2\pi x/X)dx \right) \\
+&amp; = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q\omega_0 X/2) - \sin(q\omega_0 X_1/2) \right) + \lambda_1 \sin( q\omega_0 X_1/2)  \right)  \\
+&amp; = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q \pi ) - \sin(q \pi X_1/X) \right) + \lambda_1 \sin( q\pi X_1/X)  \right)\end{split}\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Numerical Verification</p>
+<div class="last figure align-center" id="id5">
+<span id="parametric-resonance-reconstruction-of-even-castle-wall-0point01-0point02-1-1point8"></span><img alt="../_images/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png" src="../_images/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Reconstruction of castle wall profile using Fourier series.</span></p>
+</div>
+</div>
+<p>Transform the system into background matter basis, so that we can inspect the stimulated transitions more clearly. As a first step, we rewrite the Hamiltonian</p>
+<div class="math">
+\[H^{(f)} = -\frac{\omega_v}{2} \cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1  + \left( \frac{1}{2}\Lambda_0  + \frac{1}{2}  \delta \lambda \right) \sigma_3,\]</div>
+<p>where we define</p>
+<div class="math">
+\[\delta \lambda = \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right).\]</div>
+<p>This profile is exactly a multi-frequency matter profile.</p>
+<p>Rotate to the background matter basis</p>
+<div class="math">
+\[\begin{split}H &amp;= - \frac{1}{2}\omega_m \sigma_3 + \frac{1}{2} \delta\lambda \sigma_3 - \frac{1}{2} \delta \lambda \sigma_1 \\
+&amp;= - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( \omega_0 q x \right) \sin 2\theta_m \sigma_1.\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="refs-notes">
+<h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="krastev1989" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Krastev1989]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Krastev, P. I., &amp; Smirnov, A. Y. (1989). Parametric effects in neutrino oscillations. Physics Letters B, 226(3-4), 341–346. doi:10.1016/0370-2693(89)91206-9</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Neutrino</a></h1>
+
+
+
+<p class="blurb">Neutrino Physics</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=NeuPhysics&repo=neutrino&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>ToC</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interference.html">Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
+</ul>
+</li>
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html">INDEX</a></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="Parametric Resonance Revisted &mdash; Neutrino Pi documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'neuphysics';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
+      |
+      <a href="genindex.html">Index</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/matter-stimulated/parametric-resonance-revisted.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-66327435-2']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

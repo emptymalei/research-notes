@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Interference &mdash; Neutrino Pi documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Pi',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="next" title="Flavor Isospin Method" href="flavor-isospin-matter.html" />
+    <link rel="prev" title="Multi-frequency" href="multi-frequency.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  <!-- Hypothesis -->
+  <!-- <script async defer src="https://hypothes.is/embed.js"></script> -->
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/interference.html"/>
+
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js", "cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "fast-preview": {disabled: true}
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="flavor-isospin-matter.html" title="Flavor Isospin Method"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="multi-frequency.html" title="Multi-frequency"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interference">
+<h1>Interference<a class="headerlink" href="#interference" title="Permalink to this headline">¶</a></h1>
+<div class="note admonition">
+<p class="first admonition-title">Summary</p>
+<p>Overall the system has at least two limits,</p>
+<ol class="arabic simple">
+<li>strong interference regime (the wavelength of the perturbations are of the same orders);</li>
+<li>low-interference regime (one of the perturbations has a wavelength much larger than the others&#8217;).</li>
+</ol>
+<p>For either case, the system is explained within the ralm of superpositions of multiple Rabi oscillations.</p>
+<p>As for the first case, th criteria is related to both the resonance itself and the size of physical system we are interested in.</p>
+<ol class="arabic simple">
+<li>Each mode has an associated resonance, and explained by a single Rabi oscillation. Higher orders have much smaller resonance width than low orders.</li>
+<li>Whether a mode is important to the system is determined by Q value, which is defined as the ratio of distance to resonance and resonance width.</li>
+<li>However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any significant transition probabilities within the region of the physical system.</li>
+</ol>
+<p><strong>However, we do not have a cystal clear understanding of such a strong interference.</strong></p>
+<p>The second case is essentially some limit of the strong interference. With Komogorov spectra of matter, the resonance is simplified in some sense. One of the limits is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density, within one wavelength of the small wavelength perturbations. Here we use two frequencies as examples, c.f. <a class="reference internal" href="#interference-adding-new-destroy-resonance-q-value"><span>Fig. 22</span></a>.</p>
+<ol class="arabic">
+<li><p class="first">Even if the short wavelength one is exactly on resonance, adding the second perturbation as a background shift could move the system out of the resonance. The math behind it is related to the amplitude,</p>
+<div class="math">
+\[\frac{ \left\lvert  B_{n}  \right\rvert^2 }{ \left\lvert    B_{n}  \right\rvert^2 + ( n  k - \omega_m )^2  },\]</div>
+<p>where <span class="math">\(n  k - \omega_m = 0\)</span> for the resonance situation. As we add in the second long wavelength perturbation, <span class="math">\(B_{n}\)</span>, <span class="math">\(\omega_m\)</span> will change. Nonetheless the relative change in <span class="math">\(B_n\)</span> is small while the change in <span class="math">\(nk-\omega_m\)</span> is huge compared to <span class="math">\(B_n\)</span> value, if the amplitude of the new perturbation is large enough, i.e., <span class="math">\(A_2 \gg \lvert B_n\rvert\)</span>.</p>
+</li>
+<li><p class="first">The caveat is that the wavelength of the second perturbation <span class="math">\(k_2\)</span> must be within a range much smaller than <span class="math">\(k_1\)</span>, and much larger than the resonance transition probability wavelength, roughly speaking, <span class="math">\(k_1\gg k_2 \gg \lvert B_n\rvert\)</span>.</p>
+</li>
+<li><p class="first">The newly added long wavelength merely has any effect when the system is in a region <span class="math">\(\mathrm{mod}(k_2 x,\pi)\sim 0\)</span>, since <span class="math">\(A_2\sin(k_2x)\sim 0\)</span> for these values. Such regions probabily will appear multiple times within the size of physical system. Then we see accumulation effect, so that the transition amplitude will rise as we go furthure out.</p>
+</li>
+</ol>
+<p class="last"><strong>From this point of view, the resonance is never destroyed since the accumulation will always be there.</strong></p>
+</div>
+<p>In the calculation of multi-frequency matter background,</p>
+<div class="math">
+\[\delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),\]</div>
+<p>we derived the equation of motion</p>
+<div class="math">
+\[i \partial_x \Psi = H \Psi,\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\Psi = \begin{pmatrix}
+\psi_{b1} \\
+\psi_{b2}
+\end{pmatrix},\end{split}\]</div>
+<p>is the wave function in the T basis (new basis unitary transform from background matter basis using T matrix) and</p>
+<div class="math">
+\[\begin{split}H = \begin{pmatrix}
+0 &amp; h_N \\
+h_N^* &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[h_N = -\frac{1}{2}\sum_{n_1=-\infty}^\infty \cdots \sum_{n_N=-\infty}^\infty B_N\Phi_N e^{i(\sum_a^{N} n_a k_a - \omega_m)x},\]</div>
+<p>and</p>
+<div class="math">
+\[\begin{split}B_N &amp;= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+\Phi_N &amp;= e^{i\left( \sum_a n_a \phi_a \right)}.\end{split}\]</div>
+<div class="section" id="apply-approximations-to-two-frequencies">
+<h2>Apply Approximations to Two Frequencies<a class="headerlink" href="#apply-approximations-to-two-frequencies" title="Permalink to this headline">¶</a></h2>
+<p>We could identify the important combinations of n&#8217;s <span class="math">\(\{n_1, \cdots, n_N \}\)</span> so that we can approximate the actual result.</p>
+<p>The important question is combining multiple lists of n&#8217;s is not intuitively easy to understand. Here we consider the effect of adding new list of n&#8217;s to the system.</p>
+<p>For simplicity a simplified system will be used,</p>
+<div class="math">
+\[\begin{split}i\partial_x  \begin{pmatrix}
+\psi_{b1} \\
+\psi_{b2}
+\end{pmatrix} = \begin{pmatrix}
+0 &amp; A_1 e^{ i \phi_1 x } +A_2 e^{ i \phi_2 x } \\
+A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x } &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+\psi_{b1} \\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>Notice that <span class="math">\(\phi_n\)</span> is always real but <span class="math">\(A_n\)</span> are either real or pure imaginary.</p>
+<p>The matrix equation can be rewritten as systems of differential equations,</p>
+<div class="math">
+\[\begin{split}i \partial_x \psi_{b1} &amp;= (A_1 e^{ i \phi_1 x } +A_2 e^{ i \phi_2 x } ) \psi_{b2}, \\
+i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) \psi_{b1}.\end{split}\]</div>
+<p>This set of equations is solved by rewrite them to a second order differential equation</p>
+<div class="math" id="equation-two-n-list-second-order-eq-o-m">
+<span class="eqno">(1)</span>\[\partial_x^2 \psi_{b2} + \frac{ A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) }{\partial_x (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) } \partial_x \psi_{b2} + (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) (A_1 e^{ i \phi_1 x } +A_2 e^{ i \phi_2 x } ) \psi_{b2}.\]</div>
+<p>As a comparison, we also write down the equation for single n list,</p>
+<div class="math">
+\[\partial_x^2 \psi_{b2} + \left( \frac{i}{\phi_1}  \right) \partial_x \psi_{b2} + \lvert A_1 \rvert^2 \psi_{b2} = 0.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Approximations?</p>
+<p>For single n list equation, the second term dominates if <span class="math">\(\phi_1\)</span> is much smaller than 1. In the language of physics, the second term dominates if the system is very close to resonance.</p>
+<div class="note admonition">
+<p class="first admonition-title"><span class="math">\(\phi_n\)</span> and resonance</p>
+<p><span class="math">\(\phi_n\)</span> is in fact the deviation from exact resonance.</p>
+<div class="last math">
+\[\phi_n = \sum_{a}^N n_a k_a - \omega_m.\]</div>
+</div>
+<p>In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have <span class="math">\(A_1= A_2 = A\)</span> and <span class="math">\(\phi_2 = 10^{10}\phi_1\)</span>, the second term in equation <a href="#equation-two-n-list-second-order-eq-o-m">(1)</a> becomes</p>
+<div class="math">
+\[\frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},\]</div>
+<p>which can be dropped on as long as <span class="math">\(\phi_1\)</span> is not as small as <span class="math">\(10^{-10}\)</span>.</p>
+<p class="last">We exaggerated the situation.</p>
+</div>
+</div>
+<div class="section" id="resonance-destroyed">
+<h2>Resonance Destroyed<a class="headerlink" href="#resonance-destroyed" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-ideas">
+<h3>General Ideas<a class="headerlink" href="#general-ideas" title="Permalink to this headline">¶</a></h3>
+<p>We first investigate two frequencies. The Hamiltonian for a single frequency matter perturbation is</p>
+<div class="math">
+\[\begin{split}\hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
+0 &amp; \frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x} \\
+\frac{1}{2} \hat B_n^* e^{-i(n \hat k - 1)\hat x} &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\hat B_n = (-i)^n \tan 2\theta_{\mathrm{m}} n \hat k  J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).\]</div>
+<p>In some conditions, even we have on of the matter frequancy at resonance, this resonance could be destroyed when a new matter frequency is destroyed. Numerical calculations show that this could happen if the new perturbation is off resonance and with larger <span class="math">\(B_{n_2}\)</span>.</p>
+<p>Let&#8217;s first set this first perturbation at resonance. Suppose we add in another matter perturbation with a frequency which is higher, i.e., <span class="math">\(k_2\ll k\)</span>. Since the wavelength of this new perturbation is much larger, we will assume it doesn&#8217;t change within one wavelength of the first perturbation. Thus it behaves as an additional background. Will this new background destroy the resonance? Illustration of this idea is shown in <a class="reference internal" href="#interference-adding-new-destroy-resonance-q-value"><span>Fig. 22</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="interference-adding-new-destroy-resonance-q-value"></span><img alt="../_images/second-freq-as-bg-illustration.png" src="../_images/second-freq-as-bg-illustration.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">The two matter perturbations</span></p>
+</div>
+<p>To quantify this idea, we calculate the Q values for different modes with and without the new frequency. The procedure should be</p>
+<ol class="arabic simple">
+<li>Prepare the parameters: <span class="math">\(\omega_v\)</span>, <span class="math">\(\lambda_0\)</span> (background matter profile), <span class="math">\(\lambda_1\)</span> (perturbation amplitude for first perturbation), <span class="math">\(k_1\)</span> (perturbation wavenumber for first perturbation)</li>
+<li>Calculate the Q values.</li>
+<li>Add in <span class="math">\(\lambda_2\)</span> (perturbation amplitude for the second perturbation) and treat this new perturbation as a constant within one wavelength of the first perturbation. Just use some random phase for the new matter profile, i.e., set <span class="math">\(\sin(k_2 x)\)</span> to some resonanable value.</li>
+<li>Recalculate the Q values.</li>
+</ol>
+<p>Without the new perturbation (Mathematica Code):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>deltamsquare13 = 2.6*10^(-15);(*MeV^2*)
+energy20 = 20;(*Energy in units of MeV*)
+thetaV = ArcSin[Sqrt[0.093]]/2
+omegaVKK = OmegaVacuum[energy20, deltamsquare13](*MeV*)(*deltamsquare13/(2 energy20)(*MeV*)*)
+
+lambdaNKK = 0.5*Cos[2 thetaV] omegaVKK (*MeV*)
+
+onekListKK = {1};
+oneaListKK =(*{0.1};*){0.02 (MeVInverse2km[ 2 Pi/(omegaMKK onekListKK[[1]])]/1500)^(5/3)};
+onephiListKK = {0};
+
+Part[qValueOrderdList[listNGenerator[1, 10], onekListKK, oneaListKK, onephiListKK, thetamV], 1 ;; 10];
+Grid@%
+</pre></div>
+</div>
+<p>which returns the Q value results for each modes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{1}  0.
+{-1} 577810.
+{2}  1.75394*10^10
+{-2} 5.26182*10^10
+{3}  4.25927*10^15
+{-3} 8.51854*10^15
+{4}  1.16361*10^21
+{-4} 1.93935*10^21
+{5}  3.76761*10^26
+{-5} 5.65142*10^26
+</pre></div>
+</div>
+<p>Adding in the new frequency:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>phi2 = Pi/2/100;
+
+twoaListKK =(*{0.1,0.1};*){0.02 (MeVInverse2km[2 Pi/(omegaMKK*twokListKK[[1]])]/1500)^(5/3),
+0.02 (MeVInverse2km[2 Pi/(omegaMKK twokListKK[[2]])]/1500)^(5/3)};
+
+lambdaNKK2 = 0.5*Cos[2 thetaV] omegaVKK + Sin[phi2]*twoaListKK[[2]]*omegaMKK(*MeV*)
+
+omegaMKK2 = OmegaMatter2[lambdaNKK2, thetaV, omegaVKK](*MeV*)
+thetamV2 = Mod[ArcTan[Sin[2 thetaV]/(Cos[2 thetaV] - (lambdaNKK2/omegaVKK)^2)]/2, Pi]
+
+onekListKK2 = {1}*omegaMKK/omegaMKK2;
+oneaListKK2 =(*{0.1};*){0.02 (MeVInverse2km[2 Pi/(omegaMKK2 onekListKK2[[1]])]/1500)^(5/3)};
+
+Part[qValueOrderdList[listNGenerator[1, 10], onekListKK2, oneaListKK2, onephiListKK, thetamV2], 1 ;; 10]
+Grid@%
+</pre></div>
+</div>
+<p>and the results for Q values of different modes are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{1}  246.833
+{-1} 577687.
+{2}  1.75752*10^10
+{-2} 5.26655*10^10
+{3}  4.27026*10^15
+{-3} 8.53505*10^15
+{4}  1.16758*10^21
+{-4} 1.94507*10^21
+{5}  3.78384*10^26
+{-5} 5.67375*10^26
+</pre></div>
+</div>
+<p>The corresponding plots are shown in <a class="reference internal" href="#second-freq-as-bg-example-1-first-freq-only"><span>Fig. 23</span></a> and <a class="reference internal" href="#second-freq-as-bg-example-1-with-second-freq-as-bg"><span>Fig. 24</span></a></p>
+<div class="figure align-center" id="id2">
+<span id="second-freq-as-bg-example-1-first-freq-only"></span><img alt="../_images/second-freq-as-bg-example-1-first-freq-only.png" src="../_images/second-freq-as-bg-example-1-first-freq-only.png" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Only the first frequency which is at resonance</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<span id="second-freq-as-bg-example-1-with-second-freq-as-bg"></span><img alt="../_images/second-freq-as-bg-example-1-with-second-freq-as-bg.png" src="../_images/second-freq-as-bg-example-1-with-second-freq-as-bg.png" />
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">With the second frequency added in but only as a shift in background density</span></p>
+</div>
+<p>What determines the amplitude is</p>
+<div class="math">
+\[\frac{ \left\lvert  B_{n}  \right\rvert^2 }{ \left\lvert    B_{n}  \right\rvert^2 + ( n  k - \omega_m )^2  }.\]</div>
+<p>In this example, the coefficient in unit of <span class="math">\(\omega_m\)</span> for one perturbation only is</p>
+<div class="math">
+\[\lvert B_1 \rvert = 3.46135\times 10^{-6},\]</div>
+<p>while it shifts a little bit when the second frequency is added in as a background shift, in unit of <span class="math">\(\omega_m\)</span>,</p>
+<div class="math">
+\[\lvert B_1' \rvert = 3.46356\times 10^{-6}.\]</div>
+<p>We set the first frequency at resonance, which means</p>
+<div class="math">
+\[k - \omega_m = 0.\]</div>
+<p>With the apprearance of the second frequency, what we have now is, in unit of <span class="math">\(\omega_m\)</span>,</p>
+<div class="math">
+\[k - \omega_m' = 0.000854192,\]</div>
+<p>which is far beyond the width of the resonance.</p>
+</div>
+<div class="section" id="some-artifical-systems">
+<h3>Some Artifical Systems<a class="headerlink" href="#some-artifical-systems" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id4">
+<img alt="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-matter-density.png" src="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-matter-density.png" />
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Matter profiles with one wavelength of the first perturbation</span></p>
+</div>
+<p>The resonance from the first perturbation is destroyed as the second perturbation grows much larger than it.</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-full-numerical.png" src="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-full-numerical.png" />
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Full numerical solutions</span></p>
+</div>
+<p>The hint is, the shift of the background matter profile is related to the destruction effect, whether it&#8217;s true destruction or effective destruction (destruction within a region).</p>
+<p>An investigation of the most important mode shows that it is destroyed due to the a shift of background matter density.</p>
+<div class="figure align-center" id="id6">
+<img alt="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-log.png" src="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-log.png" />
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Resonance destruction of the first mode</span></p>
+</div>
+<p>To verify how the interference actually works, we plot the full numerical calculation and the {1,0} mode, for comparision</p>
+<div class="figure align-center" id="id7">
+<span id="second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines"></span><img alt="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines.png" src="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines.png" />
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.</span></p>
+</div>
+<p>It is clearly shown in <a class="reference internal" href="#second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines"><span>Fig. 28</span></a> that each vicinity of zero amplitude for the second perturbation, the transition amplitude will increase, due to the resonance of the first perturbation.</p>
+<p>What&#8217;s more interesting is that as <span class="math">\(A_2\)</span> becomes much larger than <span class="math">\(A_1\)</span>, the resonance seams to be destroyed. As an example, here we take <span class="math">\(A_2=0.0346135, A_1=0.0000357347\)</span> both in unit of <span class="math">\(\omega_m\)</span>, which means <span class="math">\(A_2\)</span> is almost three orders larger than <span class="math">\(A_1\)</span>. The results are shown in <a class="reference internal" href="#second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines"><span>Fig. 29</span></a>.</p>
+<div class="figure align-center" id="id8">
+<span id="second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines"></span><img alt="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines.png" src="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines.png" />
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="refs-notes">
+<h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Neutrino</a></h1>
+
+
+
+<p class="blurb">Neutrino Physics</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=NeuPhysics&repo=neutrino&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>ToC</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
+</ul>
+</li>
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html">INDEX</a></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="Interference &mdash; Neutrino Pi documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'neuphysics';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
+      |
+      <a href="genindex.html">Index</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/matter-stimulated/interference.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-66327435-2']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

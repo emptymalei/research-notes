@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MSW Effect Revisted &mdash; Neutrino Pi documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Pi',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="next" title="Parametric Resonance Revisted" href="parametric-resonance-revisted.html" />
+    <link rel="prev" title="Scales" href="scales.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  <!-- Hypothesis -->
+  <!-- <script async defer src="https://hypothes.is/embed.js"></script> -->
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/msw-revisted.html"/>
+
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js", "cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "fast-preview": {disabled: true}
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="parametric-resonance-revisted.html" title="Parametric Resonance Revisted"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scales.html" title="Scales"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="msw-effect-revisted">
+<h1>MSW Effect Revisted<a class="headerlink" href="#msw-effect-revisted" title="Permalink to this headline">¶</a></h1>
+<div class="note admonition">
+<p class="first admonition-title">Pauli Matrices and Rotations</p>
+<p>Given a rotation</p>
+<div class="math">
+\[\begin{split}U = \begin{pmatrix} \cos \theta &amp; \sin \theta \\ -\sin\theta &amp; \cos \theta \end{pmatrix},\end{split}\]</div>
+<p>its effect on Pauli matrices are</p>
+<div class="last math">
+\[\begin{split}U^\dagger \sigma_3 U  &amp;=\cos 2\theta \sigma_3 + \sin 2\theta \sigma_1 \\
+U^\dagger \sigma_1 U &amp; = -\sin 2\theta \sigma_3 + \cos 2\theta \sigma_1.\end{split}\]</div>
+</div>
+<div class="section" id="flavor-basis">
+<h2>Flavor Basis<a class="headerlink" href="#flavor-basis" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Vacuum Oscillations</p>
+<p class="last">Vacuum oscillations is already a Rabi oscillation at resonance with oscillation width <span class="math">\(\omega_v \sin 2\theta_v\)</span>.</p>
+</div>
+<p>Neutrino oscillation in matter has a Hamiltonian in flavor basis</p>
+<div class="math">
+\[H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1.\]</div>
+<p>The Schroding equation is</p>
+<div class="math">
+\[i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)}.\]</div>
+<p>To make connections to Rabi oscillations, we would like to remove the changing <span class="math">\(\sigma_3\)</span> terms, using a transformation</p>
+<div class="math">
+\[\begin{split}T = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix},\end{split}\]</div>
+<p>which transform the flavor basis to another basis</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} \psi_e \\ \psi_x \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{a} \\ \psi_{b} \end{pmatrix}.\end{split}\]</div>
+<p>The Schrodinger equation can be written into this new basis</p>
+<div class="math">
+\[i \partial_x (T \Psi^{(r)}) = H^{(f)} T\Psi^{(r)},\]</div>
+<p>which is simplified to</p>
+<div class="math">
+\[i \partial_x \Psi^{(r)} = H^{(r)} \Psi^{(r)},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{2i\eta(x)} \\
+e^{-2i\eta(x)} &amp; 0 \\
+\end{pmatrix},\end{split}\]</div>
+<p>in which we remove the varying component of <span class="math">\(\sigma_3\)</span> elements using</p>
+<div class="math">
+\[\frac{d}{dx}\eta(x) = \frac{\lambda(x)}{2}.\]</div>
+<p>The final Hamiltonian would have some form</p>
+<div class="math">
+\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{i\int_0^x \lambda(\tau)d\tau + 2i\eta(0)} \\
+e^{-i\int_0^x \lambda(\tau)d\tau - 2i\eta(0)} &amp; 0 \\
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\eta(0)\)</span> is chosen to conter the constant terms from the integral.</p>
+<p>For arbitary matter profile, we could first apply Fourier expand the profile into trig function then use Jacobi-Anger expansion so that the system becomes a lot of Rabi oscillations.</p>
+<p>Any transformations or expansions that decompose <span class="math">\(\exp{\left(i\int_0^x \lambda(\tau)d\tau\right)}\)</span> into many summations of <span class="math">\(\exp{\left( i a x + b \right)}\)</span> would be enough for an Rabi oscillation interpretation.</p>
+<p>Let&#8217;s discuss the constant matter profile, <span class="math">\(\lambda(x) = \lambda_0\)</span>. Thus we have</p>
+<div class="math">
+\[\eta(x) = \frac{1}{2} \lambda_0 x.\]</div>
+<p>The Hamiltonian becomes</p>
+<div class="math">
+\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{i\lambda_0 x} \\
+e^{-i\lambda_0 x} &amp; 0 \\
+\end{pmatrix},\end{split}\]</div>
+<p>which is exactly a Rabi oscillation. The resonance condition is</p>
+<div class="math">
+\[\lambda_0 = \omega_v \cos 2\theta_v.\]</div>
+</div>
+<div class="section" id="instanteneous-matter-basis">
+<h2>Instanteneous Matter Basis<a class="headerlink" href="#instanteneous-matter-basis" title="Permalink to this headline">¶</a></h2>
+<p>Neutrino oscillation in matter has a Hamiltonian in flavor basis</p>
+<div class="math">
+\[H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1.\]</div>
+<p>The Schroding equation is</p>
+<div class="math">
+\[i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)},\]</div>
+<p>which can be transformed to instantaneous matter basis by applying a rotation <span class="math">\(U\)</span>,</p>
+<div class="math">
+\[i \partial_x \left(  U\Psi^{(m)} \right)= H^{(f)} U\Psi^{(m)},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}U = \begin{pmatrix} \cos \theta_m &amp; \sin \theta_m \\ -\sin\theta_m &amp; \cos \theta_m \end{pmatrix}.\end{split}\]</div>
+<p>With a little algebra, we can write the system into</p>
+<div class="math">
+\[i \partial _x \Psi^{(m)} = H^{(m)}\Psi^{(m)}\]</div>
+<div class="math">
+\[H^{(m)} = U^\dagger H^{(f)} U - i U^\dagger \partial_x U.\]</div>
+<p>By setting the off-diagonal elements of the first term <span class="math">\(U^\dagger H^{(f)} U\)</span> to zero, we can derive the relation</p>
+<div class="math">
+\[\tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v}.\]</div>
+<p>Furthermore, we derive the term</p>
+<div class="math">
+\[i U^\dagger \partial_x U = - \dot\theta_m \sigma_2.\]</div>
+<p>We can calculate <span class="math">\(\dot\theta_m\)</span> by taking the derivative of <span class="math">\(\tan 2\theta_m\)</span>,</p>
+<div class="math">
+\[\frac{d}{dx} \tan 2\theta_m = \frac{2}{\cos^2 2\theta_m} \dot\theta_m,\]</div>
+<p>so that</p>
+<div class="math">
+\[\begin{split}\dot\theta_m &amp;= \frac{1}{2} \cos^2 (2\theta_m) \frac{d}{dx} \tan 2\theta_m \\
+&amp; = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v } \frac{d}{dx} \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v} \\
+&amp; = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v }  \frac{\sin 2\theta_v}{(\cos 2\theta_v - \lambda/\omega_v)^2} \frac{1}{\omega)v} \frac{d}{dx} \lambda(x) \\
+&amp; = \frac{1}{2} \sin 2\theta_m \frac{1}{\omega_m} \frac{d}{dx} \lambda(x).\end{split}\]</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Neutrino</a></h1>
+
+
+
+<p class="blurb">Neutrino Physics</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=NeuPhysics&repo=neutrino&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>ToC</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interference.html">Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
+</ul>
+</li>
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html">INDEX</a></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="MSW Effect Revisted &mdash; Neutrino Pi documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'neuphysics';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
+      |
+      <a href="genindex.html">Index</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/matter-stimulated/msw-revisted.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-66327435-2']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

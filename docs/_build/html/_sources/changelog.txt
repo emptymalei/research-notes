@@ -1,0 +1,34 @@
+Changelog
+====================
+
+
+<div class="changelog">
+# Change Log
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+### Added
+- zh-CN and zh-TW translations from @tianshuo.
+- de translation from @mpbzh.
+- it-IT translation from @roalz.
+- sv translation from @magol.
+- tr-TR translation from @karalamalar.
+
+### Changed
+- Start versioning based on the current English version at 0.3.0 to help
+translation authors keep things up-to-date.
+
+## [0.3.0] - 2015-12-03
+### Added
+- RU translation from @aishek.
+- pt-BR translation from @tallesl.
+- es-ES translation from @ZeliosAriex.
+
+## [0.2.0] - 2015-10-06
+### Changed
+- Remove exclusionary mentions of "open source" since this project can benefit
+both "open" and "closed" source projects equally.
+</div>

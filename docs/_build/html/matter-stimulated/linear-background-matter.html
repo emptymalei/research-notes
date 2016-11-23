@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Linear Background Matter Profile &mdash; Neutrino Pi documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Pi',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
+    <link rel="prev" title="Physics Picture" href="picture.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  <!-- Hypothesis -->
+  <!-- <script async defer src="https://hypothes.is/embed.js"></script> -->
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/linear-background-matter.html"/>
+
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js", "cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      "fast-preview": {disabled: true}
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="picture.html" title="Physics Picture"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linear-background-matter-profile">
+<h1>Linear Background Matter Profile<a class="headerlink" href="#linear-background-matter-profile" title="Permalink to this headline">¶</a></h1>
+<p>The equation of motion in flavor basis for arbitary matter profile <span class="math">\(\lambda(x)\)</span> is</p>
+<div class="math">
+\[\begin{split}i \partial_x \begin{pmatrix}
+\psi_e\\
+\psi_x
+\end{pmatrix} = \left[
+\left( \frac{\lambda(x)}{2} - \frac{\omega_v}{2} \cos 2\theta_v  \right) \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1
+\right]\begin{pmatrix}
+\psi_e\\
+\psi_x
+\end{pmatrix}.\end{split}\]</div>
+<p>Introduce the T transformation</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_e\\
+\psi_x
+\end{pmatrix} = \mathbf{T} \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = \begin{pmatrix}
+e^{-i \eta(x)} &amp; 0 \\
+0 &amp; e^{i \eta(x)}
+\end{pmatrix} \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>By multiplying on both sides <span class="math">\(\mathbf{T}^\dagger\)</span>, we get</p>
+<div class="math">
+\[\begin{split}i \partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = \frac{\omega_v}{2} \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{2i\eta(x)} \\
+e^{-2i\eta(x)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} + \left( \frac{\lambda(x)}{2} - \frac{\omega_v}{2} \cos 2\theta_v - \partial_x \eta(x) \right) \sigma_3 \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>To remove the diagonal elements we require</p>
+<div class="math">
+\[\frac{\lambda(x)}{2} - \frac{\omega_v}{2} \cos 2\theta_v - \partial_x \eta(x)  = 0,\]</div>
+<div class="math">
+\[\eta(x) = \eta(0) + \frac{1}{2}\int_0^x dx' \left( \lambda(x) - \frac{\omega_v}{2} \cos 2\theta_v \right) .\]</div>
+<p>Perodic perturbation can be used</p>
+<div class="math">
+\[\delta \lambda(x) = A\sin (kx + \phi).\]</div>
+<p><span class="math">\(\eta(x)\)</span> has the form</p>
+<div class="math">
+\[\begin{split}\eta(x) &amp;= \eta(0) + \frac{1}{2} \int_0^x dx' (\lambda_0(x) + A\sin(kx+\phi) ) - \frac{1}{2}\omega_v \cos 2\theta_v x \\
+&amp; = - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) {\color{grey}- \frac{1}{2}g(0) - \frac{A}{2k} \cos \phi + \eta(0) },\end{split}\]</div>
+<p>where <span class="math">\(g(x)=\int dx' \lambda_0(x')\)</span> and the grey part is usally set to zero.</p>
+<p>The equation we are dealing with is</p>
+<div class="math">
+\[\begin{split}i \partial_x  \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = \frac{\omega_v}{2} \sin 2\theta_v \begin{pmatrix}
+0 &amp; e^{2i\eta(x)} \\
+e^{-2i\eta(x)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\eta(x) = - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos(kx+\phi) + \frac{1}{2} g(x) .\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Can we solve the equation</p>
+<p>Here is the problem. For most general <span class="math">\(g(x)\)</span> we are not guaranteed to have a analycal solution of the system.</p>
+<p>For <span class="math">\(g(x)\propto x\)</span> we have demonstrated that the system is solvale.</p>
+<p class="last">What about <span class="math">\(g(x)\propto x^2\)</span> (linear background matter profile) and <span class="math">\(g(x)\propto e^{x}\)</span> (exponential background matter profile)?</p>
+</div>
+<div class="section" id="id1">
+<h2>Linear Background Matter Profile<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Equation Solved</p>
+<p>It turns out that we can solve the system</p>
+<div class="math">
+\[\begin{split}i\partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} = A_s  \begin{pmatrix}
+0 &amp; e^{if x^2} \\
+e^{-if x^2} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>The solution involves hypergeometric functions. For initial condition</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_{b1}(0)\\
+\psi_{b2}(0)
+\end{pmatrix} = \begin{pmatrix}
+1\\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>we have the solution</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_{b1}(x)\\
+\psi_{b2}(x)
+\end{pmatrix} = \begin{pmatrix}
+{}_1F_1 \left( \frac{i A_s^2}{4f};\frac{1}{2}; i f x^2 \right) \\
+-i A_s x e^{-i f x^2} {}_1F_1 \left( \frac{i A_s^2}{4f}+1;\frac{3}{2}; i f x^2 \right)
+\end{pmatrix},\end{split}\]</div>
+<p class="last">where <span class="math">\({}_1F_1(a;b;z)\)</span> is <a class="reference external" href="https://en.wikipedia.org/wiki/Confluent_hypergeometric_function">hypergeometric function</a> .</p>
+</div>
+<p>We choose the background matter profile to be</p>
+<div class="math">
+\[\lambda_0(x) = a x + b,\]</div>
+<p>while the perturbation to be</p>
+<div class="math">
+\[\delta \lambda(x) = A\sin (kx + \phi).\]</div>
+<p><span class="math">\(\eta(x)\)</span> is solved</p>
+<div class="math">
+\[\begin{split}g(x) &amp; = \frac{1}{2} ax^2+b \\
+\eta(x) &amp;= - \frac{1}{2} \omega_v \cos 2\theta_v x - \frac{A}{2k} \cos (kx + \phi) + \frac{1}{2} \left( \frac{1}{2}a x^2 + b x \right),\end{split}\]</div>
+<p>so that</p>
+<div class="math">
+\[e^{2i\eta(x)} = e^{-i \omega_v \cos 2\theta_v x} e^{i ( ax^2/2+ bx )} e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)}.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Jacobi-Anger Expansion</p>
+<div class="last math">
+\[e^{-i\left( \frac{A}{k} \cos (kx+\phi) \right)} = \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi)}.\]</div>
+</div>
+<p>Collect terms</p>
+<div class="math">
+\[\begin{split}e^{2i\eta(x)} &amp;= \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{in(kx+\phi) + \frac{1}{2}ax^2 +bx - \omega_v \cos 2\theta_v x } \\
+&amp;=  \sum_{n=-\infty}^{\infty} (-i)^n J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi \right) } \\
+&amp; = \sum_{n=-\infty}^{\infty} J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi + n\pi \right) } \\
+&amp; = \sum_{n=-\infty}^{\infty} J_n\left(\frac{A}{k}\right) e^{ i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) }  ,\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}b_n &amp;= b + nk - \omega_v \cos 2\theta_v,\\
+\phi'&amp;= \phi + \pi,\end{split}\]</div>
+<p>and we have used</p>
+<div class="math">
+\[(-i)^n = e^{i n\pi}.\]</div>
+<p>The equation to be sovled becomes</p>
+<div class="math">
+\[\begin{split}i\partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} =   \sum_{n=-\infty}^\infty \frac{\omega_v}{2}\sin 2\theta_v  J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) } \\
+e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>With initial condition</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\psi_{b1}(0)\\
+\psi_{b2}(0)
+\end{pmatrix} = \begin{pmatrix}
+1\\
+0
+\end{pmatrix},\end{split}\]</div>
+<p>the equation</p>
+<div class="math">
+\[\begin{split}i\partial_x \begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix} =   \frac{\omega_v}{2}\sin 2\theta_v  J_n\left( \frac{A}{k} \right) \begin{pmatrix}
+0 &amp; e^{i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right) } \\
+e^{-i\left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi' \right)} &amp; 0
+\end{pmatrix}\begin{pmatrix}
+\psi_{b1}\\
+\psi_{b2}
+\end{pmatrix}.\end{split}\]</div>
+<p>can be solved. To save keystroke, we define</p>
+<div class="math">
+\[A_s= J_n\left(\frac{A}{k}\right)\frac{\omega_v}{2} \sin 2\theta_v.\]</div>
+<p>We write down the solution</p>
+<div class="math">
+\[\psi_2(x) =  (-1)^{1/4} \sqrt{2} A_s e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) } b_n  \left[ - H_{-1 - i A_s^2/a} (p_1 + p_2 x) F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) + (1+\frac{a}{b_n} x) H_{-1 - i A_s^2/a} (p_1)  F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) \right] \bigg /  \left\{ \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \right\},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}p_1 &amp; = \frac{(-1)^{1/4} b_n}{\sqrt{2a}}, \\
+p_2 &amp; = \frac{ (-1)^{1/4} \sqrt{a}  }{ \sqrt{2} }.\end{split}\]</div>
+<p><span class="math">\(F_1\equiv {}_1 F_1\)</span> is the hypergeometric function. What&#8217;s important is that we can always define</p>
+<div class="math">
+\[\begin{split}M_n &amp; =  \sqrt{a} H_{-i A_s^2/a} (p_1) \left[ (-1)^{3/4} \sqrt{2a} F_1 \left(  i \frac{A_s^2}{2a};\frac{1}{2};\frac{i b_n^2}{2a} \right) - b_n F_1 \left(  1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \right] \\
+K_{F,n} &amp;= F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2};\frac{i b_n^2}{2a} \right) \\
+K_{H,n} &amp;= H_{-1 - i A_s^2/a} (p_1),\end{split}\]</div>
+<p>which are all constants given the parameters and n. We can reduce the solution to</p>
+<div class="math">
+\[\psi_2 =  (-1)^{1/4} \sqrt{2} A_s b_n \frac{K_{H,n} F_1 \left( 1 + i \frac{A_s^2}{2a};\frac{3}{2}; (p_1 + p_2 x)^2\right) (1+\frac{a}{b_n} x) - K_{F,n} H_{-1 - i A_s^2/a} (p_1 + p_2 x) }{ M_n } e^{-i \left( \frac{1}{2} a \left( x + \frac{b_n}{a} \right)^2 - \frac{b_n^2}{2a} + n\phi'  \right) }.\]</div>
+<p>Some points:</p>
+<ol class="arabic simple">
+<li>The third argument of <span class="math">\(F_1\)</span>, which is denoted as <span class="math">\(p_1 +p_2 x\)</span> is in fact imaginary. As a result, this value of hypergeometric function is actually dropping as <span class="math">\(x\)</span> increase.</li>
+<li>In this result, the x dependent Hermite polynomial is a monotonically decreasing function.</li>
+<li>The overall phase doesn&#8217;t play a role in the transition probability.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Neutrino</a></h1>
+
+
+
+<p class="blurb">Neutrino Physics</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=NeuPhysics&repo=neutrino&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>ToC</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interference.html">Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Linear Background Matter Profile</a></li>
+</ul>
+</li>
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html">INDEX</a></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="Linear Background Matter Profile &mdash; Neutrino Pi documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'neuphysics';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
+      |
+      <a href="genindex.html">Index</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/matter-stimulated/linear-background-matter.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-66327435-2']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
