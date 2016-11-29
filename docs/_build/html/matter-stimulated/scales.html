@@ -28,9 +28,74 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
-    <link rel="up" title="Matter Stimulated Oscillation" href="index.html" />
-    <link rel="next" title="MSW Effect Revisted" href="msw-revisted.html" />
-    <link rel="prev" title="Matter Stimulated Oscillation" href="index.html" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -46,73 +111,56 @@
     })();
 </script>
 
-  <!-- Hypothesis -->
-  <!-- <script async defer src="https://hypothes.is/embed.js"></script> -->
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+<!-- Gitter Sidecar Environment BEGIN -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'NeuPhysics/neutrino',
+    activationElement: false
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<!-- Gitter Sidecar Environment END -->
+
 
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  <html lang="en">
+
+
+  
+  <meta name="description" content="Neutrinos the amazing particles, physics about neutrino oscillations">
+  
+
+
+  
+  <meta name="keywords" content="neutrino, neutrino physics">
+  
+
+
+  
+  <meta name="author" content="Lei Ma">
+  
   <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/scales.html"/>
 
 
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["color.js", "cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
-  </script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
-      cancel: ["Extension","cancel"]
-      });
-   });
-   </script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      showProcessingMessages: false,
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: { equationNumbers: { autoNumber: "AMS" } },
-      "fast-preview": {disabled: true}
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      processEscapes: true
-    }
-  });
-</script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      Macros: {
-        overlr: ['\\overset\\leftrightarrow{\#1}',1],
-        overl: ['\\overset\leftarrow{\#1}',1],
-        overr: ['\\overset\rightarrow{\#1}',1],
-        bra: ['\\left\\langle \#1\\right|',1],
-        ket: ['\\left| \#1\\right\\rangle',1],
-        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
-        avg: ['\\left< \#1 \\right>',1],
-        slashed: ['\\cancel{\#1}',1],
-        bold: ['\\boldsymbol{\#1}',1],
-        sech: ['\\operatorname{sech}{\#1}',1],
-        csch: ['\\operatorname{csch}{\#1}',1]
-      }
-    }
-  });
-  </script>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+
 
 
  
@@ -124,14 +172,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="msw-revisted.html" title="MSW Effect Revisted"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Matter Stimulated Oscillation"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Matter Stimulated Oscillation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -149,7 +190,7 @@
 <h3>Initial Matter Density Configuration<a class="headerlink" href="#initial-matter-density-configuration" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id5">
 <img alt="../_images/supernova-matter-profile-initial-configuration.png" src="../_images/supernova-matter-profile-initial-configuration.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Supernova initial matter profile from <a class="reference internal" href="#shigeyama1990" id="id1">[shigeyama1990]</a>.</span></p>
+<p class="caption"><span class="caption-text">Supernova initial matter profile from <a class="reference internal" href="#shigeyama1990" id="id1">[shigeyama1990]</a>.</span></p>
 </div>
 <table class="docutils citation" frame="void" id="shigeyama1990" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -169,12 +210,12 @@
 <p>From the 2D simulation by E. Borriello et al, the size of supernova at 2sec after the bounce is about <span class="math">\(2.7\times 10^4\mathrm{km}\)</span> <a class="reference internal" href="#eborriello2014" id="id2">[EBorriello2014]</a>.</p>
 <div class="figure align-center" id="id6">
 <img alt="../_images/supernova-shock-turbulence.png" src="../_images/supernova-shock-turbulence.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">2D supernova simulation for a 15 solar mass supernova <a class="reference internal" href="#eborriello2014" id="id3">[EBorriello2014]</a>.</span></p>
+<p class="caption"><span class="caption-text">2D supernova simulation for a 15 solar mass supernova <a class="reference internal" href="#eborriello2014" id="id3">[EBorriello2014]</a>.</span></p>
 </div>
 <p>The angle averaged density on radial direction is of the order <span class="math">\(10^3\mathrm{g/cm^3}\)</span> to <span class="math">\(10^5\mathrm{g/cm^3}\)</span>.</p>
 <div class="figure align-center" id="id7">
 <img alt="../_images/supernova-radial-density-profile.png" src="../_images/supernova-radial-density-profile.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Supernova 2D simulation radial density (averaged over angles) <a class="reference internal" href="#eborriello2014" id="id4">[EBorriello2014]</a>.</span></p>
+<p class="caption"><span class="caption-text">Supernova 2D simulation radial density (averaged over angles) <a class="reference internal" href="#eborriello2014" id="id4">[EBorriello2014]</a>.</span></p>
 </div>
 <table class="docutils citation" frame="void" id="eborriello2014" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -184,7 +225,7 @@
 </table>
 <div class="figure align-center" id="id8">
 <img alt="../_images/earth-density-profile-PREM-model.png" src="../_images/earth-density-profile-PREM-model.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Earth density profile from PREM model.</span></p>
+<p class="caption"><span class="caption-text">Earth density profile from PREM model.</span></p>
 </div>
 <p>That was the densities. As a reference, we can calculate MSW resonance densities for some neutrino energies. The relation between neutrino energy and MSW resonance electron number density is calculated through</p>
 <div class="math">
@@ -237,31 +278,21 @@
 </p>
 
 
-<h3>ToC</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matter Stimulated Oscillation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Scales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">MSW Effect Revisted</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">Parametric Resonance Revisted</a></li>
-<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">Single Frequency Matter Perturbation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">Two-frequency Matter Perturbation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">Multi-frequency</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interference.html">Interference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">Flavor Isospin Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="picture.html">Physics Picture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">Linear Background Matter Profile</a></li>
-</ul>
-</li>
+<h3>Contents</h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="simple">
 </ul>
 
 
 <ul>
-	<li><a href="genindex.html">INDEX</a></li>
+	<li><a href="genindex.html" style="text-decoration: none;"><img src="https://img.shields.io/badge/Neutrino-Index-blue.svg?style=flat-square"></li>
 </ul>
 <h3>Links</h3>
 <ul>
    <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
-   </ul>
+   <li class="toctree-l1"><a href="http://physics.openmetric.org" style="color:orange;"><i class="fa fa-fire"></i>&nbsp;Physics Notes</a></li>
+   <li class="toctree-l1"><a href="http://neutrino.xyz/neutrino-map" style="color:orange;"><i class="fa fa-map-signs"></i>&nbsp;Neutrino Map</a></li>
+</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -327,9 +358,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
 <!-- Disqus END -->
 
 
-      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
+      &copy;2016, Lei Ma. | <a href="index.html">Licenses</a>
       |
-      <a href="genindex.html">Index</a>
+      <a href="/genindex.html">Index</a>
+      |
+      Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>

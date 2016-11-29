@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>MSW Effect Revisted &mdash; Neutrino Pi documentation</title>
+    <title>Fast Modes &mdash; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -156,7 +156,7 @@ TeX: {
   
   <meta name="author" content="Lei Ma">
   
-  <link rel="canonical" href="http://docs.neutrino.xyz/matter-stimulated/msw-revisted.html"/>
+  <link rel="canonical" href="http://docs.neutrino.xyz/collective/fast-modes.html"/>
 
 
 
@@ -181,107 +181,57 @@ TeX: {
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="msw-effect-revisted">
-<h1>MSW Effect Revisted<a class="headerlink" href="#msw-effect-revisted" title="Permalink to this headline">¶</a></h1>
-<div class="note admonition">
-<p class="first admonition-title">Pauli Matrices and Rotations</p>
-<p>Given a rotation</p>
+  <div class="section" id="fast-modes">
+<h1>Fast Modes<a class="headerlink" href="#fast-modes" title="Permalink to this headline">¶</a></h1>
+<p>Is the system unstable even for <span class="math">\(\omega_v=0\)</span> and <span class="math">\(\lambda=0\)</span>?</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/fast-mode-alpha-0.8.png" src="../_images/fast-mode-alpha-0.8.png" />
+<p class="caption"><span class="caption-text">The maximum imaginary part in linear stability analysis. These calculations are for fix <span class="math">\(k_m/\hat E=1\)</span>, where <span class="math">\(\hat E\)</span> is the energy scale used to scale all the quantities.</span></p>
+<div class="legend">
 <div class="math">
-\[\begin{split}U = \begin{pmatrix} \cos \theta &amp; \sin \theta \\ -\sin\theta &amp; \cos \theta \end{pmatrix},\end{split}\]</div>
-<p>its effect on Pauli matrices are</p>
-<div class="last math">
-\[\begin{split}U^\dagger \sigma_3 U  &amp;=\cos 2\theta \sigma_3 + \sin 2\theta \sigma_1 \\
-U^\dagger \sigma_1 U &amp; = -\sin 2\theta \sigma_3 + \cos 2\theta \sigma_1.\end{split}\]</div>
+\[\begin{split}\omega_v =&amp; 0\\
+\lambda =&amp; 0\\
+\alpha = &amp; 0.8.\end{split}\]</div>
+<p>The grid of figure are arranged according to the following values of <span class="math">\(\{\theta_1,\theta_2\}\)</span>.</p>
+<div class="math">
+\[\begin{split}\begin{array}{cccc}
+\left\{\frac{\pi }{6},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{6},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{6},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{6},\frac{\pi }{3}\right\} \\
+\left\{\frac{2 \pi }{9},\frac{\pi }{6}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{\pi }{3}\right\} \\
+\left\{\frac{5 \pi }{18},\frac{\pi }{6}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{\pi }{3}\right\} \\
+\left\{\frac{\pi }{3},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{3},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{3},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{3},\frac{\pi }{3}\right\} \\
+\end{array}\end{split}\]</div>
 </div>
-<div class="section" id="flavor-basis">
-<h2>Flavor Basis<a class="headerlink" href="#flavor-basis" title="Permalink to this headline">¶</a></h2>
-<div class="note admonition">
-<p class="first admonition-title">Vacuum Oscillations</p>
-<p class="last">Vacuum oscillations is already a Rabi oscillation at resonance with oscillation width <span class="math">\(\omega_v \sin 2\theta_v\)</span>.</p>
 </div>
-<p>Neutrino oscillation in matter has a Hamiltonian in flavor basis</p>
+<div class="figure align-center" id="id2">
+<img alt="../_images/fast-mode-alpha-1.2.png" src="../_images/fast-mode-alpha-1.2.png" />
+<p class="caption"><span class="caption-text">The maximum imaginary part in linear stability analysis. These calculations are for fix <span class="math">\(k_m/\hat E=1\)</span>, where <span class="math">\(\hat E\)</span> is the energy scale used to scale all the quantities.</span></p>
+<div class="legend">
 <div class="math">
-\[H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1.\]</div>
-<p>The Schroding equation is</p>
+\[\begin{split}\omega_v =&amp; 0\\
+\lambda =&amp; 0\\
+\alpha = &amp; 1.2.\end{split}\]</div>
+<p>The grid of figure are arranged according to the following values of <span class="math">\(\{\theta_1,\theta_2\}\)</span>.</p>
 <div class="math">
-\[i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)}.\]</div>
-<p>To make connections to Rabi oscillations, we would like to remove the changing <span class="math">\(\sigma_3\)</span> terms, using a transformation</p>
-<div class="math">
-\[\begin{split}T = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix},\end{split}\]</div>
-<p>which transform the flavor basis to another basis</p>
-<div class="math">
-\[\begin{split}\begin{pmatrix} \psi_e \\ \psi_x \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} &amp; 0 \\  0 &amp; e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{a} \\ \psi_{b} \end{pmatrix}.\end{split}\]</div>
-<p>The Schrodinger equation can be written into this new basis</p>
-<div class="math">
-\[i \partial_x (T \Psi^{(r)}) = H^{(f)} T\Psi^{(r)},\]</div>
-<p>which is simplified to</p>
-<div class="math">
-\[i \partial_x \Psi^{(r)} = H^{(r)} \Psi^{(r)},\]</div>
-<p>where</p>
-<div class="math">
-\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
-0 &amp; e^{2i\eta(x)} \\
-e^{-2i\eta(x)} &amp; 0 \\
-\end{pmatrix},\end{split}\]</div>
-<p>in which we remove the varying component of <span class="math">\(\sigma_3\)</span> elements using</p>
-<div class="math">
-\[\frac{d}{dx}\eta(x) = \frac{\lambda(x)}{2}.\]</div>
-<p>The final Hamiltonian would have some form</p>
-<div class="math">
-\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
-0 &amp; e^{i\int_0^x \lambda(\tau)d\tau + 2i\eta(0)} \\
-e^{-i\int_0^x \lambda(\tau)d\tau - 2i\eta(0)} &amp; 0 \\
-\end{pmatrix},\end{split}\]</div>
-<p>where <span class="math">\(\eta(0)\)</span> is chosen to conter the constant terms from the integral.</p>
-<p>For arbitary matter profile, we could first apply Fourier expand the profile into trig function then use Jacobi-Anger expansion so that the system becomes a lot of Rabi oscillations.</p>
-<p>Any transformations or expansions that decompose <span class="math">\(\exp{\left(i\int_0^x \lambda(\tau)d\tau\right)}\)</span> into many summations of <span class="math">\(\exp{\left( i a x + b \right)}\)</span> would be enough for an Rabi oscillation interpretation.</p>
-<p>Let&#8217;s discuss the constant matter profile, <span class="math">\(\lambda(x) = \lambda_0\)</span>. Thus we have</p>
-<div class="math">
-\[\eta(x) = \frac{1}{2} \lambda_0 x.\]</div>
-<p>The Hamiltonian becomes</p>
-<div class="math">
-\[\begin{split}H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
-0 &amp; e^{i\lambda_0 x} \\
-e^{-i\lambda_0 x} &amp; 0 \\
-\end{pmatrix},\end{split}\]</div>
-<p>which is exactly a Rabi oscillation. The resonance condition is</p>
-<div class="math">
-\[\lambda_0 = \omega_v \cos 2\theta_v.\]</div>
+\[\begin{split}\begin{array}{cccc}
+\left\{\frac{\pi }{6},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{6},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{6},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{6},\frac{\pi }{3}\right\} \\
+\left\{\frac{2 \pi }{9},\frac{\pi }{6}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{\pi }{3}\right\} \\
+\left\{\frac{5 \pi }{18},\frac{\pi }{6}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{\pi }{3}\right\} \\
+\left\{\frac{\pi }{3},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{3},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{3},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{3},\frac{\pi }{3}\right\} \\
+\end{array}\end{split}\]</div>
 </div>
-<div class="section" id="instanteneous-matter-basis">
-<h2>Instanteneous Matter Basis<a class="headerlink" href="#instanteneous-matter-basis" title="Permalink to this headline">¶</a></h2>
-<p>Neutrino oscillation in matter has a Hamiltonian in flavor basis</p>
+</div>
+<p>When we have symmetric geometry, the instability region is gone. Such a result is exactly what we expect. However, different</p>
+<div class="figure align-center" id="id3">
+<img alt="../_images/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" src="../_images/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" />
+<p class="caption"><span class="caption-text">Linear stability analysis for</span></p>
+<div class="legend">
 <div class="math">
-\[H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1.\]</div>
-<p>The Schroding equation is</p>
-<div class="math">
-\[i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)},\]</div>
-<p>which can be transformed to instantaneous matter basis by applying a rotation <span class="math">\(U\)</span>,</p>
-<div class="math">
-\[i \partial_x \left(  U\Psi^{(m)} \right)= H^{(f)} U\Psi^{(m)},\]</div>
-<p>where</p>
-<div class="math">
-\[\begin{split}U = \begin{pmatrix} \cos \theta_m &amp; \sin \theta_m \\ -\sin\theta_m &amp; \cos \theta_m \end{pmatrix}.\end{split}\]</div>
-<p>With a little algebra, we can write the system into</p>
-<div class="math">
-\[i \partial _x \Psi^{(m)} = H^{(m)}\Psi^{(m)}\]</div>
-<div class="math">
-\[H^{(m)} = U^\dagger H^{(f)} U - i U^\dagger \partial_x U.\]</div>
-<p>By setting the off-diagonal elements of the first term <span class="math">\(U^\dagger H^{(f)} U\)</span> to zero, we can derive the relation</p>
-<div class="math">
-\[\tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v}.\]</div>
-<p>Furthermore, we derive the term</p>
-<div class="math">
-\[i U^\dagger \partial_x U = - \dot\theta_m \sigma_2.\]</div>
-<p>We can calculate <span class="math">\(\dot\theta_m\)</span> by taking the derivative of <span class="math">\(\tan 2\theta_m\)</span>,</p>
-<div class="math">
-\[\frac{d}{dx} \tan 2\theta_m = \frac{2}{\cos^2 2\theta_m} \dot\theta_m,\]</div>
-<p>so that</p>
-<div class="math">
-\[\begin{split}\dot\theta_m &amp;= \frac{1}{2} \cos^2 (2\theta_m) \frac{d}{dx} \tan 2\theta_m \\
-&amp; = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v } \frac{d}{dx} \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v} \\
-&amp; = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v }  \frac{\sin 2\theta_v}{(\cos 2\theta_v - \lambda/\omega_v)^2} \frac{1}{\omega)v} \frac{d}{dx} \lambda(x) \\
-&amp; = \frac{1}{2} \sin 2\theta_m \frac{1}{\omega_m} \frac{d}{dx} \lambda(x).\end{split}\]</div>
+\[\begin{split}\omega_v =&amp; 0\\
+\lambda =&amp; 0\\
+\alpha = &amp; 0.8 \\
+\theta_L =&amp; 2\pi/9 \\
+\theta_R =&amp; \pi/6.\end{split}\]</div>
+</div>
 </div>
 </div>
 
@@ -349,7 +299,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="MSW Effect Revisted &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="Fast Modes &mdash; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -396,7 +346,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
-      <a href="../_sources/matter-stimulated/msw-revisted.txt"
+      <a href="../_sources/collective/fast-modes.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

@@ -35,6 +35,74 @@
   
   <script type="text/javascript" id="searchindexloader"></script>
   
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -50,73 +118,56 @@
     })();
 </script>
 
-  <!-- Hypothesis -->
-  <!-- <script async defer src="https://hypothes.is/embed.js"></script> -->
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+<!-- Gitter Sidecar Environment BEGIN -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'NeuPhysics/neutrino',
+    activationElement: false
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<!-- Gitter Sidecar Environment END -->
+
 
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  <html lang="en">
+
+
+  
+  <meta name="description" content="Neutrinos the amazing particles, physics about neutrino oscillations">
+  
+
+
+  
+  <meta name="keywords" content="neutrino, neutrino physics">
+  
+
+
+  
+  <meta name="author" content="Lei Ma">
+  
   <link rel="canonical" href="http://docs.neutrino.xyz/search.html"/>
 
 
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["color.js", "cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
-  </script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
-      cancel: ["Extension","cancel"]
-      });
-   });
-   </script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      showProcessingMessages: false,
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: { equationNumbers: { autoNumber: "AMS" } },
-      "fast-preview": {disabled: true}
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      processEscapes: true
-    }
-  });
-</script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      Macros: {
-        overlr: ['\\overset\\leftrightarrow{\#1}',1],
-        overl: ['\\overset\leftarrow{\#1}',1],
-        overr: ['\\overset\rightarrow{\#1}',1],
-        bra: ['\\left\\langle \#1\\right|',1],
-        ket: ['\\left| \#1\\right\\rangle',1],
-        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
-        avg: ['\\left< \#1 \\right>',1],
-        slashed: ['\\cancel{\#1}',1],
-        bold: ['\\boldsymbol{\#1}',1],
-        sech: ['\\operatorname{sech}{\#1}',1],
-        csch: ['\\operatorname{csch}{\#1}',1]
-      }
-    }
-  });
-  </script>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+
 
 
  
@@ -181,19 +232,21 @@
 </p>
 
 
-<h3>ToC</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="matter-stimulated/index.html">Matter Stimulated Oscillation</a></li>
+<h3>Contents</h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="simple">
 </ul>
 
 
 <ul>
-	<li><a href="genindex.html">INDEX</a></li>
+	<li><a href="genindex.html" style="text-decoration: none;"><img src="https://img.shields.io/badge/Neutrino-Index-blue.svg?style=flat-square"></li>
 </ul>
 <h3>Links</h3>
 <ul>
    <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
-   </ul>
+   <li class="toctree-l1"><a href="http://physics.openmetric.org" style="color:orange;"><i class="fa fa-fire"></i>&nbsp;Physics Notes</a></li>
+   <li class="toctree-l1"><a href="http://neutrino.xyz/neutrino-map" style="color:orange;"><i class="fa fa-map-signs"></i>&nbsp;Neutrino Map</a></li>
+</ul>
 <h3>Support Us</h3>
 <p>
 Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
@@ -246,9 +299,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
 <!-- Disqus END -->
 
 
-      &copy;2016, Lei Ma. | <a href="citing.html">Licenses</a>
+      &copy;2016, Lei Ma. | <a href="index.html">Licenses</a>
       |
-      <a href="genindex.html">Index</a>
+      <a href="/genindex.html">Index</a>
+      |
+      Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
