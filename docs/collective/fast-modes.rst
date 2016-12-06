@@ -1,6 +1,15 @@
 Fast Modes
 ====================
 
+.. admonition:: Four Beams Model
+   :class: hint
+
+   There are many things to consider for the four beams line model.
+
+   1. Different emission angle for neutrinos and antineutrinos;
+   2. Different density for neutrinos and antineutrinos;
+   3. Left and right difference.
+
 Is the system unstable even for :math:`\omega_v=0` and :math:`\lambda=0`?
 
 
@@ -59,3 +68,85 @@ When we have symmetric geometry, the instability region is gone. Such a result i
       \alpha = & 0.8 \\
       \theta_L =& 2\pi/9 \\
       \theta_R =& \pi/6.
+
+
+
+Regions of Instability
+----------------------------------
+
+
+For convinience, we define some quantities for four beam case.
+
+1. We define the a parameter :math:`\alpha=(1-a)/(1+a)` so that :math:`\alpha \in [0,\infty]` is mapped onto :math:`a\in [-1,1]`.
+2. The summation of the two angles :math:`\Sigma\theta=\theta_1+\theta_2` and the difference between two angles :math:`\Delta\theta=\theta_1-\theta_2`, where :math:`\theta_1` is for neutrino beams.
+3. Every quantity is in unit of :math:`\mu`.
+
+
+First we check the result without matter, without vacuum frequency, and :math:`\Sigma\theta=2\pi/3`.
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png
+   :align: center
+
+   No matter, no vacuum frequency
+
+
+
+We can also check the matter effect.
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png
+   :align: center
+
+   With matter, no vacuum frequency.
+
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png
+   :align: center
+
+   With matter, no vacuum frequency.
+
+
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png
+   :align: center
+
+   With matter, no vacuum frequency.
+
+
+
+Then we check the result without matter, without vacuum frequency, and :math:`\Sigma\theta=2\pi/3`, and :math:`\frac{m k}{\mu}=0.1`.
+
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png
+   :align: center
+
+   No matter, no vacuum frequency.
+
+The effect of :math:`m k/\mu` is also similar to matter effect.
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png
+   :align: center
+
+   Higher order Fourier modes, without matter, no vacuum frequency.
+
+
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png
+   :align: center
+
+   Higher order Fourier modes, without matter, no vacuum frequency.
+
+
+Matter + Fourier modes also has suppression
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png
+   :align: center
+
+   Higher order Fourier modes, with matter, no vacuum frequency.
+
+
+
+
+.. figure:: assets/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png
+   :align: center
+
+   Higher order Fourier modes, with matter, no vacuum frequency.

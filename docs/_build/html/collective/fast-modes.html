@@ -183,6 +183,15 @@ TeX: {
             
   <div class="section" id="fast-modes">
 <h1>Fast Modes<a class="headerlink" href="#fast-modes" title="Permalink to this headline">¶</a></h1>
+<div class="hint admonition">
+<p class="first admonition-title">Four Beams Model</p>
+<p>There are many things to consider for the four beams line model.</p>
+<ol class="last arabic simple">
+<li>Different emission angle for neutrinos and antineutrinos;</li>
+<li>Different density for neutrinos and antineutrinos;</li>
+<li>Left and right difference.</li>
+</ol>
+</div>
 <p>Is the system unstable even for <span class="math">\(\omega_v=0\)</span> and <span class="math">\(\lambda=0\)</span>?</p>
 <div class="figure align-center" id="id1">
 <img alt="../_images/fast-mode-alpha-0.8.png" src="../_images/fast-mode-alpha-0.8.png" />
@@ -222,7 +231,7 @@ TeX: {
 </div>
 <p>When we have symmetric geometry, the instability region is gone. Such a result is exactly what we expect. However, different</p>
 <div class="figure align-center" id="id3">
-<img alt="../_images/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" src="../_images/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" />
+<img alt="collective/assets/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" src="collective/assets/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" />
 <p class="caption"><span class="caption-text">Linear stability analysis for</span></p>
 <div class="legend">
 <div class="math">
@@ -231,6 +240,56 @@ TeX: {
 \alpha = &amp; 0.8 \\
 \theta_L =&amp; 2\pi/9 \\
 \theta_R =&amp; \pi/6.\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="regions-of-instability">
+<h2>Regions of Instability<a class="headerlink" href="#regions-of-instability" title="Permalink to this headline">¶</a></h2>
+<p>For convinience, we define some quantities for four beam case.</p>
+<ol class="arabic simple">
+<li>We define the a parameter <span class="math">\(\alpha=(1-a)/(1+a)\)</span> so that <span class="math">\(\alpha \in [0,\infty]\)</span> is mapped onto <span class="math">\(a\in [-1,1]\)</span>.</li>
+<li>The summation of the two angles <span class="math">\(\Sigma\theta=\theta_1+\theta_2\)</span> and the difference between two angles <span class="math">\(\Delta\theta=\theta_1-\theta_2\)</span>, where <span class="math">\(\theta_1\)</span> is for neutrino beams.</li>
+<li>Every quantity is in unit of <span class="math">\(\mu\)</span>.</li>
+</ol>
+<p>First we check the result without matter, without vacuum frequency, and <span class="math">\(\Sigma\theta=2\pi/3\)</span>.</p>
+<div class="figure align-center" id="id4">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png" />
+<p class="caption"><span class="caption-text">No matter, no vacuum frequency</span></p>
+</div>
+<p>We can also check the matter effect.</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png" />
+<p class="caption"><span class="caption-text">With matter, no vacuum frequency.</span></p>
+</div>
+<div class="figure align-center" id="id6">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png" />
+<p class="caption"><span class="caption-text">With matter, no vacuum frequency.</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png" />
+<p class="caption"><span class="caption-text">With matter, no vacuum frequency.</span></p>
+</div>
+<p>Then we check the result without matter, without vacuum frequency, and <span class="math">\(\Sigma\theta=2\pi/3\)</span>, and <span class="math">\(\frac{m k}{\mu}=0.1\)</span>.</p>
+<div class="figure align-center" id="id8">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png" />
+<p class="caption"><span class="caption-text">No matter, no vacuum frequency.</span></p>
+</div>
+<p>The effect of <span class="math">\(m k/\mu\)</span> is also similar to matter effect.</p>
+<div class="figure align-center" id="id9">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png" />
+<p class="caption"><span class="caption-text">Higher order Fourier modes, without matter, no vacuum frequency.</span></p>
+</div>
+<div class="figure align-center" id="id10">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png" />
+<p class="caption"><span class="caption-text">Higher order Fourier modes, without matter, no vacuum frequency.</span></p>
+</div>
+<p>Matter + Fourier modes also has suppression</p>
+<div class="figure align-center" id="id11">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png" />
+<p class="caption"><span class="caption-text">Higher order Fourier modes, with matter, no vacuum frequency.</span></p>
+</div>
+<div class="figure align-center" id="id12">
+<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png" />
+<p class="caption"><span class="caption-text">Higher order Fourier modes, with matter, no vacuum frequency.</span></p>
 </div>
 </div>
 </div>
