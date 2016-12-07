@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6.2. Intuitions &mdash; Neutrino 0.1.2 documentation</title>
+    <title>Some Clarifications &mdash; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1.2',
+        VERSION:     'Pi',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,10 +27,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Neutrino 0.1.2 documentation" href="../index.html" />
-    <link rel="up" title="6. Collective Behavior" href="index.html" />
-    <link rel="next" title="6.3. Linear Stability Analysis" href="linear-stability-analysis.html" />
-    <link rel="prev" title="6.1. Collective Behavior" href="concepts.html" />
+    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -159,7 +156,7 @@ TeX: {
   
   <meta name="author" content="Lei Ma">
   
-  <link rel="canonical" href="http://docs.neutrino.xyz/collective/intuitions.html"/>
+  <link rel="canonical" href="http://docs.neutrino.xyz/collective/some-clarifications.html"/>
 
 
 
@@ -175,14 +172,7 @@ TeX: {
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="linear-stability-analysis.html" title="6.3. Linear Stability Analysis"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="concepts.html" title="6.1. Collective Behavior"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino 0.1.2 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">6. Collective Behavior</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -191,13 +181,129 @@ TeX: {
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="intuitions">
-<h1>6.2. Intuitions<a class="headerlink" href="#intuitions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="refs-notes">
-<h2>6.2.1. Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="some-clarifications">
+<h1>Some Clarifications<a class="headerlink" href="#some-clarifications" title="Permalink to this headline">¶</a></h1>
+<p>I need to understand several phenomena people mentioned.</p>
 <ol class="arabic simple">
-<li>Flavor Oscillation Models in Dense Neutrino Media</li>
+<li>Why crossing leads to instability?</li>
+<li>What exactly is happening when we break the symmetries?</li>
 </ol>
+<div class="section" id="two-beams-model">
+<h2>Two Beams Model<a class="headerlink" href="#two-beams-model" title="Permalink to this headline">¶</a></h2>
+<p>We use a simple two-beam line model.</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/two-beam-line-model.png" src="../_images/two-beam-line-model.png" />
+<p class="caption"><span class="caption-text">Two-beam model. Using this model we can check the effect of different symmetries.</span></p>
+</div>
+<p>For convinience of notations, we define a number density distribution function</p>
+<div class="math">
+\[f(\hat\nu,\omega)= \frac{n(\hat \nu,\omega)}{n_t},\]</div>
+<p>where <span class="math">\(n_t\)</span> is the total number density of all neutrino emitted, <span class="math">\(n(\hat\nu,\omega)\)</span> is the number density with momentum direction <span class="math">\(\hat \nu\)</span> and energy <span class="math">\(\omega\)</span>.</p>
+<p>We also define</p>
+<div class="math">
+\[\mu = \sqrt{2}G_F n_t.\]</div>
+<p>For two dimensional systems, we can calculate the neutrinos within an angle <span class="math">\([\theta,\theta+d\theta]\)</span></p>
+<div class="math">
+\[n_t f(\hat\nu,\omega) d\theta.\]</div>
+<p>Similarly we can define the angular distribution for antineutrinos.</p>
+<div class="section" id="all-neutrino-beams">
+<h3>All Neutrino Beams<a class="headerlink" href="#all-neutrino-beams" title="Permalink to this headline">¶</a></h3>
+<p>If all the beams are neutrinos, but with different energies for the left and right beams. The distribution function for beams is delta function. In fact, each beam is just half of the total neutrino number density <span class="math">\(n_t\)</span>.</p>
+<p>The Hamiltonian is a sum of vacuum terms, matter terms, and self-interaction terms,</p>
+<div class="math">
+\[H= H_v + H_m + H_{\nu\nu},\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}H_v =&amp; - \eta \frac{1}{2}\omega \sigma_3 \\
+H_m =&amp; \frac{1}{2}\lambda \sigma_3\\
+H_{\nu\nu}^L =&amp; \frac{1}{2}\mu \rho^R (1-\cos(\theta_1-\theta_2))\\
+H_{\nu\nu}^R =&amp; \frac{1}{2}\mu \rho^L (1-\cos(\theta_1-\theta_2)).\end{split}\]</div>
+<p>To linearize the equation of motion, we define the perturbed density matrix as</p>
+<div class="math">
+\[\begin{split}\rho = \frac{1}{2}\begin{pmatrix}
+1 &amp; \epsilon\\
+\epsilon^* &amp; -1
+\end{pmatrix},\end{split}\]</div>
+<p>where we have removed the trace part because it is alway time independent.</p>
+<p>The linearized equation of motion becomes</p>
+<div class="math">
+\[\begin{split}i \partial_z \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} =&amp;  - i \begin{pmatrix}\cot\theta_1\partial_x &amp; 0 \\
+0 &amp; \cot\theta_2 \partial_x
+\end{pmatrix} \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} \\
+&amp;+
+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 &amp; -\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1\\
+-\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\mu_1 =&amp; \sqrt{2}G_F n_{t,1}\\
+\mu_2 =&amp; \sqrt{2}G_F n_{t,2}.\end{split}\]</div>
+<p>We know that real symmetric matrix has only real eigenvalues, from which we infer that <span class="math">\(\mu_1=\mu_2\)</span> and <span class="math">\(\theta_1=\theta_2\)</span> removes the instability.</p>
+<p>For translational symmetric models, that is <span class="math">\(\partial_x\to 0\)</span>, we have the eigenvalues</p>
+<div class="math">
+\[\Omega = \frac{1}{4}(A\pm B),\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}A=&amp; -\eta \omega_1/\sin\theta_1 - \mu_2 /\sin\theta_1 + \eta \omega_2 /\sin\theta_2 + \mu_1 \xi /\sin\theta_2 + \lambda(1/\sin\theta_1 + 1/\sin\theta_2)  \\
+B=&amp; 1/(\sin\theta_1\sin\theta_2) \sqrt{
+   -4[(\lambda-\eta\omega_1)(\lambda +\eta\omega_2) + (\lambda (\mu_1-\mu_2) -\eta (\mu_1\omega_1 + \mu_2\omega_2) )\xi ] \sin\theta_1 \sin\theta_2 + [(\lambda + \eta\omega_2 + \mu_1\xi) \sin\theta_1 + (\lambda - \eta \omega_1 - \mu_2\xi) \sin\theta_2 ]^2
+}\\
+\xi=&amp;1-\cos(\theta_1-\theta_2)\end{split}\]</div>
+</div>
+<div class="section" id="all-antineutrino-beams">
+<h3>All Antineutrino Beams<a class="headerlink" href="#all-antineutrino-beams" title="Permalink to this headline">¶</a></h3>
+<p>I only need to change <span class="math">\(\mu_i\to -\bar\mu_i\)</span> and <span class="math">\(\omega_i\to -\bar\omega_i\)</span>, where <span class="math">\(\bar\mu=\sqrt{2}G_F \bar n_t\)</span>.</p>
+<div class="math">
+\[\begin{split}i \partial_z \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} =&amp;  - i \begin{pmatrix}\cot\theta_1\partial_x &amp; 0 \\
+0 &amp; \cot\theta_2 \partial_x
+\end{pmatrix} \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} \\
+&amp;+
+\frac{1}{2}\begin{pmatrix}
+(\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 &amp; \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
+\bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 &amp; (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix}\end{split}\]</div>
+</div>
+<div class="section" id="one-antineutrino-and-one-neutrino-beams">
+<h3>One Antineutrino and One Neutrino Beams<a class="headerlink" href="#one-antineutrino-and-one-neutrino-beams" title="Permalink to this headline">¶</a></h3>
+<p>Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes</p>
+<div class="math">
+\[\begin{split}i\partial_z \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} = &amp; -i\begin{pmatrix}
+\cot\theta_1 \partial_x &amp; 0 \\
+0 &amp; \cot\theta_2 \partial_x
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} \\
+&amp;+ \frac{1}{2}\begin{pmatrix}
+(\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 &amp; \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
+-\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 &amp; (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix}\end{split}\]</div>
+</div>
 </div>
 </div>
 
@@ -223,32 +329,7 @@ TeX: {
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../preliminary/index.html">1. Preliminary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mass/index.html">2. Masses of Neutrinos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../experiments/index.html">3. Experiments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../oscillations/index.html">4. Oscillations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../matter/index.html">5. Interaction With Matter</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Collective Behavior</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="concepts.html">6.1. Collective Behavior</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">6.2. Intuitions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#refs-notes">6.2.1. Refs &amp; Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="linear-stability-analysis.html">6.3. Linear Stability Analysis</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../instability/index.html">7. Instability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pictures/index.html">8. Pictures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../models/index.html">9. Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../statistical-physics/index.html">10. Statistical Physics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geometric-phase/index.html">11. Geometric Phase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../astrophysics/index.html">12. Astrophysics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">13. Gravity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cosmology/index.html">14. Neutrinos and Cosmology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">15. Other Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ref.html">16. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">17. Acknowledgement</a></li>
+<ul class="simple">
 </ul>
 
 
@@ -273,23 +354,15 @@ TeX: {
     Enter search terms or a module, class or function name.
     </p>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script><h3>Bug Report and Chat</h3>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
 <p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
 
-<button class="sidebar-btn">
-<a href="https://github.com/NeuPhysics/neutrino/issues"><img src="https://img.shields.io/badge/issues-GitHub-orange.svg?style=flat-square"></a>
-</button>
-
-
-
-<button class="js-gitter-toggle-chat-button sidebar-btn">
-<a href="https://gitter.im/NeuPhysics/neutrino?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" target="_blank"><img src="https://img.shields.io/badge/chat-on%20gitter-blue.svg?style=flat-square"></a>
-</button>
-
-
-<button class="sidebar-btn">
-<a href="https://gratipay.com/~emptymalei/"><img src="https://img.shields.io/badge/tips-neutrino-4c924c.svg?style=flat-square"></a>
-</button>
         </div>
       </div>
       <div class="clearer"></div>
@@ -298,7 +371,7 @@ TeX: {
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="6.2. Intuitions &mdash; Neutrino 0.1.2 documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="Some Clarifications &mdash; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -345,7 +418,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
-      <a href="../_sources/collective/intuitions.txt"
+      <a href="../_sources/collective/some-clarifications.txt"
           rel="nofollow">Page source</a></li>
     </div>
 
