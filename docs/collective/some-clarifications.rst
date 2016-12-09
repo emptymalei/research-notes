@@ -89,6 +89,7 @@ The linearized equation of motion becomes
    \epsilon_1 \\
    \epsilon_2
    \end{pmatrix},
+   :label: eqn-line-model-two-beams-all-neutrino-linearized-eom
 
 
 where
@@ -116,59 +117,235 @@ where
 
 
 
-All Antineutrino Beams
+.. admonition:: All Antineutrino Beams
+   :class: note
+
+
+   I only need to change :math:`\mu_i\to -\bar\mu_i` and :math:`\omega_i\to -\bar\omega_i`, where :math:`\bar\mu=\sqrt{2}G_F \bar n_t`.
+
+   .. math::
+      i \partial_z \begin{pmatrix}
+      \epsilon_1 \\
+      \epsilon_2
+      \end{pmatrix} =&  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+      0 & \cot\theta_2 \partial_x
+      \end{pmatrix} \begin{pmatrix}
+      \epsilon_1 \\
+      \epsilon_2
+      \end{pmatrix} \\
+      &+
+      \frac{1}{2}\begin{pmatrix}
+      (\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
+      \bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
+      \end{pmatrix}\begin{pmatrix}
+      \epsilon_1 \\
+      \epsilon_2
+      \end{pmatrix}
+
+
+
+.. admonition:: One Antineutrino and One Neutrino Beams
+   :class: note
+
+   Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes
+
+   .. math::
+      i\partial_z \begin{pmatrix}
+      \epsilon_1 \\
+      \epsilon_2
+      \end{pmatrix} = & -i\begin{pmatrix}
+      \cot\theta_1 \partial_x & 0 \\
+      0 & \cot\theta_2 \partial_x
+      \end{pmatrix}\begin{pmatrix}
+      \epsilon_1 \\
+      \epsilon_2
+      \end{pmatrix} \\
+      &+ \frac{1}{2}\begin{pmatrix}
+      (\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 & \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
+      -\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
+      \end{pmatrix}\begin{pmatrix}
+      \epsilon_1 \\
+      \epsilon_2
+      \end{pmatrix}
+
+
+Simple Cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I only need to change :math:`\mu_i\to -\bar\mu_i` and :math:`\omega_i\to -\bar\omega_i`, where :math:`\bar\mu=\sqrt{2}G_F \bar n_t`.
+We first consider a simple case, where :math:`\theta_1=\theta_2\equiv \theta`, :math:`\lambda=0`, :math:`\eta=1`, and homogeneous in x direction. For simplicity we define
 
 .. math::
-   i \partial_z \begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} =&  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
-   0 & \cot\theta_2 \partial_x
-   \end{pmatrix} \begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} \\
-   &+
-   \frac{1}{2}\begin{pmatrix}
-   (\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
-   \bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
-   \end{pmatrix}\begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix}
+   \mu =& \sqrt{2}G_F (n_1 + n_2)\\
+   \mu_i =& \mu \frac{n_i}{n_1+n_2}\equiv \mu f_i \\
+   \xi = & 1-\cos(\theta_1-\theta_2)\\
+   \omega'_i = & \lambda - \eta\omega_i.
 
 
-
-
-
-
-
-
-
-One Antineutrino and One Neutrino Beams
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes
+The equation for perturbations becomes
 
 .. math::
-   i\partial_z \begin{pmatrix}
+   i\partial_z\begin{pmatrix}
    \epsilon_1 \\
    \epsilon_2
-   \end{pmatrix} = & -i\begin{pmatrix}
-   \cot\theta_1 \partial_x & 0 \\
-   0 & \cot\theta_2 \partial_x
+   \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
+   \omega'_i + \mu f_2\xi & -\mu f_2 \xi \\
+   -\mu f_1 \xi & \omega'_2 + \mu f_1 \xi
    \end{pmatrix}\begin{pmatrix}
    \epsilon_1 \\
    \epsilon_2
-   \end{pmatrix} \\
-   &+ \frac{1}{2}\begin{pmatrix}
-   (\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 & \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
-   -\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
+   \end{pmatrix}.
+
+Since :math:`\mu` is the most important energy scale in this problem, we scale all energies with it.
+
+.. math::
+   i\partial_{\hat z}\begin{pmatrix}
+   \epsilon_1 \\
+   \epsilon_2
+   \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
+   \hat\omega'_1 +  f_2\xi & - f_2 \xi \\
+   - f_1 \xi & \hat\omega'_2 +  f_1 \xi
    \end{pmatrix}\begin{pmatrix}
    \epsilon_1 \\
    \epsilon_2
-   \end{pmatrix}
+   \end{pmatrix},
+
+where
+
+.. math::
+   \partial_{\hat z} =& \frac{d}{\mu dz} \\
+   \hat \omega'_i =& \frac{\omega'_i}{\mu}.
+
+
+
+The characteristic equation for this equation is
+
+.. math::
+   \left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,
+   :label: eqn-two-beam-line-characteristic-eqn-simple
+
+which is simplified to
+
+.. math::
+   (\Omega-\Omega_1)(\Omega-\Omega_2) -f_1f_2\xi^2 = 0,
+
+where
+
+.. math::
+   \Omega_1 = & \hat\omega'_1 + f_2 \xi\\
+   \Omega_2 = & \hat\omega'_2 + f_1 \xi.
+
+
+Complete the square
+
+.. math::
+   (\Omega - (\Omega_1 + \Omega_2)/2)^2 = \frac{1}{4}(\Omega_1-\Omega_2) + f_1f_2\xi^2.
+
+
+The solution becomes
+
+.. math::
+   \Omega = \frac{1}{2}(\Omega_1+\Omega_2)\pm\sqrt{ (\Omega_1-\Omega_2)^2/4 + f_1f_2\xi^2 }.
+
+The condition to have positive imaginary part is
+
+.. math::
+   (\Omega_1-\Omega_2)^2 + 4f_1f_2\xi^2 < 0,
+
+or
+
+.. math::
+   -2\sqrt{-f_1f_2\xi^2}<\Omega_1-\Omega_2<2\sqrt{-f_1f_2\xi^2}.
+
+Plug in the definitions of :math:`\Omega_i`,
+
+.. math::
+   -2\sqrt{-f_1f_2\xi^2}< \eta(- \omega_1 + \omega_2)/\mu + (f_2 - f_1)\xi < 2\sqrt{-f_1f_2\xi^2}.
+
+From this we can infer
+
+1. :math:`f_1f_2` has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is :highlight-text:`crossing`.
+2. :math:`f_2-f_1`, :math:`\eta(\omega_2-\omega_1)`, and :math:`\mu` set limit on each other.
+
+
+Breaking Symmetries
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+For a line model, the symmetries we have are
+
+1. Time translation symmetry;
+2. Translational symmetry along the line;
+3. Energy spectrum of the beams;
+4. Number density of left and right beams;
+5. Angle of left and right beams;
+6. With and without matter.
+
+
+In this subsection we provide simple pictures of some the symmetries mentioned above.
+
+Translational symmetry is explained by introducing Fourier transform in x direction. For each mode, a term that is proportional to Fourier mode index m. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.
+
+Number density of each beam is described by the distribution :math:`f_i`'s effectively.
+
+To see the importance of angles, we can redefine some quantities
+
+.. math::
+   \omega''_i=& \frac{\omega/_i}{\sin\theta_i}\\
+   f''_1=&\frac{f_1}{\sin\theta_2} \\
+   f''_2=&\frac{f_2}{\sin\theta_1}.
+
+The we will reach the same characteristic equation as Eq. :eq:`eqn-two-beam-line-characteristic-eqn-simple`. So the angles serves as shift of energy gap and angular distribution.
+
+
+Including matter will define vacuum frequencies, :math:`\omega'_i`, which is effectively just a shift of vacuum frequencies.
+
+
+
+.. admonition:: Time Translational Symmetry
+   :class: warning
+
+   How about time translational symmetry? I need to write down the equation of motion that is related to time.
+
+   Two limits are of particular interest.
+
+   1. Adiabatic limit,
+   2. Superfast time variants.
+
+
+
+Numerical Calculations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+We assume the two beams have different energy, as indicated by :math:`\omega_1` and :math:`\omega_2` in Eq. :eq:`eqn-line-model-two-beams-all-neutrino-linearized-eom`.
+
+
+For numerical calcualtions, we scale quantities using :math:`\mu`.
+
+With symmetric angles for the two beams, I didn't find instabilities. However, :math:`\theta_1\neq \theta_2` leads to instabilities in IH, which is consistant with our expections.
+
+
+
+For NH:
+
+
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png
+   :width: 31%
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png
+   :width: 31%
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-6.png
+   :width: 31%
+
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-6-theta2-pi-div-3.png
+   :width: 31%
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-6-theta2-pi-div-3.png
+   :width: 31%
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-6-theta2-pi-div-3.png
+   :width: 31%
+
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-3.png
+   :width: 31%
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-3.png
+   :width: 31%
+.. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-3.png
+   :width: 31%

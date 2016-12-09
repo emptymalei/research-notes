@@ -226,8 +226,8 @@ H_{\nu\nu}^R =&amp; \frac{1}{2}\mu \rho^L (1-\cos(\theta_1-\theta_2)).\end{split
 \end{pmatrix},\end{split}\]</div>
 <p>where we have removed the trace part because it is alway time independent.</p>
 <p>The linearized equation of motion becomes</p>
-<div class="math">
-\[\begin{split}i \partial_z \begin{pmatrix}
+<div class="math" id="equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">
+<span class="eqno">(1)</span>\[\begin{split}i \partial_z \begin{pmatrix}
 \epsilon_1 \\
 \epsilon_2
 \end{pmatrix} =&amp;  - i \begin{pmatrix}\cot\theta_1\partial_x &amp; 0 \\
@@ -255,15 +255,14 @@ H_{\nu\nu}^R =&amp; \frac{1}{2}\mu \rho^L (1-\cos(\theta_1-\theta_2)).\end{split
 <p>where</p>
 <div class="math">
 \[\begin{split}A=&amp; -\eta \omega_1/\sin\theta_1 - \mu_2 /\sin\theta_1 + \eta \omega_2 /\sin\theta_2 + \mu_1 \xi /\sin\theta_2 + \lambda(1/\sin\theta_1 + 1/\sin\theta_2)  \\
-B=&amp; 1/(\sin\theta_1\sin\theta_2) \sqrt{
+B=&amp; \sqrt{
    -4[(\lambda-\eta\omega_1)(\lambda +\eta\omega_2) + (\lambda (\mu_1-\mu_2) -\eta (\mu_1\omega_1 + \mu_2\omega_2) )\xi ] \sin\theta_1 \sin\theta_2 + [(\lambda + \eta\omega_2 + \mu_1\xi) \sin\theta_1 + (\lambda - \eta \omega_1 - \mu_2\xi) \sin\theta_2 ]^2
-}\\
-\xi=&amp;1-\cos(\theta_1-\theta_2)\end{split}\]</div>
-</div>
-<div class="section" id="all-antineutrino-beams">
-<h3>All Antineutrino Beams<a class="headerlink" href="#all-antineutrino-beams" title="Permalink to this headline">¶</a></h3>
+}/(\sin\theta_1\sin\theta_2)\\
+\xi=&amp;1-\cos(\theta_1-\theta_2).\end{split}\]</div>
+<div class="note admonition">
+<p class="first admonition-title">All Antineutrino Beams</p>
 <p>I only need to change <span class="math">\(\mu_i\to -\bar\mu_i\)</span> and <span class="math">\(\omega_i\to -\bar\omega_i\)</span>, where <span class="math">\(\bar\mu=\sqrt{2}G_F \bar n_t\)</span>.</p>
-<div class="math">
+<div class="last math">
 \[\begin{split}i \partial_z \begin{pmatrix}
 \epsilon_1 \\
 \epsilon_2
@@ -282,10 +281,10 @@ B=&amp; 1/(\sin\theta_1\sin\theta_2) \sqrt{
 \epsilon_2
 \end{pmatrix}\end{split}\]</div>
 </div>
-<div class="section" id="one-antineutrino-and-one-neutrino-beams">
-<h3>One Antineutrino and One Neutrino Beams<a class="headerlink" href="#one-antineutrino-and-one-neutrino-beams" title="Permalink to this headline">¶</a></h3>
+<div class="note admonition">
+<p class="first admonition-title">One Antineutrino and One Neutrino Beams</p>
 <p>Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes</p>
-<div class="math">
+<div class="last math">
 \[\begin{split}i\partial_z \begin{pmatrix}
 \epsilon_1 \\
 \epsilon_2
@@ -303,6 +302,121 @@ B=&amp; 1/(\sin\theta_1\sin\theta_2) \sqrt{
 \epsilon_1 \\
 \epsilon_2
 \end{pmatrix}\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="simple-cases">
+<h3>Simple Cases<a class="headerlink" href="#simple-cases" title="Permalink to this headline">¶</a></h3>
+<p>We first consider a simple case, where <span class="math">\(\theta_1=\theta_2\equiv \theta\)</span>, <span class="math">\(\lambda=0\)</span>, <span class="math">\(\eta=1\)</span>, and homogeneous in x direction. For simplicity we define</p>
+<div class="math">
+\[\begin{split}\mu =&amp; \sqrt{2}G_F (n_1 + n_2)\\
+\mu_i =&amp; \mu \frac{n_i}{n_1+n_2}\equiv \mu f_i \\
+\xi = &amp; 1-\cos(\theta_1-\theta_2)\\
+\omega'_i = &amp; \lambda - \eta\omega_i.\end{split}\]</div>
+<p>The equation for perturbations becomes</p>
+<div class="math">
+\[\begin{split}i\partial_z\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
+\omega'_i + \mu f_2\xi &amp; -\mu f_2 \xi \\
+-\mu f_1 \xi &amp; \omega'_2 + \mu f_1 \xi
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix}.\end{split}\]</div>
+<p>Since <span class="math">\(\mu\)</span> is the most important energy scale in this problem, we scale all energies with it.</p>
+<div class="math">
+\[\begin{split}i\partial_{\hat z}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
+\hat\omega'_1 +  f_2\xi &amp; - f_2 \xi \\
+- f_1 \xi &amp; \hat\omega'_2 +  f_1 \xi
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\partial_{\hat z} =&amp; \frac{d}{\mu dz} \\
+\hat \omega'_i =&amp; \frac{\omega'_i}{\mu}.\end{split}\]</div>
+<p>The characteristic equation for this equation is</p>
+<div class="math" id="equation-eqn-two-beam-line-characteristic-eqn-simple">
+<span class="eqno">(2)</span>\[\left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,\]</div>
+<p>which is simplified to</p>
+<div class="math">
+\[(\Omega-\Omega_1)(\Omega-\Omega_2) -f_1f_2\xi^2 = 0,\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\Omega_1 = &amp; \hat\omega'_1 + f_2 \xi\\
+\Omega_2 = &amp; \hat\omega'_2 + f_1 \xi.\end{split}\]</div>
+<p>Complete the square</p>
+<div class="math">
+\[(\Omega - (\Omega_1 + \Omega_2)/2)^2 = \frac{1}{4}(\Omega_1-\Omega_2) + f_1f_2\xi^2.\]</div>
+<p>The solution becomes</p>
+<div class="math">
+\[\Omega = \frac{1}{2}(\Omega_1+\Omega_2)\pm\sqrt{ (\Omega_1-\Omega_2)^2/4 + f_1f_2\xi^2 }.\]</div>
+<p>The condition to have positive imaginary part is</p>
+<div class="math">
+\[\begin{split}(\Omega_1-\Omega_2)^2 + 4f_1f_2\xi^2 &lt; 0,\end{split}\]</div>
+<p>or</p>
+<div class="math">
+\[\begin{split}-2\sqrt{-f_1f_2\xi^2}&lt;\Omega_1-\Omega_2&lt;2\sqrt{-f_1f_2\xi^2}.\end{split}\]</div>
+<p>Plug in the definitions of <span class="math">\(\Omega_i\)</span>,</p>
+<div class="math">
+\[\begin{split}-2\sqrt{-f_1f_2\xi^2}&lt; \eta(- \omega_1 + \omega_2)/\mu + (f_2 - f_1)\xi &lt; 2\sqrt{-f_1f_2\xi^2}.\end{split}\]</div>
+<p>From this we can infer</p>
+<ol class="arabic simple">
+<li><span class="math">\(f_1f_2\)</span> has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is <span class="highlight-text">crossing</span>.</li>
+<li><span class="math">\(f_2-f_1\)</span>, <span class="math">\(\eta(\omega_2-\omega_1)\)</span>, and <span class="math">\(\mu\)</span> set limit on each other.</li>
+</ol>
+</div>
+<div class="section" id="breaking-symmetries">
+<h3>Breaking Symmetries<a class="headerlink" href="#breaking-symmetries" title="Permalink to this headline">¶</a></h3>
+<p>For a line model, the symmetries we have are</p>
+<ol class="arabic simple">
+<li>Time translation symmetry;</li>
+<li>Translational symmetry along the line;</li>
+<li>Energy spectrum of the beams;</li>
+<li>Number density of left and right beams;</li>
+<li>Angle of left and right beams;</li>
+<li>With and without matter.</li>
+</ol>
+<p>In this subsection we provide simple pictures of some the symmetries mentioned above.</p>
+<p>Translational symmetry is explained by introducing Fourier transform in x direction. For each mode, a term that is proportional to Fourier mode index m. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.</p>
+<p>Number density of each beam is described by the distribution <span class="math">\(f_i\)</span>&#8216;s effectively.</p>
+<p>To see the importance of angles, we can redefine some quantities</p>
+<div class="math">
+\[\begin{split}\omega''_i=&amp; \frac{\omega/_i}{\sin\theta_i}\\
+f''_1=&amp;\frac{f_1}{\sin\theta_2} \\
+f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
+<p>The we will reach the same characteristic equation as Eq. <a href="#equation-eqn-two-beam-line-characteristic-eqn-simple">(2)</a>. So the angles serves as shift of energy gap and angular distribution.</p>
+<p>Including matter will define vacuum frequencies, <span class="math">\(\omega'_i\)</span>, which is effectively just a shift of vacuum frequencies.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Time Translational Symmetry</p>
+<p>How about time translational symmetry? I need to write down the equation of motion that is related to time.</p>
+<p>Two limits are of particular interest.</p>
+<ol class="last arabic simple">
+<li>Adiabatic limit,</li>
+<li>Superfast time variants.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="numerical-calculations">
+<h3>Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
+<p>We assume the two beams have different energy, as indicated by <span class="math">\(\omega_1\)</span> and <span class="math">\(\omega_2\)</span> in Eq. <a href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a>.</p>
+<p>For numerical calcualtions, we scale quantities using <span class="math">\(\mu\)</span>.</p>
+<p>With symmetric angles for the two beams, I didn&#8217;t find instabilities. However, <span class="math">\(\theta_1\neq \theta_2\)</span> leads to instabilities in IH, which is consistant with our expections.</p>
+<p>For NH:</p>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-6.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-6.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-6.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-6-theta2-pi-div-3.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-6-theta2-pi-div-3.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-6-theta2-pi-div-3.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-6-theta2-pi-div-3.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-6-theta2-pi-div-3.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-6-theta2-pi-div-3.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-6-theta2-pi-div-3.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-6-theta2-pi-div-3.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-6-theta2-pi-div-3.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-3.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-3.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-3.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-3.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-3.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-3.png" style="width: 31%;" /></a>
+<a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-3.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-3.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-3.png" style="width: 31%;" /></a>
 </div>
 </div>
 </div>
