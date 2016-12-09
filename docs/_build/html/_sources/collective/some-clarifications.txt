@@ -264,7 +264,20 @@ Plug in the definitions of :math:`\Omega_i`,
 From this we can infer
 
 1. :math:`f_1f_2` has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is :highlight-text:`crossing`.
-2. :math:`f_2-f_1`, :math:`\eta(\omega_2-\omega_1)`, and :math:`\mu` set limit on each other.
+2. :math:`-\omega_1+\omega_2=0` will remove the instability. So we have to have both neutrinos and antineutrinos.
+3. :math:`f_2-f_1`, :math:`\eta(\omega_2-\omega_1)`, and :math:`\mu` set limit on each other.
+
+
+.. admonition:: But why?
+   :class: warning
+
+   We have these conclusions. But why?
+
+   What are the roles of
+
+   1. :math:`f_i`,
+   2. neutrino beam and antineutrino beam,
+   3. hierarchy.
 
 
 Breaking Symmetries
