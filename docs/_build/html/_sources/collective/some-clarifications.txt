@@ -279,6 +279,22 @@ From this we can infer
    2. neutrino beam and antineutrino beam,
    3. hierarchy.
 
+.. admonition:: Real Symmetric and Skew Symmetric
+	:class: toggle
+		
+	Another way of understanding this equation is to think of it as the growth of the length of the vector :math:`\vec v = (\epsilon_1,\epsilon_2)^T`. For an arbitrary matrix differential equation of the form
+
+	.. math::
+		\partial_z \mathbf v = \mathbf A \mathbf v,
+
+	we can always decompose the matrix :math:`\mathbf A` into symmetric part and skew-symmetric part
+
+	.. math::
+		\mathbf A = \frac{1}{2}(\mathbf A + \mathbf A^T) + \frac{1}{2}(\mathbf A - \mathbf A^T) \equiv \mathbf A^+ + \mathbf A^-.
+
+   We can indentify the effect of :math:`f_1-f_2` but this is not particularly useful since we can not say anything about the eigenvalues of matrix :math:`\mathbf A` from the eigenvalues of matrix :math:`\mathbf A^+` and :math:`\mathbf A^-`.
+
+
 
 Breaking Symmetries
 ~~~~~~~~~~~~~~~~~~~~~~
