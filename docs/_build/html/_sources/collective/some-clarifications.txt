@@ -7,6 +7,7 @@ I need to understand several phenomena people mentioned.
 1. Why crossing leads to instability?
 2. What exactly is happening when we break the symmetries?
 
+.. _two-beams-model:
 
 Two Beams Model
 ------------------------
@@ -277,11 +278,12 @@ From this we can infer
 
    1. :math:`f_i`,
    2. neutrino beam and antineutrino beam,
-   3. hierarchy.
+   3. hierarchy,
+   4. neutrino number density variations.
 
 .. admonition:: Real Symmetric and Skew Symmetric
 	:class: toggle
-		
+
 	Another way of understanding this equation is to think of it as the growth of the length of the vector :math:`\vec v = (\epsilon_1,\epsilon_2)^T`. For an arbitrary matrix differential equation of the form
 
 	.. math::

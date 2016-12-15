@@ -46,3 +46,7 @@ img.math {
    background: none;
    border: none;
 }
+
+p.admonition-title:after {
+    content: "" !important;
+}

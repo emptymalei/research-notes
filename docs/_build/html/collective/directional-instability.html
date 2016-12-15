@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Directional Instability &mdash; Neutrino Pi documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Pi',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+<!-- Gitter Sidecar Environment BEGIN -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'NeuPhysics/neutrino',
+    activationElement: false
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<!-- Gitter Sidecar Environment END -->
+
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  <html lang="en">
+
+
+  
+  <meta name="description" content="Neutrinos the amazing particles, physics about neutrino oscillations">
+  
+
+
+  
+  <meta name="keywords" content="neutrino, neutrino physics">
+  
+
+
+  
+  <meta name="author" content="Lei Ma">
+  
+  <link rel="canonical" href="http://docs.neutrino.xyz/collective/directional-instability.html"/>
+
+
+
+
+
+
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="directional-instability">
+<h1>Directional Instability<a class="headerlink" href="#directional-instability" title="Permalink to this headline">¶</a></h1>
+<div class="hint admonition">
+<p class="first admonition-title">Conventions</p>
+<p>We use the metric</p>
+<div class="last math">
+\[\eta \to \mathrm{diag}(+,-,-,-).\]</div>
+</div>
+<p>From the paper by <a class="reference internal" href="#izaguirre2016" id="id1">[Izaguirre2016]</a>, we notice that dispersion relation is related to the direction of &#8216;flavor wave vector&#8217;.</p>
+<p>In this section, we explore the possible significance of the directional instability.</p>
+<table class="docutils citation" frame="void" id="izaguirre2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Izaguirre2016]</a></td><td>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2016). <a class="reference external" href="http://arxiv.org/abs/1610.01612">Fast Pairwise Conversion of Supernova Neutrinos: Dispersion-Relation Approach</a>, 1–6.</td></tr>
+</tbody>
+</table>
+<div class="section" id="formalism">
+<h2>Formalism<a class="headerlink" href="#formalism" title="Permalink to this headline">¶</a></h2>
+<div class="warning admonition">
+<p class="first admonition-title">What does the EoM Describe?</p>
+<p>The equation of motion that describe the flavor transition is not really the equation of motion that describes the dynamics or kinematics of neutrino itself.</p>
+<p>It rather describes the &#8216;wave of flavor content&#8217;.</p>
+<p class="last">However, the problem is that the velocity/momentum should be that of neutrinos. How to reconcile?</p>
+</div>
+<p>To implement the idea of dispersion relation, we need the EoM</p>
+<div class="math">
+\[i\frac{d}{dt}\rho = [H,\rho],\]</div>
+<p>where</p>
+<div class="math">
+\[\frac{d}{dt} = \partial_t + \mathbf v^{\mathrm T} \cdot \boldsymbol \nabla.\]</div>
+<p>The equation of motion for <a class="reference internal" href="some-clarifications.html#two-beams-model"><span>two beams model</span></a> is</p>
+<div class="math" id="equation-eqn-line-model-two-beams-linearized-eom-liouville">
+<span class="eqno">(1)</span>\[\begin{split}i (\partial_t+\mathbf v^{\mathrm T}\cdot\boldsymbol\nabla) \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} =
+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) ) &amp; -\mu_2 (1-\cos(\theta_1-\theta_2)) \\
+-\mu_1 (1- \cos(\theta_1-\theta_2)) &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )
+\end{pmatrix}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix}.\end{split}\]</div>
+<div class="warning admonition">
+<p class="first admonition-title">Caveat of Notations</p>
+<p>One has to notice that this notation is retarded in linearized equation. The velocity is in fact different for different beams. But for simplicity we keep it here. Please do NOT use this notion for linearized equation in any formal writings.</p>
+<p>The term</p>
+<div class="math">
+\[\begin{split}i (\partial_t+\mathbf v^{\mathrm T}\cdot\boldsymbol\nabla) \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix}\end{split}\]</div>
+<p>is actually</p>
+<div class="last math">
+\[\begin{split}i\begin{pmatrix}
+(\partial_t+\mathbf v_1^{\mathrm T}\cdot\boldsymbol\nabla) \epsilon_1 \\
+(\partial_t+\mathbf v_2^{\mathrm T}\cdot\boldsymbol\nabla) \epsilon_2
+\end{pmatrix}\end{split}\]</div>
+</div>
+<p>Then we Fourier transform the perturbations <span class="math">\(\begin{pmatrix}\epsilon_1 &amp;  \epsilon_2\end{pmatrix}^{\mathrm T}\)</span>,</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} = \int d\Omega\int d^2 k \mathbf Q(\Omega,\mathbf k) e^{-i(\Omega t- \mathbf k \cdot \mathbf r)},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\mathbf Q = \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+<p>Eq. <a href="#equation-eqn-line-model-two-beams-linearized-eom-liouville">(1)</a> becomes</p>
+<div class="math">
+\[\begin{split}(\Omega - \mathbf v^{\mathrm T}\cdot \mathbf k)\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} =
+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) ) &amp; -\mu_2 (1-\cos(\theta_1-\theta_2)) \\
+-\mu_1 (1- \cos(\theta_1-\theta_2)) &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+<p>Define four velocity</p>
+<div class="math">
+\[u^\mu\to(1, \mathbf v)\]</div>
+<p>and the four wave vector</p>
+<div class="math">
+\[k^\mu\to(\Omega, \mathbf k).\]</div>
+<p>For the two dimensional geometry we have been discussing,</p>
+<div class="math">
+\[\Omega - \mathbf v^{\mathrm T}\cdot \mathbf k = \Omega- v_x k_x -v_z k_z.\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Proceed?</p>
+<p class="last">The analysis following this equation becomes rather tricky. What kind of instability are we interested in? We could, in principle, solve the instability for time domain, which means <span class="math">\(\Omega\)</span> has positive imaginary part. We could also solve the instability in z direction, which corresponds to <span class="math">\(k_z\)</span> has negative imaginary part. Beware that these are related the eigenvalues of the matrix though a sign and some constant.</p>
+</div>
+<p>What if we are interested in the instabilities in an arbitrary direction? Assume the direction we are interested in is</p>
+<div class="math">
+\[\begin{split}\mathbf k'\to \begin{pmatrix}
+k_1\\
+k_2
+\end{pmatrix} = \begin{pmatrix}
+\cos\gamma &amp; \sin\gamma\\
+-\sin\gamma &amp; \cos\gamma
+\end{pmatrix}\begin{pmatrix}
+k_x\\
+k_y
+\end{pmatrix}.\end{split}\]</div>
+<p>We plug this relation into the linearized equation</p>
+<div class="math">
+\[\begin{split}(\Omega-\mathbf v^{\mathrm T}\mathbf R^{\mathrm T} \mathbf k')\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} =
+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) ) &amp; -\mu_2 (1-\cos(\theta_1-\theta_2)) \\
+-\mu_1 (1- \cos(\theta_1-\theta_2)) &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix},\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\mathbf R =\begin{pmatrix}
+\cos\gamma &amp; \sin\gamma\\
+-\sin\gamma &amp; \cos\gamma
+\end{pmatrix}.\end{split}\]</div>
+<p>We can define velocity vector in new basis</p>
+<div class="math" id="equation-eqn-new-velocity-with-rotation">
+<span class="eqno">(2)</span>\[\begin{split}\mathbf v' \equiv \begin{pmatrix}
+v_1 \\
+v_2
+\end{pmatrix} = \begin{pmatrix}
+\cos\gamma &amp; \sin\gamma\\
+-\sin\gamma &amp; \cos\gamma
+\end{pmatrix}\begin{pmatrix}
+v_x \\
+v_z
+\end{pmatrix}\end{split}\]</div>
+</div>
+<div class="section" id="instability-in-arbitrary-direction">
+<h2>Instability in Arbitrary Direction<a class="headerlink" href="#instability-in-arbitrary-direction" title="Permalink to this headline">¶</a></h2>
+<p>Suppose the direction we are interested in is <span class="math">\(k_2\)</span>, the equation becomes</p>
+<div class="math">
+\[\begin{split}k_2 \begin{pmatrix}
+v_{2,1} Q_1 \\
+v_{2,2} Q_2
+\end{pmatrix} =&amp; - \Omega  \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} + k_1 \begin{pmatrix}
+v_{1,1} Q_1 \\
+v_{1,2} Q_2
+\end{pmatrix} \\
+&amp;+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) ) &amp; -\mu_2 (1-\cos(\theta_1-\theta_2)) \\
+-\mu_1 (1- \cos(\theta_1-\theta_2)) &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(v_1\)</span> and <span class="math">\(v_2\)</span> is obtained from Eq. <a href="#equation-eqn-new-velocity-with-rotation">(2)</a></p>
+<div class="math">
+\[\begin{split}v_{1,i} =&amp; \cos\gamma v_x + \sin\gamma v_z \\
+=&amp; \cos\gamma \cos\theta_i + \sin\gamma \sin\theta_i \\
+=&amp; \cos(\theta_i - \gamma)\\
+v_{2,i} =&amp; -\sin\gamma v_x + \cos\gamma v_z \\
+=&amp; -\sin\gamma \cos\theta_i + \cos\gamma \sin\theta_i\\
+=&amp; \sin(\theta_i - \gamma),\end{split}\]</div>
+<p>where <span class="math">\(\theta_i\)</span> is the angle of the corresponding beam i, with angle define in <a class="reference internal" href="some-clarifications.html#two-beams-model"><span>two beams model</span></a>.</p>
+<p>We will define a new angle</p>
+<div class="math">
+\[\theta_i' = \theta_i - \gamma,\]</div>
+<p>then the linearized equation will be similar to the one we have solved.</p>
+<p>With the definition of the new beam angles, we have</p>
+<div class="math">
+\[\begin{split}v_{1,i} =&amp; \cos \theta_i' \\
+v_{2,i} =&amp; \sin \theta_i'.\end{split}\]</div>
+<p>The linearized equation can be rewritten into</p>
+<div class="math">
+\[\begin{split}k_2 \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} =&amp; - \Omega \begin{pmatrix}
+1/v_{2,1} &amp; 0 \\
+0 &amp; 1/v_{2,2}
+\end{pmatrix}  \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} + k_1 \begin{pmatrix}
+v_{1,1}/v_{2,1} &amp; 0 \\
+0 &amp; v_{1,2}/v_{2,2}
+\end{pmatrix} \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} \\
+&amp;+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )/v_{2,1}  &amp; -\mu_2 (1-\cos(\theta_1-\theta_2))/v_{2,1}  \\
+-\mu_1 (1- \cos(\theta_1-\theta_2))/v_{2,2} &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )/v_{2,2}
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+<p>Plug in the velocities</p>
+<div class="math">
+\[\begin{split}k_2 \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} =&amp; - \Omega \begin{pmatrix}
+1/\sin\theta_1' &amp; 0 \\
+0 &amp; 1/\sin\theta_2'
+\end{pmatrix}  \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} + k_1 \begin{pmatrix}
+\cos\theta_1'/\sin\theta_1' &amp; 0 \\
+0 &amp; \cos\theta_2'/\sin\theta_2'
+\end{pmatrix} \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} \\
+&amp;+\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )/\sin\theta_1'  &amp; -\mu_2 (1-\cos(\theta_1-\theta_2))/\sin\theta_1'  \\
+-\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2' &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2'
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+<p>We notice that</p>
+<ol class="arabic simple">
+<li><span class="math">\(\Omega\)</span> is in the same position as <span class="math">\(\lambda\)</span>.</li>
+<li>Though <span class="math">\(\theta_i\in [0,\pi/2]\)</span>, with the rotation, <span class="math">\(\theta_i\)</span> can be arbitrary. We could in principle have singularity in the terms <span class="math">\(1/\sin\theta_i'\)</span>. This is quite interesting because we can delibrately remove one of the beams by make the other one&#8217;s effective angle close to 0 or Pi.</li>
+</ol>
+<p>In fact it&#8217;s such a bad idea to divide on both sides <span class="math">\(\sin\theta_i'\)</span>. The singularities comes from this shitty move. What I prefer is to rewrite the linearized equation into</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\Omega - k_1\cos\theta_1' - k_2 \sin\theta_1' &amp; 0\\
+0 &amp; \Omega - k_1\cos\theta_2' - k_2 \sin\theta_2'
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} =\frac{1}{2}\begin{pmatrix}
+(\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )  &amp; -\mu_2 (1-\cos(\theta_1-\theta_2))  \\
+-\mu_1 (1- \cos(\theta_1-\theta_2)) &amp; (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Neutrino</a></h1>
+
+
+
+<p class="blurb">Neutrino Physics</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=NeuPhysics&repo=neutrino&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>Contents</h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="simple">
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html" style="text-decoration: none;"><img src="https://img.shields.io/badge/Neutrino-Index-blue.svg?style=flat-square"></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   <li class="toctree-l1"><a href="http://physics.openmetric.org" style="color:orange;"><i class="fa fa-fire"></i>&nbsp;Physics Notes</a></li>
+   <li class="toctree-l1"><a href="http://neutrino.xyz/neutrino-map" style="color:orange;"><i class="fa fa-map-signs"></i>&nbsp;Neutrino Map</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="Directional Instability &mdash; Neutrino Pi documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'neuphysics';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="index.html">Licenses</a>
+      |
+      <a href="/genindex.html">Index</a>
+      |
+      Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/collective/directional-instability.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-66327435-2']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
