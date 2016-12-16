@@ -362,7 +362,7 @@ v_{2,i} =&amp; -\sin\gamma v_x + \cos\gamma v_z \\
 v_{2,i} =&amp; \sin \theta_i'.\end{split}\]</div>
 <p>The linearized equation can be rewritten into</p>
 <div class="math">
-\[\begin{split}k_2 \begin{pmatrix}
+\[\begin{split}-k_2 \begin{pmatrix}
 Q_1 \\
 Q_2
 \end{pmatrix} =&amp; - \Omega \begin{pmatrix}
@@ -386,8 +386,8 @@ Q_1 \\
 Q_2
 \end{pmatrix}.\end{split}\]</div>
 <p>Plug in the velocities</p>
-<div class="math">
-\[\begin{split}k_2 \begin{pmatrix}
+<div class="math" id="equation-eqn-linearized-eom-k2-direction">
+<span class="eqno">(3)</span>\[\begin{split}-k_2 \begin{pmatrix}
 Q_1 \\
 Q_2
 \end{pmatrix} =&amp; - \Omega \begin{pmatrix}
@@ -415,9 +415,11 @@ Q_2
 <li><span class="math">\(\Omega\)</span> is in the same position as <span class="math">\(\lambda\)</span>.</li>
 <li>Though <span class="math">\(\theta_i\in [0,\pi/2]\)</span>, with the rotation, <span class="math">\(\theta_i\)</span> can be arbitrary. We could in principle have singularity in the terms <span class="math">\(1/\sin\theta_i'\)</span>. This is quite interesting because we can delibrately remove one of the beams by make the other one&#8217;s effective angle close to 0 or Pi.</li>
 </ol>
+<div class="note admonition">
+<p class="first admonition-title">Singularities?</p>
 <p>In fact it&#8217;s such a bad idea to divide on both sides <span class="math">\(\sin\theta_i'\)</span>. The singularities comes from this shitty move. What I prefer is to rewrite the linearized equation into</p>
-<div class="math">
-\[\begin{split}\begin{pmatrix}
+<div class="last math" id="equation-eqn-linearized-eom-k2-direction-non-singularity">
+<span class="eqno">(4)</span>\[\begin{split}\begin{pmatrix}
 \Omega - k_1\cos\theta_1' - k_2 \sin\theta_1' &amp; 0\\
 0 &amp; \Omega - k_1\cos\theta_2' - k_2 \sin\theta_2'
 \end{pmatrix}\begin{pmatrix}
@@ -430,6 +432,74 @@ Q_2
 Q_1 \\
 Q_2
 \end{pmatrix}.\end{split}\]</div>
+</div>
+<p>Dispite the complexity, we assume that translational symmetry is found in direction <span class="math">\(k_1\)</span>, leaving only <span class="math">\(k_2\)</span> non zero. We solve the dispersion relation for Eq. <a href="#equation-eqn-linearized-eom-k2-direction">(3)</a>.</p>
+<p>Define</p>
+<div class="math">
+\[\begin{split}\bar\omega_i =&amp; \lambda - \eta\omega_i\\
+\bar\mu_i =&amp; \mu_i(1-\cos(\theta_1-\theta_2)).\end{split}\]</div>
+<p>Eq. <a href="#equation-eqn-linearized-eom-k2-direction">(3)</a> becomes</p>
+<div class="math">
+\[\begin{split}k_2 \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix} =-\frac{1}{2}\begin{pmatrix}
+\frac{\bar\omega_1 + \bar\mu_2-2\Omega+2k_1\cos\theta_1'}{\sin\theta_1'} &amp; -\frac{\bar\mu_2}{\sin\theta_1'} \\
+-\frac{\bar\mu_1}{\sin\theta_2'} &amp; \frac{ \bar\omega_2+\bar\mu_1-2\Omega + 2k_1\cos\theta_2' }{\sin\theta_2'}
+\end{pmatrix}\begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+<p>We find the relation between <span class="math">\(k_2\)</span>, <span class="math">\(k_1\)</span> and <span class="math">\(\Omega\)</span> by solving the following determinant.</p>
+<div class="math">
+\[\begin{split}\left| 2 k_2 \mathbf I +  \begin{pmatrix}
+\frac{\bar\omega_1 + \bar\mu_2-2\Omega+2k_1\cos\theta_1'}{\sin\theta_1'} &amp; -\frac{\bar\mu_2}{\sin\theta_1'} \\
+-\frac{\bar\mu_1}{\sin\theta_2'} &amp; \frac{ \bar\omega_2+\bar\mu_1-2\Omega + 2k_1\cos\theta_2' }{\sin\theta_2'}
+\end{pmatrix} \right| = 0,\end{split}\]</div>
+<p>which is in fact the dispersion relation</p>
+<div class="math">
+\[\left(2k_2 + \frac{\bar\omega_1 + \bar\mu_2 -2\Omega +2k_1\cos\theta_1'}{\sin\theta_1'} \right) \left( 2k_2 + \frac{\bar\omega_2+\bar\mu_1 - 2\Omega + 2k_1\cos\theta_1'}{\sin\theta_2'} \right) + \frac{\bar\mu_1\bar\mu_2}{\sin\theta_1'\sin\theta_2'} =0,\]</div>
+<p>which is simplified</p>
+<div class="math">
+\[(2k_2\sin\theta_1'+ \bar\omega_1+\bar\mu_2-2\Omega+2k_1\cos\theta_1')(2k_2\sin\theta_2' + \bar\omega_2 + \bar\mu_1 -2\Omega+2k_1\cos\theta_2') + \bar\mu_1\bar\mu_2 = 0.\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Other Methods?</p>
+<p>Is is possible to find the dispersion relation starting from Eq. <a href="#equation-eqn-linearized-eom-k2-direction-non-singularity">(4)</a>?</p>
+<p class="last">Since <span class="math">\(\Omega\)</span> has no coefficient in this problem. We move it to the left and find the dispersion relation. In this case we do not have to deal with singularities and the demoninators. And the dispersion is simply the determinant of the matrix if we move everything to oneside.</p>
+</div>
+<p>We define</p>
+<div class="math">
+\[\bar\Omega_i = \Omega - k_1\cos\theta_i' - k_2\sin\theta_i'\]</div>
+<p>so that</p>
+<div class="math">
+\[(\bar\omega_1 + \bar\mu_2 - 2\bar\Omega_1) (\bar\omega_2+\bar\mu_1 - 2\bar\Omega_2)+ \bar\mu_1\bar\mu_2=0,\]</div>
+<p>which is a good form for programming.</p>
+<p>We know that</p>
+<div class="math">
+\[\begin{split}\bar\Omega_1\bar\Omega_2=&amp; \Omega^2 + k_1^2\cos\theta_1'\cos\theta_2' + k_2^2\sin\theta_1'\sin\theta_2' + k_1k_2\sin(\theta_1'+\theta_2')\\
+(\bar\omega_1+\bar\mu_2)\bar\Omega_1 + (\bar\omega_2+\bar\mu_1)\bar\Omega_2
+=&amp; \Omega(\bar\omega_1+\bar\omega_2+\bar\mu_1+\bar\mu_2) \\
+&amp;- k_1( (\bar\omega_1+\bar\mu_2)\cos\theta_2' + (\bar\omega_2+\bar\mu_1)\cos\theta_1' ) \\
+&amp; -k_2((\bar\omega_1+\bar\mu_2)\sin\theta_2' + (\bar\omega_2+\bar\mu_1)\sin\theta_1').\end{split}\]</div>
+<p>To avoid super long equations, we define</p>
+<div class="math">
+\[\begin{split}A =&amp; \bar\omega_1+\bar\omega_2+\bar\mu_1+\bar\mu_2\\
+B_c =&amp; (\bar\omega_1+\bar\mu_2)\cos\theta_2' + (\bar\omega_2+\bar\mu_1)\cos\theta_1' \\
+B_s =&amp; (\bar\omega_1+\bar\mu_2)\sin\theta_2' + (\bar\omega_2+\bar\mu_1)\sin\theta_1'\\
+c_i=&amp;\cos\theta_i' \\
+s_i=&amp; \sin\theta_i\\
+s_{i+j}=&amp;\sin(\theta_i'+\theta_j').\end{split}\]</div>
+<p>The dispersion relation</p>
+<div class="math">
+\[4\Omega^2-2A\Omega+2c_1c_2k_1^2 + 2 B_c k_1 + 2s_1s_2 k_2^2 +2 B_s k_2 + 4s_{1+2}k_1k_2 + (\bar\omega_1+\bar\mu_2)(\bar\omega_2+\bar\mu_1) + \bar\mu_1\bar\mu_2 = 0.\]</div>
+<p>This will be the equation for conic sections.</p>
+</div>
+<div class="section" id="phase-velocity-and-solitary-waves">
+<h2>Phase Velocity and Solitary Waves<a class="headerlink" href="#phase-velocity-and-solitary-waves" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Solitary Waves in Neutrino Flavor Wave Propagation</p>
+<p class="last">It seems that solitary waves can occur in neutrino flavor oscillations due to its non-linarity.</p>
+</div>
 </div>
 </div>
 
