@@ -186,7 +186,7 @@ TeX: {
 <p>However, as we proceed to the more realistic matter profile, multi-frequency matter profiles are necessary. Generally, we choose the perturbation matter profile upon a constant background to be</p>
 <div class="math">
 \[\delta \lambda(x) = \sum_n A_n \sin (k_n x + \phi_n).\]</div>
-<p>Using <a class="reference internal" href="index.html#matter-stimulated-equation-eta-x-general"><span>definition</span></a> of <span class="math">\(\eta\)</span> we conclude that</p>
+<p>Using <a class="reference internal" href="index.html#matter-stimulated-equation-eta-x-general"><span class="std std-ref">definition</span></a> of <span class="math">\(\eta\)</span> we conclude that</p>
 <div class="math">
 \[\eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \sum_n \frac{A_n}{k_n} \cos ( k_n x+ \phi_n ).\]</div>
 <p>Hence we write down</p>
@@ -345,7 +345,7 @@ Red dotted line is numerical solution, black line is lowest approximation of <sp
 <p class="caption"><span class="caption-text">Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in <span class="math">\(n_1\)</span> fixes the deviation from numerical calculation (red dotted line). The wave vectors are <span class="math">\(k_1=0.5\)</span>, <span class="math">\(k_2=0.8\)</span>, amplitudes are <span class="math">\(A_1=0.1 k_1^{-5/3}\)</span>, <span class="math">\(A_2=0.1 k_2^{-5/3}\)</span>, mixing angle in background matter is <span class="math">\(\theta_m=\pi/5\)</span>.</span></p>
 </div>
 </li>
-<li><p class="first">Now according to the complate expression of the 12 element of Hamiltonian <a href="#equation-2-freq-hamiltonian-12-element">(4)</a>, there is no difference between <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. We notice in equation <a class="reference internal" href="single-frequency.html#single-frequency-equation-eqn-single-frequency-width-guessing"><span>single frequency width</span></a>, single frequency width depends on the coefficient in front of the phase in the Hamiltonian and the integer. The task is to derive or guess the resonance width for each pair of integers <span class="math">\(n_1, n_2\)</span>.</p>
+<li><p class="first">Now according to the complate expression of the 12 element of Hamiltonian <a href="#equation-2-freq-hamiltonian-12-element">(4)</a>, there is no difference between <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span>. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. We notice in equation <a class="reference internal" href="single-frequency.html#single-frequency-equation-eqn-single-frequency-width-guessing"><span class="std std-ref">single frequency width</span></a>, single frequency width depends on the coefficient in front of the phase in the Hamiltonian and the integer. The task is to derive or guess the resonance width for each pair of integers <span class="math">\(n_1, n_2\)</span>.</p>
 </li>
 </ol>
 <div class="note admonition">
@@ -373,7 +373,7 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 \Phi &amp; = e^{i(n_1\phi_1+n_2\phi_2)}.\end{split}\]</div>
 <p>Notice that</p>
 <div class="math">
-\[\begin{split}B_{n_2,n_1}(k_2,k_1, A_2, A_1) &amp;= -(-i)^{n_1+n_2} \tan 2\theta_m n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).\end{split}\]</div>
+\[B_{n_2,n_1}(k_2,k_1, A_2, A_1) &amp;= -(-i)^{n_1+n_2} \tan 2\theta_m n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).\]</div>
 <p>Using these definitions, we rewrite the Hamiltonian 12 element</p>
 <div class="math" id="equation-2-freq-hamiltonian-12-element">
 <span class="eqno">(4)</span>\[\begin{split}h &amp;= h_1 + h_2 \\
@@ -381,11 +381,11 @@ h_2 &amp;=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1
 &amp; = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}\\
 &amp; = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},\end{split}\]</div>
 <p>where <span class="math">\(B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)\)</span> is what we are interested in.</p>
-<p>Comparing this expression with the single frequency one which is almost the same structure if we remove the two sums, and using the result <a class="reference internal" href="single-frequency.html#single-frequency-equation-stimulated-single-freq-trans-probability"><span>transition probability for single frequency</span></a>, we can infer that the transition probability,</p>
+<p>Comparing this expression with the single frequency one which is almost the same structure if we remove the two sums, and using the result <a class="reference internal" href="single-frequency.html#single-frequency-equation-stimulated-single-freq-trans-probability"><span class="std std-ref">transition probability for single frequency</span></a>, we can infer that the transition probability,</p>
 <div class="math">
 \[P_{1\to 2}(x) = \frac{\lvert \hat B_2 \rvert^2}{ \lvert \hat B_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),\]</div>
 <p>where <span class="math">\(\hat B_2=\frac{ B_2 }{\omega_m}=\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}\)</span> and <span class="math">\(\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1\)</span> which tells us how far from resonance and <span class="math">\(q_2=\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }\)</span>.</p>
-<p>The width then is similar to <a class="reference internal" href="single-frequency.html#single-frequency-equation-eqn-single-frequency-width-guessing"><span>single frequency width</span></a>, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,</p>
+<p>The width then is similar to <a class="reference internal" href="single-frequency.html#single-frequency-equation-eqn-single-frequency-width-guessing"><span class="std std-ref">single frequency width</span></a>, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,</p>
 <div class="math" id="equation-stimulated-2-freq-width-requirement-raw">
 <span class="eqno">(5)</span>\[n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert \hat B_2 \rvert = \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.\]</div>
 <p>For a given pair of integers <span class="math">\(n_1,n_2\)</span>, we could find the amplitude as a function of <span class="math">\(k_1, k_2\)</span>.</p>
@@ -513,9 +513,6 @@ k_{2,\mathrm{intercept}} &amp;= k_{20}.\end{split}\]</div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3>Support Us</h3>
@@ -577,8 +574,8 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
       <a href="../_sources/matter-stimulated/two-frequency.txt"

@@ -306,7 +306,7 @@ For a line model, the symmetries we have are
 
 1. Time translation symmetry;
 2. Translational symmetry along the line;
-3. Energy spectrum of the beams;
+3. Energy spectrum of the beams; **One of particular interest is to have different neutrino spheres for different energies which can be investigated using two beam model.**
 4. Number density of left and right beams;
 5. Angle of left and right beams;
 6. With and without matter.
