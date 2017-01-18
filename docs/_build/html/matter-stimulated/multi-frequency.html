@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Multi-frequency &mdash; Neutrino Pi documentation</title>
+    <title>1.6. Multi-frequency &#8212; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,14 +20,18 @@
         VERSION:     'Pi',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.7. Interference" href="interference.html" />
+    <link rel="prev" title="1.5. Two-frequency Matter Perturbation" href="two-frequency.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -172,7 +176,14 @@ TeX: {
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="interference.html" title="1.7. Interference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="two-frequency.html" title="1.5. Two-frequency Matter Perturbation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">1. Matter Stimulated Oscillation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -182,9 +193,9 @@ TeX: {
           <div class="body" role="main">
             
   <div class="section" id="multi-frequency">
-<h1>Multi-frequency<a class="headerlink" href="#multi-frequency" title="Permalink to this headline">¶</a></h1>
+<h1>1.6. Multi-frequency<a class="headerlink" href="#multi-frequency" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="frequencies">
-<h2>3 Frequencies<a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h2>
+<h2>1.6.1. 3 Frequencies<a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h2>
 <p>To extend what we have done to more frequencies is easy. For 3 frequencies, the 12 element of Hamiltonian has such a pattern that</p>
 <div class="math">
 \[\begin{split}h &amp;= {\color{blue} \delta \lambda_1 \sum_{n_1} \cdots } {\color{red} \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red} \delta \lambda_2 \sum_{n_2} \cdots } {\color{cyan}\sum_{n_3} \cdots } + {\color{blue}\sum_{n_1} \cdots } {\color{red}  \sum_{n_2} \cdots } {\color{cyan} \delta \lambda_3 \sum_{n_3} \cdots } \\
@@ -225,7 +236,7 @@ B_{3,3} &amp; =  - (-i)^{n_1+n_2+n_3} \tan 2\theta_m  n_3 k_3 J_{n_1}(\frac{A_1}
 </div>
 </div>
 <div class="section" id="n-frequencies">
-<h2>N Frequencies<a class="headerlink" href="#n-frequencies" title="Permalink to this headline">¶</a></h2>
+<h2>1.6.2. N Frequencies<a class="headerlink" href="#n-frequencies" title="Permalink to this headline">¶</a></h2>
 <p>Given a system with N perturbations</p>
 <div class="math">
 \[\delta\lambda_N = \sum_{a=1}^N A_a \sin(k_a x + \phi_a),\]</div>
@@ -253,7 +264,7 @@ h_N^* &amp; 0
 </div>
 </div>
 <div class="section" id="numerical-results">
-<h2>Numerical Results<a class="headerlink" href="#numerical-results" title="Permalink to this headline">¶</a></h2>
+<h2>1.6.3. Numerical Results<a class="headerlink" href="#numerical-results" title="Permalink to this headline">¶</a></h2>
 <p>For an example system with 6 frequencies, with background matter profile <span class="math">\(\lambda=10\lambda_{\mathrm{MSW}}=10\cos(2\theta_v)\omega_v\)</span>, <span class="math">\(\sin 2\theta_v = 0.093\)</span>, <span class="math">\(\delta m^2 = \delta m_{13}^2=2.6\times 10^{-15}\)</span>, energy <span class="math">\(10\mathrm{MeV}\)</span></p>
 <div class="math">
 \[\hat k = \{2.6138748783741892734981263895723814892738971298790875814789472389461\\]</div>
@@ -263,7 +274,7 @@ h_N^* &amp; 0
 \[\hat a = 0.1\hat k^{-5/3} = \{0.0201616, 0.0375445, 0.057076, 0.119196, 0.181205, 0.743814\}.\]</div>
 <div class="figure align-center" id="id1">
 <img alt="../_images/6-frequency-matter-profile-200-combinations.png" src="../_images/6-frequency-matter-profile-200-combinations.png" />
-<p class="caption"><span class="caption-text">Matter profile with 6 frequencies</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.21 </span><span class="caption-text">Matter profile with 6 frequencies</span></p>
 </div>
 </div>
 </div>
@@ -290,7 +301,26 @@ h_N^* &amp; 0
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">1.1. Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">1.2. MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">1.3. Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">1.4. Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">1.5. Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.6. Multi-frequency</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frequencies">1.6.1. 3 Frequencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#n-frequencies">1.6.2. N Frequencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-results">1.6.3. Numerical Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interference.html">1.7. Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">1.8. Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">1.9. Physics Picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">1.10. Linear Background Matter Profile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">2. Collective</a></li>
 </ul>
 
 
@@ -306,8 +336,8 @@ h_N^* &amp; 0
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -329,7 +359,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Multi-frequency &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="1.6. Multi-frequency &#8212; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -372,11 +402,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="../_sources/matter-stimulated/multi-frequency.txt"
+      <a href="../_sources/matter-stimulated/multi-frequency.rst.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

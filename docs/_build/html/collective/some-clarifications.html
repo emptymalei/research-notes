@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Some Clarifications &mdash; Neutrino Pi documentation</title>
+    <title>2.3. Some Clarifications &#8212; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,14 +20,17 @@
         VERSION:     'Pi',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2.2. Directional Instability" href="directional-instability.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -172,7 +175,11 @@ TeX: {
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="directional-instability.html" title="2.2. Directional Instability"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Collective</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -182,18 +189,18 @@ TeX: {
           <div class="body" role="main">
             
   <div class="section" id="some-clarifications">
-<h1>Some Clarifications<a class="headerlink" href="#some-clarifications" title="Permalink to this headline">¶</a></h1>
+<h1>2.3. Some Clarifications<a class="headerlink" href="#some-clarifications" title="Permalink to this headline">¶</a></h1>
 <p>I need to understand several phenomena people mentioned.</p>
 <ol class="arabic simple">
 <li>Why crossing leads to instability?</li>
 <li>What exactly is happening when we break the symmetries?</li>
 </ol>
 <div class="section" id="two-beams-model">
-<span id="id1"></span><h2>Two Beams Model<a class="headerlink" href="#two-beams-model" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>2.3.1. Two Beams Model<a class="headerlink" href="#two-beams-model" title="Permalink to this headline">¶</a></h2>
 <p>We use a simple two-beam line model.</p>
 <div class="figure align-center" id="id2">
 <img alt="../_images/two-beam-line-model.png" src="../_images/two-beam-line-model.png" />
-<p class="caption"><span class="caption-text">Two-beam model. Using this model we can check the effect of different symmetries.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Two-beam model. Using this model we can check the effect of different symmetries.</span></p>
 </div>
 <p>For convinience of notations, we define a number density distribution function</p>
 <div class="math">
@@ -207,7 +214,7 @@ TeX: {
 \[n_t f(\hat\nu,\omega) d\theta.\]</div>
 <p>Similarly we can define the angular distribution for antineutrinos.</p>
 <div class="section" id="all-neutrino-beams">
-<h3>All Neutrino Beams<a class="headerlink" href="#all-neutrino-beams" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.1.1. All Neutrino Beams<a class="headerlink" href="#all-neutrino-beams" title="Permalink to this headline">¶</a></h3>
 <p>If all the beams are neutrinos, but with different energies for the left and right beams. The distribution function for beams is delta function. In fact, each beam is just half of the total neutrino number density <span class="math">\(n_t\)</span>.</p>
 <p>The Hamiltonian is a sum of vacuum terms, matter terms, and self-interaction terms,</p>
 <div class="math">
@@ -227,7 +234,7 @@ H_{\nu\nu}^R =&amp; \frac{1}{2}\mu \rho^L (1-\cos(\theta_1-\theta_2)).\end{split
 <p>where we have removed the trace part because it is alway time independent.</p>
 <p>The linearized equation of motion becomes</p>
 <div class="math" id="equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">
-<span class="eqno">(1)</span>\[\begin{split}i \partial_z \begin{pmatrix}
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom" title="Permalink to this equation">¶</a></span>\[\begin{split}i \partial_z \begin{pmatrix}
 \epsilon_1 \\
 \epsilon_2
 \end{pmatrix} =&amp;  - i \begin{pmatrix}\cot\theta_1\partial_x &amp; 0 \\
@@ -305,7 +312,7 @@ B=&amp; \sqrt{
 </div>
 </div>
 <div class="section" id="simple-cases">
-<h3>Simple Cases<a class="headerlink" href="#simple-cases" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.1.2. Simple Cases<a class="headerlink" href="#simple-cases" title="Permalink to this headline">¶</a></h3>
 <p>We first consider a simple case, where <span class="math">\(\theta_1=\theta_2\equiv \theta\)</span>, <span class="math">\(\lambda=0\)</span>, <span class="math">\(\eta=1\)</span>, and homogeneous in x direction. For simplicity we define</p>
 <div class="math">
 \[\begin{split}\mu =&amp; \sqrt{2}G_F (n_1 + n_2)\\
@@ -342,7 +349,7 @@ B=&amp; \sqrt{
 \hat \omega'_i =&amp; \frac{\omega'_i}{\mu}.\end{split}\]</div>
 <p>The characteristic equation for this equation is</p>
 <div class="math" id="equation-eqn-two-beam-line-characteristic-eqn-simple">
-<span class="eqno">(2)</span>\[\left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-two-beam-line-characteristic-eqn-simple" title="Permalink to this equation">¶</a></span>\[\left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,\]</div>
 <p>which is simplified to</p>
 <div class="math">
 \[(\Omega-\Omega_1)(\Omega-\Omega_2) -f_1f_2\xi^2 = 0,\]</div>
@@ -379,7 +386,9 @@ B=&amp; \sqrt{
 <li><span class="math">\(f_i\)</span>,</li>
 <li>neutrino beam and antineutrino beam,</li>
 <li>hierarchy,</li>
-<li>neutrino number density variations.</li>
+<li>neutrino number density variations,</li>
+<li>variations of angular distributions of neutrinos,</li>
+<li>variations of energy spectrum of neutrinos.</li>
 </ol>
 </div>
 <div class="admonition-real-symmetric-and-skew-symmetric-class-toggle admonition">
@@ -397,7 +406,7 @@ B=&amp; \sqrt{
 </div>
 </div>
 <div class="section" id="breaking-symmetries">
-<h3>Breaking Symmetries<a class="headerlink" href="#breaking-symmetries" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.1.3. Breaking Symmetries<a class="headerlink" href="#breaking-symmetries" title="Permalink to this headline">¶</a></h3>
 <p>For a line model, the symmetries we have are</p>
 <ol class="arabic simple">
 <li>Time translation symmetry;</li>
@@ -415,7 +424,7 @@ B=&amp; \sqrt{
 \[\begin{split}\omega''_i=&amp; \frac{\omega/_i}{\sin\theta_i}\\
 f''_1=&amp;\frac{f_1}{\sin\theta_2} \\
 f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
-<p>The we will reach the same characteristic equation as Eq. <a href="#equation-eqn-two-beam-line-characteristic-eqn-simple">(2)</a>. So the angles serves as shift of energy gap and angular distribution.</p>
+<p>The we will reach the same characteristic equation as Eq. <a class="reference internal" href="#equation-eqn-two-beam-line-characteristic-eqn-simple">(2)</a>. So the angles serves as shift of energy gap and angular distribution.</p>
 <p>Including matter will define vacuum frequencies, <span class="math">\(\omega'_i\)</span>, which is effectively just a shift of vacuum frequencies.</p>
 <div class="warning admonition">
 <p class="first admonition-title">Time Translational Symmetry</p>
@@ -428,8 +437,8 @@ f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
 </div>
 </div>
 <div class="section" id="numerical-calculations">
-<h3>Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
-<p>We assume the two beams have different energy, as indicated by <span class="math">\(\omega_1\)</span> and <span class="math">\(\omega_2\)</span> in Eq. <a href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a>.</p>
+<h3>2.3.1.4. Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
+<p>We assume the two beams have different energy, as indicated by <span class="math">\(\omega_1\)</span> and <span class="math">\(\omega_2\)</span> in Eq. <a class="reference internal" href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a>.</p>
 <p>For numerical calcualtions, we scale quantities using <span class="math">\(\mu\)</span>.</p>
 <p>With symmetric angles for the two beams, I didn&#8217;t find instabilities. However, <span class="math">\(\theta_1\neq \theta_2\)</span> leads to instabilities in IH, which is consistant with our expections.</p>
 <p>For NH:</p>
@@ -468,7 +477,17 @@ f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../matter-stimulated/index.html">1. Matter Stimulated Oscillation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Collective</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fast-modes.html">2.1. Fast Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Some Clarifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#two-beams-model">2.3.1. Two Beams Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
@@ -484,8 +503,8 @@ f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -507,7 +526,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Some Clarifications &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="2.3. Some Clarifications &#8212; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -550,11 +569,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="../_sources/collective/some-clarifications.txt"
+      <a href="../_sources/collective/some-clarifications.rst.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Directional Instability &mdash; Neutrino Pi documentation</title>
+    <title>2.2. Directional Instability &#8212; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,14 +20,18 @@
         VERSION:     'Pi',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3. Some Clarifications" href="some-clarifications.html" />
+    <link rel="prev" title="2.1. Fast Modes" href="fast-modes.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -172,7 +176,14 @@ TeX: {
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="some-clarifications.html" title="2.3. Some Clarifications"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fast-modes.html" title="2.1. Fast Modes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Collective</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -182,7 +193,7 @@ TeX: {
           <div class="body" role="main">
             
   <div class="section" id="directional-instability">
-<h1>Directional Instability<a class="headerlink" href="#directional-instability" title="Permalink to this headline">¶</a></h1>
+<h1>2.2. Directional Instability<a class="headerlink" href="#directional-instability" title="Permalink to this headline">¶</a></h1>
 <div class="hint admonition">
 <p class="first admonition-title">Conventions</p>
 <p>We use the metric</p>
@@ -198,7 +209,7 @@ TeX: {
 </tbody>
 </table>
 <div class="section" id="formalism">
-<h2>Formalism<a class="headerlink" href="#formalism" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.1. Formalism<a class="headerlink" href="#formalism" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="first admonition-title">What does the EoM Describe?</p>
 <p>The equation of motion that describe the flavor transition is not really the equation of motion that describes the dynamics or kinematics of neutrino itself.</p>
@@ -213,7 +224,7 @@ TeX: {
 \[\frac{d}{dt} = \partial_t + \mathbf v^{\mathrm T} \cdot \boldsymbol \nabla.\]</div>
 <p>The equation of motion for <a class="reference internal" href="some-clarifications.html#two-beams-model"><span class="std std-ref">two beams model</span></a> is</p>
 <div class="math" id="equation-eqn-line-model-two-beams-linearized-eom-liouville">
-<span class="eqno">(1)</span>\[\begin{split}i (\partial_t+\mathbf v^{\mathrm T}\cdot\boldsymbol\nabla) \begin{pmatrix}
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-line-model-two-beams-linearized-eom-liouville" title="Permalink to this equation">¶</a></span>\[\begin{split}i (\partial_t+\mathbf v^{\mathrm T}\cdot\boldsymbol\nabla) \begin{pmatrix}
 \epsilon_1 \\
 \epsilon_2
 \end{pmatrix} =
@@ -252,7 +263,7 @@ TeX: {
 Q_1 \\
 Q_2
 \end{pmatrix}.\end{split}\]</div>
-<p>Eq. <a href="#equation-eqn-line-model-two-beams-linearized-eom-liouville">(1)</a> becomes</p>
+<p>Eq. <a class="reference internal" href="#equation-eqn-line-model-two-beams-linearized-eom-liouville">(1)</a> becomes</p>
 <div class="math">
 \[\begin{split}(\Omega - \mathbf v^{\mathrm T}\cdot \mathbf k)\begin{pmatrix}
 Q_1 \\
@@ -311,7 +322,7 @@ Q_2
 \end{pmatrix}.\end{split}\]</div>
 <p>We can define velocity vector in new basis</p>
 <div class="math" id="equation-eqn-new-velocity-with-rotation">
-<span class="eqno">(2)</span>\[\begin{split}\mathbf v' \equiv \begin{pmatrix}
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-new-velocity-with-rotation" title="Permalink to this equation">¶</a></span>\[\begin{split}\mathbf v' \equiv \begin{pmatrix}
 v_1 \\
 v_2
 \end{pmatrix} = \begin{pmatrix}
@@ -323,7 +334,7 @@ v_z
 \end{pmatrix}\end{split}\]</div>
 </div>
 <div class="section" id="instability-in-arbitrary-direction">
-<h2>Instability in Arbitrary Direction<a class="headerlink" href="#instability-in-arbitrary-direction" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.2. Instability in Arbitrary Direction<a class="headerlink" href="#instability-in-arbitrary-direction" title="Permalink to this headline">¶</a></h2>
 <p>Suppose the direction we are interested in is <span class="math">\(k_2\)</span>, the equation becomes</p>
 <div class="math">
 \[\begin{split}k_2 \begin{pmatrix}
@@ -343,7 +354,7 @@ v_{1,2} Q_2
 Q_1 \\
 Q_2
 \end{pmatrix},\end{split}\]</div>
-<p>where <span class="math">\(v_1\)</span> and <span class="math">\(v_2\)</span> is obtained from Eq. <a href="#equation-eqn-new-velocity-with-rotation">(2)</a></p>
+<p>where <span class="math">\(v_1\)</span> and <span class="math">\(v_2\)</span> is obtained from Eq. <a class="reference internal" href="#equation-eqn-new-velocity-with-rotation">(2)</a></p>
 <div class="math">
 \[\begin{split}v_{1,i} =&amp; \cos\gamma v_x + \sin\gamma v_z \\
 =&amp; \cos\gamma \cos\theta_i + \sin\gamma \sin\theta_i \\
@@ -387,7 +398,7 @@ Q_2
 \end{pmatrix}.\end{split}\]</div>
 <p>Plug in the velocities</p>
 <div class="math" id="equation-eqn-linearized-eom-k2-direction">
-<span class="eqno">(3)</span>\[\begin{split}-k_2 \begin{pmatrix}
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-linearized-eom-k2-direction" title="Permalink to this equation">¶</a></span>\[\begin{split}-k_2 \begin{pmatrix}
 Q_1 \\
 Q_2
 \end{pmatrix} =&amp; - \Omega \begin{pmatrix}
@@ -419,7 +430,7 @@ Q_2
 <p class="first admonition-title">Singularities?</p>
 <p>In fact it&#8217;s such a bad idea to divide on both sides <span class="math">\(\sin\theta_i'\)</span>. The singularities comes from this shitty move. What I prefer is to rewrite the linearized equation into</p>
 <div class="last math" id="equation-eqn-linearized-eom-k2-direction-non-singularity">
-<span class="eqno">(4)</span>\[\begin{split}\begin{pmatrix}
+<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-linearized-eom-k2-direction-non-singularity" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{pmatrix}
 \Omega - k_1\cos\theta_1' - k_2 \sin\theta_1' &amp; 0\\
 0 &amp; \Omega - k_1\cos\theta_2' - k_2 \sin\theta_2'
 \end{pmatrix}\begin{pmatrix}
@@ -433,12 +444,12 @@ Q_1 \\
 Q_2
 \end{pmatrix}.\end{split}\]</div>
 </div>
-<p>Dispite the complexity, we assume that translational symmetry is found in direction <span class="math">\(k_1\)</span>, leaving only <span class="math">\(k_2\)</span> non zero. We solve the dispersion relation for Eq. <a href="#equation-eqn-linearized-eom-k2-direction">(3)</a>.</p>
+<p>Dispite the complexity, we assume that translational symmetry is found in direction <span class="math">\(k_1\)</span>, leaving only <span class="math">\(k_2\)</span> non zero. We solve the dispersion relation for Eq. <a class="reference internal" href="#equation-eqn-linearized-eom-k2-direction">(3)</a>.</p>
 <p>Define</p>
 <div class="math">
 \[\begin{split}\bar\omega_i =&amp; \lambda - \eta\omega_i\\
 \bar\mu_i =&amp; \mu_i(1-\cos(\theta_1-\theta_2)).\end{split}\]</div>
-<p>Eq. <a href="#equation-eqn-linearized-eom-k2-direction">(3)</a> becomes</p>
+<p>Eq. <a class="reference internal" href="#equation-eqn-linearized-eom-k2-direction">(3)</a> becomes</p>
 <div class="math">
 \[\begin{split}k_2 \begin{pmatrix}
 Q_1 \\
@@ -464,7 +475,7 @@ Q_2
 \[(2k_2\sin\theta_1'+ \bar\omega_1+\bar\mu_2-2\Omega+2k_1\cos\theta_1')(2k_2\sin\theta_2' + \bar\omega_2 + \bar\mu_1 -2\Omega+2k_1\cos\theta_2') + \bar\mu_1\bar\mu_2 = 0.\]</div>
 <div class="note admonition">
 <p class="first admonition-title">Other Methods?</p>
-<p>Is is possible to find the dispersion relation starting from Eq. <a href="#equation-eqn-linearized-eom-k2-direction-non-singularity">(4)</a>?</p>
+<p>Is is possible to find the dispersion relation starting from Eq. <a class="reference internal" href="#equation-eqn-linearized-eom-k2-direction-non-singularity">(4)</a>?</p>
 <p class="last">Since <span class="math">\(\Omega\)</span> has no coefficient in this problem. We move it to the left and find the dispersion relation. In this case we do not have to deal with singularities and the demoninators. And the dispersion is simply the determinant of the matrix if we move everything to oneside.</p>
 </div>
 <p>We define</p>
@@ -495,11 +506,15 @@ s_{i+j}=&amp;\sin(\theta_i'+\theta_j').\end{split}\]</div>
 <p>This will be the equation for conic sections.</p>
 </div>
 <div class="section" id="phase-velocity-and-solitary-waves">
-<h2>Phase Velocity and Solitary Waves<a class="headerlink" href="#phase-velocity-and-solitary-waves" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.3. Phase Velocity and Solitary Waves<a class="headerlink" href="#phase-velocity-and-solitary-waves" title="Permalink to this headline">¶</a></h2>
 <div class="note admonition">
 <p class="first admonition-title">Solitary Waves in Neutrino Flavor Wave Propagation</p>
 <p class="last">It seems that solitary waves can occur in neutrino flavor oscillations due to its non-linarity.</p>
 </div>
+</div>
+<div class="section" id="how-to-understand-every-step-of-raffelt-s-paper">
+<h2>2.2.4. How to Understand Every Step of Raffelt&#8217;s Paper<a class="headerlink" href="#how-to-understand-every-step-of-raffelt-s-paper" title="Permalink to this headline">¶</a></h2>
+<p>Make the formalism 4 dimensional.</p>
 </div>
 </div>
 
@@ -525,7 +540,20 @@ s_{i+j}=&amp;\sin(\theta_i'+\theta_j').\end{split}\]</div>
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../matter-stimulated/index.html">1. Matter Stimulated Oscillation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Collective</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fast-modes.html">2.1. Fast Modes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Directional Instability</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#formalism">2.2.1. Formalism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instability-in-arbitrary-direction">2.2.2. Instability in Arbitrary Direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-velocity-and-solitary-waves">2.2.3. Phase Velocity and Solitary Waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-understand-every-step-of-raffelt-s-paper">2.2.4. How to Understand Every Step of Raffelt&#8217;s Paper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="some-clarifications.html">2.3. Some Clarifications</a></li>
+</ul>
+</li>
 </ul>
 
 
@@ -541,8 +569,8 @@ s_{i+j}=&amp;\sin(\theta_i'+\theta_j').\end{split}\]</div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -564,7 +592,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Directional Instability &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="2.2. Directional Instability &#8212; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -607,11 +635,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="../_sources/collective/directional-instability.txt"
+      <a href="../_sources/collective/directional-instability.rst.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

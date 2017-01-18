@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Interference &mdash; Neutrino Pi documentation</title>
+    <title>1.7. Interference &#8212; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,14 +20,18 @@
         VERSION:     'Pi',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.8. Flavor Isospin Method" href="flavor-isospin-matter.html" />
+    <link rel="prev" title="1.6. Multi-frequency" href="multi-frequency.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -172,7 +176,14 @@ TeX: {
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="flavor-isospin-matter.html" title="1.8. Flavor Isospin Method"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="multi-frequency.html" title="1.6. Multi-frequency"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">1. Matter Stimulated Oscillation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -182,7 +193,7 @@ TeX: {
           <div class="body" role="main">
             
   <div class="section" id="interference">
-<h1>Interference<a class="headerlink" href="#interference" title="Permalink to this headline">¶</a></h1>
+<h1>1.7. Interference<a class="headerlink" href="#interference" title="Permalink to this headline">¶</a></h1>
 <div class="note admonition">
 <p class="first admonition-title">Summary</p>
 <p>Overall the system has at least two limits,</p>
@@ -198,7 +209,7 @@ TeX: {
 <li>However a mode with a wavelength that is much larger than the system is not counted since the resonance has not accumulated any significant transition probabilities within the region of the physical system.</li>
 </ol>
 <p><strong>However, we do not have a cystal clear understanding of such a strong interference.</strong></p>
-<p>The second case is essentially some limit of the strong interference. With Komogorov spectra of matter, the resonance is simplified in some sense. One of the limits is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density, within one wavelength of the small wavelength perturbations. Here we use two frequencies as examples, c.f. <code class="xref std std-numref docutils literal"><span class="pre">interference-adding-new-destroy-resonance-q-value</span></code>.</p>
+<p>The second case is essentially some limit of the strong interference. With Komogorov spectra of matter, the resonance is simplified in some sense. One of the limits is that one of the matter perturbations has much larger wavelength than the others, which will behave as a shift of the background matter density, within one wavelength of the small wavelength perturbations. Here we use two frequencies as examples, c.f. <a class="reference internal" href="#interference-adding-new-destroy-resonance-q-value"><span class="std std-numref">Fig. 1.22</span></a>.</p>
 <ol class="arabic">
 <li><p class="first">Even if the short wavelength one is exactly on resonance, adding the second perturbation as a background shift could move the system out of the resonance. The math behind it is related to the amplitude,</p>
 <div class="math">
@@ -238,7 +249,7 @@ h_N^* &amp; 0
 \[\begin{split}B_N &amp;= (-i)^{\sum_a n_a} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
 \Phi_N &amp;= e^{i\left( \sum_a n_a \phi_a \right)}.\end{split}\]</div>
 <div class="section" id="apply-approximations-to-two-frequencies">
-<h2>Apply Approximations to Two Frequencies<a class="headerlink" href="#apply-approximations-to-two-frequencies" title="Permalink to this headline">¶</a></h2>
+<h2>1.7.1. Apply Approximations to Two Frequencies<a class="headerlink" href="#apply-approximations-to-two-frequencies" title="Permalink to this headline">¶</a></h2>
 <p>We could identify the important combinations of n&#8217;s <span class="math">\(\{n_1, \cdots, n_N \}\)</span> so that we can approximate the actual result.</p>
 <p>The important question is combining multiple lists of n&#8217;s is not intuitively easy to understand. Here we consider the effect of adding new list of n&#8217;s to the system.</p>
 <p>For simplicity a simplified system will be used,</p>
@@ -261,7 +272,7 @@ A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x } &amp; 0
 i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) \psi_{b1}.\end{split}\]</div>
 <p>This set of equations is solved by rewrite them to a second order differential equation</p>
 <div class="math" id="equation-two-n-list-second-order-eq-o-m">
-<span class="eqno">(1)</span>\[\partial_x^2 \psi_{b2} + \frac{ A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) }{\partial_x (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) } \partial_x \psi_{b2} + (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) (A_1 e^{ i \phi_1 x } +A_2 e^{ i \phi_2 x } ) \psi_{b2}.\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-two-n-list-second-order-eq-o-m" title="Permalink to this equation">¶</a></span>\[\partial_x^2 \psi_{b2} + \frac{ A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) }{\partial_x (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) } \partial_x \psi_{b2} + (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x }) (A_1 e^{ i \phi_1 x } +A_2 e^{ i \phi_2 x } ) \psi_{b2}.\]</div>
 <p>As a comparison, we also write down the equation for single n list,</p>
 <div class="math">
 \[\partial_x^2 \psi_{b2} + \left( \frac{i}{\phi_1}  \right) \partial_x \psi_{b2} + \lvert A_1 \rvert^2 \psi_{b2} = 0.\]</div>
@@ -274,7 +285,7 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <div class="last math">
 \[\phi_n = \sum_{a}^N n_a k_a - \omega_m.\]</div>
 </div>
-<p>In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have <span class="math">\(A_1= A_2 = A\)</span> and <span class="math">\(\phi_2 = 10^{10}\phi_1\)</span>, the second term in equation <a href="#equation-two-n-list-second-order-eq-o-m">(1)</a> becomes</p>
+<p>In the multi-n-list case, this domination is easily destroyed. As an example, suppose we have <span class="math">\(A_1= A_2 = A\)</span> and <span class="math">\(\phi_2 = 10^{10}\phi_1\)</span>, the second term in equation <a class="reference internal" href="#equation-two-n-list-second-order-eq-o-m">(1)</a> becomes</p>
 <div class="math">
 \[\frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{\partial_x (e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2} = \frac{ e^{ - i \phi_1 x } + e^{ -i 10^{10}\phi_1 x }) }{ (-i\phi_1 e^{ - i \phi_1 x } - i 10^{10}\phi_1 e^{ -i 10^{10}\phi_1 x }) } \partial_x \psi_{b2},\]</div>
 <p>which can be dropped on as long as <span class="math">\(\phi_1\)</span> is not as small as <span class="math">\(10^{-10}\)</span>.</p>
@@ -282,9 +293,9 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 </div>
 </div>
 <div class="section" id="resonance-destroyed">
-<h2>Resonance Destroyed<a class="headerlink" href="#resonance-destroyed" title="Permalink to this headline">¶</a></h2>
+<h2>1.7.2. Resonance Destroyed<a class="headerlink" href="#resonance-destroyed" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="general-ideas">
-<h3>General Ideas<a class="headerlink" href="#general-ideas" title="Permalink to this headline">¶</a></h3>
+<h3>1.7.2.1. General Ideas<a class="headerlink" href="#general-ideas" title="Permalink to this headline">¶</a></h3>
 <p>We first investigate two frequencies. The Hamiltonian for a single frequency matter perturbation is</p>
 <div class="math">
 \[\begin{split}\hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
@@ -295,10 +306,10 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <div class="math">
 \[\hat B_n = (-i)^n \tan 2\theta_{\mathrm{m}} n \hat k  J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).\]</div>
 <p>In some conditions, even we have on of the matter frequancy at resonance, this resonance could be destroyed when a new matter frequency is destroyed. Numerical calculations show that this could happen if the new perturbation is off resonance and with larger <span class="math">\(B_{n_2}\)</span>.</p>
-<p>Let&#8217;s first set this first perturbation at resonance. Suppose we add in another matter perturbation with a frequency which is higher, i.e., <span class="math">\(k_2\ll k\)</span>. Since the wavelength of this new perturbation is much larger, we will assume it doesn&#8217;t change within one wavelength of the first perturbation. Thus it behaves as an additional background. Will this new background destroy the resonance? Illustration of this idea is shown in <code class="xref std std-numref docutils literal"><span class="pre">interference-adding-new-destroy-resonance-q-value</span></code>.</p>
+<p>Let&#8217;s first set this first perturbation at resonance. Suppose we add in another matter perturbation with a frequency which is higher, i.e., <span class="math">\(k_2\ll k\)</span>. Since the wavelength of this new perturbation is much larger, we will assume it doesn&#8217;t change within one wavelength of the first perturbation. Thus it behaves as an additional background. Will this new background destroy the resonance? Illustration of this idea is shown in <a class="reference internal" href="#interference-adding-new-destroy-resonance-q-value"><span class="std std-numref">Fig. 1.22</span></a>.</p>
 <div class="figure align-center" id="id1">
 <span id="interference-adding-new-destroy-resonance-q-value"></span><img alt="../_images/second-freq-as-bg-illustration.png" src="../_images/second-freq-as-bg-illustration.png" />
-<p class="caption"><span class="caption-text">The two matter perturbations</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.22 </span><span class="caption-text">The two matter perturbations</span></p>
 </div>
 <p>To quantify this idea, we calculate the Q values for different modes with and without the new frequency. The procedure should be</p>
 <ol class="arabic simple">
@@ -367,14 +378,14 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <span class="p">{</span><span class="o">-</span><span class="mi">5</span><span class="p">}</span> <span class="mf">5.67375</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">26</span>
 </pre></div>
 </div>
-<p>The corresponding plots are shown in <code class="xref std std-numref docutils literal"><span class="pre">second-freq-as-bg-example-1-first-freq-only</span></code> and <code class="xref std std-numref docutils literal"><span class="pre">second-freq-as-bg-example-1-with-second-freq-as-bg</span></code></p>
+<p>The corresponding plots are shown in <a class="reference internal" href="#second-freq-as-bg-example-1-first-freq-only"><span class="std std-numref">Fig. 1.23</span></a> and <a class="reference internal" href="#second-freq-as-bg-example-1-with-second-freq-as-bg"><span class="std std-numref">Fig. 1.24</span></a></p>
 <div class="figure align-center" id="id2">
 <span id="second-freq-as-bg-example-1-first-freq-only"></span><img alt="../_images/second-freq-as-bg-example-1-first-freq-only.png" src="../_images/second-freq-as-bg-example-1-first-freq-only.png" />
-<p class="caption"><span class="caption-text">Only the first frequency which is at resonance</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.23 </span><span class="caption-text">Only the first frequency which is at resonance</span></p>
 </div>
 <div class="figure align-center" id="id3">
 <span id="second-freq-as-bg-example-1-with-second-freq-as-bg"></span><img alt="../_images/second-freq-as-bg-example-1-with-second-freq-as-bg.png" src="../_images/second-freq-as-bg-example-1-with-second-freq-as-bg.png" />
-<p class="caption"><span class="caption-text">With the second frequency added in but only as a shift in background density</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.24 </span><span class="caption-text">With the second frequency added in but only as a shift in background density</span></p>
 </div>
 <p>What determines the amplitude is</p>
 <div class="math">
@@ -394,37 +405,37 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <p>which is far beyond the width of the resonance.</p>
 </div>
 <div class="section" id="some-artifical-systems">
-<h3>Some Artifical Systems<a class="headerlink" href="#some-artifical-systems" title="Permalink to this headline">¶</a></h3>
+<h3>1.7.2.2. Some Artifical Systems<a class="headerlink" href="#some-artifical-systems" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id4">
 <img alt="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-matter-density.png" src="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-matter-density.png" />
-<p class="caption"><span class="caption-text">Matter profiles with one wavelength of the first perturbation</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.25 </span><span class="caption-text">Matter profiles with one wavelength of the first perturbation</span></p>
 </div>
 <p>The resonance from the first perturbation is destroyed as the second perturbation grows much larger than it.</p>
 <div class="figure align-center" id="id5">
 <img alt="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-full-numerical.png" src="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-full-numerical.png" />
-<p class="caption"><span class="caption-text">Full numerical solutions</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.26 </span><span class="caption-text">Full numerical solutions</span></p>
 </div>
 <p>The hint is, the shift of the background matter profile is related to the destruction effect, whether it&#8217;s true destruction or effective destruction (destruction within a region).</p>
 <p>An investigation of the most important mode shows that it is destroyed due to the a shift of background matter density.</p>
 <div class="figure align-center" id="id6">
 <img alt="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-log.png" src="../_images/second-freq-as-bg-1-divided-10-10-20-30-100-1000-10000-log.png" />
-<p class="caption"><span class="caption-text">Resonance destruction of the first mode</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.27 </span><span class="caption-text">Resonance destruction of the first mode</span></p>
 </div>
 <p>To verify how the interference actually works, we plot the full numerical calculation and the {1,0} mode, for comparision</p>
 <div class="figure align-center" id="id7">
 <span id="second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines"></span><img alt="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines.png" src="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines.png" />
-<p class="caption"><span class="caption-text">The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.28 </span><span class="caption-text">The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.</span></p>
 </div>
-<p>It is clearly shown in <code class="xref std std-numref docutils literal"><span class="pre">second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines</span></code> that each vicinity of zero amplitude for the second perturbation, the transition amplitude will increase, due to the resonance of the first perturbation.</p>
-<p>What&#8217;s more interesting is that as <span class="math">\(A_2\)</span> becomes much larger than <span class="math">\(A_1\)</span>, the resonance seams to be destroyed. As an example, here we take <span class="math">\(A_2=0.0346135, A_1=0.0000357347\)</span> both in unit of <span class="math">\(\omega_m\)</span>, which means <span class="math">\(A_2\)</span> is almost three orders larger than <span class="math">\(A_1\)</span>. The results are shown in <code class="xref std std-numref docutils literal"><span class="pre">second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines</span></code>.</p>
+<p>It is clearly shown in <a class="reference internal" href="#second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-1000-full-numerical-with-10-mode-with-gridlines"><span class="std std-numref">Fig. 1.28</span></a> that each vicinity of zero amplitude for the second perturbation, the transition amplitude will increase, due to the resonance of the first perturbation.</p>
+<p>What&#8217;s more interesting is that as <span class="math">\(A_2\)</span> becomes much larger than <span class="math">\(A_1\)</span>, the resonance seams to be destroyed. As an example, here we take <span class="math">\(A_2=0.0346135, A_1=0.0000357347\)</span> both in unit of <span class="math">\(\omega_m\)</span>, which means <span class="math">\(A_2\)</span> is almost three orders larger than <span class="math">\(A_1\)</span>. The results are shown in <a class="reference internal" href="#second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines"><span class="std std-numref">Fig. 1.29</span></a>.</p>
 <div class="figure align-center" id="id8">
 <span id="second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines"></span><img alt="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines.png" src="../_images/second-freq-as-bg-1-d-10-1-d-1000-1-d-10000-1-d-200000-10000-full-numerical-with-10-mode-with-gridlines.png" />
-<p class="caption"><span class="caption-text">The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.29 </span><span class="caption-text">The solid lines are the full numerical calculations of the system; Dashed lines are {1,0} mode of the corresponding parameters; Vertical grid lines are the positions of zero amplitudes of the second matter perturbation.</span></p>
 </div>
 </div>
 </div>
 <div class="section" id="refs-notes">
-<h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+<h2>1.7.3. Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -450,7 +461,26 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">1.1. Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">1.2. MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">1.3. Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">1.4. Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">1.5. Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">1.6. Multi-frequency</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.7. Interference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apply-approximations-to-two-frequencies">1.7.1. Apply Approximations to Two Frequencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resonance-destroyed">1.7.2. Resonance Destroyed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refs-notes">1.7.3. Refs &amp; Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">1.8. Flavor Isospin Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="picture.html">1.9. Physics Picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">1.10. Linear Background Matter Profile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">2. Collective</a></li>
 </ul>
 
 
@@ -466,8 +496,8 @@ i \partial_x \psi_{b2} &amp; = (A_1^* e^{ - i \phi_1 x } + A_2^* e^{ -i \phi_2 x
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -489,7 +519,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Interference &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="1.7. Interference &#8212; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -532,11 +562,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="../_sources/matter-stimulated/interference.txt"
+      <a href="../_sources/matter-stimulated/interference.rst.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

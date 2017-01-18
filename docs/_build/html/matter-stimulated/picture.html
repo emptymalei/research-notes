@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Physics Picture &mdash; Neutrino Pi documentation</title>
+    <title>1.9. Physics Picture &#8212; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,14 +20,18 @@
         VERSION:     'Pi',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Neutrino Pi documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.10. Linear Background Matter Profile" href="linear-background-matter.html" />
+    <link rel="prev" title="1.8. Flavor Isospin Method" href="flavor-isospin-matter.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -172,7 +176,14 @@ TeX: {
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="linear-background-matter.html" title="1.10. Linear Background Matter Profile"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="flavor-isospin-matter.html" title="1.8. Flavor Isospin Method"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">1. Matter Stimulated Oscillation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -182,9 +193,9 @@ TeX: {
           <div class="body" role="main">
             
   <div class="section" id="physics-picture">
-<h1>Physics Picture<a class="headerlink" href="#physics-picture" title="Permalink to this headline">¶</a></h1>
+<h1>1.9. Physics Picture<a class="headerlink" href="#physics-picture" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="rabi-oscillations">
-<h2>Rabi oscillations<a class="headerlink" href="#rabi-oscillations" title="Permalink to this headline">¶</a></h2>
+<h2>1.9.1. Rabi oscillations<a class="headerlink" href="#rabi-oscillations" title="Permalink to this headline">¶</a></h2>
 <p>Hamiltonian of Rabi oscillation is</p>
 <div class="math">
 \[\begin{split}H = -\frac{\omega_m}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} - A \cos(k t)\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0  \end{pmatrix} .\end{split}\]</div>
@@ -205,7 +216,7 @@ TeX: {
 <p>The best practice would be applying this to the different modes.</p>
 </div>
 <div class="section" id="oscillations-and-modes">
-<h2>Oscillations and Modes<a class="headerlink" href="#oscillations-and-modes" title="Permalink to this headline">¶</a></h2>
+<h2>1.9.2. Oscillations and Modes<a class="headerlink" href="#oscillations-and-modes" title="Permalink to this headline">¶</a></h2>
 <p>Using Jacobi-Anger expansion, for any system with Hamiltonian</p>
 <div class="math">
 \[H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2}\sum_n A_n \sin (k_n x) \cos 2\theta_m \sigma_3 - \frac{1}{2}\sum_n A_n \sin (k_n x) \sin 2\theta_m \sigma_1,\]</div>
@@ -260,43 +271,43 @@ e^{-i \left( \sum_{a} n_a' k_a   \right)x} &amp;  0
 \phi_2 &amp; \neq \omega_m.\end{split}\]</div>
 <p>We then have two different situations, <span class="math">\(\phi_2/\omega_m \gg 1\)</span> and <span class="math">\(\phi_2/\omega_m \ll 1\)</span>.</p>
 <div class="section" id="slow-perturbation">
-<h3>Slow Perturbation<a class="headerlink" href="#slow-perturbation" title="Permalink to this headline">¶</a></h3>
+<h3>1.9.2.1. Slow Perturbation<a class="headerlink" href="#slow-perturbation" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math">\(\phi_2/\omega_m \ll 1\)</span>, the second mode is a very slow rotating perturbation, which can be explained using the proposed theory.</p>
 <div class="figure align-center" id="id1">
 <img alt="../_images/rabi-oscillation-interference-of-different-modes.png" src="../_images/rabi-oscillation-interference-of-different-modes.png" />
-<p class="caption"><span class="caption-text">Resonance interference of modes. The combination of the first mode and <span class="math">\(B_2=\)</span></span></p>
+<p class="caption"><span class="caption-number">Fig. 1.31 </span><span class="caption-text">Resonance interference of modes. The combination of the first mode and <span class="math">\(B_2=\)</span></span></p>
 </div>
 <div class="figure align-center" id="id2">
 <img alt="../_images/rabi-oscillation-interference-of-different-modes-compare-rabi-formula.png" src="../_images/rabi-oscillation-interference-of-different-modes-compare-rabi-formula.png" />
-<p class="caption"><span class="caption-text">Compare with Rabi formula</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.32 </span><span class="caption-text">Compare with Rabi formula</span></p>
 </div>
 <p>As a test of the theory, we can calculate the ratio of each <span class="math">\(B_2\)</span>, which depends on the modes, and the critical value <span class="math">\(B_2^C\)</span> which is the crtical value for the destruction of the resonance.</p>
 <div class="figure align-center" id="id3">
 <img alt="../_images/rabi-oscillation-interference-of-different-modes-b2-over-b2critical.png" src="../_images/rabi-oscillation-interference-of-different-modes-b2-over-b2critical.png" />
-<p class="caption"><span class="caption-text">Ratio <span class="math">\(\lvert B_2\rvert/\lvert B_2^C \rvert\)</span></span></p>
+<p class="caption"><span class="caption-number">Fig. 1.33 </span><span class="caption-text">Ratio <span class="math">\(\lvert B_2\rvert/\lvert B_2^C \rvert\)</span></span></p>
 </div>
 <p>To summarize, in the modes view, resonance of some modes are destroyed by some certain modes.</p>
 </div>
 </div>
 <div class="section" id="example-of-full-system">
-<h2>Example of Full System<a class="headerlink" href="#example-of-full-system" title="Permalink to this headline">¶</a></h2>
+<h2>1.9.3. Example of Full System<a class="headerlink" href="#example-of-full-system" title="Permalink to this headline">¶</a></h2>
 <p>First we choose a system that is on resonance</p>
 <div class="math">
 \[H_1 = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
 <p>where <span class="math">\(\delta\lambda_1 = A_1 \sin (k_1 x)\)</span>, where <span class="math">\(k_1 = \omega_m\)</span> and <span class="math">\(A_1 = 3.5\times 10^{-5}\omega_m\)</span>. This sets the system to resonance.</p>
 <div class="figure align-center" id="id4">
 <img alt="../_images/resonance-freq-example-1.png" src="../_images/resonance-freq-example-1.png" />
-<p class="caption"><span class="caption-text">Resonance</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.34 </span><span class="caption-text">Resonance</span></p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">Does the Diagonal Term Matter?</p>
 <p>Removing the diagonal elements of the perturbation</p>
 <div class="math">
 \[H_1' = -\frac{\omega_m}{2} \sigma_3  - \frac{\delta \lambda_1}{2} \sin 2\theta_m \sigma_1,\]</div>
-<p>will result in <code class="xref std std-numref docutils literal"><span class="pre">resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed</span></code>.</p>
+<p>will result in <a class="reference internal" href="#resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"><span class="std std-numref">Fig. 1.35</span></a>.</p>
 <div class="last figure align-center" id="id5">
 <span id="resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed"></span><img alt="../_images/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png" src="../_images/resonance-freq-example-1-compare-with-diagonal-elements-of-perturbation-removed.png" />
-<p class="caption"><span class="caption-text">Remove the diagonal elements of the preturbation</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.35 </span><span class="caption-text">Remove the diagonal elements of the preturbation</span></p>
 </div>
 </div>
 <div class="note admonition">
@@ -310,7 +321,7 @@ e^{-i \left( \sum_{a} n_a' k_a   \right)x} &amp;  0
 k_2 &amp;= 0.1.\end{split}\]</div>
 <div class="last figure align-center" id="id6">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation.png" />
-<p class="caption"><span class="caption-text">Added new slow perturbation</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.36 </span><span class="caption-text">Added new slow perturbation</span></p>
 </div>
 </div>
 <div class="note admonition">
@@ -318,21 +329,21 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <p>Removing the diagonal elements of slow perturbation</p>
 <div class="math">
 \[H_2' = -\frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda_1 }{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda_1 + \delta \lambda_2}{2} \sin 2\theta_m \sigma_1,\]</div>
-<p>gives us the result <code class="xref std std-numref docutils literal"><span class="pre">resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements</span></code>.</p>
+<p>gives us the result <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"><span class="std std-numref">Fig. 1.37</span></a>.</p>
 <div class="last figure align-center" id="id7">
 <span id="resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements"></span><img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-compare-with-removing-diagonal-elements.png" />
-<p class="caption"><span class="caption-text">Remove diagonal elements of slow perturbation.</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.37 </span><span class="caption-text">Remove diagonal elements of slow perturbation.</span></p>
 </div>
 </div>
 </div>
 <div class="section" id="explaination">
-<h2>Explaination<a class="headerlink" href="#explaination" title="Permalink to this headline">¶</a></h2>
+<h2>1.9.4. Explaination<a class="headerlink" href="#explaination" title="Permalink to this headline">¶</a></h2>
 <p>Slow perturbation is slow and changes the energy gap of the system. Since the energy gap <span class="math">\(\omega_m\)</span> determines the resonance point, which is</p>
 <div class="math">
 \[k_1 = \omega_m,\]</div>
 <p>adding the slow perturbation could increase <span class="math">\(\omega_m\)</span>,</p>
 <div class="math" id="equation-quadratic-approximation-energy-gap-shift">
-<span class="eqno">(1)</span>\[\begin{split}\omega_m' &amp;= \sqrt{A_{2,\bot} ^2 + \omega_m^2} \\
+<span class="eqno">(1)<a class="headerlink" href="#equation-quadratic-approximation-energy-gap-shift" title="Permalink to this equation">¶</a></span>\[\begin{split}\omega_m' &amp;= \sqrt{A_{2,\bot} ^2 + \omega_m^2} \\
 &amp; = \omega_m \sqrt{ \left(\frac{A_{2,\bot}}{\omega_m} \right)^2 + 1 } \\
 &amp; \approx  \omega_m + \frac{A_{2,\bot}^2}{2\omega_m},\end{split}\]</div>
 <p>where <span class="math">\(A_{2,\bot}\)</span> is component perpendicular to z axis.</p>
@@ -346,7 +357,7 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 <p>Shift the system out of resonance, it is required that</p>
 <div class="math">
 \[\lvert \omega_m' - k_1 \rvert \gtrsim \text{width of resonance} A_1.\]</div>
-<p>Width of resonance is basically determined by <span class="math">\(A_{1,\bot}\)</span>. Apply equation <a href="#equation-quadratic-approximation-energy-gap-shift">(1)</a>, we can solve the condition to break the resonance,</p>
+<p>Width of resonance is basically determined by <span class="math">\(A_{1,\bot}\)</span>. Apply equation <a class="reference internal" href="#equation-quadratic-approximation-energy-gap-shift">(1)</a>, we can solve the condition to break the resonance,</p>
 <div class="math">
 \[A_{2,\bot} \gtrsim \sqrt{2\omega_m A_{1,\bot}}.\]</div>
 <p>In our example, the condition becomes</p>
@@ -355,16 +366,16 @@ k_2 &amp;= 0.1.\end{split}\]</div>
 \Rightarrow &amp; A_2  \gtrsim \sqrt{2\omega_m A_1 \tan 2\theta_m/\cos 2\theta_m}.\end{split}\]</div>
 <div class="figure align-center" id="id8">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction.png" />
-<p class="caption"><span class="caption-text">With <span class="math">\(A_2=\sqrt{2 A_1 \sin (2 \theta_m)}/ \cos ^2(2 \theta_m) =0.0190304\omega_m\)</span></span></p>
+<p class="caption"><span class="caption-number">Fig. 1.38 </span><span class="caption-text">With <span class="math">\(A_2=\sqrt{2 A_1 \sin (2 \theta_m)}/ \cos ^2(2 \theta_m) =0.0190304\omega_m\)</span></span></p>
 </div>
 <div class="figure align-center" id="id9">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare.png" />
-<p class="caption"><span class="caption-text">Compare to show destruction</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.39 </span><span class="caption-text">Compare to show destruction</span></p>
 </div>
-<p>Using Rabi formula the amplitudes are not matching the numerical calculations, <code class="xref std std-numref docutils literal"><span class="pre">resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field</span></code>.</p>
+<p>Using Rabi formula the amplitudes are not matching the numerical calculations, <a class="reference internal" href="#resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"><span class="std std-numref">Fig. 1.40</span></a>.</p>
 <div class="figure align-center" id="id10">
 <span id="resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field"></span><img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-gridlines.png" />
-<p class="caption"><span class="caption-text">Grid lines are the amplitudes predicted by Rabi formula.</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.40 </span><span class="caption-text">Grid lines are the amplitudes predicted by Rabi formula.</span></p>
 </div>
 <p>As a reference, the Q values for each line are</p>
 <div class="last math">
@@ -375,22 +386,22 @@ Q_3 &amp; = \frac{\lvert k_1 - \sqrt{A_2'' \sin^2(2\theta_m)  + 1 }  }{A_1\sin (
 <p>However, the important question is whether the modified oscillation really Rabi oscillation. The answer is NO.</p>
 <div class="figure align-center" id="id11">
 <img alt="../_images/really-rabi-question-mark.png" src="../_images/really-rabi-question-mark.png" />
-<p class="caption"><span class="caption-text">Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
+<p class="caption"><span class="caption-number">Fig. 1.41 </span><span class="caption-text">Is the oscillation with slow perturbation really Rabi oscillation? Upper panel: Theoretical and numerical calculation of original system;
 Lower panel: Theoretical and numerical calculation with slow perturbation added.</span></p>
 </div>
 <p>We can not predict the oscillation when we add in the new perturbation using the Rabi oscillation formula. That makes sense!</p>
 <div class="section" id="introducing-another-component-perturbation">
-<h3>Introducing Another Component Perturbation<a class="headerlink" href="#introducing-another-component-perturbation" title="Permalink to this headline">¶</a></h3>
+<h3>1.9.4.1. Introducing Another Component Perturbation<a class="headerlink" href="#introducing-another-component-perturbation" title="Permalink to this headline">¶</a></h3>
 <p>We add in the term that has two components,</p>
 <div class="math">
 \[H = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda(x)}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_1 + \frac{\delta \lambda(x)}{2} \sin 2\theta_m \sigma_2.\]</div>
 <div class="figure align-center" id="id12">
 <img alt="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png" src="../_images/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png" />
-<p class="caption"><span class="caption-text">Add another component xy plane</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.42 </span><span class="caption-text">Add another component xy plane</span></p>
 </div>
 </div>
 <div class="section" id="rotating-perturbation-with-constant-strength">
-<h3>Rotating Perturbation with Constant Strength<a class="headerlink" href="#rotating-perturbation-with-constant-strength" title="Permalink to this headline">¶</a></h3>
+<h3>1.9.4.2. Rotating Perturbation with Constant Strength<a class="headerlink" href="#rotating-perturbation-with-constant-strength" title="Permalink to this headline">¶</a></h3>
 <p>Construct a system with a mode at resonance and another rotating perturbation of constant length,</p>
 <div class="math">
 \[H = - \frac{\omega_m}{2} \sigma_3 - \frac{1}{2} (A_1\cos(k_1x) + A_2 \sin(k_2x))  \sigma_1 + \frac{1}{2} ( A_1\sin (k_1 x) + A_2 \sin(k_2 x) ) \sigma_2,\]</div>
@@ -398,12 +409,12 @@ Lower panel: Theoretical and numerical calculation with slow perturbation added.
 <p>The new <span class="math">\(\sigma_2\)</span> term is a rotating field with constant length, which makes sure the modified energy gap has a constant length rather than the slowly changing energy gap.</p>
 <div class="figure align-center" id="id13">
 <img alt="../_images/rabi-oscillations-energy-gap-change.png" src="../_images/rabi-oscillations-energy-gap-change.png" />
-<p class="caption"><span class="caption-text">Reduction of transition amplitudes. Black dashed line: one perturbation at exact resonance; Green long dashed line: <span class="math">\(A_2=A_{2,\mathrm{Critical}}=0.0083666\)</span>; Blue dotted line: <span class="math">\(A_2=0.01\)</span>; Red line: <span class="math">\(A_2=0.02\)</span>. The grid lines are the amplitude predicted using Rabi formula correspondingly.</span></p>
+<p class="caption"><span class="caption-number">Fig. 1.43 </span><span class="caption-text">Reduction of transition amplitudes. Black dashed line: one perturbation at exact resonance; Green long dashed line: <span class="math">\(A_2=A_{2,\mathrm{Critical}}=0.0083666\)</span>; Blue dotted line: <span class="math">\(A_2=0.01\)</span>; Red line: <span class="math">\(A_2=0.02\)</span>. The grid lines are the amplitude predicted using Rabi formula correspondingly.</span></p>
 </div>
 </div>
 </div>
 <div class="section" id="refs-notes">
-<h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+<h2>1.9.5. Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -429,7 +440,28 @@ Lower panel: Theoretical and numerical calculation with slow perturbation added.
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Matter Stimulated Oscillation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scales.html">1.1. Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msw-revisted.html">1.2. MSW Effect Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parametric-resonance-revisted.html">1.3. Parametric Resonance Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-frequency.html">1.4. Single Frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-frequency.html">1.5. Two-frequency Matter Perturbation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-frequency.html">1.6. Multi-frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interference.html">1.7. Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-isospin-matter.html">1.8. Flavor Isospin Method</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.9. Physics Picture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rabi-oscillations">1.9.1. Rabi oscillations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oscillations-and-modes">1.9.2. Oscillations and Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-of-full-system">1.9.3. Example of Full System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explaination">1.9.4. Explaination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refs-notes">1.9.5. Refs &amp; Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="linear-background-matter.html">1.10. Linear Background Matter Profile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">2. Collective</a></li>
 </ul>
 
 
@@ -445,8 +477,8 @@ Lower panel: Theoretical and numerical calculation with slow perturbation added.
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -468,7 +500,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Physics Picture &mdash; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="1.9. Physics Picture &#8212; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -511,11 +543,11 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Sitemap<a href="assets/sitemap.xml">.xml</a><a href="assets/sitemap.xml.gz">.gz</a>
       |
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="../_sources/matter-stimulated/picture.txt"
+      <a href="../_sources/matter-stimulated/picture.rst.txt"
           rel="nofollow">Page source</a></li>
     </div>
 
