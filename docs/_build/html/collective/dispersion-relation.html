@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.1. Fast Modes &#8212; Neutrino Pi documentation</title>
+    <title>2.4. Dispersion Relation &#8212; Neutrino Pi documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,8 +30,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Directional Instability" href="directional-instability.html" />
-    <link rel="prev" title="2. Collective" href="index.html" />
+    <link rel="prev" title="2.3. Some Clarifications" href="some-clarifications.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -160,7 +159,7 @@ TeX: {
   
   <meta name="author" content="Lei Ma">
   
-  <link rel="canonical" href="http://docs.neutrino.xyz/collective/fast-modes.html"/>
+  <link rel="canonical" href="http://docs.neutrino.xyz/collective/dispersion-relation.html"/>
 
 
 
@@ -177,10 +176,7 @@ TeX: {
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="directional-instability.html" title="2.2. Directional Instability"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="2. Collective"
+          <a href="some-clarifications.html" title="2.3. Some Clarifications"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Neutrino Pi documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Collective</a> &#187;</li> 
@@ -192,115 +188,111 @@ TeX: {
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="fast-modes">
-<h1>2.1. Fast Modes<a class="headerlink" href="#fast-modes" title="Permalink to this headline">¶</a></h1>
-<div class="hint admonition">
-<p class="first admonition-title">Four Beams Model</p>
-<p>There are many things to consider for the four beams line model.</p>
-<ol class="last arabic simple">
-<li>Different emission angle for neutrinos and antineutrinos;</li>
-<li>Different density for neutrinos and antineutrinos;</li>
-<li>Left and right difference.</li>
-</ol>
-</div>
-<p>Is the system unstable even for <span class="math">\(\omega_v=0\)</span> and <span class="math">\(\lambda=0\)</span>?</p>
-<div class="figure align-center" id="id1">
-<img alt="../_images/fast-mode-alpha-0.8.png" src="../_images/fast-mode-alpha-0.8.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The maximum imaginary part in linear stability analysis. These calculations are for fix <span class="math">\(k_m/\hat E=1\)</span>, where <span class="math">\(\hat E\)</span> is the energy scale used to scale all the quantities.</span></p>
-<div class="legend">
+  <div class="section" id="dispersion-relation">
+<h1>2.4. Dispersion Relation<a class="headerlink" href="#dispersion-relation" title="Permalink to this headline">¶</a></h1>
+<p>Reference to notes:</p>
+<p>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2016). Fast Pairwise Conversion of Supernova Neutrinos: Dispersion-Relation Approach, 21101(January), 1–6. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.118.021101">https://doi.org/10.1103/PhysRevLett.118.021101</a></p>
+<div class="section" id="polarization-tensor">
+<h2>2.4.1. Polarization Tensor<a class="headerlink" href="#polarization-tensor" title="Permalink to this headline">¶</a></h2>
+<p>In Raffelt&#8217;s paper, they parametrize <span class="math">\(k^\mu(n)\)</span> then the polarization tensor is decomposed into two parts,</p>
 <div class="math">
-\[\begin{split}\omega_v =&amp; 0\\
-\lambda =&amp; 0\\
-\alpha = &amp; 0.8.\end{split}\]</div>
-<p>The grid of figure are arranged according to the following values of <span class="math">\(\{\theta_1,\theta_2\}\)</span>.</p>
+\[\eta^{\mu\nu}\]</div>
+<p>and</p>
 <div class="math">
-\[\begin{split}\begin{array}{cccc}
-\left\{\frac{\pi }{6},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{6},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{6},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{6},\frac{\pi }{3}\right\} \\
-\left\{\frac{2 \pi }{9},\frac{\pi }{6}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{\pi }{3}\right\} \\
-\left\{\frac{5 \pi }{18},\frac{\pi }{6}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{\pi }{3}\right\} \\
-\left\{\frac{\pi }{3},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{3},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{3},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{3},\frac{\pi }{3}\right\} \\
-\end{array}\end{split}\]</div>
+\[\frac{1}{\omega}N^{\mu\nu},\]</div>
+<p>where</p>
+<div class="math">
+\[N^{\mu\nu} = \int d\Gamma G_{\mathbf v} \frac{v^\mu v^\nu}{ 1-n \hat{\mathbf k} \cdot \mathbf v },\]</div>
+<p>with <span class="math">\(k^\mu=(\omega,\mathbf k)\)</span>.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Note to self</p>
+<p>The actual wave vector that determines the instability is <span class="math">\(K^\mu\)</span> which is related to <span class="math">\(k^\mu\)</span>,</p>
+<div class="math">
+\[k^\mu= K^\mu - (\Lambda^\mu + \Phi^\mu).\]</div>
+<p>Since <span class="math">\(\Lambda^\mu\)</span> and <span class="math">\(\Phi^\mu\)</span> are real, imaginary part of <span class="math">\(\omega\)</span> (<span class="math">\(\mathbf k\)</span>) equal imaginary part of <span class="math">\(\Omega\)</span> (<span class="math">\(\mathbf K\)</span>). Thus we only discuss the dispersion relation of <span class="math">\(k^\mu\)</span>.</p>
+<p>Density matrix is written as</p>
+<div class="math">
+\[\begin{split}\rho = \begin{pmatrix}
+1 &amp; \epsilon \\
+\epsilon^* &amp; -1
+\end{pmatrix}.\end{split}\]</div>
+<p>The perturbation <span class="math">\(\epsilon\)</span> is assumed to have the form</p>
+<div class="math">
+\[\epsilon = Q(\Omega, \mathbf K) e^{ -i( \Omega t - \mathbf K \cdot \mathbf x ) }.\]</div>
+<p class="last">This assumption indicates that even though we find instabilities, a proper initial condition/boundary condition is required to stimulate this instability.</p>
 </div>
+<p>The polarization tensor is in fact</p>
+<div class="math">
+\[\Pi^{\mu\nu} = \eta - \frac{1}{\omega}N^{\mu\nu}.\]</div>
+<p>The equation of motion becomes</p>
+<div class="math">
+\[v_\mu \Pi^{\mu\nu} a_\nu =0 ,\]</div>
+<p>where</p>
+<div class="math">
+\[a_\nu = - \int d\Gamma v_\nu G_{\mathbf v} Q_{\mathbf v}.\]</div>
+<p>Since <span class="math">\(v_\mu\)</span> is (component) of a null dual vector, we require <span class="math">\(\Pi^{\mu\nu} a_\nu\)</span> to be (component) proportional to <span class="math">\(v^\mu\)</span>. Since we have a lot of directions, different <span class="math">\(v^\mu\)</span> are independent of each other. So we require <span class="math">\(\Pi^{\mu\nu} a_\nu=0\)</span>.</p>
+<p>Then we need to find the solution to</p>
+<div class="math">
+\[\mathrm{Det}(\Pi^{\mu\nu})=0,\]</div>
+<p>which is simplified to</p>
+<div class="math">
+\[\mathrm{Det}(\omega \eta^{\mu\nu} - N^{\mu\nu}) = 0.\]</div>
+<p>We can multiply a minus on both sides. Note that</p>
+<div class="math">
+\[-\mathrm{Det}(\omega \eta^{\mu\nu} - N^{\mu\nu})\]</div>
+<p>is the determinant of a matrix</p>
+<div class="math">
+\[\omega I - N'^{\mu\nu},\]</div>
+<p>where <span class="math">\(N'\)</span> is a matrix with the first row of <span class="math">\(N\)</span> multiplied by a minus sign.</p>
+<p>Equivalently, we only need to find the eigenvalues of <span class="math">\(N'\)</span>.</p>
 </div>
+<div class="section" id="id1">
+<h2>2.4.2. Dispersion Relation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Raffelt et al proposed that can now solve the dispersion relation by finding the value of <span class="math">\(k^\mu(n)\)</span> for each n. We make the plot <span class="math">\(\omega\)</span> vs <span class="math">\(\mathbf k\)</span>.</p>
+<p>Here is an example that I calculated.</p>
+<p>The axial symmetric system can be calculated easily using this method. The paper gave an example of two polar angle beams with axial symmetry.</p>
 <div class="figure align-center" id="id2">
-<img alt="../_images/fast-mode-alpha-1.2.png" src="../_images/fast-mode-alpha-1.2.png" />
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">The maximum imaginary part in linear stability analysis. These calculations are for fix <span class="math">\(k_m/\hat E=1\)</span>, where <span class="math">\(\hat E\)</span> is the energy scale used to scale all the quantities.</span></p>
-<div class="legend">
-<div class="math">
-\[\begin{split}\omega_v =&amp; 0\\
-\lambda =&amp; 0\\
-\alpha = &amp; 1.2.\end{split}\]</div>
-<p>The grid of figure are arranged according to the following values of <span class="math">\(\{\theta_1,\theta_2\}\)</span>.</p>
-<div class="math">
-\[\begin{split}\begin{array}{cccc}
-\left\{\frac{\pi }{6},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{6},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{6},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{6},\frac{\pi }{3}\right\} \\
-\left\{\frac{2 \pi }{9},\frac{\pi }{6}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{\pi }{3}\right\} \\
-\left\{\frac{5 \pi }{18},\frac{\pi }{6}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{\pi }{3}\right\} \\
-\left\{\frac{\pi }{3},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{3},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{3},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{3},\frac{\pi }{3}\right\} \\
-\end{array}\end{split}\]</div>
+<img alt="../_images/listpltOmegan1.png" src="../_images/listpltOmegan1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.14 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for <span class="math">\(G=0.5 \delta(\cos\theta- 0.8) + 0.5 \delta(\cos\theta+0.2)\)</span>.</span></p>
 </div>
-</div>
-<p>When we have symmetric geometry, the instability region is gone. Such a result is exactly what we expect. However, different</p>
 <div class="figure align-center" id="id3">
-<img alt="collective/assets/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" src="collective/assets/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Linear stability analysis for</span></p>
-<div class="legend">
-<div class="math">
-\[\begin{split}\omega_v =&amp; 0\\
-\lambda =&amp; 0\\
-\alpha = &amp; 0.8 \\
-\theta_L =&amp; 2\pi/9 \\
-\theta_R =&amp; \pi/6.\end{split}\]</div>
+<img alt="../_images/listpltDispersionRelationDecompose1.png" src="../_images/listpltDispersionRelationDecompose1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Dispersion relation.</span></p>
 </div>
-</div>
-<div class="section" id="regions-of-instability">
-<h2>2.1.1. Regions of Instability<a class="headerlink" href="#regions-of-instability" title="Permalink to this headline">¶</a></h2>
-<p>For convinience, we define some quantities for four beam case.</p>
-<ol class="arabic simple">
-<li>We define the a parameter <span class="math">\(\alpha=(1-a)/(1+a)\)</span> so that <span class="math">\(\alpha \in [0,\infty]\)</span> is mapped onto <span class="math">\(a\in [-1,1]\)</span>.</li>
-<li>The summation of the two angles <span class="math">\(\Sigma\theta=\theta_1+\theta_2\)</span> and the difference between two angles <span class="math">\(\Delta\theta=\theta_1-\theta_2\)</span>, where <span class="math">\(\theta_1\)</span> is for neutrino beams.</li>
-<li>Every quantity is in unit of <span class="math">\(\mu\)</span>.</li>
-</ol>
-<p>First we check the result without matter, without vacuum frequency, and <span class="math">\(\Sigma\theta=2\pi/3\)</span>.</p>
+<p>We can check what happens for multibeams. I can plot the dispersion relation for similar configuration but with different number of beams.</p>
 <div class="figure align-center" id="id4">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">No matter, no vacuum frequency</span></p>
+<img alt="../_images/listanimi1.png" src="../_images/listanimi1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.16 </span><span class="caption-text">Animition of dispersion relation.</span></p>
+<div class="legend">
+<div class="code text highlight-default"><div class="highlight"><pre><span></span><span class="n">dataPltNBeamsPlt</span><span class="p">[</span><span class="n">Join</span><span class="p">[</span><span class="n">Table</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">beams</span><span class="p">,</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">beams</span><span class="o">/</span><span class="mi">2</span><span class="p">}],</span>
+<span class="n">Table</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">beams</span><span class="p">,</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">beams</span><span class="o">/</span><span class="mi">2</span><span class="p">}]],</span>
+<span class="n">Table</span><span class="p">[</span><span class="n">Pi</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">n</span> <span class="n">Pi</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">beams</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">beams</span> <span class="o">-</span> <span class="mi">1</span><span class="p">}],</span> <span class="p">{</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">},</span> <span class="mf">0.049</span><span class="p">,</span> <span class="p">{{</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">}}]</span>
+</pre></div>
 </div>
-<p>We can also check the matter effect.</p>
+</div>
+</div>
+<p>I plot the <span class="math">\(\omega(n)\)</span> relation for different number of beams</p>
+<a class="reference internal image-reference" href="../_images/listpltOmegan12List-2.png"><img alt="../_images/listpltOmegan12List-2.png" src="../_images/listpltOmegan12List-2.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="../_images/listpltOmegan12List-4.png"><img alt="../_images/listpltOmegan12List-4.png" src="../_images/listpltOmegan12List-4.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="../_images/listpltOmegan12List-8.png"><img alt="../_images/listpltOmegan12List-8.png" src="../_images/listpltOmegan12List-8.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="../_images/listpltOmegan12List-10.png"><img alt="../_images/listpltOmegan12List-10.png" src="../_images/listpltOmegan12List-10.png" style="width: 49%;" /></a>
+<p>Similar to the previous example, confining the range of <span class="math">\(n\)</span> leads to only a partial patch of the dispersion relation.</p>
+<div class="figure align-center">
+<img alt="../_images/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png" src="../_images/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png" />
+</div>
+<div class="warning admonition">
+<p class="first admonition-title">This should be the continuous limit?</p>
+<p>As a comparison, we can plot the dispersion relation in a larger range of n for 10 beams.</p>
 <div class="figure align-center" id="id5">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png" />
-<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">With matter, no vacuum frequency.</span></p>
+<img alt="../_images/listpltOmegan12List-10.png" src="../_images/listpltOmegan12List-10.png" />
+<p class="caption"><span class="caption-number">Fig. 2.17 </span><span class="caption-text">10 beams.</span></p>
 </div>
+<p>On the other hand, we can calculate the continuous limit for the same angle range.</p>
 <div class="figure align-center" id="id6">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">With matter, no vacuum frequency.</span></p>
+<img alt="../_images/compare-continuous-and-10-beams-within-n-range--1-to-1.png" src="../_images/compare-continuous-and-10-beams-within-n-range--1-to-1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.18 </span><span class="caption-text">Dispersion relation for 10 beams (<span class="math">\(n\in [-1,1]\)</span>), and continuous limit.</span></p>
 </div>
-<div class="figure align-center" id="id7">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">With matter, no vacuum frequency.</span></p>
-</div>
-<p>Then we check the result without matter, without vacuum frequency, and <span class="math">\(\Sigma\theta=2\pi/3\)</span>, and <span class="math">\(\frac{m k}{\mu}=0.1\)</span>.</p>
-<div class="figure align-center" id="id8">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">No matter, no vacuum frequency.</span></p>
-</div>
-<p>The effect of <span class="math">\(m k/\mu\)</span> is also similar to matter effect.</p>
-<div class="figure align-center" id="id9">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Higher order Fourier modes, without matter, no vacuum frequency.</span></p>
-</div>
-<div class="figure align-center" id="id10">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Higher order Fourier modes, without matter, no vacuum frequency.</span></p>
-</div>
-<p>Matter + Fourier modes also has suppression</p>
-<div class="figure align-center" id="id11">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png" />
-<p class="caption"><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Higher order Fourier modes, with matter, no vacuum frequency.</span></p>
-</div>
-<div class="figure align-center" id="id12">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png" />
-<p class="caption"><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Higher order Fourier modes, with matter, no vacuum frequency.</span></p>
+<p class="last">MEH</p>
 </div>
 </div>
 </div>
@@ -330,13 +322,14 @@ TeX: {
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../matter-stimulated/index.html">1. Matter Stimulated Oscillation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Collective</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Fast Modes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#regions-of-instability">2.1.1. Regions of Instability</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="fast-modes.html">2.1. Fast Modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="some-clarifications.html">2.3. Some Clarifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Dispersion Relation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#polarization-tensor">2.4.1. Polarization Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.4.2. Dispersion Relation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -377,7 +370,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="2.1. Fast Modes &#8212; Neutrino Pi documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="2.4. Dispersion Relation &#8212; Neutrino Pi documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -424,7 +417,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="../_sources/collective/fast-modes.rst.txt"
+      <a href="../_sources/collective/dispersion-relation.rst.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

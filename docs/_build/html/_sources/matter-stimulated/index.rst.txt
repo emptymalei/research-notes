@@ -28,6 +28,7 @@ Here by background matter basis, we mean that the Hamiltonian is diagonalized if
       H = -\frac{\omega_m}{3}\sigma_3 + \frac{\delta \lambda}{2} U^\dagger \sigma_3 U.
 
 
+What we are interested in is the transition between two background mass states. If we can have full converstion between the two mass states, we can have full conversion between flavor states.
 
 **A Unitary Transformation**
 

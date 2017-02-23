@@ -7,3 +7,4 @@ Collective
    fast-modes.rst
    directional-instability.rst
    some-clarifications.rst
+   dispersion-relation.rst
