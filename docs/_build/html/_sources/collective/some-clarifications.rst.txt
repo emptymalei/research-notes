@@ -304,7 +304,7 @@ From this we can infer
 .. admonition:: Real Symmetric and Skew Symmetric
    :class: toggle
 
-	Another way of understanding this equation is to think of it as the growth of the length of the vector :math:`\vec v = (\epsilon_1,\epsilon_2)^T`. For an arbitrary matrix differential equation of the form
+   Another way of understanding this equation is to think of it as the growth of the length of the vector :math:`\vec v = (\epsilon_1,\epsilon_2)^T`. For an arbitrary matrix differential equation of the form
 
 	.. math::
 		\partial_z \mathbf v = \mathbf A \mathbf v,

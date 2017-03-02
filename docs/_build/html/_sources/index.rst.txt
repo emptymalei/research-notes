@@ -55,21 +55,6 @@ Sitemap can be downloaded: :download:`sitemap.xml <assets/sitemap.xml>` or :down
    :caption: Table of Contents
    :numbered:
 
-   preliminary/index.rst
-   mass/index.rst
-   experiments/index.rst
-   oscillations/index.rst
-   matter/index.rst
    matter-stimulated/index.rst
    collective/index.rst
-   instability/index.rst
-   pictures/index.rst
-   models/index.rst
-   statistical-physics/index.rst
-   geometric-phase/index.rst
-   astrophysics/index.rst
-   gravity/index.rst
-   cosmology/index.rst
-   misc/index.rst
-   ref.rst
-   acknowledgement.rst
+   

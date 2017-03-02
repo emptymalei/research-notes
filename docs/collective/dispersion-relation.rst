@@ -153,7 +153,9 @@ Similar to the previous example, confining the range of :math:`n` leads to only 
 .. figure:: assets/dispersion-relation/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png
    :align: center
 
-   .. code::
+   The code for it
+
+   .. code:: text
 
       pltDiffBeamsConfined[beams_] := dataPltNBeamsPlt[
       Join[Table[1/beams, {n, 1, beams/2}],
