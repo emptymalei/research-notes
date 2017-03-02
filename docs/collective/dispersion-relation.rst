@@ -183,3 +183,14 @@ Similar to the previous example, confining the range of :math:`n` leads to only 
       Dispersion relation for 10 beams (:math:`n\in [-1,1]`), and continuous limit.
 
    MEH
+
+
+
+
+Analyze the Symmetries in Dispersion Relation
+------------------------------------------------------------------
+
+Four velocity can be expressed in terms of spherical harmonics.
+
+.. math::
+   v^\mu = \sqrt{\pi}\begin{pmatrix} 2 & \sqrt{2/3} (Y_1^{-1} - Y_1^1) & i \sqrt{2/3} (Y_1^{-1} + Y_1^1) & 2\sqrt{1/3} Y_1^0 \end{pmatrix}.

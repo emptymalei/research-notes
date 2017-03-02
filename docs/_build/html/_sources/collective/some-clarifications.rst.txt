@@ -173,7 +173,7 @@ where
 Simple Cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We first consider a simple case, where :math:`\theta_1=\theta_2\equiv \theta`, :math:`\lambda=0`, :math:`\eta=1`, and homogeneous in x direction. For simplicity we define
+We first consider a simple case, where :math:`\theta_1=\theta_2\equiv\theta` :math:`\lambda=0`, :math:`\eta=1`, and homogeneous in x direction. For simplicity we define
 
 .. math::
    \mu =& \sqrt{2}G_F (n_1 + n_2)\\
@@ -181,6 +181,13 @@ We first consider a simple case, where :math:`\theta_1=\theta_2\equiv \theta`, :
    \xi = & 1-\cos(\theta_1-\theta_2)\\
    \omega'_i = & \lambda - \eta\omega_i.
 
+
+.. admonition:: Not A Self-consistant Example
+   :class: warning
+
+   This is not a self-consistant example since :math:`\theta_1=\theta_2` indicates that :math:`\xi=0`. As we will see, no instability is present in this case.
+
+   However, we keep the term :math:`\xi` because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
 
 The equation for perturbations becomes
 
@@ -195,6 +202,7 @@ The equation for perturbations becomes
    \epsilon_1 \\
    \epsilon_2
    \end{pmatrix}.
+   :label: eqn-linearized-eom-symmetric-eg
 
 Since :math:`\mu` is the most important energy scale in this problem, we scale all energies with it.
 
@@ -255,7 +263,15 @@ The condition to have positive imaginary part is
 or
 
 .. math::
-   -2\sqrt{-f_1f_2\xi^2}<\Omega_1-\Omega_2<2\sqrt{-f_1f_2\xi^2}.
+   -2\sqrt{-f_1f_2\xi^2}<\Omega_1-\Omega_2<2\sqrt{-f_1f_2\xi^2},
+
+and :math:`f_1f_2\xi^2<0`. Recall the meaning of :math:`f_i`,
+
+.. math::
+   f_i = \frac{n_i}{n_1+n_2},
+
+instability requires that we have a spectrum crossing, i.e., :math:`n_1` and :math:`n_2` have different signs.
+
 
 Plug in the definitions of :math:`\Omega_i`,
 
@@ -267,6 +283,7 @@ From this we can infer
 1. :math:`f_1f_2` has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is :highlight-text:`crossing`.
 2. :math:`-\omega_1+\omega_2=0` will remove the instability. So we have to have both neutrinos and antineutrinos.
 3. :math:`f_2-f_1`, :math:`\eta(\omega_2-\omega_1)`, and :math:`\mu` set limit on each other.
+4. :math:`\theta_1=\theta_2\equiv \theta` removes the instability since it leads to :math:`\xi=0`. The emission has to be asymmetric in this simple two beams model. **This is trivial since equal emission angle means the beams are not colliding.**
 
 
 .. admonition:: But why?
@@ -283,8 +300,9 @@ From this we can infer
    5. variations of angular distributions of neutrinos,
    6. variations of energy spectrum of neutrinos.
 
+
 .. admonition:: Real Symmetric and Skew Symmetric
-	:class: toggle
+   :class: toggle
 
 	Another way of understanding this equation is to think of it as the growth of the length of the vector :math:`\vec v = (\epsilon_1,\epsilon_2)^T`. For an arbitrary matrix differential equation of the form
 
@@ -301,7 +319,7 @@ From this we can infer
 
 
 Breaking Symmetries
-~~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 
 For a line model, the symmetries we have are
@@ -316,22 +334,101 @@ For a line model, the symmetries we have are
 
 In this subsection we provide simple pictures of some the symmetries mentioned above.
 
-Translational symmetry is explained by introducing Fourier transform in x direction. For each mode, a term that is proportional to Fourier mode index m. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.
 
-Number density of each beam is described by the distribution :math:`f_i`'s effectively.
+
+Emission Angle Parity Symmetry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The emission angles change the value of :math:`\xi=1-\cos(\theta_1-\theta_2)` as well as rescale the quantities by angle dependent factor :math:`1/\sin\theta_i`.
 
 To see the importance of angles, we can redefine some quantities
 
 .. math::
-   \omega''_i=& \frac{\omega/_i}{\sin\theta_i}\\
+   \omega''_i=& \frac{\omega'_i}{\sin\theta_i}\\
    f''_1=&\frac{f_1}{\sin\theta_2} \\
    f''_2=&\frac{f_2}{\sin\theta_1}.
 
 The we will reach the same characteristic equation as Eq. :eq:`eqn-two-beam-line-characteristic-eqn-simple`. So the angles serves as shift of energy gap and angular distribution.
 
+The region of instability changes in a convoluted way. Given angles we can always write down the expression and find out.
 
-Including matter will define vacuum frequencies, :math:`\omega'_i`, which is effectively just a shift of vacuum frequencies.
+1. The criteria of existance of instability doesn't change.
+2. The region of instability changes.
 
+
+
+Matter Effect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Including matter will define vacuum frequencies, :math:`\omega'_i`, which is effectively just a shift of vacuum frequencies. In the symmetric emission case, :math:`\omega'_1-\omega'_2` is independent of matter effect. But breaking the emission symmetry generates the degeneracy,
+
+.. math::
+   \hat\omega''_1-\hat\omega''_2=( \lambda/\sin\theta_1 - \lambda/\sin\theta_2 + \eta(- \omega_1/\sin\theta_1 + \omega_2/\sin\theta_2) )/\mu`.
+
+1. Very large matter density shift the region to very small :math:`\mu`.
+
+
+
+
+
+Translational Symmetry
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Translational symmetry is explained by introducing Fourier transform in x direction. For each mode, a term that is proportional to Fourier mode index m. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.
+
+For each Fourier mode
+
+.. math::
+   \begin{pmatrix}
+   \epsilon_1 \\
+   \epsilon_2
+   \end{pmatrix} =  \mathbf Q(\Omega,k) e^{-i(\Omega t- k x)},
+
+where we set :math:`\Omega=0`.
+
+First term in RHS of Eq. :eq:`eqn-line-model-two-beams-all-neutrino-linearized-eom` becomes
+
+.. math::
+   - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+   0 & \cot\theta_2 \partial_x
+   \end{pmatrix} \begin{pmatrix}
+   \epsilon_1 \\
+   \epsilon_2
+   \end{pmatrix} = k \begin{pmatrix}\cot\theta_1 & 0 \\
+   0 & \cot\theta_2
+   \end{pmatrix} \begin{pmatrix}
+   Q_1 \\
+   Q_2
+   \end{pmatrix}.
+
+We now define :math:`\hat\omega''_i`,
+
+
+.. math::
+   \hat\omega''_{k,i} = \hat \omega''_i + 2\hat k\cot\theta_i,
+
+where :math:`\hat k=k/\mu`.
+
+The k term contributes to the difference between :math:`\Omega_{k,i}\equiv \hat\omega''_{k,i}+ f''_i\xi`.
+
+**Instability criteria doesn't change. However, the regime of instability changes.** We also know that the instability region is determined by
+
+.. math::
+   \lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert < \sqrt{f_1f_2\xi^2},
+
+where :math:`\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2`. The instability region shift from
+
+.. math::
+   -\sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi < (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu < \sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi
+
+If :math:`\lvert \Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2) \rvert` becomes larger, the region of instability is shifted to larger :math:`\mu`, i.e., larger number density.
+
+
+
+
+
+Time Translational Symmetry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. admonition:: Time Translational Symmetry

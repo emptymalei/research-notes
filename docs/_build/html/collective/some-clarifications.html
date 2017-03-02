@@ -317,15 +317,20 @@ B=&amp; \sqrt{
 </div>
 <div class="section" id="simple-cases">
 <h3>2.3.1.2. Simple Cases<a class="headerlink" href="#simple-cases" title="Permalink to this headline">¶</a></h3>
-<p>We first consider a simple case, where <span class="math">\(\theta_1=\theta_2\equiv \theta\)</span>, <span class="math">\(\lambda=0\)</span>, <span class="math">\(\eta=1\)</span>, and homogeneous in x direction. For simplicity we define</p>
+<p>We first consider a simple case, where <span class="math">\(\theta_1=\theta_2\equiv\theta\)</span> <span class="math">\(\lambda=0\)</span>, <span class="math">\(\eta=1\)</span>, and homogeneous in x direction. For simplicity we define</p>
 <div class="math">
 \[\begin{split}\mu =&amp; \sqrt{2}G_F (n_1 + n_2)\\
 \mu_i =&amp; \mu \frac{n_i}{n_1+n_2}\equiv \mu f_i \\
 \xi = &amp; 1-\cos(\theta_1-\theta_2)\\
 \omega'_i = &amp; \lambda - \eta\omega_i.\end{split}\]</div>
+<div class="warning admonition">
+<p class="first admonition-title">Not A Self-consistant Example</p>
+<p>This is not a self-consistant example since <span class="math">\(\theta_1=\theta_2\)</span> indicates that <span class="math">\(\xi=0\)</span>. As we will see, no instability is present in this case.</p>
+<p class="last">However, we keep the term <span class="math">\(\xi\)</span> because we need to analyze the effect of symmetry breaking. This example builds up a formalism.</p>
+</div>
 <p>The equation for perturbations becomes</p>
-<div class="math">
-\[\begin{split}i\partial_z\begin{pmatrix}
+<div class="math" id="equation-eqn-linearized-eom-symmetric-eg">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-linearized-eom-symmetric-eg" title="Permalink to this equation">¶</a></span>\[\begin{split}i\partial_z\begin{pmatrix}
 \epsilon_1 \\
 \epsilon_2
 \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
@@ -353,7 +358,7 @@ B=&amp; \sqrt{
 \hat \omega'_i =&amp; \frac{\omega'_i}{\mu}.\end{split}\]</div>
 <p>The characteristic equation for this equation is</p>
 <div class="math" id="equation-eqn-two-beam-line-characteristic-eqn-simple">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-two-beam-line-characteristic-eqn-simple" title="Permalink to this equation">¶</a></span>\[\left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-two-beam-line-characteristic-eqn-simple" title="Permalink to this equation">¶</a></span>\[\left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,\]</div>
 <p>which is simplified to</p>
 <div class="math">
 \[(\Omega-\Omega_1)(\Omega-\Omega_2) -f_1f_2\xi^2 = 0,\]</div>
@@ -372,7 +377,11 @@ B=&amp; \sqrt{
 \[(\Omega_1-\Omega_2)^2 + 4f_1f_2\xi^2 &lt; 0,\]</div>
 <p>or</p>
 <div class="math">
-\[-2\sqrt{-f_1f_2\xi^2}&lt;\Omega_1-\Omega_2&lt;2\sqrt{-f_1f_2\xi^2}.\]</div>
+\[-2\sqrt{-f_1f_2\xi^2}&lt;\Omega_1-\Omega_2&lt;2\sqrt{-f_1f_2\xi^2},\]</div>
+<p>and <span class="math">\(f_1f_2\xi^2&lt;0\)</span>. Recall the meaning of <span class="math">\(f_i\)</span>,</p>
+<div class="math">
+\[f_i = \frac{n_i}{n_1+n_2},\]</div>
+<p>instability requires that we have a spectrum crossing, i.e., <span class="math">\(n_1\)</span> and <span class="math">\(n_2\)</span> have different signs.</p>
 <p>Plug in the definitions of <span class="math">\(\Omega_i\)</span>,</p>
 <div class="math">
 \[-2\sqrt{-f_1f_2\xi^2}&lt; \eta(- \omega_1 + \omega_2)/\mu + (f_2 - f_1)\xi &lt; 2\sqrt{-f_1f_2\xi^2}.\]</div>
@@ -381,6 +390,7 @@ B=&amp; \sqrt{
 <li><span class="math">\(f_1f_2\)</span> has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is <span class="highlight-text">crossing</span>.</li>
 <li><span class="math">\(-\omega_1+\omega_2=0\)</span> will remove the instability. So we have to have both neutrinos and antineutrinos.</li>
 <li><span class="math">\(f_2-f_1\)</span>, <span class="math">\(\eta(\omega_2-\omega_1)\)</span>, and <span class="math">\(\mu\)</span> set limit on each other.</li>
+<li><span class="math">\(\theta_1=\theta_2\equiv \theta\)</span> removes the instability since it leads to <span class="math">\(\xi=0\)</span>. The emission has to be asymmetric in this simple two beams model. <strong>This is trivial since equal emission angle means the beams are not colliding.</strong></li>
 </ol>
 <div class="warning admonition">
 <p class="first admonition-title">But why?</p>
@@ -395,9 +405,8 @@ B=&amp; \sqrt{
 <li>variations of energy spectrum of neutrinos.</li>
 </ol>
 </div>
-<div class="admonition-real-symmetric-and-skew-symmetric-class-toggle admonition">
-<p class="first admonition-title">Real Symmetric and Skew Symmetric
-     :class: toggle</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Real Symmetric and Skew Symmetric</p>
 <blockquote>
 <div><p>Another way of understanding this equation is to think of it as the growth of the length of the vector <span class="math">\(\vec v = (\epsilon_1,\epsilon_2)^T\)</span>. For an arbitrary matrix differential equation of the form</p>
 <div class="math">
@@ -409,8 +418,9 @@ B=&amp; \sqrt{
 <p class="last">We can indentify the effect of <span class="math">\(f_1-f_2\)</span> but this is not particularly useful since we can not say anything about the eigenvalues of matrix <span class="math">\(\mathbf A\)</span> from the eigenvalues of matrix <span class="math">\(\mathbf A^+\)</span> and <span class="math">\(\mathbf A^-\)</span>.</p>
 </div>
 </div>
+</div>
 <div class="section" id="breaking-symmetries">
-<h3>2.3.1.3. Breaking Symmetries<a class="headerlink" href="#breaking-symmetries" title="Permalink to this headline">¶</a></h3>
+<h2>2.3.2. Breaking Symmetries<a class="headerlink" href="#breaking-symmetries" title="Permalink to this headline">¶</a></h2>
 <p>For a line model, the symmetries we have are</p>
 <ol class="arabic simple">
 <li>Time translation symmetry;</li>
@@ -421,15 +431,68 @@ B=&amp; \sqrt{
 <li>With and without matter.</li>
 </ol>
 <p>In this subsection we provide simple pictures of some the symmetries mentioned above.</p>
-<p>Translational symmetry is explained by introducing Fourier transform in x direction. For each mode, a term that is proportional to Fourier mode index m. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.</p>
-<p>Number density of each beam is described by the distribution <span class="math">\(f_i\)</span>&#8216;s effectively.</p>
+<div class="section" id="emission-angle-parity-symmetry">
+<h3>2.3.2.1. Emission Angle Parity Symmetry<a class="headerlink" href="#emission-angle-parity-symmetry" title="Permalink to this headline">¶</a></h3>
+<p>The emission angles change the value of <span class="math">\(\xi=1-\cos(\theta_1-\theta_2)\)</span> as well as rescale the quantities by angle dependent factor <span class="math">\(1/\sin\theta_i\)</span>.</p>
 <p>To see the importance of angles, we can redefine some quantities</p>
 <div class="math">
-\[\begin{split}\omega''_i=&amp; \frac{\omega/_i}{\sin\theta_i}\\
+\[\begin{split}\omega''_i=&amp; \frac{\omega'_i}{\sin\theta_i}\\
 f''_1=&amp;\frac{f_1}{\sin\theta_2} \\
 f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
-<p>The we will reach the same characteristic equation as Eq. <a class="reference internal" href="#equation-eqn-two-beam-line-characteristic-eqn-simple">(2)</a>. So the angles serves as shift of energy gap and angular distribution.</p>
-<p>Including matter will define vacuum frequencies, <span class="math">\(\omega'_i\)</span>, which is effectively just a shift of vacuum frequencies.</p>
+<p>The we will reach the same characteristic equation as Eq. <a class="reference internal" href="#equation-eqn-two-beam-line-characteristic-eqn-simple">(3)</a>. So the angles serves as shift of energy gap and angular distribution.</p>
+<p>The region of instability changes in a convoluted way. Given angles we can always write down the expression and find out.</p>
+<ol class="arabic simple">
+<li>The criteria of existance of instability doesn&#8217;t change.</li>
+<li>The region of instability changes.</li>
+</ol>
+</div>
+<div class="section" id="matter-effect">
+<h3>2.3.2.2. Matter Effect<a class="headerlink" href="#matter-effect" title="Permalink to this headline">¶</a></h3>
+<p>Including matter will define vacuum frequencies, <span class="math">\(\omega'_i\)</span>, which is effectively just a shift of vacuum frequencies. In the symmetric emission case, <span class="math">\(\omega'_1-\omega'_2\)</span> is independent of matter effect. But breaking the emission symmetry generates the degeneracy,</p>
+<div class="math">
+\[\hat\omega''_1-\hat\omega''_2=( \lambda/\sin\theta_1 - \lambda/\sin\theta_2 + \eta(- \omega_1/\sin\theta_1 + \omega_2/\sin\theta_2) )/\mu`.\]</div>
+<ol class="arabic simple">
+<li>Very large matter density shift the region to very small <span class="math">\(\mu\)</span>.</li>
+</ol>
+</div>
+<div class="section" id="translational-symmetry">
+<h3>2.3.2.3. Translational Symmetry<a class="headerlink" href="#translational-symmetry" title="Permalink to this headline">¶</a></h3>
+<p>Translational symmetry is explained by introducing Fourier transform in x direction. For each mode, a term that is proportional to Fourier mode index m. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.</p>
+<p>For each Fourier mode</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} =  \mathbf Q(\Omega,k) e^{-i(\Omega t- k x)},\end{split}\]</div>
+<p>where we set <span class="math">\(\Omega=0\)</span>.</p>
+<p>First term in RHS of Eq. <a class="reference internal" href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a> becomes</p>
+<div class="math">
+\[\begin{split}- i \begin{pmatrix}\cot\theta_1\partial_x &amp; 0 \\
+0 &amp; \cot\theta_2 \partial_x
+\end{pmatrix} \begin{pmatrix}
+\epsilon_1 \\
+\epsilon_2
+\end{pmatrix} = k \begin{pmatrix}\cot\theta_1 &amp; 0 \\
+0 &amp; \cot\theta_2
+\end{pmatrix} \begin{pmatrix}
+Q_1 \\
+Q_2
+\end{pmatrix}.\end{split}\]</div>
+<p>We now define <span class="math">\(\hat\omega''_i\)</span>,</p>
+<div class="math">
+\[\hat\omega''_{k,i} = \hat \omega''_i + 2\hat k\cot\theta_i,\]</div>
+<p>where <span class="math">\(\hat k=k/\mu\)</span>.</p>
+<p>The k term contributes to the difference between <span class="math">\(\Omega_{k,i}\equiv \hat\omega''_{k,i}+ f''_i\xi\)</span>.</p>
+<p><strong>Instability criteria doesn&#8217;t change. However, the regime of instability changes.</strong> We also know that the instability region is determined by</p>
+<div class="math">
+\[\lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert &lt; \sqrt{f_1f_2\xi^2},\]</div>
+<p>where <span class="math">\(\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2\)</span>. The instability region shift from</p>
+<div class="math">
+\[-\sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi &lt; (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu &lt; \sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi\]</div>
+<p>If <span class="math">\(\lvert \Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2) \rvert\)</span> becomes larger, the region of instability is shifted to larger <span class="math">\(\mu\)</span>, i.e., larger number density.</p>
+</div>
+<div class="section" id="time-translational-symmetry">
+<h3>2.3.2.4. Time Translational Symmetry<a class="headerlink" href="#time-translational-symmetry" title="Permalink to this headline">¶</a></h3>
 <div class="warning admonition">
 <p class="first admonition-title">Time Translational Symmetry</p>
 <p>How about time translational symmetry? I need to write down the equation of motion that is related to time.</p>
@@ -441,7 +504,7 @@ f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
 </div>
 </div>
 <div class="section" id="numerical-calculations">
-<h3>2.3.1.4. Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.2.5. Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
 <p>We assume the two beams have different energy, as indicated by <span class="math">\(\omega_1\)</span> and <span class="math">\(\omega_2\)</span> in Eq. <a class="reference internal" href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a>.</p>
 <p>For numerical calcualtions, we scale quantities using <span class="math">\(\mu\)</span>.</p>
 <p>With symmetric angles for the two beams, I didn&#8217;t find instabilities. However, <span class="math">\(\theta_1\neq \theta_2\)</span> leads to instabilities in IH, which is consistant with our expections.</p>
@@ -488,6 +551,7 @@ f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
 <li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Some Clarifications</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#two-beams-model">2.3.1. Two Beams Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#breaking-symmetries">2.3.2. Breaking Symmetries</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
