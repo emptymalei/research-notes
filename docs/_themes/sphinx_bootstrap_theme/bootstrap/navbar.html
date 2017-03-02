@@ -40,10 +40,12 @@
               <li class="hidden-sm">{% include "sourcelink.html" %}</li>
             {% endif %}
           </ul>
-
+          
+          {% if theme_navbar_search %}
           {% block navbarsearch %}
             {% include "navbarsearchbox.html" %}
           {% endblock %}
+	  {% endif %}
         </div>
     </div>
   </div>
