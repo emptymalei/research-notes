@@ -10,7 +10,26 @@ Izaguirre, I., Raffelt, G., & Tamborra, I. (2016). Fast Pairwise Conversion of S
 Polarization Tensor
 --------------------------
 
-In Raffelt's paper, they parametrize :math:`k^\mu(n)` then the polarization tensor is decomposed into two parts,
+In Raffelt's paper, they defined the polarization tensor as
+
+.. math::
+   \Pi^{\mu\nu} = \eta^{\mu\nu} + \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v^\nu}{k^\mu v_\mu}.
+
+For numerical calculations, we lower the second index and multiply on both side :math:`\omega`,
+
+.. math::
+   \omega\Pi^\mu_\nu = \omega\delta^\mu_\nu + \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v_\nu}{ 1- \frac{k}{\omega} \hat k\cdot \mathbf v },
+
+where
+
+.. math::
+   v^\mu &= \begin{pmatrix} 1 & \sin\theta \cos\phi & \sin\theta \sin\phi & \cos\theta \end{pmatrix}\\
+   k^\mu &= \begin{pmatrix} \omega & k \sin\theta_k \cos\phi_k & k\sin\theta_k \sin\phi_k & k\cos\theta_k \end{pmatrix}.
+
+Parametrization of Polarization Tensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Raffelt et al parametrize :math:`k^\mu(n)` where :math:`n=k/\omega`. Then the polarization tensor is decomposed into two parts,
 
 .. math::
    \eta^{\mu\nu}
@@ -56,7 +75,7 @@ with :math:`k^\mu=(\omega,\mathbf k)`.
 The polarization tensor is in fact
 
 .. math::
-   \Pi^{\mu\nu} = \eta - \frac{1}{\omega}N^{\mu\nu}.
+   \Pi^{\mu\nu} = \eta + \frac{1}{\omega}N^{\mu\nu}.
 
 The equation of motion becomes
 
@@ -78,27 +97,25 @@ Then we need to find the solution to
 which is simplified to
 
 .. math::
-   \mathrm{Det}(\omega \eta^{\mu\nu} - N^{\mu\nu}) = 0.
+   \mathrm{Det}(\omega \eta^{\mu\nu} + N^{\mu\nu}) = 0.
 
-We can multiply a minus on both sides. Note that
+We can also use the polarization tensor :math:`\Pi^\mu_\nu`
 
 .. math::
-   -\mathrm{Det}(\omega \eta^{\mu\nu} - N^{\mu\nu})
+   \mathrm{Det}(\omega \delta^\mu_\nu + N^{\mu}_\nu) =0
 
 is the determinant of a matrix
 
 .. math::
-   \omega I - N'^{\mu\nu},
-
-where :math:`N'` is a matrix with the first row of :math:`N` multiplied by a minus sign.
+   \omega I + \mathbf N^\mu_\nu.
 
 
-Equivalently, we only need to find the eigenvalues of :math:`N'`.
+Equivalently, we only need to find the eigenvalues of :math:`\mathbf N^\mu_\nu` then multiply on each of them by negative sign.
 
 
 
-Dispersion Relation
----------------------
+Examples of Parametrization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Raffelt et al proposed that can now solve the dispersion relation by finding the value of :math:`k^\mu(n)` for each n. We make the plot :math:`\omega` vs :math:`\mathbf k`.
 

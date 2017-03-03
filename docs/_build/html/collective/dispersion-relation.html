@@ -229,9 +229,12 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">2.4. Dispersion Relation</a><ul>
-<li><a class="reference internal" href="#polarization-tensor">2.4.1. Polarization Tensor</a></li>
-<li><a class="reference internal" href="#id1">2.4.2. Dispersion Relation</a></li>
-<li><a class="reference internal" href="#analyze-the-symmetries-in-dispersion-relation">2.4.3. Analyze the Symmetries in Dispersion Relation</a></li>
+<li><a class="reference internal" href="#polarization-tensor">2.4.1. Polarization Tensor</a><ul>
+<li><a class="reference internal" href="#parametrization-of-polarization-tensor">2.4.1.1. Parametrization of Polarization Tensor</a></li>
+<li><a class="reference internal" href="#examples-of-parametrization">2.4.1.2. Examples of Parametrization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#analyze-the-symmetries-in-dispersion-relation">2.4.2. Analyze the Symmetries in Dispersion Relation</a></li>
 </ul>
 </li>
 </ul>
@@ -268,7 +271,19 @@ TeX: {
 <p>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2016). Fast Pairwise Conversion of Supernova Neutrinos: Dispersion-Relation Approach, 21101(January), 1–6. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.118.021101">https://doi.org/10.1103/PhysRevLett.118.021101</a></p>
 <div class="section" id="polarization-tensor">
 <h2>2.4.1. Polarization Tensor<a class="headerlink" href="#polarization-tensor" title="Permalink to this headline">¶</a></h2>
-<p>In Raffelt&#8217;s paper, they parametrize <span class="math">\(k^\mu(n)\)</span> then the polarization tensor is decomposed into two parts,</p>
+<p>In Raffelt&#8217;s paper, they defined the polarization tensor as</p>
+<div class="math">
+\[\Pi^{\mu\nu} = \eta^{\mu\nu} + \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v^\nu}{k^\mu v_\mu}.\]</div>
+<p>For numerical calculations, we lower the second index and multiply on both side <span class="math">\(\omega\)</span>,</p>
+<div class="math">
+\[\omega\Pi^\mu_\nu = \omega\delta^\mu_\nu + \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v_\nu}{ 1- \frac{k}{\omega} \hat k\cdot \mathbf v },\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}v^\mu &amp;= \begin{pmatrix} 1 &amp; \sin\theta \cos\phi &amp; \sin\theta \sin\phi &amp; \cos\theta \end{pmatrix}\\
+k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\theta_k \sin\phi_k &amp; k\cos\theta_k \end{pmatrix}.\end{split}\]</div>
+<div class="section" id="parametrization-of-polarization-tensor">
+<h3>2.4.1.1. Parametrization of Polarization Tensor<a class="headerlink" href="#parametrization-of-polarization-tensor" title="Permalink to this headline">¶</a></h3>
+<p>Raffelt et al parametrize <span class="math">\(k^\mu(n)\)</span> where <span class="math">\(n=k/\omega\)</span>. Then the polarization tensor is decomposed into two parts,</p>
 <div class="math">
 \[\eta^{\mu\nu}\]</div>
 <p>and</p>
@@ -297,7 +312,7 @@ TeX: {
 </div>
 <p>The polarization tensor is in fact</p>
 <div class="math">
-\[\Pi^{\mu\nu} = \eta - \frac{1}{\omega}N^{\mu\nu}.\]</div>
+\[\Pi^{\mu\nu} = \eta + \frac{1}{\omega}N^{\mu\nu}.\]</div>
 <p>The equation of motion becomes</p>
 <div class="math">
 \[v_\mu \Pi^{\mu\nu} a_\nu =0 ,\]</div>
@@ -310,31 +325,30 @@ TeX: {
 \[\mathrm{Det}(\Pi^{\mu\nu})=0,\]</div>
 <p>which is simplified to</p>
 <div class="math">
-\[\mathrm{Det}(\omega \eta^{\mu\nu} - N^{\mu\nu}) = 0.\]</div>
-<p>We can multiply a minus on both sides. Note that</p>
+\[\mathrm{Det}(\omega \eta^{\mu\nu} + N^{\mu\nu}) = 0.\]</div>
+<p>We can also use the polarization tensor <span class="math">\(\Pi^\mu_\nu\)</span></p>
 <div class="math">
-\[-\mathrm{Det}(\omega \eta^{\mu\nu} - N^{\mu\nu})\]</div>
+\[\mathrm{Det}(\omega \delta^\mu_\nu + N^{\mu}_\nu) =0\]</div>
 <p>is the determinant of a matrix</p>
 <div class="math">
-\[\omega I - N'^{\mu\nu},\]</div>
-<p>where <span class="math">\(N'\)</span> is a matrix with the first row of <span class="math">\(N\)</span> multiplied by a minus sign.</p>
-<p>Equivalently, we only need to find the eigenvalues of <span class="math">\(N'\)</span>.</p>
+\[\omega I + \mathbf N^\mu_\nu.\]</div>
+<p>Equivalently, we only need to find the eigenvalues of <span class="math">\(\mathbf N^\mu_\nu\)</span> then multiply on each of them by negative sign.</p>
 </div>
-<div class="section" id="id1">
-<h2>2.4.2. Dispersion Relation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="examples-of-parametrization">
+<h3>2.4.1.2. Examples of Parametrization<a class="headerlink" href="#examples-of-parametrization" title="Permalink to this headline">¶</a></h3>
 <p>Raffelt et al proposed that can now solve the dispersion relation by finding the value of <span class="math">\(k^\mu(n)\)</span> for each n. We make the plot <span class="math">\(\omega\)</span> vs <span class="math">\(\mathbf k\)</span>.</p>
 <p>Here is an example that I calculated.</p>
 <p>The axial symmetric system can be calculated easily using this method. The paper gave an example of two polar angle beams with axial symmetry.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id1">
 <img alt="../_images/listpltOmegan1.png" src="../_images/listpltOmegan1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.14 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for <span class="math">\(G=0.5 \delta(\cos\theta- 0.8) + 0.5 \delta(\cos\theta+0.2)\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id2">
 <img alt="../_images/listpltDispersionRelationDecompose1.png" src="../_images/listpltDispersionRelationDecompose1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Dispersion relation.</span></p>
 </div>
 <p>We can check what happens for multibeams. I can plot the dispersion relation for similar configuration but with different number of beams.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id3">
 <img alt="../_images/listanimi1.png" src="../_images/listanimi1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.16 </span><span class="caption-text">Animition of dispersion relation.</span></p>
 <div class="legend">
@@ -351,7 +365,7 @@ TeX: {
 <a class="reference internal image-reference" href="../_images/listpltOmegan12List-8.png"><img alt="../_images/listpltOmegan12List-8.png" src="../_images/listpltOmegan12List-8.png" style="width: 49%;" /></a>
 <a class="reference internal image-reference" href="../_images/listpltOmegan12List-10.png"><img alt="../_images/listpltOmegan12List-10.png" src="../_images/listpltOmegan12List-10.png" style="width: 49%;" /></a>
 <p>Similar to the previous example, confining the range of <span class="math">\(n\)</span> leads to only a partial patch of the dispersion relation.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id4">
 <img alt="../_images/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png" src="../_images/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png" />
 <p class="caption"><span class="caption-number">Fig. 2.17 </span><span class="caption-text">The code for it</span></p>
 <div class="legend">
@@ -367,20 +381,21 @@ TeX: {
 <div class="warning admonition">
 <p class="first admonition-title">This should be the continuous limit?</p>
 <p>As a comparison, we can plot the dispersion relation in a larger range of n for 10 beams.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id5">
 <img alt="../_images/listpltOmegan12List-10.png" src="../_images/listpltOmegan12List-10.png" />
 <p class="caption"><span class="caption-number">Fig. 2.18 </span><span class="caption-text">10 beams.</span></p>
 </div>
 <p>On the other hand, we can calculate the continuous limit for the same angle range.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id6">
 <img alt="../_images/compare-continuous-and-10-beams-within-n-range--1-to-1.png" src="../_images/compare-continuous-and-10-beams-within-n-range--1-to-1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Dispersion relation for 10 beams (<span class="math">\(n\in [-1,1]\)</span>), and continuous limit.</span></p>
 </div>
 <p class="last">MEH</p>
 </div>
 </div>
+</div>
 <div class="section" id="analyze-the-symmetries-in-dispersion-relation">
-<h2>2.4.3. Analyze the Symmetries in Dispersion Relation<a class="headerlink" href="#analyze-the-symmetries-in-dispersion-relation" title="Permalink to this headline">¶</a></h2>
+<h2>2.4.2. Analyze the Symmetries in Dispersion Relation<a class="headerlink" href="#analyze-the-symmetries-in-dispersion-relation" title="Permalink to this headline">¶</a></h2>
 <p>Four velocity can be expressed in terms of spherical harmonics.</p>
 <div class="math">
 \[v^\mu = \sqrt{\pi}\begin{pmatrix} 2 &amp; \sqrt{2/3} (Y_1^{-1} - Y_1^1) &amp; i \sqrt{2/3} (Y_1^{-1} + Y_1^1) &amp; 2\sqrt{1/3} Y_1^0 \end{pmatrix}.\]</div>
