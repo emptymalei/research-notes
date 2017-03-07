@@ -26,6 +26,9 @@ where
    v^\mu &= \begin{pmatrix} 1 & \sin\theta \cos\phi & \sin\theta \sin\phi & \cos\theta \end{pmatrix}\\
    k^\mu &= \begin{pmatrix} \omega & k \sin\theta_k \cos\phi_k & k\sin\theta_k \sin\phi_k & k\cos\theta_k \end{pmatrix}.
 
+
+
+
 Parametrization of Polarization Tensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -206,10 +209,266 @@ Similar to the previous example, confining the range of :math:`n` leads to only 
 
 
 
-Analyze the Symmetries in Dispersion Relation
+
+
+
+
+
+
+Analyze the Symmetries in Polarization Tensor
 ------------------------------------------------------------------
 
-Four velocity can be expressed in terms of spherical harmonics.
+
+.. admonition:: Vectors Using Spherical Harmonics
+   :class: toggle
+
+   Four velocity can be expressed in terms of spherical harmonics.
+
+   .. math::
+      v^\mu = \sqrt{\pi}\begin{pmatrix} 2 & \sqrt{2/3} (Y_1^{-1} - Y_1^1) & i \sqrt{2/3} (Y_1^{-1} + Y_1^1) & 2\sqrt{1/3} Y_1^0 \end{pmatrix}.
+
+
+In principle, solving the dispersion relation is not easy. Neverthless, symmetries would significantly simplify the problem.
+
+Axial symmetry indicates that the integrals of first orders of :math:`\sin\phi\cos\phi`, :math:`\sin\phi`, and :math:`\cos\phi` are 0 on the range :math:`\phi\in [0,2\Pi]`.
+
+We denote the integral
 
 .. math::
-   v^\mu = \sqrt{\pi}\begin{pmatrix} 2 & \sqrt{2/3} (Y_1^{-1} - Y_1^1) & i \sqrt{2/3} (Y_1^{-1} + Y_1^1) & 2\sqrt{1/3} Y_1^0 \end{pmatrix}.
+   \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v_\nu}{\omega- k \hat{\mathbf k}\cdot \mathbf v}
+
+as :math:`P^\mu_\nu`. The polarization tensor becomes
+
+.. math::
+   \Pi^\mu_{\phantom{\mu}\nu} = I + P^\mu_{\phantom{\mu}\nu}.
+
+For axial symmetric emission, only terms :math:`P^0_{\phantom{0}0}, P^0_{\phantom{0}3}, P^3_{\phantom{3}0}, P^3_{\phantom{3}3}, P^1_{\phantom{1}1}, P^2_{\phantom{2}2}` are nonzero, given :math:`\mathbf k` in z direction, i.e., :math:`\phi_k=\theta_k=0`.
+
+To simplify the calcualtion, we denote :math:`n=\frac{\lvert \mathbf k\rvert}{\omega}`. We will NOT solve :math:`\omega(n)`. Instead we write down the form of the eigenvalues of
+
+.. math::
+   N^\mu_{\phantom{\mu}\nu} = \omega P^\mu_{\phantom{\mu}\nu},
+
+which shows is an analytical expression of :math:`\omega`. We do not solve this relation. Instead, we plugin the definition :math:`n=\frac{\lvert \mathbf  k\rvert}{\omega}` and find out the relation between :math:`\omega` and :math:`k=\lvert \mathbf k \rvert`
+
+We define
+
+.. math::
+   I_n(\theta)=\int_{-\cos\theta_2}^{-\cos\theta_1} d\cos\theta G(\theta) \frac{\cos^n\theta}{1 - n \cos\theta },
+
+where :math:`\theta_1` and :math:`\theta_2` are
+
+Since
+
+.. math::
+   \int_0^{2\pi} d\phi&=2\pi \\
+   \int_0^{2\pi} d\phi \cos^2\phi &=\int_0^{2\phi} d\phi \sin^2\phi = \pi,
+
+the matrix :math:`N^\mu_{\phantom{\mu}\nu}` is simplified,
+
+.. math::
+   N^\mu_{\phantom{\mu}\nu} = \omega P^\mu_{\phantom{\mu}\nu}\to  \begin{pmatrix}
+   \frac{1}{2}  I_0 & 0 & 0 & -\frac{1}{2}I_1\\
+   0 & -\frac{1}{4}(I_0-I_2) & 0 & 0\\
+   0 & 0 & -\frac{1}{4}(I_0-I_2) & 0 \\
+   \frac{1}{2}I_1 & 0 & 0 & -\frac{1}{2}I_2
+   \end{pmatrix}.
+
+We express the eigen values of matrix :math:`N^\mu_{\phantom{\mu}\nu}`, which we denote as :math:`\lambda_N`,
+
+.. math::
+   \omega = -\lambda_N = \frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).
+   :label: eqn-omega-n-relation-axial-sym-general
+
+
+We plug in the definition :math:`n=k/\omega` then solve dispersion relation from each of the solutions in Eq. :eq:`eqn-omega-n-relation-axial-sym-general`.
+
+The questions are
+
+1. What does each of the solutions mean?
+
+
+Eigenvalues and Axial Symmetry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+By definition, the meaning of polarization tensor, :math:`\Pi^\mu_\nu a^\nu=0` implies that :math:`a^1` and :math:`a^2` are the :math:`\phi` angle dependent components. To prove this, we rewrite :math:`Q`,
+
+.. math::
+   Q = \frac{a^\mu v_\mu}{k^\nu v_\nu},
+
+which clearly shows that the 1, and 2 component of :math:`a^\mu` is related to the phi dependence of :math:`Q`. :math:`a^1=a^2=0` indicates that :math:`Q` has no :math:`\phi` dependence.
+
+.. admonition:: Is this related to eigenvectors?
+   :class: warning
+
+
+   The eigenvalue :math:`\frac{1}{4}(I_0-I_2)` of matrix :math:`N^\mu_{\phantom{\mu}\nu}` corresponds to eigenvectors :math:`(0,0,1,0)` and :math:`(0,1,0,0)`.
+
+   I don't think it is related to eigenvalues. However, eigenvalues set limit on the actual solution. When we write down the solution to :math:`a^\mu`, the coefficients are related to each other because we have determinant of coefficient matrix being 0. There are degeneracies.
+
+
+That is to say, the part
+
+.. math::
+   \begin{pmatrix}
+   -\frac{1}{4}(I_0-I_2) & 0 \\
+   0 & -\frac{1}{4}(I_0-I_2)
+   \end{pmatrix}
+
+are the only elements that determines the whether we have a :math:`\phi` dependence in :math:`Q`, since this is the only part that needs to be acted on in Gaussian elimination method. It is obvious that we have
+
+.. math::
+   a^1=a^2=0.
+
+In turn, it determines the angle dependence of :math:`Q`,
+
+.. math::
+   Q =  \frac{a^0 - a^1\sin\theta\cos\phi - a^2\sin\theta\sin\phi - a^3 \cos\theta}{k^\mu v_\mu} = Q_0 + Q_3(\theta).
+
+We have no :math:`\phi` dependence in :math:`Q` if we foce the emission to be axially symmetric.
+
+
+
+Continuous Emission within Angle Range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this case we have to calculate :math:`I_n` specifically for the angle range, then plug in the expression :math:`n=k/\omega` to find the dispersion relation.
+
+
+Discrete Emission Beams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For discrete emission :math:`G(\theta)=\sum_i G_i \delta(\cos\theta-\cos\theta_i)`, we can define new quantities
+
+.. math::
+   \tilde I_n(\theta)= \sum_i G_i \frac{\cos^n\theta_i}{1 - n \cos\theta_i }.
+
+
+Thus
+
+.. math::
+   &\omega = \frac{1}{4}(I_0-I_2) \\
+   \Rightarrow &\omega = \frac{1}{4} \sum_i G_i \frac{1-\cos^2\theta_i}{1 - n \cos\theta_i }.
+
+
+For two sets of beams, we have
+
+.. math::
+   4 =  G_1 \frac{1-\cos^2\theta_1}{\omega - k\cos\theta_1 } + G_2 \frac{1-\cos^2\theta_2}{\omega - k \cos\theta_2 },
+
+which is a conic section. We have already used :math:`n=k/\omega`.
+
+.. admonition:: Hyperbola
+   :class: note
+
+   For an quadratic equation [HyperbolaWikipedia]_
+
+   .. math::
+      A_{xx} x^2 + 2 A_{xy} xy + A_{yy} y^2 + 2 B_x x + 2 B_y y + C = 0,
+
+   it is hyperbola if
+
+   .. math::
+      D := \begin{vmatrix} A_{xx} & A_{xy}\\A_{xy} & A_{yy} \end{vmatrix} < 0.
+
+   Center of the hyperbola :math:`(x_c,y_c)` is
+
+   .. math::
+      x_c &= -\frac{1}{D} \begin{vmatrix} B_x & A_{xy} \\ B_y & A_{yy} \end{vmatrix}\\
+      y_c &= -\frac 1 D \begin{vmatrix} A_{xx} & B_x \\A_{xy} & B_y \end{vmatrix}.
+
+   Principal axis is tilted away from x axis by angle :math:`\beta`
+
+   .. math::
+      \tan 2\beta = \frac{2A_{xy}}{A_{xx}-A_{yy}}.
+
+   .. [HyperbolaWikipedia] `Hyperbola @ Wikipedia <https://en.wikipedia.org/wiki/Hyperbola#Quadratic_equation>`_
+
+
+We can prove that this is a hyperbola. Simplify the equation to standard form of conic sections
+
+.. math::
+   4\cos\theta_1\cos\theta_2 k^2 - 2 \times 2(\cos \theta_1+\cos\theta_2) \omega k +4\omega^2  + 2 \times \frac{ G_1(1-\cos^2\theta_1)\cos\theta_2 + G_2(1-\cos^2\theta_2)\cos\theta_1 }{2} k - 2 \times\frac{ G_1(1-\cos^2\theta_1) + G_2(1-\cos^2\theta_2) }{2}  \omega = 0.
+
+
+.. admonition:: The :math:`\omega~k` plane
+   :class: toggle
+
+   We use :math:`\omega~k` plane, so that we map :math:`k` to :math:`x` and :math:`\omega` to :math:`y`.
+
+   So the coefficients are defined as
+
+   .. math::
+      A_{kk} &= 4\cos\theta_1\cos\theta_2\\
+      A_{k\omega} &= -2(\cos\theta_1+\cos\theta_2)\\
+      A_{\omega\omega} & = 4 \\
+      B_k & =  \frac{ G_1(1-\cos^2\theta_1)\cos\theta_2 + G_2(1-\cos^2\theta_2)\cos\theta_1 }{2} = \frac{\tilde G_1 \cos\theta_2 + \tilde G_2 \cos\theta_1}{2}\\
+      B_\omega & =  - \frac{ G_1(1-\cos^2\theta_1) + G_2(1-\cos^2\theta_2) }{2} = -\frac{\tilde G_1 + \tilde G_2}{2}.
+
+
+
+The condition for it to be hyperbola is :math:`D<0`, where
+
+.. math::
+   D = \begin{vmatrix}
+   4\cos\theta_1\cos\theta_2 & -2(\cos\theta_1+\cos\theta_2) \\
+   -2(\cos\theta_1+\cos\theta_2)  & 4
+   \end{vmatrix} = - 4 (\cos\theta_1-\cos\theta_2)^2.
+
+As long as we have different angles, :math:`D` is always less than 0. We always have a hyperbola. The center of the hyperbola is
+
+.. math::
+   k_c &= -\frac{1}{D} \begin{vmatrix}
+   B_k & A_{k\omega} \\
+   B_\omega & A_{\omega\omega}
+   \end{vmatrix} = \frac{1}{4 (\cos\theta_1-\cos\theta_2)^2} \begin{vmatrix}
+   \frac{ \tilde G_1\cos\theta_2 + \tilde G_2\cos\theta_1 }{2} & -2(\cos\theta_1+\cos\theta_2)\\
+   - \frac{ \tilde G_1 + \tilde G_2 }{2} & 4
+   \end{vmatrix}   \\
+   \omega_c &= -\frac{1}{D} \begin{vmatrix}
+   A_{kk} & B_k \\
+   A_{k\omega} & B_\omega
+   \end{vmatrix} = \frac{1}{4 (\cos\theta_1-\cos\theta_2)^2} \begin{vmatrix}
+   4\cos\theta_1\cos\theta_2 & \frac{ \tilde G_1\cos\theta_2 + \tilde G_2\cos\theta_1 }{2}\\
+   -2(\cos\theta_1+\cos\theta_2) & - \frac{ \tilde G_1 + \tilde G_2 }{2}
+   \end{vmatrix}  .
+
+
+A special case for it is :math:`G_1=\pm G_2`, however, the expression for the center doesn't really simplify that much.
+
+
+We are interested in gaps, so the asymptotic lines are the lines that we are interested in.
+
+First of all, we need to find out the principal axis. The angle between the principal axis and x axis is defined to be :math:`\beta`,
+
+.. math::
+   \tan2 \beta = \frac{2A_{k\omega}}{A_{kk}-A_{\omega\omega}} = \frac{\cos\theta_1+\cos\theta_2}{1-\cos\theta_1\cos\theta_2}.
+
+Suppose we have angles :math:`\theta'_i=\arctan ( \cos\theta_i )`,
+
+.. math::
+   \beta = \frac{\theta'_1+\theta'_2}{2}.
+
+This indicates that the angle :math:`\beta` is always within range :math:`\beta \in [\pi/4,\pi/4]`.
+
+
+
+.. admonition:: The other solutions
+   :class: note
+
+   For the solutions
+
+   .. math::
+      \omega = -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right),
+
+   it becomes much more complicated.
+
+
+
+
+Why is it called Polarization Tensor
+-------------------------------------------
+
+
+Why is :math:`a^\mu` called polarization vector?

@@ -414,15 +414,25 @@ The k term contributes to the difference between :math:`\Omega_{k,i}\equiv \hat\
 **Instability criteria doesn't change. However, the regime of instability changes.** We also know that the instability region is determined by
 
 .. math::
-   \lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert < \sqrt{f_1f_2\xi^2},
+   \lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert < \sqrt{-f_1f_2\xi^2},
 
 where :math:`\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2`. The instability region shift from
 
 .. math::
-   -\sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi < (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu < \sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi
+   -\sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi < (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu < \sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi
 
 If :math:`\lvert \Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2) \rvert` becomes larger, the region of instability is shifted to larger :math:`\mu`, i.e., larger number density.
 
+
+
+Number Density of Emission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A crossing is required to have instability, i.e., :math:`-f''_1f''_2>0`. Meanwhile the number density on the left and right have little effects on the existance of instability. It shifts the region of instability for :math:`\mu`.
+
+
+Energy of Emission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 

@@ -216,6 +216,10 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">3. Gravity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gravity/gravitational-waves.html">3.1. Gravitational Waves</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -239,8 +243,10 @@ TeX: {
 <li><a class="reference internal" href="#emission-angle-parity-symmetry">2.3.2.1. Emission Angle Parity Symmetry</a></li>
 <li><a class="reference internal" href="#matter-effect">2.3.2.2. Matter Effect</a></li>
 <li><a class="reference internal" href="#translational-symmetry">2.3.2.3. Translational Symmetry</a></li>
-<li><a class="reference internal" href="#time-translational-symmetry">2.3.2.4. Time Translational Symmetry</a></li>
-<li><a class="reference internal" href="#numerical-calculations">2.3.2.5. Numerical Calculations</a></li>
+<li><a class="reference internal" href="#number-density-of-emission">2.3.2.4. Number Density of Emission</a></li>
+<li><a class="reference internal" href="#energy-of-emission">2.3.2.5. Energy of Emission</a></li>
+<li><a class="reference internal" href="#time-translational-symmetry">2.3.2.6. Time Translational Symmetry</a></li>
+<li><a class="reference internal" href="#numerical-calculations">2.3.2.7. Numerical Calculations</a></li>
 </ul>
 </li>
 </ul>
@@ -570,14 +576,21 @@ Q_2
 <p>The k term contributes to the difference between <span class="math">\(\Omega_{k,i}\equiv \hat\omega''_{k,i}+ f''_i\xi\)</span>.</p>
 <p><strong>Instability criteria doesn&#8217;t change. However, the regime of instability changes.</strong> We also know that the instability region is determined by</p>
 <div class="math">
-\[\lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert &lt; \sqrt{f_1f_2\xi^2},\]</div>
+\[\lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert &lt; \sqrt{-f_1f_2\xi^2},\]</div>
 <p>where <span class="math">\(\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2\)</span>. The instability region shift from</p>
 <div class="math">
-\[-\sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi &lt; (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu &lt; \sqrt{f''_1f''_2\xi^2} -\Delta f''_{12}\xi\]</div>
+\[-\sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi &lt; (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu &lt; \sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi\]</div>
 <p>If <span class="math">\(\lvert \Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2) \rvert\)</span> becomes larger, the region of instability is shifted to larger <span class="math">\(\mu\)</span>, i.e., larger number density.</p>
 </div>
+<div class="section" id="number-density-of-emission">
+<h3>2.3.2.4. Number Density of Emission<a class="headerlink" href="#number-density-of-emission" title="Permalink to this headline">¶</a></h3>
+<p>A crossing is required to have instability, i.e., <span class="math">\(-f''_1f''_2&gt;0\)</span>. Meanwhile the number density on the left and right have little effects on the existance of instability. It shifts the region of instability for <span class="math">\(\mu\)</span>.</p>
+</div>
+<div class="section" id="energy-of-emission">
+<h3>2.3.2.5. Energy of Emission<a class="headerlink" href="#energy-of-emission" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="time-translational-symmetry">
-<h3>2.3.2.4. Time Translational Symmetry<a class="headerlink" href="#time-translational-symmetry" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.2.6. Time Translational Symmetry<a class="headerlink" href="#time-translational-symmetry" title="Permalink to this headline">¶</a></h3>
 <div class="warning admonition">
 <p class="first admonition-title">Time Translational Symmetry</p>
 <p>How about time translational symmetry? I need to write down the equation of motion that is related to time.</p>
@@ -589,7 +602,7 @@ Q_2
 </div>
 </div>
 <div class="section" id="numerical-calculations">
-<h3>2.3.2.5. Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.2.7. Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
 <p>We assume the two beams have different energy, as indicated by <span class="math">\(\omega_1\)</span> and <span class="math">\(\omega_2\)</span> in Eq. <a class="reference internal" href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a>.</p>
 <p>For numerical calcualtions, we scale quantities using <span class="math">\(\mu\)</span>.</p>
 <p>With symmetric angles for the two beams, I didn&#8217;t find instabilities. However, <span class="math">\(\theta_1\neq \theta_2\)</span> leads to instabilities in IH, which is consistant with our expections.</p>

@@ -34,6 +34,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Gravity" href="../gravity/index.html" />
     <link rel="prev" title="2.3. Some Clarifications" href="some-clarifications.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -215,6 +216,10 @@ TeX: {
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Dispersion Relation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">3. Gravity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gravity/gravitational-waves.html">3.1. Gravitational Waves</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -234,7 +239,13 @@ TeX: {
 <li><a class="reference internal" href="#examples-of-parametrization">2.4.1.2. Examples of Parametrization</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#analyze-the-symmetries-in-dispersion-relation">2.4.2. Analyze the Symmetries in Dispersion Relation</a></li>
+<li><a class="reference internal" href="#analyze-the-symmetries-in-polarization-tensor">2.4.2. Analyze the Symmetries in Polarization Tensor</a><ul>
+<li><a class="reference internal" href="#eigenvalues-and-axial-symmetry">2.4.2.1. Eigenvalues and Axial Symmetry</a></li>
+<li><a class="reference internal" href="#continuous-emission-within-angle-range">2.4.2.2. Continuous Emission within Angle Range</a></li>
+<li><a class="reference internal" href="#discrete-emission-beams">2.4.2.3. Discrete Emission Beams</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#why-is-it-called-polarization-tensor">2.4.3. Why is it called Polarization Tensor</a></li>
 </ul>
 </li>
 </ul>
@@ -247,6 +258,10 @@ TeX: {
                 
   <li>
     <a href="some-clarifications.html" title="Previous Chapter: 2.3. Some Clarifications"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2.3. Some Cla...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../gravity/index.html" title="Next Chapter: 3. Gravity"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3. Gravity &raquo;</span>
     </a>
   </li>
               
@@ -339,16 +354,16 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 <p>Raffelt et al proposed that can now solve the dispersion relation by finding the value of <span class="math">\(k^\mu(n)\)</span> for each n. We make the plot <span class="math">\(\omega\)</span> vs <span class="math">\(\mathbf k\)</span>.</p>
 <p>Here is an example that I calculated.</p>
 <p>The axial symmetric system can be calculated easily using this method. The paper gave an example of two polar angle beams with axial symmetry.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <img alt="../_images/listpltOmegan1.png" src="../_images/listpltOmegan1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.14 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for <span class="math">\(G=0.5 \delta(\cos\theta- 0.8) + 0.5 \delta(\cos\theta+0.2)\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <img alt="../_images/listpltDispersionRelationDecompose1.png" src="../_images/listpltDispersionRelationDecompose1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Dispersion relation.</span></p>
 </div>
 <p>We can check what happens for multibeams. I can plot the dispersion relation for similar configuration but with different number of beams.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <img alt="../_images/listanimi1.png" src="../_images/listanimi1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.16 </span><span class="caption-text">Animition of dispersion relation.</span></p>
 <div class="legend">
@@ -365,7 +380,7 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 <a class="reference internal image-reference" href="../_images/listpltOmegan12List-8.png"><img alt="../_images/listpltOmegan12List-8.png" src="../_images/listpltOmegan12List-8.png" style="width: 49%;" /></a>
 <a class="reference internal image-reference" href="../_images/listpltOmegan12List-10.png"><img alt="../_images/listpltOmegan12List-10.png" src="../_images/listpltOmegan12List-10.png" style="width: 49%;" /></a>
 <p>Similar to the previous example, confining the range of <span class="math">\(n\)</span> leads to only a partial patch of the dispersion relation.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <img alt="../_images/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png" src="../_images/pltDiffBeamsConfined-n-in--1-to-1-beams-10.png" />
 <p class="caption"><span class="caption-number">Fig. 2.17 </span><span class="caption-text">The code for it</span></p>
 <div class="legend">
@@ -381,12 +396,12 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 <div class="warning admonition">
 <p class="first admonition-title">This should be the continuous limit?</p>
 <p>As a comparison, we can plot the dispersion relation in a larger range of n for 10 beams.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <img alt="../_images/listpltOmegan12List-10.png" src="../_images/listpltOmegan12List-10.png" />
 <p class="caption"><span class="caption-number">Fig. 2.18 </span><span class="caption-text">10 beams.</span></p>
 </div>
 <p>On the other hand, we can calculate the continuous limit for the same angle range.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img alt="../_images/compare-continuous-and-10-beams-within-n-range--1-to-1.png" src="../_images/compare-continuous-and-10-beams-within-n-range--1-to-1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Dispersion relation for 10 beams (<span class="math">\(n\in [-1,1]\)</span>), and continuous limit.</span></p>
 </div>
@@ -394,11 +409,172 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 </div>
 </div>
 </div>
-<div class="section" id="analyze-the-symmetries-in-dispersion-relation">
-<h2>2.4.2. Analyze the Symmetries in Dispersion Relation<a class="headerlink" href="#analyze-the-symmetries-in-dispersion-relation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="analyze-the-symmetries-in-polarization-tensor">
+<h2>2.4.2. Analyze the Symmetries in Polarization Tensor<a class="headerlink" href="#analyze-the-symmetries-in-polarization-tensor" title="Permalink to this headline">¶</a></h2>
+<div class="toggle admonition">
+<p class="first admonition-title">Vectors Using Spherical Harmonics</p>
 <p>Four velocity can be expressed in terms of spherical harmonics.</p>
-<div class="math">
+<div class="last math">
 \[v^\mu = \sqrt{\pi}\begin{pmatrix} 2 &amp; \sqrt{2/3} (Y_1^{-1} - Y_1^1) &amp; i \sqrt{2/3} (Y_1^{-1} + Y_1^1) &amp; 2\sqrt{1/3} Y_1^0 \end{pmatrix}.\]</div>
+</div>
+<p>In principle, solving the dispersion relation is not easy. Neverthless, symmetries would significantly simplify the problem.</p>
+<p>Axial symmetry indicates that the integrals of first orders of <span class="math">\(\sin\phi\cos\phi\)</span>, <span class="math">\(\sin\phi\)</span>, and <span class="math">\(\cos\phi\)</span> are 0 on the range <span class="math">\(\phi\in [0,2\Pi]\)</span>.</p>
+<p>We denote the integral</p>
+<div class="math">
+\[\int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v_\nu}{\omega- k \hat{\mathbf k}\cdot \mathbf v}\]</div>
+<p>as <span class="math">\(P^\mu_\nu\)</span>. The polarization tensor becomes</p>
+<div class="math">
+\[\Pi^\mu_{\phantom{\mu}\nu} = I + P^\mu_{\phantom{\mu}\nu}.\]</div>
+<p>For axial symmetric emission, only terms <span class="math">\(P^0_{\phantom{0}0}, P^0_{\phantom{0}3}, P^3_{\phantom{3}0}, P^3_{\phantom{3}3}, P^1_{\phantom{1}1}, P^2_{\phantom{2}2}\)</span> are nonzero, given <span class="math">\(\mathbf k\)</span> in z direction, i.e., <span class="math">\(\phi_k=\theta_k=0\)</span>.</p>
+<p>To simplify the calcualtion, we denote <span class="math">\(n=\frac{\lvert \mathbf k\rvert}{\omega}\)</span>. We will NOT solve <span class="math">\(\omega(n)\)</span>. Instead we write down the form of the eigenvalues of</p>
+<div class="math">
+\[N^\mu_{\phantom{\mu}\nu} = \omega P^\mu_{\phantom{\mu}\nu},\]</div>
+<p>which shows is an analytical expression of <span class="math">\(\omega\)</span>. We do not solve this relation. Instead, we plugin the definition <span class="math">\(n=\frac{\lvert \mathbf  k\rvert}{\omega}\)</span> and find out the relation between <span class="math">\(\omega\)</span> and <span class="math">\(k=\lvert \mathbf k \rvert\)</span></p>
+<p>We define</p>
+<div class="math">
+\[I_n(\theta)=\int_{-\cos\theta_2}^{-\cos\theta_1} d\cos\theta G(\theta) \frac{\cos^n\theta}{1 - n \cos\theta },\]</div>
+<p>where <span class="math">\(\theta_1\)</span> and <span class="math">\(\theta_2\)</span> are</p>
+<p>Since</p>
+<div class="math">
+\[\begin{split}\int_0^{2\pi} d\phi&amp;=2\pi \\
+\int_0^{2\pi} d\phi \cos^2\phi &amp;=\int_0^{2\phi} d\phi \sin^2\phi = \pi,\end{split}\]</div>
+<p>the matrix <span class="math">\(N^\mu_{\phantom{\mu}\nu}\)</span> is simplified,</p>
+<div class="math">
+\[\begin{split}N^\mu_{\phantom{\mu}\nu} = \omega P^\mu_{\phantom{\mu}\nu}\to  \begin{pmatrix}
+\frac{1}{2}  I_0 &amp; 0 &amp; 0 &amp; -\frac{1}{2}I_1\\
+0 &amp; -\frac{1}{4}(I_0-I_2) &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -\frac{1}{4}(I_0-I_2) &amp; 0 \\
+\frac{1}{2}I_1 &amp; 0 &amp; 0 &amp; -\frac{1}{2}I_2
+\end{pmatrix}.\end{split}\]</div>
+<p>We express the eigen values of matrix <span class="math">\(N^\mu_{\phantom{\mu}\nu}\)</span>, which we denote as <span class="math">\(\lambda_N\)</span>,</p>
+<div class="math" id="equation-eqn-omega-n-relation-axial-sym-general">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-omega-n-relation-axial-sym-general" title="Permalink to this equation">¶</a></span>\[\omega = -\lambda_N = \frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
+<p>We plug in the definition <span class="math">\(n=k/\omega\)</span> then solve dispersion relation from each of the solutions in Eq. <a class="reference internal" href="#equation-eqn-omega-n-relation-axial-sym-general">(1)</a>.</p>
+<p>The questions are</p>
+<ol class="arabic simple">
+<li>What does each of the solutions mean?</li>
+</ol>
+<div class="section" id="eigenvalues-and-axial-symmetry">
+<h3>2.4.2.1. Eigenvalues and Axial Symmetry<a class="headerlink" href="#eigenvalues-and-axial-symmetry" title="Permalink to this headline">¶</a></h3>
+<p>By definition, the meaning of polarization tensor, <span class="math">\(\Pi^\mu_\nu a^\nu=0\)</span> implies that <span class="math">\(a^1\)</span> and <span class="math">\(a^2\)</span> are the <span class="math">\(\phi\)</span> angle dependent components. To prove this, we rewrite <span class="math">\(Q\)</span>,</p>
+<div class="math">
+\[Q = \frac{a^\mu v_\mu}{k^\nu v_\nu},\]</div>
+<p>which clearly shows that the 1, and 2 component of <span class="math">\(a^\mu\)</span> is related to the phi dependence of <span class="math">\(Q\)</span>. <span class="math">\(a^1=a^2=0\)</span> indicates that <span class="math">\(Q\)</span> has no <span class="math">\(\phi\)</span> dependence.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Is this related to eigenvectors?</p>
+<p>The eigenvalue <span class="math">\(\frac{1}{4}(I_0-I_2)\)</span> of matrix <span class="math">\(N^\mu_{\phantom{\mu}\nu}\)</span> corresponds to eigenvectors <span class="math">\((0,0,1,0)\)</span> and <span class="math">\((0,1,0,0)\)</span>.</p>
+<p class="last">I don&#8217;t think it is related to eigenvalues. However, eigenvalues set limit on the actual solution. When we write down the solution to <span class="math">\(a^\mu\)</span>, the coefficients are related to each other because we have determinant of coefficient matrix being 0. There are degeneracies.</p>
+</div>
+<p>That is to say, the part</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+-\frac{1}{4}(I_0-I_2) &amp; 0 \\
+0 &amp; -\frac{1}{4}(I_0-I_2)
+\end{pmatrix}\end{split}\]</div>
+<p>are the only elements that determines the whether we have a <span class="math">\(\phi\)</span> dependence in <span class="math">\(Q\)</span>, since this is the only part that needs to be acted on in Gaussian elimination method. It is obvious that we have</p>
+<div class="math">
+\[a^1=a^2=0.\]</div>
+<p>In turn, it determines the angle dependence of <span class="math">\(Q\)</span>,</p>
+<div class="math">
+\[Q =  \frac{a^0 - a^1\sin\theta\cos\phi - a^2\sin\theta\sin\phi - a^3 \cos\theta}{k^\mu v_\mu} = Q_0 + Q_3(\theta).\]</div>
+<p>We have no <span class="math">\(\phi\)</span> dependence in <span class="math">\(Q\)</span> if we foce the emission to be axially symmetric.</p>
+</div>
+<div class="section" id="continuous-emission-within-angle-range">
+<h3>2.4.2.2. Continuous Emission within Angle Range<a class="headerlink" href="#continuous-emission-within-angle-range" title="Permalink to this headline">¶</a></h3>
+<p>In this case we have to calculate <span class="math">\(I_n\)</span> specifically for the angle range, then plug in the expression <span class="math">\(n=k/\omega\)</span> to find the dispersion relation.</p>
+</div>
+<div class="section" id="discrete-emission-beams">
+<h3>2.4.2.3. Discrete Emission Beams<a class="headerlink" href="#discrete-emission-beams" title="Permalink to this headline">¶</a></h3>
+<p>For discrete emission <span class="math">\(G(\theta)=\sum_i G_i \delta(\cos\theta-\cos\theta_i)\)</span>, we can define new quantities</p>
+<div class="math">
+\[\tilde I_n(\theta)= \sum_i G_i \frac{\cos^n\theta_i}{1 - n \cos\theta_i }.\]</div>
+<p>Thus</p>
+<div class="math">
+\[\begin{split}&amp;\omega = \frac{1}{4}(I_0-I_2) \\
+\Rightarrow &amp;\omega = \frac{1}{4} \sum_i G_i \frac{1-\cos^2\theta_i}{1 - n \cos\theta_i }.\end{split}\]</div>
+<p>For two sets of beams, we have</p>
+<div class="math">
+\[4 =  G_1 \frac{1-\cos^2\theta_1}{\omega - k\cos\theta_1 } + G_2 \frac{1-\cos^2\theta_2}{\omega - k \cos\theta_2 },\]</div>
+<p>which is a conic section. We have already used <span class="math">\(n=k/\omega\)</span>.</p>
+<div class="note admonition">
+<p class="first admonition-title">Hyperbola</p>
+<p>For an quadratic equation <a class="reference internal" href="#hyperbolawikipedia" id="id1">[HyperbolaWikipedia]</a></p>
+<div class="math">
+\[A_{xx} x^2 + 2 A_{xy} xy + A_{yy} y^2 + 2 B_x x + 2 B_y y + C = 0,\]</div>
+<p>it is hyperbola if</p>
+<div class="math">
+\[\begin{split}D := \begin{vmatrix} A_{xx} &amp; A_{xy}\\A_{xy} &amp; A_{yy} \end{vmatrix} &lt; 0.\end{split}\]</div>
+<p>Center of the hyperbola <span class="math">\((x_c,y_c)\)</span> is</p>
+<div class="math">
+\[\begin{split}x_c &amp;= -\frac{1}{D} \begin{vmatrix} B_x &amp; A_{xy} \\ B_y &amp; A_{yy} \end{vmatrix}\\
+y_c &amp;= -\frac 1 D \begin{vmatrix} A_{xx} &amp; B_x \\A_{xy} &amp; B_y \end{vmatrix}.\end{split}\]</div>
+<p>Principal axis is tilted away from x axis by angle <span class="math">\(\beta\)</span></p>
+<div class="math">
+\[\tan 2\beta = \frac{2A_{xy}}{A_{xx}-A_{yy}}.\]</div>
+<table class="last docutils citation" frame="void" id="hyperbolawikipedia" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[HyperbolaWikipedia]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Hyperbola#Quadratic_equation">Hyperbola &#64; Wikipedia</a></td></tr>
+</tbody>
+</table>
+</div>
+<p>We can prove that this is a hyperbola. Simplify the equation to standard form of conic sections</p>
+<div class="math">
+\[4\cos\theta_1\cos\theta_2 k^2 - 2 \times 2(\cos \theta_1+\cos\theta_2) \omega k +4\omega^2  + 2 \times \frac{ G_1(1-\cos^2\theta_1)\cos\theta_2 + G_2(1-\cos^2\theta_2)\cos\theta_1 }{2} k - 2 \times\frac{ G_1(1-\cos^2\theta_1) + G_2(1-\cos^2\theta_2) }{2}  \omega = 0.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">The <span class="math">\(\omega~k\)</span> plane</p>
+<p>We use <span class="math">\(\omega~k\)</span> plane, so that we map <span class="math">\(k\)</span> to <span class="math">\(x\)</span> and <span class="math">\(\omega\)</span> to <span class="math">\(y\)</span>.</p>
+<p>So the coefficients are defined as</p>
+<div class="last math">
+\[\begin{split}A_{kk} &amp;= 4\cos\theta_1\cos\theta_2\\
+A_{k\omega} &amp;= -2(\cos\theta_1+\cos\theta_2)\\
+A_{\omega\omega} &amp; = 4 \\
+B_k &amp; =  \frac{ G_1(1-\cos^2\theta_1)\cos\theta_2 + G_2(1-\cos^2\theta_2)\cos\theta_1 }{2} = \frac{\tilde G_1 \cos\theta_2 + \tilde G_2 \cos\theta_1}{2}\\
+B_\omega &amp; =  - \frac{ G_1(1-\cos^2\theta_1) + G_2(1-\cos^2\theta_2) }{2} = -\frac{\tilde G_1 + \tilde G_2}{2}.\end{split}\]</div>
+</div>
+<p>The condition for it to be hyperbola is <span class="math">\(D&lt;0\)</span>, where</p>
+<div class="math">
+\[\begin{split}D = \begin{vmatrix}
+4\cos\theta_1\cos\theta_2 &amp; -2(\cos\theta_1+\cos\theta_2) \\
+-2(\cos\theta_1+\cos\theta_2)  &amp; 4
+\end{vmatrix} = - 4 (\cos\theta_1-\cos\theta_2)^2.\end{split}\]</div>
+<p>As long as we have different angles, <span class="math">\(D\)</span> is always less than 0. We always have a hyperbola. The center of the hyperbola is</p>
+<div class="math">
+\[\begin{split}k_c &amp;= -\frac{1}{D} \begin{vmatrix}
+B_k &amp; A_{k\omega} \\
+B_\omega &amp; A_{\omega\omega}
+\end{vmatrix} = \frac{1}{4 (\cos\theta_1-\cos\theta_2)^2} \begin{vmatrix}
+\frac{ \tilde G_1\cos\theta_2 + \tilde G_2\cos\theta_1 }{2} &amp; -2(\cos\theta_1+\cos\theta_2)\\
+- \frac{ \tilde G_1 + \tilde G_2 }{2} &amp; 4
+\end{vmatrix}   \\
+\omega_c &amp;= -\frac{1}{D} \begin{vmatrix}
+A_{kk} &amp; B_k \\
+A_{k\omega} &amp; B_\omega
+\end{vmatrix} = \frac{1}{4 (\cos\theta_1-\cos\theta_2)^2} \begin{vmatrix}
+4\cos\theta_1\cos\theta_2 &amp; \frac{ \tilde G_1\cos\theta_2 + \tilde G_2\cos\theta_1 }{2}\\
+-2(\cos\theta_1+\cos\theta_2) &amp; - \frac{ \tilde G_1 + \tilde G_2 }{2}
+\end{vmatrix}  .\end{split}\]</div>
+<p>A special case for it is <span class="math">\(G_1=\pm G_2\)</span>, however, the expression for the center doesn&#8217;t really simplify that much.</p>
+<p>We are interested in gaps, so the asymptotic lines are the lines that we are interested in.</p>
+<p>First of all, we need to find out the principal axis. The angle between the principal axis and x axis is defined to be <span class="math">\(\beta\)</span>,</p>
+<div class="math">
+\[\tan2 \beta = \frac{2A_{k\omega}}{A_{kk}-A_{\omega\omega}} = \frac{\cos\theta_1+\cos\theta_2}{1-\cos\theta_1\cos\theta_2}.\]</div>
+<p>Suppose we have angles <span class="math">\(\theta'_i=\arctan ( \cos\theta_i )\)</span>,</p>
+<div class="math">
+\[\beta = \frac{\theta'_1+\theta'_2}{2}.\]</div>
+<p>This indicates that the angle <span class="math">\(\beta\)</span> is always within range <span class="math">\(\beta \in [\pi/4,\pi/4]\)</span>.</p>
+<div class="note admonition">
+<p class="first admonition-title">The other solutions</p>
+<p>For the solutions</p>
+<div class="math">
+\[\omega = -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right),\]</div>
+<p class="last">it becomes much more complicated.</p>
+</div>
+</div>
+</div>
+<div class="section" id="why-is-it-called-polarization-tensor">
+<h2>2.4.3. Why is it called Polarization Tensor<a class="headerlink" href="#why-is-it-called-polarization-tensor" title="Permalink to this headline">¶</a></h2>
+<p>Why is <span class="math">\(a^\mu\)</span> called polarization vector?</p>
 </div>
 </div>
 
