@@ -11,7 +11,7 @@ Basics
 If we ignore the cross terms, line element is
 
 .. math::
-   ds^2 = -dt^2 + (1+h_+) dx^2 + (1-h+) dy^2 + dz^2,
+   ds^2 = -dt^2 + (1+h_+) dx^2 + (1-h_+) dy^2 + dz^2,
 
 where
 
