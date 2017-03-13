@@ -472,3 +472,57 @@ Why is it called Polarization Tensor
 
 
 Why is :math:`a^\mu` called polarization vector?
+
+We kind of see why :math:`a^\mu` is some kind of polarization given the definition
+
+.. math::
+   a^\mu = -\int d\Gamma v^\mu G(\theta,\phi) Q(\theta,\phi).
+
+In some sense it is a weighted average of :math:`Q`. And :math:`S = Q e^{-i k^\mu x_\mu}` is the "field" we are insterested in.
+
+Comparing to electrodynamics, where we have the field :math:`A^\mu` which tells us about the polarization,
+
+
+.. admonition:: Polarization in Electrodynamics
+   :class: toggle
+
+   We can assume that the four vector field is
+
+   .. math::
+      A^\mu = \epsilon^\mu a e^{-ikx} + {\epsilon^\mu}^*  a^* e^{ikx} \qquad \text{with}\quad k_\mu k^\mu =0.
+
+   We make sense of it by interpretating :math:`\epsilon^\mu` as the polarization vector and :math:`a` as the amplitude of the field strength. This solution is only for one particular case. We use it as an example because it is simple.
+
+   To calculate the electric field, :math:`E^i` where :math:`i=1,2,3`, we apply the definition of it
+
+   .. math::
+      E^i = - F^{0i}.
+
+   By working it out, we find :math:`\epsilon^i`, which is the spatial part of :math:`\epsilon^\mu`, indeed plays a role in the direction of field.
+
+
+
+
+
+Discrete Case and Continuous Case
+--------------------------------------
+
+
+Will we have a continuous case if the number of beams is infinite.
+
+For discrete case
+
+.. math::
+   I_0 - I_2 = \sum_{i=1}^N G_i \frac{ 1-\cos^2\theta_i }{\omega - k \cos \theta_i} = \sum_i G_i \frac{1-u_i^2}{\omega-k u_i}.
+   :label: eqn-discrete-beams-i0-i2
+
+The continuous case is
+
+.. math::
+   I_0 - I_2 = \int d\cos\theta  G(\cos\theta) \frac{1 - \cos^2\theta}{\omega- k \cos\theta} = \int du G(u) \frac{1-u^2}{\omega-k u} .
+   :label: eqn-conti-beams-i0-i2
+
+
+We notice that Eq. :eq:`eqn-discrete-beams-i0-i2` and Eq. :eq:`eqn-conti-beams-i0-i2` are the same when number of beams becomes large.
+
+:math:`G_i` is in fact :math:`G_i = g_i \Delta u_i`, where :math:`\Delta u_i` is the range of :math:`\cos \theta_i` around :math:`\theta_i`.

@@ -220,6 +220,10 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="../gravity/gravitational-waves.html">3.1. Gravitational Waves</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../group-meeting/index.html">4. Group Meeting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../group-meeting/2017/index.html">4.1. Group Meeting 2017</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -246,6 +250,7 @@ TeX: {
 </ul>
 </li>
 <li><a class="reference internal" href="#why-is-it-called-polarization-tensor">2.4.3. Why is it called Polarization Tensor</a></li>
+<li><a class="reference internal" href="#discrete-case-and-continuous-case">2.4.4. Discrete Case and Continuous Case</a></li>
 </ul>
 </li>
 </ul>
@@ -575,6 +580,34 @@ A_{k\omega} &amp; B_\omega
 <div class="section" id="why-is-it-called-polarization-tensor">
 <h2>2.4.3. Why is it called Polarization Tensor<a class="headerlink" href="#why-is-it-called-polarization-tensor" title="Permalink to this headline">¶</a></h2>
 <p>Why is <span class="math">\(a^\mu\)</span> called polarization vector?</p>
+<p>We kind of see why <span class="math">\(a^\mu\)</span> is some kind of polarization given the definition</p>
+<div class="math">
+\[a^\mu = -\int d\Gamma v^\mu G(\theta,\phi) Q(\theta,\phi).\]</div>
+<p>In some sense it is a weighted average of <span class="math">\(Q\)</span>. And <span class="math">\(S = Q e^{-i k^\mu x_\mu}\)</span> is the &#8220;field&#8221; we are insterested in.</p>
+<p>Comparing to electrodynamics, where we have the field <span class="math">\(A^\mu\)</span> which tells us about the polarization,</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Polarization in Electrodynamics</p>
+<p>We can assume that the four vector field is</p>
+<div class="math">
+\[A^\mu = \epsilon^\mu a e^{-ikx} + {\epsilon^\mu}^*  a^* e^{ikx} \qquad \text{with}\quad k_\mu k^\mu =0.\]</div>
+<p>We make sense of it by interpretating <span class="math">\(\epsilon^\mu\)</span> as the polarization vector and <span class="math">\(a\)</span> as the amplitude of the field strength. This solution is only for one particular case. We use it as an example because it is simple.</p>
+<p>To calculate the electric field, <span class="math">\(E^i\)</span> where <span class="math">\(i=1,2,3\)</span>, we apply the definition of it</p>
+<div class="math">
+\[E^i = - F^{0i}.\]</div>
+<p class="last">By working it out, we find <span class="math">\(\epsilon^i\)</span>, which is the spatial part of <span class="math">\(\epsilon^\mu\)</span>, indeed plays a role in the direction of field.</p>
+</div>
+</div>
+<div class="section" id="discrete-case-and-continuous-case">
+<h2>2.4.4. Discrete Case and Continuous Case<a class="headerlink" href="#discrete-case-and-continuous-case" title="Permalink to this headline">¶</a></h2>
+<p>Will we have a continuous case if the number of beams is infinite.</p>
+<p>For discrete case</p>
+<div class="math" id="equation-eqn-discrete-beams-i0-i2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-discrete-beams-i0-i2" title="Permalink to this equation">¶</a></span>\[I_0 - I_2 = \sum_{i=1}^N G_i \frac{ 1-\cos^2\theta_i }{\omega - k \cos \theta_i} = \sum_i G_i \frac{1-u_i^2}{\omega-k u_i}.\]</div>
+<p>The continuous case is</p>
+<div class="math" id="equation-eqn-conti-beams-i0-i2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-conti-beams-i0-i2" title="Permalink to this equation">¶</a></span>\[I_0 - I_2 = \int d\cos\theta  G(\cos\theta) \frac{1 - \cos^2\theta}{\omega- k \cos\theta} = \int du G(u) \frac{1-u^2}{\omega-k u} .\]</div>
+<p>We notice that Eq. <a class="reference internal" href="#equation-eqn-discrete-beams-i0-i2">(2)</a> and Eq. <a class="reference internal" href="#equation-eqn-conti-beams-i0-i2">(3)</a> are the same when number of beams becomes large.</p>
+<p><span class="math">\(G_i\)</span> is in fact <span class="math">\(G_i = g_i \Delta u_i\)</span>, where <span class="math">\(\Delta u_i\)</span> is the range of <span class="math">\(\cos \theta_i\)</span> around <span class="math">\(\theta_i\)</span>.</p>
 </div>
 </div>
 

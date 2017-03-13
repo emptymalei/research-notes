@@ -1,6 +1,27 @@
 Gravitational Waves
 ==============================
 
+
+Basics
+----------------------------
+
+
+
+
+If we ignore the cross terms, line element is
+
+.. math::
+   ds^2 = -dt^2 + (1+h_+) dx^2 + (1-h+) dy^2 + dz^2,
+
+where
+
+.. math::
+   h_+ = A^{xx} \exp( i k(z-t) ).
+
+
+Some Estimations
+------------------------
+
 As an estimation, the power of gravitation waves drop as :math:`1/r^2`. Thus the strain drops as :math:`1/r`.
 
 For compact binary coalescence, the circular polarized wave at distance r is [Riles2013]_
@@ -38,6 +59,17 @@ As an example, we plot the evolution as a function of :math:`\tau` for 1.4 solar
 
 
 The size of the disk of neutron star mergers are of the order :math:`10 km` [Foucart2012]_.
+
+
+
+
+
+
+Build a Model
+------------------------------
+
+
+
 
 
 References and Notes

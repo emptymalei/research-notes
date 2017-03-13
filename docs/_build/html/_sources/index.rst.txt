@@ -58,3 +58,4 @@ Sitemap can be downloaded: :download:`sitemap.xml <assets/sitemap.xml>` or :down
    matter-stimulated/index.rst
    collective/index.rst
    gravity/index.rst
+   group-meeting/index.rst
