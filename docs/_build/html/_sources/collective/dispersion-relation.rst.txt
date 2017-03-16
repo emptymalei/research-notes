@@ -254,7 +254,7 @@ which shows is an analytical expression of :math:`\omega`. We do not solve this 
 We define
 
 .. math::
-   I_n(\theta)=\int_{-\cos\theta_2}^{-\cos\theta_1} d\cos\theta G(\theta) \frac{\cos^n\theta}{1 - n \cos\theta },
+   I_n(\theta)=\int_{\cos\theta_2}^{\cos\theta_1} d\cos\theta G(\theta) \frac{\cos^n\theta}{1 - n \cos\theta },
 
 where :math:`\theta_1` and :math:`\theta_2` are
 
