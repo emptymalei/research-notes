@@ -189,6 +189,8 @@ For neutron star mergers, :math:`h_\times=-h_+`. The first solution is reduced t
 
    How can I make sure I am can use this method?
 
+   Even the previous calculations are valid, gravitational waves seems to break the symmetries in the emission surface. The question to ask is **the effect of breaking emission surface symmetry anyway**.
+
 
 References and Notes
 -----------------------

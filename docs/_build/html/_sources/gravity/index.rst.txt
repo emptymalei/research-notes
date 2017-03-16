@@ -5,5 +5,5 @@ Gravity
 .. toctree::
    :maxdepth: 2
 
-   .. trajectory.rst
+   equation-of-motion.rst
    gravitational-waves.rst

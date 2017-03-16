@@ -17,3 +17,10 @@ About numerical calculations
 About analytical analysis
 
 1. I should have the discrete case approaching the continuous case when the number of beams becomes large.
+
+
+2017-03-16
+----------------------
+
+
+1. Solved the continuous case but the result is weird, both for homogeneous and nonhonogeous case.

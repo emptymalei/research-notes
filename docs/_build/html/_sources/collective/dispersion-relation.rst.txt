@@ -502,6 +502,82 @@ Comparing to electrodynamics, where we have the field :math:`A^\mu` which tells 
 
 
 
+Solving Continuous Emission
+-----------------------------------------
+
+Suppose neutrinos are emitted within a angle range :math:`[\theta_1,\theta_2]`. Using Mathematica, we find the three important integrals
+
+.. math::
+   I_0 &= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
+      &= \frac{\omega}{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \\
+   I_1 &= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
+   & =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \right) \\
+   I_2 &= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
+   &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \right).
+
+
+where :math:`c_1=\cos\theta_1` and :math:`c_2=\cos\theta_2`.
+
+
+Homogeneous Emission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Assuming :math:`G=1`, the MAA solution is
+
+.. math::
+   -4 = I_0 - I_2,
+
+which becomes
+
+.. math::
+   \ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.
+   :label: eqn-dr-continuous-angle-range
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-graphic-solution.png
+   :align: center
+
+   LHS and RHS of Eq. :eq:`eqn-dr-continuous-angle-range`. The :math:`n` values where the LHS = RHS are :math:`n\sim -1, -0.35, 0.9, 1`. The value -0.35 can be found usng FindRoot, but all other values are approximated guesses.
+
+
+.. admonition:: -0.35?
+   :class: warning
+
+   I was wondering whether this -0.35 is of any importance. So I ploted the line :math:`\pm 0.35 k` on top of the :math:`\omega\sim k` plot. Didn't find any match to the discrete solutions.
+
+   .. figure:: assets/dispersion-relation/DR-omega-k-direct-4-beams.png
+      :align: center
+
+      4 Beams
+
+
+
+Emission with Crossing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+I have to break each of the integral into two parts. I calculate :math:`I_0-I_2` for the first region then add to it the second region. Within a region :math:`[\theta_1,\theta_2]` and :math:`G=g`,
+
+.. math::
+   RHS(c_1,c_2)=I_0-I_2 = g \left[ \left( \frac{1}{n} - \frac{1}{n^3} \right)\ln\left( \frac{1-n c_2}{1-n c_1} \right) - \frac{c_2-c_1}{n} \left( \frac{c_1+c_2}{2} + \frac{1}{n} \right) \right].
+
+
+The dispersion relation is given by
+
+.. math::
+   -4 = RHS(c_1,c_0) + RHS(c_0,c_2).
+
+I can plot the RHS.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions.png
+   :align: center
+
+   Function value for :math:`RHS(c_1,c_0) + RHS(c_0,c_2)`. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
+
+The reason we have no real values between :math:`1/0.9` and :math:`1/0.3` is because the argument of the ln function is negative within this regime.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-arg-ln.png
+   :align: center
+
+   The argument of the ln function for RHS.
 
 
 Discrete Case and Continuous Case
