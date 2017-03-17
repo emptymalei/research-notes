@@ -618,10 +618,10 @@ I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 <h3>2.4.4.1. Homogeneous Emission<a class="headerlink" href="#homogeneous-emission" title="Permalink to this headline">¶</a></h3>
 <p>Assuming <span class="math">\(G=1\)</span>, the MAA solution is</p>
 <div class="math">
-\[-4 = I_0 - I_2,\]</div>
+\[-4\omega = I_0 - I_2,\]</div>
 <p>which becomes</p>
 <div class="math" id="equation-eqn-dr-continuous-angle-range">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 \omega n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.\]</div>
 <div class="figure align-center" id="id8">
 <img alt="../_images/DR-omega-k-direct-continuous-two-graphic-solution.png" src="../_images/DR-omega-k-direct-continuous-two-graphic-solution.png" />
 <p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text">LHS and RHS of Eq. <a class="reference internal" href="#equation-eqn-dr-continuous-angle-range">(2)</a>. The <span class="math">\(n\)</span> values where the LHS = RHS are <span class="math">\(n\sim -1, -0.35, 0.9, 1\)</span>. The value -0.35 can be found usng FindRoot, but all other values are approximated guesses.</span></p>
@@ -642,7 +642,7 @@ I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 \[RHS(c_1,c_2)=I_0-I_2 = g \left[ \left( \frac{1}{n} - \frac{1}{n^3} \right)\ln\left( \frac{1-n c_2}{1-n c_1} \right) - \frac{c_2-c_1}{n} \left( \frac{c_1+c_2}{2} + \frac{1}{n} \right) \right].\]</div>
 <p>The dispersion relation is given by</p>
 <div class="math">
-\[-4 = RHS(c_1,c_0) + RHS(c_0,c_2).\]</div>
+\[-4\omega = RHS(c_1,c_0) + RHS(c_0,c_2).\]</div>
 <p>I can plot the RHS.</p>
 <div class="figure align-center" id="id10">
 <img alt="../_images/DR-omega-k-direct-continuous-two-regions.png" src="../_images/DR-omega-k-direct-continuous-two-regions.png" />

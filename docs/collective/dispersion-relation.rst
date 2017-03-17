@@ -525,12 +525,12 @@ Homogeneous Emission
 Assuming :math:`G=1`, the MAA solution is
 
 .. math::
-   -4 = I_0 - I_2,
+   -4\omega = I_0 - I_2,
 
 which becomes
 
 .. math::
-   \ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.
+   \ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 \omega n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.
    :label: eqn-dr-continuous-angle-range
 
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-graphic-solution.png
@@ -563,7 +563,7 @@ I have to break each of the integral into two parts. I calculate :math:`I_0-I_2`
 The dispersion relation is given by
 
 .. math::
-   -4 = RHS(c_1,c_0) + RHS(c_0,c_2).
+   -4\omega = RHS(c_1,c_0) + RHS(c_0,c_2).
 
 I can plot the RHS.
 
@@ -578,6 +578,9 @@ The reason we have no real values between :math:`1/0.9` and :math:`1/0.3` is bec
    :align: center
 
    The argument of the ln function for RHS.
+
+
+
 
 
 Discrete Case and Continuous Case
