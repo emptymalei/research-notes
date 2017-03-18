@@ -256,7 +256,8 @@ TeX: {
 <li><a class="reference internal" href="#emission-with-crossing">2.4.4.2. Emission with Crossing</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#discrete-case-and-continuous-case">2.4.5. Discrete Case and Continuous Case</a></li>
+<li><a class="reference internal" href="#general-discussions-of-significance-of-spectra">2.4.5. General Discussions of Significance of Spectra</a></li>
+<li><a class="reference internal" href="#discrete-case-and-continuous-case">2.4.6. Discrete Case and Continuous Case</a></li>
 </ul>
 </li>
 </ul>
@@ -608,11 +609,11 @@ A_{k\omega} &amp; B_\omega
 <p>Suppose neutrinos are emitted within a angle range <span class="math">\([\theta_1,\theta_2]\)</span>. Using Mathematica, we find the three important integrals</p>
 <div class="math">
 \[\begin{split}I_0 &amp;= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
-   &amp;= \frac{\omega}{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \\
+   &amp;= \frac{\omega}{k} \ln \left( \left\vert\frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \\
 I_1 &amp;= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
-&amp; =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \right) \\
+&amp; =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
 I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
-&amp;= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \right).\end{split}\]</div>
+&amp;= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).\end{split}\]</div>
 <p>where <span class="math">\(c_1=\cos\theta_1\)</span> and <span class="math">\(c_2=\cos\theta_2\)</span>.</p>
 <div class="section" id="homogeneous-emission">
 <h3>2.4.4.1. Homogeneous Emission<a class="headerlink" href="#homogeneous-emission" title="Permalink to this headline">¶</a></h3>
@@ -621,42 +622,112 @@ I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 \[-4\omega = I_0 - I_2,\]</div>
 <p>which becomes</p>
 <div class="math" id="equation-eqn-dr-continuous-angle-range">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 \omega n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left( \left\vert \frac{1-c_2 n}{1-c_1 n} \right\vert \right)\]</div>
+<p>Meanwhile we could write down the MZA/bimodal solution in the form of <span class="math">\(\omega(n)\)</span>.</p>
+<p>For MAA and MZA we can plot <span class="math">\(\omega\)</span> as a function of n.</p>
 <div class="figure align-center" id="id8">
-<img alt="../_images/DR-omega-k-direct-continuous-two-graphic-solution.png" src="../_images/DR-omega-k-direct-continuous-two-graphic-solution.png" />
-<p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text">LHS and RHS of Eq. <a class="reference internal" href="#equation-eqn-dr-continuous-angle-range">(2)</a>. The <span class="math">\(n\)</span> values where the LHS = RHS are <span class="math">\(n\sim -1, -0.35, 0.9, 1\)</span>. The value -0.35 can be found usng FindRoot, but all other values are approximated guesses.</span></p>
+<img alt="../_images/DR-omega-k-direct-continuous-maa-no-crossing.png" src="../_images/DR-omega-k-direct-continuous-maa-no-crossing.png" />
+<p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution.</span></p>
 </div>
-<div class="warning admonition">
-<p class="first admonition-title">-0.35?</p>
-<p>I was wondering whether this -0.35 is of any importance. So I ploted the line <span class="math">\(\pm 0.35 k\)</span> on top of the <span class="math">\(\omega\sim k\)</span> plot. Didn&#8217;t find any match to the discrete solutions.</p>
-<div class="last figure align-center" id="id9">
-<img alt="../_images/DR-omega-k-direct-4-beams.png" src="../_images/DR-omega-k-direct-4-beams.png" />
-<p class="caption"><span class="caption-number">Fig. 2.21 </span><span class="caption-text">4 Beams</span></p>
+<div class="figure align-center" id="id9">
+<img alt="../_images/DR-omega-k-direct-continuous-mza-no-crossing.png" src="../_images/DR-omega-k-direct-continuous-mza-no-crossing.png" />
+<p class="caption"><span class="caption-number">Fig. 2.21 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution.</span></p>
 </div>
+<p>On the other hand, we know <span class="math">\(k=n\omega\)</span>, so we have parametrized the dispersion relation using a parameter <span class="math">\(n\)</span>.</p>
+<div class="figure align-center" id="id10">
+<img alt="../_images/DR-omega-k-direct-continuous-dr-no-crossing.png" src="../_images/DR-omega-k-direct-continuous-dr-no-crossing.png" />
+<p class="caption"><span class="caption-number">Fig. 2.22 </span><span class="caption-text">Dispersion relation out of Eq. <a class="reference internal" href="#equation-eqn-dr-continuous-angle-range">(2)</a>. For large k, the relation becomes proportional. The discontinuties are at location of <span class="math">\(\lim_{n\to \infty}\{n\omega(n),\omega(n)\}\)</span>. In this example, <span class="math">\(\{ -0.184653, 0 \}\)</span> (MAA solution) and <span class="math">\(\{  0.729306, 0 \}\)</span> (MZA solution).</span></p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">The Limits</p>
+<p>There are several limits in the dispersion relation.</p>
+<p>From the figure of <span class="math">\(\omega\)</span>, we notice the singularities at the two ends of the distribution, <span class="math">\(1/c_1\)</span> and <span class="math">\(1/c_2\)</span>. At these points, a tiny change of n will cause a significant change in <span class="math">\(\omega\)</span> and <span class="math">\(k\)</span>. In fact the relation between them becomes a proportional relation since <span class="math">\(n\)</span> remains almost constant.</p>
+<p>Another limit is <span class="math">\(n\to \infty\)</span>. Since <span class="math">\(\ln(n)\)</span> increases slower than <span class="math">\(n\)</span>, we have</p>
+<div class="math">
+\[\lim_{n\to\infty}\omega(n) =\lim_{n\to\infty} \frac{ I_0-I_2 }{4} = 0.\]</div>
+<p>We can calculate <span class="math">\(\lim_{n\to \infty}\{n\omega(n),\omega(n)\}\)</span>, for <span class="math">\(c_1=0.9\)</span> and <span class="math">\(c_1=0.3\)</span>,</p>
+<div class="math">
+\[\begin{split}\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{-0.184653, 0.  \}, &amp;\qquad \text{for MAA solution}\\
+\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{0.729306, 0.  \}, &amp;\qquad \text{for MZA solution}.\end{split}\]</div>
+<p>In general, we have the limits</p>
+<div class="last math">
+\[\begin{split}\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{(c_1^2-c_2^2 + 2\ln \left\vert\frac{c_2}{c_1}\right\vert )/8, 0  \}, &amp;\qquad \text{for MAA solution} \\
+\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{ ( c_1^2-c_2^2 - 2\ln \left\vert \frac{c_2}{c_1} \right\vert )/4, 0  \}, &amp;\qquad \text{for MZA solution}.\end{split}\]</div>
 </div>
 </div>
 <div class="section" id="emission-with-crossing">
 <h3>2.4.4.2. Emission with Crossing<a class="headerlink" href="#emission-with-crossing" title="Permalink to this headline">¶</a></h3>
-<p>I have to break each of the integral into two parts. I calculate <span class="math">\(I_0-I_2\)</span> for the first region then add to it the second region. Within a region <span class="math">\([\theta_1,\theta_2]\)</span> and <span class="math">\(G=g\)</span>,</p>
+<p>I have to break each of the integral into two parts. I calculate <span class="math">\(I_0-I_2\)</span> for the first region then add to it the second region. Within a region <span class="math">\([\theta_1,\theta_2]\)</span> and</p>
 <div class="math">
-\[RHS(c_1,c_2)=I_0-I_2 = g \left[ \left( \frac{1}{n} - \frac{1}{n^3} \right)\ln\left( \frac{1-n c_2}{1-n c_1} \right) - \frac{c_2-c_1}{n} \left( \frac{c_1+c_2}{2} + \frac{1}{n} \right) \right].\]</div>
+\[\begin{split}G=\begin{cases}
+g_1, \qquad &amp; \theta_1&lt;\theta&lt;\theta_0 \\
+g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
+\end{cases}.\end{split}\]</div>
+<p>For MAA solution we define a function,</p>
+<div class="math">
+\[RHS(c_1,c_2,g)=\frac{I_0-I_2}{4} = \frac{g}{4} \left[ \left( \frac{1}{n} - \frac{1}{n^3} \right)\ln\left( \frac{1-n c_2}{1-n c_1} \right) - \frac{c_2-c_1}{n} \left( \frac{c_1+c_2}{2} + \frac{1}{n} \right) \right].\]</div>
 <p>The dispersion relation is given by</p>
 <div class="math">
-\[-4\omega = RHS(c_1,c_0) + RHS(c_0,c_2).\]</div>
-<p>I can plot the RHS.</p>
-<div class="figure align-center" id="id10">
-<img alt="../_images/DR-omega-k-direct-continuous-two-regions.png" src="../_images/DR-omega-k-direct-continuous-two-regions.png" />
-<p class="caption"><span class="caption-number">Fig. 2.22 </span><span class="caption-text">Function value for <span class="math">\(RHS(c_1,c_0) + RHS(c_0,c_2)\)</span>. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
+\[\omega = RHS(c_1,c_0,g_1) + RHS(c_0,c_2,g_2).\]</div>
+<p>Then we parametrically plot <span class="math">\(\{ n \omega(n), \omega(n)\}\)</span> to get the dispersion relation, for MAA solution. Similarly I can find that of MZA solution.</p>
+<div class="note admonition">
+<p class="first admonition-title">Limits</p>
+<p>Before we do any numerical calculations, we can calculate the limits first.</p>
+<div class="math">
+\[\begin{split}\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) + 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert + 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/8, 0  \}, &amp;\qquad \text{for MAA solution} \\
+\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{ ( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) - 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert - 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/4, 0  \}, &amp;\qquad \text{for MZA solution}.\end{split}\]</div>
+<p>For <span class="math">\(g_1=g_2=1\)</span> these limit match the homogeous result, which they should.</p>
+<p class="last">We also have the large k limit which are <span class="math">\(\omega = \frac{1}{c_i}k\)</span>.</p>
+</div>
+<p>For simplicity, we choose <span class="math">\(g_1=-g_2=1\)</span>.</p>
+<div class="figure align-center" id="id11">
+<img alt="../_images/DR-omega-k-direct-continuous-two-regions-dr-crossing.png" src="../_images/DR-omega-k-direct-continuous-two-regions-dr-crossing.png" />
+<p class="caption"><span class="caption-number">Fig. 2.23 </span><span class="caption-text">Dispersion relation for spectral crossing. The discontinuties are at <span class="math">\(\{ 0.0944205, 0 \}\)</span> (MAA solution) and <span class="math">\(\{  -0.098841, 0 \}\)</span> (MZA solution).</span></p>
+</div>
+<p>I can also plot the MAA and MZA soltions for <span class="math">\(\omega(n)\)</span>.</p>
+<div class="figure align-center" id="id12">
+<img alt="../_images/DR-omega-k-direct-continuous-two-regions-maa-crossing.png" src="../_images/DR-omega-k-direct-continuous-two-regions-maa-crossing.png" />
+<p class="caption"><span class="caption-number">Fig. 2.24 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id13">
+<img alt="../_images/DR-omega-k-direct-continuous-two-regions-mza-crossing.png" src="../_images/DR-omega-k-direct-continuous-two-regions-mza-crossing.png" />
+<p class="caption"><span class="caption-number">Fig. 2.25 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MZA solution. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
 </div>
 <p>The reason we have no real values between <span class="math">\(1/0.9\)</span> and <span class="math">\(1/0.3\)</span> is because the argument of the ln function is negative within this regime.</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id14">
 <img alt="../_images/DR-omega-k-direct-continuous-two-regions-arg-ln.png" src="../_images/DR-omega-k-direct-continuous-two-regions-arg-ln.png" />
-<p class="caption"><span class="caption-number">Fig. 2.23 </span><span class="caption-text">The argument of the ln function for RHS.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.26 </span><span class="caption-text">The argument of the ln function. The vertical grid lines are <span class="math">\(n=1/0.3,1/0.6,1/0.9\)</span>. Even <span class="math">\(n=1/0.6\)</span> gives us the zero argument, which means the ln function is infinite, I do not think this is some point that we can have a <span class="math">\(\omega,k\)</span> relation.</span></p>
 </div>
+<div class="note admonition">
+<p class="first admonition-title">Some Discussions about <span class="math">\(\omega(n)\)</span></p>
+<p>It seems that if we plot <span class="math">\(-\omega(n)\)</span> for MZA we will have some kind of similar plot compared to MAA. Well the singularities are all the same location. If we do that we will have the same <span class="math">\(\lvert\omega\rvert\)</span> for <span class="math">\(n\)</span> very close to the sigularities thus same <span class="math">\(\lvert k\rvert\)</span>. Of couse for MAA and MZA, <span class="math">\(\omega\)</span> have different signs.</p>
+<p class="last">In other words, the slopes of <span class="math">\(\omega(k)\)</span> will have the same value for MZA and MAA but in different quadrant.</p>
+</div>
+</div>
+</div>
+<div class="section" id="general-discussions-of-significance-of-spectra">
+<h2>2.4.5. General Discussions of Significance of Spectra<a class="headerlink" href="#general-discussions-of-significance-of-spectra" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id15">
+<img alt="../_images/omega-of-n-for-different-spectra.png" src="../_images/omega-of-n-for-different-spectra.png" />
+<p class="caption"><span class="caption-number">Fig. 2.27 </span><span class="caption-text">Function <span class="math">\(\omega(n)\)</span> for different <span class="math">\(g_1,g_2\)</span>. The emission was set to <span class="math">\(G=\begin{cases}
+g_1, \qquad &amp; \theta_1&lt;\theta&lt;\theta_0 \\
+g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
+\end{cases}\)</span> where <span class="math">\(\cos\theta_1=0.9\)</span> and <span class="math">\(\cos\theta_2=0.3\)</span> <span class="math">\(\cos\theta_0=0.6\)</span></span></p>
+</div>
+<div class="figure align-center" id="id16">
+<img alt="../_images/omega-of-n-for-different-spectra-c0-0.4.png" src="../_images/omega-of-n-for-different-spectra-c0-0.4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.28 </span><span class="caption-text">Function <span class="math">\(\omega(n)\)</span> for different <span class="math">\(g_1,g_2\)</span>. The emission was set to <span class="math">\(G=\begin{cases}
+g_1, \qquad &amp; \theta_1&lt;\theta&lt;\theta_0 \\
+g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
+\end{cases}\)</span> where <span class="math">\(\cos\theta_1=0.9\)</span> and <span class="math">\(\cos\theta_2=0.3\)</span> <span class="math">\(\cos\theta_0=0.4\)</span></span></p>
+</div>
+<div class="warning admonition">
+<p class="first admonition-title">Why</p>
+<p class="last">Can I derive some expression for the <span class="math">\(\ln\)</span> function for a continuous distribution <span class="math">\(G(\theta)\)</span>?</p>
 </div>
 </div>
 <div class="section" id="discrete-case-and-continuous-case">
-<h2>2.4.5. Discrete Case and Continuous Case<a class="headerlink" href="#discrete-case-and-continuous-case" title="Permalink to this headline">¶</a></h2>
+<h2>2.4.6. Discrete Case and Continuous Case<a class="headerlink" href="#discrete-case-and-continuous-case" title="Permalink to this headline">¶</a></h2>
 <p>Will we have a continuous case if the number of beams is infinite.</p>
 <p>For discrete case</p>
 <div class="math" id="equation-eqn-discrete-beams-i0-i2">

@@ -509,11 +509,11 @@ Suppose neutrinos are emitted within a angle range :math:`[\theta_1,\theta_2]`. 
 
 .. math::
    I_0 &= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
-      &= \frac{\omega}{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \\
+      &= \frac{\omega}{k} \ln \left( \left\vert\frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \\
    I_1 &= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
-   & =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \right) \\
+   & =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
    I_2 &= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
-   &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k} \right) \right).
+   &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).
 
 
 where :math:`c_1=\cos\theta_1` and :math:`c_2=\cos\theta_2`.
@@ -530,57 +530,167 @@ Assuming :math:`G=1`, the MAA solution is
 which becomes
 
 .. math::
-   \ln \left( \frac{1-c_2 n }{1-c_1 n} \right) = \frac{ -4 \omega n^3 + (c_2-c_1)(1+(c_1+c_2)n/2 ) }{ n^2-1 }.
+   \omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left( \left\vert \frac{1-c_2 n}{1-c_1 n} \right\vert \right)
    :label: eqn-dr-continuous-angle-range
 
-.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-graphic-solution.png
+
+Meanwhile we could write down the MZA/bimodal solution in the form of :math:`\omega(n)`.
+
+
+For MAA and MZA we can plot :math:`\omega` as a function of n.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-maa-no-crossing.png
    :align: center
 
-   LHS and RHS of Eq. :eq:`eqn-dr-continuous-angle-range`. The :math:`n` values where the LHS = RHS are :math:`n\sim -1, -0.35, 0.9, 1`. The value -0.35 can be found usng FindRoot, but all other values are approximated guesses.
+   :math:`\omega(n)` for MAA solution.
 
 
-.. admonition:: -0.35?
-   :class: warning
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-mza-no-crossing.png
+   :align: center
 
-   I was wondering whether this -0.35 is of any importance. So I ploted the line :math:`\pm 0.35 k` on top of the :math:`\omega\sim k` plot. Didn't find any match to the discrete solutions.
+   :math:`\omega(n)` for MAA solution.
 
-   .. figure:: assets/dispersion-relation/DR-omega-k-direct-4-beams.png
-      :align: center
 
-      4 Beams
+On the other hand, we know :math:`k=n\omega`, so we have parametrized the dispersion relation using a parameter :math:`n`.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-dr-no-crossing.png
+   :align: center
+
+   Dispersion relation out of Eq. :eq:`eqn-dr-continuous-angle-range`. For large k, the relation becomes proportional. The discontinuties are at location of :math:`\lim_{n\to \infty}\{n\omega(n),\omega(n)\}`. In this example, :math:`\{ -0.184653, 0 \}` (MAA solution) and :math:`\{  0.729306, 0 \}` (MZA solution).
+
+
+.. admonition:: The Limits
+   :class: note
+
+   There are several limits in the dispersion relation.
+
+   From the figure of :math:`\omega`, we notice the singularities at the two ends of the distribution, :math:`1/c_1` and :math:`1/c_2`. At these points, a tiny change of n will cause a significant change in :math:`\omega` and :math:`k`. In fact the relation between them becomes a proportional relation since :math:`n` remains almost constant.
+
+   Another limit is :math:`n\to \infty`. Since :math:`\ln(n)` increases slower than :math:`n`, we have
+
+   .. math::
+      \lim_{n\to\infty}\omega(n) =\lim_{n\to\infty} \frac{ I_0-I_2 }{4} = 0.
+
+   We can calculate :math:`\lim_{n\to \infty}\{n\omega(n),\omega(n)\}`, for :math:`c_1=0.9` and :math:`c_1=0.3`,
+
+   .. math::
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{-0.184653, 0.  \}, &\qquad \text{for MAA solution}\\
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{0.729306, 0.  \}, &\qquad \text{for MZA solution}.
+
+   In general, we have the limits
+
+   .. math::
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{(c_1^2-c_2^2 + 2\ln \left\vert\frac{c_2}{c_1}\right\vert )/8, 0  \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{ ( c_1^2-c_2^2 - 2\ln \left\vert \frac{c_2}{c_1} \right\vert )/4, 0  \}, &\qquad \text{for MZA solution}.
+
 
 
 
 Emission with Crossing
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-I have to break each of the integral into two parts. I calculate :math:`I_0-I_2` for the first region then add to it the second region. Within a region :math:`[\theta_1,\theta_2]` and :math:`G=g`,
+I have to break each of the integral into two parts. I calculate :math:`I_0-I_2` for the first region then add to it the second region. Within a region :math:`[\theta_1,\theta_2]` and
 
 .. math::
-   RHS(c_1,c_2)=I_0-I_2 = g \left[ \left( \frac{1}{n} - \frac{1}{n^3} \right)\ln\left( \frac{1-n c_2}{1-n c_1} \right) - \frac{c_2-c_1}{n} \left( \frac{c_1+c_2}{2} + \frac{1}{n} \right) \right].
+   G=\begin{cases}
+   g_1, \qquad & \theta_1<\theta<\theta_0 \\
+   g_2, \qquad & \theta_0<\theta<\theta_2
+   \end{cases}.
 
+For MAA solution we define a function,
+
+.. math::
+   RHS(c_1,c_2,g)=\frac{I_0-I_2}{4} = \frac{g}{4} \left[ \left( \frac{1}{n} - \frac{1}{n^3} \right)\ln\left( \frac{1-n c_2}{1-n c_1} \right) - \frac{c_2-c_1}{n} \left( \frac{c_1+c_2}{2} + \frac{1}{n} \right) \right].
 
 The dispersion relation is given by
 
 .. math::
-   -4\omega = RHS(c_1,c_0) + RHS(c_0,c_2).
+   \omega = RHS(c_1,c_0,g_1) + RHS(c_0,c_2,g_2).
 
-I can plot the RHS.
 
-.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions.png
+Then we parametrically plot :math:`\{ n \omega(n), \omega(n)\}` to get the dispersion relation, for MAA solution. Similarly I can find that of MZA solution.
+
+.. admonition:: Limits
+   :class: note
+
+   Before we do any numerical calculations, we can calculate the limits first.
+
+   .. math::
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) + 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert + 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/8, 0  \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{ ( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) - 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert - 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/4, 0  \}, &\qquad \text{for MZA solution}.
+
+   For :math:`g_1=g_2=1` these limit match the homogeous result, which they should.
+
+   We also have the large k limit which are :math:`\omega = \frac{1}{c_i}k`.
+
+
+
+For simplicity, we choose :math:`g_1=-g_2=1`.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-dr-crossing.png
    :align: center
 
-   Function value for :math:`RHS(c_1,c_0) + RHS(c_0,c_2)`. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
+   Dispersion relation for spectral crossing. The discontinuties are at :math:`\{ 0.0944205, 0 \}` (MAA solution) and :math:`\{  -0.098841, 0 \}` (MZA solution).
+
+I can also plot the MAA and MZA soltions for :math:`\omega(n)`.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-maa-crossing.png
+   :align: center
+
+   :math:`\omega(n)` for MAA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
+
+
+.. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-mza-crossing.png
+   :align: center
+
+   :math:`\omega(n)` for MZA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
 
 The reason we have no real values between :math:`1/0.9` and :math:`1/0.3` is because the argument of the ln function is negative within this regime.
 
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-arg-ln.png
    :align: center
 
-   The argument of the ln function for RHS.
+   The argument of the ln function. The vertical grid lines are :math:`n=1/0.3,1/0.6,1/0.9`. Even :math:`n=1/0.6` gives us the zero argument, which means the ln function is infinite, I do not think this is some point that we can have a :math:`\omega,k` relation.
+
+
+.. admonition:: Some Discussions about :math:`\omega(n)`
+   :class: note
+
+   It seems that if we plot :math:`-\omega(n)` for MZA we will have some kind of similar plot compared to MAA. Well the singularities are all the same location. If we do that we will have the same :math:`\lvert\omega\rvert` for :math:`n` very close to the sigularities thus same :math:`\lvert k\rvert`. Of couse for MAA and MZA, :math:`\omega` have different signs.
+
+   In other words, the slopes of :math:`\omega(k)` will have the same value for MZA and MAA but in different quadrant.
 
 
 
+
+
+General Discussions of Significance of Spectra
+------------------------------------------------
+
+
+.. figure:: assets/dispersion-relation/omega-of-n-for-different-spectra.png
+   :align: center
+
+   Function :math:`\omega(n)` for different :math:`g_1,g_2`. The emission was set to :math:`G=\begin{cases}
+   g_1, \qquad & \theta_1<\theta<\theta_0 \\
+   g_2, \qquad & \theta_0<\theta<\theta_2
+   \end{cases}` where :math:`\cos\theta_1=0.9` and :math:`\cos\theta_2=0.3` :math:`\cos\theta_0=0.6`
+
+
+
+.. figure:: assets/dispersion-relation/omega-of-n-for-different-spectra-c0-0.4.png
+   :align: center
+
+   Function :math:`\omega(n)` for different :math:`g_1,g_2`. The emission was set to :math:`G=\begin{cases}
+   g_1, \qquad & \theta_1<\theta<\theta_0 \\
+   g_2, \qquad & \theta_0<\theta<\theta_2
+   \end{cases}` where :math:`\cos\theta_1=0.9` and :math:`\cos\theta_2=0.3` :math:`\cos\theta_0=0.4`
+
+
+.. admonition:: Why
+   :class: warning
+
+   Can I derive some expression for the :math:`\ln` function for a continuous distribution :math:`G(\theta)`?
 
 
 Discrete Case and Continuous Case
