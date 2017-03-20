@@ -5,6 +5,8 @@ Gravitational Waves
    :class: warning
 
    1. We use signature :math:`+2` for the metric.
+   2. :math:`\omega,k` are the frequencies from Fourier expansion of the off diagonal element of density matrix.
+
 
 Basics
 ----------------------------
@@ -30,8 +32,8 @@ In general, a weak gravitational wave has two different modes, the :math:`h_+` m
 where
 
 .. math::
-   h_+ &= A_{xx} \cos(\omega(t-z))\\
-   h_\times &= A_{xy} \cos(\omega(t-z)).
+   h_+ &= A_{xx} \cos(\omega_{gw}(t-z))\\
+   h_\times &= A_{xy} \cos(\omega_{gw}(t-z)).
 
 
 .. admonition:: Binary Neutron Stary System
@@ -64,13 +66,17 @@ For simplicity, we ignore the cross terms and consider only the diagonal element
 where
 
 .. math::
-   h_+ = A_{xx} \cos(\omega(t-z)).
+   h_+ = A_{xx} \cos(\omega_{gw}(t-z)).
 
 
 
 
 Some Estimations
 ------------------------
+
+
+Magnitude of Strain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As an estimation, the power of gravitation waves drop as :math:`1/r^2`. Thus the strain drops as :math:`1/r`.
 
@@ -114,16 +120,120 @@ The size of the disk of neutron star mergers are of the order :math:`10 km` [Fou
 
 
 
+Some Scales
+~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+1. Vacuum frequency: :math:`\omega_v = 3.75\times 10^{-11}eV \frac{ \delta m^2 }{ 7.5\times 10^{-5} \mathrm{eV^2} } \frac{1\mathrm{MeV} }{E}`.
+2. Vacuum frequency corresponds to oscillation length scale of :math:`L_v \sim 197\times 10^6\times \frac{ 1 }{ \omega_v } \approx 10^1 \mathrm{km}`.
+3. The gravitational wave frequency are usually of the order kHz [Bauswein2016]_. Such a frequency corresponds to a periodic potential in space, which has a length scale of :math:`L_{GW} \sim 3\times 10^{5}\mathrm{km/s} \times 10^{-3} \mathrm{s}\sim 10^2 \mathrm{km}`.
+
+
+
+.. figure:: assets/gravitational-waves/gw-frequency-neutron-star-mergers.png
+   :align: center
+
+   Gravitational wave frequencies and their strains. [Bauswein2016]_
+
+
 
 Build a Model
 ------------------------------
 
 
-I have no idea how can we build a practical model and numerically solve it up to nonlinear regime of neutrino oscillations.
+I need a practical model to demonstrate the effect and be able to numerically solve it up to nonlinear regime of neutrino oscillations.
 
-However, with the help of dispersion relation, the linear regime can be analyzed.
+In any case, we could linearize the equation of motion and explore the linear regime. With the help of dispersion relation, the linear regime can be analyzed.
 
-I have to replace the Minkowski metric with the metric of gravitational waves. Without any calculation, I expect gravitational waves breaks the symmetrics, even the degeneracy of the MAA solution for axial symmetric system.
+
+In principle, the equation of motion is changed due to gravitational field with derivatives becoming covariant ones. However, for fast neutrino oscillations, we can consider the local effect by ignoring the connections. I have to replace the Minkowski metric with the metric of gravitational waves. Without any calculation, I expect gravitational waves breaks the symmetrics intrinsically. For example it breaks the degeneracy of the MAA solution for axial symmetric system.
+
+
+
+.. admonition:: Shashank's Comment
+   :class: warning
+
+   He said that a possible resonance could bring in other effects.
+
+   **Update (20/03/2017)**:
+
+   I think this is a very nice point. If we write down the Dirac equation for neutrino oscillations in matter [Cardall1996]_,
+
+   .. math::
+      [\gamma^\mu(\partial_\mu + i A_{f\mu} \mathscr P_L) + M_f] \psi_f = 0,
+
+   where :math:`A_{f\mu}` is the neutrino-matter interaction.
+
+   For stimulated oscillations, this "potential" :math:`A_{f\mu}` is periodic.
+
+   The vacuum oscillation in gravitational field is determined by [Cardall1996]_
+
+   .. math::
+      [\gamma^\mu e^\mu_a (\partial_\mu + \Gamma_{\mu})+M]\psi=0,
+
+   where :math:`\Gamma_\mu` is the so called spin connection, which has the form
+
+   .. math::
+      \Gamma_\mu = \frac{1}{8} [\gamma^b,\gamma^c] e^\nu_b e_{c\nu;\mu}.
+
+   Cardall and Fuller calcualted the contribution from gravity
+
+   .. math::
+      \gamma^a e^\mu_a \Gamma_\mu = \gamma^a e_a^\mu \left[ i A_{G\mu} \left( - (-g)^{-1/2} \frac{\gamma_5}{2} \right) \right],
+
+   where
+
+   .. math::
+      A_G^\mu = \frac{1}{4} \sqrt{-g} e_a^\mu \epsilon^{abcd} (e_{b\nu,\sigma} - e_{b\sigma,\nu})e^\nu_{c} e^\sigma_d.
+
+   For gravitational waves, it effectively provides a potential that is periodic since :math:`-g` has periodic components.
+
+   As for length scales, vacuum oscillations has length scale :math:`10\,\mathrm{km}`, while GW from neutron star mergers has length scale :math:`10^2\,\mathrm{km}`. They are not exactly of the same order.
+
+   Another point is that matter effect increases the oscillation length scales.
+
+
+Resonances
+------------------------------
+
+For resonance of linear EoM, we do not need to consider neutrino self-interactions.
+
+.. admonition:: What's the EoM
+   :class: warning
+
+   We need a Schrodinger equation formalism instead of the Dirac equation one.
+
+
+
+Nonlinear Effect
+------------------------------
+
+To consider the nonlinear effect on neutrino flavor conversions, we can apply linear stability analysis.
+
+
+Polarization Tensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I can use polarization tensor to solve the linear regime [Izaguirre2017]_. This method is nothing different from solving the linearized EoM for k and finding the imaginary part in it.
+
+
+.. admonition:: Comments on Dispersion Relation
+   :class: note
+
+   Any dispersion relation :math:`f(\omega,k)=0` indicates whether it is possible to have imaginary parts in :math:`\omega,k`.
+
+   What we usually do is to set :math:`\omega=0` and find :math:`k`.
+
+   The equation of motion is simply of the form
+
+   .. math::
+      v^\mu k_\mu Q = v^\mu a_\mu,
+
+   where :math:`Q` is the amplitude of Fourier mode. So in principle we could simply change all the Minkowski metric to the one with perturbation.
+
+   There is another concern. The integrals also depends on the metric. But it is of a smaller effect. We need to prove this/make sense of it.
 
 
 Gravitational Waves + Mode
@@ -133,9 +243,9 @@ Gravitational Waves + Mode
 .. admonition:: Assumptions
    :class: warning
 
-   Assume the EoM derived by Raffelt is valid for weak gravitational field.
+   Assume the EoM derived by Raffelt is valid for weak gravitational field, as explained above.
 
-   In principle, if we do not consider other effects on Schrodinger equation but only the change in distances.
+   As an approximation, we do not consider other effects on Schrodinger equation but only the change in distances.
 
 
 The polarization tensor
@@ -153,10 +263,15 @@ The first situation we demonstrate is for gravitational waves propagating in :ma
    0 & -\frac{1}{4}(1+h_+) (I_0-I_2) & 0  & 0 \\
    0 & 0 & -\frac{1}{4}(1+h_+) (I_0-I_2) & 0  \\
    \frac{1}{2}I_1 & 0 & 0 & -\frac{1}{2}I_2
-   \end{pmatrix}.
+   \end{pmatrix},
 
 
-:math:`h_+` is small, so we expect small effect from + mode. At least we do not expect something completely different.
+where :math:`h_+\sim h_0 \cos (\omega_{gw}(t-z))` is small, so we expect small effect from + mode. At least we do not expect something completely different.
+
+
+
+
+
 
 
 
@@ -176,8 +291,8 @@ The x mode will bring in cross terms. The polarization tensor becomes
 To look at the MAA solution, we need to write down the eigenvalues for the 2 by 2 matrix in the center. We fine the relation between :math:`\omega` and :math:`k` is
 
 .. math::
-   -4 &= -(1-h_+ - h_\times) (I_0-I_2)\\
-   -4 &= -(1-h_+ + h_\times) (I_0-I_2).
+   4 &= -(1-h_+ - h_\times) (I_0-I_2)\\
+   4 &= -(1-h_+ + h_\times) (I_0-I_2).
 
 
 For neutron star mergers, :math:`h_\times=-h_+`. The first solution is reduced to the flat space time solution.
@@ -200,7 +315,12 @@ References and Notes
 .. [Hendry2007] `An Introduction to General Relativity, Gravitational Waves and Detection Principles <http://star-www.st-and.ac.uk/~hz4/gr/hendry_GRwaves.pdf>`_, Dr Martin Hendry. This discussion about the gravitational waves in a binary neutron star system is for slow motion approximation.
 .. [Riles2013] K. Riles, `Gravitational waves: Sources, detectors and searches <http://dx.doi.org/10.1016/j.ppnp.2012.08.001>`_, Progress in Particle and Nuclear Physics, Volume 68, January 2013, Pages 1-54, ISSN 0146-6410.
 .. [Foucart2012] Francois Foucart, `Black-hole–neutron-star mergers: Disk mass predictions <http://journals.aps.org/prd/abstract/10.1103/PhysRevD.86.124007>`_, Phys. Rev. D 86, December 2012.
+.. [Izaguirre2017] Izaguirre, I., Raffelt, G., & Tamborra, I. (2017). `Fast Pairwise Conversion of Supernova Neutrinos: A Dispersion Relation Approach <https://doi.org/10.1103/PhysRevLett.118.021101>`_. Physical Review Letters, 118(2), 21101.
 
+.. [Cardall1996] Cardall, C. Y., & Fuller, G. M. (1996). `Neutrino oscillations in curved spacetime: an heuristic treatment <https://doi.org/10.1103/PhysRevD.55.7960>`_, 55(12), 7.
+
+
+.. [Bauswein2016] A. Bauswein, J. Clark, N. Stergioulas, H.-T. J. (n.d.). Dynamics and gravitational-wave emission of neutron-star merger remnants, arXiv:1602.00950. Retrieved from https://arxiv.org/abs/1602.00950
 
 Kip Thorne wrote a review paper about gravitational waves: `The Generation of Gravitational Waves: A Review of Computational Tecniques <https://www.its.caltech.edu/~kip/scripts/PubScans/II-68.pdf>`_.
 
