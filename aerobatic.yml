@@ -1,0 +1,15 @@
+id: 77f8f739-39e0-46d7-b0be-45893607b70c
+deploy:
+  ignore: [ipynb,ipynb2tex,README.md]
+  directory: docs/_build/html
+plugins:
+  - name: password-protect
+    options:
+      password: $MASTER_KEY
+  - name: custom-errors
+    options:
+      errors:
+        '400': error.html
+        '403': error.html
+        '404': error.html
+  - name: webpage
