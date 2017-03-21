@@ -314,7 +314,7 @@ TeX: {
 <p>where</p>
 <div class="math">
 \[\begin{split}h_+ &amp;= A_{xx} \cos(\omega_{gw}(t-z))\\
-h_\times &amp;= A_{xy} \cos(\omega_{gw}(t-z)).\end{split}\]</div>
+h_\times &amp;= A_{xy} \sin(\omega_{gw}(t-z)).\end{split}\]</div>
 <div class="note admonition">
 <p class="first admonition-title">Binary Neutron Stary System</p>
 <p>In a binary neutron star system, which we detect at a distance <span class="math">\(r\)</span>, the gravitational waves carries the metric <a class="reference internal" href="#hendry2007" id="id2">[Hendry2007]</a></p>
@@ -361,7 +361,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <div class="math">
 \[h(\tau) \sim 10^{-6}\left( \frac{1 \text{ day} }{\tau} \right)^{1/4} \left( \frac{M}{1.4M_{\odot}}\right)^{5/4}.\]</div>
 <p>As an example, we plot the evolution as a function of <span class="math">\(\tau\)</span> for 1.4 solar mass binaries.</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id12">
 <img alt="../_images/binary-mergers-h-tau.png" src="../_images/binary-mergers-h-tau.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Binary mergers. In the beginning, gravitational waves are very strong.</span></p>
 </div>
@@ -379,7 +379,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <li>Vacuum frequency corresponds to oscillation length scale of <span class="math">\(L_v \sim 197\times 10^6\times \frac{ 1 }{ \omega_v } \approx 10^1 \mathrm{km}\)</span>.</li>
 <li>The gravitational wave frequency are usually of the order kHz <a class="reference internal" href="#bauswein2016" id="id6">[Bauswein2016]</a>. Such a frequency corresponds to a periodic potential in space, which has a length scale of <span class="math">\(L_{GW} \sim 3\times 10^{5}\mathrm{km/s} \times 10^{-3} \mathrm{s}\sim 10^2 \mathrm{km}\)</span>.</li>
 </ol>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id13">
 <img alt="../_images/gw-frequency-neutron-star-mergers.png" src="../_images/gw-frequency-neutron-star-mergers.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Gravitational wave frequencies and their strains. <a class="reference internal" href="#bauswein2016" id="id7">[Bauswein2016]</a></span></p>
 </div>
@@ -421,7 +421,28 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <p>For resonance of linear EoM, we do not need to consider neutrino self-interactions.</p>
 <div class="warning admonition">
 <p class="first admonition-title">What&#8217;s the EoM</p>
-<p class="last">We need a Schrodinger equation formalism instead of the Dirac equation one.</p>
+<p class="last">We need a Schrodinger equation formalism instead of the Dirac equation one. Here I am going to use the one derived by Cardall and Fuller <a class="reference internal" href="#cardall1996" id="id10">[Cardall1996]</a>.</p>
+</div>
+<p>We need to calculate the vector potential</p>
+<div class="math">
+\[\vec A_{gw} = \frac{1}{4} \sqrt{ -g } e_a^\mu \epsilon^{abcd} ( e_{b\nu,\sigma} - e_{b\sigma,\nu} ) e_c^\nu e_d^\sigma,\]</div>
+<p>where <span class="math">\(e_a^\mu\)</span> is the tetrad and <span class="math">\(g=\mathrm{det}(g_{\mu\nu})\)</span>.</p>
+<p>First of all, we use gravitational waves in a background of Schwarzchild metric, which is mimicking the neutron star mergers.</p>
+<p>As an approximation, use the tetrad from Schwarzchild metric, and plug in gravitational waves to <span class="math">\(\sqrt{-g}\)</span>.</p>
+<p>The potential then is</p>
+<div class="math">
+\[\vec A_{gw} = \sqrt{-g} \vec A_{S},\]</div>
+<p>where <span class="math">\(\vec A_{S}\)</span> is the potential from Schwarzchild metric. The intereting part is that</p>
+<div class="math">
+\[\sqrt{-g} = \sqrt{1- (h_+^2 + h_\times^2)}.\]</div>
+<p>For neutron star megers,</p>
+<div class="math">
+\[h_+^2 + h_\times^2= h_0^2 (\cos^2 (\omega_{gw}(t-z)) + \sin^2 (\omega_{gw}(t-z)) ) = h_0^2,\]</div>
+<p>which is a constant. So we observe nothing new.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Are the approximations valid?</p>
+<p>First of all, I used the tetrad from Schwarzchild metric. This is in principle of the same order of <span class="math">\(\sqrt{-g}\)</span>.</p>
+<p class="last">Secondly, I used time independent equation. For gravitational waves, we need time dependent equation.</p>
 </div>
 </div>
 <div class="section" id="nonlinear-effect">
@@ -429,7 +450,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <p>To consider the nonlinear effect on neutrino flavor conversions, we can apply linear stability analysis.</p>
 <div class="section" id="polarization-tensor">
 <h3>3.2.5.1. Polarization Tensor<a class="headerlink" href="#polarization-tensor" title="Permalink to this headline">¶</a></h3>
-<p>I can use polarization tensor to solve the linear regime <a class="reference internal" href="#izaguirre2017" id="id10">[Izaguirre2017]</a>. This method is nothing different from solving the linearized EoM for k and finding the imaginary part in it.</p>
+<p>I can use polarization tensor to solve the linear regime <a class="reference internal" href="#izaguirre2017" id="id11">[Izaguirre2017]</a>. This method is nothing different from solving the linearized EoM for k and finding the imaginary part in it.</p>
 <div class="note admonition">
 <p class="first admonition-title">Comments on Dispersion Relation</p>
 <p>Any dispersion relation <span class="math">\(f(\omega,k)=0\)</span> indicates whether it is possible to have imaginary parts in <span class="math">\(\omega,k\)</span>.</p>
@@ -516,13 +537,13 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <table class="docutils citation" frame="void" id="izaguirre2017" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[Izaguirre2017]</a></td><td>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2017). <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.118.021101">Fast Pairwise Conversion of Supernova Neutrinos: A Dispersion Relation Approach</a>. Physical Review Letters, 118(2), 21101.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id11">[Izaguirre2017]</a></td><td>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2017). <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.118.021101">Fast Pairwise Conversion of Supernova Neutrinos: A Dispersion Relation Approach</a>. Physical Review Letters, 118(2), 21101.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="cardall1996" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[Cardall1996]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> Cardall, C. Y., &amp; Fuller, G. M. (1996). <a class="reference external" href="https://doi.org/10.1103/PhysRevD.55.7960">Neutrino oscillations in curved spacetime: an heuristic treatment</a>, 55(12), 7.</td></tr>
+<tr><td class="label">[Cardall1996]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>, <a class="fn-backref" href="#id10">3</a>)</em> Cardall, C. Y., &amp; Fuller, G. M. (1996). <a class="reference external" href="https://doi.org/10.1103/PhysRevD.55.7960">Neutrino oscillations in curved spacetime: an heuristic treatment</a>, 55(12), 7.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="bauswein2016" rules="none">

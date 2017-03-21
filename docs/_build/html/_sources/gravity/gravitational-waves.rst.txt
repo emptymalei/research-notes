@@ -33,7 +33,7 @@ where
 
 .. math::
    h_+ &= A_{xx} \cos(\omega_{gw}(t-z))\\
-   h_\times &= A_{xy} \cos(\omega_{gw}(t-z)).
+   h_\times &= A_{xy} \sin(\omega_{gw}(t-z)).
 
 
 .. admonition:: Binary Neutron Stary System
@@ -216,7 +216,46 @@ For resonance of linear EoM, we do not need to consider neutrino self-interactio
 .. admonition:: What's the EoM
    :class: warning
 
-   We need a Schrodinger equation formalism instead of the Dirac equation one.
+   We need a Schrodinger equation formalism instead of the Dirac equation one. Here I am going to use the one derived by Cardall and Fuller [Cardall1996]_.
+
+
+We need to calculate the vector potential
+
+.. math::
+   \vec A_{gw} = \frac{1}{4} \sqrt{ -g } e_a^\mu \epsilon^{abcd} ( e_{b\nu,\sigma} - e_{b\sigma,\nu} ) e_c^\nu e_d^\sigma,
+
+where :math:`e_a^\mu` is the tetrad and :math:`g=\mathrm{det}(g_{\mu\nu})`.
+
+First of all, we use gravitational waves in a background of Schwarzchild metric, which is mimicking the neutron star mergers.
+
+As an approximation, use the tetrad from Schwarzchild metric, and plug in gravitational waves to :math:`\sqrt{-g}`.
+
+The potential then is
+
+.. math::
+   \vec A_{gw} = \sqrt{-g} \vec A_{S},
+
+where :math:`\vec A_{S}` is the potential from Schwarzchild metric. The intereting part is that
+
+.. math::
+   \sqrt{-g} = \sqrt{1- (h_+^2 + h_\times^2)}.
+
+For neutron star megers,
+
+.. math::
+   h_+^2 + h_\times^2= h_0^2 (\cos^2 (\omega_{gw}(t-z)) + \sin^2 (\omega_{gw}(t-z)) ) = h_0^2,
+
+which is a constant. So we observe nothing new.
+
+.. admonition:: Are the approximations valid?
+   :class: warning
+
+   First of all, I used the tetrad from Schwarzchild metric. This is in principle of the same order of :math:`\sqrt{-g}`.
+
+   Secondly, I used time independent equation. For gravitational waves, we need time dependent equation.
+
+
+
 
 
 
