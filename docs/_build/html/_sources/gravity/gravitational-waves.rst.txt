@@ -69,6 +69,19 @@ where
    h_+ = A_{xx} \cos(\omega_{gw}(t-z)).
 
 
+There are many sources of gravitational waves. Neutron star megers, even burst in supernova explosions.
+
+.. admonition:: What Metric
+   :class: note
+
+   In principle, the metric near neutron star megers are complicated. For approximations, I would like to propose a Kerr metric plus the perturbations.
+
+   However, Kerr metric is still too complicated for neutrino oscillations. I would argue that the angular momentum is not that large and we could simply use a Schwarzchild metric as the background metric.
+
+   So the first case study would be Schwarzchild metric plus the plane wave gravitational perturbation.
+
+   For vacuum oscillation, Schwarzchild metric has no effect on the flavor oscillations.
+
 
 
 Some Estimations
@@ -190,7 +203,7 @@ In principle, the equation of motion is changed due to gravitational field with 
 
    For gravitational waves, it effectively provides a potential that is periodic since :math:`-g` has periodic components.
 
-   As for length scales, vacuum oscillations has length scale :math:`10\,\mathrm{km}`, while GW from neutron star mergers has length scale :math:`10^2\,\mathrm{km}`. They are not exactly of the same order.
+   As for length scales, vacuum oscillations (10MeV) has length scale :math:`10^2\,\mathrm{km}`, while GW from neutron star mergers has length scale :math:`10^2\,\mathrm{km}`. They are of the same order.
 
    Another point is that matter effect increases the oscillation length scales.
 
