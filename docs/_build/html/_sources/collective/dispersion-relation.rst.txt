@@ -724,6 +724,8 @@ I can also plot the MAA and MZA soltions for :math:`\omega(n)`.
    :math:`\omega(n)` for MAA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
 
 
+
+
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-mza-crossing.png
    :align: center
 
@@ -752,13 +754,29 @@ General Discussions of Significance of Spectra
 ------------------------------------------------
 
 
-.. figure:: assets/dispersion-relation/omega-of-n-for-different-spectra.png
+.. figure:: assets/dispersion-relation/DR-omega-of-n-for-different-spectra.png
    :align: center
 
    Function :math:`\omega(n)` for different :math:`g_1,g_2`. The emission was set to :math:`G=\begin{cases}
    g_1, \qquad & \theta_1<\theta<\theta_0 \\
    g_2, \qquad & \theta_0<\theta<\theta_2
-   \end{cases}` where :math:`\cos\theta_1=0.9` and :math:`\cos\theta_2=0.3` :math:`\cos\theta_0=0.6`
+   \end{cases}` where :math:`\cos\theta_1=0.9` and :math:`\cos\theta_2=0.3` :math:`\cos\theta_0=0.6`.
+
+
+
+.. figure:: assets/dispersion-relation/DR-k-of-n-for-different-spectra.png
+   :align: center
+
+   :math:`k(n)` for the same parameters.
+
+The corresponding dispersion relations are shown in :numref:`dr-omega-k-continuous-table-0-9-0-3-png`
+
+.. _dr-omega-k-continuous-table-0-9-0-3-png:
+
+.. figure:: assets/dispersion-relation/DR-omega-k-continuous-table-0.9-0.3.png
+   :align: center
+
+   DR for spectra :math:`\{ \{ \{ 0.9,0.6 \}, g1 \}, \{ \{ 0.6,0.3 \}, g2 \} \}`.
 
 
 
@@ -774,11 +792,11 @@ General Discussions of Significance of Spectra
 .. admonition:: Why
    :class: warning
 
-   It seems that crossing is crucial to a change in the number of solution to :math:`n(\omega)`. If we have crossing, then the number of solutions to :math:`n(\omega)` will change for different values of :math:`\omega`. Otherwise, the number of solutions won't change.
+   It seems that crossing is important to a change in the number of solution to :math:`n(\omega)`. If we have crossing, then the number of solutions to :math:`n(\omega)` will change for different values of :math:`\omega`. Otherwise, the number of solutions won't change.
 
-   And a change of the number of solutions indicates a possible gap.
+   And a change of the number of solutions indicates a possible gap. **I need some verification about the relation between such non-explicit gap and instabilities.**
 
-   Now the question is, why?
+   However, I also notice that the combination :math:`{-2,-1}` also has such change of number of solutions. In this case, I can spot that for some branches we have complex :math:`k`. What I don't understand is that we always find real solutions to :math:`k` for some other branches. Does it mean that only one such complex solutions is sufficient? And what exactly is the requirement?
 
    Can I derive some expression for the :math:`\ln` function for a continuous distribution :math:`G(\theta)`?
 
