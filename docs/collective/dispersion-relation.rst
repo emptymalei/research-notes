@@ -801,6 +801,17 @@ The corresponding dispersion relations are shown in :numref:`dr-omega-k-continuo
    Can I derive some expression for the :math:`\ln` function for a continuous distribution :math:`G(\theta)`?
 
 
+Do we really need a gap?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I think not. As long as we have a point on :math:`\omega(k)` plane that :math:`\omega'(k_b)=\infty` and :math:`\omega'(k_{b,-})\omega'(k_{b,+})<0`, we could obtain a complex k for some range of it.
+
+Is this true? I can not prove it but give some examples. From :numref:`dr-omega-k-continuous-table-0-9-0-3-png`, I can choose the combination :math:`\{g_1,g_2\}=\{3,1\}`. Solve the system using the traditional method and set :math:`\omega=0`.
+
+When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real :math:`\omega`.
+
+
+
 Discrete Case and Continuous Case
 --------------------------------------
 
