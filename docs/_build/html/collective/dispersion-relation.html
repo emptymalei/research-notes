@@ -251,13 +251,14 @@ TeX: {
 </ul>
 </li>
 <li><a class="reference internal" href="#why-is-it-called-polarization-tensor">2.4.3. Why is it called Polarization Tensor</a></li>
-<li><a class="reference internal" href="#solving-continuous-emission">2.4.4. Solving Continuous Emission</a><ul>
-<li><a class="reference internal" href="#homogeneous-emission">2.4.4.1. Homogeneous Emission</a></li>
-<li><a class="reference internal" href="#emission-with-crossing">2.4.4.2. Emission with Crossing</a></li>
+<li><a class="reference internal" href="#solving-n-beams">2.4.4. Solving N Beams</a></li>
+<li><a class="reference internal" href="#solving-continuous-emission">2.4.5. Solving Continuous Emission</a><ul>
+<li><a class="reference internal" href="#homogeneous-emission">2.4.5.1. Homogeneous Emission</a></li>
+<li><a class="reference internal" href="#emission-with-crossing">2.4.5.2. Emission with Crossing</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general-discussions-of-significance-of-spectra">2.4.5. General Discussions of Significance of Spectra</a></li>
-<li><a class="reference internal" href="#discrete-case-and-continuous-case">2.4.6. Discrete Case and Continuous Case</a></li>
+<li><a class="reference internal" href="#general-discussions-of-significance-of-spectra">2.4.6. General Discussions of Significance of Spectra</a></li>
+<li><a class="reference internal" href="#discrete-case-and-continuous-case">2.4.7. Discrete Case and Continuous Case</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,9 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 <div class="math">
 \[N^\mu_{\phantom{\mu}\nu} = \omega P^\mu_{\phantom{\mu}\nu},\]</div>
 <p>which shows is an analytical expression of <span class="math">\(\omega\)</span>. We do not solve this relation. Instead, we plugin the definition <span class="math">\(n=\frac{\lvert \mathbf  k\rvert}{\omega}\)</span> and find out the relation between <span class="math">\(\omega\)</span> and <span class="math">\(k=\lvert \mathbf k \rvert\)</span></p>
+<p>The four velocity is</p>
+<div class="math">
+\[v^\mu \to ( 1, \sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta )^{\mathrm T}.\]</div>
 <p>We define</p>
 <div class="math">
 \[I_n(\theta)=\int_{\cos\theta_2}^{\cos\theta_1} d\cos\theta G(\theta) \frac{\cos^n\theta}{1 - n \cos\theta },\]</div>
@@ -460,7 +464,7 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 \end{pmatrix}.\end{split}\]</div>
 <p>We express the eigen values of matrix <span class="math">\(N^\mu_{\phantom{\mu}\nu}\)</span>, which we denote as <span class="math">\(\lambda_N\)</span>,</p>
 <div class="math" id="equation-eqn-omega-n-relation-axial-sym-general">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-omega-n-relation-axial-sym-general" title="Permalink to this equation">¶</a></span>\[\omega = -\lambda_N = \frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-omega-n-relation-axial-sym-general" title="Permalink to this equation">¶</a></span>\[\omega = -\lambda_N = -\frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
 <p>We plug in the definition <span class="math">\(n=k/\omega\)</span> then solve dispersion relation from each of the solutions in Eq. <a class="reference internal" href="#equation-eqn-omega-n-relation-axial-sym-general">(1)</a>.</p>
 <p>The questions are</p>
 <ol class="arabic simple">
@@ -604,8 +608,60 @@ A_{k\omega} &amp; B_\omega
 <p class="last">By working it out, we find <span class="math">\(\epsilon^i\)</span>, which is the spatial part of <span class="math">\(\epsilon^\mu\)</span>, indeed plays a role in the direction of field.</p>
 </div>
 </div>
+<div class="section" id="solving-n-beams">
+<h2>2.4.4. Solving N Beams<a class="headerlink" href="#solving-n-beams" title="Permalink to this headline">¶</a></h2>
+<p>For consistancy check, we parametrize <span class="math">\(\omega(n)\)</span>. For MAA solution, we have</p>
+<div class="math">
+\[\omega(n) = \frac{1}{4} \sum_i G_i \frac{1-\cos^n\theta_i}{1 - n \cos\theta_i }.\]</div>
+<div class="figure align-center" id="id8">
+<span id="fig-dr-omega-n-2-beams-lr-png"></span><img alt="../_images/DR-omega-n-2-beams-lr.png" src="../_images/DR-omega-n-2-beams-lr.png" />
+<p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> with two angles <span class="math">\(\cos\theta = 0.9,0.3\)</span> and <span class="math">\(G_1 = -G_2 = -2\pi/2\)</span>. The grid lines are the values of n for singularity, <span class="math">\(n=1/0.3,1/0.9\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id9">
+<span id="fig-dr-omega-k-2-beams-lr-png"></span><img alt="../_images/DR-omega-k-2-beams-lr.png" src="../_images/DR-omega-k-2-beams-lr.png" />
+<p class="caption"><span class="caption-number">Fig. 2.21 </span><span class="caption-text">Same parameters as above. The orange dashed lines are the singularity lines.</span></p>
+</div>
+<p><a class="reference internal" href="#fig-dr-omega-n-2-beams-lr-png"><span class="std std-numref">Fig. 2.20</span></a> shows that the limit of <span class="math">\(n\to 1/0.9,1/0.3\)</span> leads to <span class="math">\(\omega\)</span> infinities. These infinities also indicates that <span class="math">\(\omega (k)\)</span> at large <span class="math">\(\lvert\omega\rvert\)</span> are straight lines with slope <span class="math">\(n=1/0.9,1/0.3\)</span>, as shown in <a class="reference internal" href="#fig-dr-omega-k-2-beams-lr-png"><span class="std std-numref">Fig. 2.21</span></a>.</p>
+<p>Similar plots are made for 4,6,8 beams.</p>
+<div class="figure align-center" id="id10">
+<img alt="../_images/DR-omega-n-2-4-6-8-beams-lr.png" src="../_images/DR-omega-n-2-4-6-8-beams-lr.png" />
+<p class="caption"><span class="caption-number">Fig. 2.22 </span><span class="caption-text">2, 4, 6, 8 beams with equal division of cosine of emission angle. For example 4 beams are emission at <span class="math">\(\cos\theta= 0.9, 0.7, 0.5, 0.3\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id11">
+<img alt="../_images/DR-omega-k-2-4-6-8-beams-lr.png" src="../_images/DR-omega-k-2-4-6-8-beams-lr.png" />
+<p class="caption"><span class="caption-number">Fig. 2.23 </span><span class="caption-text">Same parameters as above.</span></p>
+</div>
+<p>We also calculated the homogeneous emssion.</p>
+<div class="figure align-center" id="id12">
+<img alt="../_images/DR-omega-n-2-4-6-8-beams-homogeneous.png" src="../_images/DR-omega-n-2-4-6-8-beams-homogeneous.png" />
+<p class="caption"><span class="caption-number">Fig. 2.24 </span><span class="caption-text">2, 4, 6, 8 beams for homogeneous <span class="math">\(G\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id13">
+<img alt="../_images/DR-omega-k-2-4-6-8-beams-homogeneous.png" src="../_images/DR-omega-k-2-4-6-8-beams-homogeneous.png" />
+<p class="caption"><span class="caption-number">Fig. 2.25 </span><span class="caption-text">Same parameters as above.</span></p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Gap</p>
+<p>Whenever a gap in <span class="math">\(omega\)</span> appears, we might find in the <span class="math">\(\omega(n)\)</span> plot that we have less solutions to <span class="math">\(n\)</span> for some given <span class="math">\(\omega\)</span> values. <strong>It seems that this can only happen for ELN spectrum with crossing.</strong></p>
+<p>To illustrate this idea, I shaded the region that <span class="math">\(n(\omega)\)</span> has no solution for the case of two emission angle and crossing in <a class="reference internal" href="#dr-omega-k-2-beams-lr-shaded-region-png"><span class="std std-numref">Fig. 2.26</span></a>.</p>
+<div class="figure align-center" id="id14">
+<span id="dr-omega-k-2-beams-lr-shaded-region-png"></span><img alt="../_images/DR-omega-k-2-beams-lr-shaded-region.png" src="../_images/DR-omega-k-2-beams-lr-shaded-region.png" />
+<p class="caption"><span class="caption-number">Fig. 2.26 </span><span class="caption-text">The shaded regions are the region that <span class="math">\(n(\omega)\)</span> has no solution. It&#8217;s hard to analytically solve <span class="math">\(n(\omega)\)</span>. But we can get an idea of this using <span class="math">\(\omega(n)\)</span> plot.</span></p>
+</div>
+<p>This provides an method to determine whether we have a gap in <span class="math">\(\omega\)</span> or <span class="math">\(k\)</span>. For gap in <span class="math">\(k\)</span>, we plot out <span class="math">\(k(n)\)</span>.</p>
+<div class="figure align-center" id="id15">
+<img alt="../_images/DR-k-n-2-beams-lr-shaded-region.png" src="../_images/DR-k-n-2-beams-lr-shaded-region.png" />
+<p class="caption"><span class="caption-number">Fig. 2.27 </span><span class="caption-text">The shaded region are the region where <span class="math">\(n(k)\)</span> has no solution.</span></p>
+</div>
+<p>The behavor of <span class="math">\(\omega(n)\)</span> and <span class="math">\(k(n)\)</span> are qualititatively the same.</p>
+<div class="last figure align-center" id="id16">
+<img alt="../_images/DR-k-n-2-beams-lr-and-homogeneous.png" src="../_images/DR-k-n-2-beams-lr-and-homogeneous.png" />
+<p class="caption"><span class="caption-number">Fig. 2.28 </span><span class="caption-text"><span class="math">\(k(n)\)</span> for non-crossing and crossing. The are qualitatively the same as <span class="math">\(\omega(n)\)</span>. That being said, we always have the same upside down U-shape for spectrum with crossing for both <span class="math">\(k(n)\)</span> and <span class="math">\(\omega(n)\)</span>, if the region of emission angles <span class="math">\(\theta\)</span> satisfies <span class="math">\(\cos\theta&gt;0\)</span>.</span></p>
+</div>
+</div>
+</div>
 <div class="section" id="solving-continuous-emission">
-<h2>2.4.4. Solving Continuous Emission<a class="headerlink" href="#solving-continuous-emission" title="Permalink to this headline">¶</a></h2>
+<h2>2.4.5. Solving Continuous Emission<a class="headerlink" href="#solving-continuous-emission" title="Permalink to this headline">¶</a></h2>
 <p>Suppose neutrinos are emitted within a angle range <span class="math">\([\theta_1,\theta_2]\)</span>. Using Mathematica, we find the three important integrals</p>
 <div class="math">
 \[\begin{split}I_0 &amp;= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
@@ -616,27 +672,27 @@ I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 &amp;= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).\end{split}\]</div>
 <p>where <span class="math">\(c_1=\cos\theta_1\)</span> and <span class="math">\(c_2=\cos\theta_2\)</span>.</p>
 <div class="section" id="homogeneous-emission">
-<h3>2.4.4.1. Homogeneous Emission<a class="headerlink" href="#homogeneous-emission" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.5.1. Homogeneous Emission<a class="headerlink" href="#homogeneous-emission" title="Permalink to this headline">¶</a></h3>
 <p>Assuming <span class="math">\(G=1\)</span>, the MAA solution is</p>
 <div class="math">
-\[-4\omega = I_0 - I_2,\]</div>
+\[\omega = \frac{g}{4}(I_0 - I_2),\]</div>
 <p>which becomes</p>
 <div class="math" id="equation-eqn-dr-continuous-angle-range">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left( \left\vert \frac{1-c_2 n}{1-c_1 n} \right\vert \right)\]</div>
 <p>Meanwhile we could write down the MZA/bimodal solution in the form of <span class="math">\(\omega(n)\)</span>.</p>
 <p>For MAA and MZA we can plot <span class="math">\(\omega\)</span> as a function of n.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id17">
 <img alt="../_images/DR-omega-k-direct-continuous-maa-no-crossing.png" src="../_images/DR-omega-k-direct-continuous-maa-no-crossing.png" />
-<p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.29 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution.</span></p>
 </div>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id18">
 <img alt="../_images/DR-omega-k-direct-continuous-mza-no-crossing.png" src="../_images/DR-omega-k-direct-continuous-mza-no-crossing.png" />
-<p class="caption"><span class="caption-number">Fig. 2.21 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.30 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution.</span></p>
 </div>
 <p>On the other hand, we know <span class="math">\(k=n\omega\)</span>, so we have parametrized the dispersion relation using a parameter <span class="math">\(n\)</span>.</p>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="id19">
 <img alt="../_images/DR-omega-k-direct-continuous-dr-no-crossing.png" src="../_images/DR-omega-k-direct-continuous-dr-no-crossing.png" />
-<p class="caption"><span class="caption-number">Fig. 2.22 </span><span class="caption-text">Dispersion relation out of Eq. <a class="reference internal" href="#equation-eqn-dr-continuous-angle-range">(2)</a>. For large k, the relation becomes proportional. The discontinuties are at location of <span class="math">\(\lim_{n\to \infty}\{n\omega(n),\omega(n)\}\)</span>. In this example, <span class="math">\(\{ -0.184653, 0 \}\)</span> (MAA solution) and <span class="math">\(\{  0.729306, 0 \}\)</span> (MZA solution).</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.31 </span><span class="caption-text">Dispersion relation out of Eq. <a class="reference internal" href="#equation-eqn-dr-continuous-angle-range">(2)</a>. For large k, the relation becomes proportional. The discontinuties are at location of <span class="math">\(\lim_{n\to \infty}\{n\omega(n),\omega(n)\}\)</span>. In this example, <span class="math">\(\{ -0.184653, 0 \}\)</span> (MAA solution) and <span class="math">\(\{  0.729306, 0 \}\)</span> (MZA solution).</span></p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">The Limits</p>
@@ -656,7 +712,7 @@ I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 </div>
 </div>
 <div class="section" id="emission-with-crossing">
-<h3>2.4.4.2. Emission with Crossing<a class="headerlink" href="#emission-with-crossing" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.5.2. Emission with Crossing<a class="headerlink" href="#emission-with-crossing" title="Permalink to this headline">¶</a></h3>
 <p>I have to break each of the integral into two parts. I calculate <span class="math">\(I_0-I_2\)</span> for the first region then add to it the second region. Within a region <span class="math">\([\theta_1,\theta_2]\)</span> and</p>
 <div class="math">
 \[\begin{split}G=\begin{cases}
@@ -679,24 +735,24 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 <p>For <span class="math">\(g_1=g_2=1\)</span> these limit match the homogeous result, which they should.</p>
 <p class="last">We also have the large k limit which are <span class="math">\(\omega = \frac{1}{c_i}k\)</span>.</p>
 </div>
-<p>For simplicity, we choose <span class="math">\(g_1=-g_2=1\)</span>.</p>
-<div class="figure align-center" id="id11">
+<p>For simplicity, we choose <span class="math">\(g_2=-g_1=1\)</span>.</p>
+<div class="figure align-center" id="id20">
 <img alt="../_images/DR-omega-k-direct-continuous-two-regions-dr-crossing.png" src="../_images/DR-omega-k-direct-continuous-two-regions-dr-crossing.png" />
-<p class="caption"><span class="caption-number">Fig. 2.23 </span><span class="caption-text">Dispersion relation for spectral crossing. The discontinuties are at <span class="math">\(\{ 0.0944205, 0 \}\)</span> (MAA solution) and <span class="math">\(\{  -0.098841, 0 \}\)</span> (MZA solution).</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.32 </span><span class="caption-text">Dispersion relation for spectral crossing. The discontinuties are at <span class="math">\(\{ 0.0944205, 0 \}\)</span> (MAA solution) and <span class="math">\(\{  -0.098841, 0 \}\)</span> (MZA solution).</span></p>
 </div>
 <p>I can also plot the MAA and MZA soltions for <span class="math">\(\omega(n)\)</span>.</p>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id21">
 <img alt="../_images/DR-omega-k-direct-continuous-two-regions-maa-crossing.png" src="../_images/DR-omega-k-direct-continuous-two-regions-maa-crossing.png" />
-<p class="caption"><span class="caption-number">Fig. 2.24 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.33 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MAA solution. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="id22">
 <img alt="../_images/DR-omega-k-direct-continuous-two-regions-mza-crossing.png" src="../_images/DR-omega-k-direct-continuous-two-regions-mza-crossing.png" />
-<p class="caption"><span class="caption-number">Fig. 2.25 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MZA solution. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.34 </span><span class="caption-text"><span class="math">\(\omega(n)\)</span> for MZA solution. The vertical grid lines are <span class="math">\(n=1/c_1, 1/c_2\)</span>.</span></p>
 </div>
 <p>The reason we have no real values between <span class="math">\(1/0.9\)</span> and <span class="math">\(1/0.3\)</span> is because the argument of the ln function is negative within this regime.</p>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id23">
 <img alt="../_images/DR-omega-k-direct-continuous-two-regions-arg-ln.png" src="../_images/DR-omega-k-direct-continuous-two-regions-arg-ln.png" />
-<p class="caption"><span class="caption-number">Fig. 2.26 </span><span class="caption-text">The argument of the ln function. The vertical grid lines are <span class="math">\(n=1/0.3,1/0.6,1/0.9\)</span>. Even <span class="math">\(n=1/0.6\)</span> gives us the zero argument, which means the ln function is infinite, I do not think this is some point that we can have a <span class="math">\(\omega,k\)</span> relation.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.35 </span><span class="caption-text">The argument of the ln function. The vertical grid lines are <span class="math">\(n=1/0.3,1/0.6,1/0.9\)</span>. Even <span class="math">\(n=1/0.6\)</span> gives us the zero argument, which means the ln function is infinite, I do not think this is some point that we can have a <span class="math">\(\omega,k\)</span> relation.</span></p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">Some Discussions about <span class="math">\(\omega(n)\)</span></p>
@@ -706,28 +762,31 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 </div>
 </div>
 <div class="section" id="general-discussions-of-significance-of-spectra">
-<h2>2.4.5. General Discussions of Significance of Spectra<a class="headerlink" href="#general-discussions-of-significance-of-spectra" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id15">
+<h2>2.4.6. General Discussions of Significance of Spectra<a class="headerlink" href="#general-discussions-of-significance-of-spectra" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id24">
 <img alt="../_images/omega-of-n-for-different-spectra.png" src="../_images/omega-of-n-for-different-spectra.png" />
-<p class="caption"><span class="caption-number">Fig. 2.27 </span><span class="caption-text">Function <span class="math">\(\omega(n)\)</span> for different <span class="math">\(g_1,g_2\)</span>. The emission was set to <span class="math">\(G=\begin{cases}
+<p class="caption"><span class="caption-number">Fig. 2.36 </span><span class="caption-text">Function <span class="math">\(\omega(n)\)</span> for different <span class="math">\(g_1,g_2\)</span>. The emission was set to <span class="math">\(G=\begin{cases}
 g_1, \qquad &amp; \theta_1&lt;\theta&lt;\theta_0 \\
 g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 \end{cases}\)</span> where <span class="math">\(\cos\theta_1=0.9\)</span> and <span class="math">\(\cos\theta_2=0.3\)</span> <span class="math">\(\cos\theta_0=0.6\)</span></span></p>
 </div>
-<div class="figure align-center" id="id16">
+<div class="figure align-center" id="id25">
 <img alt="../_images/omega-of-n-for-different-spectra-c0-0.4.png" src="../_images/omega-of-n-for-different-spectra-c0-0.4.png" />
-<p class="caption"><span class="caption-number">Fig. 2.28 </span><span class="caption-text">Function <span class="math">\(\omega(n)\)</span> for different <span class="math">\(g_1,g_2\)</span>. The emission was set to <span class="math">\(G=\begin{cases}
+<p class="caption"><span class="caption-number">Fig. 2.37 </span><span class="caption-text">Function <span class="math">\(\omega(n)\)</span> for different <span class="math">\(g_1,g_2\)</span>. The emission was set to <span class="math">\(G=\begin{cases}
 g_1, \qquad &amp; \theta_1&lt;\theta&lt;\theta_0 \\
 g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 \end{cases}\)</span> where <span class="math">\(\cos\theta_1=0.9\)</span> and <span class="math">\(\cos\theta_2=0.3\)</span> <span class="math">\(\cos\theta_0=0.4\)</span></span></p>
 </div>
 <div class="warning admonition">
 <p class="first admonition-title">Why</p>
+<p>It seems that crossing is crucial to a change in the number of solution to <span class="math">\(n(\omega)\)</span>. If we have crossing, then the number of solutions to <span class="math">\(n(\omega)\)</span> will change for different values of <span class="math">\(\omega\)</span>. Otherwise, the number of solutions won&#8217;t change.</p>
+<p>And a change of the number of solutions indicates a possible gap.</p>
+<p>Now the question is, why?</p>
 <p class="last">Can I derive some expression for the <span class="math">\(\ln\)</span> function for a continuous distribution <span class="math">\(G(\theta)\)</span>?</p>
 </div>
 </div>
 <div class="section" id="discrete-case-and-continuous-case">
-<h2>2.4.6. Discrete Case and Continuous Case<a class="headerlink" href="#discrete-case-and-continuous-case" title="Permalink to this headline">¶</a></h2>
+<h2>2.4.7. Discrete Case and Continuous Case<a class="headerlink" href="#discrete-case-and-continuous-case" title="Permalink to this headline">¶</a></h2>
 <p>Will we have a continuous case if the number of beams is infinite.</p>
 <p>For discrete case</p>
 <div class="math" id="equation-eqn-discrete-beams-i0-i2">

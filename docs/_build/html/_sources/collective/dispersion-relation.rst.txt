@@ -209,12 +209,6 @@ Similar to the previous example, confining the range of :math:`n` leads to only 
 
 
 
-
-
-
-
-
-
 Analyze the Symmetries in Polarization Tensor
 ------------------------------------------------------------------
 
@@ -251,6 +245,11 @@ To simplify the calcualtion, we denote :math:`n=\frac{\lvert \mathbf k\rvert}{\o
 
 which shows is an analytical expression of :math:`\omega`. We do not solve this relation. Instead, we plugin the definition :math:`n=\frac{\lvert \mathbf  k\rvert}{\omega}` and find out the relation between :math:`\omega` and :math:`k=\lvert \mathbf k \rvert`
 
+The four velocity is
+
+.. math::
+   v^\mu \to ( 1, \sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta )^{\mathrm T}.
+
 We define
 
 .. math::
@@ -277,7 +276,7 @@ the matrix :math:`N^\mu_{\phantom{\mu}\nu}` is simplified,
 We express the eigen values of matrix :math:`N^\mu_{\phantom{\mu}\nu}`, which we denote as :math:`\lambda_N`,
 
 .. math::
-   \omega = -\lambda_N = \frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).
+   \omega = -\lambda_N = -\frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).
    :label: eqn-omega-n-relation-axial-sym-general
 
 
@@ -502,6 +501,91 @@ Comparing to electrodynamics, where we have the field :math:`A^\mu` which tells 
 
 
 
+Solving N Beams
+------------------------------------
+
+For consistancy check, we parametrize :math:`\omega(n)`. For MAA solution, we have
+
+.. math::
+   \omega(n) = \frac{1}{4} \sum_i G_i \frac{1-\cos^n\theta_i}{1 - n \cos\theta_i }.
+
+
+.. _fig-DR-omega-n-2-beams-lr-png:
+
+.. figure:: assets/dispersion-relation/DR-omega-n-2-beams-lr.png
+   :align: center
+
+   :math:`\omega(n)` with two angles :math:`\cos\theta = 0.9,0.3` and :math:`G_1 = -G_2 = -2\pi/2`. The grid lines are the values of n for singularity, :math:`n=1/0.3,1/0.9`.
+
+.. _fig-DR-omega-k-2-beams-lr-png:
+
+.. figure:: assets/dispersion-relation/DR-omega-k-2-beams-lr.png
+   :align: center
+
+   Same parameters as above. The orange dashed lines are the singularity lines.
+
+
+:numref:`fig-DR-omega-n-2-beams-lr-png` shows that the limit of :math:`n\to 1/0.9,1/0.3` leads to :math:`\omega` infinities. These infinities also indicates that :math:`\omega (k)` at large :math:`\lvert\omega\rvert` are straight lines with slope :math:`n=1/0.9,1/0.3`, as shown in :numref:`fig-DR-omega-k-2-beams-lr-png`.
+
+Similar plots are made for 4,6,8 beams.
+
+.. figure:: assets/dispersion-relation/DR-omega-n-2-4-6-8-beams-lr.png
+   :align: center
+
+   2, 4, 6, 8 beams with equal division of cosine of emission angle. For example 4 beams are emission at :math:`\cos\theta= 0.9, 0.7, 0.5, 0.3`.
+
+
+.. figure:: assets/dispersion-relation/DR-omega-k-2-4-6-8-beams-lr.png
+   :align: center
+
+   Same parameters as above.
+
+
+
+We also calculated the homogeneous emssion.
+
+.. figure:: assets/dispersion-relation/DR-omega-n-2-4-6-8-beams-homogeneous.png
+   :align: center
+
+   2, 4, 6, 8 beams for homogeneous :math:`G`.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-2-4-6-8-beams-homogeneous.png
+   :align: center
+
+   Same parameters as above.
+
+
+
+.. admonition:: Gap
+   :class: note
+
+   Whenever a gap in :math:`omega` appears, we might find in the :math:`\omega(n)` plot that we have less solutions to :math:`n` for some given :math:`\omega` values. **It seems that this can only happen for ELN spectrum with crossing.**
+
+   To illustrate this idea, I shaded the region that :math:`n(\omega)` has no solution for the case of two emission angle and crossing in :numref:`dr-omega-k-2-beams-lr-shaded-region-png`.
+
+   .. _dr-omega-k-2-beams-lr-shaded-region-png:
+
+   .. figure:: assets/dispersion-relation/DR-omega-k-2-beams-lr-shaded-region.png
+      :align: center
+
+      The shaded regions are the region that :math:`n(\omega)` has no solution. It's hard to analytically solve :math:`n(\omega)`. But we can get an idea of this using :math:`\omega(n)` plot.
+
+   This provides an method to determine whether we have a gap in :math:`\omega` or :math:`k`. For gap in :math:`k`, we plot out :math:`k(n)`.
+
+   .. figure:: assets/dispersion-relation/DR-k-n-2-beams-lr-shaded-region.png
+      :align: center
+
+      The shaded region are the region where :math:`n(k)` has no solution.
+
+   The behavor of :math:`\omega(n)` and :math:`k(n)` are qualititatively the same.
+
+   .. figure:: assets/dispersion-relation/DR-k-n-2-beams-lr-and-homogeneous.png
+      :align: center
+
+      :math:`k(n)` for non-crossing and crossing. The are qualitatively the same as :math:`\omega(n)`. That being said, we always have the same upside down U-shape for spectrum with crossing for both :math:`k(n)` and :math:`\omega(n)`, if the region of emission angles :math:`\theta` satisfies :math:`\cos\theta>0`.
+
+
+
 Solving Continuous Emission
 -----------------------------------------
 
@@ -525,7 +609,7 @@ Homogeneous Emission
 Assuming :math:`G=1`, the MAA solution is
 
 .. math::
-   -4\omega = I_0 - I_2,
+   \omega = \frac{g}{4}(I_0 - I_2),
 
 which becomes
 
@@ -625,7 +709,7 @@ Then we parametrically plot :math:`\{ n \omega(n), \omega(n)\}` to get the dispe
 
 
 
-For simplicity, we choose :math:`g_1=-g_2=1`.
+For simplicity, we choose :math:`g_2=-g_1=1`.
 
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-dr-crossing.png
    :align: center
@@ -689,6 +773,12 @@ General Discussions of Significance of Spectra
 
 .. admonition:: Why
    :class: warning
+
+   It seems that crossing is crucial to a change in the number of solution to :math:`n(\omega)`. If we have crossing, then the number of solutions to :math:`n(\omega)` will change for different values of :math:`\omega`. Otherwise, the number of solutions won't change.
+
+   And a change of the number of solutions indicates a possible gap.
+
+   Now the question is, why?
 
    Can I derive some expression for the :math:`\ln` function for a continuous distribution :math:`G(\theta)`?
 

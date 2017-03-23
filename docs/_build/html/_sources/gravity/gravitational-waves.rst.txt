@@ -211,6 +211,11 @@ In principle, the equation of motion is changed due to gravitational field with 
 Resonances
 ------------------------------
 
+Stimulated Transitions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**In this section, we will try to verify Shashank's idea about resonance.**
+
 For resonance of linear EoM, we do not need to consider neutrino self-interactions.
 
 .. admonition:: What's the EoM
@@ -254,6 +259,43 @@ which is a constant. So we observe nothing new.
 
    Secondly, I used time independent equation. For gravitational waves, we need time dependent equation.
 
+
+
+
+MSW-like Transition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Some Estimations
+   :class: note
+
+   The scale of :math:`\vec A` is determined by :math:`\dot a/a=H`. For a MSW resonance, we require the energy scale of :math:`\vec A` to go through a value that is of the order of vacuum oscillation frequency.
+
+   For convinience of comparision with previous calculations, we use length scale instead of energy scales.
+
+   For 1MeV neutrinos, the length scale associated with oscillations is of the order 10km. We can find the corresponding H that is of the same order of length. It turns out to be
+
+   .. math::
+      H \sim 10^3 \frac{1}{ \mathrm{s} } \sim 10^3 \frac{10^{19}\mathrm{km}}{ \mathrm{s} \mathrm{Mpc} } \sim 10^{22} \mathrm{km/s/Mpc}.
+
+   This is a huge Hubble parameter. Not sure if it means anything anymore.
+
+   If we consider the low energy neutrinos. But for a reasonable Hubble parameter, we have to consider very low energy even non-relativistic neutrinos. Not really something that can be worked out.
+
+
+Regardless of the estimation, the formalism can be calcualted using [Cardall1996]_ and [Chirata]_.
+
+The tetrad to be used is
+
+.. math::
+   e^0_a &= (1,0,0,0) \\
+   e^1_a &= (0,1/a,0,0) \\
+   e^2_a &= ( 0,0,1/(a\sqrt{k(\chi)}),0 ) \\
+   e^3_a &= ( 0,0,0, 1/( a\sqrt{k(\chi)} \sin\theta ) ),
+
+where the line element is
+
+.. math::
+   ds^2 = - dt^2 + a^2 \left[ d\chi^2 + k(\chi) (d\theta^2 + \sin^2\theta d\phi^2) \right].
 
 
 
@@ -373,6 +415,8 @@ References and Notes
 
 
 .. [Bauswein2016] A. Bauswein, J. Clark, N. Stergioulas, H.-T. J. (n.d.). Dynamics and gravitational-wave emission of neutron-star merger remnants, arXiv:1602.00950. Retrieved from https://arxiv.org/abs/1602.00950
+
+.. [Chirata] `Lecture notes on Cosmology <http://www.tapir.caltech.edu/~chirata/ph217/lec01.pdf>`_
 
 Kip Thorne wrote a review paper about gravitational waves: `The Generation of Gravitational Waves: A Review of Computational Tecniques <https://www.its.caltech.edu/~kip/scripts/PubScans/II-68.pdf>`_.
 

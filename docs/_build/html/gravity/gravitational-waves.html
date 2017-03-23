@@ -246,7 +246,11 @@ TeX: {
 </ul>
 </li>
 <li><a class="reference internal" href="#build-a-model">3.2.3. Build a Model</a></li>
-<li><a class="reference internal" href="#resonances">3.2.4. Resonances</a></li>
+<li><a class="reference internal" href="#resonances">3.2.4. Resonances</a><ul>
+<li><a class="reference internal" href="#stimulated-transitions">3.2.4.1. Stimulated Transitions</a></li>
+<li><a class="reference internal" href="#msw-like-transition">3.2.4.2. MSW-like Transition</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#nonlinear-effect">3.2.5. Nonlinear Effect</a><ul>
 <li><a class="reference internal" href="#polarization-tensor">3.2.5.1. Polarization Tensor</a></li>
 <li><a class="reference internal" href="#gravitational-waves-mode">3.2.5.2. Gravitational Waves + Mode</a></li>
@@ -361,7 +365,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <div class="math">
 \[h(\tau) \sim 10^{-6}\left( \frac{1 \text{ day} }{\tau} \right)^{1/4} \left( \frac{M}{1.4M_{\odot}}\right)^{5/4}.\]</div>
 <p>As an example, we plot the evolution as a function of <span class="math">\(\tau\)</span> for 1.4 solar mass binaries.</p>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id14">
 <img alt="../_images/binary-mergers-h-tau.png" src="../_images/binary-mergers-h-tau.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Binary mergers. In the beginning, gravitational waves are very strong.</span></p>
 </div>
@@ -379,7 +383,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <li>Vacuum frequency corresponds to oscillation length scale of <span class="math">\(L_v \sim 197\times 10^6\times \frac{ 1 }{ \omega_v } \approx 10^1 \mathrm{km}\)</span>.</li>
 <li>The gravitational wave frequency are usually of the order kHz <a class="reference internal" href="#bauswein2016" id="id6">[Bauswein2016]</a>. Such a frequency corresponds to a periodic potential in space, which has a length scale of <span class="math">\(L_{GW} \sim 3\times 10^{5}\mathrm{km/s} \times 10^{-3} \mathrm{s}\sim 10^2 \mathrm{km}\)</span>.</li>
 </ol>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="id15">
 <img alt="../_images/gw-frequency-neutron-star-mergers.png" src="../_images/gw-frequency-neutron-star-mergers.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Gravitational wave frequencies and their strains. <a class="reference internal" href="#bauswein2016" id="id7">[Bauswein2016]</a></span></p>
 </div>
@@ -418,6 +422,9 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 </div>
 <div class="section" id="resonances">
 <h2>3.2.4. Resonances<a class="headerlink" href="#resonances" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stimulated-transitions">
+<h3>3.2.4.1. Stimulated Transitions<a class="headerlink" href="#stimulated-transitions" title="Permalink to this headline">¶</a></h3>
+<p><strong>In this section, we will try to verify Shashank&#8217;s idea about resonance.</strong></p>
 <p>For resonance of linear EoM, we do not need to consider neutrino self-interactions.</p>
 <div class="warning admonition">
 <p class="first admonition-title">What&#8217;s the EoM</p>
@@ -445,12 +452,36 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <p class="last">Secondly, I used time independent equation. For gravitational waves, we need time dependent equation.</p>
 </div>
 </div>
+<div class="section" id="msw-like-transition">
+<h3>3.2.4.2. MSW-like Transition<a class="headerlink" href="#msw-like-transition" title="Permalink to this headline">¶</a></h3>
+<div class="note admonition">
+<p class="first admonition-title">Some Estimations</p>
+<p>The scale of <span class="math">\(\vec A\)</span> is determined by <span class="math">\(\dot a/a=H\)</span>. For a MSW resonance, we require the energy scale of <span class="math">\(\vec A\)</span> to go through a value that is of the order of vacuum oscillation frequency.</p>
+<p>For convinience of comparision with previous calculations, we use length scale instead of energy scales.</p>
+<p>For 1MeV neutrinos, the length scale associated with oscillations is of the order 10km. We can find the corresponding H that is of the same order of length. It turns out to be</p>
+<div class="math">
+\[H \sim 10^3 \frac{1}{ \mathrm{s} } \sim 10^3 \frac{10^{19}\mathrm{km}}{ \mathrm{s} \mathrm{Mpc} } \sim 10^{22} \mathrm{km/s/Mpc}.\]</div>
+<p>This is a huge Hubble parameter. Not sure if it means anything anymore.</p>
+<p class="last">If we consider the low energy neutrinos. But for a reasonable Hubble parameter, we have to consider very low energy even non-relativistic neutrinos. Not really something that can be worked out.</p>
+</div>
+<p>Regardless of the estimation, the formalism can be calcualted using <a class="reference internal" href="#cardall1996" id="id11">[Cardall1996]</a> and <a class="reference internal" href="#chirata" id="id12">[Chirata]</a>.</p>
+<p>The tetrad to be used is</p>
+<div class="math">
+\[\begin{split}e^0_a &amp;= (1,0,0,0) \\
+e^1_a &amp;= (0,1/a,0,0) \\
+e^2_a &amp;= ( 0,0,1/(a\sqrt{k(\chi)}),0 ) \\
+e^3_a &amp;= ( 0,0,0, 1/( a\sqrt{k(\chi)} \sin\theta ) ),\end{split}\]</div>
+<p>where the line element is</p>
+<div class="math">
+\[ds^2 = - dt^2 + a^2 \left[ d\chi^2 + k(\chi) (d\theta^2 + \sin^2\theta d\phi^2) \right].\]</div>
+</div>
+</div>
 <div class="section" id="nonlinear-effect">
 <h2>3.2.5. Nonlinear Effect<a class="headerlink" href="#nonlinear-effect" title="Permalink to this headline">¶</a></h2>
 <p>To consider the nonlinear effect on neutrino flavor conversions, we can apply linear stability analysis.</p>
 <div class="section" id="polarization-tensor">
 <h3>3.2.5.1. Polarization Tensor<a class="headerlink" href="#polarization-tensor" title="Permalink to this headline">¶</a></h3>
-<p>I can use polarization tensor to solve the linear regime <a class="reference internal" href="#izaguirre2017" id="id11">[Izaguirre2017]</a>. This method is nothing different from solving the linearized EoM for k and finding the imaginary part in it.</p>
+<p>I can use polarization tensor to solve the linear regime <a class="reference internal" href="#izaguirre2017" id="id13">[Izaguirre2017]</a>. This method is nothing different from solving the linearized EoM for k and finding the imaginary part in it.</p>
 <div class="note admonition">
 <p class="first admonition-title">Comments on Dispersion Relation</p>
 <p>Any dispersion relation <span class="math">\(f(\omega,k)=0\)</span> indicates whether it is possible to have imaginary parts in <span class="math">\(\omega,k\)</span>.</p>
@@ -537,13 +568,13 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <table class="docutils citation" frame="void" id="izaguirre2017" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[Izaguirre2017]</a></td><td>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2017). <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.118.021101">Fast Pairwise Conversion of Supernova Neutrinos: A Dispersion Relation Approach</a>. Physical Review Letters, 118(2), 21101.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id13">[Izaguirre2017]</a></td><td>Izaguirre, I., Raffelt, G., &amp; Tamborra, I. (2017). <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.118.021101">Fast Pairwise Conversion of Supernova Neutrinos: A Dispersion Relation Approach</a>. Physical Review Letters, 118(2), 21101.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="cardall1996" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[Cardall1996]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>, <a class="fn-backref" href="#id10">3</a>)</em> Cardall, C. Y., &amp; Fuller, G. M. (1996). <a class="reference external" href="https://doi.org/10.1103/PhysRevD.55.7960">Neutrino oscillations in curved spacetime: an heuristic treatment</a>, 55(12), 7.</td></tr>
+<tr><td class="label">[Cardall1996]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>, <a class="fn-backref" href="#id10">3</a>, <a class="fn-backref" href="#id11">4</a>)</em> Cardall, C. Y., &amp; Fuller, G. M. (1996). <a class="reference external" href="https://doi.org/10.1103/PhysRevD.55.7960">Neutrino oscillations in curved spacetime: an heuristic treatment</a>, 55(12), 7.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="bauswein2016" rules="none">
@@ -553,6 +584,12 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <li>Bauswein, J. Clark, N. Stergioulas, H.-T. J. (n.d.). Dynamics and gravitational-wave emission of neutron-star merger remnants, arXiv:1602.00950. Retrieved from https://arxiv.org/abs/1602.00950</li>
 </ol>
 </td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="chirata" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[Chirata]</a></td><td><a class="reference external" href="http://www.tapir.caltech.edu/~chirata/ph217/lec01.pdf">Lecture notes on Cosmology</a></td></tr>
 </tbody>
 </table>
 <p>Kip Thorne wrote a review paper about gravitational waves: <a class="reference external" href="https://www.its.caltech.edu/~kip/scripts/PubScans/II-68.pdf">The Generation of Gravitational Waves: A Review of Computational Tecniques</a>.</p>
