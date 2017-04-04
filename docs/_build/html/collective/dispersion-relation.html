@@ -34,7 +34,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Gravity" href="../gravity/index.html" />
+    <link rel="next" title="2.5. Discworld" href="discworld.html" />
     <link rel="prev" title="2.3. Some Clarifications" href="some-clarifications.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -214,6 +214,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="some-clarifications.html">2.3. Some Clarifications</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discworld.html">2.5. Discworld</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">3. Gravity</a><ul>
@@ -277,7 +278,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="../gravity/index.html" title="Next Chapter: 3. Gravity"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3. Gravity &raquo;</span>
+    <a href="discworld.html" title="Next Chapter: 2.5. Discworld"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2.5. Discworld &raquo;</span>
     </a>
   </li>
               
@@ -670,7 +671,7 @@ A_{k\omega} &amp; B_\omega
 \[\begin{split}I_0 &amp;= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
    &amp;= \frac{\omega}{k} \ln \left( \left\vert\frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \\
 I_1 &amp;= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
-&amp; =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
+&amp; =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
 I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 &amp;= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).\end{split}\]</div>
 <p>where <span class="math">\(c_1=\cos\theta_1\)</span> and <span class="math">\(c_2=\cos\theta_2\)</span>.</p>
@@ -799,8 +800,13 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 <div class="section" id="do-we-really-need-a-gap">
 <h3>2.4.6.1. Do we really need a gap?<a class="headerlink" href="#do-we-really-need-a-gap" title="Permalink to this headline">¶</a></h3>
 <p>I think not. As long as we have a point on <span class="math">\(\omega(k)\)</span> plane that <span class="math">\(\omega'(k_b)=\infty\)</span> and <span class="math">\(\omega'(k_{b,-})\omega'(k_{b,+})&lt;0\)</span>, we could obtain a complex k for some range of it.</p>
-<p>Is this true? I can not prove it but give some examples. From <a class="reference internal" href="#dr-omega-k-continuous-table-0-9-0-3-png"><span class="std std-numref">Fig. 2.38</span></a>, I can choose the combination <span class="math">\(\{g_1,g_2\}=\{3,1\}\)</span>. Solve the system using the traditional method and set <span class="math">\(\omega=0\)</span>.</p>
-<p>When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real <span class="math">\(\omega\)</span>.</p>
+<p>Is this true? I can not prove it but give some examples. From <a class="reference internal" href="#dr-omega-k-continuous-table-0-9-0-3-png"><span class="std std-numref">Fig. 2.38</span></a>, I can choose the combination <span class="math">\(\{g_1,g_2\}=\{3,1\}\)</span>. Solve the system using the traditional method and set <span class="math">\(\omega=0\)</span>. (When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real <span class="math">\(\omega\)</span>.) When I try to solve the problem, I will face eactly the same problem of solving some matrix eqation of polarization tensor.</p>
+<p>Or I can simply consider <span class="math">\(k(n)\)</span> and find whether we have a region of <span class="math">\(k'(n)=0\)</span> and <span class="math">\(k''(n)\neq 0\)</span> which generates different numbers of solutions in different region of <span class="math">\(k\)</span>.</p>
+<div class="note admonition">
+<p class="first admonition-title">Imagary Part in k</p>
+<p>For MAA solution, I can try to solve <span class="math">\(n\)</span> given value of <span class="math">\(\omega\)</span>. If I obtain complex value of <span class="math">\(n\)</span>, then I have complex value of k thus instability.</p>
+<p class="last">However, the equation for n is hard to solve.</p>
+</div>
 </div>
 </div>
 <div class="section" id="discrete-case-and-continuous-case">

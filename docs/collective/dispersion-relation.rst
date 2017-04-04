@@ -595,7 +595,7 @@ Suppose neutrinos are emitted within a angle range :math:`[\theta_1,\theta_2]`. 
    I_0 &= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
       &= \frac{\omega}{k} \ln \left( \left\vert\frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \\
    I_1 &= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
-   & =  \frac{\omega}{\omega} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
+   & =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
    I_2 &= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
    &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).
 
@@ -806,9 +806,17 @@ Do we really need a gap?
 
 I think not. As long as we have a point on :math:`\omega(k)` plane that :math:`\omega'(k_b)=\infty` and :math:`\omega'(k_{b,-})\omega'(k_{b,+})<0`, we could obtain a complex k for some range of it.
 
-Is this true? I can not prove it but give some examples. From :numref:`dr-omega-k-continuous-table-0-9-0-3-png`, I can choose the combination :math:`\{g_1,g_2\}=\{3,1\}`. Solve the system using the traditional method and set :math:`\omega=0`.
+Is this true? I can not prove it but give some examples. From :numref:`dr-omega-k-continuous-table-0-9-0-3-png`, I can choose the combination :math:`\{g_1,g_2\}=\{3,1\}`. Solve the system using the traditional method and set :math:`\omega=0`. (When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real :math:`\omega`.) When I try to solve the problem, I will face eactly the same problem of solving some matrix eqation of polarization tensor.
 
-When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real :math:`\omega`.
+Or I can simply consider :math:`k(n)` and find whether we have a region of :math:`k'(n)=0` and :math:`k''(n)\neq 0` which generates different numbers of solutions in different region of :math:`k`.
+
+
+.. admonition:: Imagary Part in k
+   :class: note
+
+   For MAA solution, I can try to solve :math:`n` given value of :math:`\omega`. If I obtain complex value of :math:`n`, then I have complex value of k thus instability.
+
+   However, the equation for n is hard to solve.
 
 
 

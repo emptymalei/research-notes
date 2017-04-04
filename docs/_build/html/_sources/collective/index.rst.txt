@@ -8,3 +8,4 @@ Collective
    directional-instability.rst
    some-clarifications.rst
    dispersion-relation.rst
+   discworld.rst
