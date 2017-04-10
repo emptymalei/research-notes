@@ -819,6 +819,8 @@ Or I can simply consider :math:`k(n)` and find whether we have a region of :math
    However, the equation for n is hard to solve.
 
 
+**The MAA solution** shows that it only determines :math:`n`. I solved the equation and found :math:`n`. For :math:`\{g_1, g_2\}=\{\}`
+
 
 Discrete Case and Continuous Case
 --------------------------------------
