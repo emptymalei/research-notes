@@ -626,13 +626,13 @@ For MAA and MZA we can plot :math:`\omega` as a function of n.
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-maa-no-crossing.png
    :align: center
 
-   :math:`\omega(n)` for MAA solution.
+   :math:`\omega(n)` for MAA solution. The spectrum is feeded in as :math:`\{\{\cos\theta_1,\cos\theta_2\}, G \}=\{\{0.9, 0.3\}, 1\}`.
 
 
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-mza-no-crossing.png
    :align: center
 
-   :math:`\omega(n)` for MAA solution.
+   :math:`\omega(n)` for MZA solution.  The spectrum is feeded in as :math:`\{\{\cos\theta_1,\cos\theta_2\}, G \}=\{\{0.9, 0.3\}, 1\}`.
 
 
 On the other hand, we know :math:`k=n\omega`, so we have parametrized the dispersion relation using a parameter :math:`n`.
@@ -681,6 +681,8 @@ I have to break each of the integral into two parts. I calculate :math:`I_0-I_2`
    g_2, \qquad & \theta_0<\theta<\theta_2
    \end{cases}.
 
+In other words, we have a box-like spetrum.
+
 For MAA solution we define a function,
 
 .. math::
@@ -714,14 +716,14 @@ For simplicity, we choose :math:`g_2=-g_1=1`.
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-dr-crossing.png
    :align: center
 
-   Dispersion relation for spectral crossing. The discontinuties are at :math:`\{ 0.0944205, 0 \}` (MAA solution) and :math:`\{  -0.098841, 0 \}` (MZA solution).
+   Dispersion relation for spectral crossing. The discontinuties are at :math:`\{ 0.0944205, 0 \}` (MAA solution) and :math:`\{  -0.098841, 0 \}` (MZA solution). The spectrum I use is :math:`\{ \{\{\cos\theta_1,\cos\theta_0\}, g1\}, \{\{ \cos\theta_0,\cos\theta_2\},g2\}\}=\{\{\{0.9, 0.6\}, 3\}, \{\{0.6, 0.3\}, -3\}\}`.
 
 I can also plot the MAA and MZA soltions for :math:`\omega(n)`.
 
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-maa-crossing.png
    :align: center
 
-   :math:`\omega(n)` for MAA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
+   :math:`\omega(n)` for MAA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`. The spectrum I use is :math:`\{\{\{0.9, 0.6\}, 3\}, \{\{0.6, 0.3\}, -3\}\}`. At :math:`n\to \pm\infty`, both of the lines approaches 0.
 
 
 
@@ -729,7 +731,7 @@ I can also plot the MAA and MZA soltions for :math:`\omega(n)`.
 .. figure:: assets/dispersion-relation/DR-omega-k-direct-continuous-two-regions-mza-crossing.png
    :align: center
 
-   :math:`\omega(n)` for MZA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`.
+   :math:`\omega(n)` for MZA solution. The vertical grid lines are :math:`n=1/c_1, 1/c_2`. The spectrum I use is :math:`\{\{\{0.9, 0.6\}, 3\}, \{\{0.6, 0.3\}, -3\}\}`. At :math:`n\to \pm\infty`, all lines approach 0. At :math:`n\to 1/0.9`, + solution becomes :math:`-\infty` and th - solution becomes a complex number :math:`-0.639474 - 36.1614 i`. (This should be irrelevant.) At :math:`n\to 1/0.3`, + solution approaches :math:`-\infty` while - solution approaches 0.0445.
 
 The reason we have no real values between :math:`1/0.9` and :math:`1/0.3` is because the argument of the ln function is negative within this regime.
 
@@ -754,7 +756,7 @@ General Discussions of Significance of Spectra
 ------------------------------------------------
 
 
-.. figure:: assets/dispersion-relation/DR-omega-of-n-for-different-spectra.png
+.. figure:: assets/dispersion-relation/DR-omega-of-n-for-different-spectra-table-0.9-0.6-0.3.png
    :align: center
 
    Function :math:`\omega(n)` for different :math:`g_1,g_2`. The emission was set to :math:`G=\begin{cases}
@@ -764,29 +766,40 @@ General Discussions of Significance of Spectra
 
 
 
-.. figure:: assets/dispersion-relation/DR-k-of-n-for-different-spectra.png
+.. figure:: assets/dispersion-relation/DR-k-of-n-for-different-spectra-table-0.9-0.6-0.3.png
    :align: center
 
    :math:`k(n)` for the same parameters.
 
-The corresponding dispersion relations are shown in :numref:`dr-omega-k-continuous-table-0-9-0-3-png`
+The corresponding dispersion relations are shown in :numref:`dr-omega-k-continuous-table-0-9-0-6-0-3-png`
 
-.. _dr-omega-k-continuous-table-0-9-0-3-png:
+.. _dr-omega-k-continuous-table-0-9-0-6-0-3-png:
 
-.. figure:: assets/dispersion-relation/DR-omega-k-continuous-table-0.9-0.3.png
+.. figure:: assets/dispersion-relation/DR-omega-k-continuous-table-0.9-0.6-0.3.png
    :align: center
 
    DR for spectra :math:`\{ \{ \{ 0.9,0.6 \}, g1 \}, \{ \{ 0.6,0.3 \}, g2 \} \}`.
 
 
 
-.. figure:: assets/dispersion-relation/omega-of-n-for-different-spectra-c0-0.4.png
+.. figure:: assets/dispersion-relation/DR-omega-of-n-for-different-spectra-table-0.9-0.4-0.3.png
    :align: center
 
    Function :math:`\omega(n)` for different :math:`g_1,g_2`. The emission was set to :math:`G=\begin{cases}
    g_1, \qquad & \theta_1<\theta<\theta_0 \\
    g_2, \qquad & \theta_0<\theta<\theta_2
    \end{cases}` where :math:`\cos\theta_1=0.9` and :math:`\cos\theta_2=0.3` :math:`\cos\theta_0=0.4`
+
+
+.. figure:: assets/dispersion-relation/DR-k-of-n-for-different-spectra-table-0.9-0.4-0.3.png
+   :align: center
+
+   :math:`k(n)` for the above case.
+
+.. figure:: assets/dispersion-relation/DR-omega-k-continuous-table-0.9-0.4-0.3.png
+   :align: center
+
+   Dispersion relations for the above plot.
 
 
 .. admonition:: Why
@@ -806,7 +819,7 @@ Do we really need a gap?
 
 I think not. As long as we have a point on :math:`\omega(k)` plane that :math:`\omega'(k_b)=\infty` and :math:`\omega'(k_{b,-})\omega'(k_{b,+})<0`, we could obtain a complex k for some range of it.
 
-Is this true? I can not prove it but give some examples. From :numref:`dr-omega-k-continuous-table-0-9-0-3-png`, I can choose the combination :math:`\{g_1,g_2\}=\{3,1\}`. Solve the system using the traditional method and set :math:`\omega=0`. (When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real :math:`\omega`.) When I try to solve the problem, I will face eactly the same problem of solving some matrix eqation of polarization tensor.
+Is this true? I can not prove it but give some examples. From :numref:`dr-omega-k-continuous-table-0-9-0-6-0-3-png`, I can choose the combination :math:`\{g_1,g_2\}=\{3,1\}`. Solve the system using the traditional method and set :math:`\omega=0`. (When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real :math:`\omega`.) When I try to solve the problem, I will face eactly the same problem of solving some matrix eqation of polarization tensor.
 
 Or I can simply consider :math:`k(n)` and find whether we have a region of :math:`k'(n)=0` and :math:`k''(n)\neq 0` which generates different numbers of solutions in different region of :math:`k`.
 
