@@ -1,0 +1,11 @@
+2017-04 Group Meeting
+========================
+
+
+
+
+2017-04-13
+---------------------
+
+1. Show the new dispersion relations as well as the :math:`\omega(n)` plots.
+2. Crossing change the number of solutions for different n.

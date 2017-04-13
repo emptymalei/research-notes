@@ -735,8 +735,8 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 <p class="first admonition-title">Limits</p>
 <p>Before we do any numerical calculations, we can calculate the limits first.</p>
 <div class="math">
-\[\begin{split}\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) + 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert + 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/8, 0  \}, &amp;\qquad \text{for MAA solution} \\
-\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{ ( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) - 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert - 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/4, 0  \}, &amp;\qquad \text{for MZA solution}.\end{split}\]</div>
+\[\begin{split}\lim_{n\to\pm\infty}\{n\omega(n),\omega(n)\}  &amp;= \{( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) + 2 g_1 \ln \frac{c_0}{c_1}  + 2 g_2\ln \frac{c_2}{c_0} )/8, 0  \}, &amp;\qquad \text{for MAA solution} \\
+\lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &amp;= \{ \{two very complicated expression, try Mathematica \}, 0  \}, &amp;\qquad \text{for MZA solution}.\end{split}\]</div>
 <p>For <span class="math">\(g_1=g_2=1\)</span> these limit match the homogeous result, which they should.</p>
 <p class="last">We also have the large k limit which are <span class="math">\(\omega = \frac{1}{c_i}k\)</span>.</p>
 </div>
@@ -782,7 +782,7 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 <p>The corresponding dispersion relations are shown in <a class="reference internal" href="#dr-omega-k-continuous-table-0-9-0-6-0-3-png"><span class="std std-numref">Fig. 2.38</span></a></p>
 <div class="figure align-center" id="id26">
 <span id="dr-omega-k-continuous-table-0-9-0-6-0-3-png"></span><img alt="../_images/DR-omega-k-continuous-table-0.9-0.6-0.3.png" src="../_images/DR-omega-k-continuous-table-0.9-0.6-0.3.png" />
-<p class="caption"><span class="caption-number">Fig. 2.38 </span><span class="caption-text">DR for spectra <span class="math">\(\{ \{ \{ 0.9,0.6 \}, g1 \}, \{ \{ 0.6,0.3 \}, g2 \} \}\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.38 </span><span class="caption-text">DR for spectra <span class="math">\(\{ \{ \{ 0.9,0.6 \}, g1 \}, \{ \{ 0.6,0.3 \}, g2 \} \}\)</span>. Everytime we have <span class="math">\(g_1\)</span> or <span class="math">\(g_2\)</span> becomes 0, the results should be ignored.</span></p>
 </div>
 <div class="figure align-center" id="id27">
 <img alt="../_images/DR-omega-of-n-for-different-spectra-table-0.9-0.4-0.3.png" src="../_images/DR-omega-of-n-for-different-spectra-table-0.9-0.4-0.3.png" />
@@ -808,15 +808,14 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 </div>
 <div class="section" id="do-we-really-need-a-gap">
 <h3>2.4.6.1. Do we really need a gap?<a class="headerlink" href="#do-we-really-need-a-gap" title="Permalink to this headline">¶</a></h3>
-<p>I think not. As long as we have a point on <span class="math">\(\omega(k)\)</span> plane that <span class="math">\(\omega'(k_b)=\infty\)</span> and <span class="math">\(\omega'(k_{b,-})\omega'(k_{b,+})&lt;0\)</span>, we could obtain a complex k for some range of it.</p>
-<p>Is this true? I can not prove it but give some examples. From <a class="reference internal" href="#dr-omega-k-continuous-table-0-9-0-6-0-3-png"><span class="std std-numref">Fig. 2.38</span></a>, I can choose the combination <span class="math">\(\{g_1,g_2\}=\{3,1\}\)</span>. Solve the system using the traditional method and set <span class="math">\(\omega=0\)</span>. (When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real <span class="math">\(\omega\)</span>.) When I try to solve the problem, I will face eactly the same problem of solving some matrix eqation of polarization tensor.</p>
+<p>As long as we have a point on <span class="math">\(\omega(k)\)</span> plane that <span class="math">\(\omega'(k_b)=\infty\)</span> and <span class="math">\(\omega'(k_{b,-})\omega'(k_{b,+})&lt;0\)</span>, we might obtain a complex k for some range of it.</p>
 <p>Or I can simply consider <span class="math">\(k(n)\)</span> and find whether we have a region of <span class="math">\(k'(n)=0\)</span> and <span class="math">\(k''(n)\neq 0\)</span> which generates different numbers of solutions in different region of <span class="math">\(k\)</span>.</p>
 <div class="note admonition">
 <p class="first admonition-title">Imagary Part in k</p>
 <p>For MAA solution, I can try to solve <span class="math">\(n\)</span> given value of <span class="math">\(\omega\)</span>. If I obtain complex value of <span class="math">\(n\)</span>, then I have complex value of k thus instability.</p>
-<p class="last">However, the equation for n is hard to solve.</p>
+<p class="last">Didn&#8217;t find any weird numbers here.</p>
 </div>
-<p><strong>The MAA solution</strong> shows that it only determines <span class="math">\(n\)</span>. I solved the equation and found <span class="math">\(n\)</span>. For <span class="math">\(\{g_1, g_2\}=\{\}\)</span></p>
+<p><a class="reference internal" href="#dr-omega-k-continuous-table-0-9-0-6-0-3-png"><span class="std std-numref">Fig. 2.38</span></a> also indicates that crossing probably change the number of solutions to <span class="math">\(omega\)</span> given different <span class="math">\(n\)</span> thus change the number of solutions to <span class="math">\(k\)</span> given different <span class="math">\(n\)</span>. For example, the lower left panel shows that <span class="math">\(\omega\)</span> has 1 solutions within <span class="math">\(n\in [-\infty,1/0.9]\)</span> but has 3 solutions within <span class="math">\(n\in [1/0.3,\infty]\)</span>. The lower right panel have 3 solutions whithin <span class="math">\(n\in [-\infty,1/0.9]\)</span> and <span class="math">\(n\in [1/0.3,\infty]\)</span>. This might be important when identifying the possible gaps.</p>
 </div>
 </div>
 <div class="section" id="discrete-case-and-continuous-case">

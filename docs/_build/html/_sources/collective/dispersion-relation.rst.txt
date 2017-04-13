@@ -702,8 +702,8 @@ Then we parametrically plot :math:`\{ n \omega(n), \omega(n)\}` to get the dispe
    Before we do any numerical calculations, we can calculate the limits first.
 
    .. math::
-      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) + 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert + 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/8, 0  \}, &\qquad \text{for MAA solution} \\
-      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{ ( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) - 2 g_1 \ln \left\vert\frac{c_0}{c_1}\right\vert - 2 g_2\ln \left\vert\frac{c_2}{c_0}\right\vert )/4, 0  \}, &\qquad \text{for MZA solution}.
+      \lim_{n\to\pm\infty}\{n\omega(n),\omega(n)\}  &= \{( g_1(c_1^2-c_0^2) + g_2(c_0^2-c_2^2) + 2 g_1 \ln \frac{c_0}{c_1}  + 2 g_2\ln \frac{c_2}{c_0} )/8, 0  \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to\infty}\{n\omega(n),\omega(n)\}  &= \{ \{two very complicated expression, try Mathematica \}, 0  \}, &\qquad \text{for MZA solution}.
 
    For :math:`g_1=g_2=1` these limit match the homogeous result, which they should.
 
@@ -778,7 +778,7 @@ The corresponding dispersion relations are shown in :numref:`dr-omega-k-continuo
 .. figure:: assets/dispersion-relation/DR-omega-k-continuous-table-0.9-0.6-0.3.png
    :align: center
 
-   DR for spectra :math:`\{ \{ \{ 0.9,0.6 \}, g1 \}, \{ \{ 0.6,0.3 \}, g2 \} \}`.
+   DR for spectra :math:`\{ \{ \{ 0.9,0.6 \}, g1 \}, \{ \{ 0.6,0.3 \}, g2 \} \}`. Everytime we have :math:`g_1` or :math:`g_2` becomes 0, the results should be ignored.
 
 
 
@@ -817,9 +817,8 @@ The corresponding dispersion relations are shown in :numref:`dr-omega-k-continuo
 Do we really need a gap?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I think not. As long as we have a point on :math:`\omega(k)` plane that :math:`\omega'(k_b)=\infty` and :math:`\omega'(k_{b,-})\omega'(k_{b,+})<0`, we could obtain a complex k for some range of it.
+As long as we have a point on :math:`\omega(k)` plane that :math:`\omega'(k_b)=\infty` and :math:`\omega'(k_{b,-})\omega'(k_{b,+})<0`, we might obtain a complex k for some range of it.
 
-Is this true? I can not prove it but give some examples. From :numref:`dr-omega-k-continuous-table-0-9-0-6-0-3-png`, I can choose the combination :math:`\{g_1,g_2\}=\{3,1\}`. Solve the system using the traditional method and set :math:`\omega=0`. (When I wrote down the equation of motion, I realized that we have a complex k solution as long as the complex k gives us a real :math:`\omega`.) When I try to solve the problem, I will face eactly the same problem of solving some matrix eqation of polarization tensor.
 
 Or I can simply consider :math:`k(n)` and find whether we have a region of :math:`k'(n)=0` and :math:`k''(n)\neq 0` which generates different numbers of solutions in different region of :math:`k`.
 
@@ -829,10 +828,11 @@ Or I can simply consider :math:`k(n)` and find whether we have a region of :math
 
    For MAA solution, I can try to solve :math:`n` given value of :math:`\omega`. If I obtain complex value of :math:`n`, then I have complex value of k thus instability.
 
-   However, the equation for n is hard to solve.
+   Didn't find any weird numbers here.
 
 
-**The MAA solution** shows that it only determines :math:`n`. I solved the equation and found :math:`n`. For :math:`\{g_1, g_2\}=\{\}`
+:numref:`dr-omega-k-continuous-table-0-9-0-6-0-3-png` also indicates that crossing probably change the number of solutions to :math:`omega` given different :math:`n` thus change the number of solutions to :math:`k` given different :math:`n`. For example, the lower left panel shows that :math:`\omega` has 1 solutions within :math:`n\in [-\infty,1/0.9]` but has 3 solutions within :math:`n\in [1/0.3,\infty]`. The lower right panel have 3 solutions whithin :math:`n\in [-\infty,1/0.9]` and :math:`n\in [1/0.3,\infty]`. This might be important when identifying the possible gaps.
+
 
 
 Discrete Case and Continuous Case

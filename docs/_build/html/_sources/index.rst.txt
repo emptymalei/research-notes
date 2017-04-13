@@ -52,7 +52,6 @@ Sitemap can be downloaded: :download:`sitemap.xml <assets/sitemap.xml>` or :down
 
 .. toctree::
    :maxdepth: 3
-   :caption: Table of Contents
    :numbered:
 
    matter-stimulated/index.rst
