@@ -22,9 +22,9 @@ We use a simple two-beam line model.
 For convinience of notations, we define a number density distribution function
 
 .. math::
-   f(\hat\nu,\omega)= \frac{n(\hat \nu,\omega)}{n_t},
+   f(\hat v,\omega)= \frac{n(\hat v,\omega)}{n_t},
 
-where :math:`n_t` is the total number density of all neutrino emitted, :math:`n(\hat\nu,\omega)` is the number density with momentum direction :math:`\hat \nu` and energy :math:`\omega`.
+where :math:`n_t` is the total number density of all neutrino emitted, :math:`n(\hat v,\omega)` is the number density with momentum direction :math:`\hat v` and energy :math:`\omega`.
 
 We also define
 
@@ -34,7 +34,7 @@ We also define
 For two dimensional systems, we can calculate the neutrinos within an angle :math:`[\theta,\theta+d\theta]`
 
 .. math::
-   n_t f(\hat\nu,\omega) d\theta.
+   n_t f(\hat v,\omega) d\theta.
 
 
 Similarly we can define the angular distribution for antineutrinos.
