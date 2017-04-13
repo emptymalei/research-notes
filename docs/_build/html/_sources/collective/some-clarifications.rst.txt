@@ -7,6 +7,13 @@ I need to understand several phenomena people mentioned.
 1. Why crossing leads to instability?
 2. What exactly is happening when we break the symmetries?
 
+
+.. admonition:: TODO
+   :class: warning
+
+   I need to make a table or something to really make it easy to access.
+
+
 .. _two-beams-model:
 
 Two Beams Model
@@ -22,9 +29,9 @@ We use a simple two-beam line model.
 For convinience of notations, we define a number density distribution function
 
 .. math::
-   f(\hat\nu,\omega)= \frac{n(\hat \nu,\omega)}{n_t},
+   f(\hat v,\omega)= \frac{n(\hat v,\omega)}{n_t},
 
-where :math:`n_t` is the total number density of all neutrino emitted, :math:`n(\hat\nu,\omega)` is the number density with momentum direction :math:`\hat \nu` and energy :math:`\omega`.
+where :math:`n_t` is the total number density of all neutrino emitted, :math:`n(\hat v,\omega)` is the number density with momentum direction :math:`\hat v` and energy :math:`\omega`.
 
 We also define
 
@@ -34,7 +41,7 @@ We also define
 For two dimensional systems, we can calculate the neutrinos within an angle :math:`[\theta,\theta+d\theta]`
 
 .. math::
-   n_t f(\hat\nu,\omega) d\theta.
+   n_t f(\hat v,\omega) d\theta.
 
 
 Similarly we can define the angular distribution for antineutrinos.
@@ -435,6 +442,7 @@ Energy of Emission
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+Different energy of two beams will make sure :math:`-\omega_1 + \omega_2\neq 0`. It has no effects on the criteria but changes the :math:`\mu` region of instability.
 
 
 Time Translational Symmetry

@@ -194,8 +194,7 @@ TeX: {
      href="../index.html">Chapters <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="current">
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../matter-stimulated/index.html">1. Matter Stimulated Oscillation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../matter-stimulated/scales.html">1.1. Scales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../matter-stimulated/msw-revisted.html">1.2. MSW Effect Revisted</a></li>
@@ -214,6 +213,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Some Clarifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discworld.html">2.5. Discworld</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">3. Gravity</a><ul>
@@ -295,6 +295,10 @@ TeX: {
 <li>Why crossing leads to instability?</li>
 <li>What exactly is happening when we break the symmetries?</li>
 </ol>
+<div class="warning admonition">
+<p class="first admonition-title">TODO</p>
+<p class="last">I need to make a table or something to really make it easy to access.</p>
+</div>
 <div class="section" id="two-beams-model">
 <span id="id1"></span><h2>2.3.1. Two Beams Model<a class="headerlink" href="#two-beams-model" title="Permalink to this headline">¶</a></h2>
 <p>We use a simple two-beam line model.</p>
@@ -304,14 +308,14 @@ TeX: {
 </div>
 <p>For convinience of notations, we define a number density distribution function</p>
 <div class="math">
-\[f(\hat\nu,\omega)= \frac{n(\hat \nu,\omega)}{n_t},\]</div>
-<p>where <span class="math">\(n_t\)</span> is the total number density of all neutrino emitted, <span class="math">\(n(\hat\nu,\omega)\)</span> is the number density with momentum direction <span class="math">\(\hat \nu\)</span> and energy <span class="math">\(\omega\)</span>.</p>
+\[f(\hat v,\omega)= \frac{n(\hat v,\omega)}{n_t},\]</div>
+<p>where <span class="math">\(n_t\)</span> is the total number density of all neutrino emitted, <span class="math">\(n(\hat v,\omega)\)</span> is the number density with momentum direction <span class="math">\(\hat v\)</span> and energy <span class="math">\(\omega\)</span>.</p>
 <p>We also define</p>
 <div class="math">
 \[\mu = \sqrt{2}G_F n_t.\]</div>
 <p>For two dimensional systems, we can calculate the neutrinos within an angle <span class="math">\([\theta,\theta+d\theta]\)</span></p>
 <div class="math">
-\[n_t f(\hat\nu,\omega) d\theta.\]</div>
+\[n_t f(\hat v,\omega) d\theta.\]</div>
 <p>Similarly we can define the angular distribution for antineutrinos.</p>
 <div class="section" id="all-neutrino-beams">
 <h3>2.3.1.1. All Neutrino Beams<a class="headerlink" href="#all-neutrino-beams" title="Permalink to this headline">¶</a></h3>
@@ -593,6 +597,7 @@ Q_2
 </div>
 <div class="section" id="energy-of-emission">
 <h3>2.3.2.5. Energy of Emission<a class="headerlink" href="#energy-of-emission" title="Permalink to this headline">¶</a></h3>
+<p>Different energy of two beams will make sure <span class="math">\(-\omega_1 + \omega_2\neq 0\)</span>. It has no effects on the criteria but changes the <span class="math">\(\mu\)</span> region of instability.</p>
 </div>
 <div class="section" id="time-translational-symmetry">
 <h3>2.3.2.6. Time Translational Symmetry<a class="headerlink" href="#time-translational-symmetry" title="Permalink to this headline">¶</a></h3>

@@ -7,6 +7,13 @@ I need to understand several phenomena people mentioned.
 1. Why crossing leads to instability?
 2. What exactly is happening when we break the symmetries?
 
+
+.. admonition:: TODO
+   :class: warning
+
+   I need to make a table or something to really make it easy to access.
+
+
 .. _two-beams-model:
 
 Two Beams Model
@@ -435,6 +442,7 @@ Energy of Emission
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+Different energy of two beams will make sure :math:`-\omega_1 + \omega_2\neq 0`. It has no effects on the criteria but changes the :math:`\mu` region of instability.
 
 
 Time Translational Symmetry
