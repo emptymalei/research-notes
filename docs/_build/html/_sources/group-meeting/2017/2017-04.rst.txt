@@ -9,3 +9,4 @@
 
 1. Show the new dispersion relations as well as the :math:`\omega(n)` plots.
 2. Crossing change the number of solutions for different n.
+3. Ask about how to identify the plus and minus modes before the calculation in the 2013 paper: Duan, H. (2013). Flavor oscillation modes in dense neutrino media. Physical Review D - Particles, Fields, Gravitation and Cosmology, 88(12), 1–7.
