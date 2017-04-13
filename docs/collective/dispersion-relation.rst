@@ -710,6 +710,13 @@ Then we parametrically plot :math:`\{ n \omega(n), \omega(n)\}` to get the dispe
 
    We also have the large k limit which are :math:`\omega = \frac{1}{c_i}k`.
 
+   Mathematically, we also have
+
+   .. math::
+      \lim_{n\to 1/c_1} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}(g_1 (1-c_1^2) ), c_1 \mathrm{DirectedInfinity}(-\mathrm{Sign}(g_1 (-1+c_1^2) ) ) \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to 1/c_0} \{ n\omega(n),\omega(n) \} = \{ \mathrm{DirectedInfinity}( (g_1 - g_2 ) (1-c_0^2) ), c_0 \mathrm{DirectedInfinity}(  (g_1-g_2) (-1+c_0^2)  ) \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to 1/c_2} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}(g_2 (1-c_2^2) ), c_2 \mathrm{DirectedInfinity}( g_2 (-1+c_2^2)  ) \}, &\qquad \text{for MAA solution}.
+
 
 
 For simplicity, we choose :math:`g_2=-g_1=1`.

@@ -1,9 +1,10 @@
 Dispersion Relation
 ================================
 
-Reference to notes:
+.. admonition:: Reference to Notes
+   :class: note
 
-Izaguirre, I., Raffelt, G., & Tamborra, I. (2016). Fast Pairwise Conversion of Supernova Neutrinos: Dispersion-Relation Approach, 21101(January), 1–6. https://doi.org/10.1103/PhysRevLett.118.021101
+   Izaguirre, I., Raffelt, G., & Tamborra, I. (2016). Fast Pairwise Conversion of Supernova Neutrinos: Dispersion-Relation Approach, 21101(January), 1–6. https://doi.org/10.1103/PhysRevLett.118.021101
 
 
 
@@ -708,6 +709,13 @@ Then we parametrically plot :math:`\{ n \omega(n), \omega(n)\}` to get the dispe
    For :math:`g_1=g_2=1` these limit match the homogeous result, which they should.
 
    We also have the large k limit which are :math:`\omega = \frac{1}{c_i}k`.
+
+   Mathematically, we also have
+
+   .. math::
+      \lim_{n\to 1/c_1} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}(g_1 (1-c_1^2) ), c_1 \mathrm{DirectedInfinity}(-\mathrm{Sign}(g_1 (-1+c_1^2) ) ) \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to 1/c_0} \{ n\omega(n),\omega(n) \} = \{ \mathrm{DirectedInfinity}( (g_1 - g_2 ) (1-c_0^2) ), c_0 \mathrm{DirectedInfinity}(  (g_1-g_2) (-1+c_0^2)  ) \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to 1/c_2} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}(g_2 (1-c_2^2) ), c_2 \mathrm{DirectedInfinity}( g_2 (-1+c_2^2)  ) \}, &\qquad \text{for MAA solution}.
 
 
 
