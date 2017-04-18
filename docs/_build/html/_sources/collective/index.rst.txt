@@ -6,6 +6,7 @@ Collective
 
    fast-modes.rst
    directional-instability.rst
-   some-clarifications.rst
+   two-beams-model.rst
    dispersion-relation.rst
    discworld.rst
+   equilibrium-points.rst
