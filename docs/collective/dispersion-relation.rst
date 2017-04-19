@@ -714,7 +714,7 @@ Then we parametrically plot :math:`\{ n \omega(n), \omega(n)\}` to get the dispe
 
    .. math::
       \lim_{n\to 1/c_1} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}(g_1 (1-c_1^2) ), c_1 \mathrm{DirectedInfinity}(-\mathrm{Sign}(g_1 (-1+c_1^2) ) ) \}, &\qquad \text{for MAA solution} \\
-      \lim_{n\to 1/c_0} \{ n\omega(n),\omega(n) \} = \{ \mathrm{DirectedInfinity}( (g_1 - g_2 ) (1-c_0^2) ), c_0 \mathrm{DirectedInfinity}(  (g_1-g_2) (-1+c_0^2)  ) \}, &\qquad \text{for MAA solution} \\
+      \lim_{n\to 1/c_0} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}( (g_1 - g_2 ) (1-c_0^2) ), c_0 \mathrm{DirectedInfinity}(  (g_1-g_2) (-1+c_0^2)  ) \}, &\qquad \text{for MAA solution} \\
       \lim_{n\to 1/c_2} \{ n\omega(n),\omega(n) \} &= \{ \mathrm{DirectedInfinity}(g_2 (1-c_2^2) ), c_2 \mathrm{DirectedInfinity}( g_2 (-1+c_2^2)  ) \}, &\qquad \text{for MAA solution}.
 
 
@@ -840,6 +840,42 @@ Or I can simply consider :math:`k(n)` and find whether we have a region of :math
 
 
 :numref:`dr-omega-k-continuous-table-0-9-0-6-0-3-png` also indicates that crossing probably change the number of solutions to :math:`omega` given different :math:`n` thus change the number of solutions to :math:`k` given different :math:`n`. For example, the lower left panel shows that :math:`\omega` has 1 solutions within :math:`n\in [-\infty,1/0.9]` but has 3 solutions within :math:`n\in [1/0.3,\infty]`. The lower right panel have 3 solutions whithin :math:`n\in [-\infty,1/0.9]` and :math:`n\in [1/0.3,\infty]`. This might be important when identifying the possible gaps.
+
+
+How to Use the Dispersion Relation
+------------------------------------
+
+I can analyze some points on the :math:`\omega\sim k` plane.
+
+.. figure:: assets/dispersion-relation/lsa-DR-963-MZA.png
+   :align: center
+
+   MZA solution for spectrum  :math:`\{ \{ \{0.9,0.6\}, 3 \}, \{ \{0.6,0.3\}, -3 \} \}`. In principle I should have some real solutions fall onto the dispersion relation lines. Other points solved directely from linear stability analysis should be the unstable regions.
+
+.. figure:: assets/dispersion-relation/lsa-963-kimag-omega-MZA-p.png
+   :align: center
+
+   for MZA+ solution for spectrum  :math:`\{ \{ \{0.9,0.6\}, 3 \}, \{ \{0.6,0.3\}, -3 \} \}`. The points for :math:`\omega>0` are not real because these are values returned without convergence. The values on the left are returned with convergence.
+
+
+.. figure:: assets/dispersion-relation/lsa-963-kimag-omega-MZA-m.png
+   :align: center
+
+   for MZA- solution. The points for :math:`\omega<0` are not real because these are values returned without convergence.
+
+
+.. figure:: assets/dispersion-relation/lsa-DR-93-MZA-Omega-Real.png
+   :align: center
+
+   MZA solution for spectrum :math:`\{ \{ \{0.9,0.3\}, 1 \} \}`. Solve complex :math:`k` for real :math:`\omega`.
+
+
+
+.. figure:: assets/dispersion-relation/lsa-DR-93-MZA-K-Real.png
+   :align: center
+
+   MZA for spectrum :math:`\{ \{ \{0.9,0.3\}, 1 \} \}`. Solve complex :math:`\omega` for real :math:`k`.
+
 
 
 
