@@ -210,9 +210,10 @@ TeX: {
 <li class="toctree-l1"><a class="reference internal" href="../../collective/index.html">2. Collective</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../collective/fast-modes.html">2.1. Fast Modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../collective/directional-instability.html">2.2. Directional Instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../collective/some-clarifications.html">2.3. Some Clarifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collective/two-beams-model.html">2.3. Two Beams Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../collective/dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../collective/discworld.html">2.5. Discworld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collective/equilibrium-points.html">2.6. Equilibrium Points</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../gravity/index.html">3. Gravity</a><ul>
@@ -239,6 +240,10 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">4.1.2. 2017-04 Group Meeting</a><ul>
 <li><a class="reference internal" href="#id1">4.1.2.1. 2017-04-13</a></li>
+<li><a class="reference internal" href="#id2">4.1.2.2. 2017-04-19</a><ul>
+<li><a class="reference internal" href="#some-discussion-on-scaling">4.1.2.2.1. Some Discussion on Scaling</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -278,6 +283,78 @@ TeX: {
 <li>Crossing change the number of solutions for different n.</li>
 <li>Ask about how to identify the plus and minus modes before the calculation in the 2013 paper: Duan, H. (2013). Flavor oscillation modes in dense neutrino media. Physical Review D - Particles, Fields, Gravitation and Cosmology, 88(12), 1–7.</li>
 </ol>
+</div>
+<div class="section" id="id2">
+<h2>4.1.2.2. 2017-04-19<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The unstable points</li>
+</ol>
+<div class="section" id="some-discussion-on-scaling">
+<h3>4.1.2.2.1. Some Discussion on Scaling<a class="headerlink" href="#some-discussion-on-scaling" title="Permalink to this headline">¶</a></h3>
+<div class="warning admonition">
+<p class="first admonition-title">Code</p>
+<p>The corresponding Mathematica code is:</p>
+<p class="last">codebase.git/mma/linear-stability/growth-in-fourier-modes.nb</p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="../../_images/growth-in-fourier-modes-slope-as-time.png" src="../../_images/growth-in-fourier-modes-slope-as-time.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Slope as a function of time. I tried log(-x) plot and it shows that -x decreases faster than exponential.</span></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="../../_images/growth-in-fourier-modes-logplot-of-log-slope-as-time.png" src="../../_images/growth-in-fourier-modes-logplot-of-log-slope-as-time.png" />
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">In the beginning -x is decreasing as exp(exp(-k x + b)). But it than will be faster than this expression.
+The caveat is that the calculation of slope is not that accurate when it approaches 0. So we actually should truncate it. As being said, it might be a good idea to treat it as exp(exp(-k x + b)). The red line is <span class="math">\(1.48988 - 0.435439 x\)</span>.</span></p>
+</div>
+<p>This means that the time evolution of slope is quite complicated. But we should compare the slope at the same time for different parameters. For each time snapshot we should be able to guess the function of parameters that describes the slope.</p>
+<p>As a very preliminary result, scale as I defined, changes how fast the perturbation is propagated into higher moments. So does the off diagonal element.</p>
+<p>meh</p>
+<p>The eigenvalues of this pseudo Hamiltonian</p>
+<div class="figure align-center" id="id5">
+<img alt="../../_images/eigenvectors-of-pseudo-hamiltonian.png" src="../../_images/eigenvectors-of-pseudo-hamiltonian.png" />
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Eigenvector components for different eigenvectors of this pseudo Hamiltonian. For mat[dim,1,1,1]</span></p>
+</div>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/eigenvalues-of-pseudo-hamiltonian.png" src="../../_images/eigenvalues-of-pseudo-hamiltonian.png" />
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Eigenvalues of this pseudo Hamiltonian. For mat[dim,1,1,1]</span></p>
+</div>
+<p>The key is actually the eigenvectors. If we assume each of the modes are plane waves, the eigenvalues are the ones that determines how fast the grow is while the eigenvectors tells us which element will grow. As I increase the scale, the eigenvectors seems to be more clean, i.e., fewer but hierarchial excited elements.</p>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/eigenvalues-of-pseudo-hamiltonian-scale-4.png" src="../../_images/eigenvalues-of-pseudo-hamiltonian-scale-4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Eigenvalues for mat[dim,4,1,1]. Notice that for the 20th and 21st eigenvalues are close to 0.</span></p>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/eigenvectors-of-pseudo-hamiltonian-scale-4.png" src="../../_images/eigenvectors-of-pseudo-hamiltonian-scale-4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Eigenvector components for different eigenvectors of this pseudo Hamiltonian. For mat[dim,4,1,1].</span></p>
+</div>
+<p>Decreasing the off diagonal elements have similar effect on eigenvectors which explains the similar structure of fourier modes for different off diagonal elements. However, they should have different growth rate as a function of time.</p>
+<p>More explicitly, we plot out the logplot of eigenvector elements and we will see the exponential behavior.</p>
+<div class="figure align-center" id="id9">
+<img alt="../../_images/eigenvectors-absolute-values-logplot-of-pseudo-hamiltonian-scale-4.png" src="../../_images/eigenvectors-absolute-values-logplot-of-pseudo-hamiltonian-scale-4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">LogPlot of <a class="reference external" href="mailto:Abs&#37;&#52;&#48;eigenvecotors">Abs<span>&#64;</span>eigenvecotors</a>. For mat[dim,4,1,1].</span></p>
+</div>
+<p>Just for reference, the positive values of eigenvectors also have this exp behavior.</p>
+<div class="figure align-center" id="id10">
+<img alt="../../_images/eigenvectors-logplot-of-pseudo-hamiltonian-scale-4.png" src="../../_images/eigenvectors-logplot-of-pseudo-hamiltonian-scale-4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text">LogPlot of positive elements of eigenvecotors. For mat[dim,4,1,1].</span></p>
+</div>
+<p>Do all the eigenvectors have the same slope?</p>
+<div class="figure align-center" id="id11">
+<img alt="../../_images/eigenvectors-absolute-values-logplot-of-pseudo-hamiltonian-scale-1-cat.png" src="../../_images/eigenvectors-absolute-values-logplot-of-pseudo-hamiltonian-scale-1-cat.png" />
+<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">All 40 eigenvectors for mat[dim,1,1,1]. Kind of same absolute values of slope.</span></p>
+</div>
+<p>Qualitatively we can see why the exponantial behavior in Fourier modes through the eigenvectors.</p>
+<p>To guess an expression for it, I need to compare different scales.</p>
+<p>As reference, we plot mat[dim,1,1,1].</p>
+<div class="figure align-center" id="id12">
+<img alt="../../_images/eigenvectors-absolute-values-logplot-of-pseudo-hamiltonian-scale-1.png" src="../../_images/eigenvectors-absolute-values-logplot-of-pseudo-hamiltonian-scale-1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">LogPlot of <a class="reference external" href="mailto:Abs&#37;&#52;&#48;eigenvecotors">Abs<span>&#64;</span>eigenvecotors</a>. For mat[dim,1,1,1].</span></p>
+</div>
+<p>Here is a plot that shows the slope of <span class="math">\(\text{Log&#64;Abs&#64;Eigenvalues}\sim \text{Eigenvalue Element ID}\)</span>.</p>
+<div class="figure align-center" id="id13">
+<img alt="../../_images/slope-log-eigenvector-elements-vs-scale.png" src="../../_images/slope-log-eigenvector-elements-vs-scale.png" />
+<p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">Slope of eigenvector elements for different scales.</span></p>
+</div>
+</div>
 </div>
 </div>
 
