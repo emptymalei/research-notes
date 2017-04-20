@@ -118,7 +118,29 @@ As reference, we plot mat[dim,1,1,1].
 
 Here is a plot that shows the slope of :math:`\text{Log@Abs@Eigenvalues}\sim \text{Eigenvalue Element ID}`.
 
+
+.. _slope-log-eigenvector-elements-vs-scale:
+
 .. figure:: assets/2017-04/slope-log-eigenvector-elements-vs-scale.png
    :align: center
 
    Slope of eigenvector elements for different scales.
+
+
+.. admonition:: Ratio of Scale and Off diagonal?
+   :class: note
+
+   Is the ratio of scale and off diagonal element responsible for the slope?
+
+   .. figure:: assets/2017-04/slope-log-eigenvector-elements-vs-scale-ratio-10.png
+      :align: center
+
+      The ratio of scales and off diagonal elements is roughly 10.
+
+
+   Or the plot with scale/off-diag = 1 to 10.
+
+   .. figure:: assets/2017-04/slope-log-eigenvector-elements-vs-scale-ratio-1-to-10.png
+      :align: center
+
+      The ratio of scales and off diagonal elements is roughly from 1 to 10. It almost matches the result from the calculation for different scales.
