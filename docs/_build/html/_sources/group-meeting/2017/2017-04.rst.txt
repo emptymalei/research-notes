@@ -144,3 +144,95 @@ Here is a plot that shows the slope of :math:`\text{Log@Abs@Eigenvalues}\sim \te
       :align: center
 
       The ratio of scales and off diagonal elements is roughly from 1 to 10. It almost matches the result from the calculation for different scales.
+
+
+2017-04-22
+----------------
+
+This is an update for the Fourier mode growth.
+
+I recalculated the eigenvectors using a Hamiltonian without random numbers so that the Hamiltonian matrix is defined as
+
+.. math::
+   H_{ij} =\begin{cases}
+   od, & i= j\pm 1\\
+   scale * i, & i=j
+   \end{cases}.
+
+What I found is that if :math:`1/ratio = od/scale` is small, the slope is related to the ration through
+
+.. math::
+   slope = k \ln (ratio) + b,
+
+or in other words,
+
+.. math::
+   ratio = e^{( slope - b)/k }.
+
+In the calculations I did, :math:`k\sim 1`.
+
+
+.. figure:: assets/2017-04/fourier-mode-growth-slope-ratio-relation.png
+   :align: center
+
+   Slope vs Ratio
+
+
+
+.. figure:: assets/2017-04/fourier-mode-growth-slope-ratio-relation-scale-2.png
+   :align: center
+
+   Slope vs Ratio with scale = 2. The same as above thus the ratio is the key.
+
+
+The dimension seems to change the interception.
+
+.. figure:: assets/2017-04/fourier-mode-growth-slope-ratio-relation-dim-15.png
+   :align: center
+
+   Slope vs Ratio with dimension = 15.
+
+
+Change the dimension seems to only slightly change the slope increasing rate.
+
+
+.. figure:: assets/2017-04/fourier-mode-growth-slope-ratio-relation-pentadiag.png
+   :align: center
+
+   Slope vs Ratio with pentadiag Hamiltonian.
+
+
+Enough for these eigenvectors. To make a real connection with the time evolution or the long time limit of the time evolution, we need to find how the system evolves.
+
+The idea is that all Fourier modes are oscillations. In the beginning of oscillations, it is simply a linear growth in time since Taylor expansion of :math:`e^{-i E t}` is :math:`E t`.
+
+Given an initial condition :math:`\psi(0)` with only nonzero in the middle element, we can expand it using the eigenvectors :math:`\psi_i (0)`, i.e.,
+
+.. math::
+   \psi(0) = \sum_i A_i \psi_i (0).
+
+What I find is that the coefficients :math:`A_i` is actually a exponential shape.
+
+.. figure:: assets/2017-04/fourier-mode-growth-initial-condition-decomposed.png
+   :align: center
+
+   logplot of coefficients :math:`A_i`.
+
+
+If I start from all 1's as initial condition, the evolution won't be of this wedge shape and it will oscillation.
+
+
+.. figure:: assets/2017-04/fourier-modes-all-1-initial-time-evo.gif
+   :align: center
+
+   Animation of value of each components of wave function, with inital condition all 1's.
+
+The corresponding decomposition of intial condition is shown in :numfig:``
+
+
+.. figure:: assets/2017-04/fourier-mode-growth-initial-all-1-decompose.png
+   :align: center
+
+   logplot of coefficients :math:`A_i`.
+
+   
