@@ -901,3 +901,23 @@ The continuous case is
 We notice that Eq. :eq:`eqn-discrete-beams-i0-i2` and Eq. :eq:`eqn-conti-beams-i0-i2` are the same when number of beams becomes large.
 
 :math:`G_i` is in fact :math:`G_i = g_i \Delta u_i`, where :math:`\Delta u_i` is the range of :math:`\cos \theta_i` around :math:`\theta_i`.
+
+
+
+
+Arbitrary Spectrum
+-----------------------------
+
+
+.. figure:: assets/dispersion-relation/DR-continuous-spectrum-near-realistic.png
+   :align: center
+
+   Reproducing Fig. 3 of Raffelt's paper.
+
+
+
+
+.. figure:: assets/dispersion-relation/DR-continuous-spectrum-near-realistic-spectrum-created.png
+   :align: center
+
+   The spectrum I created and used. :math:`-11.2738 u^5-11.5219 u^4+9.1079 u^3+12.6683 u^2+4.51014 u+2.50958`.

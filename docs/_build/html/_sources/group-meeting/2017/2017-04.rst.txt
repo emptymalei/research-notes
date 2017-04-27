@@ -227,12 +227,11 @@ If I start from all 1's as initial condition, the evolution won't be of this wed
 
    Animation of value of each components of wave function, with inital condition all 1's.
 
-The corresponding decomposition of intial condition is shown in :numfig:``
+The corresponding decomposition of intial condition is shown in :numfig:`fourier-mode-growth-initial-all-1-decompose`.
 
+.. _fourier-mode-growth-initial-all-1-decompose:
 
 .. figure:: assets/2017-04/fourier-mode-growth-initial-all-1-decompose.png
    :align: center
 
    logplot of coefficients :math:`A_i`.
-
-   
