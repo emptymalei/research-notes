@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.1. Fast Modes &#8212; Neutrino Private Notebook</title>
+    <title>2.5. Flavor Waves &#8212; Neutrino Private Notebook</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Directional Instability" href="directional-instability.html" />
-    <link rel="prev" title="2. Collective" href="index.html" />
+    <link rel="next" title="2.6. Discworld" href="discworld.html" />
+    <link rel="prev" title="2.4. Dispersion Relation" href="dispersion-relation.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -209,11 +209,11 @@ TeX: {
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Collective</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Fast Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fast-modes.html">2.1. Fast Modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-beams-model.html">2.3. Two Beams Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.5. Flavor Waves</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discworld.html">2.6. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.7. Equilibrium Points</a></li>
 </ul>
@@ -240,8 +240,8 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">2.1. Fast Modes</a><ul>
-<li><a class="reference internal" href="#regions-of-instability">2.1.1. Regions of Instability</a></li>
+<li><a class="reference internal" href="#">2.5. Flavor Waves</a><ul>
+<li><a class="reference internal" href="#references-and-notes">2.5.1. References and Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -253,11 +253,11 @@ TeX: {
               
                 
   <li>
-    <a href="index.html" title="Previous Chapter: 2. Collective"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2. Collective</span>
+    <a href="dispersion-relation.html" title="Previous Chapter: 2.4. Dispersion Relation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2.4. Dispersi...</span>
     </a>
   </li>
   <li>
-    <a href="directional-instability.html" title="Next Chapter: 2.2. Directional Instability"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2.2. Directio... &raquo;</span>
+    <a href="discworld.html" title="Next Chapter: 2.6. Discworld"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2.6. Discworld &raquo;</span>
     </a>
   </li>
               
@@ -276,116 +276,26 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="fast-modes">
-<h1>2.1. Fast Modes<a class="headerlink" href="#fast-modes" title="Permalink to this headline">¶</a></h1>
-<div class="hint admonition">
-<p class="first admonition-title">Four Beams Model</p>
-<p>There are many things to consider for the four beams line model.</p>
-<ol class="last arabic simple">
-<li>Different emission angle for neutrinos and antineutrinos;</li>
-<li>Different density for neutrinos and antineutrinos;</li>
-<li>Left and right difference.</li>
-</ol>
-</div>
-<p>Is the system unstable even for <span class="math">\(\omega_v=0\)</span> and <span class="math">\(\lambda=0\)</span>?</p>
-<div class="figure align-center" id="id1">
-<img alt="../_images/fast-mode-alpha-0.8.png" src="../_images/fast-mode-alpha-0.8.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The maximum imaginary part in linear stability analysis. These calculations are for fix <span class="math">\(k_m/\hat E=1\)</span>, where <span class="math">\(\hat E\)</span> is the energy scale used to scale all the quantities.</span></p>
-<div class="legend">
+  <div class="section" id="flavor-waves">
+<h1>2.5. Flavor Waves<a class="headerlink" href="#flavor-waves" title="Permalink to this headline">¶</a></h1>
+<p>We have to specify the field before we can visualize the waves.</p>
+<p>In the paper <a class="reference internal" href="#duan2009" id="id1">[Duan2009]</a> the field is named as spin waves, which is in fact a field of rotating angles <span class="math">\(\phi(t,\mathbf x)\)</span> of the flavor isospin around the direction of vacuum Hamiltonian in mass basis in this space. It is a flavor isospin field but is characterized by this rotating angle <span class="math">\(\phi(t,\mathbf x)\)</span>.</p>
+<p>In general, we could think of the wave as a lot of internal spins, whose direction is defined by comparing them to the local Hamiltonian. The equation of motion is first order</p>
 <div class="math">
-\[\begin{split}\omega_v =&amp; 0\\
-\lambda =&amp; 0\\
-\alpha = &amp; 0.8.\end{split}\]</div>
-<p>The grid of figure are arranged according to the following values of <span class="math">\(\{\theta_1,\theta_2\}\)</span>.</p>
+\[(\partial_t + \hat v \cdot \boldsymbol \nabla) \mathbf s = \mathbf s \times \mathbf H,\]</div>
+<p>which is a precession equation not a wave equation. We can not think of the spin itself as wave. For a constant <span class="math">\(\mathbf H\)</span>, Fourier transform of the equation shows that</p>
 <div class="math">
-\[\begin{split}\begin{array}{cccc}
-\left\{\frac{\pi }{6},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{6},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{6},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{6},\frac{\pi }{3}\right\} \\
-\left\{\frac{2 \pi }{9},\frac{\pi }{6}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{\pi }{3}\right\} \\
-\left\{\frac{5 \pi }{18},\frac{\pi }{6}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{\pi }{3}\right\} \\
-\left\{\frac{\pi }{3},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{3},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{3},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{3},\frac{\pi }{3}\right\} \\
-\end{array}\end{split}\]</div>
-</div>
-</div>
-<div class="figure align-center" id="id2">
-<img alt="../_images/fast-mode-alpha-1.2.png" src="../_images/fast-mode-alpha-1.2.png" />
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">The maximum imaginary part in linear stability analysis. These calculations are for fix <span class="math">\(k_m/\hat E=1\)</span>, where <span class="math">\(\hat E\)</span> is the energy scale used to scale all the quantities.</span></p>
-<div class="legend">
-<div class="math">
-\[\begin{split}\omega_v =&amp; 0\\
-\lambda =&amp; 0\\
-\alpha = &amp; 1.2.\end{split}\]</div>
-<p>The grid of figure are arranged according to the following values of <span class="math">\(\{\theta_1,\theta_2\}\)</span>.</p>
-<div class="math">
-\[\begin{split}\begin{array}{cccc}
-\left\{\frac{\pi }{6},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{6},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{6},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{6},\frac{\pi }{3}\right\} \\
-\left\{\frac{2 \pi }{9},\frac{\pi }{6}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{2 \pi }{9},\frac{\pi }{3}\right\} \\
-\left\{\frac{5 \pi }{18},\frac{\pi }{6}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{5 \pi }{18},\frac{\pi }{3}\right\} \\
-\left\{\frac{\pi }{3},\frac{\pi }{6}\right\} &amp; \left\{\frac{\pi }{3},\frac{2 \pi }{9}\right\} &amp; \left\{\frac{\pi }{3},\frac{5 \pi }{18}\right\} &amp; \left\{\frac{\pi }{3},\frac{\pi }{3}\right\} \\
-\end{array}\end{split}\]</div>
-</div>
-</div>
-<p>When we have symmetric geometry, the instability region is gone. Such a result is exactly what we expect. However, different</p>
-<div class="figure align-center" id="id3">
-<img alt="collective/assets/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" src="collective/assets/fast-modes-fast-mode-no-matter-asymmetric-alpha-0.8.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Linear stability analysis for</span></p>
-<div class="legend">
-<div class="math">
-\[\begin{split}\omega_v =&amp; 0\\
-\lambda =&amp; 0\\
-\alpha = &amp; 0.8 \\
-\theta_L =&amp; 2\pi/9 \\
-\theta_R =&amp; \pi/6.\end{split}\]</div>
-</div>
-</div>
-<div class="section" id="regions-of-instability">
-<h2>2.1.1. Regions of Instability<a class="headerlink" href="#regions-of-instability" title="Permalink to this headline">¶</a></h2>
-<p>For convinience, we define some quantities for four beam case.</p>
-<ol class="arabic simple">
-<li>We define the a parameter <span class="math">\(\alpha=(1-a)/(1+a)\)</span> so that <span class="math">\(\alpha \in [0,\infty]\)</span> is mapped onto <span class="math">\(a\in [-1,1]\)</span>.</li>
-<li>The summation of the two angles <span class="math">\(\Sigma\theta=\theta_1+\theta_2\)</span> and the difference between two angles <span class="math">\(\Delta\theta=\theta_1-\theta_2\)</span>, where <span class="math">\(\theta_1\)</span> is for neutrino beams.</li>
-<li>Every quantity is in unit of <span class="math">\(\mu\)</span>.</li>
-</ol>
-<p>First we check the result without matter, without vacuum frequency, and <span class="math">\(\Sigma\theta=2\pi/3\)</span>.</p>
-<div class="figure align-center" id="id4">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">No matter, no vacuum frequency</span></p>
-</div>
-<p>We can also check the matter effect.</p>
-<div class="figure align-center" id="id5">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-1.png" />
-<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">With matter, no vacuum frequency.</span></p>
-</div>
-<div class="figure align-center" id="id6">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-10.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">With matter, no vacuum frequency.</span></p>
-</div>
-<div class="figure align-center" id="id7">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0-lambda-divided-by-mu-100.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">With matter, no vacuum frequency.</span></p>
-</div>
-<p>Then we check the result without matter, without vacuum frequency, and <span class="math">\(\Sigma\theta=2\pi/3\)</span>, and <span class="math">\(\frac{m k}{\mu}=0.1\)</span>.</p>
-<div class="figure align-center" id="id8">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-0.1-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">No matter, no vacuum frequency.</span></p>
-</div>
-<p>The effect of <span class="math">\(m k/\mu\)</span> is also similar to matter effect.</p>
-<div class="figure align-center" id="id9">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Higher order Fourier modes, without matter, no vacuum frequency.</span></p>
-</div>
-<div class="figure align-center" id="id10">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-0.png" />
-<p class="caption"><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Higher order Fourier modes, without matter, no vacuum frequency.</span></p>
-</div>
-<p>Matter + Fourier modes also has suppression</p>
-<div class="figure align-center" id="id11">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-10-lambda-divided-by-mu-100.png" />
-<p class="caption"><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Higher order Fourier modes, with matter, no vacuum frequency.</span></p>
-</div>
-<div class="figure align-center" id="id12">
-<img alt="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png" src="../_images/plt2-sigmatheta-2Pi-divided-by-3-mk-divided-by-mu-1-lambda-divided-by-mu-10.png" />
-<p class="caption"><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Higher order Fourier modes, with matter, no vacuum frequency.</span></p>
-</div>
+\[\omega = \mathbf k \cdot \hat v,\]</div>
+<p>and <span class="math">\(\tilde{\mathbf s}\)</span> is parallel to <span class="math">\(\matbbf H\)</span> in order to have solutions.</p>
+<p>One of the interesting things to do is to connect this view of waves to the dispersion relation.</p>
+<div class="section" id="references-and-notes">
+<h2>2.5.1. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="duan2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Duan2009]</a></td><td>Duan, H., Fuller, G. M., &amp; Qian, Y.-Z. (2009). Neutrino Flavor Spin Waves. arXiv:0808.2046v1.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -444,7 +354,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/collective/fast-modes.rst.txt"
+       <a href="../_sources/collective/flavor-waves.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
