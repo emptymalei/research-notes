@@ -17,7 +17,7 @@ which is a precession equation not a wave equation. We can not think of the spin
 .. math::
    \omega = \mathbf k \cdot \hat v,
 
-and :math:`\tilde{\mathbf s}` is parallel to :math:`\matbbf H` in order to have solutions.
+and :math:`\tilde{\mathbf s}` is parallel to :math:`\mathbf H` in order to have solutions.
 
 One of the interesting things to do is to connect this view of waves to the dispersion relation.
 

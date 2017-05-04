@@ -921,3 +921,22 @@ Arbitrary Spectrum
    :align: center
 
    The spectrum I created and used. :math:`-11.2738 u^5-11.5219 u^4+9.1079 u^3+12.6683 u^2+4.51014 u+2.50958`.
+
+The unstable regions can be calculated exactly by setting :math:`\omega` to be real.
+
+.. figure:: assets/dispersion-relation/DR-continuous-spectrum-near-realistic-no-crossing-maa.png
+   :align: center
+
+   MAA
+
+
+.. figure:: assets/dispersion-relation/DR-continuous-spectrum-near-realistic-no-crossing-mzap.png
+   :align: center
+
+   MZA+
+
+
+.. figure:: assets/dispersion-relation/DR-continuous-spectrum-near-realistic-no-crossing-mzam.png
+   :align: center
+
+   MZA-
