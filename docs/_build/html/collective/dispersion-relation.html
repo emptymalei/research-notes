@@ -471,9 +471,24 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 0 &amp; 0 &amp; -\frac{1}{4}(I_0-I_2) &amp; 0 \\
 \frac{1}{2}I_1 &amp; 0 &amp; 0 &amp; -\frac{1}{2}I_2
 \end{pmatrix}.\end{split}\]</div>
-<p>We express the eigen values of matrix <span class="math">\(N^\mu_{\phantom{\mu}\nu}\)</span>, which we denote as <span class="math">\(\lambda_N\)</span>,</p>
+<p>The equation we are solving is</p>
+<div class="math">
+\[\operatorname{Det}(\omega + N^{\nu}_{\phantom{\mu}\nu}) = 0.\]</div>
+<p>We find the solutions to omega,</p>
 <div class="math" id="equation-eqn-omega-n-relation-axial-sym-general">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-omega-n-relation-axial-sym-general" title="Permalink to this equation">¶</a></span>\[\omega = -\lambda_N = -\frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-omega-n-relation-axial-sym-general" title="Permalink to this equation">¶</a></span>\[\omega = \frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Mathematica Code</p>
+<p>The Mathematica code for solving <span class="math">\(\omega\)</span> as a function of <span class="math">\(n\)</span> is</p>
+<div class="last highlight-Mathematica"><div class="highlight"><pre><span></span><span class="n">Det</span><span class="p">[{</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="n">omega</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">i1</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i2</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i2</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="n">i1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">omega</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i2</span><span class="o">/</span><span class="mi">2</span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="p">}]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 <p>We plug in the definition <span class="math">\(n=k/\omega\)</span> then solve dispersion relation from each of the solutions in Eq. <a class="reference internal" href="#equation-eqn-omega-n-relation-axial-sym-general">(1)</a>.</p>
 <p>The questions are</p>
 <ol class="arabic simple">

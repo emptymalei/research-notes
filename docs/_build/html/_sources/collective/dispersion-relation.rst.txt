@@ -274,12 +274,31 @@ the matrix :math:`N^\mu_{\phantom{\mu}\nu}` is simplified,
    \frac{1}{2}I_1 & 0 & 0 & -\frac{1}{2}I_2
    \end{pmatrix}.
 
-We express the eigen values of matrix :math:`N^\mu_{\phantom{\mu}\nu}`, which we denote as :math:`\lambda_N`,
+The equation we are solving is
 
 .. math::
-   \omega = -\lambda_N = -\frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).
+   \operatorname{Det}(\omega + N^{\nu}_{\phantom{\mu}\nu}) = 0.
+
+We find the solutions to omega,
+
+.. math::
+   \omega = \frac{1}{4}(I_0-I_2), \quad -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).
    :label: eqn-omega-n-relation-axial-sym-general
 
+
+.. admonition:: Mathematica Code
+   :class: toggle
+
+   The Mathematica code for solving :math:`\omega` as a function of :math:`n` is
+
+   .. code-block:: Mathematica
+
+      Det[{
+            {omega + i0/2, 0, 0, -i1/2},
+            {0, omega - (i0 - i2)/4, 0, 0},
+            {0, 0, omega - (i0 - i2)/4, 0},
+            {i1/2, 0, 0, omega - i2/2}
+         }]
 
 We plug in the definition :math:`n=k/\omega` then solve dispersion relation from each of the solutions in Eq. :eq:`eqn-omega-n-relation-axial-sym-general`.
 
