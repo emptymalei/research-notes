@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.8. Equilibrium Points &#8212; Neutrino Private Notebook</title>
+    <title>2.5. Dispersion Relation and Crossing &#8212; Neutrino Private Notebook</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Gravity" href="../gravity/index.html" />
-    <link rel="prev" title="2.7. Discworld" href="discworld.html" />
+    <link rel="next" title="2.6. Flavor Waves" href="flavor-waves.html" />
+    <link rel="prev" title="2.4. Dispersion Relation" href="dispersion-relation.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -213,10 +213,10 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="directional-instability.html">2.2. Directional Instability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="two-beams-model.html">2.3. Two Beams Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dispersion-relation-and-crossing.html">2.5. Dispersion Relation and Crossing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. Dispersion Relation and Crossing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.6. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discworld.html">2.7. Discworld</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. Equilibrium Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.8. Equilibrium Points</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">3. Gravity</a><ul>
@@ -241,8 +241,8 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">2.8. Equilibrium Points</a><ul>
-<li><a class="reference internal" href="#using-a-simple-case">2.8.1. Using a Simple Case</a></li>
+<li><a class="reference internal" href="#">2.5. Dispersion Relation and Crossing</a><ul>
+<li><a class="reference internal" href="#box-spectrum">2.5.1. Box Spectrum</a></li>
 </ul>
 </li>
 </ul>
@@ -254,11 +254,11 @@ TeX: {
               
                 
   <li>
-    <a href="discworld.html" title="Previous Chapter: 2.7. Discworld"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2.7. Discworld</span>
+    <a href="dispersion-relation.html" title="Previous Chapter: 2.4. Dispersion Relation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2.4. Dispersi...</span>
     </a>
   </li>
   <li>
-    <a href="../gravity/index.html" title="Next Chapter: 3. Gravity"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3. Gravity &raquo;</span>
+    <a href="flavor-waves.html" title="Next Chapter: 2.6. Flavor Waves"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2.6. Flavor Waves &raquo;</span>
     </a>
   </li>
               
@@ -277,56 +277,23 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="equilibrium-points">
-<h1>2.8. Equilibrium Points<a class="headerlink" href="#equilibrium-points" title="Permalink to this headline">¶</a></h1>
-<p>I need a method to find the equilibrium points of neutrino oscillations.</p>
-<div class="warning admonition">
-<p class="first admonition-title">Why are Equilibrium Points Important</p>
-<p>We always start from a very special equilibrium point that is the flavor states because this is how the neutrinos are produced.</p>
-<p>However, the equation of motion becomes quite nonlinear and is hard to speculate. But we might be able to infer which final state it is gonna fall into by determining the equialibrium states.</p>
-<p class="last">For example, a polarized state or not.</p>
+  <div class="section" id="dispersion-relation-and-crossing">
+<h1>2.5. Dispersion Relation and Crossing<a class="headerlink" href="#dispersion-relation-and-crossing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="box-spectrum">
+<h2>2.5.1. Box Spectrum<a class="headerlink" href="#box-spectrum" title="Permalink to this headline">¶</a></h2>
+<p>Since box spectrum is easier and faster to calculate, we&#8217;ll explore the phenomena within box spectrum. For example, the spectrum notation</p>
+<div class="highlight-Mathematica"><div class="highlight"><pre><span></span><span class="p">{{{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.3</span><span class="p">},</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">},</span><span class="w"> </span><span class="p">{{</span><span class="mf">-0.3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="mf">0.7</span><span class="p">}}</span><span class="w"></span>
+</pre></div>
 </div>
-<div class="section" id="using-a-simple-case">
-<h2>2.8.1. Using a Simple Case<a class="headerlink" href="#using-a-simple-case" title="Permalink to this headline">¶</a></h2>
-<p><span class="strike">I tried two beams model using Schrodinger equation. It returns wave functions being zero for several parameters, which is not what I was looking for.</span> (That was silly. Another example of chaotic mind. The fixed point should be for polarization vector, not the wave function.)</p>
-<p>I should use the equation of motion for polarization vector.</p>
-<div class="note admonition">
-<p class="first admonition-title">EoM for Flavor Isospin</p>
-<p>The equation of motion is</p>
-<div class="math">
-\[\frac{d}{dt} \mathbf s = \mathbf H \times \mathbf s,\]</div>
-<p>where</p>
-<div class="math">
-\[\mathbf H = \mathbf H_v + \mathbf H_m + \mathbf H_{\nu\nu},\]</div>
-<p>and</p>
-<div class="math">
-\[\begin{split}H_v &amp;= \frac{\boldsymbol{\sigma}}{2} \cdot \mathbf H_v \\
-H_m &amp;= \frac{\boldsymbol{\sigma}}{2} \cdot \mathbf H_m,\end{split}\]</div>
-<p>The neutrino self-interaction term is</p>
-<div class="last math">
-\[\mathbf H_{\nu\nu} = \mu  \int d\omega' \int d\Omega' (1-\cos(\theta'_1 - \theta'_2)) \mathbf s(\omega',\Omega').\]</div>
+<p>indicates tht the spectrum has a constant value -0.2 within <span class="math">\(\cos\theta \in [-1,-0.3]\)</span> and value 0.7 within <span class="math">\(\cos\theta \in [-0.3,1]\)</span>.</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/no-crossing-4.png" src="../_images/no-crossing-4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.52 </span><span class="caption-text">No crossing</span></p>
 </div>
-<p>For two beams, the equilibrium point for flavor isospin is determined by</p>
-<div class="math">
-\[( \omega^L \mathbf B + \lambda^L \mathbf L + \mu^L \mathbf D^L ) \times \mathbf P^L = 0,\]</div>
-<p>where</p>
-<div class="math">
-\[\begin{split}\mathbf B^i =&amp; \begin{pmatrix}
-0 \\
-\sin 2\theta_v \\
-\cos 2\theta_v
-\end{pmatrix}\\
-\mathbf L^i =&amp; \begin{pmatrix}
-0 \\
-0 \\
-1
-\end{pmatrix}\\
-\mathbf D^L =&amp; \int d\omega' \xi \mathbf P^R (\omega')\\
-\xi =&amp; 1 - \cos(\theta^L -\theta^R).\end{split}\]</div>
-<p>For single energy, the equation becomes</p>
-<div class="math">
-\[\begin{split}( \omega^L \mathbf B + \lambda^L \mathbf L + \mu^L \xi \mathbf P^R ) \times \mathbf P^L =&amp; 0 \\
-( \omega^R \mathbf B + \lambda^R \mathbf L + \mu^R \xi \mathbf P^L ) \times \mathbf P^R =&amp; 0.\end{split}\]</div>
+<div class="figure align-center" id="id2">
+<img alt="../_images/with-crossing-4.png" src="../_images/with-crossing-4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.53 </span><span class="caption-text">With crossing</span></p>
+</div>
 </div>
 </div>
 
@@ -385,7 +352,7 @@ H_m &amp;= \frac{\boldsymbol{\sigma}}{2} \cdot \mathbf H_m,\end{split}\]</div>
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/collective/equilibrium-points.rst.txt"
+       <a href="../_sources/collective/dispersion-relation-and-crossing.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
