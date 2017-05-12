@@ -13,7 +13,7 @@ Since box spectrum is easier and faster to calculate, we'll explore the phenomen
 
 indicates tht the spectrum has a constant value -0.2 within :math:`\cos\theta \in [-1,-0.3]` and value 0.7 within :math:`\cos\theta \in [-0.3,1]`.
 
-.. figure:: assets/dispersion-relation-and-crossing/no-crossing-4.png
+.. figure:: assets/dispersion-relation-and-crossing/box-spectra-without-crossing-omega-n-k-n-dr.png
    :align: center
 
    No crossing
@@ -21,7 +21,7 @@ indicates tht the spectrum has a constant value -0.2 within :math:`\cos\theta \i
 
 
 
-.. figure:: assets/dispersion-relation-and-crossing/with-crossing-4.png
+.. figure:: assets/dispersion-relation-and-crossing/box-spectra-with-crossing-omega-n-k-n-dr.png
    :align: center
 
    With crossing
