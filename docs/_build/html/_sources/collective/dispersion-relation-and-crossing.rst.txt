@@ -2,6 +2,12 @@ Dispersion Relation and Crossing
 ===================================
 
 
+.. admonition:: How to understand Dispersion Relation
+   :class: note
+
+   We should come back to the wave picture. DR tells us how easily a wave will disperse as it travels. The things that can be research on are the disperse itself. Stability is one important topic but it also tells us how the wave disperse.
+
+
 Box Spectrum
 -----------------------
 
@@ -31,3 +37,42 @@ indicates tht the spectrum has a constant value -0.2 within :math:`\cos\theta \i
    :class: warning
 
    1. Any 0 in spectrum make it possible go cross the singularity line.
+   2. MZA disappears at some point of parameters. What are the constraints.
+
+
+.. admonition:: MZA disappears
+   :class: note
+
+   The analytical expression for it to dispear shows that it involves all the elements of the spectrum. Numerically, I can show that for a specific one :math:`\{\{\{-1, -0.3\}, g_1\}, \{\{-0.3, 1\}, 1\}\}`, the region of :math:`g_1` that leads to no MZA solution for a given :math:`n` is shown in :numref:`analytical-where-mza-dispear-spectrum-c5`.
+
+   .. _analytical-where-mza-dispear-spectrum-c5:
+
+   .. figure:: assets/dispersion-relation-and-crossing/analytical-where-mza-dispear-spectrum-c5.png
+      :align: center
+
+      Region of :math:`g_1`.
+
+   This figure shows that the MZA solution will come back if we choose really small :math:`g_1`. It is verified using another spectrum which is labeled as C5 spectrum.
+
+   .. figure:: assets/dispersion-relation-and-crossing/omega-n-spectrum-c5.png
+      :align: center
+
+      For a spectrum :math:`\{\{\{-1, -0.3\}, -15\}, \{\{-0.3, 1\}, 1\}\}`.
+
+
+   However examples of numerical calculations won't be enough. Alternatively, I could derive an analytical expression. MZA solution is
+
+   .. math::
+      \omega = -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).
+
+   We examine the term inside square root and set it to be negative which will show us the region where real omega disppears.
+
+
+   Comment: the upper limit is not a horizontal line.
+
+   .. figure:: assets/dispersion-relation-and-crossing/omega-n-upper-limit-spectrum-c5.png
+      :align: center
+
+      Upper limit.
+
+   For the MZA solutions to disappear, we need to find the smallest value of the upper limit (-0.73160 in this case) and the largest value of lower limit (-7.16327 in this case).

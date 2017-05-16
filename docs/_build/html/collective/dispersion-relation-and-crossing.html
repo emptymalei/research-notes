@@ -100,8 +100,10 @@ TeX: {
 }
 });
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+
 
 
 <script type="text/javascript">
@@ -279,6 +281,10 @@ TeX: {
       
   <div class="section" id="dispersion-relation-and-crossing">
 <h1>2.5. Dispersion Relation and Crossing<a class="headerlink" href="#dispersion-relation-and-crossing" title="Permalink to this headline">¶</a></h1>
+<div class="note admonition">
+<p class="first admonition-title">How to understand Dispersion Relation</p>
+<p class="last">We should come back to the wave picture. DR tells us how easily a wave will disperse as it travels. The things that can be research on are the disperse itself. Stability is one important topic but it also tells us how the wave disperse.</p>
+</div>
 <div class="section" id="box-spectrum">
 <h2>2.5.1. Box Spectrum<a class="headerlink" href="#box-spectrum" title="Permalink to this headline">¶</a></h2>
 <p>Since box spectrum is easier and faster to calculate, we&#8217;ll explore the phenomena within box spectrum. For example, the spectrum notation</p>
@@ -298,7 +304,31 @@ TeX: {
 <p class="first admonition-title">Observations and Questions</p>
 <ol class="last arabic simple">
 <li>Any 0 in spectrum make it possible go cross the singularity line.</li>
+<li>MZA disappears at some point of parameters. What are the constraints.</li>
 </ol>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">MZA disappears</p>
+<p>The analytical expression for it to dispear shows that it involves all the elements of the spectrum. Numerically, I can show that for a specific one <span class="math">\(\{\{\{-1, -0.3\}, g_1\}, \{\{-0.3, 1\}, 1\}\}\)</span>, the region of <span class="math">\(g_1\)</span> that leads to no MZA solution for a given <span class="math">\(n\)</span> is shown in <a class="reference internal" href="#analytical-where-mza-dispear-spectrum-c5"><span class="std std-numref">Fig. 2.54</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="analytical-where-mza-dispear-spectrum-c5"></span><img alt="../_images/analytical-where-mza-dispear-spectrum-c5.png" src="../_images/analytical-where-mza-dispear-spectrum-c5.png" />
+<p class="caption"><span class="caption-number">Fig. 2.54 </span><span class="caption-text">Region of <span class="math">\(g_1\)</span>.</span></p>
+</div>
+<p>This figure shows that the MZA solution will come back if we choose really small <span class="math">\(g_1\)</span>. It is verified using another spectrum which is labeled as C5 spectrum.</p>
+<div class="figure align-center" id="id4">
+<img alt="../_images/omega-n-spectrum-c5.png" src="../_images/omega-n-spectrum-c5.png" />
+<p class="caption"><span class="caption-number">Fig. 2.55 </span><span class="caption-text">For a spectrum <span class="math">\(\{\{\{-1, -0.3\}, -15\}, \{\{-0.3, 1\}, 1\}\}\)</span>.</span></p>
+</div>
+<p>However examples of numerical calculations won&#8217;t be enough. Alternatively, I could derive an analytical expression. MZA solution is</p>
+<div class="math">
+\[\omega = -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
+<p>We examine the term inside square root and set it to be negative which will show us the region where real omega disppears.</p>
+<p>Comment: the upper limit is not a horizontal line.</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/omega-n-upper-limit-spectrum-c5.png" src="../_images/omega-n-upper-limit-spectrum-c5.png" />
+<p class="caption"><span class="caption-number">Fig. 2.56 </span><span class="caption-text">Upper limit.</span></p>
+</div>
+<p class="last">For the MZA solutions to disappear, we need to find the smallest value of the upper limit (-0.73160 in this case) and the largest value of lower limit (-7.16327 in this case).</p>
 </div>
 </div>
 </div>

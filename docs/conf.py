@@ -76,6 +76,7 @@ extensions = [
 ]
 
 
+
 latex_preamble_data = r"""
 \usepackage{hyperref}
 \usepackage{mathrsfs}
@@ -253,7 +254,7 @@ html_theme_options = {
 
     # Render the current pages TOC in the navbar. (Default: true)
     'navbar_pagenav': True,
-    
+
     'navbar_search': False,
 }
 
