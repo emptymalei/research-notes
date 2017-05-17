@@ -287,18 +287,36 @@ TeX: {
 </div>
 <div class="section" id="box-spectrum">
 <h2>2.5.1. Box Spectrum<a class="headerlink" href="#box-spectrum" title="Permalink to this headline">¶</a></h2>
+<div class="toggle admonition">
+<p class="first admonition-title">Numerical Issues with Box Spectrum in LSA</p>
+<p>Mathematica seems to fail the mission when finding the complex k&#8217;s given real <span class="math">\(\omega\)</span>.</p>
+<p>I tested bot NIntegrate of the integrals and Integrate first. It seems that Integrate first works better and faster.</p>
+<p>I ploted out the MZA solutions and check if they have interceptions with the 0 plane. I found that interceptions exsits for only some values of <span class="math">\(\omega\)</span>. Examples of such plots are shown below.</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/mzap-solution-3d-plot-spect-wc1.png" src="../_images/mzap-solution-3d-plot-spect-wc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.52 </span><span class="caption-text">MZA solutions for spectrum id WC1. We could see the spike-like structure in the real part intercepts with 0 plane as well as imaginary part that indicates a solution.</span></p>
+</div>
+<p>After some test, my thought is that the integral is nicely behaved for some range of real <span class="math">\(\omega\)</span>, which makes sense since the line of instability can not extend to arbitary large and small <span class="math">\(\omega\)</span>.</p>
+<p>Thus the solution to the warnings and errors in FindRoot is to plugin the suitable range of <span class="math">\(\omega\)</span>.</p>
+<p>Meanwhile for real <span class="math">\(k\)</span>, we have only solutions at <span class="math">\(\omega =0\)</span>.</p>
+<div class="figure align-center" id="id2">
+<img alt="../_images/mzap-solution-3d-plot-realk-spect-wc1.png" src="../_images/mzap-solution-3d-plot-realk-spect-wc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.53 </span><span class="caption-text">For real k, <span class="math">\(k=0.8\)</span>.</span></p>
+</div>
+<p class="last">MAA solutions also has similar shape.</p>
+</div>
 <p>Since box spectrum is easier and faster to calculate, we&#8217;ll explore the phenomena within box spectrum. For example, the spectrum notation</p>
 <div class="highlight-Mathematica"><div class="highlight"><pre><span></span><span class="p">{{{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.3</span><span class="p">},</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">},</span><span class="w"> </span><span class="p">{{</span><span class="mf">-0.3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="mf">0.7</span><span class="p">}}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>indicates tht the spectrum has a constant value -0.2 within <span class="math">\(\cos\theta \in [-1,-0.3]\)</span> and value 0.7 within <span class="math">\(\cos\theta \in [-0.3,1]\)</span>.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id3">
 <img alt="../_images/box-spectra-without-crossing-omega-n-k-n-dr.png" src="../_images/box-spectra-without-crossing-omega-n-k-n-dr.png" />
-<p class="caption"><span class="caption-number">Fig. 2.52 </span><span class="caption-text">No crossing</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.54 </span><span class="caption-text">No crossing</span></p>
 </div>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id4">
 <img alt="../_images/box-spectra-with-crossing-omega-n-k-n-dr.png" src="../_images/box-spectra-with-crossing-omega-n-k-n-dr.png" />
-<p class="caption"><span class="caption-number">Fig. 2.53 </span><span class="caption-text">With crossing</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.55 </span><span class="caption-text">With crossing</span></p>
 </div>
 <div class="warning admonition">
 <p class="first admonition-title">Observations and Questions</p>
@@ -309,26 +327,34 @@ TeX: {
 </div>
 <div class="note admonition">
 <p class="first admonition-title">MZA disappears</p>
-<p>The analytical expression for it to dispear shows that it involves all the elements of the spectrum. Numerically, I can show that for a specific one <span class="math">\(\{\{\{-1, -0.3\}, g_1\}, \{\{-0.3, 1\}, 1\}\}\)</span>, the region of <span class="math">\(g_1\)</span> that leads to no MZA solution for a given <span class="math">\(n\)</span> is shown in <a class="reference internal" href="#analytical-where-mza-dispear-spectrum-c5"><span class="std std-numref">Fig. 2.54</span></a>.</p>
-<div class="figure align-center" id="id3">
+<p>The analytical expression for it to dispear shows that it involves all the elements of the spectrum. Numerically, I can show that for a specific one <span class="math">\(\{\{\{-1, -0.3\}, g_1\}, \{\{-0.3, 1\}, 1\}\}\)</span>, the region of <span class="math">\(g_1\)</span> that leads to no MZA solution for a given <span class="math">\(n\)</span> is shown in <a class="reference internal" href="#analytical-where-mza-dispear-spectrum-c5"><span class="std std-numref">Fig. 2.56</span></a>.</p>
+<div class="figure align-center" id="id5">
 <span id="analytical-where-mza-dispear-spectrum-c5"></span><img alt="../_images/analytical-where-mza-dispear-spectrum-c5.png" src="../_images/analytical-where-mza-dispear-spectrum-c5.png" />
-<p class="caption"><span class="caption-number">Fig. 2.54 </span><span class="caption-text">Region of <span class="math">\(g_1\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.56 </span><span class="caption-text">Region of <span class="math">\(g_1\)</span>.</span></p>
 </div>
 <p>This figure shows that the MZA solution will come back if we choose really small <span class="math">\(g_1\)</span>. It is verified using another spectrum which is labeled as C5 spectrum.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id6">
 <img alt="../_images/omega-n-spectrum-c5.png" src="../_images/omega-n-spectrum-c5.png" />
-<p class="caption"><span class="caption-number">Fig. 2.55 </span><span class="caption-text">For a spectrum <span class="math">\(\{\{\{-1, -0.3\}, -15\}, \{\{-0.3, 1\}, 1\}\}\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.57 </span><span class="caption-text">For a spectrum <span class="math">\(\{\{\{-1, -0.3\}, -15\}, \{\{-0.3, 1\}, 1\}\}\)</span>.</span></p>
 </div>
 <p>However examples of numerical calculations won&#8217;t be enough. Alternatively, I could derive an analytical expression. MZA solution is</p>
 <div class="math">
 \[\omega = -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
 <p>We examine the term inside square root and set it to be negative which will show us the region where real omega disppears.</p>
 <p>Comment: the upper limit is not a horizontal line.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id7">
 <img alt="../_images/omega-n-upper-limit-spectrum-c5.png" src="../_images/omega-n-upper-limit-spectrum-c5.png" />
-<p class="caption"><span class="caption-number">Fig. 2.56 </span><span class="caption-text">Upper limit.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.58 </span><span class="caption-text">Upper limit.</span></p>
 </div>
 <p class="last">For the MZA solutions to disappear, we need to find the smallest value of the upper limit (-0.73160 in this case) and the largest value of lower limit (-7.16327 in this case).</p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Taylor Expansion of MZA solutions</p>
+<p>What about Taylor expansion around small values of <span class="math">\(g_1\)</span>? Taylor expanding the most general abstract form doesn&#8217;t give us any useful results since it is super complicated.</p>
+<div class="last figure align-center" id="id8">
+<img alt="collective/assets/dispersion-relation-and-crossing/mza-solutions-taylor-series-coefficients-spect-c5.png" src="collective/assets/dispersion-relation-and-crossing/mza-solutions-taylor-series-coefficients-spect-c5.png" />
+<p class="caption"><span class="caption-number">Fig. 2.59 </span><span class="caption-text">Coefficients of Taylor series of MZA solutions. It&#8217;s weird that the coefficients are all real.</span></p>
+</div>
 </div>
 </div>
 </div>

@@ -692,11 +692,11 @@ A_{k\omega} &amp; B_\omega
 <p>Suppose neutrinos are emitted within a angle range <span class="math">\([\theta_1,\theta_2]\)</span>. Using Mathematica, we find the three important integrals</p>
 <div class="math">
 \[\begin{split}I_0 &amp;= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
-   &amp;= \frac{\omega}{k} \ln \left( \left\vert\frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \\
+   &amp;= \frac{\omega}{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \\
 I_1 &amp;= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
-&amp; =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
+&amp; =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \right) \\
 I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
-&amp;= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).\end{split}\]</div>
+&amp;= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left(  \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \right).\end{split}\]</div>
 <p>where <span class="math">\(c_1=\cos\theta_1\)</span> and <span class="math">\(c_2=\cos\theta_2\)</span>.</p>
 <div class="section" id="homogeneous-emission">
 <h3>2.4.5.1. Homogeneous Emission<a class="headerlink" href="#homogeneous-emission" title="Permalink to this headline">¶</a></h3>
@@ -705,7 +705,7 @@ I_2 &amp;= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
 \[\omega = \frac{g}{4}(I_0 - I_2),\]</div>
 <p>which becomes</p>
 <div class="math" id="equation-eqn-dr-continuous-angle-range">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left( \left\vert \frac{1-c_2 n}{1-c_1 n} \right\vert \right)\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-dr-continuous-angle-range" title="Permalink to this equation">¶</a></span>\[\omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left(  \frac{1-c_2 n}{1-c_1 n}  \right)\]</div>
 <p>Meanwhile we could write down the MZA/bimodal solution in the form of <span class="math">\(\omega(n)\)</span>.</p>
 <p>For MAA and MZA we can plot <span class="math">\(\omega\)</span> as a function of n.</p>
 <div class="figure align-center" id="id17">

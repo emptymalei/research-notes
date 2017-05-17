@@ -613,11 +613,11 @@ Suppose neutrinos are emitted within a angle range :math:`[\theta_1,\theta_2]`. 
 
 .. math::
    I_0 &= \int_{c_2 }^{c_1 } d x \frac{1}{1-k\cos\theta/\omega} \\
-      &= \frac{\omega}{k} \ln \left( \left\vert\frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \\
+      &= \frac{\omega}{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \\
    I_1 &= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
-   & =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left(\left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right) \\
+   & =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \right) \\
    I_2 &= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
-   &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left( \left\vert \frac{\omega-c_2 k}{\omega-c_1 k} \right\vert \right) \right).
+   &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left(  \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \right).
 
 
 where :math:`c_1=\cos\theta_1` and :math:`c_2=\cos\theta_2`.
@@ -634,7 +634,7 @@ Assuming :math:`G=1`, the MAA solution is
 which becomes
 
 .. math::
-   \omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left( \left\vert \frac{1-c_2 n}{1-c_1 n} \right\vert \right)
+   \omega=\frac{(c_2-c_1)(1+(c_1+c_2)n/2)}{4n^3} + \frac{ 1-n^2 }{4n^3}\ln\left(  \frac{1-c_2 n}{1-c_1 n}  \right)
    :label: eqn-dr-continuous-angle-range
 
 

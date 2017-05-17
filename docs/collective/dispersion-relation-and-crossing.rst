@@ -11,6 +11,34 @@ Dispersion Relation and Crossing
 Box Spectrum
 -----------------------
 
+
+.. admonition:: Numerical Issues with Box Spectrum in LSA
+   :class: toggle
+
+   Mathematica seems to fail the mission when finding the complex k's given real :math:`\omega`.
+
+   I tested bot NIntegrate of the integrals and Integrate first. It seems that Integrate first works better and faster.
+
+   I ploted out the MZA solutions and check if they have interceptions with the 0 plane. I found that interceptions exsits for only some values of :math:`\omega`. Examples of such plots are shown below.
+
+   .. figure:: assets/dispersion-relation-and-crossing/mzap-solution-3d-plot-spect-wc1.png
+      :align: center
+
+      MZA solutions for spectrum id WC1. We could see the spike-like structure in the real part intercepts with 0 plane as well as imaginary part that indicates a solution.
+
+   After some test, my thought is that the integral is nicely behaved for some range of real :math:`\omega`, which makes sense since the line of instability can not extend to arbitary large and small :math:`\omega`.
+
+   Thus the solution to the warnings and errors in FindRoot is to plugin the suitable range of :math:`\omega`.
+
+   Meanwhile for real :math:`k`, we have only solutions at :math:`\omega =0`.
+
+   .. figure:: assets/dispersion-relation-and-crossing/mzap-solution-3d-plot-realk-spect-wc1.png
+      :align: center
+
+      For real k, :math:`k=0.8`.
+
+   MAA solutions also has similar shape.
+
 Since box spectrum is easier and faster to calculate, we'll explore the phenomena within box spectrum. For example, the spectrum notation
 
 .. code-block:: Mathematica
