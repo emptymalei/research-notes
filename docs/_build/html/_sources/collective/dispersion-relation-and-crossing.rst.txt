@@ -115,3 +115,33 @@ indicates tht the spectrum has a constant value -0.2 within :math:`\cos\theta \i
       :align: center
 
       Coefficients of Taylor series of MZA solutions. It's weird that the coefficients are all real.
+
+   I am not sure how to use these results.
+
+
+.. admonition:: Crossing has an effect on :math:`d\omega/dn`
+   :class: note
+
+
+   By observing the :math:`\omega\sim n` plot, we noticed that crossing is changes the behavior of it, especially at the point :math:`n=-1`. It seems that crossing changes whether the :math:`\omega` goes to :math:`\infty` or :math:`-\infty` at :math:`n=-1`.
+
+   .. figure:: assets/dispersion-relation-and-crossing/box-spectra-mza-g1-n-shortrange.png
+      :align: center
+
+      :math:`d\omega/dn` for MZA solutions with spectrum :math:`spectAbs2 = \{\{\{-1, -0.3\}, g_1\}, \{\{-0.3, 1\}, 1\}\}`. In this plot, we have :math:`g_1\in [-1,1]` with a step size 0.1 while :math:`n\in [-1,1]`. We notice that the value at -1 changes as crossing happens.
+
+   More specifically, we plot out the :math:`d\omega/dn` for three different :math:`g_1`.
+
+   .. figure:: assets/dispersion-relation-and-crossing/box-spectra-mza-n-g1-three-values-including-crossing.png
+      :align: center
+
+      for 3 different values of :math:`g_1`. The second panel is for :math:`g_1=0`. The grid lines are actually calculated using Limit which are :math:`-0.0143723` and :math:`0.0370502`. They never become 0?
+
+
+Instabilities
+--------------------------
+
+.. admonition:: Crossing seems to have little effects on instabilities
+   :class: warning
+
+   Instabilities on DR plot seems to be NOT affected by crossing. Probably because of the lines in the forbidden region (using abs for log argument in the results of integral for I's) doesn't seem to change a lot.
