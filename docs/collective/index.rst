@@ -8,6 +8,7 @@ Collective
    directional-instability.rst
    two-beams-model.rst
    dispersion-relation.rst
+   dispersion-relation-gap.rst
    dispersion-relation-and-crossing.rst
    flavor-waves.rst
    discworld.rst
