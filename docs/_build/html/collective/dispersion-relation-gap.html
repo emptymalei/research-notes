@@ -246,6 +246,9 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">2.5. Dispersion Relation and Gap</a><ul>
 <li><a class="reference internal" href="#discrete-beams">2.5.1. Discrete Beams</a></li>
+<li><a class="reference internal" href="#two-beams">2.5.2. Two Beams</a></li>
+<li><a class="reference internal" href="#solutions">2.5.3. Solutions</a></li>
+<li><a class="reference internal" href="#references-and-notes">2.5.4. References and Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -334,6 +337,50 @@ TeX: {
 <img alt="../_images/lsaMZAmRKPltDB-WC1-to-WC3-and-C1-to-C3.png" src="../_images/lsaMZAmRKPltDB-WC1-to-WC3-and-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.60 </span><span class="caption-text">MZA- solution for real k finding complex <span class="math">\(\omega\)</span>.</span></p>
 </div>
+</div>
+<div class="section" id="two-beams">
+<h2>2.5.2. Two Beams<a class="headerlink" href="#two-beams" title="Permalink to this headline">¶</a></h2>
+<p>For two beams, the equation <span class="math">\(f(\omega,k)=0\)</span> is quadratic in both <span class="math">\(\omega\)</span> and <span class="math">\(k\)</span>, thus two solutions everywhere even for complex solutions.</p>
+<div class="note admonition">
+<p class="first admonition-title">Infinities at Emission Angle</p>
+<p>It has been a very weird thing that the MZA DR lines can cross the forbidden lines defined by the emission angle. To illustrate this problem, we think of a two beams model, with spectrum <span class="math">\(\{\{g_1,u_1\},\{g_2,u_2\}\}\)</span>.</p>
+<p>The equation for DR has terms of the form</p>
+<div class="math">
+\[\frac{1}{1-n u_i},\]</div>
+<p>which indicates that this can lead to infinity when <span class="math">\(n=1/u_i\)</span>, unless the numerator is 0. For MAA solution, the numerator indeed becomes 0. But for MZA solution it is not that obvious.</p>
+<p>However, we can prove that one of the MZA solutions is still finite as <span class="math">\(n=1/u_i\)</span>.</p>
+<p>The MZA solution is</p>
+<div class="math">
+\[\omega(n) = -\frac{1}{4} \left(  I_0 - I_2 \pm \sqrt{  (I_0+I_2 - 2I_1)(I_0+I_2 + 2I_1) } \right),\]</div>
+<p>where</p>
+<div class="math">
+\[I_m = \sum g_i \frac{ u_i^m }{1 - m u_i}.\]</div>
+<p>We are interested in wether the term</p>
+<div class="math">
+\[I_0 - I_2 \pm \sqrt{  (I_0+I_2 - 2I_1)(I_0+I_2 + 2I_1) }\]</div>
+<p>will become finite at <span class="math">\(n=1/u_i\)</span>. We plug in the expressions for <span class="math">\(I_m\)</span>.</p>
+<div class="math">
+\[\begin{split}&amp;I_0 - I_2 \pm \sqrt{  (I_0+I_2 - 2I_1)(I_0+I_2 + 2I_1) } \\
+=&amp;\sum_i \frac{ g_i(1-u_i^2) }{1-n u_i} \pm \sqrt{ \left( \sum_i \frac{ g_i(u_i-1)^2 }{ 1- nu_i } \right) \left( \sum_i \frac{ g_i(u_i+1)^2 }{ 1- nu_i } \right) } \\
+=&amp; \frac{ g_1 (1-u_1^2)(1-n u_2) + g_2(1-u_2^2)(1-n u_1) }{ (1-n u_1)(1-n u_2) } \pm \sqrt{  \frac{ [ g_1 (1-u_1)^2 (1-n u_2) + g_2 (1-u_2)^2 (1-n u_1) ][ g_1 (1+u_1)^2 (1-n u_2) + g_2 (1+u_2)^2 (1-n u_1) ] }{ (1-n u_1)^2(1-n u_2)^2 } }.\end{split}\]</div>
+<p>We take the limit <span class="math">\(n\to 1/u_i\)</span>.</p>
+<div class="math">
+\[\begin{split}&amp;I_0 - I_2 \pm \sqrt{  (I_0+I_2 - 2I_1)(I_0+I_2 + 2I_1) } \\
+=&amp; \frac{ g_1(1-u_1^2) }{ 1- n u_1 } \pm  \left\lvert \frac{ g_1(1-u_1^2)  }{  1 - n u_1  } \right\rvert.\end{split}\]</div>
+<p>One of the solutions, + or -, will be 0, depending on spectrum and also which side we are approaching the limit.</p>
+<p>Suppose we have <span class="math">\(g_1&gt;0\)</span> and <span class="math">\(n\to 1/u_1 +\)</span> (<span class="math">\(1-n u_1&lt;0\)</span>).</p>
+<div class="math">
+\[\omega(n) = \frac{ g_1(1-u_1^2) }{ 1- n u_1 } \pm  \left(  - \frac{ g_1(1-u_1^2)  }{  1 - n u_1  }  \right),\]</div>
+<p class="last">so that the MZA+ solution is 0.</p>
+</div>
+</div>
+<div class="section" id="solutions">
+<h2>2.5.3. Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<p>It seems that gap and instability are not really related all the time. For discrete beams, the number of solutions is the key to instabilities.</p>
+<p>It shows that spectrum <span class="math">\(DBC1\)</span> has only MZA+ instabilities on the left side of the axis for real k. We need to prove that no solutions are found on the left side of the axis. Similarly for MZA- solutions but on different sides.</p>
+</div>
+<div class="section" id="references-and-notes">
+<h2>2.5.4. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

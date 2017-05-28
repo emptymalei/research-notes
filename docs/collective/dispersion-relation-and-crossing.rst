@@ -12,6 +12,26 @@ Box Spectrum
 -----------------------
 
 
+.. admonition:: Box Spectrum Defined Spectra Code
+   :class: toggle
+
+   .. code-block:: Mathematica
+
+      spectWC1 = {{{-1, -0.3}, 1}, {{-0.3, 1}, 1}};
+      spectWC2 = {{{-1, -0.3}, 0.5}, {{-0.3, 1}, 1}};
+      spectWC3 = {{{-1, -0.3}, 0.1}, {{-0.3, 1}, 1}};
+      spectWC4 = {{{-1, -0.3}, 0}, {{-0.3, 1}, 1}};
+
+      spectC1 = {{{-1, -0.3}, -0.1}, {{-0.3, 1}, 1}};
+      spectC2 = {{{-1, -0.3}, -0.5}, {{-0.3, 1}, 1}};
+      spectC3 = {{{-1, -0.3}, -1}, {{-0.3, 1}, 1}};
+      spectC4 = {{{-1, -0.3}, -1.5}, {{-0.3, 1}, 1}};
+
+      spectC5 = {{{-1, -0.3}, -15}, {{-0.3, 1}, 1}};
+      spectC6 = {{{-1, -0.3}, -0.01}, {{-0.3, 1}, 1}};
+      spectC7 = {{{-1, -0.3}, 0.01}, {{-0.3, 1}, 1}};
+      spectWC5 = {{{0.1, 0.3}, 1}, {{0.3, 1}, 1}};
+
 .. admonition:: Numerical Issues with Box Spectrum in LSA
    :class: toggle
 
@@ -19,12 +39,28 @@ Box Spectrum
 
    I tested bot NIntegrate of the integrals and Integrate first. It seems that Integrate first works better and faster.
 
-   I ploted out the MZA solutions and check if they have interceptions with the 0 plane. I found that interceptions exsits for only some values of :math:`\omega`. Examples of such plots are shown below.
+   Since I could find the analytical expressions for the integrals, I simple plug in the expression then calculate numbers.
 
-   .. figure:: assets/dispersion-relation-and-crossing/mzap-solution-3d-plot-spect-wc1.png
+   I could plot the values of :math:`\omega - (I_0-I_4)/4` (MAA solution) for real :math:`\omega` to check if they have interceptions with the 0 plane.
+
+   .. figure:: assets/dispersion-relation-and-crossing/maa-solution-real-image-3d-plot-spect-wc1.png
       :align: center
 
-      MZA solutions for spectrum id WC1. We could see the spike-like structure in the real part intercepts with 0 plane as well as imaginary part that indicates a solution.
+      MAA solution for WC1 spectrum. This plot was for :math:`\omega=0.1`. The two horizontal axes are real and imaginary part of k. Green plane is 0 plane. The blue surface is real part while the orange surface is imaginary part.  We could see the spike-like structure in the real part intercepts with 0 plane as well as imaginary part that indicates a solution
+
+   I also ploted out the MZA solutions. I found that interceptions exsits for only some values of :math:`\omega`. Examples of such plots are shown below.
+
+   .. figure:: assets/dispersion-relation-and-crossing/mzap-solution-real-image-3d-plot-spect-wc1.png
+      :align: center
+
+      MZA+ solutions for spectrum id WC1. Seems to be solutionless.
+
+   Similarly for MZA- solution we have the following.
+
+   .. figure:: assets/dispersion-relation-and-crossing/mzam-solution-real-image-3d-plot-spect-wc1.png
+      :align: center
+
+      MZA- solutions for spectrum id WC1.
 
    After some test, my thought is that the integral is nicely behaved for some range of real :math:`\omega`, which makes sense since the line of instability can not extend to arbitary large and small :math:`\omega`.
 
@@ -32,12 +68,19 @@ Box Spectrum
 
    Meanwhile for real :math:`k`, we have only solutions at :math:`\omega =0`.
 
-   .. figure:: assets/dispersion-relation-and-crossing/mzap-solution-3d-plot-realk-spect-wc1.png
+   .. figure:: assets/dispersion-relation-and-crossing/maa-solution-real-image-3d-plot-spect-wc1-realk.png
       :align: center
 
-      For real k, :math:`k=0.8`.
+      For real k. MAA solution. Blue, Orange, Green has similar means as before.
+
+   .. figure:: assets/dispersion-relation-and-crossing/mzap-solution-real-image-3d-plot-spect-wc1-realk.png
+      :align: center
+
+      For real k, :math:`k=0.1`.
 
    MAA solutions also has similar shape.
+
+   In any case, we managed to solve instabilities for MAA and MZA. In Mathematica package `dispersion-relation.wl`, `ConAxialSymOmegaNMZApEqnLHSComplex[-omegareal, k, spectrum]` returns the value of :math:`\omega - \left( -\frac{1}{4}\left( I_0 - I_2 + \sqrt{ (I_0+I_2-2I_1)(I_0+I_2+2I_1) } \right) \right)`. Simply using `FindRoot` from Mathematica should return the solutions.
 
 Since box spectrum is easier and faster to calculate, we'll explore the phenomena within box spectrum. For example, the spectrum notation
 
@@ -145,3 +188,33 @@ Instabilities
    :class: warning
 
    Instabilities on DR plot seems to be NOT affected by crossing. Probably because of the lines in the forbidden region (using abs for log argument in the results of integral for I's) doesn't seem to change a lot.
+
+
+
+
+.. figure:: assets/dispersion-relation-and-crossing/box-spectra-dr-lsa-maa-spectwc3-to-wc4.png
+   :align: center
+
+   DR and LSA for spectrum ``spectWC3`` and ``spectWC4``. LSA is for real :math:`\omega`, the color of the dots indicates the value of imaginary value of :math:`k`.
+
+
+
+
+.. figure:: assets/dispersion-relation-and-crossing/box-spectra-dr-lsa-maa-spectc1-to-c4.png
+   :align: center
+
+   DR and LSA (MAA) for spectra with crossings.
+
+
+.. figure:: assets/dispersion-relation-and-crossing/box-spectra-dr-lsa-mzap-spectwc3-wc4.png
+   :align: center
+
+   DR and LSA (MZA+) for spectra ``spectWC3`` (left) and ``spectWC4`` (right).
+
+
+
+
+.. figure:: assets/dispersion-relation-and-crossing/box-spectra-dr-lsa-mzap-spectc1-to-c4.png
+   :align: center
+
+   DR and LSA (MZA+) for spectra ``spectC1`` (left-most) to ``spectC4`` (right-most).

@@ -617,7 +617,7 @@ Suppose neutrinos are emitted within a angle range :math:`[\theta_1,\theta_2]`. 
    I_1 &= \int_{c_2 }^{c_1 } d x \frac{x}{1-k\cos\theta/\omega} \\
    & =  \frac{\omega}{k} \left( c_2 -c_1  +  \frac{ \omega }{k} \ln \left( \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \right) \\
    I_2 &= \int_{c_2 }^{c_1 } d x \frac{x^2}{1-k\cos\theta/\omega} \\
-   &= \frac{\omega}{k} \left(  (c_2 -c_1 )\left(\frac{\omega}{k} + c_1 +c_2  \right) + \left(\frac{\omega}{k}\right)^2 \ln \left(  \frac{\omega-c_2 k}{\omega-c_1 k}  \right) \right).
+   &= \frac{\omega}{2 k}  (c_2 -c_1 ) \left(2 \frac{\omega}{k} + c_1 +c_2  \right)  + \left(\frac{\omega}{k}\right)^3 \ln \left(  \frac{\omega-c_2 k}{\omega-c_1 k}  \right) .
 
 
 where :math:`c_1=\cos\theta_1` and :math:`c_2=\cos\theta_2`.
