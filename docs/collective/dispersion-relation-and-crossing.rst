@@ -346,7 +346,7 @@ Can We Explain Crossing Using Discrete Beams?
 -------------------------------------------------
 
 
-What does a backward emission mean? Is it somewhat equivalent to a crossing spectrum without backward emission?
+What does backward emission mean? Is it somewhat equivalent to crossing spectrum without backward emission?
 
 
 .. figure:: assets/dispersion-relation-and-crossing/lsaMAAROPltDB-WC4-and-C4.png

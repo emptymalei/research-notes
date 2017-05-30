@@ -2,10 +2,6 @@ Dispersion Relation and Gap
 ===============================
 
 
-.. admonition:: Question about MZA solutions
-   :class: warning
-
-   I seems that we should do Taylor expansion around :math:`omega=0` for MZA solutions to see what actually is happening. We can expand the :math:`I_m`'s around small real :math:`\omega`, then perform the integral.
 
 
 Discrete Beams
@@ -415,14 +411,28 @@ MZA solutions for spectra with crossing are shown below.
 .. figure:: assets/dispersion-relation-gap/f-of-omega-1-and-k-densityplot-log-mzap-mzam-spectc1.png
    :align: center
 
-   MZA solutions for ``spectC1`` with :math:`\omega=1`. We found one real solutioin for MZA- solution.
+   MZA solutions for ``spectC1`` with :math:`\omega=1`. We found one real solution for MZA- solution.
 
 
 
 .. figure:: assets/dispersion-relation-gap/f-of-omega-m1-and-k-densityplot-log-mzap-mzam-spectc1.png
    :align: center
 
-   MZA solutions for ``spectC1`` with :math:`\omega=-1`. We found one real solutioin for MZA+ solution.
+   MZA solutions for ``spectC1`` with :math:`\omega=-1`. We found one real solution for MZA+ solution.
+
+
+Instability Regions Stop at Axis :math:`\omega=0` or :math:`k=0`
+--------------------------------------------------------------------------------------
+
+
+.. admonition:: Question about MZA solutions
+   :class: warning
+
+   It seems that we should Taylor expand around :math:`omega=0` for MZA/MAA solutions to see what actually is happening. We can expand the :math:`I_m`'s around small real :math:`\omega`, then perform the integral.
+
+
+For discrete beams, we determine :math:`k` using first order expansion of :math:`I_m` at :math:`\omega\sim 0`.
+
 
 
 
