@@ -2,6 +2,12 @@ Dispersion Relation and Gap
 ===============================
 
 
+.. admonition:: Question about MZA solutions
+   :class: warning
+
+   I seems that we should do Taylor expansion around :math:`omega=0` for MZA solutions to see what actually is happening. We can expand the :math:`I_m`'s around small real :math:`\omega`, then perform the integral.
+
+
 Discrete Beams
 -------------------
 

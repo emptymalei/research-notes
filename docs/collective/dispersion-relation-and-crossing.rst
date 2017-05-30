@@ -368,3 +368,6 @@ What does a backward emission mean? Is it somewhat equivalent to a crossing spec
    :align: center
 
    DR and LSA (MZA-) for ``spectDBWC4`` and ``spectDBC4`` which are ``{{0.5, -0.1}, {1, 0.4}, {1, 0.6}}`` and ``{{-0.5, 0.1}, {1, 0.4}, {1, 0.6}}`` respectively.
+
+
+Analytically, crossing and backward emission are not simply related.
