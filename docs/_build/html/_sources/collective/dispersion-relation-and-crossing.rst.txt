@@ -181,8 +181,127 @@ indicates tht the spectrum has a constant value -0.2 within :math:`\cos\theta \i
       for 3 different values of :math:`g_1`. The second panel is for :math:`g_1=0`. The grid lines are actually calculated using Limit which are :math:`-0.0143723` and :math:`0.0370502`. They never become 0?
 
 
-Instabilities
---------------------------
+
+.. admonition:: MZA solutions Disapears?
+   :class: warning
+
+   The DR plots show that MZA solutions disappears for ``spectC3`` and ``spectC4``. Is this true?
+
+   I tested ``Exclusions->None`` in Mathematica to make sure this is not a plotting issue. The results do not change with this option.
+
+   However, I found that the :math:`\lvert f(\omega=1,k)\rvert` is approaching 0 for some none zero real k.
+
+   .. figure:: assets/dispersion-relation-and-crossing/f-of-omega-1-and-k-densityplot-log-mzap-mzam-spectc3.png
+      :align: center
+
+      MZA solutions for ``spectC3`` with :math:`\omega=1`. We found one real solutioin for MZA- solution, which is not what we expected from DR plots.
+
+
+   This makes the DR plots questionable. However, no bug has been found. In fact I have been using the same functions to make this density plot.
+
+   The I realized that using only real :math:`n`'s could be a problem since we might have complex :math:`n`'s that give us real :math:`\omega`, in principle.
+
+   Indeed this is true for ``spectC3``.
+
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-omega-for-complex-n-mzap-boxspectrum-spectc3.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`\omega` for MZA+ solution of ``spectC3``
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-omega-for-complex-n-mzam-boxspectrum-spectc3.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`\omega` for MZA- solution of ``spectC3``.
+
+   Meanwhile the real parts of these solutions do not go to 0.
+
+   .. figure::  assets/dispersion-relation-and-crossing/real-part-of-omega-for-complex-n-mzap-boxspectrum-spectc3.png
+      :align: center
+
+      Absolute value of real part of :math:`\omega` for MZA+ solution of ``spectC3``.
+
+   .. figure::  assets/dispersion-relation-and-crossing/real-part-of-omega-for-complex-n-mzam-boxspectrum-spectc3.png
+      :align: center
+
+      Absolute value of real part of :math:`\omega` for MZA- solution of ``spectC3``.
+
+
+
+   But there can never be real k for these real :math:`\omega` lines because real :math:`k=\omega n` where :math:`n` is complex.
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-k-for-complex-n-mzap-boxspectrum-spectc3.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`k` for MZA+ solution of ``spectC3``.
+
+
+
+   For ``spectC3``, we have the following.
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-omega-for-complex-n-mzap-boxspectrum-spectc2.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`\omega` for MZA+ solution of ``spectC2``.
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-omega-for-complex-n-mzam-boxspectrum-spectc2.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`\omega` for MZA- solution of ``spectC2``.
+
+
+
+   .. figure:: assets/dispersion-relation-and-crossing/real-part-of-omega-for-complex-n-mzap-boxspectrum-spectc2.png
+      :align: center
+
+      Absolute value of real part of :math:`\omega` for MZA+ solution of ``spectC2``.
+
+
+   .. figure:: assets/dispersion-relation-and-crossing/real-part-of-omega-for-complex-n-mzam-boxspectrum-spectc2.png
+      :align: center
+
+      Absolute value of real part of :math:`\omega` for MZA- solution of ``spectC2``.
+
+
+   So things must be special for ``spectWC1`` etc. Here we plot the real and imaginary part of ``spectWC3``.
+
+   .. figure:: assets/dispersion-relation-and-crossing/real-part-of-omega-for-complex-n-mzap-boxspectrum-spectwc3.png
+      :align: center
+
+      Absolute value of real part of :math:`\omega` for MZA+ solution of ``spectWC3``.
+
+   .. figure:: assets/dispersion-relation-and-crossing/real-part-of-omega-for-complex-n-mzam-boxspectrum-spectwc3.png
+      :align: center
+
+      Absolute value of real part of :math:`\omega` for MZA- solution of ``spectWC3``.
+
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-omega-for-complex-n-mzap-boxspectrum-spectwc3.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`\omega` for MZA+ solution of ``spectWC3``.
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-omega-for-complex-n-mzam-boxspectrum-spectwc3.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`\omega` for MZA- solution of ``spectWC3``.
+
+   But there can never be real k for these real :math:`\omega` lines because real :math:`k=\omega n` where :math:`n` is complex.
+
+   .. figure:: assets/dispersion-relation-and-crossing/imaginary-part-of-k-for-complex-n-mzap-boxspectrum-spectwc3.png
+      :align: center
+
+      Absolute value of imaginary part of :math:`k` for MZA+ solution of ``spectWC3``.
+
+   So, where did the MZA solutions go?
+
+
+
+
+
+
+Instabilities for Box Spectra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Crossing seems to have little effects on instabilities
    :class: warning
@@ -195,7 +314,7 @@ Instabilities
 .. figure:: assets/dispersion-relation-and-crossing/box-spectra-dr-lsa-maa-spectwc3-to-wc4.png
    :align: center
 
-   DR and LSA for spectrum ``spectWC3`` and ``spectWC4``. LSA is for real :math:`\omega`, the color of the dots indicates the value of imaginary value of :math:`k`.
+   MAA DR and LSA for spectrum ``spectWC3`` and ``spectWC4``. LSA is for real :math:`\omega`, the color of the dots indicates the value of imaginary value of :math:`k`.
 
 
 
@@ -218,3 +337,34 @@ Instabilities
    :align: center
 
    DR and LSA (MZA+) for spectra ``spectC1`` (left-most) to ``spectC4`` (right-most).
+
+
+
+
+
+Can We Explain Crossing Using Discrete Beams?
+-------------------------------------------------
+
+
+What does a backward emission mean? Is it somewhat equivalent to a crossing spectrum without backward emission?
+
+
+.. figure:: assets/dispersion-relation-and-crossing/lsaMAAROPltDB-WC4-and-C4.png
+   :align: center
+
+   DR and LSA (MAA) for ``spectDBWC4`` and ``spectDBC4`` which are ``{{0.5, -0.1}, {1, 0.4}, {1, 0.6}}`` and ``{{-0.5, 0.1}, {1, 0.4}, {1, 0.6}}`` respectively.
+
+
+
+
+.. figure:: assets/dispersion-relation-and-crossing/lsaMZApROPltDB-WC4-and-C4.png
+   :align: center
+
+   DR and LSA (MZA+) for ``spectDBWC4`` and ``spectDBC4`` which are ``{{0.5, -0.1}, {1, 0.4}, {1, 0.6}}`` and ``{{-0.5, 0.1}, {1, 0.4}, {1, 0.6}}`` respectively.
+
+
+
+.. figure:: assets/dispersion-relation-and-crossing/lsaMZAmROPltDB-WC4-and-C4.png
+   :align: center
+
+   DR and LSA (MZA-) for ``spectDBWC4`` and ``spectDBC4`` which are ``{{0.5, -0.1}, {1, 0.4}, {1, 0.6}}`` and ``{{-0.5, 0.1}, {1, 0.4}, {1, 0.6}}`` respectively.

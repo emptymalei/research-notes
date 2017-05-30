@@ -247,7 +247,15 @@ TeX: {
 <li><a class="reference internal" href="#">2.5. Dispersion Relation and Gap</a><ul>
 <li><a class="reference internal" href="#discrete-beams">2.5.1. Discrete Beams</a></li>
 <li><a class="reference internal" href="#two-beams">2.5.2. Two Beams</a></li>
-<li><a class="reference internal" href="#solutions">2.5.3. Solutions</a></li>
+<li><a class="reference internal" href="#solutions">2.5.3. Solutions</a><ul>
+<li><a class="reference internal" href="#id1">2.5.3.1. Discrete Beams</a><ul>
+<li><a class="reference internal" href="#maa">2.5.3.1.1. MAA</a></li>
+<li><a class="reference internal" href="#mza">2.5.3.1.2. MZA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#box-spectra">2.5.3.2. Box Spectra</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#references-and-notes">2.5.4. References and Notes</a></li>
 </ul>
 </li>
@@ -298,42 +306,42 @@ TeX: {
 </pre></div>
 </div>
 <p>The first thing is to really see that the instability regions are going through the gap in discrete beams case.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <img alt="../_images/lsaMAAROPltDB-WC1-to-WC3.png" src="../_images/lsaMAAROPltDB-WC1-to-WC3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.52 </span><span class="caption-text">MAA solutions for spectra WC1, WC2, WC3. The instability regions go through the gap.</span></p>
 </div>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <img alt="../_images/lsaMAAROPltDB-C1-to-C3.png" src="../_images/lsaMAAROPltDB-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.53 </span><span class="caption-text">MAA solutions for spectra C1, C2, C3. For real <span class="math">\(\omega\)</span>, no complex k is found.</span></p>
 </div>
 <p>The MZA+ solution can also be found.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <img alt="../_images/lsaMZApROPltDB-WC1-to-WC3.png" src="../_images/lsaMZApROPltDB-WC1-to-WC3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.54 </span><span class="caption-text">MZA+ solution for WC spectra.</span></p>
 </div>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <img alt="../_images/lsaMZApROPltDB-C1-to-C3.png" src="../_images/lsaMZApROPltDB-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.55 </span><span class="caption-text">MZA+ solution for C spectra. As like before, no instability in k is found.</span></p>
 </div>
 <p>The MZA- solutions:</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <img alt="../_images/lsaMZAmROPltDB-WC1-to-WC3.png" src="../_images/lsaMZAmROPltDB-WC1-to-WC3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.56 </span><span class="caption-text">MZA- solution for WC spectra.</span></p>
 </div>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img alt="../_images/lsaMZAmROPltDB-C1-to-C3.png" src="../_images/lsaMZAmROPltDB-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.57 </span><span class="caption-text">MZA- solution for C spectra.</span></p>
 </div>
 <p>So the C spectra have no instabilities in k. I should calculate the instabilities in <span class="math">\(\omega\)</span> for real k.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id8">
 <img alt="../_images/lsaMAARKPltDB-WC1-to-WC3-and-C1-to-C3.png" src="../_images/lsaMAARKPltDB-WC1-to-WC3-and-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.58 </span><span class="caption-text">MAA solution for real k finding complex <span class="math">\(\omega\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id9">
 <img alt="../_images/lsaMZApRKPltDB-WC1-to-WC3-and-C1-to-C3.png" src="../_images/lsaMZApRKPltDB-WC1-to-WC3-and-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.59 </span><span class="caption-text">MZA+ solution for real k finding complex <span class="math">\(\omega\)</span>.</span></p>
 </div>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id10">
 <img alt="../_images/lsaMZAmRKPltDB-WC1-to-WC3-and-C1-to-C3.png" src="../_images/lsaMZAmRKPltDB-WC1-to-WC3-and-C1-to-C3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.60 </span><span class="caption-text">MZA- solution for real k finding complex <span class="math">\(\omega\)</span>.</span></p>
 </div>
@@ -378,6 +386,150 @@ TeX: {
 <h2>2.5.3. Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
 <p>It seems that gap and instability are not really related all the time. For discrete beams, the number of solutions is the key to instabilities.</p>
 <p>It shows that spectrum <span class="math">\(DBC1\)</span> has only MZA+ instabilities on the left side of the axis for real k. We need to prove that no solutions are found on the left side of the axis. Similarly for MZA- solutions but on different sides.</p>
+<div class="section" id="id1">
+<h3>2.5.3.1. Discrete Beams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="maa">
+<h4>2.5.3.1.1. MAA<a class="headerlink" href="#maa" title="Permalink to this headline">¶</a></h4>
+<p>For <code class="docutils literal"><span class="pre">spectDBWC1</span></code> we have the following density plots of <span class="math">\(f(\omega=0.1,k)\)</span>, <span class="math">\(f(\omega=0.5,k)\)</span>, and <span class="math">\(f(\omega=1.5,k)\)</span> respectively.</p>
+<a class="reference internal image-reference" href="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectdbwc1.png"><img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectdbwc1.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectdbwc1.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../_images/f-of-omega-0.5-and-k-densityplot-log-maa-spectdbwc1.png"><img alt="../_images/f-of-omega-0.5-and-k-densityplot-log-maa-spectdbwc1.png" src="../_images/f-of-omega-0.5-and-k-densityplot-log-maa-spectdbwc1.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../_images/f-of-omega-1.5-and-k-densityplot-log-maa-spectdbwc1.png"><img alt="../_images/f-of-omega-1.5-and-k-densityplot-log-maa-spectdbwc1.png" src="../_images/f-of-omega-1.5-and-k-densityplot-log-maa-spectdbwc1.png" style="width: 32%;" /></a>
+<p>Similar plots are made for <code class="docutils literal"><span class="pre">spectDBC1</span></code> which has no MAA instabilities.</p>
+<a class="reference internal image-reference" href="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectdbc1.png"><img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectdbc1.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectdbc1.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../_images/f-of-omega-0.5-and-k-densityplot-log-maa-spectdbc1.png"><img alt="../_images/f-of-omega-0.5-and-k-densityplot-log-maa-spectdbc1.png" src="../_images/f-of-omega-0.5-and-k-densityplot-log-maa-spectdbc1.png" style="width: 32%;" /></a>
+<a class="reference internal image-reference" href="../_images/f-of-omega-1.5-and-k-densityplot-log-maa-spectdbc1.png"><img alt="../_images/f-of-omega-1.5-and-k-densityplot-log-maa-spectdbc1.png" src="../_images/f-of-omega-1.5-and-k-densityplot-log-maa-spectdbc1.png" style="width: 32%;" /></a>
+</div>
+<div class="section" id="mza">
+<h4>2.5.3.1.2. MZA<a class="headerlink" href="#mza" title="Permalink to this headline">¶</a></h4>
+<p>I can also plot out the MZA solutions.</p>
+<div class="figure align-center" id="id11">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mazm-spectdbwc1.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mazm-spectdbwc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.61 </span><span class="caption-text">MZA solutions (MZA+ left, MZA- right) for <code class="docutils literal"><span class="pre">spectDBWC1</span></code> with <span class="math">\(\omega=0.1\)</span>. The MZA+ plot on the left seems to be weird. I checked the values within this region. There is a plateau here but not exactly flat. And they are not approaching 0. The other real solution in MZA- solution which is not shown is pretty far away from these two complex solutions.</span></p>
+</div>
+<p>A closer look at the MZA- solutions are showed below.</p>
+<div class="figure align-center" id="id12">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-mazm-spectdbwc1-2.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-mazm-spectdbwc1-2.png" />
+<p class="caption"><span class="caption-number">Fig. 2.62 </span><span class="caption-text">MZA- solutions for <code class="docutils literal"><span class="pre">spectDBWC1</span></code> at a closer look at the 0 points. The white bands are regions slightly larger than 0. <code class="docutils literal"><span class="pre">Log&#64;Abs&#64;DBAxialSymOmegaNMZApEqnLHSComplex[0.1,</span> <span class="pre">-0.1826</span> <span class="pre">-</span> <span class="pre">0*I,</span> <span class="pre">spectDBWC1]</span></code> returns <code class="docutils literal"><span class="pre">0.475377</span></code>.</span></p>
+</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Check Values at Plateau</p>
+<div class="highlight-Mathematica"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">162</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="n">Log</span><span class="o">@</span><span class="n">Abs</span><span class="o">@</span><span class="n">DBAxialSymOmegaNMZApEqnLHSComplex</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.6</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">spectDBWC1</span><span class="p">]</span><span class="w"></span>
+<span class="n">Log</span><span class="o">@</span><span class="n">Abs</span><span class="o">@</span><span class="n">DBAxialSymOmegaNMZApEqnLHSComplex</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">spectDBWC1</span><span class="p">]</span><span class="w"></span>
+
+<span class="n">Out</span><span class="p">[</span><span class="mi">162</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="mf">-2.46077</span><span class="w"></span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">163</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="mf">-2.49663</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A sharp transition occurs at the white boundry. The values near the boundary change abruptly. According to the values <span class="math">\(f(\omega=0.1,k)\)</span>, imaginary part of it appears and becomes large as we move from left to right around the boundary.</p>
+<div class="figure align-center" id="id13">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-spectwc1-at-step-structure.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-spectwc1-at-step-structure.png" />
+<p class="caption"><span class="caption-number">Fig. 2.63 </span><span class="caption-text">LogPlot of <span class="math">\(|f(\omega=0.1,k=kreal-0.8386*I)|\)</span> for <span class="math">\(kreal\in [1.052, 1.0535]\)</span>. This region of plot goes across the step structure.</span></p>
+</div>
+<div class="last highlight-Mathematica"><div class="highlight"><pre><span></span><span class="n">LogPlot</span><span class="p">[</span><span class="n">Abs</span><span class="o">@</span><span class="n">DBAxialSymOmegaNMZApEqnLHSComplex</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">kreal</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.8386</span><span class="o">*</span><span class="n">I</span><span class="p">,</span><span class="w">  </span><span class="n">spectDBWC1</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">kreal</span><span class="p">,</span><span class="w"> </span><span class="mf">1.052</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0535</span><span class="p">},</span><span class="w"> </span><span class="n">Frame</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">True</span><span class="p">,</span><span class="w"> </span><span class="n">PlotLabel</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;|f(\[Omega]=0.1,k=kreal-0.8386*I)| for spectDBWC1&quot;</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>For <span class="math">\(\omega=-0.5\)</span>.</p>
+<div class="figure align-center" id="id14">
+<img alt="../_images/f-of-omega-m0.5-and-k-densityplot-log-mzap-mazm-spectdbwc1.png" src="../_images/f-of-omega-m0.5-and-k-densityplot-log-mzap-mazm-spectdbwc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.64 </span><span class="caption-text">MZA solutions (MZA+ left, MZA- right) for <code class="docutils literal"><span class="pre">spectDBWC1</span></code> with <span class="math">\(\omega=-0.5\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id15">
+<img alt="../_images/f-of-omega-m0.5-and-k-densityplot-log-mazm-spectdbwc1-2.png" src="../_images/f-of-omega-m0.5-and-k-densityplot-log-mazm-spectdbwc1-2.png" />
+<p class="caption"><span class="caption-number">Fig. 2.65 </span><span class="caption-text">MZA- solution around the real solution. <code class="docutils literal"><span class="pre">Log&#64;Abs&#64;DBAxialSymOmegaNMZApEqnLHSComplex[-0.5,</span> <span class="pre">-1.99</span> <span class="pre">-</span> <span class="pre">0*I,</span> <span class="pre">spectDBWC1]</span></code> returns <code class="docutils literal"><span class="pre">-5.18447</span></code> which indicates a 0 point.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="box-spectra">
+<h3>2.5.3.2. Box Spectra<a class="headerlink" href="#box-spectra" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id16">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectwc3.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectwc3.png" />
+<p class="caption"><span class="caption-number">Fig. 2.66 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=0.1\)</span>. We have points or regions approaching <span class="math">\(f(\omega=0.1,k)\to 0\)</span>.</span></p>
+</div>
+<p>f-of-omega-m0.1-and-k-densityplot-log-maa-spectwc3.png</p>
+<div class="figure align-center" id="id17">
+<img alt="../_images/f-of-omega-m0.1-and-k-densityplot-log-maa-spectwc3.png" src="../_images/f-of-omega-m0.1-and-k-densityplot-log-maa-spectwc3.png" />
+<p class="caption"><span class="caption-number">Fig. 2.67 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=-0.1\)</span>. How do I determine whether it is approaching 0? I change the plot range and checked. <span class="math">\(e^{-2.3}\)</span> seems to be the smallest value.</span></p>
+</div>
+<div class="figure align-center" id="id18">
+<img alt="../_images/f-of-omega-1-and-k-densityplot-log-maa-spectwc3.png" src="../_images/f-of-omega-1-and-k-densityplot-log-maa-spectwc3.png" />
+<p class="caption"><span class="caption-number">Fig. 2.68 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=1\)</span>. It seems that the solutions to k are real.</span></p>
+</div>
+<p>Similar plots are made for <code class="docutils literal"><span class="pre">spectWC4</span></code>.</p>
+<div class="figure align-center" id="id19">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectwc4.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectwc4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.69 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectWC4</span></code> for <span class="math">\(\omega=0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id20">
+<img alt="../_images/f-of-omega-m0.1-and-k-densityplot-log-maa-spectwc4.png" src="../_images/f-of-omega-m0.1-and-k-densityplot-log-maa-spectwc4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.70 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectWC4</span></code> for <span class="math">\(\omega=-0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id21">
+<img alt="../_images/f-of-omega-1-and-k-densityplot-log-maa-spectwc4.png" src="../_images/f-of-omega-1-and-k-densityplot-log-maa-spectwc4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.71 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectWC4</span></code> for <span class="math">\(\omega=-0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id22">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectc1.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-maa-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.72 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectC1</span></code> for <span class="math">\(\omega=0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id23">
+<img alt="../_images/f-of-omega-m0.1-and-k-densityplot-log-maa-spectc1.png" src="../_images/f-of-omega-m0.1-and-k-densityplot-log-maa-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.73 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectC1</span></code> for <span class="math">\(\omega=-0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id24">
+<img alt="../_images/f-of-omega-1-and-k-densityplot-log-maa-spectc1.png" src="../_images/f-of-omega-1-and-k-densityplot-log-maa-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.74 </span><span class="caption-text">MAA <code class="docutils literal"><span class="pre">spectC1</span></code> for <span class="math">\(\omega=1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id25">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mzam-boxspectrum-spectwc3.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mzam-boxspectrum-spectwc3.png" />
+<p class="caption"><span class="caption-number">Fig. 2.75 </span><span class="caption-text">MZA <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id26">
+<img alt="../_images/f-of-omega-m0.1-and-k-densityplot-log-mzap-mzam-spectwc3.png" src="../_images/f-of-omega-m0.1-and-k-densityplot-log-mzap-mzam-spectwc3.png" />
+<p class="caption"><span class="caption-number">Fig. 2.76 </span><span class="caption-text">MZA solution <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=-0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id27">
+<img alt="../_images/f-of-omega-0.05-and-k-densityplot-log-mzap-mzam-spectwc3.png" src="../_images/f-of-omega-0.05-and-k-densityplot-log-mzap-mzam-spectwc3.png" />
+<p class="caption"><span class="caption-number">Fig. 2.77 </span><span class="caption-text">MZA solutions <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=0.05\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id28">
+<img alt="../_images/f-of-omega-0.05-and-k-densityplot-log-mzap-mzam-spectwc3-check-point.png" src="../_images/f-of-omega-0.05-and-k-densityplot-log-mzap-mzam-spectwc3-check-point.png" />
+<p class="caption"><span class="caption-number">Fig. 2.78 </span><span class="caption-text">MZA+ solution <code class="docutils literal"><span class="pre">spectWC3</span></code> for <span class="math">\(\omega=0.05\)</span> for a small range of <span class="math">\(k\)</span>. I chose only real <span class="math">\(k\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id29">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mzam-spectwc4.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mzam-spectwc4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.79 </span><span class="caption-text">MZA solution <code class="docutils literal"><span class="pre">spectWC4</span></code> for <span class="math">\(\omega=0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id30">
+<img alt="../_images/f-of-omega-m0.1-and-k-densityplot-log-mzap-mzam-spectwc4.png" src="../_images/f-of-omega-m0.1-and-k-densityplot-log-mzap-mzam-spectwc4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.80 </span><span class="caption-text">MZA solution <code class="docutils literal"><span class="pre">spectWC4</span></code> for <span class="math">\(\omega=-0.1\)</span>.</span></p>
+</div>
+<div class="figure align-center" id="id31">
+<img alt="../_images/f-of-omega-0.05-and-k-densityplot-log-mzap-mzam-spectwc4.png" src="../_images/f-of-omega-0.05-and-k-densityplot-log-mzap-mzam-spectwc4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.81 </span><span class="caption-text">MZA solution <code class="docutils literal"><span class="pre">spectWC4</span></code> for <span class="math">\(\omega=0.05\)</span>.</span></p>
+</div>
+<div class="warning admonition">
+<p class="first admonition-title">Questions about MZA Solutions</p>
+<p class="last">The results are weird. For <code class="docutils literal"><span class="pre">spectWC3</span></code> and <code class="docutils literal"><span class="pre">spectWC4</span></code>, no real solutions are found in DR for <span class="math">\(\omega=0.05\)</span>. However, here we found one real solution for <span class="math">\(k\)</span>, which is not 0.</p>
+</div>
+<p>MZA solutions for spectra with crossing are shown below.</p>
+<div class="figure align-center" id="id32">
+<img alt="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mzam-spectc1.png" src="../_images/f-of-omega-0.1-and-k-densityplot-log-mzap-mzam-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.82 </span><span class="caption-text">MZA solutions for <code class="docutils literal"><span class="pre">spectC1</span></code> with <span class="math">\(\omega=0.1\)</span></span></p>
+</div>
+<div class="figure align-center" id="id33">
+<img alt="../_images/f-of-omega-m0.1-and-k-densityplot-log-mzap-mzam-spectc1.png" src="../_images/f-of-omega-m0.1-and-k-densityplot-log-mzap-mzam-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.83 </span><span class="caption-text">MZA solutions for <code class="docutils literal"><span class="pre">spectC1</span></code> with <span class="math">\(\omega=-0.1\)</span></span></p>
+</div>
+<div class="figure align-center" id="id34">
+<img alt="../_images/f-of-omega-1-and-k-densityplot-log-mzap-mzam-spectc1.png" src="../_images/f-of-omega-1-and-k-densityplot-log-mzap-mzam-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.84 </span><span class="caption-text">MZA solutions for <code class="docutils literal"><span class="pre">spectC1</span></code> with <span class="math">\(\omega=1\)</span>. We found one real solutioin for MZA- solution.</span></p>
+</div>
+<div class="figure align-center" id="id35">
+<img alt="../_images/f-of-omega-m1-and-k-densityplot-log-mzap-mzam-spectc1.png" src="../_images/f-of-omega-m1-and-k-densityplot-log-mzap-mzam-spectc1.png" />
+<p class="caption"><span class="caption-number">Fig. 2.85 </span><span class="caption-text">MZA solutions for <code class="docutils literal"><span class="pre">spectC1</span></code> with <span class="math">\(\omega=-1\)</span>. We found one real solutioin for MZA+ solution.</span></p>
+</div>
+</div>
 </div>
 <div class="section" id="references-and-notes">
 <h2>2.5.4. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
