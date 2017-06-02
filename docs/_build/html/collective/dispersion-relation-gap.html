@@ -256,7 +256,7 @@ TeX: {
 <li><a class="reference internal" href="#box-spectra">2.5.3.2. Box Spectra</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#instability-regions-stops-at-axis-or">2.5.4. Instability Regions Stops at Axis <span class="math">\(\omega=0\)</span> or <span class="math">\(k=0\)</span></a></li>
+<li><a class="reference internal" href="#instability-regions-stop-at-axis-or">2.5.4. Instability Regions Stop at Axis <span class="math">\(\omega=0\)</span> or <span class="math">\(k=0\)</span></a></li>
 <li><a class="reference internal" href="#references-and-notes">2.5.5. References and Notes</a></li>
 </ul>
 </li>
@@ -532,11 +532,69 @@ TeX: {
 </div>
 </div>
 </div>
-<div class="section" id="instability-regions-stops-at-axis-or">
-<h2>2.5.4. Instability Regions Stops at Axis <span class="math">\(\omega=0\)</span> or <span class="math">\(k=0\)</span><a class="headerlink" href="#instability-regions-stops-at-axis-or" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="instability-regions-stop-at-axis-or">
+<h2>2.5.4. Instability Regions Stop at Axis <span class="math">\(\omega=0\)</span> or <span class="math">\(k=0\)</span><a class="headerlink" href="#instability-regions-stop-at-axis-or" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="first admonition-title">Question about MZA solutions</p>
-<p class="last">I seems that we should do Taylor expansion around <span class="math">\(omega=0\)</span> for MZA solutions to see what actually is happening. We can expand the <span class="math">\(I_m\)</span>&#8216;s around small real <span class="math">\(\omega\)</span>, then perform the integral.</p>
+<p class="last">It seems that we should Taylor expand around <span class="math">\(omega=0\)</span> for MZA/MAA solutions to see what actually is happening. We can expand the <span class="math">\(I_m\)</span>&#8216;s around small real <span class="math">\(\omega\)</span>, then perform the integral.</p>
+</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Can I do Taylor Expansion?</p>
+<p>For discrete beams, we determine <span class="math">\(k\)</span> using first order expansion of <span class="math">\(I_m\)</span> at <span class="math">\(\omega\sim 0\)</span>.</p>
+<p><strong>We first look at MAA solution.</strong></p>
+<p>For generality we do not distingush between discrete beams and continuous beams. Instead, we define moments of spectrum to be</p>
+<div class="math">
+\[\begin{split}G_m = \begin{cases}
+\sum g_i u_i^m, &amp;\qquad \text{for discrete beams}\\
+\int G(u) u^m du, &amp;\qquad \text{for continuous spectrum}\\
+\end{cases}.\end{split}\]</div>
+<p>For MAA solutions, the equations we are interested in are</p>
+<div class="math" id="equation-eqn-maa-bar-eqn">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-maa-bar-eqn" title="Permalink to this equation">¶</a></span>\[4 = \bar I_0 - \bar I_2,\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\bar I_m = \begin{cases}
+\sum g_i \frac{u_i^m}{\omega - u_i k} , &amp;\qquad \text{for discrete beams}\\
+\int G(u) \frac{u^m}{\omega - u k} du, &amp;\qquad \text{for continuous spectrum}\\
+\end{cases}.\end{split}\]</div>
+<p>We perform Taylor expansion on <span class="math">\(\frac{u^m}{\omega - k u}\)</span>.</p>
+<div class="math">
+\[\frac{u^m}{\omega - k u}  = -\frac{u^{m-1}}{k} - \omega \frac{u^{m-2}}{k^2} + \mathscr{O}(\omega^2).\]</div>
+<p>Eqn. <a class="reference internal" href="#equation-eqn-maa-bar-eqn">(1)</a> is simplified to</p>
+<div class="math">
+\[4 k^2 + k (G_{-1}-G_1) + \omega ( G_{-2}-G_0 )=0.\]</div>
+<p>by dropping high orders. We are looking for solutions to this equation which is determined by the discriminant <span class="math">\(\Delta\)</span>.</p>
+<div class="math">
+\[\Delta = (G_{-1}-G_1)^2 - 16 \omega ( G_{-2}-G_0 ).\]</div>
+<p>The first term <span class="math">\((G_{-1}-G_1)^2\)</span> is non-negative. I can tell that <span class="math">\(\omega\)</span> plays a rule here. The question is how to quantify it.</p>
+<p>Analatyically I could discuss the region of positive or negative <span class="math">\(\Delta\)</span>, i.e., real or imaginary solutions. But this is not simply determined by the sign of <span class="math">\(\omega\)</span>.</p>
+<ol class="arabic simple">
+<li><span class="math">\(( G_{-2}-G_0 )&gt;0\)</span>, <span class="math">\(\Delta&lt;0\)</span> requires <span class="math">\(\omega&gt;\frac{ ( (G_{-1}-G_1)^2 }{ 16( G_{-2}-G_0 ) }\)</span>;</li>
+<li><span class="math">\(( G_{-2}-G_0 )&lt;0\)</span>, <span class="math">\(\Delta&lt;0\)</span> requires <span class="math">\(\omega&lt;\frac{ ( (G_{-1}-G_1)^2 }{ 16( G_{-2}-G_0 ) }\)</span>;</li>
+</ol>
+<p class="last">This is no really helpful and not correct.</p>
+</div>
+<p>From numerical calculations, we observe that <span class="math">\(\omega/k\to 0\)</span>, as <span class="math">\(\omega\to 0\)</span>. Thus we expect that</p>
+<div class="math">
+\[\begin{split}&amp;4 =&amp; \bar I_0 - \bar I_2  \\
+\Rightarrow &amp;4 =&amp; \int G(u) \frac{1-u^2}{\omega - k u} du \\
+\Rightarrow &amp;4 =&amp; \frac{1}{k} \int G(u) \frac{ 1 - u^2 }{ \omega/k - u } .\end{split}\]</div>
+<p>We investigate the behavior this solution around <span class="math">\(\omega\to 0\)</span> so that the MAA solution simplifies to</p>
+<div class="math">
+\[4 = \frac{1}{k} \left( \mathscr P \int G(u) \frac{ 1 - u^2 }{  - u } - i \pi \operatorname{Sign}\left( \frac{-\omega \operatorname{Im}(k)}{\lvert k \rvert}  \right) G(0)  \right).\]</div>
+<p>We write down the real and imaginary part of the equation</p>
+<div class="math">
+\[\begin{split}k_R =&amp; \frac{1}{4}\left(  \mathscr P \int G(u) \frac{ 1 - u^2 }{  - u }  \right) \\
+k_I = &amp; \frac{1}{4}  \pi \operatorname{Sign}\left( \frac{\omega \operatorname{Im}(k)}{\lvert k \rvert}  \right) G(0) \\
+=&amp; \frac{1}{4}  \pi \operatorname{Sign}\left( \omega \right) \operatorname{Sign}\left(  \operatorname{Im}(k)  \right) G(0) \\
+=&amp; \frac{\pi}{4}G(0) \operatorname{Sign}\left( \omega \right) \operatorname{Sign}\left(  \operatorname{Im}(k)  \right) ,\end{split}\]</div>
+<p>where <span class="math">\(k = k_R + i k_I\)</span>. We are interested in imaginary part of <span class="math">\(k\)</span> since it dertermines the instability. We rewrite the equation,</p>
+<div class="math">
+\[\lvert k_I \rvert  =  \frac{\pi}{4}G(0) \operatorname{Sign}\left( \omega \right).\]</div>
+<p>If <span class="math">\(G(0)\)</span> is positive, we should have <span class="math">\(\omega&gt;0\)</span> to really have instabilities. And the value of imaginary part of <span class="math">\(k\)</span> is fixed to <span class="math">\(\frac{G(0) \pi}{4}\)</span> which is <span class="math">\(0.78\)</span> if <span class="math">\(G(0)\)</span></p>
+<div class="warning admonition">
+<p class="first admonition-title">MZA Solutions</p>
+<p class="last">For MZA solutions, I tried but it seems to be complicated. Neverthless I have the form of solutions. Need more thinking.</p>
 </div>
 </div>
 <div class="section" id="references-and-notes">

@@ -421,15 +421,104 @@ MZA solutions for spectra with crossing are shown below.
    MZA solutions for ``spectC1`` with :math:`\omega=-1`. We found one real solution for MZA+ solution.
 
 
-Instability Regions Stops at Axis :math:`\omega=0` or :math:`k=0`
+Instability Regions Stop at Axis :math:`\omega=0` or :math:`k=0`
 --------------------------------------------------------------------------------------
 
 
 .. admonition:: Question about MZA solutions
    :class: warning
 
-   I seems that we should do Taylor expansion around :math:`omega=0` for MZA solutions to see what actually is happening. We can expand the :math:`I_m`'s around small real :math:`\omega`, then perform the integral.
+   It seems that we should Taylor expand around :math:`omega=0` for MZA/MAA solutions to see what actually is happening. We can expand the :math:`I_m`'s around small real :math:`\omega`, then perform the integral.
 
+.. admonition:: Can I do Taylor Expansion?
+   :class: toggle
+
+   For discrete beams, we determine :math:`k` using first order expansion of :math:`I_m` at :math:`\omega\sim 0`.
+
+   **We first look at MAA solution.**
+
+
+   For generality we do not distingush between discrete beams and continuous beams. Instead, we define moments of spectrum to be
+
+   .. math::
+      G_m = \begin{cases}
+      \sum g_i u_i^m, &\qquad \text{for discrete beams}\\
+      \int G(u) u^m du, &\qquad \text{for continuous spectrum}\\
+      \end{cases}.
+
+
+   For MAA solutions, the equations we are interested in are
+
+   .. math::
+      4 = \bar I_0 - \bar I_2,
+      :label: eqn-maa-bar-eqn
+
+   where
+
+   .. math::
+      \bar I_m = \begin{cases}
+      \sum g_i \frac{u_i^m}{\omega - u_i k} , &\qquad \text{for discrete beams}\\
+      \int G(u) \frac{u^m}{\omega - u k} du, &\qquad \text{for continuous spectrum}\\
+      \end{cases}.
+
+   We perform Taylor expansion on :math:`\frac{u^m}{\omega - k u}`.
+
+   .. math::
+      \frac{u^m}{\omega - k u}  = -\frac{u^{m-1}}{k} - \omega \frac{u^{m-2}}{k^2} + \mathscr{O}(\omega^2).
+
+   Eqn. :eq:`eqn-maa-bar-eqn` is simplified to
+
+   .. math::
+      4 k^2 + k (G_{-1}-G_1) + \omega ( G_{-2}-G_0 )=0.
+
+   by dropping high orders. We are looking for solutions to this equation which is determined by the discriminant :math:`\Delta`.
+
+   .. math::
+      \Delta = (G_{-1}-G_1)^2 - 16 \omega ( G_{-2}-G_0 ).
+
+   The first term :math:`(G_{-1}-G_1)^2` is non-negative. I can tell that :math:`\omega` plays a rule here. The question is how to quantify it.
+
+   Analatyically I could discuss the region of positive or negative :math:`\Delta`, i.e., real or imaginary solutions. But this is not simply determined by the sign of :math:`\omega`.
+
+   1. :math:`( G_{-2}-G_0 )>0`, :math:`\Delta<0` requires :math:`\omega>\frac{ ( (G_{-1}-G_1)^2 }{ 16( G_{-2}-G_0 ) }`;
+   2. :math:`( G_{-2}-G_0 )<0`, :math:`\Delta<0` requires :math:`\omega<\frac{ ( (G_{-1}-G_1)^2 }{ 16( G_{-2}-G_0 ) }`;
+
+
+   This is no really helpful and not correct.
+
+
+From numerical calculations, we observe that :math:`\omega/k\to 0`, as :math:`\omega\to 0`. Thus we expect that
+
+.. math::
+   &4 =& \bar I_0 - \bar I_2  \\
+   \Rightarrow &4 =& \int G(u) \frac{1-u^2}{\omega - k u} du \\
+   \Rightarrow &4 =& \frac{1}{k} \int G(u) \frac{ 1 - u^2 }{ \omega/k - u } .
+
+We investigate the behavior this solution around :math:`\omega\to 0` so that the MAA solution simplifies to
+
+.. math::
+   4 = \frac{1}{k} \left( \mathscr P \int G(u) \frac{ 1 - u^2 }{  - u } - i \pi \operatorname{Sign}\left( \frac{-\omega \operatorname{Im}(k)}{\lvert k \rvert}  \right) G(0)  \right).
+
+We write down the real and imaginary part of the equation
+
+.. math::
+   k_R =& \frac{1}{4}\left(  \mathscr P \int G(u) \frac{ 1 - u^2 }{  - u }  \right) \\
+   k_I = & \frac{1}{4}  \pi \operatorname{Sign}\left( \frac{\omega \operatorname{Im}(k)}{\lvert k \rvert}  \right) G(0) \\
+   =& \frac{1}{4}  \pi \operatorname{Sign}\left( \omega \right) \operatorname{Sign}\left(  \operatorname{Im}(k)  \right) G(0) \\
+   =& \frac{\pi}{4}G(0) \operatorname{Sign}\left( \omega \right) \operatorname{Sign}\left(  \operatorname{Im}(k)  \right) ,
+
+where :math:`k = k_R + i k_I`. We are interested in imaginary part of :math:`k` since it dertermines the instability. We rewrite the equation,
+
+.. math::
+   \lvert k_I \rvert  =  \frac{\pi}{4}G(0) \operatorname{Sign}\left( \omega \right).
+
+If :math:`G(0)` is positive, we should have :math:`\omega>0` to really have instabilities. And the value of imaginary part of :math:`k` is fixed to :math:`\frac{G(0) \pi}{4}` which is :math:`0.78` if :math:`G(0)`
+
+
+.. admonition:: MZA Solutions
+   :class: warning
+
+   For MZA solutions, I tried but it seems to be complicated. Neverthless I have the form of solutions. Need more thinking.
 
 
 References and Notes
