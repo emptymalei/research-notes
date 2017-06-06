@@ -596,6 +596,41 @@ k_I = &amp; \frac{1}{4}  \pi \operatorname{Sign}\left( \frac{\omega \operatornam
 <p class="first admonition-title">MZA Solutions</p>
 <p class="last">For MZA solutions, I tried but it seems to be complicated. Neverthless I have the form of solutions. Need more thinking.</p>
 </div>
+<p>For MZA solutions, we have the equation</p>
+<div class="math">
+\[(\bar I_0 - \bar I_2 + 4)^2 = (\bar I_0 +\bar I_2 + 2 \bar I_1)(\bar I_0 +\bar I_2 - 2 \bar I_1).\]</div>
+<p>We calculate each terms at the limit <span class="math">\(\omega/k \to 0\)</span>.</p>
+<div class="math">
+\[\begin{split}\bar I_0 - \bar I_2 = &amp; \frac{1}{k}\left(  -\mathscr P \int \frac{G(u)}{u} du + i \pi \operatorname{Sign}(\omega k_I)G(0) + \int G(u) u du \right) \\
+\bar I_0 + \bar I_2 \pm 2 I_1 = &amp; \frac{1}{k}\left(  -\mathscr P \int \frac{G(u)}{u} du + i \pi \operatorname{Sign}(\omega k_I)G(0) - \int G(u) u du \mp 2\int G(u) du  \right).\end{split}\]</div>
+<p><span class="math">\(1/k\)</span> could be elimited on both sides. We define</p>
+<div class="math">
+\[\begin{split}A_R = &amp; 4 k_R  -\mathscr P \int \frac{G(u)}{u} du + \int G(u) u du \\
+A_I =&amp;  4 k_I + \pi \operatorname{Sign}(\omega k_I)G(0) \\
+B_R =&amp; -\mathscr P \int \frac{G(u)}{u} du - \int G(u) u du - 2\int G(u) du  \\
+B_I =&amp; \pi \operatorname{Sign}(\omega k_I)G(0) \\
+C_R =&amp; -\mathscr P \int \frac{G(u)}{u} du - \int G(u) u du + 2\int G(u) du  \\
+C_I =&amp; = B_I = \pi \operatorname{Sign}(\omega k_I)G(0) .\end{split}\]</div>
+<p>Then the equation could be rewitten as</p>
+<div class="math">
+\[(A_R + i A_I)^2 = (B_R+i B_I) (C_R + i C_I).\]</div>
+<p>We seperate the imaginary part of the equation.</p>
+<div class="math">
+\[2 A_R A_I = B_R C_I + B_I C_R,\]</div>
+<p>which is in fact</p>
+<div class="math">
+\[2 A_R 4 k_I + 2 A_R \pi G(0) \operatorname{Sign}(\omega k_I) = \pi G(0)\operatorname{Sign}(\omega k_I) 2 \left( -\mathscr P \int \frac{G(u)}{u} du - \int G(u) u du \right).\]</div>
+<p>We solve <span class="math">\(k_I\)</span>.</p>
+<div class="math">
+\[k_I = \pi G(0) \operatorname{Sign}(\omega k_I) \left(  1 + 2\frac{ \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }{ 4k_R - \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }  \right).\]</div>
+<div class="warning admonition">
+<p class="first admonition-title">Problems?</p>
+<ol class="last arabic simple">
+<li>In principle we could solve <span class="math">\(k_R\)</span> and <span class="math">\(k_I\)</span> by combining both the real and imaginary part. However, the real part of the equation is quadratic in k.</li>
+<li>I have the sign of <span class="math">\(\omega\)</span> consistant with LSA for several spectra. But the numerical values are not exactly matching.</li>
+<li>The problem of MZA- solutions becomes much more serious now.</li>
+</ol>
+</div>
 </div>
 <div class="section" id="references-and-notes">
 <h2>2.5.5. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>

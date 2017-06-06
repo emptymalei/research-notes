@@ -521,5 +521,57 @@ If :math:`G(0)` is positive, we should have :math:`\omega>0` to really have inst
    For MZA solutions, I tried but it seems to be complicated. Neverthless I have the form of solutions. Need more thinking.
 
 
+For MZA solutions, we have the equation
+
+.. math::
+   (\bar I_0 - \bar I_2 + 4)^2 = (\bar I_0 +\bar I_2 + 2 \bar I_1)(\bar I_0 +\bar I_2 - 2 \bar I_1).
+
+We calculate each terms at the limit :math:`\omega/k \to 0`.
+
+.. math::
+   \bar I_0 - \bar I_2 = & \frac{1}{k}\left(  -\mathscr P \int \frac{G(u)}{u} du + i \pi \operatorname{Sign}(\omega k_I)G(0) + \int G(u) u du \right) \\
+   \bar I_0 + \bar I_2 \pm 2 I_1 = & \frac{1}{k}\left(  -\mathscr P \int \frac{G(u)}{u} du + i \pi \operatorname{Sign}(\omega k_I)G(0) - \int G(u) u du \mp 2\int G(u) du  \right).
+
+:math:`1/k` could be elimited on both sides. We define
+
+.. math::
+   A_R = & 4 k_R  -\mathscr P \int \frac{G(u)}{u} du + \int G(u) u du \\
+   A_I =&  4 k_I + \pi \operatorname{Sign}(\omega k_I)G(0) \\
+   B_R =& -\mathscr P \int \frac{G(u)}{u} du - \int G(u) u du - 2\int G(u) du  \\
+   B_I =& \pi \operatorname{Sign}(\omega k_I)G(0) \\
+   C_R =& -\mathscr P \int \frac{G(u)}{u} du - \int G(u) u du + 2\int G(u) du  \\
+   C_I =& = B_I = \pi \operatorname{Sign}(\omega k_I)G(0) .
+
+Then the equation could be rewitten as
+
+.. math::
+   (A_R + i A_I)^2 = (B_R+i B_I) (C_R + i C_I).
+
+We seperate the imaginary part of the equation.
+
+.. math::
+   2 A_R A_I = B_R C_I + B_I C_R,
+
+which is in fact
+
+.. math::
+   2 A_R 4 k_I + 2 A_R \pi G(0) \operatorname{Sign}(\omega k_I) = \pi G(0)\operatorname{Sign}(\omega k_I) 2 \left( -\mathscr P \int \frac{G(u)}{u} du - \int G(u) u du \right).
+
+We solve :math:`k_I`.
+
+.. math::
+   k_I = \pi G(0) \operatorname{Sign}(\omega k_I) \left(  1 + 2\frac{ \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }{ 4k_R - \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }  \right).
+
+
+.. admonition:: Problems?
+   :class: warning
+
+   1. In principle we could solve :math:`k_R` and :math:`k_I` by combining both the real and imaginary part. However, the real part of the equation is quadratic in k.
+   2. I have the sign of :math:`\omega` consistant with LSA for several spectra. But the numerical values are not exactly matching.
+   3. The problem of MZA- solutions becomes much more serious now.
+
+
+
+
 References and Notes
 -----------------------------
