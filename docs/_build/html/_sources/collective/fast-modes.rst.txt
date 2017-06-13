@@ -1,6 +1,68 @@
 Fast Modes
 ====================
 
+
+Why is it fast?
+----------------------------
+
+
+Fast modes require different opening angles for neutrinos and anti-neutrinos. The reason seems to be quite understandable. Forward scattering requires "colliding beams". In the early studies of neutrino self interactions, the models always have same opening angles for neutrinos and antineutrinos, which means that no colliding for neutrinos and antineutrinos on the same side of emission.
+
+Different opening angles for all beams introduce collisions between all the beams, thus possibly leading to more conversions.
+
+Here we use the four beams model. The linear stability analysis is simply four coupled harmonic oscillators.
+
+
+.. admonition:: How could they be harmonic oscillators?
+   :class: warning
+
+   Here is the confusion. How could :math:`\epsilon` become very large if they are coupled harmonic oscillators? Is this related the fact that :math:`\epsilon` is complex instead of real?
+
+
+We take out the terms related to the difference in opening angles :math:`\chi_-=1-\cos(\theta_1 - \theta_2)`. The linearized equation of motion becomes
+
+.. math::
+   i \partial_z \begin{pmatrix}
+   \epsilon^L \\ \bar\epsilon^L \\ \epsilon^R \\ \bar\epsilon^R
+   \end{pmatrix} =
+   \begin{pmatrix}
+   \frac{ -\mu\alpha \chi_- }{\sin\theta_1}  & \frac{ \mu\alpha\chi_- }{\sin\theta_1} & 0 & 0 \\
+   \frac{ -\mu\chi_- }{\sin\theta_2} & \frac{ \mu\chi_- }{\sin\theta_2}  & 0 & 0 \\
+   0 & 0 & \frac{ -\mu\alpha\chi_- }{\sin\theta_1}  & \frac{ \mu\alpha\chi_- }{\sin\theta_1} \\
+   0 & 0 & \frac{ -\mu\chi_- }{\sin\theta_2} & \frac{ \mu\chi_- }{\sin\theta_2}
+   \end{pmatrix}
+   \begin{pmatrix}
+   \epsilon^L \\ \bar\epsilon^L \\ \epsilon^R \\ \bar\epsilon^R
+   \end{pmatrix}.
+
+The matrix becomes block diagonalized. We assume a solution of the form :math:`\epsilon = \epsilon_0 e^{i\Omega}` which is substitued into the equation. The first two components obay the equation.
+
+.. math::
+   \begin{pmatrix}
+   \mu M_{11} + \Omega & \mu M_{12} \\
+   \mu M_{21} & \mu M_{22} + \Omega
+   \end{pmatrix} \begin{pmatrix}
+   \epsilon^L \\
+   \bar \epsilon^L
+   \end{pmatrix} =0.
+
+The solutions of :math:`\Omega` has the form
+
+.. math::
+   \Omega =  \frac{ -(M_{11} + M_{22}) \pm \sqrt{\Delta} }{ 2 } \mu \propto \mu,
+
+where the discrimination :math:`\Delta` is
+
+.. math::
+   \Delta = (M_{11} - M_{22})^2 + 4 M_{12} M_{21}.
+
+
+
+
+
+Several Numerical Calculations
+----------------------------------
+
 .. admonition:: Four Beams Model
    :class: hint
 

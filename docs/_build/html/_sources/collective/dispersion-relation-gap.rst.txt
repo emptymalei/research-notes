@@ -560,7 +560,7 @@ which is in fact
 We solve :math:`k_I`.
 
 .. math::
-   k_I = \pi G(0) \operatorname{Sign}(\omega k_I) \left(  1 + 2\frac{ \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }{ 4k_R - \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }  \right).
+   k_I = - \frac{1}{4} \pi G(0) \operatorname{Sign}(\omega k_I) \left(  1 + \frac{ \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }{ 4k_R - \mathscr P \int \frac{G(u)}{u} du + \int G(u) u du }  \right).
 
 
 .. admonition:: Problems?

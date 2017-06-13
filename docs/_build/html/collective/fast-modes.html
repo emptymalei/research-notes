@@ -245,7 +245,9 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">2.1. Fast Modes</a><ul>
-<li><a class="reference internal" href="#regions-of-instability">2.1.1. Regions of Instability</a></li>
+<li><a class="reference internal" href="#why-is-it-fast">2.1.1. Why is it fast?</a></li>
+<li><a class="reference internal" href="#several-numerical-calculations">2.1.2. Several Numerical Calculations</a></li>
+<li><a class="reference internal" href="#regions-of-instability">2.1.3. Regions of Instability</a></li>
 </ul>
 </li>
 </ul>
@@ -282,6 +284,47 @@ TeX: {
       
   <div class="section" id="fast-modes">
 <h1>2.1. Fast Modes<a class="headerlink" href="#fast-modes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-is-it-fast">
+<h2>2.1.1. Why is it fast?<a class="headerlink" href="#why-is-it-fast" title="Permalink to this headline">¶</a></h2>
+<p>Fast modes require different opening angles for neutrinos and anti-neutrinos. The reason seems to be quite understandable. Forward scattering requires &#8220;colliding beams&#8221;. In the early studies of neutrino self interactions, the models always have same opening angles for neutrinos and antineutrinos, which means that no colliding for neutrinos and antineutrinos on the same side of emission.</p>
+<p>Different opening angles for all beams introduce collisions between all the beams, thus possibly leading to more conversions.</p>
+<p>Here we use the four beams model. The linear stability analysis is simply four coupled harmonic oscillators.</p>
+<div class="warning admonition">
+<p class="first admonition-title">How could they be harmonic oscillators?</p>
+<p class="last">Here is the confusion. How could <span class="math">\(\epsilon\)</span> become very large if they are coupled harmonic oscillators? Is this related the fact that <span class="math">\(\epsilon\)</span> is complex instead of real?</p>
+</div>
+<p>We take out the terms related to the difference in opening angles <span class="math">\(\chi_-=1-\cos(\theta_1 - \theta_2)\)</span>. The linearized equation of motion becomes</p>
+<div class="math">
+\[\begin{split}i \partial_z \begin{pmatrix}
+\epsilon^L \\ \bar\epsilon^L \\ \epsilon^R \\ \bar\epsilon^R
+\end{pmatrix} =
+\begin{pmatrix}
+\frac{ -\mu\alpha \chi_- }{\sin\theta_1}  &amp; \frac{ \mu\alpha\chi_- }{\sin\theta_1} &amp; 0 &amp; 0 \\
+\frac{ -\mu\chi_- }{\sin\theta_2} &amp; \frac{ \mu\chi_- }{\sin\theta_2}  &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{ -\mu\alpha\chi_- }{\sin\theta_1}  &amp; \frac{ \mu\alpha\chi_- }{\sin\theta_1} \\
+0 &amp; 0 &amp; \frac{ -\mu\chi_- }{\sin\theta_2} &amp; \frac{ \mu\chi_- }{\sin\theta_2}
+\end{pmatrix}
+\begin{pmatrix}
+\epsilon^L \\ \bar\epsilon^L \\ \epsilon^R \\ \bar\epsilon^R
+\end{pmatrix}.\end{split}\]</div>
+<p>The matrix becomes block diagonalized. We assume a solution of the form <span class="math">\(\epsilon = \epsilon_0 e^{i\Omega}\)</span> which is substitued into the equation. The first two components obay the equation.</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\mu M_{11} + \Omega &amp; \mu M_{12} \\
+\mu M_{21} &amp; \mu M_{22} + \Omega
+\end{pmatrix} \begin{pmatrix}
+\epsilon^L \\
+\bar \epsilon^L
+\end{pmatrix} =0.\end{split}\]</div>
+<p>The solutions of <span class="math">\(\Omega\)</span> has the form</p>
+<div class="math">
+\[\Omega =  \frac{ -(M_{11} + M_{22}) \pm \sqrt{\Delta} }{ 2 } \mu \propto \mu,\]</div>
+<p>where the discrimination <span class="math">\(\Delta\)</span> is</p>
+<div class="math">
+\[\Delta = (M_{11} - M_{22})^2 + 4 M_{12} M_{21}.\]</div>
+</div>
+<div class="section" id="several-numerical-calculations">
+<h2>2.1.2. Several Numerical Calculations<a class="headerlink" href="#several-numerical-calculations" title="Permalink to this headline">¶</a></h2>
 <div class="hint admonition">
 <p class="first admonition-title">Four Beams Model</p>
 <p>There are many things to consider for the four beams line model.</p>
@@ -341,8 +384,9 @@ TeX: {
 \theta_R =&amp; \pi/6.\end{split}\]</div>
 </div>
 </div>
+</div>
 <div class="section" id="regions-of-instability">
-<h2>2.1.1. Regions of Instability<a class="headerlink" href="#regions-of-instability" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.3. Regions of Instability<a class="headerlink" href="#regions-of-instability" title="Permalink to this headline">¶</a></h2>
 <p>For convinience, we define some quantities for four beam case.</p>
 <ol class="arabic simple">
 <li>We define the a parameter <span class="math">\(\alpha=(1-a)/(1+a)\)</span> so that <span class="math">\(\alpha \in [0,\infty]\)</span> is mapped onto <span class="math">\(a\in [-1,1]\)</span>.</li>
