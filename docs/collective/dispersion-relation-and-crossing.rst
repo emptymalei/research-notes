@@ -371,3 +371,39 @@ What does backward emission mean? Is it somewhat equivalent to crossing spectrum
 
 
 Analytically, crossing and backward emission are not simply related.
+
+
+Spectral Crossing Makes DR Crossing 0 Possible
+-------------------------------------------------
+
+
+The MZA solution has some interesting behaviors. It seems that a crossing in spectrum can bend the DR and make it cross 0.
+
+We can prove that the crossing indeed needed but not guarantee to make DR cross 0.
+
+The MZA solution is
+
+.. math::
+   (-4\omega -(I_0 - I_2) )^2 = (I_0 -2 I_1 + I_2)(I_0 + 2 I_1 + I_2).
+
+For :math:`\omega\to 0`, we have
+
+.. math::
+   I_0I_2 = I_1^2.
+
+We restore the integral form, which is
+
+.. math::
+   \int du \frac{ G(u) u^2 }{  1- n u} = \left( \int du \frac{ G(u) u }{  1- n u} \right)^2.
+
+We actually have :math:`1-n u>0`. Thus
+
+.. math::
+   \tilde G (u) = \frac{G(u)}{1-n u},
+
+always preserves the sign of the spectrum. If the spectrum is always positive, then we are calculating some average of :math:`u` and :math:`u^2`, the equation becomes
+
+.. math::
+   \langle u^2 \rangle = \left(\langle u \rangle \right)^2,
+
+which can not be true. However, a crossing brings some negative regions and makes it possible but not guaranteed to have solutions.

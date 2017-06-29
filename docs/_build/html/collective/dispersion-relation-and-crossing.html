@@ -34,7 +34,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.7. Flavor Waves" href="flavor-waves.html" />
+    <link rel="next" title="2.7. Dispersion Relation and Instabilities Using Green’s Function" href="dispersion-and-greens-function.html" />
     <link rel="prev" title="2.5. Dispersion Relation and Gap" href="dispersion-relation-gap.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -217,9 +217,10 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.7. Flavor Waves</a></li>
-<li class="toctree-l2"><a class="reference internal" href="discworld.html">2.8. Discworld</a></li>
-<li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.9. Equilibrium Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.8. Flavor Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discworld.html">2.9. Discworld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.10. Equilibrium Points</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">3. Gravity</a><ul>
@@ -250,6 +251,7 @@ TeX: {
 </ul>
 </li>
 <li><a class="reference internal" href="#can-we-explain-crossing-using-discrete-beams">2.6.2. Can We Explain Crossing Using Discrete Beams?</a></li>
+<li><a class="reference internal" href="#spectral-crossing-makes-dr-crossing-0-possible">2.6.3. Spectral Crossing Makes DR Crossing 0 Possible</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="flavor-waves.html" title="Next Chapter: 2.7. Flavor Waves"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2.7. Flavor Waves &raquo;</span>
+    <a href="dispersion-and-greens-function.html" title="Next Chapter: 2.7. Dispersion Relation and Instabilities Using Green’s Function"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2.7. Dispersi... &raquo;</span>
     </a>
   </li>
               
@@ -525,6 +527,27 @@ TeX: {
 <p class="caption"><span class="caption-number">Fig. 2.120 </span><span class="caption-text">DR and LSA (MZA-) for <code class="docutils literal"><span class="pre">spectDBWC4</span></code> and <code class="docutils literal"><span class="pre">spectDBC4</span></code> which are <code class="docutils literal"><span class="pre">{{0.5,</span> <span class="pre">-0.1},</span> <span class="pre">{1,</span> <span class="pre">0.4},</span> <span class="pre">{1,</span> <span class="pre">0.6}}</span></code> and <code class="docutils literal"><span class="pre">{{-0.5,</span> <span class="pre">0.1},</span> <span class="pre">{1,</span> <span class="pre">0.4},</span> <span class="pre">{1,</span> <span class="pre">0.6}}</span></code> respectively.</span></p>
 </div>
 <p>Analytically, crossing and backward emission are not simply related.</p>
+</div>
+<div class="section" id="spectral-crossing-makes-dr-crossing-0-possible">
+<h2>2.6.3. Spectral Crossing Makes DR Crossing 0 Possible<a class="headerlink" href="#spectral-crossing-makes-dr-crossing-0-possible" title="Permalink to this headline">¶</a></h2>
+<p>The MZA solution has some interesting behaviors. It seems that a crossing in spectrum can bend the DR and make it cross 0.</p>
+<p>We can prove that the crossing indeed needed but not guarantee to make DR cross 0.</p>
+<p>The MZA solution is</p>
+<div class="math">
+\[(-4\omega -(I_0 - I_2) )^2 = (I_0 -2 I_1 + I_2)(I_0 + 2 I_1 + I_2).\]</div>
+<p>For <span class="math">\(\omega\to 0\)</span>, we have</p>
+<div class="math">
+\[I_0I_2 = I_1^2.\]</div>
+<p>We restore the integral form, which is</p>
+<div class="math">
+\[\int du \frac{ G(u) u^2 }{  1- n u} = \left( \int du \frac{ G(u) u }{  1- n u} \right)^2.\]</div>
+<p>We actually have <span class="math">\(1-n u&gt;0\)</span>. Thus</p>
+<div class="math">
+\[\tilde G (u) = \frac{G(u)}{1-n u},\]</div>
+<p>always preserves the sign of the spectrum. If the spectrum is always positive, then we are calculating some average of <span class="math">\(u\)</span> and <span class="math">\(u^2\)</span>, the equation becomes</p>
+<div class="math">
+\[\langle u^2 \rangle = \left(\langle u \rangle \right)^2,\]</div>
+<p>which can not be true. However, a crossing brings some negative regions and makes it possible but not guaranteed to have solutions.</p>
 </div>
 </div>
 
