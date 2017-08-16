@@ -14,3 +14,4 @@ Collective
    flavor-waves.rst
    discworld.rst
    equilibrium-points.rst
+   halo-effect.rst
