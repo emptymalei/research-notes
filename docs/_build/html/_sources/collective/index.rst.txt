@@ -15,4 +15,3 @@ Collective
    discworld.rst
    equilibrium-points.rst
    numerical.rst
-   halo-effect.rst
