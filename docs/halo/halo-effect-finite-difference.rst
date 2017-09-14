@@ -118,6 +118,17 @@ I checked the convergence.
 
 
 
+Compare step sizes :math:`10^{-5}` and :math:`10^{-6}`.
+
+.. raw:: html
+
+   <video width="100%" controls>
+   <source src="../_static/assets/halo/halo-effect-finite-difference/convergence-1e6-and-1e5.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+   </video>
+   <p class="caption">Comparing step size 1e-6 and 1e-5, with Ntop = 20000 total iterations and 20 outputs. Each time increment in the plot indicates 20000/20=1000 iterations. </p>
+
+
 .. admonition:: What to do?
    :class: warning
 
