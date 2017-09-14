@@ -1,9 +1,6 @@
-Halo Effect
-=======================
+Halo Effect - Artificial Neural Network
+========================================================
 
-
-Preliminary Research with Shashank
--------------------------------------
 
 
 .. admonition:: Notice
@@ -16,7 +13,8 @@ Preliminary Research with Shashank
 
 The aim of this subproject is to solve a system that could not be solved using the transitional numerical methods. The system here is a system of neutrinos emitted from a plane but interact with with the neutrinos reflected from some other plane. In this case the evolution of the emitted neutrinos are coupled to itself through the reflection.
 
-
+Background
+---------------------------------
 
 Neutrino-neutrino Interaction with The Appearance of Reflection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,7 +23,7 @@ Neutrino-neutrino Interaction with The Appearance of Reflection
 Here is the configuration.
 
 
-.. figure:: assets/halo-effect/neutrinoWithReflection.png
+.. figure:: assets/halo-effect-ann/neutrinoWithReflection.png
    :align: center
 
    Configuration of the system. The lower plane is the emission plane while the upper plane the the reflection plane. Neutrino reaches the upper plane has a probability of being reflected, in other words there is a fixed coefficient for reflection. Only the reflected beams with angle that is the same as the emission angle are considered.
@@ -36,7 +34,7 @@ The lower plane is the emission plane while the upper plane the the reflection p
 
 
 
-.. figure:: assets/halo-effect/emissionAngles.png
+.. figure:: assets/halo-effect-ann/emissionAngles.png
    :align: center
 
    There is a left-right symmetry of the emission beams. The angles are defined as $\theta$.
@@ -62,7 +60,7 @@ The notation for neutrino beams are
 At a fixed, each beam has a neutrino-neutrino interaction Hamiltonian with contribution from another emission beam and two reflected beams.
 
 
-.. figure:: assets/halo-effect/interactionAtPoint.png
+.. figure:: assets/halo-effect-ann/interactionAtPoint.png
    :align: center
 
    The neutrino-neutrino interaction at a fixed point for a beam going to the right.
@@ -149,6 +147,10 @@ in which :math:`\mathbf{Refl}` is the operator for the reflection that takes out
    :class: warning
 
    The question is how to determine this :math:`\mathbf{Refl}`
+
+
+Numerical Methods
+-----------------------------
 
 
 Artificial Neural Network for Vacuum Oscillation
@@ -290,7 +292,7 @@ The code I have been testing is written by Shashank for my code doesn't minimize
 
 
    .. index:: fig-ann-NelderMead
-   .. figure:: assets/halo-effect/ann_NelderMead.png
+   .. figure:: assets/halo-effect-ann/ann_NelderMead.png
       :align: center
 
       The 11 element of density matrix as a function of time. The red curve is accurate result while the blue is the numerical one.
@@ -299,7 +301,7 @@ The code I have been testing is written by Shashank for my code doesn't minimize
 
 
    .. code-block:: text
-   
+
       status: 0
       nfev: 145333
       success: True
@@ -369,7 +371,7 @@ The code I have been testing is written by Shashank for my code doesn't minimize
 
 
    .. index:: fig-ann-DEvo
-   .. figure:: assets/halo-effect/ann_devo.png
+   .. figure:: assets/halo-effect-ann/ann_devo.png
       :align: center
 
       The 11 element of density matrix as a function of time. The red curve is accurate result while the blue is from differential evolution.
@@ -435,7 +437,7 @@ The code I have been testing is written by Shashank for my code doesn't minimize
 
 
    .. index:: fig-ann-DEvo-range
-   .. figure:: assets/halo-effect/ann_devo_range.png
+   .. figure:: assets/halo-effect-ann/ann_devo_range.png
       :align: center
 
       The 11 element of density matrix as a function of time. The red curve is accurate result while the blue is from differential evolution.

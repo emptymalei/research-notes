@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.1. Halo Effect &#8212; Neutrino Private Notebook</title>
+    <title>3.1. Halo Effect - Artificial Neural Network &#8212; Neutrino Private Notebook</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,7 +34,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Gravity" href="../gravity/index.html" />
+    <link rel="next" title="3.2. Halo Effect - Finite Difference" href="halo-effect-finite-difference.html" />
     <link rel="prev" title="3. Halo Effect" href="index.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -225,7 +225,8 @@ TeX: {
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Halo Effect</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Halo Effect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Halo Effect - Artificial Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="halo-effect-finite-difference.html">3.2. Halo Effect - Finite Difference</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">4. Gravity</a><ul>
@@ -250,15 +251,18 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">3.1. Halo Effect</a><ul>
-<li><a class="reference internal" href="#preliminary-research-with-shashank">3.1.1. Preliminary Research with Shashank</a><ul>
+<li><a class="reference internal" href="#">3.1. Halo Effect - Artificial Neural Network</a><ul>
+<li><a class="reference internal" href="#background">3.1.1. Background</a><ul>
 <li><a class="reference internal" href="#neutrino-neutrino-interaction-with-the-appearance-of-reflection">3.1.1.1. Neutrino-neutrino Interaction with The Appearance of Reflection</a></li>
-<li><a class="reference internal" href="#artificial-neural-network-for-vacuum-oscillation">3.1.1.2. Artificial Neural Network for Vacuum Oscillation</a><ul>
-<li><a class="reference internal" href="#vacuum-oscillation">3.1.1.2.1. Vacuum Oscillation</a></li>
-<li><a class="reference internal" href="#id1">3.1.1.2.2. Artificial Neural Network for Vacuum Oscillation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#codes">3.1.1.3. Codes</a></li>
+<li><a class="reference internal" href="#numerical-methods">3.1.2. Numerical Methods</a><ul>
+<li><a class="reference internal" href="#artificial-neural-network-for-vacuum-oscillation">3.1.2.1. Artificial Neural Network for Vacuum Oscillation</a><ul>
+<li><a class="reference internal" href="#vacuum-oscillation">3.1.2.1.1. Vacuum Oscillation</a></li>
+<li><a class="reference internal" href="#id1">3.1.2.1.2. Artificial Neural Network for Vacuum Oscillation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#codes">3.1.2.2. Codes</a></li>
 </ul>
 </li>
 </ul>
@@ -276,7 +280,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="../gravity/index.html" title="Next Chapter: 4. Gravity"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">4. Gravity &raquo;</span>
+    <a href="halo-effect-finite-difference.html" title="Next Chapter: 3.2. Halo Effect - Finite Difference"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3.2. Halo Eff... &raquo;</span>
     </a>
   </li>
               
@@ -295,15 +299,15 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="halo-effect">
-<h1>3.1. Halo Effect<a class="headerlink" href="#halo-effect" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="preliminary-research-with-shashank">
-<h2>3.1.1. Preliminary Research with Shashank<a class="headerlink" href="#preliminary-research-with-shashank" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="halo-effect-artificial-neural-network">
+<h1>3.1. Halo Effect - Artificial Neural Network<a class="headerlink" href="#halo-effect-artificial-neural-network" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="first admonition-title">Notice</p>
 <p class="last">This is a summary of the work that has been done on solving vacuum oscillation using artificial neural network. Also included are some tests.</p>
 </div>
 <p>The aim of this subproject is to solve a system that could not be solved using the transitional numerical methods. The system here is a system of neutrinos emitted from a plane but interact with with the neutrinos reflected from some other plane. In this case the evolution of the emitted neutrinos are coupled to itself through the reflection.</p>
+<div class="section" id="background">
+<h2>3.1.1. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="neutrino-neutrino-interaction-with-the-appearance-of-reflection">
 <h3>3.1.1.1. Neutrino-neutrino Interaction with The Appearance of Reflection<a class="headerlink" href="#neutrino-neutrino-interaction-with-the-appearance-of-reflection" title="Permalink to this headline">¶</a></h3>
 <p>Here is the configuration.</p>
@@ -377,11 +381,14 @@ i\partial_z \rho^{Lr}(z) &amp;= \cos\theta \left[ H_{vac} + H_{\nu\nu}^{Lr}, \rh
 <p class="last">The question is how to determine this <span class="math">\(\mathbf{Refl}\)</span></p>
 </div>
 </div>
+</div>
+<div class="section" id="numerical-methods">
+<h2>3.1.2. Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="artificial-neural-network-for-vacuum-oscillation">
-<h3>3.1.1.2. Artificial Neural Network for Vacuum Oscillation<a class="headerlink" href="#artificial-neural-network-for-vacuum-oscillation" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.2.1. Artificial Neural Network for Vacuum Oscillation<a class="headerlink" href="#artificial-neural-network-for-vacuum-oscillation" title="Permalink to this headline">¶</a></h3>
 <p>To make sure artificial neural network actually works, we started from the calculation of vacuum oscillation. In this section we consider only two flavour neutrino oscillation.</p>
 <div class="section" id="vacuum-oscillation">
-<h4>3.1.1.2.1. Vacuum Oscillation<a class="headerlink" href="#vacuum-oscillation" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.2.1.1. Vacuum Oscillation<a class="headerlink" href="#vacuum-oscillation" title="Permalink to this headline">¶</a></h4>
 <p>Neutrino Vacuum Oscillation is determined by the following equation of motion.</p>
 <div class="math">
 \[i\partial_t \rho = \left[ H_{vac},\rho \right],\]</div>
@@ -430,7 +437,7 @@ b - i c &amp; d \end{pmatrix},\end{split}\]</div>
 <p>The four equations can be solved and the density matrix at any time can be obtained.</p>
 </div>
 <div class="section" id="id1">
-<h4>3.1.1.2.2. Artificial Neural Network for Vacuum Oscillation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.2.1.2. Artificial Neural Network for Vacuum Oscillation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>The code I have been testing is written by Shashank for my code doesn&#8217;t minimized to a good result.But the debugging for my code is also shown below.</p>
 <div class="note admonition">
 <p class="first admonition-title">Debugging( Compare my code with Shashank&#8217;s code)</p>
@@ -551,7 +558,7 @@ nit: 100
 </div>
 </div>
 <div class="section" id="codes">
-<h3>3.1.1.3. Codes<a class="headerlink" href="#codes" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.2.2. Codes<a class="headerlink" href="#codes" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
 <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">expit</span>
@@ -724,7 +731,7 @@ nit: 100
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/halo/halo-effect.rst.txt"
+       <a href="../_sources/halo/halo-effect-ann.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
