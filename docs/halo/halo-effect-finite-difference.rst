@@ -61,6 +61,8 @@ Single Neutrino Simultaneous
 .. admonition:: Computation Time
    :class: toggle
 
+   **2017-09-13:**
+
    The export of my test code:
 
    .. code-block:: txt
@@ -81,6 +83,26 @@ Single Neutrino Simultaneous
    1. (1e5 steps in z) times (10000) steps requires (10000 times 7e-4 times 100 = 700) seconds;
    2. (1e6 steps in z) times (10000) steps requires (10000 times 7e-4 times 1000 = 7000 ) seconds, i.e., 117 minutes;
    3. (1e7 steps in z) times (10000) steps requires (10000 times 7e-4 times 10000 = 70000 ) seconds, i.e., 1e3 minutes.
+
+
+   **2017-09-14:** I changed the Hamiltonian functions and solvers.
+
+   .. code-block:: txt
+
+      PROGRAM START
+      Halo Problem Forward and Backward:
+      Total number of iterations: 100
+      Size of rhos: 1000
+      Range: 1.000000
+      Step size: 0.001000
+      Save Steps: 2
+      Total clock time: 0.018305
+      Clock time for 1000 iterations: 0.18335
+      PROGRAM END
+
+   3.5 times faster!
+
+
 
 The result shows that
 
@@ -138,3 +160,9 @@ Compare step sizes :math:`10^{-5}` and :math:`10^{-6}`.
    2. Read about what the mathematicians are using to solve **BVP with nonlocal boundary conditions**. Refer to :ref:`BVP nonlocal BC <bvp-nonlocal-bc-references>`.
    3. Try to calculate multiangles to check if the convergence is easier to reach. What are the conditions of equilibrium?
    4. Write the time dependent code, with tracks all the neutrinos at different locations and solve it. This would be the actual time evolution of the flavors. The time scale would be on ms. Will this be useful?
+
+
+.. admonition:: TODO
+   :class: warning
+
+   1. Linear stability analysis.
