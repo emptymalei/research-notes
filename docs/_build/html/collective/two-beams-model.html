@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>2.3. Two Beams Model &#8212; Neutrino Private Notebook</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -27,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -168,7 +164,7 @@ TeX: {
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -217,7 +213,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-and-crossing.html">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.8. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discworld.html">2.9. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.10. Equilibrium Points</a></li>
@@ -555,7 +551,7 @@ f''_2=&amp;\frac{f_2}{\sin\theta_1}.\end{split}\]</div>
 <p>The we will reach the same characteristic equation as Eq. <a class="reference internal" href="#equation-eqn-two-beam-line-characteristic-eqn-simple">(3)</a>. So the angles serves as shift of energy gap and angular distribution.</p>
 <p>The region of instability changes in a convoluted way. Given angles we can always write down the expression and find out.</p>
 <ol class="arabic simple">
-<li>The criteria of existance of instability doesn&#8217;t change.</li>
+<li>The criteria of existance of instability doesn’t change.</li>
 <li>The region of instability changes.</li>
 </ol>
 </div>
@@ -608,7 +604,7 @@ Q_2
 \[\hat\omega''_{k,i} = \hat \omega''_i + 2\hat k\cot\theta_i,\]</div>
 <p>where <span class="math">\(\hat k=k/\mu\)</span>.</p>
 <p>The k term contributes to the difference between <span class="math">\(\Omega_{k,i}\equiv \hat\omega''_{k,i}+ f''_i\xi\)</span>.</p>
-<p><strong>Instability criteria doesn&#8217;t change. However, the regime of instability changes.</strong> We also know that the instability region is determined by</p>
+<p><strong>Instability criteria doesn’t change. However, the regime of instability changes.</strong> We also know that the instability region is determined by</p>
 <div class="math">
 \[\lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert &lt; \sqrt{-f_1f_2\xi^2},\]</div>
 <p>where <span class="math">\(\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2\)</span>. The instability region shift from</p>
@@ -640,7 +636,7 @@ Q_2
 <h3>2.3.2.7. Numerical Calculations<a class="headerlink" href="#numerical-calculations" title="Permalink to this headline">¶</a></h3>
 <p>We assume the two beams have different energy, as indicated by <span class="math">\(\omega_1\)</span> and <span class="math">\(\omega_2\)</span> in Eq. <a class="reference internal" href="#equation-eqn-line-model-two-beams-all-neutrino-linearized-eom">(1)</a>.</p>
 <p>For numerical calcualtions, we scale quantities using <span class="math">\(\mu\)</span>.</p>
-<p>With symmetric angles for the two beams, I didn&#8217;t find instabilities. However, <span class="math">\(\theta_1\neq \theta_2\)</span> leads to instabilities in IH, which is consistant with our expections.</p>
+<p>With symmetric angles for the two beams, I didn’t find instabilities. However, <span class="math">\(\theta_1\neq \theta_2\)</span> leads to instabilities in IH, which is consistant with our expections.</p>
 <p>For NH:</p>
 <a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png" style="width: 31%;" /></a>
 <a class="reference internal image-reference" href="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png"><img alt="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png" src="../_images/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png" style="width: 31%;" /></a>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>5.1.1. 2017-03 Group Meeting &#8212; Neutrino Private Notebook</title>
+    <title>5.1.3. 2017-10 Group Meeting &#8212; Neutrino Private Notebook</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -30,8 +30,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.1.2. 2017-04 Group Meeting" href="2017-04.html" />
-    <link rel="prev" title="5.1. Group Meeting 2017" href="index.html" />
+    <link rel="prev" title="5.1.2. 2017-04 Group Meeting" href="2017-04.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/x-mathjax-config">
@@ -248,9 +247,8 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">5.1.1. 2017-03 Group Meeting</a><ul>
-<li><a class="reference internal" href="#id1">5.1.1.1. 2017-03-09</a></li>
-<li><a class="reference internal" href="#id2">5.1.1.2. 2017-03-16</a></li>
+<li><a class="reference internal" href="#">5.1.3. 2017-10 Group Meeting</a><ul>
+<li><a class="reference internal" href="#id1">5.1.3.1. 2017-10-05</a></li>
 </ul>
 </li>
 </ul>
@@ -262,11 +260,7 @@ TeX: {
               
                 
   <li>
-    <a href="index.html" title="Previous Chapter: 5.1. Group Meeting 2017"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 5.1. Group Me...</span>
-    </a>
-  </li>
-  <li>
-    <a href="2017-04.html" title="Next Chapter: 5.1.2. 2017-04 Group Meeting"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">5.1.2. 2017-0... &raquo;</span>
+    <a href="2017-04.html" title="Previous Chapter: 5.1.2. 2017-04 Group Meeting"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 5.1.2. 2017-0...</span>
     </a>
   </li>
               
@@ -286,25 +280,58 @@ TeX: {
     <div class="col-md-12 content">
       
   <div class="section" id="group-meeting">
-<h1>5.1.1. 2017-03 Group Meeting<a class="headerlink" href="#group-meeting" title="Permalink to this headline">¶</a></h1>
+<h1>5.1.3. 2017-10 Group Meeting<a class="headerlink" href="#group-meeting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>5.1.1.1. 2017-03-09<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Topic: Dispersion Relation of Neutrino Flavor Oscillations</p>
-<p>About numerical calculations</p>
-<ol class="arabic simple">
-<li>My <span class="math">\(\omega\)</span> and <span class="math">\(k\)</span> have a minus sign compared to Raffelts result.</li>
-<li>Not exactly the same plot. How can I determine the scaling of spectrum. In principle I have the same definition of <span class="math">\(G\)</span>. However, it definitely is not the case when comparing the result.</li>
-</ol>
-<p>About analytical analysis</p>
-<ol class="arabic simple">
-<li>I should have the discrete case approaching the continuous case when the number of beams becomes large.</li>
-</ol>
+<h2>5.1.3.1. 2017-10-05<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Bipolar model with matter effect. (<a class="reference external" href="http://docs.neutrino.xyz/pictures/flavor-isospin.html#bipolar-with-matter">link</a>)</p>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/matter-bipolar-alpha-1-lambda-c2t-range-300.png" src="../../_images/matter-bipolar-alpha-1-lambda-c2t-range-300.png" />
+<p class="caption"><span class="caption-number">Fig. 5.21 </span><span class="caption-text">With <span class="math">\(\alpha=1\)</span>, <span class="math">\(\lambda=\cos 2\theta_v\)</span>, <span class="math">\(\mu=3\omega\)</span>, where everything is in unit of <span class="math">\(\omega\)</span>. Range of calculation is <span class="math">\([0,300]\)</span>.</span></p>
 </div>
-<div class="section" id="id2">
-<h2>5.1.1.2. 2017-03-16<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>The frequencies are 1.95547, 3.39437, 5.25602.</p>
+<p>The plots obviously show that the NFIS’s going through three fourier modes,</p>
+<div class="math">
+\[A_1 \cos( \gamma_1 t ) + A_2 \cos( \gamma_2 t ) + A_3 \cos( \gamma_3 t ).\]</div>
+<p>Before we work out the data fitting, it would be nice if I can find the relation between the parameters and coefficients and frequencies.</p>
+<p>I should work out <span class="math">\(\alpha=0.5,0.8,1,1.2,1.5\)</span>, <span class="math">\(\mu=0.5,1,2,3\)</span>, as well as some change in <span class="math">\(\lambda\)</span>.</p>
+<div class="note admonition">
+<p class="first admonition-title">Observations</p>
+<p class="last">Generally speaking, small <span class="math">\(\alpha\)</span> enhances the first frequency.</p>
+</div>
+<p>Frist we calculate <span class="math">\(\lambda=\cos 2\theta_v\)</span> and <span class="math">\(\mu=3\)</span></p>
+<p>For <span class="math">\(\alpha=1\)</span></p>
 <ol class="arabic simple">
-<li>Solved the continuous case but the result is weird, both for homogeneous and nonhonogeous case.</li>
+<li>frequencies: {1.95547, 3.39437, 5.25602}</li>
+<li>A: {0.111267, 0.0282127, 0.021448}</li>
+<li>Abar: {0.0397217, 0.0496267, 0.0205751}</li>
 </ol>
+<p>For <span class="math">\(\alpha=0.8\)</span></p>
+<ol class="arabic simple">
+<li>frequencies: {1.50333, 3.4475, 4.96213}</li>
+<li>A: {0.146606, 0.0257919, 0.0199095}</li>
+<li>Abar: {0.0434389, 0.038914, 0.0167421}</li>
+</ol>
+<p>For <span class="math">\(\alpha=0.6\)</span></p>
+<ol class="arabic simple">
+<li>{1.16424, 3.59444, 4.72477}</li>
+<li>{0.189593, 0.021267, 0.0167421}</li>
+<li>{0.0459276, 0.0316742, 0.0153846}</li>
+</ol>
+<p>For <span class="math">\(\alpha=0.5\)</span></p>
+<ol class="arabic simple">
+<li>frequencies: {1.03651, 3.58314, 4.6279}</li>
+<li>A: {0.225792, 0.0217194, 0.0134389}</li>
+<li>Abar: {0.0459276, 0.0255656, 0.0104072}</li>
+</ol>
+<p>So the amplitude for neutrinos seems to be changing linearly as a function of <span class="math">\(\alpha\)</span>.</p>
+<p>Keep <span class="math">\(\alpha=1\)</span> and <span class="math">\(\lambda=\cos 2\theta_v\)</span>, while change <span class="math">\(\mu\)</span>.</p>
+<p>For <span class="math">\(\mu=2\)</span>.</p>
+<ol class="arabic simple">
+<li>Frequencies: {1.46942, 2.91624, 4.38567}</li>
+<li>A: {0.122172, 0.0303167, 0.0217195}</li>
+<li>Abar: {0.0312217, 0.0533937, 0.0190045}</li>
+</ol>
+<p>I consider the amplitudes unchanged but the frequencies are shifted to lower values.</p>
 </div>
 </div>
 
@@ -363,7 +390,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../../_sources/group-meeting/2017/2017-03.rst.txt"
+       <a href="../../_sources/group-meeting/2017/2017-10.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>2.6. Dispersion Relation and Crossing &#8212; Neutrino Private Notebook</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -27,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -168,7 +164,7 @@ TeX: {
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -217,7 +213,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.8. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discworld.html">2.9. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.10. Equilibrium Points</a></li>
@@ -322,7 +318,7 @@ TeX: {
 </div>
 <div class="toggle admonition">
 <p class="first admonition-title">Numerical Issues with Box Spectrum in LSA</p>
-<p>Mathematica seems to fail the mission when finding the complex k&#8217;s given real <span class="math">\(\omega\)</span>.</p>
+<p>Mathematica seems to fail the mission when finding the complex k’s given real <span class="math">\(\omega\)</span>.</p>
 <p>I tested bot NIntegrate of the integrals and Integrate first. It seems that Integrate first works better and faster.</p>
 <p>Since I could find the analytical expressions for the integrals, I simple plug in the expression then calculate numbers.</p>
 <p>I could plot the values of <span class="math">\(\omega - (I_0-I_4)/4\)</span> (MAA solution) for real <span class="math">\(\omega\)</span> to check if they have interceptions with the 0 plane.</p>
@@ -354,7 +350,7 @@ TeX: {
 <p>MAA solutions also has similar shape.</p>
 <p class="last">In any case, we managed to solve instabilities for MAA and MZA. In Mathematica package <cite>dispersion-relation.wl</cite>, <cite>ConAxialSymOmegaNMZApEqnLHSComplex[-omegareal, k, spectrum]</cite> returns the value of <span class="math">\(\omega - \left( -\frac{1}{4}\left( I_0 - I_2 + \sqrt{ (I_0+I_2-2I_1)(I_0+I_2+2I_1) } \right) \right)\)</span>. Simply using <cite>FindRoot</cite> from Mathematica should return the solutions.</p>
 </div>
-<p>Since box spectrum is easier and faster to calculate, we&#8217;ll explore the phenomena within box spectrum. For example, the spectrum notation</p>
+<p>Since box spectrum is easier and faster to calculate, we’ll explore the phenomena within box spectrum. For example, the spectrum notation</p>
 <div class="highlight-Mathematica"><div class="highlight"><pre><span></span><span class="p">{{{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.3</span><span class="p">},</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">},</span><span class="w"> </span><span class="p">{{</span><span class="mf">-0.3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="mf">0.7</span><span class="p">}}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -386,7 +382,7 @@ TeX: {
 <img alt="../_images/omega-n-spectrum-c5.png" src="../_images/omega-n-spectrum-c5.png" />
 <p class="caption"><span class="caption-number">Fig. 2.94 </span><span class="caption-text">For a spectrum <span class="math">\(\{\{\{-1, -0.3\}, -15\}, \{\{-0.3, 1\}, 1\}\}\)</span>.</span></p>
 </div>
-<p>However examples of numerical calculations won&#8217;t be enough. Alternatively, I could derive an analytical expression. MZA solution is</p>
+<p>However examples of numerical calculations won’t be enough. Alternatively, I could derive an analytical expression. MZA solution is</p>
 <div class="math">
 \[\omega = -\frac{1}{4}\left(I_0-I_2\pm \sqrt{ (I_0-2I_1+I_2)(I_0+2I_1+I_2) }\right).\]</div>
 <p>We examine the term inside square root and set it to be negative which will show us the region where real omega disppears.</p>
@@ -399,10 +395,10 @@ TeX: {
 </div>
 <div class="note admonition">
 <p class="first admonition-title">Taylor Expansion of MZA solutions</p>
-<p>What about Taylor expansion around small values of <span class="math">\(g_1\)</span>? Taylor expanding the most general abstract form doesn&#8217;t give us any useful results since it is super complicated.</p>
+<p>What about Taylor expansion around small values of <span class="math">\(g_1\)</span>? Taylor expanding the most general abstract form doesn’t give us any useful results since it is super complicated.</p>
 <div class="figure align-center" id="id11">
 <img alt="../_images/mza-solutions-taylor-series-coefficients-spect-c5.png" src="../_images/mza-solutions-taylor-series-coefficients-spect-c5.png" />
-<p class="caption"><span class="caption-number">Fig. 2.96 </span><span class="caption-text">Coefficients of Taylor series of MZA solutions. It&#8217;s weird that the coefficients are all real.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.96 </span><span class="caption-text">Coefficients of Taylor series of MZA solutions. It’s weird that the coefficients are all real.</span></p>
 </div>
 <p class="last">I am not sure how to use these results.</p>
 </div>
@@ -429,7 +425,7 @@ TeX: {
 <p class="caption"><span class="caption-number">Fig. 2.99 </span><span class="caption-text">MZA solutions for <code class="docutils literal"><span class="pre">spectC3</span></code> with <span class="math">\(\omega=1\)</span>. We found one real solutioin for MZA- solution, which is not what we expected from DR plots.</span></p>
 </div>
 <p>This makes the DR plots questionable. However, no bug has been found. In fact I have been using the same functions to make this density plot.</p>
-<p>The I realized that using only real <span class="math">\(n\)</span>&#8216;s could be a problem since we might have complex <span class="math">\(n\)</span>&#8216;s that give us real <span class="math">\(\omega\)</span>, in principle.</p>
+<p>The I realized that using only real <span class="math">\(n\)</span>‘s could be a problem since we might have complex <span class="math">\(n\)</span>‘s that give us real <span class="math">\(\omega\)</span>, in principle.</p>
 <p>Indeed this is true for <code class="docutils literal"><span class="pre">spectC3</span></code>.</p>
 <div class="figure align-center" id="id15">
 <img alt="../_images/imaginary-part-of-omega-for-complex-n-mzap-boxspectrum-spectc3.png" src="../_images/imaginary-part-of-omega-for-complex-n-mzap-boxspectrum-spectc3.png" />
@@ -498,7 +494,7 @@ TeX: {
 <h3>2.6.1.1. Instabilities for Box Spectra<a class="headerlink" href="#instabilities-for-box-spectra" title="Permalink to this headline">¶</a></h3>
 <div class="warning admonition">
 <p class="first admonition-title">Crossing seems to have little effects on instabilities</p>
-<p class="last">Instabilities on DR plot seems to be NOT affected by crossing. Probably because of the lines in the forbidden region (using abs for log argument in the results of integral for I&#8217;s) doesn&#8217;t seem to change a lot.</p>
+<p class="last">Instabilities on DR plot seems to be NOT affected by crossing. Probably because of the lines in the forbidden region (using abs for log argument in the results of integral for I’s) doesn’t seem to change a lot.</p>
 </div>
 <div class="figure align-center" id="id29">
 <img alt="../_images/box-spectra-dr-lsa-maa-spectwc3-to-wc4.png" src="../_images/box-spectra-dr-lsa-maa-spectwc3-to-wc4.png" />

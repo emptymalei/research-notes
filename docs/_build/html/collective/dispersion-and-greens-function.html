@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>2.7. Dispersion Relation and Instabilities Using Green’s Function &#8212; Neutrino Private Notebook</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -27,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -168,7 +164,7 @@ TeX: {
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -217,7 +213,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-and-crossing.html">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. Dispersion Relation and Instabilities Using Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.8. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discworld.html">2.9. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.10. Equilibrium Points</a></li>
@@ -252,7 +248,7 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a><ul>
+<li><a class="reference internal" href="#">2.7. Dispersion Relation and Instabilities Using Green’s Function</a><ul>
 <li><a class="reference internal" href="#a-simple-system">2.7.1. A Simple System</a></li>
 <li><a class="reference internal" href="#neutrinos">2.7.2. Neutrinos</a></li>
 <li><a class="reference internal" href="#gap">2.7.3. Gap</a></li>
@@ -291,7 +287,7 @@ TeX: {
     <div class="col-md-12 content">
       
   <div class="section" id="dispersion-relation-and-instabilities-using-green-s-function">
-<h1>2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function<a class="headerlink" href="#dispersion-relation-and-instabilities-using-green-s-function" title="Permalink to this headline">¶</a></h1>
+<h1>2.7. Dispersion Relation and Instabilities Using Green’s Function<a class="headerlink" href="#dispersion-relation-and-instabilities-using-green-s-function" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="first admonition-title">This is a review</p>
 <p class="last">This is my reading notes about the paper: <a class="reference external" href="http://inspirehep.net/record/1604289">Capozzi, F., Dasgupta, B., Lisi, E., Marrone, A., &amp; Mirizzi, A. (2017). Fast flavor conversions of supernova neutrinos: Classifying instabilities via dispersion relations, 1–25</a>.</p>
@@ -306,7 +302,7 @@ TeX: {
 <div class="math">
 \[D(\omega, \mathbf k) = 0,\]</div>
 <p>which is in fact the dispersion relation.</p>
-<p>The picture behind these math is that we are treating the field as waves. By &#8220;solving&#8221; the dispersion relation, we find <span class="math">\(\omega(\mathbf k)\)</span> or <span class="math">\(\mathbf k(\omega)\)</span>, which is substituted into the wave form,</p>
+<p>The picture behind these math is that we are treating the field as waves. By “solving” the dispersion relation, we find <span class="math">\(\omega(\mathbf k)\)</span> or <span class="math">\(\mathbf k(\omega)\)</span>, which is substituted into the wave form,</p>
 <div class="math">
 \[S = Q e^{i(\mathbf k(\omega) \cdot \mathbf x - \omega t)},\]</div>
 <p>or</p>
@@ -322,7 +318,7 @@ TeX: {
 <p>For the general equation of coherence</p>
 <div class="math">
 \[\mathscr D S = f(\mathbf x,t),\]</div>
-<p>the authors consider the Green&#8217;s function of the equations, i.e.,</p>
+<p>the authors consider the Green’s function of the equations, i.e.,</p>
 <div class="math">
 \[\mathscr D G = \delta(\mathbf x)\delta(t).\]</div>
 <p>Fourier transform of <span class="math">\(G\)</span> leads to</p>

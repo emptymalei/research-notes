@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>4.2. Gravitational Waves &#8212; Neutrino Private Notebook</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -27,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -168,7 +164,7 @@ TeX: {
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -217,7 +213,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-relation-and-crossing.html">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/flavor-waves.html">2.8. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/discworld.html">2.9. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/equilibrium-points.html">2.10. Equilibrium Points</a></li>
@@ -372,7 +368,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <div class="math">
 \[h(t) =  \frac{1}{r} \left( \frac{5 G^5 M^5}{2 c^{11}} \right)^{1/4} \frac{1}{(t_{\mathrm{coal}} -t)^{1/4}},\]</div>
 <p>which shows that the frequency diverges at <span class="math">\(t_{\mathrm{coal}}\)</span>.</p>
-<p>In the astrophysicists&#8217; form, we have <a class="reference internal" href="#riles2013" id="id4">[Riles2013]</a></p>
+<p>In the astrophysicists’ form, we have <a class="reference internal" href="#riles2013" id="id4">[Riles2013]</a></p>
 <div class="math">
 \[h(\tau) = (1.7\times 10^{-23}) \left( \frac{15\mathrm{Mpc}}{r} \right) \left( \frac{1 \text{ day} }{\tau} \right)^{1/4} \left( \frac{M}{1.4M_{\odot}}\right)^{5/4}.\]</div>
 <p>As an estimation, we can show that at <span class="math">\(r=1000 km\)</span> from the source,</p>
@@ -386,7 +382,7 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <div class="warning admonition">
 <p class="first admonition-title">Strong Field</p>
 <p>However, the problem is, for stong waves, this estimation fails. I need to find a paper that numerically calculates the strain for strong fields.</p>
-<p class="last"><strong>And I haven&#8217;t found the right paper.</strong></p>
+<p class="last"><strong>And I haven’t found the right paper.</strong></p>
 </div>
 <p>The size of the disk of neutron star mergers are of the order <span class="math">\(10 km\)</span> <a class="reference internal" href="#foucart2012" id="id5">[Foucart2012]</a>.</p>
 </div>
@@ -409,14 +405,14 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <p>In any case, we could linearize the equation of motion and explore the linear regime. With the help of dispersion relation, the linear regime can be analyzed.</p>
 <p>In principle, the equation of motion is changed due to gravitational field with derivatives becoming covariant ones. However, for fast neutrino oscillations, we can consider the local effect by ignoring the connections. I have to replace the Minkowski metric with the metric of gravitational waves. Without any calculation, I expect gravitational waves breaks the symmetrics intrinsically. For example it breaks the degeneracy of the MAA solution for axial symmetric system.</p>
 <div class="warning admonition">
-<p class="first admonition-title">Shashank&#8217;s Comment</p>
+<p class="first admonition-title">Shashank’s Comment</p>
 <p>He said that a possible resonance could bring in other effects.</p>
 <p><strong>Update (20/03/2017)</strong>:</p>
 <p>I think this is a very nice point. If we write down the Dirac equation for neutrino oscillations in matter <a class="reference internal" href="#cardall1996" id="id8">[Cardall1996]</a>,</p>
 <div class="math">
 \[[\gamma^\mu(\partial_\mu + i A_{f\mu} \mathscr P_L) + M_f] \psi_f = 0,\]</div>
 <p>where <span class="math">\(A_{f\mu}\)</span> is the neutrino-matter interaction.</p>
-<p>For stimulated oscillations, this &#8220;potential&#8221; <span class="math">\(A_{f\mu}\)</span> is periodic.</p>
+<p>For stimulated oscillations, this “potential” <span class="math">\(A_{f\mu}\)</span> is periodic.</p>
 <p>The vacuum oscillation in gravitational field is determined by <a class="reference internal" href="#cardall1996" id="id9">[Cardall1996]</a></p>
 <div class="math">
 \[[\gamma^\mu e^\mu_a (\partial_\mu + \Gamma_{\mu})+M]\psi=0,\]</div>
@@ -438,10 +434,10 @@ h_{xy}&amp;=h_{yx} = - h\sin (4\pi f t),\end{split}\]</div>
 <h2>4.2.4. Resonances<a class="headerlink" href="#resonances" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="stimulated-transitions">
 <h3>4.2.4.1. Stimulated Transitions<a class="headerlink" href="#stimulated-transitions" title="Permalink to this headline">¶</a></h3>
-<p><strong>In this section, we will try to verify Shashank&#8217;s idea about resonance.</strong></p>
+<p><strong>In this section, we will try to verify Shashank’s idea about resonance.</strong></p>
 <p>For resonance of linear EoM, we do not need to consider neutrino self-interactions.</p>
 <div class="warning admonition">
-<p class="first admonition-title">What&#8217;s the EoM</p>
+<p class="first admonition-title">What’s the EoM</p>
 <p class="last">We need a Schrodinger equation formalism instead of the Dirac equation one. Here I am going to use the one derived by Cardall and Fuller <a class="reference internal" href="#cardall1996" id="id10">[Cardall1996]</a>.</p>
 </div>
 <p>We need to calculate the vector potential</p>

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>2.4. Dispersion Relation &#8212; Neutrino Private Notebook</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -27,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -168,7 +164,7 @@ TeX: {
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -217,7 +213,7 @@ TeX: {
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dispersion-relation-and-crossing.html">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flavor-waves.html">2.8. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discworld.html">2.9. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equilibrium-points.html">2.10. Equilibrium Points</a></li>
@@ -320,7 +316,7 @@ TeX: {
 </div>
 <div class="section" id="polarization-tensor">
 <h2>2.4.1. Polarization Tensor<a class="headerlink" href="#polarization-tensor" title="Permalink to this headline">¶</a></h2>
-<p>In Raffelt&#8217;s paper, they defined the polarization tensor as</p>
+<p>In Raffelt’s paper, they defined the polarization tensor as</p>
 <div class="math">
 \[\Pi^{\mu\nu} = \eta^{\mu\nu} + \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v^\nu}{k^\mu v_\mu}.\]</div>
 <p>For numerical calculations, we lower the second index and multiply on both side <span class="math">\(\omega\)</span>,</p>
@@ -515,7 +511,7 @@ k^\mu &amp;= \begin{pmatrix} \omega &amp; k \sin\theta_k \cos\phi_k &amp; k\sin\
 <div class="warning admonition">
 <p class="first admonition-title">Is this related to eigenvectors?</p>
 <p>The eigenvalue <span class="math">\(\frac{1}{4}(I_0-I_2)\)</span> of matrix <span class="math">\(N^\mu_{\phantom{\mu}\nu}\)</span> corresponds to eigenvectors <span class="math">\((0,0,1,0)\)</span> and <span class="math">\((0,1,0,0)\)</span>.</p>
-<p class="last">I don&#8217;t think it is related to eigenvalues. However, eigenvalues set limit on the actual solution. When we write down the solution to <span class="math">\(a^\mu\)</span>, the coefficients are related to each other because we have determinant of coefficient matrix being 0. There are degeneracies.</p>
+<p class="last">I don’t think it is related to eigenvalues. However, eigenvalues set limit on the actual solution. When we write down the solution to <span class="math">\(a^\mu\)</span>, the coefficients are related to each other because we have determinant of coefficient matrix being 0. There are degeneracies.</p>
 </div>
 <p>That is to say, the part</p>
 <div class="math">
@@ -606,7 +602,7 @@ A_{k\omega} &amp; B_\omega
 4\cos\theta_1\cos\theta_2 &amp; \frac{ \tilde G_1\cos\theta_2 + \tilde G_2\cos\theta_1 }{2}\\
 -2(\cos\theta_1+\cos\theta_2) &amp; - \frac{ \tilde G_1 + \tilde G_2 }{2}
 \end{vmatrix}  .\end{split}\]</div>
-<p>A special case for it is <span class="math">\(G_1=\pm G_2\)</span>, however, the expression for the center doesn&#8217;t really simplify that much.</p>
+<p>A special case for it is <span class="math">\(G_1=\pm G_2\)</span>, however, the expression for the center doesn’t really simplify that much.</p>
 <p>We are interested in gaps, so the asymptotic lines are the lines that we are interested in.</p>
 <p>First of all, we need to find out the principal axis. The angle between the principal axis and x axis is defined to be <span class="math">\(\beta\)</span>,</p>
 <div class="math">
@@ -630,7 +626,7 @@ A_{k\omega} &amp; B_\omega
 <p>We kind of see why <span class="math">\(a^\mu\)</span> is some kind of polarization given the definition</p>
 <div class="math">
 \[a^\mu = -\int d\Gamma v^\mu G(\theta,\phi) Q(\theta,\phi).\]</div>
-<p>In some sense it is a weighted average of <span class="math">\(Q\)</span>. And <span class="math">\(S = Q e^{-i k^\mu x_\mu}\)</span> is the &#8220;field&#8221; we are insterested in.</p>
+<p>In some sense it is a weighted average of <span class="math">\(Q\)</span>. And <span class="math">\(S = Q e^{-i k^\mu x_\mu}\)</span> is the “field” we are insterested in.</p>
 <p>Comparing to electrodynamics, where we have the field <span class="math">\(A^\mu\)</span> which tells us about the polarization,</p>
 <div class="toggle admonition">
 <p class="first admonition-title">Polarization in Electrodynamics</p>
@@ -682,7 +678,7 @@ A_{k\omega} &amp; B_\omega
 <p>To illustrate this idea, I shaded the region that <span class="math">\(n(\omega)\)</span> has no solution for the case of two emission angle and crossing in <a class="reference internal" href="#dr-omega-k-2-beams-lr-shaded-region-png"><span class="std std-numref">Fig. 2.26</span></a>.</p>
 <div class="figure align-center" id="id14">
 <span id="dr-omega-k-2-beams-lr-shaded-region-png"></span><img alt="../_images/DR-omega-k-2-beams-lr-shaded-region.png" src="../_images/DR-omega-k-2-beams-lr-shaded-region.png" />
-<p class="caption"><span class="caption-number">Fig. 2.26 </span><span class="caption-text">The shaded regions are the region that <span class="math">\(n(\omega)\)</span> has no solution. It&#8217;s hard to analytically solve <span class="math">\(n(\omega)\)</span>. But we can get an idea of this using <span class="math">\(\omega(n)\)</span> plot.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.26 </span><span class="caption-text">The shaded regions are the region that <span class="math">\(n(\omega)\)</span> has no solution. It’s hard to analytically solve <span class="math">\(n(\omega)\)</span>. But we can get an idea of this using <span class="math">\(\omega(n)\)</span> plot.</span></p>
 </div>
 <p>This provides an method to determine whether we have a gap in <span class="math">\(\omega\)</span> or <span class="math">\(k\)</span>. For gap in <span class="math">\(k\)</span>, we plot out <span class="math">\(k(n)\)</span>.</p>
 <div class="figure align-center" id="id15">
@@ -838,9 +834,9 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 </div>
 <div class="warning admonition">
 <p class="first admonition-title">Why</p>
-<p>It seems that crossing is important to a change in the number of solution to <span class="math">\(n(\omega)\)</span>. If we have crossing, then the number of solutions to <span class="math">\(n(\omega)\)</span> will change for different values of <span class="math">\(\omega\)</span>. Otherwise, the number of solutions won&#8217;t change.</p>
+<p>It seems that crossing is important to a change in the number of solution to <span class="math">\(n(\omega)\)</span>. If we have crossing, then the number of solutions to <span class="math">\(n(\omega)\)</span> will change for different values of <span class="math">\(\omega\)</span>. Otherwise, the number of solutions won’t change.</p>
 <p>And a change of the number of solutions indicates a possible gap. <strong>I need some verification about the relation between such non-explicit gap and instabilities.</strong></p>
-<p>However, I also notice that the combination <span class="math">\({-2,-1}\)</span> also has such change of number of solutions. In this case, I can spot that for some branches we have complex <span class="math">\(k\)</span>. What I don&#8217;t understand is that we always find real solutions to <span class="math">\(k\)</span> for some other branches. Does it mean that only one such complex solutions is sufficient? And what exactly is the requirement?</p>
+<p>However, I also notice that the combination <span class="math">\({-2,-1}\)</span> also has such change of number of solutions. In this case, I can spot that for some branches we have complex <span class="math">\(k\)</span>. What I don’t understand is that we always find real solutions to <span class="math">\(k\)</span> for some other branches. Does it mean that only one such complex solutions is sufficient? And what exactly is the requirement?</p>
 <p class="last">Can I derive some expression for the <span class="math">\(\ln\)</span> function for a continuous distribution <span class="math">\(G(\theta)\)</span>?</p>
 </div>
 <div class="section" id="do-we-really-need-a-gap">
@@ -850,7 +846,7 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 <div class="note admonition">
 <p class="first admonition-title">Imagary Part in k</p>
 <p>For MAA solution, I can try to solve <span class="math">\(n\)</span> given value of <span class="math">\(\omega\)</span>. If I obtain complex value of <span class="math">\(n\)</span>, then I have complex value of k thus instability.</p>
-<p class="last">Didn&#8217;t find any weird numbers here.</p>
+<p class="last">Didn’t find any weird numbers here.</p>
 </div>
 <p><a class="reference internal" href="#dr-omega-k-continuous-table-0-9-0-6-0-3-png"><span class="std std-numref">Fig. 2.38</span></a> also indicates that crossing probably change the number of solutions to <span class="math">\(omega\)</span> given different <span class="math">\(n\)</span> thus change the number of solutions to <span class="math">\(k\)</span> given different <span class="math">\(n\)</span>. For example, the lower left panel shows that <span class="math">\(\omega\)</span> has 1 solutions within <span class="math">\(n\in [-\infty,1/0.9]\)</span> but has 3 solutions within <span class="math">\(n\in [1/0.3,\infty]\)</span>. The lower right panel have 3 solutions whithin <span class="math">\(n\in [-\infty,1/0.9]\)</span> and <span class="math">\(n\in [1/0.3,\infty]\)</span>. This might be important when identifying the possible gaps.</p>
 </div>
@@ -895,7 +891,7 @@ g_2, \qquad &amp; \theta_0&lt;\theta&lt;\theta_2
 <h2>2.4.9. Arbitrary Spectrum<a class="headerlink" href="#arbitrary-spectrum" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id35">
 <img alt="../_images/DR-continuous-spectrum-near-realistic.png" src="../_images/DR-continuous-spectrum-near-realistic.png" />
-<p class="caption"><span class="caption-number">Fig. 2.47 </span><span class="caption-text">Reproducing Fig. 3 of Raffelt&#8217;s paper.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.47 </span><span class="caption-text">Reproducing Fig. 3 of Raffelt’s paper.</span></p>
 </div>
 <div class="figure align-center" id="id36">
 <img alt="../_images/DR-continuous-spectrum-near-realistic-spectrum-created.png" src="../_images/DR-continuous-spectrum-near-realistic-spectrum-created.png" />

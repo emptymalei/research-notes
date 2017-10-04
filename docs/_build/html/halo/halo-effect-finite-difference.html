@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>3.2. Halo Effect - Finite Difference &#8212; Neutrino Private Notebook</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -27,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -168,7 +164,7 @@ TeX: {
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -217,7 +213,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-relation.html">2.4. Dispersion Relation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-relation-gap.html">2.5. Dispersion Relation and Gap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-relation-and-crossing.html">2.6. Dispersion Relation and Crossing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green&#8217;s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collective/dispersion-and-greens-function.html">2.7. Dispersion Relation and Instabilities Using Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/flavor-waves.html">2.8. Flavor Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/discworld.html">2.9. Discworld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../collective/equilibrium-points.html">2.10. Equilibrium Points</a></li>
@@ -344,6 +340,7 @@ TeX: {
 </div>
 <div class="toggle admonition">
 <p class="first admonition-title">Computation Time</p>
+<p><strong>2017-09-13:</strong></p>
 <p>The export of my test code:</p>
 <div class="highlight-txt"><div class="highlight"><pre><span></span>PROGRAM START
 Halo Problem Forward and Backward:
@@ -358,11 +355,25 @@ PROGRAM END
 </pre></div>
 </div>
 <p>Some estimations:</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>(1e5 steps in z) times (10000) steps requires (10000 times 7e-4 times 100 = 700) seconds;</li>
 <li>(1e6 steps in z) times (10000) steps requires (10000 times 7e-4 times 1000 = 7000 ) seconds, i.e., 117 minutes;</li>
 <li>(1e7 steps in z) times (10000) steps requires (10000 times 7e-4 times 10000 = 70000 ) seconds, i.e., 1e3 minutes.</li>
 </ol>
+<p><strong>2017-09-14:</strong> I changed the Hamiltonian functions and solvers.</p>
+<div class="highlight-txt"><div class="highlight"><pre><span></span>PROGRAM START
+Halo Problem Forward and Backward:
+Total number of iterations: 100
+Size of rhos: 1000
+Range: 1.000000
+Step size: 0.001000
+Save Steps: 2
+Total clock time: 0.018305
+Clock time for 1000 iterations: 0.18335
+PROGRAM END
+</pre></div>
+</div>
+<p class="last">3.5 times faster!</p>
 </div>
 <p>The result shows that</p>
 <video width="100%" controls>
@@ -376,7 +387,7 @@ Your browser does not support HTML5 video.
 <p class="caption"><span class="caption-number">Fig. 3.7 </span><span class="caption-text">For 20000 iteractions within range 0 to 1 with 100 outputs. Each time increment in the plot indicates 200 iterations.</span></p>
 </div>
 </div>
-<p>We immediately spot trouble here. The calculation doesn&#8217;t reach equilibrium. I calculated using larger iterations (100000 iterations) and it doesn&#8217;t converge either.</p>
+<p>We immediately spot trouble here. The calculation doesn’t reach equilibrium. I calculated using larger iterations (100000 iterations) and it doesn’t converge either.</p>
 <p>I checked the convergence.</p>
 <video width="100%" controls>
 <source src="../_static/assets/halo/halo-effect-finite-difference/convergence-1e4-and-1e5.mp4" type="video/mp4">
@@ -395,6 +406,12 @@ Your browser does not support HTML5 video.
 <li>Read about what the mathematicians are using to solve <strong>BVP with nonlocal boundary conditions</strong>. Refer to <a class="reference internal" href="halo-effect-analytical-methods.html#bvp-nonlocal-bc-references"><span class="std std-ref">BVP nonlocal BC</span></a>.</li>
 <li>Try to calculate multiangles to check if the convergence is easier to reach. What are the conditions of equilibrium?</li>
 <li>Write the time dependent code, with tracks all the neutrinos at different locations and solve it. This would be the actual time evolution of the flavors. The time scale would be on ms. Will this be useful?</li>
+</ol>
+</div>
+<div class="warning admonition">
+<p class="first admonition-title">TODO</p>
+<ol class="last arabic simple">
+<li>Linear stability analysis.</li>
 </ol>
 </div>
 </div>
