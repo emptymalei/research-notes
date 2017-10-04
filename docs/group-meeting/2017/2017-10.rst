@@ -21,6 +21,14 @@ The plots obviously show that the NFIS's going through three fourier modes,
    A_1 \cos( \gamma_1 t ) + A_2 \cos( \gamma_2 t ) + A_3 \cos( \gamma_3 t ).
 
 
+.. admonition:: Guess
+   :class: note
+
+   It should be
+
+   .. math::
+      \mathbf P = \sum_{i=1}^3 \mathbf P_{f,i} \cos(\gamma_i t).
+
 Before we work out the data fitting, it would be nice if I can find the relation between the parameters and coefficients and frequencies.
 
 I should work out :math:`\alpha=0.5,0.8,1,1.2,1.5`, :math:`\mu=0.5,1,2,3`, as well as some change in :math:`\lambda`.
