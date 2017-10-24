@@ -291,3 +291,11 @@ margin: 10px;
 .navbar-right>div>input {
 max-width: 85px;
 }
+
+
+.fixed-bot-right {
+	 position: fixed !important;
+	 bottom: 1% !important;
+    right: 1% !important;
+    /*margin:0px !important;*/
+}

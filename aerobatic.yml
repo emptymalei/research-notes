@@ -5,7 +5,9 @@ deploy:
 plugins:
   - name: password-protect
     options:
-      password: $MASTER_KEY
+        password: [$MASTER_KEY,$UNM_KEY]
+        maxFailures: 5
+        failureWindow: 600
   - name: custom-errors
     options:
       errors:
