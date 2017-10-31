@@ -1,4 +1,4 @@
-Equation of Motioin
+Equation of Motion
 =========================
 
 - Understand the equation of motion for neutrinos in curved spacetime.

@@ -8,6 +8,7 @@ plugins:
         password: [$MASTER_KEY,$UNM_KEY]
         maxFailures: 5
         failureWindow: 600
+        loginPage: login.html
   - name: custom-errors
     options:
       errors:

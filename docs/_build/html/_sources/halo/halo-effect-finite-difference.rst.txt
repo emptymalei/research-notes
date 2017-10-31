@@ -166,3 +166,16 @@ Compare step sizes :math:`10^{-5}` and :math:`10^{-6}`.
    :class: warning
 
    1. Linear stability analysis.
+
+
+
+Verify Results
+--------------------------------------------
+
+
+The equilibrium results can be verified using Mathematica solver. I simply feed in the initial conditions at :math:`z=0` and calculate forward to the reflection surace at :math:`z=L`. The two neutrino beams should be at the same state.
+
+
+
+References and Notes
+---------------------------------
