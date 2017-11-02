@@ -176,6 +176,13 @@ Verify Results
 The equilibrium results can be verified using Mathematica solver. I simply feed in the initial conditions at :math:`z=0` and calculate forward to the reflection surace at :math:`z=L`. The two neutrino beams should be at the same state.
 
 
+Result is verified using Mathematica code.
+
+.. figure:: assets/halo-effect-finite-difference/cpp-code-validation-using-mathematica.png
+   :align: center
+
+   C++ code validation using mathematica for :math:`\mu=20`.
+
 
 References and Notes
 ---------------------------------
