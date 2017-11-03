@@ -16,7 +16,7 @@ For single angle neutrino-only emission, this model can also work for the tilted
 .. admonition:: Some Seasoning
    :class: note
 
-   - [ ] Added in anti-neutrinos to the beams
+   - [ ] Add in anti-neutrinos to the beams
    - [ ] Neutrino and anti-neutrino beams are in different directions
 
 
@@ -29,10 +29,160 @@ Introduce multiangles and left-right asymmetries to the system.
 
 
 
+Numerical - State Convention
+---------------------------------
+
+We use traceless density matrix. There are two senarios to keep track of the elements.
+
+Convention Used in Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For any tracelesstwo by two matrix with real diagonal elements such as density matrix,
+
+.. math::
+   \rho = \begin{pmatrix}
+   a & b + i c\\
+   b - i c & -a
+   \end{pmatrix}
 
 
-Numerical Methods
+we define a corresponding array `s = { a, b ,c }`. Then the density matrix is
+
+.. math::
+   \rho = \begin{pmatrix}
+   s[0] & s[1] + i s[2] \\
+   s[1] - i s[2] & -s[0]
+   \end{pmatrix}.
+
+
+
+
+Polarization Vector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Polarization vector :math:`\vec P` is
+
+.. math::
+   \rho = 1 + \vec \sigma \cdot \vec P,
+
+so that `\vec P = { b, -c , a }`.
+
+
+.. admonition:: Relation to My Convention
+   :class: toggle
+
+   It is related to my convention by
+
+   .. code-block:: c++
+
+      P[0] = s[1]
+      P[1] = -s[2]
+      P[2] = s[0]
+
+
+
+
+Numerical - Stepper Senario
 -----------------------------------
+
+
+
+Euler Method
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We start from the equation of motion
+
+.. math::
+   i\partial_z \rho = \left[ H, \rho \right],
+
+where we denote
+
+.. math::
+   \rho &= \begin{pmatrix}
+   a & b + i c\\
+   b - i c & -a
+   \end{pmatrix} \\
+   H & = \begin{pmatrix}
+   h & \bar h + i \tilde h\\
+   \bar h - i\tilde h & - h
+   \end{pmatrix}.
+
+
+Calcuation of the commutator shows that
+
+.. math::
+   \left[ H ,\rho\right] = 2 \begin{pmatrix}
+   i( \tilde h b - \bar h c) & b h - a \bar h + i( h c - a \tilde h) \\
+   c.c. &  - i( \tilde h b - \bar h c)
+   \end{pmatrix},
+
+from which we conclude that
+
+.. math::
+   \partial_z a &= 2 ( \tilde h b - \bar h c ) \\
+   \partial_z b &= 2 ( h c - a \tilde h ) \\
+   \partial_z c &= 2 ( h b - a \bar h ).
+
+Then we discretize each equations using Euler method.
+
+
+
+
+Evolution Operator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+The same calculation can be achieved by using the evolution operator :math:`U(t) = \exp (-i H t)`.
+
+.. admonition:: Evolution Operator
+   :class: note
+
+   Evolution operator :math:`U(t)` is used to evolve states
+
+   .. math::
+      \rho(t) = U(t)\rho(t_0) U(t)^\dagger
+
+   if Hamiltonian doesn't depend on time.
+
+   As a numerical algorithm, we can use the finite difference form
+
+   .. math::
+      \rho(t+\Delta t) = U(\Delta t) \rho(t)  U(\Delta t)^\dagger.
+
+
+Since the Hamiltonian in our simple calcuations is always two by two, the exact form of the algorithm can be written down exactly.
+
+The evolution operator itself is
+
+.. math::
+   U(\Delta t) = \begin{pmatrix}
+   \cos (h \Delta t) - i\frac{h[0] \sin( h \Delta t) }{ h } & \frac{ -i h[1] + h[2] \sin ( h \Delta t ) }{  h } \\
+   \frac{ -i h[1] - h[2] \sin ( h \Delta t ) }{  h } &  \cos (h \Delta t) + i\frac{h[0] \sin( h \Delta t) }{ h }
+   \end{pmatrix}
+
+where we defined :math:`h = \sqrt{ h0^2+h1^2+h_2^2 }` for short.
+
+The evolved density matrix obtained quite a long expression but it definitely can be implemented.
+
+.. math::
+   \rho(t + \Delta t) = \left(
+   \begin{array}{cc}
+   \frac{\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{s0} \text{h1}^2-\text{h0} \text{s1} \text{h1}+\text{h2} (\text{h2} \text{s0}-\text{h0} \text{s2})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h2} \text{s1}-\text{h1} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} & \frac{(\text{h1}+\text{h2} i) (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left((\text{s1}+i \text{s2}) \text{h0}^2-\text{h0} (\text{h1}+\text{h2} i) \text{s0}+(\text{h1}+\text{h2} i) i (\text{h1} \text{s2}-\text{h2} \text{s1})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(-\text{h2} \text{s0}+\text{h1} i \text{s0}-i \text{h0} \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
+   (\text{s1}-i \text{s2}) \cos ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+\frac{\left(-(\text{s1}-i \text{s2}) \text{h0}^2+2 (\text{h1}-i \text{h2}) \text{s0} \text{h0}+(\text{h1}-i \text{h2})^2 (\text{s1}+i \text{s2})\right) \sin ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\text{h0}^2+\text{h1}^2+\text{h2}^2}+\frac{(-\text{h2} \text{s0}+\text{h1} (-i) \text{s0}+\text{h0} i \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}} & \frac{-\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{h0} \text{s1} \text{h1}-\text{h1}^2 \text{s0}+\text{h2} (\text{h0} \text{s2}-\text{h2} \text{s0})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h1} \text{s2}-\text{h2} \text{s1}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
+   \end{array}
+   \right)
+
+
+
+
+
+
+Numerical - Iteration Senario
+-----------------------------------
+
+
+
 
 
 Single Neutrino Forward then Backward

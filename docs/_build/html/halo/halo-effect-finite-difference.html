@@ -254,13 +254,23 @@ TeX: {
 <li><a class="reference internal" href="#model-with-collective-oscillations">3.2.1.2. Model with Collective Oscillations</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#numerical-methods">3.2.2. Numerical Methods</a><ul>
-<li><a class="reference internal" href="#single-neutrino-forward-then-backward">3.2.2.1. Single Neutrino Forward then Backward</a></li>
-<li><a class="reference internal" href="#single-neutrino-simultaneous">3.2.2.2. Single Neutrino Simultaneous</a></li>
+<li><a class="reference internal" href="#numerical-state-convention">3.2.2. Numerical - State Convention</a><ul>
+<li><a class="reference internal" href="#convention-used-in-code">3.2.2.1. Convention Used in Code</a></li>
+<li><a class="reference internal" href="#polarization-vector">3.2.2.2. Polarization Vector</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#verify-results">3.2.3. Verify Results</a></li>
-<li><a class="reference internal" href="#references-and-notes">3.2.4. References and Notes</a></li>
+<li><a class="reference internal" href="#numerical-stepper-senario">3.2.3. Numerical - Stepper Senario</a><ul>
+<li><a class="reference internal" href="#euler-method">3.2.3.1. Euler Method</a></li>
+<li><a class="reference internal" href="#evolution-operator">3.2.3.2. Evolution Operator</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#numerical-iteration-senario">3.2.4. Numerical - Iteration Senario</a><ul>
+<li><a class="reference internal" href="#single-neutrino-forward-then-backward">3.2.4.1. Single Neutrino Forward then Backward</a></li>
+<li><a class="reference internal" href="#single-neutrino-simultaneous">3.2.4.2. Single Neutrino Simultaneous</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#verify-results">3.2.5. Verify Results</a></li>
+<li><a class="reference internal" href="#references-and-notes">3.2.6. References and Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -306,7 +316,7 @@ TeX: {
 <div class="note admonition">
 <p class="first admonition-title">Some Seasoning</p>
 <ul class="last simple">
-<li>[ ] Added in anti-neutrinos to the beams</li>
+<li>[ ] Add in anti-neutrinos to the beams</li>
 <li>[ ] Neutrino and anti-neutrino beams are in different directions</li>
 </ul>
 </div>
@@ -316,10 +326,106 @@ TeX: {
 <p>Introduce multiangles and left-right asymmetries to the system.</p>
 </div>
 </div>
-<div class="section" id="numerical-methods">
-<h2>3.2.2. Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="numerical-state-convention">
+<h2>3.2.2. Numerical - State Convention<a class="headerlink" href="#numerical-state-convention" title="Permalink to this headline">¶</a></h2>
+<p>We use traceless density matrix. There are two senarios to keep track of the elements.</p>
+<div class="section" id="convention-used-in-code">
+<h3>3.2.2.1. Convention Used in Code<a class="headerlink" href="#convention-used-in-code" title="Permalink to this headline">¶</a></h3>
+<p>For any tracelesstwo by two matrix with real diagonal elements such as density matrix,</p>
+<div class="math">
+\[\begin{split}\rho = \begin{pmatrix}
+a &amp; b + i c\\
+b - i c &amp; -a
+\end{pmatrix}\end{split}\]</div>
+<p>we define a corresponding array <cite>s = { a, b ,c }</cite>. Then the density matrix is</p>
+<div class="math">
+\[\begin{split}\rho = \begin{pmatrix}
+s[0] &amp; s[1] + i s[2] \\
+s[1] - i s[2] &amp; -s[0]
+\end{pmatrix}.\end{split}\]</div>
+</div>
+<div class="section" id="polarization-vector">
+<h3>3.2.2.2. Polarization Vector<a class="headerlink" href="#polarization-vector" title="Permalink to this headline">¶</a></h3>
+<p>Polarization vector <span class="math">\(\vec P\)</span> is</p>
+<div class="math">
+\[\rho = 1 + \vec \sigma \cdot \vec P,\]</div>
+<p>so that <cite>vec P = { b, -c , a }</cite>.</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Relation to My Convention</p>
+<p>It is related to my convention by</p>
+<div class="last highlight-c++"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">P</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-stepper-senario">
+<h2>3.2.3. Numerical - Stepper Senario<a class="headerlink" href="#numerical-stepper-senario" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="euler-method">
+<h3>3.2.3.1. Euler Method<a class="headerlink" href="#euler-method" title="Permalink to this headline">¶</a></h3>
+<p>We start from the equation of motion</p>
+<div class="math">
+\[i\partial_z \rho = \left[ H, \rho \right],\]</div>
+<p>where we denote</p>
+<div class="math">
+\[\begin{split}\rho &amp;= \begin{pmatrix}
+a &amp; b + i c\\
+b - i c &amp; -a
+\end{pmatrix} \\
+H &amp; = \begin{pmatrix}
+h &amp; \bar h + i \tilde h\\
+\bar h - i\tilde h &amp; - h
+\end{pmatrix}.\end{split}\]</div>
+<p>Calcuation of the commutator shows that</p>
+<div class="math">
+\[\begin{split}\left[ H ,\rho\right] = 2 \begin{pmatrix}
+i( \tilde h b - \bar h c) &amp; b h - a \bar h + i( h c - a \tilde h) \\
+c.c. &amp;  - i( \tilde h b - \bar h c)
+\end{pmatrix},\end{split}\]</div>
+<p>from which we conclude that</p>
+<div class="math">
+\[\begin{split}\partial_z a &amp;= 2 ( \tilde h b - \bar h c ) \\
+\partial_z b &amp;= 2 ( h c - a \tilde h ) \\
+\partial_z c &amp;= 2 ( h b - a \bar h ).\end{split}\]</div>
+<p>Then we discretize each equations using Euler method.</p>
+</div>
+<div class="section" id="evolution-operator">
+<h3>3.2.3.2. Evolution Operator<a class="headerlink" href="#evolution-operator" title="Permalink to this headline">¶</a></h3>
+<p>The same calculation can be achieved by using the evolution operator <span class="math">\(U(t) = \exp (-i H t)\)</span>.</p>
+<div class="note admonition">
+<p class="first admonition-title">Evolution Operator</p>
+<p>Evolution operator <span class="math">\(U(t)\)</span> is used to evolve states</p>
+<div class="math">
+\[\rho(t) = U(t)\rho(t_0) U(t)^\dagger\]</div>
+<p>if Hamiltonian doesn’t depend on time.</p>
+<p>As a numerical algorithm, we can use the finite difference form</p>
+<div class="last math">
+\[\rho(t+\Delta t) = U(\Delta t) \rho(t)  U(\Delta t)^\dagger.\]</div>
+</div>
+<p>Since the Hamiltonian in our simple calcuations is always two by two, the exact form of the algorithm can be written down exactly.</p>
+<p>The evolution operator itself is</p>
+<div class="math">
+\[\begin{split}U(\Delta t) = \begin{pmatrix}
+\cos (h \Delta t) - i\frac{h[0] \sin( h \Delta t) }{ h } &amp; \frac{ -i h[1] + h[2] \sin ( h \Delta t ) }{  h } \\
+\frac{ -i h[1] - h[2] \sin ( h \Delta t ) }{  h } &amp;  \cos (h \Delta t) + i\frac{h[0] \sin( h \Delta t) }{ h }
+\end{pmatrix}\end{split}\]</div>
+<p>where we defined <span class="math">\(h = \sqrt{ h0^2+h1^2+h_2^2 }\)</span> for short.</p>
+<p>The evolved density matrix obtained quite a long expression but it definitely can be implemented.</p>
+<div class="math">
+\[\begin{split}\rho(t + \Delta t) = \left(
+\begin{array}{cc}
+\frac{\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{s0} \text{h1}^2-\text{h0} \text{s1} \text{h1}+\text{h2} (\text{h2} \text{s0}-\text{h0} \text{s2})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h2} \text{s1}-\text{h1} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} &amp; \frac{(\text{h1}+\text{h2} i) (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left((\text{s1}+i \text{s2}) \text{h0}^2-\text{h0} (\text{h1}+\text{h2} i) \text{s0}+(\text{h1}+\text{h2} i) i (\text{h1} \text{s2}-\text{h2} \text{s1})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(-\text{h2} \text{s0}+\text{h1} i \text{s0}-i \text{h0} \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
+(\text{s1}-i \text{s2}) \cos ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+\frac{\left(-(\text{s1}-i \text{s2}) \text{h0}^2+2 (\text{h1}-i \text{h2}) \text{s0} \text{h0}+(\text{h1}-i \text{h2})^2 (\text{s1}+i \text{s2})\right) \sin ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\text{h0}^2+\text{h1}^2+\text{h2}^2}+\frac{(-\text{h2} \text{s0}+\text{h1} (-i) \text{s0}+\text{h0} i \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}} &amp; \frac{-\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{h0} \text{s1} \text{h1}-\text{h1}^2 \text{s0}+\text{h2} (\text{h0} \text{s2}-\text{h2} \text{s0})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h1} \text{s2}-\text{h2} \text{s1}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
+\end{array}
+\right)\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="numerical-iteration-senario">
+<h2>3.2.4. Numerical - Iteration Senario<a class="headerlink" href="#numerical-iteration-senario" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="single-neutrino-forward-then-backward">
-<h3>3.2.2.1. Single Neutrino Forward then Backward<a class="headerlink" href="#single-neutrino-forward-then-backward" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.4.1. Single Neutrino Forward then Backward<a class="headerlink" href="#single-neutrino-forward-then-backward" title="Permalink to this headline">¶</a></h3>
 <div class="note admonition">
 <p class="first admonition-title">Algrimth</p>
 <ol class="last arabic simple">
@@ -331,7 +437,7 @@ TeX: {
 </div>
 </div>
 <div class="section" id="single-neutrino-simultaneous">
-<h3>3.2.2.2. Single Neutrino Simultaneous<a class="headerlink" href="#single-neutrino-simultaneous" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.4.2. Single Neutrino Simultaneous<a class="headerlink" href="#single-neutrino-simultaneous" title="Permalink to this headline">¶</a></h3>
 <div class="note admonition">
 <p class="first admonition-title">Algrimth</p>
 <ol class="last arabic simple">
@@ -419,7 +525,7 @@ Your browser does not support HTML5 video.
 </div>
 </div>
 <div class="section" id="verify-results">
-<h2>3.2.3. Verify Results<a class="headerlink" href="#verify-results" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.5. Verify Results<a class="headerlink" href="#verify-results" title="Permalink to this headline">¶</a></h2>
 <p>The equilibrium results can be verified using Mathematica solver. I simply feed in the initial conditions at <span class="math">\(z=0\)</span> and calculate forward to the reflection surace at <span class="math">\(z=L\)</span>. The two neutrino beams should be at the same state.</p>
 <p>Result is verified using Mathematica code.</p>
 <div class="figure align-center" id="id2">
@@ -428,7 +534,7 @@ Your browser does not support HTML5 video.
 </div>
 </div>
 <div class="section" id="references-and-notes">
-<h2>3.2.4. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.6. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
