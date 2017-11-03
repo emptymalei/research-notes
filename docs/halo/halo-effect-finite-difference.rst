@@ -177,8 +177,14 @@ The evolved density matrix obtained quite a long expression but it definitely ca
 To obtain a simpler form, we can write all matrices as Pauli matrices.
 
 .. math::
-   U = \cos(h \Delta t) I  -i \frac{ h[1] \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h[0] \sin(h \Delta t) }{ h} \sigma_3.
+   U &= \cos(h \Delta t) I  -i \frac{ h[1] \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h[0] \sin(h \Delta t) }{ h} \sigma_3 \\
+   & = u_0 I + u_1 \sigma_1 + u_2 \sigma_2 + u_3 \sigma_3.
 
+
+.. admonition:: Tedious
+   :class: warning
+
+   Even with Pauli matrices the calculation is tedious.
 
 
 
