@@ -188,6 +188,18 @@ To obtain a simpler form, we can write all matrices as Pauli matrices.
 
 
 
+We could Taylor series of the evolution operator,
+
+.. math::
+   U = 1 - i H(t) \Delta t.
+
+We work out the evolved density matrix,
+
+.. math::
+   
+
+
+
 Numerical - Iteration Senario
 -----------------------------------
 

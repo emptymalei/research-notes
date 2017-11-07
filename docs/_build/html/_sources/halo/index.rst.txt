@@ -7,3 +7,4 @@ Halo Effect
    halo-effect-ann.rst
    halo-effect-finite-difference.rst
    halo-effect-analytical-methods.rst
+   halo-questions.rst
