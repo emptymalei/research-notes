@@ -196,7 +196,7 @@ We could Taylor series of the evolution operator,
 We work out the evolved density matrix,
 
 .. math::
-   
+
 
 
 
@@ -354,6 +354,104 @@ Result is verified using Mathematica code.
    :align: center
 
    C++ code validation using mathematica for :math:`\mu=20`.
+
+
+Damping in Time
+------------------------------------------
+
+.. admonition:: The Problem
+   :class: note
+
+   The problem I encountered is that some of the calculations show that approaching to equilibrium can be extremely slow due to some kind of oscillation behavior.
+
+   .. raw:: html
+
+      <video width="100%" controls>
+      <source src="../_static/assets/halo/halo-effect-finite-difference/halo_parallel_REFL0.200000_ITER10000000_STEPS50000_RANGE5.000000_TH_20_t2017-11-5-17-59-36.csv.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+      </video>
+      <p class="caption"> The system is kind of oscillatory in time. Reflection coefficient refl=0.2, mu = 1.0, within z range [0,5]. </p>
+
+
+Average the past two steps to slow down the time evolution. Maybe it can prevent the oscillations in time.
+
+The average algorithm takes on parameter :math:`\alpha`,
+
+.. math::
+   \rho(t_{n-1}) = (1-\alpha)\rho(t_{n-1}) + \alpha \rho(t_{n-2}).
+
+I can verify that the code is producing the correct results by setting :math:`\alpha=0` and compare the result with my previous code. They are producing exact the same results.
+
+.. raw:: html
+
+   <video width="100%" controls>
+   <source src="../_static/assets/halo/halo-effect-finite-difference/damping-method-mu-0.1-refl-0.01-average-alpha-0-no-average.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+   </video>
+   <p class="caption">Comparing damping method with alpha=0 (effectively no damping) and original code (without damping) for neutrino potential mu =0.1 and reflection coefficient refl=0.01  </p>
+
+I also verified that the final equilibrium states produced by new code with damping and the original code without damping are the same.
+
+.. image:: assets/halo-effect-finite-difference/neutrino-headon-avg1-alpha-0p5-vs-noavg-refl0p01-mu-p1.png
+   :width: 49%
+.. image:: assets/halo-effect-finite-difference/neutrino-headon-avg1-alpha-0p5-vs-noavg-refl0p1-mu0p1.png
+   :width: 49%
+.. image:: assets/halo-effect-finite-difference/neutrino-headon-avg1-alpha-0p5-vs-noavg-refl0p01-mu1.png
+   :width: 49%
+.. image:: assets/halo-effect-finite-difference/neutrino-headon-avg1-alpha-0p5-vs-noavg-refl0p1-mu1.png
+   :width: 49%
+
+
+However, the new algoritm seems to be slow. It's expected though.
+
+
+.. raw:: html
+
+   <video width="100%" controls>
+   <source src="../_static/assets/halo/halo-effect-finite-difference/damping-method-mu-0.1-refl-0.1-average-alpha-0.5-no-average.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+   </video>
+   <p class="caption">Comparing damping method with alpha=0.5 and no damping for neutrino potential mu =0.1 and reflection coefficient refl=0.1  </p>
+
+.. raw:: html
+
+   <video width="100%" controls>
+   <source src="../_static/assets/halo/halo-effect-finite-difference/damping-method-mu-0.1-refl-0.01-average-alpha-0.5-no-average.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+   </video>
+   <p class="caption">Comparing damping method with alpha=0.5 and no damping for neutrino potential mu =0.1 and reflection coefficient refl=0.01  </p>
+
+
+.. raw:: html
+
+   <video width="100%" controls>
+   <source src="../_static/assets/halo/halo-effect-finite-difference/damping-method-mu-1-refl-0.1-average-alpha-0.5-no-average.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+   </video>
+   <p class="caption">Comparing damping method with alpha=0.5 and no damping for neutrino potential mu =1.0 and reflection coefficient refl=0.1  </p>
+
+
+.. raw:: html
+
+   <video width="100%" controls>
+   <source src="../_static/assets/halo/halo-effect-finite-difference/damping-method-mu-1-refl-0.01-average-alpha-0.5-no-average.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+   </video>
+   <p class="caption">Comparing damping method with alpha=0.5 and no damping for neutrino potential mu =1.0 and reflection coefficient refl=0.01  </p>
+
+
+
+
+To make use of this new damping mechanism, I need to recalculate
+
+```
+refl = 0.2
+mu = 1.0
+range = 5
+```
+
+
+
 
 
 References and Notes
