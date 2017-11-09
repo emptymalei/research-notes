@@ -157,21 +157,11 @@ The evolution operator itself is
 
 .. math::
    U(\Delta t) = \begin{pmatrix}
-   \cos (h \Delta t) - i\frac{h[0] \sin( h \Delta t) }{ h } & \frac{ -i h[1] + h[2] \sin ( h \Delta t ) }{  h } \\
-   \frac{ -i h[1] - h[2] \sin ( h \Delta t ) }{  h } &  \cos (h \Delta t) + i\frac{h[0] \sin( h \Delta t) }{ h }
+   \cos (h \Delta t) - i\frac{h[0] \sin( h \Delta t) }{ h } & \frac{ (-i h[1] + h[2] ) \sin ( h \Delta t ) }{  h } \\
+   \frac{ (-i h[1] - h[2]) \sin ( h \Delta t ) }{  h } &  \cos (h \Delta t) + i\frac{h[0] \sin( h \Delta t) }{ h }
    \end{pmatrix}
 
 where we defined :math:`h = \sqrt{ h0^2+h1^2+h_2^2 }` for short.
-
-The evolved density matrix obtained quite a long expression but it definitely can be implemented.
-
-.. math::
-   \rho(t + \Delta t) = \left(
-   \begin{array}{cc}
-   \frac{\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{s0} \text{h1}^2-\text{h0} \text{s1} \text{h1}+\text{h2} (\text{h2} \text{s0}-\text{h0} \text{s2})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h2} \text{s1}-\text{h1} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} & \frac{(\text{h1}+\text{h2} i) (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left((\text{s1}+i \text{s2}) \text{h0}^2-\text{h0} (\text{h1}+\text{h2} i) \text{s0}+(\text{h1}+\text{h2} i) i (\text{h1} \text{s2}-\text{h2} \text{s1})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(-\text{h2} \text{s0}+\text{h1} i \text{s0}-i \text{h0} \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
-   (\text{s1}-i \text{s2}) \cos ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+\frac{\left(-(\text{s1}-i \text{s2}) \text{h0}^2+2 (\text{h1}-i \text{h2}) \text{s0} \text{h0}+(\text{h1}-i \text{h2})^2 (\text{s1}+i \text{s2})\right) \sin ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\text{h0}^2+\text{h1}^2+\text{h2}^2}+\frac{(-\text{h2} \text{s0}+\text{h1} (-i) \text{s0}+\text{h0} i \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}} & \frac{-\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{h0} \text{s1} \text{h1}-\text{h1}^2 \text{s0}+\text{h2} (\text{h0} \text{s2}-\text{h2} \text{s0})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h1} \text{s2}-\text{h2} \text{s1}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
-   \end{array}
-   \right)
 
 
 To obtain a simpler form, we can write all matrices as Pauli matrices.
@@ -180,22 +170,46 @@ To obtain a simpler form, we can write all matrices as Pauli matrices.
    U &= \cos(h \Delta t) I  -i \frac{ h[1] \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h[0] \sin(h \Delta t) }{ h} \sigma_3 \\
    & = u_0 I + u_1 \sigma_1 + u_2 \sigma_2 + u_3 \sigma_3.
 
-
-.. admonition:: Tedious
-   :class: warning
-
-   Even with Pauli matrices the calculation is tedious.
-
-
-
-We could Taylor series of the evolution operator,
+For the purpose of formalism, we denote density matrix as :math:`\rho = P_i \sigma_i`. The density matrix at :math:`t+\Delta t` is
 
 .. math::
-   U = 1 - i H(t) \Delta t.
+   \rho(t+\Delta t) &= U_t(\Delta t) \rho(t) U_t^\dagger(\Delta t) \\
+   &= ( cI + s u_i \sigma_i ) \rho_k \sigma_k ( c I + s u_j^* \sigma_j ) \\
+   &= c^2 \rho_k \sigma_k + s^2 \left[ \rho_n + \rho_k ( u_k^* u_n - u_k u_n^* ) \right]\sigma_n \\
+   & = \left[  \rho_n + s^2 \rho_k (  u_k^* u_n - u_k u_n^*  ) \right]\sigma_n,
 
-We work out the evolved density matrix,
+where :math:`c=\cos( h \Delta t )`, :math:`s = \sin(h\Delta t)`, :math:`u_{1,3} =-i h_{1,3}/h`, :math:`u_2 = i h_2/h`, and :math:`h=\sqrt{h_1^2 + h_2^2 + h_3^2}`.
 
-.. math::
+
+
+
+.. admonition:: The Tedious Result Using Mathematica
+   :class: toggle
+
+   The evolved density matrix obtained quite a long expression but it definitely can be implemented.
+
+   .. math::
+      \rho(t + \Delta t) = \left(
+      \begin{array}{cc}
+      \frac{\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{s0} \text{h1}^2-\text{h0} \text{s1} \text{h1}+\text{h2} (\text{h2} \text{s0}-\text{h0} \text{s2})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h2} \text{s1}-\text{h1} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} & \frac{(\text{h1}+\text{h2} i) (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left((\text{s1}+i \text{s2}) \text{h0}^2-\text{h0} (\text{h1}+\text{h2} i) \text{s0}+(\text{h1}+\text{h2} i) i (\text{h1} \text{s2}-\text{h2} \text{s1})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(-\text{h2} \text{s0}+\text{h1} i \text{s0}-i \text{h0} \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
+      (\text{s1}-i \text{s2}) \cos ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+\frac{\left(-(\text{s1}-i \text{s2}) \text{h0}^2+2 (\text{h1}-i \text{h2}) \text{s0} \text{h0}+(\text{h1}-i \text{h2})^2 (\text{s1}+i \text{s2})\right) \sin ^2\left(\text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\text{h0}^2+\text{h1}^2+\text{h2}^2}+\frac{(-\text{h2} \text{s0}+\text{h1} (-i) \text{s0}+\text{h0} i \text{s1}+\text{h0} \text{s2}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)}{\sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}} & \frac{-\text{h0} (\text{h0} \text{s0}+\text{h1} \text{s1}+\text{h2} \text{s2})+\left(\text{h0} \text{s1} \text{h1}-\text{h1}^2 \text{s0}+\text{h2} (\text{h0} \text{s2}-\text{h2} \text{s0})\right) \cos \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right)+(\text{h1} \text{s2}-\text{h2} \text{s1}) \sin \left(2 \text{dt} \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}\right) \sqrt{\text{h0}^2+\text{h1}^2+\text{h2}^2}}{\text{h0}^2+\text{h1}^2+\text{h2}^2} \\
+      \end{array}
+      \right)
+
+
+
+
+
+.. admonition:: First Order Expansion
+   :class: note
+
+   We could Taylor series of the evolution operator,
+
+   .. math::
+      U = 1 - i H(t) \Delta t.
+
+   We work out the evolved density matrix.
+
 
 
 
