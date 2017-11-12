@@ -464,9 +464,25 @@ mu = 1.0
 range = 5
 ```
 
+Varying Parameters
+---------------------------------------
+
+.. figure:: assets/halo-effect-finite-difference/varying-relf-for-mu-1.png
+   :align: center
+
+   Fix :math:`\mu=1`
 
 
+.. figure:: assets/halo-effect-finite-difference/varying-relf-for-mu-0.5.png
+   :align: center
 
+   Fix :math:`\mu=0.5`
+
+
+.. figure:: assets/halo-effect-finite-difference/varying-relf-for-mu-0.1.png
+   :align: center
+
+   Fix :math:`\mu=0.1`
 
 References and Notes
 ---------------------------------
