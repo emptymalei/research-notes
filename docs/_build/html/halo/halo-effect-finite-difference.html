@@ -30,7 +30,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.3. Halo Effect - Analytical Methods" href="halo-effect-analytical-methods.html" />
+    <link rel="next" title="3.3. Halo Effect in Line Model - Finite Difference" href="halo-effect-finite-difference-line-model.html" />
     <link rel="prev" title="3.1. Halo Effect - Artificial Neural Network" href="halo-effect-ann.html" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -223,8 +223,9 @@ TeX: {
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Halo Effect</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="halo-effect-ann.html">3.1. Halo Effect - Artificial Neural Network</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Halo Effect - Finite Difference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="halo-effect-analytical-methods.html">3.3. Halo Effect - Analytical Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="halo-questions.html">3.4. Questions about Halo Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="halo-effect-finite-difference-line-model.html">3.3. Halo Effect in Line Model - Finite Difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="halo-effect-analytical-methods.html">3.4. Halo Effect - Analytical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="halo-questions.html">3.5. Questions about Halo Problem</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gravity/index.html">4. Gravity</a><ul>
@@ -252,12 +253,13 @@ TeX: {
 <li><a class="reference internal" href="#">3.2. Halo Effect - Finite Difference</a><ul>
 <li><a class="reference internal" href="#models">3.2.1. Models</a><ul>
 <li><a class="reference internal" href="#toy-model">3.2.1.1. Toy Model</a></li>
-<li><a class="reference internal" href="#model-with-collective-oscillations">3.2.1.2. Model with Collective Oscillations</a></li>
+<li><a class="reference internal" href="#antineutrinos-or-spectrum">3.2.1.2. Antineutrinos or Spectrum</a></li>
+<li><a class="reference internal" href="#model-with-collective-oscillations">3.2.1.3. Model with Collective Oscillations</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#numerical-state-convention">3.2.2. Numerical - State Convention</a><ul>
-<li><a class="reference internal" href="#convention-used-in-code">3.2.2.1. Convention Used in Code</a></li>
-<li><a class="reference internal" href="#polarization-vector">3.2.2.2. Polarization Vector</a></li>
+<li><a class="reference internal" href="#convention-i-used-in-code">3.2.2.1. Convention I Used in Code</a></li>
+<li><a class="reference internal" href="#convention-ii-polarization-vector">3.2.2.2. Convention II: Polarization Vector</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#numerical-stepper-senario">3.2.3. Numerical - Stepper Senario</a><ul>
@@ -289,7 +291,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="halo-effect-analytical-methods.html" title="Next Chapter: 3.3. Halo Effect - Analytical Methods"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3.3. Halo Eff... &raquo;</span>
+    <a href="halo-effect-finite-difference-line-model.html" title="Next Chapter: 3.3. Halo Effect in Line Model - Finite Difference"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3.3. Halo Eff... &raquo;</span>
     </a>
   </li>
               
@@ -312,10 +314,6 @@ TeX: {
 <h1>3.2. Halo Effect - Finite Difference<a class="headerlink" href="#halo-effect-finite-difference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="models">
 <h2>3.2.1. Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="toy-model">
-<h3>3.2.1.1. Toy Model<a class="headerlink" href="#toy-model" title="Permalink to this headline">¶</a></h3>
-<p>The toy model we use is neutrino-only, right forward beam and reflection.</p>
-<p>For single angle neutrino-only emission, this model can also work for the tilted emission simply by rescale the neutrino self-interaction by <span class="math">\(\cos\alpha\)</span> where <span class="math">\(\alpha\)</span> the angle of forward and backward beams.</p>
 <div class="note admonition">
 <p class="first admonition-title">Some Seasoning</p>
 <ul class="last simple">
@@ -323,17 +321,25 @@ TeX: {
 <li>[ ] Neutrino and anti-neutrino beams are in different directions</li>
 </ul>
 </div>
+<div class="section" id="toy-model">
+<h3>3.2.1.1. Toy Model<a class="headerlink" href="#toy-model" title="Permalink to this headline">¶</a></h3>
+<p>The toy model we use is neutrino-only, right forward beam and reflection.</p>
+<p>For single angle neutrino-only emission, this model can also work for the tilted emission simply by rescale the neutrino self-interaction by <span class="math">\(\cos\alpha\)</span> where <span class="math">\(\alpha\)</span> the angle of forward and backward beams.</p>
+</div>
+<div class="section" id="antineutrinos-or-spectrum">
+<h3>3.2.1.2. Antineutrinos or Spectrum<a class="headerlink" href="#antineutrinos-or-spectrum" title="Permalink to this headline">¶</a></h3>
+<p>The simple model would be two beams model with left and right beams having different energies.</p>
 </div>
 <div class="section" id="model-with-collective-oscillations">
-<h3>3.2.1.2. Model with Collective Oscillations<a class="headerlink" href="#model-with-collective-oscillations" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.1.3. Model with Collective Oscillations<a class="headerlink" href="#model-with-collective-oscillations" title="Permalink to this headline">¶</a></h3>
 <p>Introduce multiangles and left-right asymmetries to the system.</p>
 </div>
 </div>
 <div class="section" id="numerical-state-convention">
 <h2>3.2.2. Numerical - State Convention<a class="headerlink" href="#numerical-state-convention" title="Permalink to this headline">¶</a></h2>
 <p>We use traceless density matrix. There are two senarios to keep track of the elements.</p>
-<div class="section" id="convention-used-in-code">
-<h3>3.2.2.1. Convention Used in Code<a class="headerlink" href="#convention-used-in-code" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="convention-i-used-in-code">
+<h3>3.2.2.1. Convention I Used in Code<a class="headerlink" href="#convention-i-used-in-code" title="Permalink to this headline">¶</a></h3>
 <p>For any tracelesstwo by two matrix with real diagonal elements such as density matrix,</p>
 <div class="math">
 \[\begin{split}\rho = \begin{pmatrix}
@@ -347,15 +353,15 @@ s[0] &amp; s[1] + i s[2] \\
 s[1] - i s[2] &amp; -s[0]
 \end{pmatrix}.\end{split}\]</div>
 </div>
-<div class="section" id="polarization-vector">
-<h3>3.2.2.2. Polarization Vector<a class="headerlink" href="#polarization-vector" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="convention-ii-polarization-vector">
+<h3>3.2.2.2. Convention II: Polarization Vector<a class="headerlink" href="#convention-ii-polarization-vector" title="Permalink to this headline">¶</a></h3>
 <p>Polarization vector <span class="math">\(\vec P\)</span> is</p>
 <div class="math">
 \[\rho = 1 + \vec \sigma \cdot \vec P,\]</div>
 <p>so that <cite>vec P = { b, -c , a }</cite>.</p>
 <div class="toggle admonition">
-<p class="first admonition-title">Relation to My Convention</p>
-<p>It is related to my convention by</p>
+<p class="first admonition-title">Relation to My Previous Convention I</p>
+<p>It is related to my convention I by</p>
 <div class="last highlight-c++"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">P</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -411,13 +417,13 @@ c.c. &amp;  - i( \tilde h b - \bar h c)
 <p>The evolution operator itself is</p>
 <div class="math">
 \[\begin{split}U(\Delta t) = \begin{pmatrix}
-\cos (h \Delta t) - i\frac{h[0] \sin( h \Delta t) }{ h } &amp; \frac{ (-i h[1] + h[2] ) \sin ( h \Delta t ) }{  h } \\
-\frac{ (-i h[1] - h[2]) \sin ( h \Delta t ) }{  h } &amp;  \cos (h \Delta t) + i\frac{h[0] \sin( h \Delta t) }{ h }
+\cos (h \Delta t) - i\frac{h_3 \sin( h \Delta t) }{ h } &amp; \frac{ -i( h_1 + i h_2 ) \sin ( h \Delta t ) }{  h } \\
+\frac{ -i( h_1 -i h_2) \sin ( h \Delta t ) }{  h } &amp;  \cos (h \Delta t) + i\frac{h_3 \sin( h \Delta t) }{ h }
 \end{pmatrix}\end{split}\]</div>
-<p>where we defined <span class="math">\(h = \sqrt{ h0^2+h1^2+h_2^2 }\)</span> for short.</p>
+<p>where we defined <span class="math">\(h = \sqrt{ h_1^2+h_2^2+h_3^2 }\)</span> for short.</p>
 <p>To obtain a simpler form, we can write all matrices as Pauli matrices.</p>
 <div class="math">
-\[\begin{split}U &amp;= \cos(h \Delta t) I  -i \frac{ h[1] \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h[0] \sin(h \Delta t) }{ h} \sigma_3 \\
+\[\begin{split}U &amp;= \cos(h \Delta t) I  -i \frac{ h_1 \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h_3 \sin(h \Delta t) }{ h} \sigma_3 \\
 &amp; = u_0 I + u_1 \sigma_1 + u_2 \sigma_2 + u_3 \sigma_3.\end{split}\]</div>
 <p>For the purpose of formalism, we denote density matrix as <span class="math">\(\rho = P_i \sigma_i\)</span>. The density matrix at <span class="math">\(t+\Delta t\)</span> is</p>
 <div class="math">
@@ -438,10 +444,11 @@ u_3 &amp;= -i \sin(h\Delta t) u_3'.\end{split}\]</div>
 <p class="first admonition-title">The Code</p>
 <p>The vectors about h is consistent with my code. But the state vector I calculated is different. The actual update rule should be</p>
 <div class="last math">
-\[\rho(t+\Delta t)[0] = \cos( 2 h \Delta t) \rho_n +  2 \sin^2(h \Delta t) u'_i \rho_i u'_n\]</div>
+\[\begin{split}\rho(t+\Delta t)[0] &amp;= \cos( 2 h \Delta t) \rho[0] +  2 \sin^2(h \Delta t) u'_i \rho_i u'[0] \\\end{split}\]</div>
 </div>
 <div class="toggle admonition">
 <p class="first admonition-title">The Tedious Result Using Mathematica</p>
+<p><strong>For my previous Convention I.</strong></p>
 <p>The evolved density matrix obtained quite a long expression but it definitely can be implemented.</p>
 <div class="last math">
 \[\begin{split}\rho(t + \Delta t) = \left(

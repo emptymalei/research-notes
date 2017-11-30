@@ -5,6 +5,13 @@ Halo Effect - Finite Difference
 Models
 ------------------------
 
+.. admonition:: Some Seasoning
+   :class: note
+
+   - [ ] Add in anti-neutrinos to the beams
+   - [ ] Neutrino and anti-neutrino beams are in different directions
+
+
 
 Toy Model
 ~~~~~~~~~~~~~~~~~
@@ -13,11 +20,17 @@ The toy model we use is neutrino-only, right forward beam and reflection.
 
 For single angle neutrino-only emission, this model can also work for the tilted emission simply by rescale the neutrino self-interaction by :math:`\cos\alpha` where :math:`\alpha` the angle of forward and backward beams.
 
-.. admonition:: Some Seasoning
-   :class: note
 
-   - [ ] Add in anti-neutrinos to the beams
-   - [ ] Neutrino and anti-neutrino beams are in different directions
+
+Antineutrinos or Spectrum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+The simple model would be two beams model with left and right beams having different energies.
+
+
+
+
 
 
 Model with Collective Oscillations
@@ -34,7 +47,7 @@ Numerical - State Convention
 
 We use traceless density matrix. There are two senarios to keep track of the elements.
 
-Convention Used in Code
+Convention I Used in Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For any tracelesstwo by two matrix with real diagonal elements such as density matrix,
@@ -57,8 +70,8 @@ we define a corresponding array `s = { a, b ,c }`. Then the density matrix is
 
 
 
-Polarization Vector
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convention II: Polarization Vector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Polarization vector :math:`\vec P` is
@@ -69,10 +82,10 @@ Polarization vector :math:`\vec P` is
 so that `\vec P = { b, -c , a }`.
 
 
-.. admonition:: Relation to My Convention
+.. admonition:: Relation to My Previous Convention I
    :class: toggle
 
-   It is related to my convention by
+   It is related to my convention I by
 
    .. code-block:: c++
 
@@ -157,17 +170,17 @@ The evolution operator itself is
 
 .. math::
    U(\Delta t) = \begin{pmatrix}
-   \cos (h \Delta t) - i\frac{h[0] \sin( h \Delta t) }{ h } & \frac{ (-i h[1] + h[2] ) \sin ( h \Delta t ) }{  h } \\
-   \frac{ (-i h[1] - h[2]) \sin ( h \Delta t ) }{  h } &  \cos (h \Delta t) + i\frac{h[0] \sin( h \Delta t) }{ h }
+   \cos (h \Delta t) - i\frac{h_3 \sin( h \Delta t) }{ h } & \frac{ -i( h_1 + i h_2 ) \sin ( h \Delta t ) }{  h } \\
+   \frac{ -i( h_1 -i h_2) \sin ( h \Delta t ) }{  h } &  \cos (h \Delta t) + i\frac{h_3 \sin( h \Delta t) }{ h }
    \end{pmatrix}
 
-where we defined :math:`h = \sqrt{ h0^2+h1^2+h_2^2 }` for short.
+where we defined :math:`h = \sqrt{ h_1^2+h_2^2+h_3^2 }` for short.
 
 
 To obtain a simpler form, we can write all matrices as Pauli matrices.
 
 .. math::
-   U &= \cos(h \Delta t) I  -i \frac{ h[1] \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h[0] \sin(h \Delta t) }{ h} \sigma_3 \\
+   U &= \cos(h \Delta t) I  -i \frac{ h_1 \sin(h \Delta t) }{h} \sigma_1 + i \frac{ h_2\sin(h \Delta t) }{h} \sigma_2- i \frac{ h_3 \sin(h \Delta t) }{ h} \sigma_3 \\
    & = u_0 I + u_1 \sigma_1 + u_2 \sigma_2 + u_3 \sigma_3.
 
 For the purpose of formalism, we denote density matrix as :math:`\rho = P_i \sigma_i`. The density matrix at :math:`t+\Delta t` is
@@ -199,7 +212,7 @@ Then we obtain the equation
    The vectors about h is consistent with my code. But the state vector I calculated is different. The actual update rule should be
 
    .. math::
-      \rho(t+\Delta t)[0] = \cos( 2 h \Delta t) \rho_n +  2 \sin^2(h \Delta t) u'_i \rho_i u'_n
+      \rho(t+\Delta t)[0] &= \cos( 2 h \Delta t) \rho[0] +  2 \sin^2(h \Delta t) u'_i \rho_i u'[0] \\
 
 
 
@@ -207,6 +220,8 @@ Then we obtain the equation
 
 .. admonition:: The Tedious Result Using Mathematica
    :class: toggle
+
+   **For my previous Convention I.**
 
    The evolved density matrix obtained quite a long expression but it definitely can be implemented.
 
