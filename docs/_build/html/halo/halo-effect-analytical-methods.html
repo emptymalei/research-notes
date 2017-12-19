@@ -251,7 +251,13 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">3.4. Halo Effect - Analytical Methods</a><ul>
-<li><a class="reference internal" href="#references-and-notes">3.4.1. References and Notes</a></li>
+<li><a class="reference internal" href="#linear-stability">3.4.1. Linear Stability</a><ul>
+<li><a class="reference internal" href="#single-beam-both-start-with-electron-flavor">3.4.1.1. Single Beam Both Start with Electron Flavor</a></li>
+<li><a class="reference internal" href="#single-beam-undetermined-back-beam">3.4.1.2. Single Beam Undetermined Back Beam</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nonlocal-boundary-value-problem">3.4.2. Nonlocal Boundary Value Problem</a></li>
+<li><a class="reference internal" href="#references-and-notes">3.4.3. References and Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -288,8 +294,124 @@ TeX: {
       
   <div class="section" id="halo-effect-analytical-methods">
 <h1>3.4. Halo Effect - Analytical Methods<a class="headerlink" href="#halo-effect-analytical-methods" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="references-and-notes">
-<h2>3.4.1. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-stability">
+<h2>3.4.1. Linear Stability<a class="headerlink" href="#linear-stability" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="single-beam-both-start-with-electron-flavor">
+<h3>3.4.1.1. Single Beam Both Start with Electron Flavor<a class="headerlink" href="#single-beam-both-start-with-electron-flavor" title="Permalink to this headline">¶</a></h3>
+<p>We assume that both the forward and backward beams are starting from electron flavor.</p>
+<div class="math">
+\[\begin{split}\rho_F &amp;= \frac{1}{2}\begin{pmatrix}
+1 &amp; \epsilon_F \\
+\epsilon_F^* &amp; -1
+\end{pmatrix} \\
+\rho_B &amp;= \frac{1}{2}\begin{pmatrix}
+1 &amp; \epsilon_B \\
+\epsilon_B^* &amp; -1
+\end{pmatrix}.\end{split}\]</div>
+<p>The linearized equation of motion is</p>
+<div class="math">
+\[\begin{split}i\partial_z \begin{pmatrix}
+\epsilon_F \\
+\epsilon_B
+\end{pmatrix} = \begin{pmatrix}
+R \mu + \eta &amp; - R \mu \\
+\mu &amp; -(\mu+ \eta)
+\end{pmatrix} \begin{pmatrix}
+\epsilon_F \\
+\epsilon_B
+\end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(\eta\)</span> is the hierarchy and all quantities are scaled by <span class="math">\(\omega_v\)</span>.</p>
+<p>We can solve the eigenvalues of this problem. To obtain complex solutions, we require <span class="math">\(\Delta &lt; 0\)</span>, which translates to</p>
+<div class="math">
+\[\mu_-&lt; \mu &lt;\mu_+,\]</div>
+<p>where</p>
+<div class="math">
+\[\mu_\pm = \frac{ -2 (1+R) \eta \pm 8 \sqrt{ R }  }{ (1-R)^2 }.\]</div>
+<div class="figure align-center" id="id1">
+<img alt="../_images/table-of-mu-values-for-instability.jpg" src="../_images/table-of-mu-values-for-instability.jpg" />
+<p class="caption"><span class="caption-number">Fig. 3.13 </span><span class="caption-text">Table of {<span class="math">\(\mu_{-}\)</span>, <span class="math">\(\mu_{+}\)</span>}.</span></p>
+</div>
+<p>We plot out growth rate as a function of <span class="math">\(R\)</span> and <span class="math">\(\mu\)</span>, which shows that such so called instabilities only exist for normal hierarchy.</p>
+<div class="figure align-center" id="id2">
+<img alt="../_images/growth-rate-mu-refl-nh.jpg" src="../_images/growth-rate-mu-refl-nh.jpg" />
+<p class="caption"><span class="caption-number">Fig. 3.14 </span><span class="caption-text">For normal hierarchy. Vacuum mixing angle is set to 0.</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="../_images/growth-rate-mu-refl-ih.jpg" src="../_images/growth-rate-mu-refl-ih.jpg" />
+<p class="caption"><span class="caption-number">Fig. 3.15 </span><span class="caption-text">For inverted hierarchy. Vacuum mixing angle is set to 0.</span></p>
+</div>
+</div>
+<div class="section" id="single-beam-undetermined-back-beam">
+<h3>3.4.1.2. Single Beam Undetermined Back Beam<a class="headerlink" href="#single-beam-undetermined-back-beam" title="Permalink to this headline">¶</a></h3>
+<p>The equation of motion is</p>
+<div class="math">
+\[\begin{split}i\partial_z \rho_F &amp;= [ H_F, \rho_F ] \\
+i\partial_z \rho_B &amp;= [ H_B, \rho_B ] ,\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}H_F &amp;=  R  \mu \rho_B\\
+H_B &amp;= \mu \rho_F.\end{split}\]</div>
+<div class="warning admonition">
+<p class="first admonition-title">Conventions</p>
+<p class="last">The angle contribution is <span class="math">\(1-\cos\theta=2\)</span>. We absorbe this factor into <span class="math">\(\mu\)</span>.</p>
+</div>
+<p>As for the initial states, we can assume some general forms</p>
+<div class="math">
+\[\begin{split}\rho_F &amp;=  \frac{1}{2} \begin{pmatrix}
+1 &amp; \epsilon_F \\
+\epsilon_F^* &amp; -1
+\end{pmatrix}\\
+\rho_B &amp;=  \frac{1}{2} \begin{pmatrix}
+a &amp; \epsilon_B \\
+\epsilon_B^* &amp; -a
+\end{pmatrix}.\end{split}\]</div>
+<p>The forward beam start from neutrino flavors. However, the state of the backward beam is to be determined. The exact state is not necessary since we are interested in linear stability.</p>
+<p>We linearize the equation of motion by keeping only first order of the small off-diagonal elements.</p>
+<div class="math">
+\[\begin{split}i\partial_z \begin{pmatrix}
+1 &amp; \epsilon_F \\
+\epsilon_F^* &amp; -1
+\end{pmatrix} &amp;= \frac{ R \mu}{2} \begin{pmatrix}
+0 &amp; 2(a \epsilon_F -\epsilon_B) \\
+c.c. &amp; 0
+\end{pmatrix} + \frac{R\mu}{2} \begin{pmatrix}
+0 &amp; 2(a\epsilon_F - b) \\
+c.c. &amp; 0
+\end{pmatrix} \\
+- i\partial_z \begin{pmatrix}
+1 &amp; \epsilon_B \\
+\epsilon_B^* &amp; -1
+\end{pmatrix} &amp;= -\frac{\mu}{2} \begin{pmatrix}
+0 &amp; 2(a \epsilon_F -\epsilon_B) \\
+c.c. &amp; 0
+\end{pmatrix} - \frac{\mu}{2} \begin{pmatrix}
+0 &amp; 2 (a\epsilon_F - b) \\
+c.c. &amp; 0
+\end{pmatrix}\end{split}\]</div>
+<p>The system of equations can be easily solved and we found that the exponentials are <span class="math">\(e^{i(2a R -1) \mu z}\)</span>. No exponent growth is possible.</p>
+<div class="highlight-Mathematica"><div class="highlight"><pre><span></span><span class="n">eqnF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="n">epsF</span><span class="p">[</span><span class="n">z</span><span class="p">],</span><span class="w"> </span><span class="n">z</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">epsF</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">epsB</span><span class="p">[</span><span class="n">z</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">epsF</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="n">eqnB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="n">epsB</span><span class="p">[</span><span class="n">z</span><span class="p">],</span><span class="w"> </span><span class="n">z</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">epsF</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">epsB</span><span class="p">[</span><span class="n">z</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">epsF</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="n">DSolve</span><span class="p">[{</span><span class="n">eqnF</span><span class="p">,</span><span class="n">eqnB</span><span class="p">},{</span><span class="n">epsF</span><span class="p">,</span><span class="n">epsB</span><span class="p">},</span><span class="n">z</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">The Two Beams have Synchronized Evolution</p>
+<p>Notice that the two equations can be combined to</p>
+<div class="math">
+\[\partial_z  \epsilon_F = \partial_z ( R \epsilon_B ).\]</div>
+<p class="last">This result indicates that the initial development of the forward and backward beams are synchronized.</p>
+</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Dealing with Inhomogenous Differential Equations</p>
+<ol class="last arabic simple">
+<li>The solution to inhomogenous systems is the general solution plus the particular solution. At least we can know that if the general solution contains exponential growth terms, the final solution should also contain exponential growth terms, if the particular solution doesn’t cancel them.</li>
+<li>Floquet theory for periodic matrix systems might be useful.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="nonlocal-boundary-value-problem">
+<h2>3.4.2. Nonlocal Boundary Value Problem<a class="headerlink" href="#nonlocal-boundary-value-problem" title="Permalink to this headline">¶</a></h2>
 <div class="note admonition" id="bvp-nonlocal-bc-references">
 <p class="first admonition-title">Some References</p>
 <ol class="last arabic simple">
@@ -297,6 +419,9 @@ TeX: {
 <li>To solve coupled systems with nonlocal boundary conditions: Goodrich, C. S. (2017). <a class="reference external" href="https://doi.org/10.1016/j.aml.2016.11.011">Pointwise conditions in discrete boundary value problems with nonlocal boundary conditions</a>. Applied Mathematics Letters, 67, 7–15.</li>
 </ol>
 </div>
+</div>
+<div class="section" id="references-and-notes">
+<h2>3.4.3. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

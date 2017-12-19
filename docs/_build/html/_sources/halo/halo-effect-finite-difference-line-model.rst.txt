@@ -49,6 +49,11 @@ In this simple setup we neglect reflections and also the interactions with backw
 
 The instabilities can be calculated using :ref:`two-beams-model`.
 
+.. admonition:: Equal Number Density Neutrinos and Antineutrinos
+   :class: note
+
+   The left beam is neutrinos and the right beam is antineutrinos, which has the same number density as the left beam.
+
 
 
 

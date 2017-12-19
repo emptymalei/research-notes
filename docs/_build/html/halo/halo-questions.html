@@ -250,7 +250,11 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">3.5. Questions about Halo Problem</a></li>
+<li><a class="reference internal" href="#">3.5. Questions about Halo Problem</a><ul>
+<li><a class="reference internal" href="#differential-cross-section">3.5.1. Differential Cross Section</a></li>
+<li><a class="reference internal" href="#misc">3.5.2. MISC</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -285,9 +289,58 @@ TeX: {
       
   <div class="section" id="questions-about-halo-problem">
 <h1>3.5. Questions about Halo Problem<a class="headerlink" href="#questions-about-halo-problem" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="differential-cross-section">
+<h2>3.5.1. Differential Cross Section<a class="headerlink" href="#differential-cross-section" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id4">
+<img alt="../_images/neutrino-scattering.png" src="../_images/neutrino-scattering.png" />
+<p class="caption"><span class="caption-number">Fig. 3.16 </span><span class="caption-text">Scattering of neutrinos off electrons.</span></p>
+</div>
+<p>Giunti derived the general form of differential cross section for all possible neutrino scatterings off electrons, equation  5.19 in his book <a class="reference internal" href="#giunti2007" id="id1">[Giunti2007]</a>. We plugin differential forms of Mandelstam variables to get the differential cross section related to neutrino scattering angles,</p>
+<div class="math">
+\[\frac{d\sigma}{d ( 2 E_\nu E_\nu' \cos \theta_\nu)} = \frac{G_F}{\pi} \left( g_1^2 + g_2^2 \left( 1 - \frac{E_\nu' \cos \theta_\nu}{m_e} \right) - g_1 g_2 \frac{E_\nu' \cos\theta_\nu}{ E_\nu } \right),\]</div>
+<p>where <span class="math">\(E_\nu=p_\nu\)</span> and <span class="math">\(E_\nu'=p_\nu'\)</span> are the energies of neutrinos before and after scattering.</p>
+<p>Applying conservation of four momentum, we have</p>
+<div class="math">
+\[p_\nu' = \frac{ m_e (m_e + p_\nu)}{ m_e + p_\nu - p_\nu \cos \theta_\nu }.\]</div>
+<p>We are interested in the energy scale that <span class="math">\(p_\nu \gg m_e\)</span>. The energy of scattered neutrinos equations simplify to</p>
+<div class="math">
+\[p_\nu' = \frac{m_e}{ 1-\cos\theta_\nu }.\]</div>
+<p>Plugin this into the differential cross section and keep only 0 orders of <span class="math">\(m_e/E_\nu\)</span>, we have</p>
+<div class="math">
+\[\frac{d\sigma}{d\cos \theta_\nu} = \frac{2 E_\nu m_e}{(1-\cos\theta_\nu)^2}  \frac{G_F}{\pi} \left( g_1^2 + g_2^2 \frac{ 1 -2\cos\theta_\nu }{1 -\cos\theta_\nu}  \right)\]</div>
+<p>For neutral current, Giunti shows that the values of <span class="math">\(g_i\)</span> are <a class="reference internal" href="#giunti2007" id="id2">[Giunti2007]</a></p>
+<div class="math">
+\[\begin{split}g_1 &amp;= g_2 =  -0.27 \\
+\bar g_1 &amp;= \bar g_2 = 0.23,\end{split}\]</div>
+<p>where bar indicates the values for antineutrinos.</p>
+<div class="note admonition">
+<p class="first admonition-title">Giunti’s formula</p>
+<p>The differential cross section formula 5.29 in <a class="reference internal" href="#giunti2007" id="id3">[Giunti2007]</a> shows</p>
+<div class="math">
+\[\frac{d\sigma}{ d\cos \theta_e}  = \sigma_0 \frac{ 4E_\nu^2 (m_e + E_\nu)^2 \cos \theta_e } { [ (m_e + E_\nu)^2 - E_\nu^2\cos^2\theta_e ]^2 } \left[ g_1^2 + g_2^2 \left( 1 - \frac{ 2 m_e E_\nu \cos^2\theta_e }{ (m_e+E_\nu)^2 - E_\nu^2 \cos^2\theta_e } \right)^2  - g_1 g_2 \frac{ 2 m_e^2 \cos^2\theta_e }{ ( m_e + E_\nu )^2 - E_\nu^2 \cos^2\theta_e } \right].\]</div>
+<p>We are interested in supnernova neutrinos whose energy is usually larger than mass of electrons. We set <span class="math">\(m_e/E_\nu \to 0\)</span>.</p>
+<div class="math">
+\[\frac{d\sigma}{ d\cos \theta_e}  = \sigma_0 \frac{ 4 E_\nu^2 \cos \theta_e } { [ 1 - \cos^2\theta_e ]^2 } .\]</div>
+<p>We need a relation between <span class="math">\(\theta_e\)</span> and <span class="math">\(\theta_\nu\)</span>. The way to derive it is to use conservation of four momentum.</p>
+<div class="math">
+\[\begin{split}E_\nu' + \sqrt{p_e'^2 - m_e^2} &amp;= m_e + E_\nu \\
+p_\nu' \sin\theta_\nu + p_e' \sin\theta_e &amp;= 0\\
+p_\nu' \cos\theta_\nu + p_e' \cos\theta_e &amp;= p_\nu.\end{split}\]</div>
+<p class="last">We imediately notice that for backward scattering, <span class="math">\(\theta_e = \pi + \theta_\nu\)</span>.</p>
+</div>
+<table class="docutils citation" frame="void" id="giunti2007" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Giunti2007]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>)</em> Guinti &amp; Kim, Fundamentals of Neutrinos and Astrophysics</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="misc">
+<h2>3.5.2. MISC<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Reflection coefficients for neutrinos and anti-neutrinos are different.</li>
 </ol>
+</div>
 </div>
 
 
