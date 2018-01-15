@@ -253,7 +253,10 @@ TeX: {
 <li><a class="reference internal" href="#">3.4. Halo Effect - Analytical Methods</a><ul>
 <li><a class="reference internal" href="#linear-stability">3.4.1. Linear Stability</a><ul>
 <li><a class="reference internal" href="#single-beam-both-start-with-electron-flavor">3.4.1.1. Single Beam Both Start with Electron Flavor</a></li>
-<li><a class="reference internal" href="#single-beam-undetermined-back-beam">3.4.1.2. Single Beam Undetermined Back Beam</a></li>
+<li><a class="reference internal" href="#single-beam-undetermined-back-beam">3.4.1.2. Single Beam Undetermined Back Beam</a><ul>
+<li><a class="reference internal" href="#linear-regime-behavior">3.4.1.2.1. Linear Regime Behavior</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#nonlocal-boundary-value-problem">3.4.2. Nonlocal Boundary Value Problem</a></li>
@@ -407,6 +410,81 @@ c.c. &amp; 0
 <li>The solution to inhomogenous systems is the general solution plus the particular solution. At least we can know that if the general solution contains exponential growth terms, the final solution should also contain exponential growth terms, if the particular solution doesn’t cancel them.</li>
 <li>Floquet theory for periodic matrix systems might be useful.</li>
 </ol>
+</div>
+<div class="section" id="linear-regime-behavior">
+<h4>3.4.1.2.1. Linear Regime Behavior<a class="headerlink" href="#linear-regime-behavior" title="Permalink to this headline">¶</a></h4>
+<p>The solutions to such a problem shows that we always obtain decreasing modes. It’s not easy to comphrend. But the linear could be solved exactly.</p>
+<p>In linear regime, we define the density matrices for forward and backward beams to be</p>
+<div class="math">
+\[\begin{split}\rho_F &amp;= \frac{1}{2} \begin{pmatrix}
+1 &amp; \epsilon_F \\
+\epsilon_B^* &amp; -1
+\end{pmatrix} \\
+\rho_B &amp;= \frac{1}{2} \begin{pmatrix}
+1 &amp; \epsilon_B \\
+\epsilon_B^* &amp; -1
+\end{pmatrix}.\end{split}\]</div>
+<p>The Hamiltonians are</p>
+<div class="math">
+\[\begin{split}H_F &amp;= H_v + \mu \rho_F \\
+H_B &amp;= H_v + R \mu \rho_B.\end{split}\]</div>
+<p>We will investigate the instability for zero mixing angle.</p>
+<p>The linearized equation of motion can be simplified to</p>
+<div class="math">
+\[\begin{split}i\partial_z \begin{pmatrix}
+\epsilon_F \\
+\epsilon_B
+\end{pmatrix} = \begin{pmatrix}
+-\omega_v + R \xi \mu &amp; - R \xi \mu \\
+\xi \mu &amp; \omega_v - \xi \mu
+\end{pmatrix} \begin{pmatrix}
+\epsilon_F \\
+\epsilon_B
+\end{pmatrix}.\end{split}\]</div>
+<p>This equation can be easily solved. The eigenvalues are</p>
+<div class="math">
+\[\begin{split}\Omega_+ &amp;= \frac{1}{2} ( (R-1)\xi\mu + \sqrt{\Delta} ) \\
+\Omega_- &amp;= \frac{1}{2} ( (R-1)\xi\mu - \sqrt{\Delta} ),\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\Delta = (1-R)^2 \mu^2 \xi^2 - 4\mu\xi \omega_v (1+R) + 4\omega_v^2.\]</div>
+<p>The corresponding eigenvectors are</p>
+<div class="math">
+\[\begin{split}V_+ &amp;=\begin{pmatrix}
+\frac{ -2\omega_v + \xi \mu (1+R) + \sqrt{\Delta} }{2\xi\mu} \\
+1
+\end{pmatrix} \\
+V_- &amp;=\begin{pmatrix}
+\frac{ -2\omega_v + \xi \mu (1+R) - \sqrt{\Delta} }{2\xi\mu} \\
+1
+\end{pmatrix}.\end{split}\]</div>
+<p>The general solution to the equation is</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\epsilon_F(z) \\
+\epsilon_B(z)
+\end{pmatrix} = C_+ V_+ e^{-i \Omega_+ z} +  C_- V_- e^{-i \Omega_- z}.\end{split}\]</div>
+<p><strong>The special property about this reflection prolem is that the density matrices for the forward and backward beams should be the same at the reflection point,</strong> say <span class="math">\(L\)</span>. With such a simple relation, we can find the relations between <span class="math">\(C_\pm\)</span> by setting <span class="math">\(\epsilon_F(L)=\epsilon_B(L)\)</span>,</p>
+<div class="math">
+\[\frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)}.\]</div>
+<p>The solution to be problem can be simplified,</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}
+\epsilon_F(z) \\
+\epsilon_B(z)
+\end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).\end{split}\]</div>
+<p>We are interested in the absolute values of each elements so that the overall factors can be neglected. The forward beam evolution is obtained by taking the absolute value of <span class="math">\(\epsilon_F\)</span>,</p>
+<div class="math">
+\[\left\vert \epsilon_F \right\vert \propto \lvert (2\omega_v +\xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) + i \delta ) e^{delta(z-L)} + ( -2\omega_v - \xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) - i \delta ) e^{-delta(z-L)} \rvert,\]</div>
+<p>in which <span class="math">\(\sqrt{\Delta}\)</span> is replaced by <span class="math">\(i \delta\)</span>.</p>
+<p>Collecting terms, we could verify that it has the form</p>
+<div class="math">
+\[\left\vert \epsilon_F \right\vert \propto A + B \cosh( 2\delta(L-z) ).\]</div>
+<p>The only <span class="math">\(z\)</span> dependent term is cosh( 2delta(L-z) ), which is decreasing within <span class="math">\([0,L]\)</span> and is increasing in <span class="math">\([L,2L]\)</span>. The slope at <span class="math">\(z=L\)</span> is 0.</p>
+<div class="figure align-center" id="id4">
+<img alt="../_images/cosh-function.png" src="../_images/cosh-function.png" />
+<p class="caption"><span class="caption-number">Fig. 3.16 </span><span class="caption-text"><span class="math">\(\cosh(2\delta(z-L))\)</span> with <span class="math">\(\delta=1\)</span>.</span></p>
+</div>
 </div>
 </div>
 </div>

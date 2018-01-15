@@ -71,7 +71,7 @@ We plot out growth rate as a function of :math:`R` and :math:`\mu`, which shows 
 
 
 Single Beam Undetermined Back Beam
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -159,6 +159,113 @@ The system of equations can be easily solved and we found that the exponentials 
    1. The solution to inhomogenous systems is the general solution plus the particular solution. At least we can know that if the general solution contains exponential growth terms, the final solution should also contain exponential growth terms, if the particular solution doesn't cancel them.
    2. Floquet theory for periodic matrix systems might be useful.
 
+
+
+Linear Regime Behavior
+`````````````````````````````````
+
+The solutions to such a problem shows that we always obtain decreasing modes. It's not easy to comphrend. But the linear could be solved exactly.
+
+In linear regime, we define the density matrices for forward and backward beams to be
+
+.. math::
+   \rho_F &= \frac{1}{2} \begin{pmatrix}
+   1 & \epsilon_F \\
+   \epsilon_B^* & -1
+   \end{pmatrix} \\
+   \rho_B &= \frac{1}{2} \begin{pmatrix}
+   1 & \epsilon_B \\
+   \epsilon_B^* & -1
+   \end{pmatrix}.
+
+
+The Hamiltonians are
+
+.. math::
+   H_F &= H_v + \mu \rho_F \\
+   H_B &= H_v + R \mu \rho_B.
+
+We will investigate the instability for zero mixing angle.
+
+The linearized equation of motion can be simplified to
+
+.. math::
+   i\partial_z \begin{pmatrix}
+   \epsilon_F \\
+   \epsilon_B
+   \end{pmatrix} = \begin{pmatrix}
+   -\omega_v + R \xi \mu & - R \xi \mu \\
+   \xi \mu & \omega_v - \xi \mu
+   \end{pmatrix} \begin{pmatrix}
+   \epsilon_F \\
+   \epsilon_B
+   \end{pmatrix}.
+
+This equation can be easily solved. The eigenvalues are
+
+.. math::
+   \Omega_+ &= \frac{1}{2} ( (R-1)\xi\mu + \sqrt{\Delta} ) \\
+   \Omega_- &= \frac{1}{2} ( (R-1)\xi\mu - \sqrt{\Delta} ),
+
+where
+
+.. math::
+   \Delta = (1-R)^2 \mu^2 \xi^2 - 4\mu\xi \omega_v (1+R) + 4\omega_v^2.
+
+The corresponding eigenvectors are
+
+.. math::
+   V_+ &=\begin{pmatrix}
+   \frac{ -2\omega_v + \xi \mu (1+R) + \sqrt{\Delta} }{2\xi\mu} \\
+   1
+   \end{pmatrix} \\
+   V_- &=\begin{pmatrix}
+   \frac{ -2\omega_v + \xi \mu (1+R) - \sqrt{\Delta} }{2\xi\mu} \\
+   1
+   \end{pmatrix}.
+
+The general solution to the equation is
+
+.. math::
+   \begin{pmatrix}
+   \epsilon_F(z) \\
+   \epsilon_B(z)
+   \end{pmatrix} = C_+ V_+ e^{-i \Omega_+ z} +  C_- V_- e^{-i \Omega_- z}.
+
+
+**The special property about this reflection prolem is that the density matrices for the forward and backward beams should be the same at the reflection point,** say :math:`L`. With such a simple relation, we can find the relations between :math:`C_\pm` by setting :math:`\epsilon_F(L)=\epsilon_B(L)`,
+
+.. math::
+   \frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)}.
+
+
+The solution to be problem can be simplified,
+
+.. math::
+   \begin{pmatrix}
+   \epsilon_F(z) \\
+   \epsilon_B(z)
+   \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
+
+
+We are interested in the absolute values of each elements so that the overall factors can be neglected. The forward beam evolution is obtained by taking the absolute value of :math:`\epsilon_F`,
+
+.. math::
+   \left\vert \epsilon_F \right\vert \propto \lvert (2\omega_v +\xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) + i \delta ) e^{delta(z-L)} + ( -2\omega_v - \xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) - i \delta ) e^{-delta(z-L)} \rvert,
+
+in which :math:`\sqrt{\Delta}` is replaced by :math:`i \delta`.
+
+Collecting terms, we could verify that it has the form
+
+.. math::
+   \left\vert \epsilon_F \right\vert \propto A + B \cosh( 2\delta(L-z) ).
+
+The only :math:`z` dependent term is \cosh( 2\delta(L-z) ), which is decreasing within :math:`[0,L]` and is increasing in :math:`[L,2L]`. The slope at :math:`z=L` is 0.
+
+.. figure:: assets/halo-effect-analytical-methods/cosh-function.png
+   :align: center
+
+   :math:`\cosh(2\delta(z-L))` with :math:`\delta=1`.
 
 
 

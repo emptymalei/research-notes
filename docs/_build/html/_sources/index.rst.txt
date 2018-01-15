@@ -24,7 +24,7 @@ Neutrino is one of the most interesting particles in our world. The first propos
 
 This project is part of `NeuPhysics <http://neutrino.xyz>`_ . Just click the link already and see what's going on.
 
-Notes of some research is hosted on bitbucket as private repository `here <https://bitbucket.org/neuphysics/neutrino-reseaching>`_ . Login to view the most current research if you have access to it.
+Notes of some research is hosted on bitbucket as private repository `here <https://bitbucket.org/neuphysics/neutrino-reseaching>`_ . Login to view the up to date research if you have access to it.
 
 
 
