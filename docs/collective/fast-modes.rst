@@ -35,7 +35,7 @@ We take out the terms related to the difference in opening angles :math:`\chi_-=
    \epsilon^L \\ \bar\epsilon^L \\ \epsilon^R \\ \bar\epsilon^R
    \end{pmatrix}.
 
-The matrix becomes block diagonalized. We assume a solution of the form :math:`\epsilon = \epsilon_0 e^{i\Omega}` which is substitued into the equation. The first two components obay the equation.
+The matrix becomes block diagonalized. We assume a solution of the form :math:`\epsilon = \epsilon_0 e^{i\Omega}` which is substitued into the equation. The first two components obey the equation.
 
 .. math::
    \begin{pmatrix}
